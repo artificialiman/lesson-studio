@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 2 Horticulture &amp; Crop Production — First Term</title>
+<style>
+/* ============================================================
+   SS 2 HORTICULTURE & CROP PRODUCTION — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #1c7a3a;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #1c7a3a;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1c7a3a;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1c7a3a;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1c7a3a;
+  border-bottom:1.4pt solid #cfe3d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #b9c1b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f8f4;
+  border-color:#a8c8b2;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa79a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#48524a;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#1c7a3a;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1c7a3a;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3ee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #1c7a3a;
+  color:#1c7a3a;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- Punnett square ---------- */
+.pun{
+  border-collapse:collapse;
+  width:auto;
+  margin:6px auto 10px;
+  font-size:10.4pt;
+  background:#fcfdfc;
+}
+.pun th,.pun td{
+  border:1.2pt solid #8a8578;
+  padding:5px 12px;
+  text-align:center;
+  min-width:56px;
+  font-weight:900;
+}
+.pun th{background:#e8f3ec;font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig,.pun{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 2 Horticulture &amp; Crop Production — First Term</h1>
+  <p class="term">Weeks 1–11 &middot; Crop Improvement, Genetics, Biotechnology, Organic Farming, Greenhouses, Urban Horticulture &amp; Agroforestry &middot; Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — HORTICULTURAL CROP IMPROVEMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Horticultural Crop Improvement</h2>
+  <p class="meta"><b>Content:</b> Meaning, aims and methods of horticultural crop improvement.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define horticultural crop improvement.</li>
+      <li>List four aims of a plant breeding programme.</li>
+      <li>Explain selection — mass, pure-line and clonal.</li>
+      <li>Describe hybridisation, including emasculation and pollination.</li>
+      <li>Explain intraspecific vs interspecific hybridisation.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A “gene pool to new variety” flow diagram showing selection and hybridisation funnelling wild and cultivated genetic diversity into a single superior variety. Also a small hand-drawn plate of the hybridisation steps — <i>emasculation</i>, <i>pollination</i>, <i>bagging</i>, <i>F<sub>1</sub></i>. Not embedded in the source.</p>
+
+  <h3>1.1 Introduction</h3>
+  <p><b>Horticultural crop improvement</b> (plant breeding) is the art and science of changing the genetic traits of plants to develop new varieties with more desirable characteristics. It is a deliberate, human-driven evolution of crops to better suit human needs.</p>
+
+  <h3>1.2 Aims of Crop Improvement</h3>
+  <table>
+    <tr><th style="width:28%">Aim</th><th>Explanation and examples</th></tr>
+    <tr><td class="k">1. Increased yield</td><td>Crops that produce more food, fibre or ornamental value per unit area — tomatoes with more fruits per plant, maize with larger cobs.</td></tr>
+    <tr>
+      <td class="k">2. Improved quality</td>
+      <td>
+        <ul class="tight">
+          <li><b>Nutritional:</b> higher vitamin, protein or mineral content (e.g. “Golden Rice” enriched with Vitamin A).</li>
+          <li><b>Eating:</b> better taste, flavour, tenderness or texture.</li>
+          <li><b>Aesthetic:</b> brighter colours, larger flowers, more attractive shapes.</li>
+          <li><b>Keeping:</b> longer shelf-life for fruits and vegetables, reducing post-harvest losses.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr><td class="k">3. Pest and disease resistance</td><td>Plants that can naturally defend themselves against specific insects, fungi, bacteria or viruses — e.g. cassava resistant to Cassava Mosaic Disease.</td></tr>
+    <tr>
+      <td class="k">4. Abiotic stress tolerance</td>
+      <td>“Hardy” crops that withstand difficult conditions: <b>drought</b> (maize that survives with less water), <b>salinity</b> (coastal or irrigated areas), <b>heat or cold</b>.</td>
+    </tr>
+    <tr><td class="k">5. Desirable plant architecture</td><td>Modifying plant shape or structure — dwarf rice that doesn’t fall over; climbing bean varieties for vertical gardens.</td></tr>
+    <tr><td class="k">6. Ease of harvesting</td><td>Crops that mature uniformly for mechanical harvesting or have fewer thorns.</td></tr>
+  </table>
+
+  <h3>1.3 Methods of Crop Improvement</h3>
+
+  <h4>1. Selection</h4>
+  <p>The oldest and most basic method. Identify plants with desirable traits and use them to create the next generation.</p>
+  <table>
+    <tr><th style="width:24%">Type</th><th>Process</th><th>Use</th></tr>
+    <tr>
+      <td class="k">Mass selection</td>
+      <td>A large number of plants (a “mass”) are evaluated in the field. The “best”-looking plants (phenotype) are selected and harvested. Their seeds are bulked together and planted to form the next generation.</td>
+      <td>Common for cross-pollinated crops. Simple and cheap but slow and not very precise.</td>
+    </tr>
+    <tr>
+      <td class="k">Pure-line selection</td>
+      <td>Used for self-pollinating crops. A breeder selects a single superior plant. Its seeds are collected and grown out. Since the plant self-pollinates, all offspring are genetically very similar (a “pure line”).</td>
+      <td>Good for creating highly uniform varieties (e.g. a new tomato or bean variety).</td>
+    </tr>
+    <tr>
+      <td class="k">Clonal selection</td>
+      <td>Used for crops propagated vegetatively (asexually) like cassava, yams, bananas and potatoes. A breeder identifies a single superior plant (e.g. a cassava plant with huge tubers). Cuttings (“clones”) are taken and multiplied.</td>
+      <td>All offspring are genetically identical to the superior parent.</td>
+    </tr>
+  </table>
+
+  <h4>2. Hybridisation (Cross-Breeding)</h4>
+  <p>The most powerful traditional breeding method. It involves crossing two parent plants with different desirable traits to produce offspring that combines those traits.</p>
+
+  <table>
+    <tr><th style="width:26%">Step</th><th>Explanation</th></tr>
+    <tr><td class="k">1. Parent selection</td><td>Choose two parents. <b>Example:</b> Parent A (tomato) — high-yielding but disease-susceptible. Parent B (tomato) — low-yielding but disease-resistant. <b>Goal:</b> create a variety that is high-yielding AND disease-resistant.</td></tr>
+    <tr><td class="k">2. Emasculation</td><td>To prevent self-pollination, carefully remove the male parts (stamens/anthers) from the flower of Parent A (the “female” parent) before it produces pollen.</td></tr>
+    <tr><td class="k">3. Pollination</td><td>Collect pollen from the flower of Parent B (the “male” parent); manually transfer it to the stigma of the emasculated flower of Parent A.</td></tr>
+    <tr><td class="k">4. Bagging</td><td>Cover the pollinated flower with a small bag (paper or cloth) to prevent stray, unwanted pollen from landing on it.</td></tr>
+    <tr><td class="k">5. Harvesting F<sub>1</sub></td><td>The flower develops into a fruit. The seeds inside are the First Filial (<b>F<sub>1</sub></b>) generation — they contain genes from both parents.</td></tr>
+    <tr><td class="k">6. Growing F<sub>1</sub> and F<sub>2</sub></td><td>The F<sub>1</sub> seeds are planted; the F<sub>1</sub> plants are often self-pollinated to produce the Second Filial (<b>F<sub>2</sub></b>) generation.</td></tr>
+    <tr><td class="k">7. Selection</td><td>The F<sub>2</sub> generation is where all the gene combinations appear. The breeder must plant thousands of F<sub>2</sub> seeds and select the very few individual plants that show the desired combination (high yield + disease resistance).</td></tr>
+    <tr><td class="k">8. Stabilisation</td><td>These selected plants are grown and re-selected over many (6–10) generations until their desirable traits are “fixed” (i.e. they breed true).</td></tr>
+  </table>
+
+  <h4>Types of Hybridisation</h4>
+  <ul class="tight">
+    <li><b>Intraspecific:</b> crossing two different varieties within the same species (<i>Zea mays</i> “A” × <i>Zea mays</i> “B”). The most common type.</li>
+    <li><b>Interspecific:</b> crossing two different (but related) species — e.g. to transfer a wild, disease-resistant gene into a cultivated species.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define horticultural crop improvement in your own words.</li>
+        <li>List four distinct aims of a plant breeding programme.</li>
+        <li>Explain the difference between “Pure-line Selection” and “Clonal Selection,” stating which type of crop each is used for.</li>
+        <li>What is “Emasculation” in the context of hybridisation, and why is it necessary?</li>
+        <li>A farmer has a maize variety that tastes sweet (Trait A) and another that is drought-tolerant (Trait B). Which method of crop improvement would be best to combine these two traits?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Visit a local market or farm.</li>
+        <li>Identify two different varieties of the same crop (e.g. two types of mango, pepper, or cassava — yellow vs white).</li>
+        <li>In your notebook, list the observable differences (phenotype) between them (size, colour, shape, texture).</li>
+        <li>Write a short paragraph speculating on what “aims” a breeder might have had when developing one of the varieties.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — GENETIC PRINCIPLES
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Genetic Principles in Crop Production</h2>
+  <p class="meta"><b>Content:</b> Key genetic terminology, Mendel’s two laws of heredity, and their applications in crop production.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define gene, allele, phenotype, genotype, homozygous and heterozygous.</li>
+      <li>State and explain Mendel’s Law of Segregation.</li>
+      <li>State and explain Mendel’s Law of Independent Assortment.</li>
+      <li>Explain hybrid vigour and its importance in commercial agriculture.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A side-by-side Punnett-square plate for a monohybrid cross (Rr × Rr) and a dihybrid cross (RrYy × RrYy), with the 3:1 and 9:3:3:1 ratios marked. Also a diagram contrasting “dominant” (R) versus “recessive” (r) allele expression. Not embedded in the source.</p>
+
+  <h3>2.1 Introduction</h3>
+  <p><b>Genetics</b> is the science of heredity. It explains how traits are passed from parents to offspring. This is the “science” behind the “art” of plant breeding. The foundation of this science was laid by <b>Gregor Mendel</b>.</p>
+
+  <h3>2.2 Key Genetic Terminology</h3>
+  <table>
+    <tr><th style="width:22%">Term</th><th>Definition</th><th>Example</th></tr>
+    <tr><td class="k">Gene</td><td>The basic unit of heredity — a segment of DNA that codes for a specific trait.</td><td>The gene for flower colour.</td></tr>
+    <tr><td class="k">Allele</td><td>Different forms of the same gene.</td><td>Alleles “R” (red) and “r” (white) for the flower-colour gene.</td></tr>
+    <tr><td class="k">Phenotype</td><td>The physical appearance or observable trait.</td><td>“The flower is red.”</td></tr>
+    <tr><td class="k">Genotype</td><td>The genetic makeup — the combination of alleles.</td><td>“RR,” “Rr” or “rr.”</td></tr>
+    <tr><td class="k">Homozygous</td><td>Having two identical alleles for a trait (true-breeding).</td><td>RR or rr.</td></tr>
+    <tr><td class="k">Heterozygous</td><td>Having two different alleles for a trait.</td><td>Rr.</td></tr>
+    <tr><td class="k">Dominant allele</td><td>Masks the effect of a recessive allele when present. Capital letter.</td><td>RR and Rr both give red flowers.</td></tr>
+    <tr><td class="k">Recessive allele</td><td>Masked by a dominant allele; only expressed when homozygous. Small letter.</td><td>rr gives white flowers.</td></tr>
+  </table>
+
+  <h3>2.3 Mendel’s Laws of Heredity</h3>
+
+  <h4>Mendel’s First Law — The Law of Segregation</h4>
+  <ul class="tight">
+    <li><b>Concept:</b> for any trait, an organism inherits two alleles, one from each parent. These two alleles segregate (separate) during gamete formation, so each gamete contains only <b>one</b> allele for that trait.</li>
+    <li><b>Example (monohybrid cross):</b> a homozygous dominant plant (RR — red) is crossed with a homozygous recessive plant (rr — white).
+      <ul class="tight">
+        <li><b>P generation:</b> RR × rr</li>
+        <li><b>Gametes:</b> the RR parent only makes R; the rr parent only makes r.</li>
+        <li><b>F<sub>1</sub> generation:</b> all offspring receive one R and one r → all are Rr (genotype) and all have red flowers (phenotype).</li>
+        <li><b>F<sub>1</sub> self-cross:</b> Rr × Rr.</li>
+        <li><b>Gametes:</b> each F<sub>1</sub> parent produces 50% R and 50% r.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table class="pun">
+    <tr><th></th><th>R</th><th>r</th></tr>
+    <tr><th>R</th><td>RR</td><td>Rr</td></tr>
+    <tr><th>r</th><td>Rr</td><td>rr</td></tr>
+  </table>
+
+  <ul class="tight">
+    <li><b>Phenotypic ratio:</b> 3 red : 1 white (75% red, 25% white).</li>
+    <li><b>Genotypic ratio:</b> 1 RR : 2 Rr : 1 rr (25% homozygous dominant, 50% heterozygous, 25% homozygous recessive).</li>
+    <li><b>Significance:</b> explains why traits can “disappear” in F<sub>1</sub> (white) and “reappear” in F<sub>2</sub>.</li>
+  </ul>
+
+  <h4>Mendel’s Second Law — The Law of Independent Assortment</h4>
+  <ul class="tight">
+    <li><b>Concept:</b> alleles for different traits are inherited independently of one another. The inheritance of one trait (like flower colour) does not affect the inheritance of another trait (like plant height).</li>
+    <li><b>Example (dihybrid cross):</b> a parent that is heterozygous for two traits — Round, Yellow seeds (RrYy).
+      <ul class="tight">
+        <li>The gene for shape (R/r) and the gene for colour (Y/y) are on different chromosomes.</li>
+        <li>When this plant makes gametes, the alleles “assort independently”. It can make four types of gametes: <b>RY, Ry, rY, ry</b>.</li>
+        <li>Two such plants crossed (RrYy × RrYy) give the classic <b>9 : 3 : 3 : 1</b> phenotypic ratio — 9 round-yellow, 3 round-green, 3 wrinkled-yellow, 1 wrinkled-green.</li>
+      </ul>
+    </li>
+    <li><b>Significance:</b> the scientific reason why hybridisation works — new combinations of traits can be created, e.g. “round seeds” from one parent and “yellow colour” from another.</li>
+  </ul>
+
+  <h3>2.4 Applications in Crop Production</h3>
+  <ol class="tight">
+    <li><b>Systematic breeding:</b> Mendel’s laws turned plant breeding from guesswork into a predictive science. Breeders use Punnett squares to predict the outcomes of their crosses.</li>
+    <li><b>Hybrid vigour (heterosis):</b> the F<sub>1</sub> hybrid (e.g. Rr) is superior to both homozygous parents (RR and rr) — bigger, more disease-resistant, higher-yielding. The entire hybrid-seed industry (e.g. hybrid maize) is built on this. Farmers buy F<sub>1</sub> seeds, get the hybrid vigour, but cannot save the seeds, as F<sub>2</sub> segregates and loses the superior traits.</li>
+    <li><b>Understanding recessive traits:</b> breeders can now understand why an undesirable trait (like disease susceptibility) might be “hidden” as a recessive allele in a heterozygous plant.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Differentiate between “Genotype” and “Phenotype” using a clear example.</li>
+        <li>What does it mean for an organism to be “heterozygous” for a trait?</li>
+        <li>State Mendel’s Law of Segregation.</li>
+        <li>In tomato plants, red fruit (R) is dominant over yellow fruit (r). Cross a heterozygous (Rr) plant with a yellow-fruited (rr) plant. What is the expected phenotypic ratio? (Use a Punnett square.)</li>
+        <li>What is “Hybrid Vigour” (Heterosis), and why is it important in commercial agriculture?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Define “Dihybrid Cross”.</li>
+        <li>Draw the 16-box Punnett square for a dihybrid cross between two parents that are heterozygous for both Round (R) and Yellow (Y) seeds (RrYy × RrYy).</li>
+        <li>Count and list the four different phenotypes and their 9:3:3:1 ratio.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — BIOTECHNOLOGY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Biotechnology in Horticulture</h2>
+  <p class="meta"><b>Content:</b> Tissue culture (micropropagation) and genetic modification (GM crops).</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define tissue culture and explain totipotency.</li>
+      <li>Describe the seven steps of tissue culture.</li>
+      <li>List the applications of tissue culture.</li>
+      <li>Define genetic modification and describe the process.</li>
+      <li>List applications, benefits and concerns of GM crops.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A seven-step tissue-culture flow diagram: <i>explant → sterilisation → inoculation → incubation/callus → shoot formation → rooting → acclimatisation</i>, illustrated with test tubes and sterile hood. Also a diagram of <i>Agrobacterium tumefaciens</i>-mediated gene transfer. Not embedded in the source.</p>
+
+  <h3>3.1 Introduction</h3>
+  <p><b>Biotechnology</b> involves using living organisms or their products to make or modify products for a specific use. In horticulture it allows for rapid and precise plant improvement, far beyond the speed of traditional breeding.</p>
+
+  <h3>3.2 Tissue Culture (Micropropagation)</h3>
+  <h4>A. Definition</h4>
+  <p>An <i>in-vitro</i> (in glass) technique of growing new plants from tiny pieces of plant tissue (leaf, stem, root tip) on a sterile, artificial nutrient medium (a jelly). The small piece of tissue used is called an <b>explant</b>. The key principle is <b>totipotency</b> — the ability of a single plant cell to grow into a complete, new plant.</p>
+
+  <h4>B. The Process</h4>
+  <table>
+    <tr><th style="width:24%">Step</th><th>Explanation</th></tr>
+    <tr><td class="k">1. Explant selection</td><td>A small, healthy piece of the desired “mother plant” is selected (meristem tip, leaf section, bud).</td></tr>
+    <tr><td class="k">2. Sterilisation</td><td>The most critical step. The explant is surface-sterilised (bleach or alcohol) to kill fungi and bacteria. The nutrient medium and tools are also sterilised in an autoclave. Work is done in a laminar flow hood which provides sterile air.</td></tr>
+    <tr><td class="k">3. Inoculation</td><td>The sterile explant is placed onto the sterile nutrient medium (a gel containing water, sugar, macro/micro-nutrients and vitamins) in a test tube or jar.</td></tr>
+    <tr><td class="k">4. Incubation</td><td>The jar is placed in a growth room with controlled light and temperature.</td></tr>
+    <tr><td class="k">5. Callus &amp; shoot formation</td><td>The explant cells divide and form an undifferentiated mass called a <b>callus</b>. By adding specific plant hormones (auxins and cytokinins) the breeder encourages the callus to form shoots.</td></tr>
+    <tr><td class="k">6. Rooting</td><td>The new, small shoots are transferred to a different medium containing hormones that promote root growth.</td></tr>
+    <tr><td class="k">7. Acclimatisation (hardening off)</td><td>The small “plantlets” are removed from the sterile, high-humidity jars. Their roots are washed and they are planted in sterile soil in a greenhouse. They are slowly adapted to the “real world” — lower humidity and natural soil.</td></tr>
+  </table>
+
+  <h4>C. Applications of Tissue Culture</h4>
+  <ol class="tight">
+    <li><b>Mass propagation (cloning):</b> one explant can produce thousands or millions of genetically identical (clonal) plantlets in a short time — vital for commercial production of ornamentals (orchids) and crops like bananas, plantains and yams.</li>
+    <li><b>Production of disease-free plants:</b> the meristem tip is often free of viruses, even if the mother plant is infected. Culturing the meristem produces “clean” planting material.</li>
+    <li><b>Germplasm conservation:</b> varieties can be stored as tiny, slow-growing tissue cultures in a lab (“gene bank”), saving space and protecting against field losses.</li>
+    <li><b>Speeding up breeding:</b> allows breeders to grow new hybrids or conduct genetic experiments much faster than in the field.</li>
+  </ol>
+
+  <h3>3.3 Genetic Modification (GM Crops)</h3>
+  <h4>A. Definition</h4>
+  <p><b>Genetic Modification (GM)</b>, or genetic engineering, directly inserts a specific gene from one organism (a bacterium, virus or another plant) into the DNA of a crop. The resulting plant is a <b>Genetically Modified Organism (GMO)</b> or a “transgenic” plant. This is different from hybridisation, which can only cross related species.</p>
+
+  <h4>B. The Process (Simplified)</h4>
+  <ol class="tight">
+    <li><b>Gene identification:</b> identify a useful gene — e.g. the <b>Bt gene</b> from the bacterium <i>Bacillus thuringiensis</i>, which is toxic to insects.</li>
+    <li><b>Gene isolation:</b> the gene is “cut out” using special <i>restriction</i> enzymes.</li>
+    <li><b>Gene insertion (transformation):</b> the isolated gene is inserted into the plant’s cells. Two common methods:
+      <ul class="tight">
+        <li><b>Gene gun:</b> the gene is coated onto tiny gold particles and “shot” into the plant cells.</li>
+        <li><b>Agrobacterium tumefaciens:</b> a natural soil bacterium that transfers its own DNA (on a “Ti plasmid”) into a plant. Scientists replace the bacterium’s DNA with the desired gene.</li>
+      </ul>
+    </li>
+    <li><b>Selection &amp; regeneration:</b> the cells are grown using tissue culture. The medium contains an “antibiotic marker” so only cells that took up the new gene survive. These cells are regenerated into whole plants.</li>
+  </ol>
+
+  <h4>C. Applications of GM Crops</h4>
+  <table>
+    <tr><th style="width:26%">Application</th><th>Explanation and examples</th></tr>
+    <tr><td class="k">Insect resistance</td><td><b>Bt Cotton</b> and <b>Bt Maize</b> produce a protein that kills specific insect pests (like the bollworm), reducing the need for chemical insecticides.</td></tr>
+    <tr><td class="k">Herbicide tolerance</td><td>“Roundup Ready” soybeans or maize are engineered to be resistant to the herbicide glyphosate. This allows the farmer to spray the entire field, killing weeds but not the crop.</td></tr>
+    <tr><td class="k">Nutritional enhancement</td><td>“<b>Golden Rice</b>” is engineered to produce beta-carotene, a precursor to Vitamin A, to help combat vitamin deficiency in developing countries.</td></tr>
+    <tr><td class="k">Disease resistance</td><td>Engineering plants to be resistant to viruses (e.g. Papaya Ringspot Virus).</td></tr>
+  </table>
+
+  <h4>D. Benefits and Concerns</h4>
+  <table>
+    <tr><th style="width:26%">Benefits</th><th>Concerns (the controversy)</th></tr>
+    <tr>
+      <td>
+        <ul class="tight">
+          <li>Increased yields.</li>
+          <li>Reduced pesticide use.</li>
+          <li>Improved nutrition.</li>
+          <li>Enhanced food security.</li>
+        </ul>
+      </td>
+      <td>
+        <ul class="tight">
+          <li><b>Environmental:</b> risk of “superweeds” (herbicide resistance spreading) or harm to non-target insects.</li>
+          <li><b>Human health:</b> concerns (largely unproven) about long-term safety or allergies.</li>
+          <li><b>Economic:</b> control of seeds by a few large corporations; farmers cannot save GM seeds.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is “totipotency,” and why is it the central principle of tissue culture?</li>
+        <li>Describe the process of “Acclimatisation” (hardening off) and explain why it is necessary.</li>
+        <li>List three major applications of tissue culture in horticulture.</li>
+        <li>What is the key difference between traditional hybridisation and genetic modification?</li>
+        <li>Explain what Bt Cotton is. Where did the Bt gene come from, and what is the benefit to the farmer?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a simple flowchart (diagram with arrows) showing the seven main steps of tissue culture, starting at “Explant Selection” and ending at “Acclimatisation”.</li>
+        <li>Write a short paragraph explaining the difference between “Herbicide Tolerant” GM crops and “Insect Resistant” GM crops.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — ORGANIC HORTICULTURE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Organic Horticulture</h2>
+  <p class="meta"><b>Content:</b> Principles of organic horticulture and key practices — soil fertility, pest control, weed control; benefits and challenges.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define organic horticulture and state its four principles.</li>
+      <li>Explain composting, green manure, cover cropping and crop rotation.</li>
+      <li>Describe cultural, biological, physical and natural methods of pest control.</li>
+      <li>Describe mulching as a weed control practice.</li>
+      <li>State the benefits and challenges of organic horticulture.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> An “organic farm cycle” diagram showing compost → soil → crops → crop residues → compost, with livestock manure and green manure looping in. Also a three-tier pyramid of organic pest control: <i>cultural → biological/physical → natural sprays</i>. Not embedded in the source.</p>
+
+  <h3>4.1 Introduction</h3>
+  <p><b>Organic horticulture</b> is a holistic production system that avoids the use of synthetic (man-made) fertilisers, pesticides and herbicides. It focuses on building healthy soil and working with natural ecological cycles to produce nutritious food.</p>
+
+  <h3>4.2 Principles of Organic Horticulture</h3>
+  <ol class="tight">
+    <li><b>Principle of health</b> — aims to produce healthy soil, healthy plants, healthy animals and healthy people; avoids inputs that can harm health.</li>
+    <li><b>Principle of ecology</b> — works with living ecological systems, not against them; emphasises recycling, biodiversity and balance in nature.</li>
+    <li><b>Principle of fairness</b> — seeks fairness in relationships with all involved, from farmers and workers to consumers.</li>
+    <li><b>Principle of care</b> — emphasises caution and responsibility in managing the farm to protect the environment and the well-being of future generations.</li>
+  </ol>
+
+  <h3>4.3 Key Practices in Organic Horticulture</h3>
+
+  <h4>A. Soil Fertility Management — “Feed the soil, not the plant.”</h4>
+  <table>
+    <tr><th style="width:26%">Practice</th><th>Explanation</th></tr>
+    <tr><td class="k">Composting</td><td>The controlled decomposition of organic matter (kitchen scraps, leaves, grass clippings, small amounts of manure) by microorganisms. The result, “compost,” is a dark, nutrient-rich soil conditioner.</td></tr>
+    <tr><td class="k">Animal manures</td><td>Using waste from poultry, goats or cattle. It must be composted or “aged” first — raw manure can burn plants and contain pathogens.</td></tr>
+    <tr><td class="k">Green manures / cover cropping</td><td><b>Cover crop:</b> a crop (Mucuna, Centrosema, Pueraria) planted between cash crops or during the off-season to cover bare soil. <b>Green manure:</b> a cover crop specifically grown to be cut down and tilled into the soil to add organic matter. Leguminous cover crops (beans, peas) are special because they “fix” nitrogen from the air into the soil.</td></tr>
+    <tr><td class="k">Crop rotation</td><td>Not planting the same crop in the same spot year after year. e.g. plant maize (heavy feeder) → beans (nitrogen fixer) → yams (root crop). Breaks pest cycles and balances soil nutrient use.</td></tr>
+  </table>
+
+  <h4>B. Pest and Disease Control — Not to eliminate all pests, but to keep them at a manageable, non-damaging level.</h4>
+  <table>
+    <tr><th style="width:26%">Category</th><th>Methods</th></tr>
+    <tr><td class="k">Cultural control</td><td><b>Crop rotation</b> — prevents soil-borne diseases from building up. <b>Intercropping</b> — planting two or more different crops together (e.g. maize and cassava) confuses pests. <b>Sanitation</b> — removing and destroying diseased plants and crop debris.</td></tr>
+    <tr><td class="k">Biological control</td><td>Encouraging “beneficial” insects (ladybugs, which eat aphids) by planting flowers they like. Using microbial pesticides like <i>Bacillus thuringiensis</i> (Bt) — the natural bacteria, not the GM crop.</td></tr>
+    <tr><td class="k">Physical/mechanical</td><td>Hand-picking large insects (caterpillars) off plants. Using insect traps or reflective mulches.</td></tr>
+    <tr><td class="k">Natural pesticides</td><td>Plant-based sprays like <b>Neem oil</b> (<i>Azadirachta indica</i>), garlic spray or hot-pepper spray. These are biodegradable but must still be used with care.</td></tr>
+  </table>
+
+  <h4>C. Weed Control</h4>
+  <ul class="tight">
+    <li><b>Mulching:</b> covering the soil surface with organic materials (straw, grass clippings, wood chips). Blocks sunlight, preventing weed seeds from germinating; also conserves soil moisture.</li>
+    <li><b>Cover cropping:</b> a dense cover crop will “choke out” and smother weeds.</li>
+    <li><b>Hand weeding / hoeing:</b> mechanical removal of weeds.</li>
+  </ul>
+
+  <h3>4.4 Benefits and Challenges</h3>
+  <table>
+    <tr><th style="width:26%">Benefits</th><th>Challenges</th></tr>
+    <tr>
+      <td>
+        <ul class="tight">
+          <li><b>Environmental:</b> no chemical runoff to pollute water; improves soil health and biodiversity.</li>
+          <li><b>Health:</b> food is free of synthetic pesticide residues.</li>
+          <li><b>Sustainability:</b> builds long-term soil fertility.</li>
+          <li><b>Economic:</b> (potentially) higher “premium” price for certified organic food; lower cost of inputs (no chemicals).</li>
+        </ul>
+      </td>
+      <td>
+        <ul class="tight">
+          <li><b>Labour intensive:</b> weeding and compost-making require more physical work.</li>
+          <li><b>Lower yields:</b> (sometimes, especially in the transition period).</li>
+          <li><b>Certification:</b> the process to become “Certified Organic” can be complex and expensive for small farmers.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is the core philosophy of organic horticulture regarding soil?</li>
+        <li>Explain the difference between a “Cover Crop” and “Green Manure”.</li>
+        <li>Why is “Crop Rotation” a key practice in organic farming? (Give two reasons.)</li>
+        <li>List three non-chemical methods an organic farmer can use to control insect pests.</li>
+        <li>What are two benefits and one challenge of organic horticulture?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Describe how you would make a small compost heap or pile at home or in the school garden.</li>
+        <li>List five “GREEN” materials (nitrogen-rich — e.g. kitchen scraps, fresh grass) and five “BROWN” materials (carbon-rich — e.g. dry leaves, cardboard, sawdust) that can be used for compost.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Midterm Examination</h2>
+  <p class="meta"><b>Content:</b> Assessment covering Weeks 1–4.</p>
+
+  <div class="box obj">
+    <h4>Scope</h4>
+    <ol class="cols2 tight">
+      <li>Horticultural crop improvement — aims and methods.</li>
+      <li>Genetic principles — Mendel’s laws and terminology.</li>
+      <li>Biotechnology — tissue culture and GM crops.</li>
+      <li>Organic horticulture — principles and practices.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for this week. If a printed question paper exists, paste the cover or instructions here.</p>
+
+  <h3>Suggested Structure</h3>
+  <table>
+    <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+    <tr><td class="k">A — Objectives</td><td>20 marks</td><td>Twenty multiple-choice questions covering Weeks 1–4.</td></tr>
+    <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+    <tr><td class="k">C — Essay / Practical</td><td>20 marks</td><td>Two essay questions, including one Punnett-square or flow-diagram question.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Revision Focus</h4>
+    <ul class="cols2 tight">
+      <li>Selection — mass, pure-line, clonal.</li>
+      <li>Emasculation and pollination.</li>
+      <li>Gene, allele, phenotype, genotype.</li>
+      <li>Mendel’s two laws with ratios.</li>
+      <li>Hybrid vigour.</li>
+      <li>Tissue culture: explant, callus, acclimatisation, disease-free.</li>
+      <li>GM: Bt, herbicide tolerance, Golden Rice.</li>
+      <li>Organic: compost, green manure, crop rotation, IPM.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — GREENHOUSE TECHNOLOGY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Greenhouse Technology</h2>
+  <p class="meta"><b>Content:</b> Structures and types; environmental control; benefits; challenges in Nigeria.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define greenhouse and describe the main types.</li>
+      <li>Compare glasshouses, polytunnels and net houses.</li>
+      <li>Explain how to control temperature, light, water and pests.</li>
+      <li>State the benefits of greenhouse technology.</li>
+      <li>Identify its challenges in Nigeria.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A three-panel illustration of <i>Glasshouse</i>, <i>Polytunnel (hoop house)</i> and <i>Net House / Shade House</i>, each labelled with light, ventilation and cover-material notes. Also a diagram of a drip-irrigation line inside a greenhouse and a double-door “airlock” entry. Not embedded in the source.</p>
+
+  <h3>6.1 Introduction</h3>
+  <p>A <b>greenhouse</b> (or glasshouse) is a structure designed to provide a controlled, protected environment for growing crops. It is covered with a transparent or translucent material (glass or plastic) that allows sunlight to enter and heats the interior.</p>
+
+  <h3>6.2 Structures and Types</h3>
+  <table>
+    <tr><th style="width:22%">Type</th><th>Structure</th><th>Pros</th><th>Cons</th></tr>
+    <tr>
+      <td class="k">Glasshouse</td>
+      <td>Traditional structure — glass panels in a metal (aluminium) frame.</td>
+      <td>Very long-lasting (30+ years); best light transmission.</td>
+      <td>Very expensive; heavy; fragile (can break); traps heat (a major problem in Nigeria).</td>
+    </tr>
+    <tr>
+      <td class="k">Polytunnel (hoop house)</td>
+      <td>Arched hoops (metal or PVC) covered with a single or double layer of UV-stabilised polyethylene plastic.</td>
+      <td>Much cheaper; easy to build; good for extending seasons.</td>
+      <td>Plastic needs replacing every 3–5 years; can be damaged by wind.</td>
+    </tr>
+    <tr>
+      <td class="k">Net house (shade house)</td>
+      <td>A simple frame (wood or metal) covered with shade net or insect-proof netting.</td>
+      <td>Very suitable for Nigerian/tropical climates. Does not trap heat; provides shade (reducing heat stress); physically excludes insect pests (whiteflies).</td>
+      <td>Does not protect from heavy rain.</td>
+    </tr>
+  </table>
+
+  <h3>6.3 Environmental Control (The “Technology”)</h3>
+  <p>A greenhouse allows the grower to become a “weather man” and control key factors.</p>
+
+  <table>
+    <tr><th style="width:22%">Factor</th><th>Controls and methods</th></tr>
+    <tr>
+      <td class="k">Temperature</td>
+      <td><b>Cooling (critical in Nigeria):</b> ventilation is key — side-vents that roll up, roof vents that open, large “extraction” fans to pull hot air out. “Evaporative cooling” (using wet pads and fans) is a more advanced method. <b>Heating (for cold climates/nights):</b> electric or gas heaters.</td>
+    </tr>
+    <tr>
+      <td class="k">Light</td>
+      <td><b>Reducing:</b> shade cloths (nets) over the roof to reduce intense sunlight. <b>Adding:</b> artificial “grow lights” (LEDs) to supplement light on cloudy days or extend the “day length”.</td>
+    </tr>
+    <tr>
+      <td class="k">Water &amp; humidity</td>
+      <td><b>Irrigation:</b> drip irrigation (delivering water directly to the plant’s roots) is the most common and efficient method. <b>Humidity:</b> misters or foggers can be used to raise humidity for seedlings or certain crops.</td>
+    </tr>
+    <tr>
+      <td class="k">Pest &amp; disease control</td>
+      <td>The structure is a physical barrier. Double-door entry systems act as an “airlock” to stop insects from flying in. Fine insect netting on all vents and openings.</td>
+    </tr>
+  </table>
+
+  <h3>6.4 Benefits of Greenhouse Technology</h3>
+  <ol class="tight">
+    <li><b>Year-round production</b> — grow high-value vegetables (tomatoes, peppers, cucumbers) even in the off-season.</li>
+    <li><b>Protection from elements</b> — from heavy rain (which spreads disease), strong winds and hailstones.</li>
+    <li><b>Pest and disease control</b> — drastically reduces pressure, leading to less pesticide use and higher quality produce.</li>
+    <li><b>Increased yield</b> — optimised conditions (water, nutrients) give much higher yields per square metre.</li>
+    <li><b>Water efficiency</b> — drip irrigation in a greenhouse uses up to 90% less water than traditional field irrigation.</li>
+  </ol>
+
+  <h3>6.5 Challenges in Nigeria</h3>
+  <ol class="cols2 tight">
+    <li><b>High initial cost</b> — setup for glasshouses or well-equipped polytunnels is very high.</li>
+    <li><b>Overheating</b> — the number one challenge. A poorly ventilated greenhouse becomes an “oven” in the tropical sun and kills plants.</li>
+    <li><b>Constant power supply</b> — advanced systems (fans, pumps, coolers) require reliable electricity — a major problem (requiring generators or large solar setups).</li>
+    <li><b>Technical know-how</b> — managing a greenhouse environment requires training and skill.</li>
+    <li><b>Availability of materials</b> — sourcing high-quality UV-treated plastic, shade nets and parts can be difficult or expensive.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is a greenhouse?</li>
+        <li>Compare a “Glasshouse” and a “Polytunnel” in terms of cost and durability.</li>
+        <li>Why is a “Net House” or “Shade House” often more suitable for a tropical climate like Nigeria than a fully enclosed plastic greenhouse?</li>
+        <li>List three environmental factors a grower can control in a greenhouse.</li>
+        <li>What is the single biggest challenge of using greenhouse technology in Nigeria, and what is the primary method to combat it?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Sketch a simple design for a “Net House” suitable for growing tomatoes.</li>
+        <li>Label the following parts: (a) frame (wood or metal) (b) shade-net roof (c) insect-proof net sides (d) drip-irrigation lines (e) double-door entry.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No new academic content. The source marks this as the midterm break.</p>
+
+  <div class="box obj">
+    <h4>Suggested Holiday Tasks</h4>
+    <ol class="cols2 tight">
+      <li>Read ahead: Urban and Peri-Urban Horticulture.</li>
+      <li>Sketch your home compound and mark three unused spaces that could be used for container or vertical gardening.</li>
+      <li>Find two examples of hydroponic or sack-garden setups online or in your community.</li>
+      <li>Ask an elder at home how their parents stored grain without modern silos.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for the midterm break. This page is intentionally short so it can serve as a divider sheet.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — URBAN AND PERI-URBAN HORTICULTURE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Urban and Peri-Urban Horticulture</h2>
+  <p class="meta"><b>Content:</b> Definitions, importance, practices and systems, and hydroponics.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define urban and peri-urban horticulture.</li>
+      <li>State the importance of urban horticulture.</li>
+      <li>Describe container, sack, vertical, rooftop and community gardening.</li>
+      <li>Define hydroponics and list common systems.</li>
+      <li>State the pros and cons of hydroponics.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A rooftop-and-balcony plate showing a <i>sack garden</i> (side holes with leafy greens), a <i>vertical trellis</i> with climbing beans, and a <i>stacked-pot system</i>, captioned “growing food where there is no land”. Also a simple <i>Nutrient Film Technique (NFT)</i> hydroponics diagram with a sloped channel and a nutrient tank. Not embedded in the source.</p>
+
+  <h3>8.1 Definitions</h3>
+  <ul class="tight">
+    <li><b>Urban horticulture:</b> growing horticultural crops (fruits, vegetables, flowers) inside city boundaries — backyards, balconies, rooftops and community gardens.</li>
+    <li><b>Peri-urban horticulture:</b> growing crops on the immediate fringes or edges of a city, often on small-scale commercial farms, to supply the city market.</li>
+  </ul>
+
+  <h3>8.2 Importance of Urban/Peri-Urban Horticulture</h3>
+  <ol class="tight">
+    <li><b>Food security &amp; nutrition</b> — direct access to fresh, nutritious food (especially vegetables) for city dwellers, improving family diets.</li>
+    <li><b>Income generation</b> — jobs and business opportunities (selling fresh produce, seedlings or compost).</li>
+    <li><b>Environmental improvement</b>
+      <ul class="tight">
+        <li>“Greens” the city, improving air quality and reducing the “urban heat island” effect.</li>
+        <li>Reduces “food miles” (the distance food travels from farm to plate), saving energy and reducing carbon emissions.</li>
+        <li><b>Waste recycling</b> — can utilise composted urban organic waste.</li>
+      </ul>
+    </li>
+    <li><b>Social &amp; educational</b> — community gardens bring people together; school gardens are powerful teaching tools.</li>
+  </ol>
+
+  <h3>8.3 Practices and Systems for Urban Horticulture</h3>
+  <p>Since space is the biggest limitation, these methods focus on growing in small, intensive spaces.</p>
+  <table>
+    <tr><th style="width:24%">Practice</th><th>Explanation</th></tr>
+    <tr><td class="k">Container gardening</td><td>Growing plants in any available container — plastic pots, buckets, “grow bags,” old car tyres, wooden boxes.</td></tr>
+    <tr><td class="k">Sack (bag) gardening</td><td>Filling large woven sacks (like those for rice or garri) with soil and compost. Plants (like leafy greens) are planted on the top and in holes cut in the sides. Very space-efficient.</td></tr>
+    <tr><td class="k">Vertical gardening</td><td>Growing plants upwards to save space — using trellises for climbing plants (beans, cucumbers), or “stackable” pots / “living wall” systems.</td></tr>
+    <tr><td class="k">Rooftop gardens</td><td>Using flat roofs as growing spaces. Requires ensuring the roof is strong enough to hold the weight of wet soil, and waterproofing plus good drainage to protect the building.</td></tr>
+    <tr><td class="k">Community gardens</td><td>A single, larger piece of land (often on “borrowed” land) divided into small plots for different families to farm.</td></tr>
+  </table>
+
+  <h3>8.4 Hydroponics — Soil-Less Horticulture</h3>
+  <p>An advanced form of urban horticulture that does not use soil.</p>
+  <p><b>Definition:</b> a method of growing plants in a “nutrient solution” (water mixed with all the essential plant nutrients) or in an inert growing medium (gravel, perlite, coconut coir).</p>
+
+  <h4>Common Systems</h4>
+  <ul class="tight">
+    <li><b>Nutrient Film Technique (NFT):</b> a thin “film” of nutrient water flows continuously in a channel over the bare plant roots. Common for lettuce.</li>
+    <li><b>Deep Water Culture (DWC):</b> plant roots are suspended directly in a large, aerated (bubbling) tank of nutrient solution.</li>
+  </ul>
+
+  <h4>Pros and Cons</h4>
+  <table>
+    <tr><th style="width:26%">Pros (Advantages)</th><th>Cons (Disadvantages)</th></tr>
+    <tr>
+      <td>
+        <ul class="tight">
+          <li><b>No soil needed</b> — can be done anywhere (a roof, a warehouse, a balcony).</li>
+          <li><b>Extremely fast growth</b> — plants get exactly the nutrients they need, 24/7.</li>
+          <li><b>Very high yield</b> — more food in less space.</li>
+          <li><b>Water efficient</b> — the water is recycled; uses 70–90% less water than soil farming.</li>
+        </ul>
+      </td>
+      <td>
+        <ul class="tight">
+          <li><b>High initial cost</b> — pumps, tanks, plumbing, nutrient salts.</li>
+          <li><b>Technical skill</b> — requires knowledge of chemistry to mix the nutrient solution.</li>
+          <li><b>Reliant on electricity</b> — pumps and aerators must run 24/7. A power cut can kill the entire crop.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is the main difference between “Urban” and “Peri-Urban” horticulture?</li>
+        <li>List three important benefits of urban horticulture for a city like Lagos or Abuja.</li>
+        <li>Describe “Sack Gardening”.</li>
+        <li>Define Hydroponics.</li>
+        <li>What are two major advantages and two major disadvantages of hydroponics?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Look around your own home, compound or school.</li>
+        <li>Identify three “unused” spaces that could be used for urban horticulture (e.g. a flat roof, a balcony, a patch of bare soil, a sunny wall).</li>
+        <li>For each space, suggest one appropriate “practice” (e.g. container garden, vertical garden) and one “crop” (e.g. pepper, lettuce, pumpkin) that could be grown there.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — AGROFORESTRY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Agroforestry</h2>
+  <p class="meta"><b>Content:</b> Meaning and definition; agroforestry systems; importance and benefits.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define agroforestry.</li>
+      <li>Describe alley cropping and multi-storey cropping.</li>
+      <li>Describe silvopasture and windbreaks.</li>
+      <li>State the benefits of agroforestry.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A multi-storey home-garden profile diagram with <i>top layer (coconut, oil palm, mango)</i>, <i>middle layer (pawpaw, banana, cocoa)</i>, <i>low layer (cassava, yam, cocoyam)</i> and <i>ground cover (pumpkin, melon)</i>. Also an alley-cropping sketch showing rows of <i>Gliricidia</i> hedges between maize lanes with prunings used as mulch. Not embedded in the source.</p>
+
+  <h3>9.1 Meaning and Definition</h3>
+  <p><b>Agroforestry</b> is a sustainable land-management system that deliberately combines woody perennials (trees, shrubs) with agricultural crops and/or livestock, either at the same time or in sequence, on the same piece of land. It is the opposite of “monoculture” (planting only one crop). A traditional Nigerian compound farm (with fruit trees, yams, vegetables and chickens) is a classic example of agroforestry.</p>
+
+  <h3>9.2 Agroforestry Practices (Systems)</h3>
+
+  <table>
+    <tr><th style="width:24%">System</th><th>Explanation</th></tr>
+    <tr>
+      <td class="k">Alley cropping (hedgerow intercropping)</td>
+      <td>Planting food crops (maize, cassava, vegetables) in the “alleys” or “lanes” between rows of fast-growing, nitrogen-fixing trees or shrubs (<i>Leucaena</i>, <i>Gliricidia</i>, <i>Faidherbia albida</i>). The trees are pruned regularly, and the leaves (rich in nitrogen) are used as mulch and “green manure” for the crops in the alleys.</td>
+    </tr>
+    <tr>
+      <td class="k">Multi-storey cropping (home gardens)</td>
+      <td>A system that copies a natural forest with different “layers”: <b>Top layer</b> — coconut, oil palm, mango, ogbono. <b>Middle layer</b> — pawpaw, banana, plantain, cocoa, coffee. <b>Low layer</b> — cassava, yams (with trellises), cocoyam, peppers. <b>Ground cover</b> — pumpkin, melon, sweet potato.</td>
+    </tr>
+    <tr>
+      <td class="k">Silvopasture</td>
+      <td>Combining trees with pasture (grass) and livestock (animals). Animals (goats, sheep, cattle) graze on the grass growing under the trees. The trees provide shade for the animals and can also be a source of fodder.</td>
+    </tr>
+    <tr>
+      <td class="k">Windbreaks / shelterbelts</td>
+      <td>One or more rows of trees and shrubs planted around the border of a farm or field to protect crops, soil and animals from strong, damaging winds. They also prevent wind erosion.</td>
+    </tr>
+  </table>
+
+  <h3>9.3 Importance and Benefits of Agroforestry</h3>
+  <ol class="tight">
+    <li><b>Improved soil fertility</b> — leguminous trees (like <i>Gliricidia</i>) “fix” nitrogen from the air; tree leaf litter (mulch) decomposes, adding rich organic matter to the soil; tree roots can “pump” nutrients from deep in the soil back up to the surface.</li>
+    <li><b>Soil and water conservation</b> — tree roots bind the soil, preventing water and wind erosion; the canopy slows down heavy rain so it “soaks in” rather than “runs off”; mulch on the soil surface reduces water evaporation.</li>
+    <li><b>Diversified income (economic security)</b> — the farmer is not reliant on one crop. They get short-term income (food crops), medium-term income (fruit) and long-term income (timber, firewood). This spreads the risk.</li>
+    <li><b>Improved microclimate</b> — the tree canopy provides shade, which lowers soil temperature and reduces heat stress on crops and animals.</li>
+    <li><b>Environmental benefits</b> — increases biodiversity (a habitat for birds and “good” insects); sequesters carbon (trees absorb CO<sub>2</sub>), helping to fight climate change.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define agroforestry in your own words.</li>
+        <li>What is “Alley Cropping”? Explain how the trees help to fertilise the crops.</li>
+        <li>Sketch and label the four “layers” of a multi-storey home garden.</li>
+        <li>List four distinct benefits of agroforestry.</li>
+        <li>What is the primary function of a “windbreak”?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Read about the tree <i>Gliricidia sepium</i> (often called “Quick-stick”).</li>
+        <li>Write a short report (one page) on why this tree is so important in agroforestry systems in West Africa. (Hint: look up its uses for fodder, green manure and living fences.)</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — ENVIRONMENTAL SUSTAINABILITY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Environmental Sustainability in Horticulture</h2>
+  <p class="meta"><b>Content:</b> Soil conservation, water management, Integrated Pest Management and biodiversity.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain the three pillars of sustainability.</li>
+      <li>Describe conservation tillage and contour ploughing.</li>
+      <li>Explain drip irrigation and rainwater harvesting.</li>
+      <li>Describe the IPM pyramid.</li>
+      <li>Explain why biodiversity is key to sustainability.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A four-level IPM pyramid with <i>Cultural &amp; Preventive</i> at the base, then <i>Physical &amp; Mechanical</i>, then <i>Biological</i>, and <i>Chemical (Last Resort)</i> at the apex. Also a contour-ploughing illustration showing planting across a slope with ridges trapping water. Not embedded in the source.</p>
+
+  <h3>10.1 Introduction</h3>
+  <p><b>Sustainable horticulture</b> means growing food in a way that is:</p>
+  <ol class="tight">
+    <li><b>Ecologically sound</b> — does not harm the environment (soil, water, air).</li>
+    <li><b>Economically viable</b> — farmers can make a good living.</li>
+    <li><b>Socially just</b> — good for families and communities.</li>
+  </ol>
+  <p>The goal is to meet our present need for food without compromising the ability of future generations to meet their own needs. This topic ties together everything we have learned this term.</p>
+
+  <h3>10.2 Key Pillars of Environmental Sustainability</h3>
+
+  <h4>A. Soil Conservation and Health</h4>
+  <p><b>The problem:</b> soil erosion, loss of organic matter and “dead” soil. <b>Sustainable practices:</b></p>
+  <table>
+    <tr><th style="width:28%">Practice</th><th>Explanation</th></tr>
+    <tr><td class="k">Conservation tillage (zero/minimum tillage)</td><td>A method of planting without ploughing or tilling the soil. A new crop is planted directly into the “stubble” (residue) of the previous crop. This protects the soil from erosion, saves water and builds organic matter.</td></tr>
+    <tr><td class="k">Cover cropping &amp; mulching</td><td>The number-one rule of soil conservation: <b>never leave the soil bare</b>. A cover crop (like <i>Mucuna</i>) or a layer of mulch (like straw) acts as “armour” for the soil, protecting it from sun, wind and rain.</td></tr>
+    <tr><td class="k">Contour ploughing / terracing</td><td>On sloping land, all farming activities (ploughing, planting) are done <b>across the slope</b> (on the contour), not up and down it. This creates small ridges that trap water and prevent it from rushing downhill and causing erosion.</td></tr>
+  </table>
+
+  <h4>B. Water Management and Conservation</h4>
+  <p><b>The problem:</b> water is scarce, rainfall is unreliable, traditional irrigation is wasteful. <b>Sustainable practices:</b></p>
+  <ul class="tight">
+    <li><b>Drip irrigation:</b> the most efficient method — delivers water in slow “drips” directly to the root zone of each plant. This eliminates evaporation and runoff, saving 70–90% of water.</li>
+    <li><b>Rainwater harvesting:</b> collecting and storing rainwater. <b>Small-scale:</b> from roofs into plastic tanks. <b>Large-scale:</b> building small farm ponds or “earth dams” to capture and store runoff water for use in the dry season.</li>
+    <li><b>Mulching:</b> a layer of mulch is also one of the best water-conservation techniques, as it dramatically reduces water loss from evaporation at the soil surface.</li>
+  </ul>
+
+  <h4>C. Integrated Pest Management (IPM)</h4>
+  <p><b>The problem:</b> over-reliance on chemical pesticides kills beneficial insects, pollutes water and creates “resistant” pests. IPM is a “middle-ground” approach — a pyramid strategy.</p>
+
+  <table>
+    <tr><th style="width:26%">Level</th><th>What is done</th></tr>
+    <tr><td class="k">1. Base — Prevention (cultural)</td><td>Use cultural methods first — crop rotation, resistant varieties, farm sanitation.</td></tr>
+    <tr><td class="k">2. Physical / mechanical</td><td>Use physical controls — traps, hand-picking, barriers.</td></tr>
+    <tr><td class="k">3. Biological</td><td>Use biological controls — beneficial insects.</td></tr>
+    <tr><td class="k">4. Top — Chemicals (last resort)</td><td>Use chemical pesticides only when the pest level is high enough to cause economic damage, and use the least-toxic, most-specific chemical available.</td></tr>
+  </table>
+
+  <h4>D. Enhancing Biodiversity</h4>
+  <p><b>The problem:</b> monoculture (planting a single crop) is an “invitation” to pests and diseases. <b>Sustainable practices:</b> polyculture/intercropping; agroforestry (integrating trees creates habitats); planting flower borders — attracts pollinators (bees) and beneficial insects (pest predators).</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What are the three “pillars” of sustainability?</li>
+        <li>Define “Conservation Tillage”. How does it protect the soil?</li>
+        <li>Explain why farming on the contour (across a slope) is a vital soil-conservation practice.</li>
+        <li>What is “Rainwater Harvesting”? Give one small-scale and one large-scale example.</li>
+        <li>What is “Integrated Pest Management (IPM)”? At what stage is it acceptable to use a chemical pesticide in an IPM system?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a diagram of an “IPM Pyramid”.</li>
+        <li>Label the four levels, from the bottom (most-used) to the top (least-used):
+          <ul class="tight">
+            <li>Level 1 — Cultural &amp; Preventive</li>
+            <li>Level 2 — Physical &amp; Mechanical</li>
+            <li>Level 3 — Biological</li>
+            <li>Level 4 — Chemical (Last Resort)</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — REVISION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>Revision — First Term</h2>
+  <p class="meta"><b>Content:</b> Comprehensive review of Weeks 1–10 and examination preparation.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Recall the key themes of the term.</li>
+      <li>Link concepts across weeks.</li>
+      <li>Answer integrated revision questions.</li>
+      <li>Prepare for the end-of-term examination.</li>
+    </ol>
+  </div>
+
+  <h3>Key Themes for Revision</h3>
+  <table>
+    <tr><th style="width:24%">Week</th><th>Key Points</th></tr>
+    <tr><td class="k">1 — Crop Improvement</td><td>Aims (yield, quality, resistance). Methods — selection (mass, pure-line, clonal) and hybridisation (emasculation, pollination, bagging, F<sub>1</sub>/F<sub>2</sub>, stabilisation).</td></tr>
+    <tr><td class="k">2 — Genetic Principles</td><td>Mendel’s Laws — Segregation (3:1) and Independent Assortment (9:3:3:1). Terms — gene, allele, dominant, recessive, phenotype, genotype, homozygous, heterozygous. Hybrid vigour.</td></tr>
+    <tr><td class="k">3 — Biotechnology</td><td>Tissue culture — explant, sterilisation, callus, acclimatisation, disease-free plants. GM crops — Bt, herbicide tolerance, Golden Rice.</td></tr>
+    <tr><td class="k">4 — Organic Horticulture</td><td>Principles — health, ecology, fairness, care. Practices — compost, green manure, cover crop, crop rotation, neem oil, mulching.</td></tr>
+    <tr><td class="k">6 — Greenhouse Technology</td><td>Types — glass, polytunnel, net house. Benefits — year-round, protection, water-saving. Challenges — cost, overheating.</td></tr>
+    <tr><td class="k">8 — Urban Horticulture</td><td>Importance — food security, income. Practices — containers, sack gardens, vertical, rooftop, community. Hydroponics — NFT, DWC, pros/cons.</td></tr>
+    <tr><td class="k">9 — Agroforestry</td><td>Systems — alley cropping, multi-storey, silvopasture, windbreaks. Benefits — soil fertility, conservation, diversified income.</td></tr>
+    <tr><td class="k">10 — Sustainability</td><td>Soil — contour ploughing, zero-tillage, mulch. Water — drip irrigation, rainwater harvesting. Pest — IPM pyramid. Biodiversity — polyculture, agroforestry.</td></tr>
+  </table>
+
+  <h3>Integrated Revision Questions</h3>
+  <ol class="tight">
+    <li>What is the difference between Mendel’s Law of Segregation and the Law of Independent Assortment?</li>
+    <li>A farmer has a virus-infected banana plant but wants to propagate it. What biotechnology technique could be used to create clean, virus-free plantlets?</li>
+    <li>Compare “Alley Cropping” and “Hydroponics” based on their (a) use of soil, (b) use of technology, and (c) key benefits.</li>
+    <li>A farmer with a field on a gentle slope is losing topsoil to erosion. Recommend three sustainable practices to help solve this problem.</li>
+    <li>Design a simple 3-year crop-rotation plan for a smallholder farm and justify each year’s crop.</li>
+    <li>Explain why a net house is more suitable than a glasshouse for tropical Nigeria.</li>
+    <li>List three post-harvest losses that drip irrigation or a greenhouse could reduce.</li>
+    <li>Explain the difference between a cover crop and green manure.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define hybrid vigour and explain its commercial value.</li>
+        <li>State one environmental and one health concern about GM crops.</li>
+        <li>Name three systems of agroforestry.</li>
+        <li>Explain the two core principles of organic horticulture — “health” and “ecology”.</li>
+        <li>Describe the four levels of the IPM pyramid.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Build a one-page revision sheet covering the whole term — key terms, definitions and one example each.</li>
+        <li>Sketch and label: (a) an IPM pyramid (b) a multi-storey home garden (c) a simple 7-step tissue-culture flow chart.</li>
+        <li>Answer one past question under timed conditions and mark your own work.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>
