@@ -1,0 +1,1869 @@
+1
+JSS 3 BUSINESS STUDIES LESSON NOTES
+FIRST TERM
+Week Topic Content
+1 Effective Office Practice Meaning of office procedure; importance of office
+procedure.
+2 Office Procedure (Part 1) Procedures for making payments; preparation of sales and
+purchases documents.
+3 Office Procedure (Part 2) Imprest account: meaning, features, advantages.
+4 Store Records Meaning of store records; delivery note; gate pass.
+5 Midterm Examination —
+6 Stocktaking Meaning of stocktaking; importance of stocktaking in
+business.
+7 Midterm Break —
+8 Office Equipment (Part 1) Meaning of office equipment; types of office equipment.
+9 Office Equipment (Part 2) Care of office equipment; advantages and disadvantages.
+10 Commerce – The Heart of
+Business
+Nature of commerce as the center of business activities.
+11 Revision Weeks 1–10 topics.
+12 Examination —
+13 Closing —
+2
+WEEK 1: EFFECTIVE OFFICE PRACTICE
+Effective office practice is essential for the smooth operation of any organization. It involves
+the implementation of well-structured office procedures, systems, and routines that ensure
+work is carried out efficiently and professionally. Understanding office procedures helps students
+appreciate the importance of organization, discipline, and communication in business
+environments.
+MEANING OF OFFICE PROCEDURE:
+ Office procedure refers to the established methods and steps used to handle office tasks
+and activities in an organized manner.
+3
+ It includes record-keeping, correspondence handling, filing, communication, and
+coordination of office functions.
+ Office procedures are guided by rules, regulations, and standards that promote
+efficiency and accountability.
+Key points:
+ Procedures ensure that tasks are completed in the correct sequence.
+ They provide a reference framework for new employees and minimize errors.
+ Office procedures can be formal (documented) or informal (practices followed routinely).
+IMPORTANCE OF OFFICE PROCEDURE:
+Proper office procedures are vital for the following reasons:
+ Efficiency and Productivity:
+o Ensures that work is done systematically and promptly, reducing wastage of
+time and resources.
+ Consistency:
+o Standardized procedures ensure uniformity in operations, allowing predictable
+and reliable results.
+ Accountability:
+o Clear procedures help in tracking responsibilities, making it easier to identify
+errors or lapses.
+ Improved Communication:
+o Structured office procedures facilitate effective flow of information within and
+outside the organization.
+ Professionalism:
+o Demonstrates discipline, orderliness, and reliability, which enhance the
+organization’s reputation.
+ Record Keeping and Documentation:
+4
+o Proper filing, documentation, and reporting ensure that important information is
+accessible for future reference.
+ Decision-Making:
+o Organized procedures provide accurate information, which aids management in
+making informed decisions.
+EVALUATION:
+1. Define office procedure in your own words.
+2. List four reasons why office procedures are important in an organization.
+3. Explain how office procedures improve communication within a business.
+4. State two ways office procedures promote accountability.
+ASSIGNMENT:
+1. Write a short essay (200 words) on how effective office procedures contribute to the
+smooth running of a business.
+2. Prepare a chart showing at least five common office procedures and their purposes.
+3. Describe in two paragraphs how consistency in office procedures can enhance
+professionalism and efficiency in the workplace.
+5
+WEEK 2: OFFICE PROCEDURE (PART 1)
+Procedures for making payments; preparation of sales and purchases documents
+INTRODUCTION
+ An office procedure is a step-by-step method adopted in business organizations to carry
+out activities in an orderly and efficient manner.
+ Proper office procedures are important in ensuring accuracy, accountability, and
+transparency in business transactions.
+ Two important aspects of office procedure are:
+1. Procedures for making payments.
+6
+2. Preparation of sales and purchases documents.
+PROCEDURES FOR MAKING PAYMENTS
+Payments in business are made either in cash or through non-cash methods. The procedure
+ensures that money paid is recorded properly and acknowledged.
+A. CASH PAYMENTS
+ Steps in cash payments:
+1. The cashier prepares a payment voucher stating amount, purpose, and payee.
+2. The voucher is authorized by a superior officer or manager.
+3. Cash is paid to the beneficiary.
+4. The payee signs the voucher or receipt to acknowledge payment.
+5. The transaction is recorded in the cashbook.
+B. NON-CASH PAYMENTS
+1. By Cheque – A cheque is written and signed by the account holder to authorize payment.
+o Steps: writing the cheque → signing → presenting to bank → beneficiary cashes
+or deposits it.
+2. Bank Draft / Bank Transfer – Payment is made through the bank directly.
+3. Electronic Payments – Using POS, online transfer, mobile banking, etc.
+Importance of Proper Payment Procedures:
+ Prevents fraud and financial mismanagement.
+ Ensures accountability and proper record keeping.
+ Helps in auditing and financial control.
+ Builds trust between buyer and seller.
+7
+PREPARATION OF SALES AND PURCHASES DOCUMENTS
+In business, when goods are sold or bought, certain documents are prepared to record the
+transaction. These documents ensure proof, accountability, and accuracy.
+A. SALES DOCUMENTS
+1. Invoice – Sent by the seller to the buyer showing details of goods sold, quantity, unit
+price, total cost, discounts, etc.
+2. Receipt – Issued by the seller to the buyer as evidence that payment has been made.
+3. Delivery Note – Accompanies goods delivered, showing details of items delivered.
+4. Proforma Invoice – A quotation given to the buyer before goods are supplied.
+5. Credit Note – Issued by the seller when goods are returned or an overcharge is corrected.
+6. Debit Note – Issued to notify a buyer of undercharge or additional payment required.
+B. PURCHASE DOCUMENTS
+1. Purchase Order – Sent by the buyer to the seller, requesting for goods.
+2. Goods Received Note (GRN) – Prepared by the buyer to confirm receipt of goods.
+3. Payment Voucher – Used when payment is being made.
+4. Statement of Account – A summary of transactions sent by the seller to the buyer over a
+period.
+STEPS IN PREPARING SALES AND PURCHASE DOCUMENTS:
+ Ensure correct details of buyer and seller (names, addresses).
+ Indicate date of transaction.
+ Record correct description of goods (quantity, unit price, total).
+ Ensure documents are signed by authorized persons.
+8
+ File copies systematically for future reference.
+IMPORTANCE OF SALES AND PURCHASE DOCUMENTS
+ Serve as legal evidence of transactions.
+ Help in keeping accurate financial records.
+ Facilitate auditing and accountability.
+ Prevent disputes between buyer and seller.
+ Ensure transparency in business transactions.
+EVALUATION
+1. Explain the procedure for making cash payments in an office.
+2. Differentiate between a debit note and a credit note.
+3. State three reasons why business documents are important.
+4. Mention four examples of sales documents and four examples of purchase documents.
+ASSIGNMENT
+1. List and explain the five main documents used in sales transactions.
+2. Write out the step-by-step procedure for making payments by cheque.
+3. State five reasons why proper office procedures in payment and documentation are
+important in business operations.
+9
+WEEK 3: OFFICE PROCEDURE (PART 2)
+Imprest account – meaning, features, advantages
+MEANING OF IMPREST ACCOUNT
+ An Imprest Account is a type of petty cash system used in offices to take care of small,
+day-to-day expenses.
+ It is a method where a fixed sum of money (called the float) is given to the petty cashier
+at the beginning of a period (weekly, monthly, etc.).
+ The petty cashier spends from this amount on minor expenses like buying stamps, tea,
+pencils, transport fares, cleaning materials, etc.
+10
+ At the end of the period, the cashier is reimbursed (refunded) the exact amount spent so
+that the account returns to the original fixed balance.
+Example:
+If the imprest is ₦20,000 and the petty cashier spends ₦5,000 on transport and office supplies,
+he/she will be refunded ₦5,000 so that the balance returns to ₦20,000.
+This system ensures accountability, control, and proper management of petty cash in an office.
+FEATURES OF AN IMPREST ACCOUNT
+1. Fixed Sum (Float): A definite amount of money is set aside at the beginning of the
+period.
+2. Petty Cashier: A petty cashier is appointed to manage and record petty cash expenses.
+3. Small/Minor Payments: It is used only for small, everyday expenses, not major
+payments.
+4. Reimbursement: At the end of the period, the petty cashier is reimbursed for the exact
+amount spent.
+5. Petty Cash Book: All transactions are recorded in a petty cash book for accountability.
+6. Controlled by Main Cashier/Accountant: The main cashier supervises the petty cashier
+to avoid misuse.
+7. Return to Original Balance: After reimbursement, the balance always returns to the
+original imprest amount.
+8. Use of Vouchers: Petty cash vouchers are used as evidence for every expense made.
+ADVANTAGES OF AN IMPREST ACCOUNT
+1. Easy Control of Cash – Since the amount is fixed and small, it is easy to monitor and
+control.
+11
+2. Reduces Workload of Main Cashier – The petty cashier handles minor payments,
+leaving the main cashier to focus on bigger transactions.
+3. Promotes Accountability – Every expense must be supported by vouchers and receipts,
+making it difficult to misuse funds.
+4. Saves Time – Minor payments are quickly made without disturbing the main cashier.
+5. Prevents Excessive Spending – Since the float is fixed, it prevents careless or excessive
+spending.
+6. Simple to Operate – The system is straightforward and easy for petty cashiers to manage.
+7. Helps in Budgeting – Records from the petty cash book provide information for
+planning future expenses.
+8. Transparency – It ensures openness, as all petty expenses are properly documented.
+EVALUATION
+1. What is an imprest account?
+2. List five features of an imprest account.
+3. State four advantages of using an imprest account in an office.
+4. Who is a petty cashier, and what is his/her role in an imprest system?
+5. Explain why reimbursement is necessary in an imprest system.
+ASSIGNMENT
+1. Define an imprest account and explain, with an example, how it operates.
+2. Identify and explain six features of an imprest account.
+3. Discuss five advantages of using an imprest system in an office.
+12
+WEEK 4: STORE RECORDS
+Meaning of store records; delivery note; gate pass
+MEANING OF STORE RECORDS
+ Store records are written or electronic documents used to record details of all goods and
+materials received, issued, or kept in a store.
+ They provide accurate information about the quantity, type, value, and movement of
+goods in and out of a store.
+ Store records help management monitor stock levels, prevent shortages, losses, or theft,
+and ensure accountability.
+13
+ They are maintained by the storekeeper or store manager in every business
+organization.
+ Examples of store records include stock cards, bin cards, goods received notes, delivery
+notes, and gate passes.
+IMPORTANCE OF STORE RECORDS
+1. Stock Control: Helps track and control inventory levels to avoid overstocking or
+stockouts.
+2. Accountability: Provides evidence of transactions and makes staff responsible for items
+in their care.
+3. Prevention of Fraud and Theft: Reduces pilfering through accurate documentation.
+4. Decision-Making: Helps management plan purchases, production, and sales.
+5. Audit and Verification: Makes auditing easy as every stock movement is recorded.
+6. Cost Control: Helps organizations know the cost of stock, manage resources efficiently,
+and avoid wastage.
+7. Efficient Operations: Ensures smooth running of the store and timely supply of goods.
+DELIVERY NOTE
+ A delivery note is a document sent by a supplier to a buyer that lists the goods being
+delivered.
+ It is used to confirm that items delivered match the purchase order.
+ Delivery notes do not include prices but only quantities and descriptions.
+ The buyer checks and signs the delivery note as proof that goods were received in good
+condition.
+Features of a Delivery Note:
+1. Name and address of the supplier and buyer.
+14
+2. Date of delivery.
+3. Description of goods supplied.
+4. Quantity of goods supplied.
+5. Signature of the recipient to confirm receipt.
+6. Delivery note number for easy tracking.
+Uses of a Delivery Note:
+ Serves as proof of delivery.
+ Helps update store records.
+ Aids in reconciling orders with supplies.
+ Acts as evidence in case of disputes.
+GATE PASS
+ A gate pass is a written authorization for goods to be moved out of or into a business
+premises.
+ It ensures that only authorized goods enter or leave an organization’s premises, thereby
+preventing theft.
+ Gate passes are usually issued by the storekeeper or security department and signed by a
+superior officer.
+Types of Gate Passes:
+1. Goods Outward Gate Pass: Issued when goods are leaving the premises, e.g., for sales
+or repairs.
+2. Goods Inward Gate Pass: Issued when goods are entering the premises, e.g., deliveries
+from suppliers.
+Contents of a Gate Pass:
+15
+ Date and time of movement.
+ Description of goods.
+ Quantity of goods.
+ Name of person moving the goods.
+ Signature of authorized personnel.
+Uses of a Gate Pass:
+ Monitors movement of goods.
+ Prevents theft and unauthorized removal of stock.
+ Assists in maintaining accurate store records.
+ Acts as evidence during auditing and investigations.
+RELATIONSHIP BETWEEN STORE RECORDS, DELIVERY NOTE, AND GATE
+PASS
+ Store records track all stock movement while delivery notes confirm items supplied by
+vendors.
+ Gate passes provide security control and authorization for goods moving in or out.
+ Together, they ensure efficient store management, accountability, and security.
+EVALUATION
+1. Define store records.
+2. Mention four reasons why store records are important.
+3. Explain the meaning of a delivery note and state three of its uses.
+4. State the difference between a delivery note and a gate pass.
+16
+5. List the types of gate passes and explain their functions.
+ASSIGNMENT
+1. Draw and label a simple format of a delivery note and a gate pass.
+2. Write out five functions of a storekeeper in relation to store records.
+3. List six store documents other than a delivery note and gate pass, and briefly explain their
+functions.
+17
+WEEK 6: STOCKTAKING
+Meaning of stocktaking; importance of stocktaking in business
+MEANING OF STOCKTAKING
+Stocktaking is the process of physically counting, recording, and valuing all the goods or items a
+business has in its store, shop, or warehouse at a particular time. It involves checking the actual
+quantity of goods in stock against the records in the books of account or stock register.
+It is usually carried out periodically—either daily, weekly, monthly, quarterly, or annually—
+depending on the size of the business. In many businesses, stocktaking is done at the end of the
+financial year to prepare final accounts.
+18
+Stocktaking is not just about counting; it is also about verifying the condition, quality, and value
+of the goods available in the store.
+IMPORTANCE OF STOCKTAKING IN BUSINESS
+Stocktaking is very important to the growth and survival of any business. The major importance
+includes the following:
+1. Helps to know the actual quantity of goods in stock
+Stocktaking enables the business owner or manager to know the exact amount of goods
+remaining in the store. This helps in planning for replenishment and prevents
+overstocking or understocking.
+2. Prevents theft and fraud
+Regular stocktaking discourages dishonest workers from stealing goods or engaging in
+fraudulent practices since they know that stock records are checked against physical
+counts.
+3. Helps in detecting damaged or expired goods
+During stocktaking, the business can identify goods that are damaged, expired, or
+obsolete. This prevents losses and helps in replacing them with new stock.
+4. Ensures accurate records
+It helps to compare the physical stock with stock records in the books of account. Any
+differences can be corrected immediately.
+5. Assists in preparing financial statements
+The closing stock value obtained from stocktaking is used in preparing the trading
+account and balance sheet at the end of the financial year.
+6. Helps in making decisions
+Business owners can make better decisions regarding re-ordering, sales strategies, and
+pricing when they have accurate stock information.
+19
+7. Improves customer satisfaction
+By ensuring that goods are always available and not out of stock, customers are better
+served, and the business maintains a good reputation.
+8. Prevents overstocking and wastage
+Excess stock may tie down capital or even spoil, but stocktaking ensures that the right
+amount of goods is maintained in the store.
+9. Helps to detect errors
+Errors in recording, issuing, or receiving stock can be easily detected and corrected
+through stocktaking.
+SUMMARY
+Stocktaking is the process of counting and recording the goods available in the store at a
+particular time. It is very important in business because it ensures accuracy of records, prevents
+theft and fraud, detects damaged or expired goods, and assists in decision-making and financial
+reporting.
+EVALUATION
+1. Define stocktaking in your own words.
+2. State three reasons why stocktaking is carried out in business.
+3. Mention three consequences of not carrying out stocktaking.
+4. Explain how stocktaking helps in detecting fraud.
+5. Why is stocktaking important in preparing financial statements?
+ASSIGNMENT
+1. List and explain five importance of stocktaking to a business enterprise.
+20
+2. Imagine you are a shopkeeper; describe the steps you will take to carry out stocktaking in
+your store.
+3. Differentiate between daily stocktaking and annual stocktaking, and state two advantages
+of each.
+21
+WEEK 8: OFFICE EQUIPMENT (PART 1)
+Office equipment refers to the tools, machines, and devices used in an office to facilitate the
+efficient performance of tasks. They help employees carry out duties such as communication,
+record-keeping, data processing, and administrative work. The use of appropriate office
+equipment enhances productivity, accuracy, and organization in any office.
+MEANING OF OFFICE EQUIPMENT:
+ Office equipment can be defined as all physical tools and machines used in offices to
+perform specific tasks more efficiently.
+22
+ These are different from office furniture (like chairs and desks), as equipment is directly
+involved in completing office activities.
+ Examples include typewriters, computers, fax machines, calculators, telephones,
+photocopiers, and shredders.
+TYPES OF OFFICE EQUIPMENT:
+ A. Office Machines:
+Machines used to process information or perform tasks faster than manual methods.
+o Typewriters: For preparing written documents.
+o Computers: For word processing, data storage, calculations, and communication.
+o Photocopiers: To make copies of documents efficiently.
+o Fax Machines: For transmitting documents over a telephone line.
+o Calculators: For arithmetic operations and quick calculations.
+ B. Communication Equipment:
+Tools used to facilitate communication within and outside the office.
+o Telephones: For voice communication.
+o Intercoms: For internal office communication.
+o Email Systems and Internet-enabled Devices: For electronic communication
+and information sharing.
+ C. Recording and Filing Equipment:
+Devices used to store, retrieve, and organize office information.
+o Filing Cabinets: For safe storage of files and documents.
+o Shredders: For securely destroying confidential documents.
+o Binders and Filing Trays: For organizing papers systematically.
+23
+ D. Miscellaneous Office Equipment:
+Equipment that supports office work but does not fall strictly under the above categories.
+o Projectors: For presentations and meetings.
+o Laminators: For protecting important documents.
+o Paper Cutters: For trimming papers to size efficiently.
+IMPORTANCE OF OFFICE EQUIPMENT:
+ Increases Efficiency: Tasks are completed faster and with less effort.
+ Enhances Accuracy: Machines such as computers and calculators reduce human error.
+ Improves Communication: Equipment like telephones, emails, and fax machines
+connect offices locally and internationally.
+ Supports Record Keeping: Filing equipment ensures documents are organized and
+easily retrievable.
+ Promotes Professionalism: Use of appropriate equipment presents the office as
+organized and efficient.
+EVALUATION:
+1. Define office equipment.
+2. List and describe four types of office equipment.
+3. Explain the importance of office equipment in enhancing productivity.
+4. Distinguish between office machines and communication equipment.
+ASSIGNMENT:
+1. Draw a labelled diagram of any five office equipment used in modern offices and explain
+their functions.
+24
+2. Prepare a table showing types of office equipment, examples, and their uses.
+3. Write a short essay (150–200 words) on how the use of office equipment can improve the
+efficiency of an organization.
+25
+WEEK 9: OFFICE EQUIPMENT (PART 2)
+Care of office equipment; advantages and disadvantages
+CARE OF OFFICE EQUIPMENT
+Proper care and maintenance of office equipment is important to ensure efficiency, long life, and
+reduction in cost of repairs or replacement. Some methods of care include:
+1. Regular Cleaning
+o Dust and dirt should be removed daily from equipment such as computers,
+typewriters, photocopiers, and calculators.
+o Use of soft, dry cloths or recommended cleaning agents prevents damage.
+26
+2. Proper Handling
+o Operators should be careful in using delicate machines like printers and
+computers.
+o Avoid rough handling, dropping, or exposing equipment to harsh conditions.
+3. Lubrication of Mechanical Equipment
+o Machines with moving parts (e.g., typewriters, duplicating machines) should be
+oiled or greased regularly to prevent rust and wear.
+4. Protection Against Power Fluctuations
+o Computers, photocopiers, and other electronic gadgets should be connected to
+stabilizers, surge protectors, or UPS to avoid damage.
+5. Safe Storage
+o Equipment not in use should be properly covered or stored in safe conditions to
+protect from dust, moisture, or theft.
+6. Regular Servicing and Repairs
+o Professional technicians should service machines periodically.
+o Faulty equipment must be repaired immediately to prevent further damage.
+7. Proper Training of Staff
+o Only trained personnel should handle complex machines like computers,
+projectors, and photocopiers.
+8. Following Manufacturer’s Instructions
+o Equipment manuals should be read and instructions followed for correct usage.
+ADVANTAGES OF OFFICE EQUIPMENT
+1. Increases Efficiency – office machines speed up work and reduce fatigue.
+27
+2. Saves Time – tasks like typing, photocopying, and calculations are completed faster.
+3. Accuracy – calculators and computers reduce human errors.
+4. Reduces Cost of Labour – fewer workers can perform more tasks with machines.
+5. Improves Record Keeping – data can be stored safely and retrieved when needed.
+6. Enhances Communication – telephones, fax machines, and emails make
+communication easier.
+7. Standardization of Work – documents produced by machines have uniform quality.
+8. Motivates Workers – availability of modern equipment reduces stress and increases job
+satisfaction.
+DISADVANTAGES OF OFFICE EQUIPMENT
+1. High Cost of Purchase – modern machines like computers and photocopiers are
+expensive.
+2. High Cost of Maintenance – regular servicing and repairs require money.
+3. Unemployment – excessive use of machines may reduce the need for manual labour.
+4. Dependency on Machines – workers may become too reliant on machines and less
+skillful without them.
+5. Breakdown of Equipment – when machines fail, work is delayed or stopped.
+6. Risk of Obsolescence – modern technology becomes outdated quickly, requiring
+frequent upgrades.
+7. Need for Skilled Operators – lack of training may limit effective usage.
+8. Electricity Dependence – electronic machines cannot function without stable power
+supply.
+28
+EVALUATION
+1. Explain three ways of caring for office equipment.
+2. List five advantages of office equipment in the workplace.
+3. State four disadvantages of office equipment.
+4. Why is it necessary to train staff before using office equipment?
+5. Mention two ways of protecting electronic equipment from damage.
+ASSIGNMENT
+1. List and explain six ways of caring for office equipment.
+2. State five advantages and five disadvantages of using office equipment in an office.
+3. Discuss four consequences of not maintaining office equipment properly.
+29
+WEEK 10: COMMERCE – THE HEART OF BUSINESS
+Commerce is often described as the heart of business because it is the central activity around
+which all other business operations revolve. While business involves production, finance,
+marketing, and management, commerce links these activities by ensuring goods and services
+are made available to consumers efficiently.
+MEANING OF COMMERCE:
+ Commerce refers to all activities involved in the distribution and exchange of goods
+and services from producers to consumers.
+ It includes buying, selling, transportation, storage, insurance, and banking activities that
+facilitate trade.
+30
+ Commerce does not produce goods but enables their movement from production to
+consumption.
+NATURE OF COMMERCE AS THE CENTER OF BUSINESS ACTIVITIES:
+ Central Role in Trade:
+Commerce connects producers and consumers, making it the central link in the
+business chain. Without commerce, products cannot reach the market.
+ Facilitates Exchange of Goods and Services:
+Commerce involves buying and selling, ensuring that goods produced are sold and that
+consumers can access what they need.
+ Involves Auxiliary Services:
+To function effectively, commerce relies on transportation, warehousing, banking,
+insurance, and advertising, which support the main trade activities.
+ Encourages Specialization and Division of Labour:
+By enabling goods to reach different markets, commerce allows producers to focus on
+production, while traders specialize in distribution.
+ Promotes Economic Growth:
+Efficient commerce stimulates production, generates employment, increases revenue, and
+contributes to the overall development of the economy.
+ Supports Consumer Satisfaction:
+Commerce ensures timely availability of goods and services, variety, and quality,
+thereby enhancing consumer welfare.
+IMPORTANCE OF COMMERCE IN BUSINESS:
+ Bridges the gap between producers and consumers.
+ Reduces wastage of goods through effective storage and transportation.
+31
+ Stimulates industrial and agricultural production.
+ Generates employment and income.
+ Encourages innovation and competitive pricing.
+EVALUATION:
+1. Define commerce and explain why it is called the heart of business.
+2. List three auxiliary services that support commerce.
+3. How does commerce promote economic growth?
+4. Explain the relationship between commerce and consumer satisfaction.
+ASSIGNMENT:
+1. Prepare a table showing main activities of commerce, examples, and their functions.
+2. Write a short essay (200 words) explaining how commerce links production and
+consumption in business.
+3. Draw a diagram showing the flow of goods from producers to consumers, including the
+role of commerce.
+32
+JSS 3 BUSINESS STUDIES LESSON NOTES
+SECOND TERM
+Week Topic Content
+1 Advertising (Part 1) Meaning of advertising; types of advertising.
+2 Advertising (Part 2) Functions and methods of advertising.
+3 Advertising (Part 3) Media of advertising; ethics of advertising; advertising jingles.
+4 Transportation Meaning; importance of transportation to commerce; types,
+advantages and disadvantages.
+5 Midterm
+Examination
+—
+6 Communication (Part
+1)
+Meaning of communication; process of effective
+communication; hindrances to communication.
+7 Midterm Break —
+8 Communication (Part
+2)
+Methods of communication; importance to business.
+9 Communication (Part
+3)
+Agencies of communication and their services; the Internet;
+GSM.
+10 Setting Simple
+Business Goals
+Difference between goals and objectives; SWOT analysis;
+strengths, weaknesses, opportunities, threats.
+11 Revision Weeks 1–10 topics.
+12 Examination —
+13 Closing —
+33
+WEEK 1: ADVERTISING (PART 1)
+Advertising is a key aspect of business communication and marketing. It involves informing,
+persuading, and reminding potential customers about products, services, or ideas to
+encourage purchase or adoption. Understanding advertising helps students appreciate how
+businesses promote products, influence consumer behavior, and compete in the market.
+MEANING OF ADVERTISING:
+ Advertising is the deliberate and paid form of communication used by businesses to
+inform the public about goods, services, or ideas.
+ It is aimed at creating awareness, influencing consumer choices, and increasing sales.
+34
+ Advertising can target existing customers, potential customers, or the general public
+depending on the business strategy.
+Key points:
+ Advertising is different from personal selling, as it does not involve direct interaction
+with the customer.
+ It is paid for, meaning businesses bear the cost of producing and distributing the
+advertisement.
+ Advertising can be informative, persuasive, or reminder-oriented depending on its
+purpose.
+TYPES OF ADVERTISING:
+Advertising can take various forms depending on the medium and method of delivery:
+ Print Advertising:
+o Uses newspapers, magazines, brochures, flyers, and posters to reach target
+audiences.
+o Suitable for detailed information and local or national coverage.
+ Broadcast Advertising:
+o Uses radio and television to communicate messages to a wide audience.
+o Effective for visual and audio demonstration of products.
+ Outdoor Advertising:
+o Involves billboards, banners, signboards, and hoardings placed in strategic
+locations.
+o Targets commuters and pedestrians in high-traffic areas.
+ Digital Advertising:
+35
+o Uses internet platforms, social media, email, and websites to reach global
+audiences.
+o Allows for interactive and targeted marketing.
+ Transit Advertising:
+o Ads placed on vehicles, buses, trains, or taxis to reach mobile audiences.
+ Point-of-Sale Advertising:
+o Displays, posters, and promotions at shops and supermarkets to influence
+buyers at the point of purchase.
+ Sponsorship and Publicity:
+o Businesses sponsor events or activities to promote brand visibility and goodwill.
+EVALUATION:
+1. Define advertising in your own words.
+2. List and briefly explain four types of advertising.
+3. Explain why advertising is important for a business.
+4. Mention two differences between advertising and personal selling.
+ASSIGNMENT:
+1. Write a short essay (200 words) on the role of advertising in promoting products and
+services.
+2. Prepare a table showing at least five types of advertising, examples of each, and their
+advantages.
+3. Discuss in two paragraphs how digital advertising has changed the way businesses reach
+consumers.
+36
+WEEK 2: ADVERTISING (PART 2)
+Functions and methods of advertising
+INTRODUCTION
+ Advertising is the process of creating awareness about a product, service, or idea
+through various media channels with the aim of influencing people’s decisions.
+ It is an important element of marketing because it connects producers with consumers.
+ In this lesson, we will focus on:
+1. Functions of advertising.
+2. Methods of advertising.
+\FUNCTIONS OF ADVERTISING
+Advertising performs several functions in business and society:
+37
+1. Creates Awareness – Makes people know about the existence of a product or service.
+2. Promotes Sales – Stimulates demand by persuading customers to buy more.
+3. Introduces New Products – Helps to launch new goods or services into the market.
+4. Educates Consumers – Informs customers about the use, quality, and benefits of
+products.
+5. Persuades Consumers – Convinces people to prefer one brand over another.
+6. Builds Brand Image – Improves the reputation of a company or product in the market.
+7. Encourages Competition – By promoting their goods, businesses compete, leading to
+better products and services.
+8. Supports Mass Production – Since advertising increases demand, companies can
+produce on a larger scale, reducing cost per unit.
+9. Informs About Price Changes, Discounts, and Offers – Keeps customers updated on
+promotions.
+10. Economic Growth – Contributes to national income through increased trade and
+commerce.
+METHODS OF ADVERTISING
+Advertising can be carried out through various methods depending on the target audience, nature
+of the product, and resources available.
+A. PRINT MEDIA
+ Newspapers – Used to advertise goods and services to a large audience.
+ Magazines – Attractive, colorful adverts targeting specific groups (e.g., fashion, sports).
+ Posters, Handbills, Flyers – Cheap methods for local advertising.
+ Billboards – Large outdoor boards placed in strategic locations.
+38
+B. BROADCAST MEDIA
+ Radio – Effective because it reaches a wide audience, even in rural areas.
+ Television – Combines sight and sound to create a powerful impact.
+C. DIGITAL / ONLINE ADVERTISING
+ Social Media (Facebook, Instagram, TikTok, Twitter, WhatsApp) – Reaches millions at
+low cost.
+ Websites and Blogs – Used for product promotion and detailed information.
+ Email and SMS Marketing – Direct advertising to individuals.
+D. OTHER METHODS
+1. Cinema Advertising – Short adverts shown before movies.
+2. Point of Sale Display – Products displayed attractively in shops to encourage impulse
+buying.
+3. Vehicle Branding – Company logos and adverts displayed on cars, buses, or trucks.
+4. Personal Selling – Sales representatives persuade customers directly.
+5. Trade Fairs and Exhibitions – Companies showcase their products to attract buyers.
+IMPORTANCE OF SELECTING THE RIGHT METHOD
+ Cost-effectiveness.
+ Targeting the right audience.
+ Type of product being advertised (luxury vs. necessity).
+ Geographical coverage.
+ Urgency of the message.
+39
+EVALUATION
+1. List five functions of advertising and explain two of them.
+2. Mention four methods of advertising through print media.
+3. State three differences between radio advertising and online advertising.
+4. Why is it important for businesses to advertise their products?
+ASSIGNMENT
+1. Explain in detail six functions of advertising to both consumers and producers.
+2. List and explain any five methods of advertising apart from print media.
+3. Write short notes on:
+a. Point of Sale Display
+b. Billboard Advertising
+c. Trade Fairs and Exhibitions
+40
+WEEK 3: ADVERTISING (PART 3)
+Media of advertising; ethics of advertising; advertising jingles
+MEDIA OF ADVERTISING
+Media of advertising refers to the various channels or platforms through which information
+about goods and services is communicated to the public. Each medium has its strengths and
+weaknesses.
+1. PRINT MEDIA
+ Newspapers: Reach a wide audience, especially literate people; suitable for urgent
+announcements, sales, and promotions.
+41
+ Magazines: More attractive with coloured pictures; reach specific groups (fashion, health,
+agriculture, etc.).
+ Posters and Handbills: Used to reach people on the streets or in local markets.
+ Billboards and Banners: Large displays placed at strategic locations, visible to
+motorists and pedestrians.
+2. ELECTRONIC MEDIA
+ Radio: Cheap and accessible to both literate and illiterate audiences; has a wide coverage.
+ Television: Combines audio and visual effects; captures attention more effectively but is
+more expensive.
+ Cinema/Film: Used to advertise before movies or shows.
+3. OUTDOOR MEDIA
+ Billboards, signposts, and banners displayed at busy locations.
+ Vehicle branding (painting adverts on buses, taxis, or trucks).
+4. DIGITAL/ONLINE MEDIA
+ Social Media: Facebook, Instagram, Twitter (X), TikTok, YouTube.
+ Websites and Blogs: Companies create official websites for their goods/services.
+ Email/SMS Advertising: Sending direct messages to potential customers.
+ETHICS OF ADVERTISING
+Ethics of advertising are the moral principles and standards that guide advertisers to ensure
+fairness, honesty, and responsibility in their messages.
+1. Truthfulness: Adverts must be honest and not misleading.
+2. Decency: Adverts must not contain offensive or immoral content.
+3. Fair Competition: Advertisers should not attack or lie against competitors.
+42
+4. Respect for Culture and Religion: Adverts must not mock cultural or religious beliefs.
+5. Avoidance of Exploitation: Children, women, or vulnerable groups should not be
+exploited.
+6. Health and Safety Compliance: Harmful products must not be promoted as safe.
+7. Clarity of Information: Prices, conditions, and benefits must be clearly stated.
+8. Social Responsibility: Adverts should not encourage violence, crime, smoking, drug
+abuse, or unhealthy practices.
+ADVERTISING JINGLES
+ A jingle is a short, catchy song, rhyme, or tune used in advertising to promote a product
+or service.
+ It is usually easy to remember and creates a lasting impression in the minds of customers.
+ Jingles are commonly used in radio, television, and online adverts.
+CHARACTERISTICS OF GOOD ADVERTISING JINGLES
+1. Short and simple.
+2. Easy to sing or recite.
+3. Catchy and memorable.
+4. Highlights the main product or brand name.
+5. Appeals to emotions (joy, excitement, satisfaction).
+6. Encourages customers to patronise the product.
+EXAMPLES
+ A detergent company may use a jingle like:
+“Wash brighter, wash cleaner, with Sparkle soap today!”
+ A telecom company might use jingles that emphasise connection and speed.
+43
+EVALUATION
+1. List and explain four media of advertising.
+2. What are advertising ethics? Mention five of them.
+3. Define advertising jingles and state four characteristics of a good jingle.
+4. Explain two advantages and two disadvantages of using television as an advertising
+medium.
+5. Why is honesty important in advertising?
+ASSIGNMENT
+1. Identify and explain five media of advertising, giving examples of products that can be
+advertised in each.
+2. State and explain six ethics of advertising.
+3. Write a short advertising jingle for any of the following:
+a. A soft drink brand
+b. A toothpaste
+c. A mobile phone company
+44
+WEEK 4: TRANSPORTATION
+Meaning; importance of transportation to commerce; types; advantages and disadvantages
+MEANING OF TRANSPORTATION
+ Transportation is the movement of people, goods, and services from one place to
+another.
+ It is an essential aspect of commerce because goods must be moved from areas of
+production to places where they are needed for consumption or resale.
+ It makes trade possible between towns, cities, regions, and countries.
+45
+ Transportation links producers and consumers, making goods available in different
+locations.
+ It includes various means such as land, water, air, and pipeline systems.
+IMPORTANCE OF TRANSPORTATION TO COMMERCE
+1. Facilitates Trade: Enables buying and selling of goods across different areas, enhancing
+local, national, and international trade.
+2. Enhances Specialization: Encourages producers to focus on specific goods or services
+because they can easily transport their goods to markets.
+3. Promotes Industrial Development: Raw materials can be transported to factories, and
+finished products to markets, stimulating industrial growth.
+4. Encourages Regional Development: Opens up rural and underdeveloped areas, making
+them accessible for economic activities.
+5. Supports International Trade: Transportation links countries and continents, enabling
+import and export.
+6. Improves Standard of Living: Makes goods and services available to people regardless
+of where they are produced, ensuring variety and affordability.
+7. Creates Employment Opportunities: Provides jobs in transport industries such as
+airlines, shipping, railways, trucking, and logistics.
+8. Reduces Wastage: Perishable goods can be quickly moved to markets, reducing spoilage.
+9. Strengthens National Unity: By connecting various regions, transportation promotes
+cultural exchange and national integration.
+10. Attracts Investment: Adequate transportation infrastructure encourages investors to
+establish businesses.
+46
+TYPES OF TRANSPORTATION
+1. Land Transportation
+o Road Transport: Uses vehicles like cars, lorries, buses, and motorbikes.
+ Suitable for short and medium distances and door-to-door delivery.
+o Rail Transport: Uses trains and railways for moving goods and passengers over
+long distances.
+ Ideal for bulky goods and long-distance travel.
+2. Water Transportation
+o Movement of goods and passengers via rivers, seas, and oceans using ships, boats,
+and ferries.
+o Suitable for international trade and transporting heavy, bulky goods.
+3. Air Transportation
+o Uses airplanes and helicopters to carry passengers and goods.
+o Best for high-value, light, or perishable goods; fastest means of transport.
+4. Pipeline Transportation
+o Involves transporting liquids and gases like petroleum, natural gas, and water
+through pipelines.
+o Often used for industrial purposes and in oil-producing countries.
+ADVANTAGES AND DISADVANTAGES OF TRANSPORTATION TYPES
+1. Road Transport
+Advantages:
+ Flexible and provides door-to-door services.
+47
+ Ideal for short distances and rural areas.
+ Relatively cheap and easy to maintain.
+Disadvantages:
+ Prone to accidents and traffic congestion.
+ Limited capacity for heavy goods.
+ Dependent on weather conditions.
+2. Rail Transport
+Advantages:
+ Suitable for bulky goods and long-distance travel.
+ Less affected by weather conditions.
+ Cost-effective for large shipments.
+Disadvantages:
+ Limited routes; not available in remote areas.
+ Fixed schedules reduce flexibility.
+ High cost of building and maintaining railway infrastructure.
+3. Water Transport
+Advantages:
+ Cheapest for large-scale international trade.
+ Suitable for bulky goods and heavy cargo.
+ Environmentally friendly.
+Disadvantages:
+ Slow compared to air or road transport.
+ Affected by weather and water levels.
+48
+ Limited to areas with navigable waters.
+4. Air Transport
+Advantages:
+ Fastest method for long-distance movement.
+ Ideal for perishable goods and emergency services.
+ High level of comfort and efficiency.
+Disadvantages:
+ Very expensive.
+ Cannot carry heavy or bulky goods.
+ Weather conditions can delay flights.
+5. Pipeline Transport
+Advantages:
+ Efficient and safe for transporting liquids and gases.
+ Low running costs after installation.
+ Not affected by traffic or weather.
+Disadvantages:
+ High cost of installation.
+ Limited to specific products (liquids and gases).
+ Leakages or bursts can cause environmental damage.
+EVALUATION
+1. Define transportation in commerce.
+2. Explain five reasons why transportation is important to commerce.
+49
+3. List and explain four types of transportation with examples.
+4. Outline three advantages and three disadvantages of air transport.
+5. Differentiate between road and pipeline transportation.
+ASSIGNMENT
+1. Create a comparative table showing the advantages and disadvantages of road, rail, water,
+air, and pipeline transportation.
+2. Draw and label a simple diagram illustrating the transportation network in Nigeria (show
+major roads, railway lines, airports, and seaports).
+3. Write a short essay on the role of transportation in promoting economic development in
+Nigeria.
+50
+WEEK 6: COMMUNICATION (PART 1)
+Meaning of communication; process of effective communication; hindrances to communication
+MEANING OF COMMUNICATION
+Communication is the process of exchanging information, ideas, feelings, or instructions
+between two or more people in a way that the message is understood. It involves sending and
+receiving messages through verbal means (spoken or written words), non-verbal means (gestures,
+body language, facial expressions), or through electronic channels (telephone, email, radio,
+television, etc.).
+In business, communication is very important because it helps to maintain good relationships,
+coordinate activities, give instructions, and achieve organizational goals. Without
+communication, no business or society can function properly.
+Characteristics of communication:
+1. It involves at least two parties: the sender and the receiver.
+2. It is a two-way process involving sending and feedback.
+3. It can be verbal, non-verbal, or written.
+51
+4. It requires understanding between both parties.
+5. It may be formal (official) or informal (casual).
+PROCESS OF EFFECTIVE COMMUNICATION
+For communication to be effective, it must follow a clear process. This process is often referred
+to as the communication cycle:
+1. Sender/Communicator – The person who has an idea or message to pass across.
+2. Message – The information, instruction, idea, or feeling to be communicated.
+3. Encoding – The process of putting the message into a form that can be transmitted (e.g.,
+speech, writing, signs, pictures, or gestures).
+4. Channel/Medium – The means by which the message is sent (e.g., face-to-face, phone
+call, letter, email, social media).
+5. Receiver – The person or group who receives the message.
+6. Decoding – The process of interpreting or understanding the message sent.
+7. Feedback – The response from the receiver to the sender, showing that the message has
+been understood or needs clarification.
+Effective communication only takes place when the receiver fully understands the message and
+provides the appropriate feedback.
+HINDRANCES TO COMMUNICATION
+Despite its importance, communication can be hindered by several barriers which prevent the
+accurate exchange of ideas. These barriers include:
+1. Language differences – When the sender and receiver do not share a common language
+or use complex/technical terms that the receiver cannot understand.
+52
+2. Poor listening – If the receiver does not pay attention, the message may be
+misunderstood.
+3. Noise – Any external distraction (e.g., loud sounds, interruptions, or background
+disturbances) that prevents clear communication.
+4. Distortion of message – When a message is changed or misinterpreted as it passes
+through different channels.
+5. Prejudice and bias – If the receiver has a negative attitude toward the sender, they may
+reject the message without proper consideration.
+6. Lack of clarity – When the message is not clearly expressed or organized.
+7. Emotional interference – Anger, stress, or excitement can prevent proper understanding
+of a message.
+8. Poor communication channels – Using the wrong medium, such as sending a long
+report verbally instead of in writing.
+9. Cultural differences – Certain gestures, words, or behaviors may mean different things
+in different cultures, leading to misunderstanding.
+10. Information overload – When too much information is given at once, making it difficult
+for the receiver to process and understand.
+SUMMARY
+Communication is the process of exchanging information between people in a way that is
+understood. The communication process involves the sender, message, encoding, channel,
+receiver, decoding, and feedback. Effective communication can be hindered by language barriers,
+noise, poor listening, prejudice, emotional factors, and the use of wrong communication channels.
+EVALUATION
+1. Define communication in your own words.
+53
+2. Mention five characteristics of communication.
+3. State and explain the seven stages in the communication process.
+4. Identify four hindrances to effective communication.
+5. Differentiate between encoding and decoding in communication.
+ASSIGNMENT
+1. Write short notes on three major importance of communication in business.
+2. With a diagram, explain the communication cycle.
+3. Discuss five hindrances to communication and suggest ways of overcoming them.
+54
+WEEK 8: COMMUNICATION (PART 2)
+Communication is a core function in business, as it enables the flow of information, instructions,
+and ideas between individuals, groups, and organizations. Effective communication ensures that
+business operations run smoothly, decisions are implemented correctly, and goals are achieved.
+This lesson focuses on methods of communication and its importance to business.
+METHODS OF BUSINESS COMMUNICATION:
+ A. Oral Communication:
+o Involves spoken words to convey messages.
+55
+o Examples: face-to-face meetings, telephone conversations, video calls, speeches,
+presentations.
+o Advantages: immediate feedback, personal touch, and clarification of
+misunderstandings.
+o Limitations: messages may be forgotten, misinterpreted, or distorted.
+ B. Written Communication:
+o Involves written messages transmitted through letters, memos, reports, emails, or
+notices.
+o Advantages: provides a permanent record, can be referred to later, ensures clarity.
+o Limitations: may be time-consuming and lacks immediate feedback.
+ C. Visual Communication:
+o Uses graphs, charts, diagrams, maps, photographs, and videos to convey
+information.
+o Advantages: simplifies complex information, easy to understand, and appealing.
+o Limitations: may require explanation, may not convey detailed information.
+ D. Non-verbal Communication:
+o Communication through body language, gestures, facial expressions, posture,
+and tone of voice.
+o Advantages: complements verbal communication, conveys emotions and attitudes.
+o Limitations: may be misinterpreted or culturally sensitive.
+ E. Electronic Communication:
+o Uses modern technologies such as social media, teleconferencing, emails, and
+business apps.
+o Advantages: fast, cost-effective, and enables communication across distances.
+56
+o Limitations: may lack personal touch, subject to technical failures.
+IMPORTANCE OF COMMUNICATION TO BUSINESS:
+ Facilitates Decision-Making: Ensures managers and employees receive accurate
+information for informed decisions.
+ Promotes Efficiency: Reduces misunderstandings, errors, and duplication of work.
+ Enhances Coordination: Connects different departments and employees to achieve
+business objectives.
+ Strengthens Customer Relations: Clear communication improves customer service and
+satisfaction.
+ Supports Motivation: Timely feedback, instructions, and appreciation boost employee
+morale.
+ Encourages Innovation: Sharing ideas through effective communication promotes
+creativity and problem-solving.
+EVALUATION:
+1. List and describe four methods of communication used in business.
+2. Explain how oral and written communication differ in their advantages and limitations.
+3. Discuss three ways effective communication improves business efficiency.
+4. Why is electronic communication important in modern business?
+ASSIGNMENT:
+1. Prepare a table showing methods of communication, examples, advantages, and
+limitations.
+2. Write a short essay (200–250 words) on the importance of effective communication in a
+business organization.
+57
+3. Conduct a class survey on the most preferred method of communication in your school
+and explain why it is preferred.
+58
+WEEK 9: COMMUNICATION (PART 3)
+Agencies of communication and their services; the internet; GSM
+AGENCIES OF COMMUNICATION AND THEIR SERVICES
+Communication agencies are organizations that provide means through which information is
+transmitted from one person or place to another. They include:
+1. POSTAL SERVICES (NIPOST – Nigerian Postal Service)
+o Handles the delivery of letters, parcels, and packages.
+o Provides services like registered mail, express mail service (EMS), post office
+boxes, and money orders.
+59
+2. COURIER SERVICES
+o Private companies such as DHL, UPS, FedEx, GIG Logistics, etc.
+o Offer fast and secure delivery of documents and goods, both locally and
+internationally.
+3. RADIO AND TELEVISION BROADCASTING HOUSES
+o Disseminate information, news, entertainment, and education to a wide audience.
+o Examples: Nigerian Television Authority (NTA), Channels TV, Wazobia FM.
+4. NEWSPAPER AND MAGAZINE HOUSES
+o Agencies like The Punch, The Guardian, Daily Trust, etc.
+o Provide written information, news, opinions, and advertisements to the public.
+5. TELECOMMUNICATION COMPANIES
+o Examples: MTN, GLO, Airtel, 9mobile.
+o Provide mobile communication services, internet access, voice calls, and SMS.
+6. INTERNET SERVICE PROVIDERS (ISPs)
+o Provide internet connectivity for browsing, emailing, streaming, and online
+communication.
+o Examples: Spectranet, Smile, Starlink.
+7. SOCIAL MEDIA PLATFORMS
+o Facebook, WhatsApp, Instagram, X (Twitter), TikTok, etc.
+o Enable instant global communication, interaction, and information sharing.
+THE INTERNET
+60
+ Meaning:
+The internet is a global network of interconnected computers that allows the exchange of
+information worldwide.
+ Uses of the Internet:
+1. Sending and receiving emails.
+2. Online banking and financial transactions.
+3. Research and learning through search engines like Google.
+4. Social networking (WhatsApp, Facebook, Instagram).
+5. Business transactions (e-commerce, online shopping).
+6. Entertainment (music, movies, games).
+7. Cloud storage and data backup.
+ Advantages of the Internet:
+o Fast access to information.
+o Enhances global communication.
+o Creates job opportunities (e.g., digital marketing, content creation).
+o Encourages online education and remote learning.
+ Disadvantages of the Internet:
+o Exposure to cybercrime (hacking, scams).
+o Spread of fake news and harmful content.
+o Internet addiction and distraction.
+o High cost of data in some regions.
+GSM (GLOBAL SYSTEM FOR MOBILE COMMUNICATION)
+61
+ Meaning:
+GSM is a digital mobile communication system that enables mobile phone users to make
+calls, send SMS, and access mobile internet.
+ Services of GSM:
+1. Voice calls (local and international).
+2. Text messaging (SMS).
+3. Multimedia messaging (MMS).
+4. Mobile internet browsing.
+5. Mobile money transfers and online banking.
+6. Conference calls.
+7. Entertainment services (caller tunes, ringtones, etc.).
+ Advantages of GSM:
+o Easy and fast communication.
+o Portable and accessible anywhere with network coverage.
+o Provides internet services and access to social media.
+o Supports business transactions and e-commerce.
+ Disadvantages of GSM:
+o Call drops and network failures.
+o High cost of airtime and data.
+o Encourages exam malpractice through cheating with phones.
+o Exposure to fraud, scams, and cyberbullying.
+EVALUATION
+62
+1. Define communication agencies and give three examples.
+2. State four services rendered by the Nigerian Postal Service (NIPOST).
+3. List five uses of the internet.
+4. Mention three services of GSM.
+5. Explain two disadvantages of the internet and GSM.
+ASSIGNMENT
+1. Identify and explain five agencies of communication in Nigeria and their services.
+2. List six uses of the internet and explain how it has improved modern communication.
+3. Discuss five advantages and five disadvantages of GSM in Nigeria.
+63
+WEEK 10: SETTING SIMPLE BUSINESS GOALS
+Difference between goals and objectives; SWOT analysis; strengths, weaknesses, opportunities,
+threats
+MEANING OF BUSINESS GOALS AND OBJECTIVES
+ Business Goals:
+o Broad, long-term targets that a business wants to achieve.
+o Goals give direction and purpose to the business.
+o Example: “To become the leading provider of quality stationery in our town.”
+ Business Objectives:
+64
+o Specific, short-term, measurable steps taken to achieve business goals.
+o Objectives are more precise and time-bound.
+o Example: “To increase stationery sales by 15% within six months.”
+ Difference Between Goals and Objectives:
+1. Goals are broad; objectives are specific.
+2. Goals are long-term; objectives are short-term.
+3. Goals are general statements; objectives are measurable targets.
+4. Objectives help achieve goals.
+SWOT ANALYSIS
+ SWOT Analysis is a tool used by businesses to evaluate their Strengths, Weaknesses,
+Opportunities, and Threats.
+ It helps businesses make informed decisions, plan strategies, and set realistic goals.
+1. Strengths (Internal)
+ Positive attributes and resources the business possesses.
+ Examples: skilled workforce, good location, strong brand, financial resources, loyal
+customers.
+ Importance: Helps the business take advantage of opportunities and gain a competitive
+edge.
+2. Weaknesses (Internal)
+ Limitations or challenges within the business that may hinder growth.
+ Examples: poor management, outdated technology, low capital, limited market reach.
+ Importance: Identifying weaknesses allows the business to improve and minimize risks.
+65
+3. Opportunities (External)
+ External factors or situations that the business can exploit to grow.
+ Examples: emerging markets, new technology, government incentives, changing
+customer preferences.
+ Importance: Seizing opportunities helps the business expand and increase profits.
+4. Threats (External)
+ External challenges or risks that may negatively affect the business.
+ Examples: competition, economic downturn, changes in regulations, natural disasters.
+ Importance: Recognizing threats helps the business prepare strategies to mitigate risks.
+IMPORTANCE OF SETTING BUSINESS GOALS
+1. Provides direction and focus for business activities.
+2. Helps measure progress and performance.
+3. Motivates owners and employees to achieve targets.
+4. Encourages better decision-making and resource allocation.
+5. Improves competitiveness and long-term growth.
+6. Helps identify challenges and opportunities in the business environment.
+STEPS IN SETTING BUSINESS GOALS
+1. Conduct a SWOT analysis to understand internal and external factors.
+2. Define clear and achievable goals.
+3. Break down goals into specific objectives.
+4. Allocate resources and responsibilities to achieve objectives.
+66
+5. Monitor progress and make adjustments as needed.
+6. Review and set new goals periodically.
+EVALUATION
+1. Differentiate between business goals and objectives.
+2. What is SWOT analysis, and why is it important?
+3. List two examples each of strengths, weaknesses, opportunities, and threats.
+4. Explain three benefits of setting business goals.
+5. Outline the steps in setting business goals.
+ASSIGNMENT
+1. Conduct a SWOT analysis for a small business in your community (e.g., a bakery,
+provision store, or fashion shop).
+2. Write five short-term objectives for a business of your choice.
+3. Explain how setting goals and objectives can help a business grow and remain
+competitive.
+67
+JSS 3 BUSINESS STUDIES LESSON NOTES
+THIRD TERM
+Week Topic Content
+1 Business Plans (Part
+1)
+Meaning of a business plan; importance of a business plan.
+2 Business Plans (Part
+2)
+Procedure for drawing up a simple business plan; format of a
+business plan.
+3 Consumer
+Protection (Part 1)
+Meaning; need for consumer protection; agencies and their roles.
+4 Consumer
+Protection (Part 2)
+Responsibilities of consumers; universal rights of consumers;
+instruments of consumer protection.
+5 Midterm
+Examination
+—
+6 Consumer
+Protection (Part 3)
+Complaints: meaning; justified vs unjustified complaints; steps in
+lodging complaints; writing a letter of complaint.
+7 Midterm Break —
+8 Consumer
+Protection (Part 4)
+Reasons for banning/restricting harmful chemicals; procedure for
+banning chemicals; seeking redress.
+9 Personal Finance Meaning; sources of finance for individuals; needs and wants;
+scale of preference; modesty and its effects.
+10 Bookkeeping and
+Business Success
+Trial balance (meaning, uses, items, preparation); Trading, Profit
+and Loss accounts (meaning, purpose, preparation); Balance sheet
+(meaning, uses, contents, preparation).
+11 Revision Weeks 1–10 topics.
+12 Examination —
+68
+13 Closing —
+69
+WEEK 1: BUSINESS PLANS (PART 1)
+A business plan is a detailed document that outlines the objectives, strategies, and
+operational plans of a business. It serves as a roadmap for business success, guiding
+entrepreneurs in organizing resources, managing operations, and attracting investors.
+Understanding business plans is crucial for students to develop entrepreneurial skills and
+sound business decision-making.
+MEANING OF A BUSINESS PLAN:
+ A business plan is a written description of a business, its goals, and the strategies to
+achieve them.
+70
+ It explains what the business intends to do, how it will operate, and how it will achieve
+profitability and growth.
+ Business plans are used for internal guidance, securing loans, or attracting investors.
+Key points:
+ It includes the business idea, mission, objectives, target market, marketing strategies,
+operational plan, financial plan, and projected outcomes.
+ A good business plan provides a clear picture of the business to stakeholders.
+ It is a living document that can be updated as the business grows or as circumstances
+change.
+IMPORTANCE OF A BUSINESS PLAN:
+A business plan is important for several reasons:
+ Guides Business Operations:
+o Provides a step-by-step plan for achieving business objectives.
+o Helps management organize resources efficiently.
+ Facilitates Financial Planning:
+o Shows projected income, expenses, and profits, aiding budgeting and resource
+allocation.
+o Helps in securing loans, grants, or investments from banks or investors.
+ Identifies Opportunities and Risks:
+o Encourages entrepreneurs to analyze the market, competition, and potential
+challenges.
+o Enables proactive strategies to mitigate risks.
+ Improves Decision-Making:
+71
+o Provides reliable information for making strategic, marketing, and operational
+decisions.
+ Measures Progress:
+o Acts as a benchmark to evaluate performance and ensure goals are being met.
+ Enhances Credibility:
+o Demonstrates professionalism and commitment to stakeholders, including
+investors, employees, and partners.
+EVALUATION:
+1. Define a business plan in your own words.
+2. List four components commonly found in a business plan.
+3. Explain three reasons why a business plan is important.
+4. How does a business plan help in risk management?
+ASSIGNMENT:
+1. Write a short essay (200 words) explaining the importance of a business plan to a small
+business owner.
+2. Prepare a table showing at least five key components of a business plan and their
+functions.
+3. Discuss in two paragraphs how a business plan can help attract investors or secure loans.
+72
+WEEK 2: BUSINESS PLANS (PART 2)
+Procedure for drawing up a simple business plan; format of a business plan
+INTRODUCTION
+ A business plan is a written document that describes the nature of a business, its
+objectives, strategies, target market, and financial forecasts.
+ It serves as a roadmap for entrepreneurs and is also useful in convincing investors, banks,
+or partners to support the business.
+ In this lesson, we will study:
+1. The procedure for drawing up a simple business plan.
+73
+2. The format of a business plan.
+PROCEDURE FOR DRAWING UP A SIMPLE BUSINESS PLAN
+When preparing a business plan, certain steps must be followed to ensure it is logical, clear, and
+complete:
+1. Identify the Business Idea
+o Decide what kind of business you want to start (e.g., bakery, tailoring, ICT
+services, poultry farming).
+o The idea should solve a problem or meet a need.
+2. Conduct Market Research
+o Study the demand for your product/service.
+o Identify your target customers and competitors.
+o Gather information on prices, market trends, and consumer preferences.
+3. Define Business Objectives
+o State what the business intends to achieve (e.g., profit-making, job creation,
+providing affordable goods).
+o Objectives should be SMART (Specific, Measurable, Achievable, Realistic,
+Time-bound).
+4. Decide on the Business Structure
+o Choose whether it will be a sole proprietorship, partnership, cooperative, or
+company.
+5. Plan for Resources
+o Identify the required resources such as capital, labour, equipment, raw materials,
+and technology.
+74
+6. Prepare Financial Estimates
+o Estimate start-up costs (capital requirements).
+o Project income, expenses, and expected profit.
+7. Prepare Marketing Strategy
+o Decide how the product will be advertised, distributed, and sold.
+o Include pricing strategy and promotional methods.
+8. Write the Business Plan Document
+o Put together all the findings in a clear written format.
+o The plan must be neat, logical, and convincing.
+FORMAT OF A BUSINESS PLAN
+A standard business plan usually contains the following sections:
+1. Title Page
+o Contains the business name, address, logo (if any), name of the owner, and date.
+2. Table of Contents
+o Lists the sections of the plan for easy reference.
+3. Executive Summary
+o A brief overview of the entire business plan.
+o Includes the business idea, mission, target market, and summary of financial
+needs.
+4. Description of the Business
+o Type of business (e.g., service, trading, manufacturing, agricultural).
+o Products or services to be offered.
+75
+o The vision and mission statements.
+5. Market Analysis
+o Information about the industry, competitors, target customers, and market trends.
+6. Organization and Management
+o The business structure and ownership.
+o Key staff and their roles.
+o Management plan.
+7. Products or Services
+o Detailed description of the goods or services.
+o Unique features and benefits to customers.
+8. Marketing and Sales Strategy
+o Advertising methods, pricing strategy, distribution channels, sales promotion, etc.
+9. Operational Plan
+o Daily activities and processes.
+o Location of the business and facilities needed.
+10. Financial Plan
+ Start-up capital required.
+ Cash flow forecast.
+ Profit and loss projection.
+ Break-even analysis.
+11. Appendices
+ Supporting documents (licenses, charts, maps, CVs, or agreements).
+EVALUATION
+76
+1. Define a business plan.
+2. List and explain four procedures involved in drawing up a simple business plan.
+3. Mention five major sections of a business plan format.
+4. State two reasons why a business plan is important.
+ASSIGNMENT
+1. Write out the eight steps you would follow if you were preparing a business plan for a
+poultry farm.
+2. Using the format of a business plan, draft a simple outline for a tailoring business in
+your community.
+3. Explain in detail the meaning and importance of the following parts of a business plan:
+a. Executive Summary
+b. Market Analysis
+c. Financial Plan
+77
+WEEK 3: CONSUMER PROTECTION (PART 1)
+Meaning; need for consumer protection; agencies and their roles
+MEANING OF CONSUMER PROTECTION
+ A consumer is a person who buys or uses goods and services to satisfy personal needs.
+ Consumer protection refers to the laws, policies, and measures put in place by
+government, organizations, and society to safeguard the rights and interests of consumers
+against exploitation by producers, sellers, or service providers.
+ It ensures that consumers are not cheated, misled, or exposed to harmful products in the
+marketplace.
+78
+Examples:
+ Ensuring expired drugs are not sold in pharmacies.
+ Ensuring correct weights and measures are used in markets.
+ Protecting consumers from fake or substandard electrical appliances.
+NEED FOR CONSUMER PROTECTION
+1. To Prevent Exploitation: Some producers and sellers may overcharge consumers or
+provide poor quality goods.
+2. To Protect Health and Safety: Substandard or expired goods (e.g., drugs, food) can
+endanger lives; protection ensures safe products.
+3. To Ensure Value for Money: Consumers should get quality and quantity that
+correspond to what they pay for.
+4. To Check False Advertising: Some adverts mislead customers with exaggerated claims;
+protection ensures honesty.
+5. To Encourage Fair Trade Practices: It creates a fair business environment where
+producers compete honestly.
+6. To Protect Rights of Consumers: Rights such as the right to safety, right to information,
+right to choose, and right to redress are upheld.
+7. To Build Consumer Confidence: Protection makes buyers more confident to purchase
+goods and services.
+8. To Promote National Development: When consumers are protected, demand increases,
+which helps the economy grow.
+AGENCIES OF CONSUMER PROTECTION AND THEIR ROLES
+1. Standards Organisation of Nigeria (SON)
+79
+ Ensures products meet minimum quality standards.
+ Prevents the circulation of fake and substandard goods.
+ Conducts product testing and certification.
+2. National Agency for Food and Drug Administration and Control (NAFDAC)
+ Regulates and controls food, drugs, cosmetics, medical devices, and packaged water.
+ Bans fake and harmful consumables from entering the market.
+ Conducts inspections of factories and products.
+3. Consumer Protection Council (CPC) (now merged into FCCPC – Federal Competition
+and Consumer Protection Commission)
+ Educates consumers on their rights.
+ Receives complaints from consumers and investigates them.
+ Provides redress (compensation or replacement) for cheated consumers.
+4. Federal Competition and Consumer Protection Commission (FCCPC)
+ Promotes fair competition among businesses.
+ Protects consumers from unfair trade practices.
+ Ensures compliance with consumer protection laws.
+5. National Broadcasting Commission (NBC)
+ Monitors and regulates adverts on radio and television.
+ Ensures adverts are truthful, decent, and not misleading.
+6. Nigerian Civil Aviation Authority (NCAA)
+ Protects air travelers by ensuring safety and quality services.
+ Monitors airline charges, schedules, and compensation in cases of flight
+delays/cancellations.
+80
+7. Nigerian Communications Commission (NCC)
+ Protects telephone and internet subscribers.
+ Ensures fair billing and quality service from telecom companies.
+8. Food Inspection Units (at Local Government Level)
+ Inspect markets, shops, and restaurants to ensure hygiene and safe food for consumption.
+EVALUATION
+1. Define consumer protection.
+2. State and explain five reasons why consumer protection is necessary.
+3. List four consumer protection agencies and their roles.
+4. Differentiate between NAFDAC and SON in terms of their consumer protection roles.
+5. Mention two ways the Consumer Protection Council helps the public.
+ASSIGNMENT
+1. Write in detail the meaning of consumer protection and give two practical examples.
+2. State and explain six needs for consumer protection in Nigeria.
+3. List six agencies of consumer protection and explain their roles in safeguarding
+consumers.
+81
+WEEK 4: CONSUMER PROTECTION (PART 2)
+Responsibilities of consumers; universal rights of consumers; instruments of consumer
+protection
+RESPONSIBILITIES OF CONSUMERS
+ Consumers are not only entitled to rights but also have responsibilities to ensure fair trade
+and efficient market practices.
+ Key responsibilities include:
+1. Being Honest: Provide correct information when purchasing goods or services.
+82
+2. Using Goods Properly: Follow instructions and handle products responsibly to
+avoid damage.
+3. Paying for Goods and Services Promptly: Fulfill financial obligations to
+suppliers and service providers.
+4. Keeping Records of Transactions: Maintain receipts and warranties for claims
+or disputes.
+5. Being Vigilant: Inspect goods and check for expiry dates, quality, and
+authenticity before purchase.
+6. Reporting Violations: Report faulty products, overpricing, or unethical business
+practices to consumer protection agencies.
+7. Respecting the Rights of Others: Do not misuse or damage goods that belong to
+others.
+UNIVERSAL RIGHTS OF CONSUMERS
+ Consumers have basic rights recognized globally to protect them from exploitation.
+1. Right to Safety: Protection from harmful goods and services.
+2. Right to Information: Access to correct information about products, including prices,
+ingredients, and usage.
+3. Right to Choose: Ability to select from a variety of goods and services at competitive
+prices.
+4. Right to be Heard: Ability to voice complaints and have them addressed by
+manufacturers, sellers, and regulators.
+5. Right to Redress: Compensation or replacement for defective goods or unsatisfactory
+services.
+6. Right to Consumer Education: Knowledge about consumer rights and responsibilities.
+83
+7. Right to a Healthy Environment: Protection from products or services that pollute or
+harm the environment.
+INSTRUMENTS OF CONSUMER PROTECTION
+ Instruments are tools, policies, or agencies that ensure consumers are protected.
+1. Consumer Protection Councils (CPC):
+o Established by governments to safeguard consumer interests, resolve disputes,
+and enforce standards.
+2. Standards Organization of Nigeria (SON):
+o Ensures products meet quality and safety standards.
+3. Consumer Complaints and Redress Forums:
+o Platforms where consumers can report violations and seek compensation.
+4. Legislation and Laws:
+o Laws such as the Consumer Protection Council Act provide legal frameworks for
+consumer rights.
+5. Labeling and Packaging Regulations:
+o Ensures goods are properly labeled with correct information on ingredients, usage,
+and safety.
+6. Trade Unions and Associations:
+o Support collective consumer action and advocacy for fair business practices.
+7. Education and Awareness Campaigns:
+o Government and NGOs run programs to educate consumers on their rights and
+responsibilities.
+IMPORTANCE OF CONSUMER PROTECTION
+84
+1. Safeguards consumers from exploitation, fraud, and substandard products.
+2. Promotes fair trade and ethical business practices.
+3. Encourages businesses to maintain high standards of quality.
+4. Enhances consumer confidence and satisfaction.
+5. Reduces disputes and litigation between consumers and sellers.
+6. Contributes to economic stability and development.
+EVALUATION
+1. List four responsibilities of consumers.
+2. Mention five universal rights of consumers and briefly explain each.
+3. Identify and explain three instruments used for consumer protection in Nigeria.
+4. Why is consumer protection important to both businesses and consumers?
+5. Differentiate between the right to safety and the right to redress.
+ASSIGNMENT
+1. Write an essay on: “The Role of Consumer Protection in Ensuring Fair Trade in Nigeria.”
+2. Interview a shop owner or market trader and list three ways they ensure consumers’
+rights are respected.
+3. Research and list five products that have been recalled in Nigeria due to safety concerns
+and explain the reason for each.
+85
+WEEK 6: CONSUMER PROTECTION (PART 3)
+Complaints – meaning; justified vs unjustified complaints; steps in lodging complaints; writing a
+letter of complaint
+MEANING OF COMPLAINTS
+A complaint is an expression of dissatisfaction or unhappiness made by a consumer when the
+goods or services received are not up to the expected standard or when the consumer’s rights are
+violated. Complaints may be directed to the seller, producer, service provider, or even consumer
+protection agencies.
+Complaints are an important part of consumer protection because they alert businesses to
+problems with their goods or services and help ensure that consumers receive fair treatment.
+86
+JUSTIFIED VS UNJUSTIFIED COMPLAINTS
+1. Justified Complaints
+These are genuine complaints made by consumers when they do not get the value for
+their money. Such complaints are valid and should be addressed.
+Examples:
+ Buying an expired product.
+ Purchasing a defective item (e.g., a phone that does not switch on).
+ Being overcharged for a product or service.
+ Receiving a service that is below the promised standard (e.g., poor hotel accommodation
+despite paying full price).
+2. Unjustified Complaints
+These are complaints made by consumers that are not valid, often due to ignorance,
+misuse of products, or unrealistic expectations.
+Examples:
+ Complaining that a product did not last forever when it was designed for limited use.
+ Complaining about a service without reading or understanding the terms and conditions.
+ Damaging a product through careless use and blaming the seller.
+STEPS IN LODGING COMPLAINTS
+When a consumer has a genuine complaint, the following steps should be taken to ensure it is
+properly addressed:
+1. Identify the problem – The consumer should be clear about the defect or issue with the
+product or service.
+87
+2. Gather evidence – Keep receipts, warranty cards, packaging, or any other proof of
+purchase.
+3. Approach the seller – Start by reporting the problem politely to the seller or service
+provider.
+4. Be clear and firm – State exactly what went wrong and what remedy is expected (e.g.,
+refund, repair, or replacement).
+5. Escalate the complaint – If the seller does not respond, report to higher authorities such
+as the Consumer Protection Council, Standards Organisation of Nigeria (SON), or other
+regulatory agencies.
+6. Write a formal complaint – If verbal complaints fail, write a letter of complaint stating
+all necessary details.
+7. Seek legal action as a last resort – If all else fails, the consumer may seek redress in a
+law court.
+WRITING A LETTER OF COMPLAINT
+A letter of complaint is a formal letter written by a consumer to a seller, producer, or consumer
+protection agency to report a problem with goods or services purchased. It must be clear, polite,
+and provide all necessary information.
+Features of a letter of complaint:
+1. Consumer’s address and date.
+2. Recipient’s address.
+3. Salutation (Dear Sir/Madam).
+4. Heading or subject line (e.g., Complaint about Defective Refrigerator).
+5. Introduction (state the purpose of writing).
+88
+6. Body (describe the product/service, date of purchase, nature of the complaint, and
+evidence).
+7. Request for remedy (refund, replacement, or repair).
+8. Conclusion (polite closing remark).
+9. Signature and full name.
+SAMPLE LETTER OF COMPLAINT
+No. 12 Adewale Street,
+Ikeja, Lagos.
+15th June, 2023.
+The Manager,
+ABC Electronics Ltd,
+Ikeja, Lagos.
+Dear Sir,
+Complaint about Defective Television Set
+I am writing to formally complain about a 32-inch Samsung television set which I purchased
+from your store on 10th June 2023 with receipt number 4589.
+Upon installation, I discovered that the television does not come on despite several attempts. The
+technician confirmed that the set is faulty. I have attached a copy of my receipt as evidence of
+purchase.
+I therefore request that the television be replaced with a new one or a full refund made to me
+within seven (7) days.
+Thank you for your prompt attention to this matter.
+Yours faithfully,
+[Signature]
+Chinedu Okeke
+89
+SUMMARY
+A complaint is a way for consumers to express dissatisfaction with goods or services.
+Complaints can be justified (valid) or unjustified (invalid). To lodge a complaint, consumers
+must identify the problem, keep evidence, report politely to the seller, escalate when necessary,
+and write a letter of complaint if verbal resolution fails.
+EVALUATION
+1. Define a complaint.
+2. Distinguish between justified and unjustified complaints with two examples each.
+3. Outline five steps a consumer should follow when lodging a complaint.
+4. State five features of a formal complaint letter.
+5. Why is it important for a consumer to keep receipts?
+ASSIGNMENT
+1. Write short notes on the difference between justified and unjustified complaints.
+2. Draft a complaint letter to a supermarket manager about being sold an expired tin of milk.
+3. Explain five steps that should be taken by a consumer before writing a letter of complaint.
+90
+WEEK 8: CONSUMER PROTECTION (PART 4)
+Consumer protection involves safeguarding the rights, health, and safety of consumers
+against harmful products and unfair business practices. Governments, regulatory agencies, and
+consumer organizations play a key role in ensuring that products meet safety standards. This
+lesson focuses on the reasons for banning or restricting harmful chemicals, the procedure
+for banning them, and ways consumers can seek redress.
+REASONS FOR BANNING OR RESTRICTING HARMFUL CHEMICALS:
+91
+ Protection of Human Health:
+Some chemicals can cause serious illnesses, poisoning, or long-term health problems.
+Restricting them prevents harm to consumers.
+ Environmental Protection:
+Harmful chemicals can damage ecosystems, pollute water and soil, and affect wildlife.
+Banning them preserves the environment.
+ Ensuring Product Safety:
+Chemicals that compromise the safety, quality, or usability of products are banned to
+protect consumers.
+ Compliance with International Standards:
+Certain chemicals may violate global safety regulations, affecting trade and consumer
+confidence.
+ Preventing Misuse or Accidents:
+Highly toxic or unstable chemicals may lead to accidental injuries or deaths,
+necessitating regulation.
+PROCEDURE FOR BANNING HARMFUL CHEMICALS:
+ Research and Identification:
+Regulatory bodies identify chemicals that are dangerous to health or the environment.
+ Scientific Testing:
+Chemicals undergo laboratory tests, risk assessments, and safety evaluations.
+ Consultation with Stakeholders:
+Government agencies, manufacturers, consumer groups, and scientists provide input and
+feedback.
+ Legislation and Regulation:
+Laws or regulations are enacted to restrict, ban, or control the use of harmful chemicals.
+92
+ Implementation and Enforcement:
+Agencies such as NAFDAC (National Agency for Food and Drug Administration and
+Control) in Nigeria enforce bans, conduct inspections, and impose penalties for
+violations.
+ Public Awareness:
+Consumers and manufacturers are informed through media campaigns, notices, and
+product labeling.
+SEEKING REDRESS AS A CONSUMER:
+ Definition: Redress is the right of a consumer to claim compensation or correction
+when harmed by defective or unsafe products.
+ Ways of Seeking Redress:
+o Reporting to Regulatory Agencies: Filing complaints with agencies like
+NAFDAC, Consumer Protection Council, or Standards Organization of
+Nigeria (SON).
+o Direct Complaint to Manufacturer or Seller: Requesting replacement, repair,
+or refund.
+o Legal Action: Taking the matter to court for compensation or enforcement of
+consumer rights.
+o Consumer Associations: Seeking assistance from consumer rights groups for
+advice and mediation.
+ Importance of Seeking Redress:
+o Protects consumers from further harm
+o Promotes accountability among businesses
+o Encourages compliance with safety and quality standards
+93
+EVALUATION:
+1. List four reasons why harmful chemicals may be banned or restricted.
+2. Describe the procedure involved in banning harmful chemicals.
+3. Explain the concept of consumer redress and list three ways to seek it.
+4. Why is consumer protection important for both consumers and businesses?
+ASSIGNMENT:
+1. Prepare a flowchart showing the procedure for banning harmful chemicals in Nigeria.
+2. Write a short essay (200 words) on why consumers must seek redress when harmed by
+unsafe products.
+3. Conduct a mini-survey in your community or school to identify products that may
+contain harmful chemicals and suggest steps for protection.
+94
+WEEK 9: PERSONAL FINANCE
+Meaning; sources of finance for individuals; needs and wants; scale of preference; modesty and
+its effects
+MEANING OF PERSONAL FINANCE
+ Personal finance refers to the proper planning, management, and control of an
+individual’s money and other financial resources.
+ It involves budgeting, saving, investing, borrowing, and spending money wisely to meet
+personal needs and achieve future goals.
+ It also includes financial decision-making about what to buy, how much to save, and how
+to spend money in a responsible way.
+95
+SOURCES OF FINANCE FOR INDIVIDUALS
+Individuals can obtain money from various sources for personal or family needs. These include:
+1. Personal Savings – money set aside from income for future use.
+2. Wages and Salaries – income earned from paid employment.
+3. Business Profits – money earned by individuals who own and operate businesses.
+4. Loans from Banks and Microfinance Institutions – money borrowed with interest to
+be repaid later.
+5. Family and Friends – financial support received in times of need.
+6. Gifts and Donations – money or resources received freely from others.
+7. Investments – income earned from shares, bonds, mutual funds, or dividends.
+8. Pensions and Retirement Benefits – money paid to individuals after retirement.
+9. Co-operative Societies – loans and contributions provided to members.
+10. Government Grants/Scholarships – financial assistance given to support education,
+businesses, or personal needs.
+NEEDS AND WANTS
+ Needs:
+o Basic things that are essential for human survival and daily living.
+o Examples: food, water, shelter, clothing, healthcare, and education.
+o Needs are limited in type but continuous in demand.
+ Wants:
+o Things that are desirable but not essential for survival.
+o Examples: cars, designer clothes, smartphones, luxury holidays.
+96
+o Wants are unlimited and often compete with needs for limited financial resources.
+SCALE OF PREFERENCE
+ Meaning:
+A scale of preference is a list of an individual’s needs and wants arranged in order of
+importance.
+ Importance:
+1. Helps in making wise financial decisions.
+2. Ensures that urgent and basic needs are met before wants.
+3. Prevents wasteful spending and encourages savings.
+4. Guides individuals when resources are limited.
+ Example:
+If a student has ₦5,000, his scale of preference may be:
+1. Purchase of textbooks – ₦3,000
+2. Food and snacks – ₦1,500
+3. Buying a wristwatch – ₦2,500
+Since the money is not enough, the student will choose the first two items (textbooks and food)
+and leave out the wristwatch (a want).
+MODESTY AND ITS EFFECTS
+ Meaning of Modesty:
+Modesty is the quality of being simple, moderate, humble, and not extravagant in
+spending or lifestyle. It involves living within one’s means and avoiding waste.
+ Effects of Modesty:
+1. Encourages Savings – modest people spend wisely and save for future needs.
+97
+2. Reduces Debt – they avoid unnecessary borrowing and financial pressure.
+3. Promotes Contentment – helps individuals to appreciate what they have.
+4. Improves Financial Stability – modest living ensures steady growth in personal
+finance.
+5. Discourages Extravagance – prevents wasteful spending on wants rather than
+needs.
+6. Builds Good Reputation – modest individuals are respected in society.
+EVALUATION
+1. Define personal finance.
+2. List five sources of finance available to individuals.
+3. Differentiate between needs and wants with examples.
+4. What is a scale of preference and why is it important?
+5. Explain three effects of modesty in personal finance.
+ASSIGNMENT
+1. Mention and explain six sources of finance for individuals.
+2. Draw up a scale of preference for a student who has ₦10,000 but needs to pay school fees
+(₦7,000), buy sandals (₦3,500), and attend a party (₦2,000). Show which items he will
+choose and explain why.
+3. Discuss five reasons why modesty is important in managing personal finance.
+98
+WEEK 10: BOOKKEEPING AND BUSINESS SUCCESS
+Trial Balance (Meaning, Uses, Items, Preparation); Trading, Profit And Loss Accounts
+(Meaning, Purpose, Preparation); Balance Sheet (Meaning, Uses, Contents, Preparation)
+MEANING AND IMPORTANCE OF BOOKKEEPING
+ Bookkeeping is the systematic recording, organizing, and maintenance of all financial
+transactions of a business.
+ Accurate bookkeeping ensures that businesses can track income, expenses, assets, and
+liabilities.
+ Importance of Bookkeeping to Business Success:
+99
+1. Helps in making informed business decisions.
+2. Ensures proper financial control.
+3. Provides data for preparing financial statements.
+4. Facilitates audits and taxation processes.
+5. Helps assess profitability and business performance.
+TRIAL BALANCE
+ Meaning:
+o A trial balance is a statement that lists all the balances of ledger accounts at a
+particular date to check the arithmetical accuracy of bookkeeping entries.
+ Uses of Trial Balance:
+1. Detects errors in ledger accounts.
+2. Serves as the basis for preparing financial statements.
+3. Helps summarize all ledger balances in one place.
+4. Assists in financial planning and decision-making.
+ Items Included in Trial Balance:
+o All ledger account balances, including:
+1. Assets (cash, inventory, equipment)
+2. Liabilities (loans, creditors)
+3. Capital/Owner’s Equity
+4. Revenue and income accounts
+5. Expenses and cost accounts
+ Preparation of Trial Balance:
+100
+0. List all ledger account balances in two columns: debit and credit.
+1. Total both columns.
+2. Ensure that total debits equal total credits.
+TRADING ACCOUNT
+ Meaning:
+o The trading account shows the results of buying and selling goods over a period.
+o It is prepared to calculate gross profit or gross loss.
+ Purpose:
+1. To determine the profitability of trading activities.
+2. To ascertain gross profit or loss for a period.
+3. To provide information for management decisions.
+ Preparation:
+o List sales revenue on the credit side.
+o List cost of goods sold (opening stock + purchases – closing stock) on the debit
+side.
+o Gross profit = Sales – Cost of goods sold.
+PROFIT AND LOSS ACCOUNT
+ Meaning:
+o Shows the net profit or net loss of a business for a specific period after
+considering all incomes and expenses.
+ Purpose:
+101
+1. To determine financial performance over a period.
+2. To provide information for taxation and investment decisions.
+ Preparation:
+0. Bring down gross profit from the trading account.
+1. List all operating expenses (rent, salaries, utilities) on the debit side.
+2. List all other incomes (interest received, commission earned) on the credit side.
+3. Net profit = Gross profit + Other incomes – Expenses.
+BALANCE SHEET
+ Meaning:
+o A balance sheet is a financial statement that shows the financial position of a
+business at a specific date.
+ Uses:
+1. Determines the financial health of the business.
+2. Shows what the business owns (assets) and owes (liabilities).
+3. Helps in planning, budgeting, and decision-making.
+4. Used by investors, banks, and management for analysis.
+ Contents of a Balance Sheet:
+0. Assets: Current (cash, inventory, debtors) and non-current (land, buildings, machinery).
+1. Liabilities: Current (creditors, loans) and long-term (mortgages, bonds).
+2. Capital/Owner’s Equity: Owner’s investment and retained earnings.
+ Preparation:
+0. List assets on one side and liabilities plus capital on the other.
+102
+1. Ensure that Assets = Liabilities + Capital.
+2. Adjust for net profit or loss from the profit and loss account.
+IMPORTANCE OF TRIAL BALANCE, PROFIT & LOSS ACCOUNT, AND BALANCE
+SHEET TO BUSINESS SUCCESS
+ Provides accurate financial information for decision-making.
+ Helps track profitability, liquidity, and solvency.
+ Prevents fraud and financial mismanagement.
+ Guides budgeting, investment, and business expansion.
+ Enhances accountability and transparency in business operations.
+EVALUATION
+1. Define bookkeeping and explain its importance to business success.
+2. What is a trial balance, and why is it prepared?
+3. Differentiate between gross profit and net profit.
+4. List three items that appear on a balance sheet.
+5. Explain the relationship between trading account, profit & loss account, and balance
+sheet.
+ASSIGNMENT
+1. Prepare a simple trial balance from the following ledger balances: Cash ₦50,000; Sales
+₦120,000; Purchases ₦60,000; Rent ₦10,000; Capital ₦90,000.
+2. Draw a trading account and profit & loss account for a small business given
+appropriate figures.
+103
+3. Prepare a simple balance sheet showing assets, liabilities, and capital based on the
+results of the profit & loss account.
