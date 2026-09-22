@@ -1,0 +1,3255 @@
+1
+JSS1 DIGITAL TECHNOLOGIES LESSON NOTES
+FIRST TERM
+WEEK 1: INTRODUCTION TO DIGITAL TECHNOLOGY
+SUBTOPICS:
+ MEANING OF DIGITAL TECHNOLOGY
+ IMPORTANCE IN MODERN LIFE
+ EXAMPLES OF DIGITAL DEVICES
+2
+MEANING OF DIGITAL TECHNOLOGY
+What is Digital Technology? Digital technology refers to electronic tools and devices that use
+digital information (0s and 1s) to create, store, and share information.
+Digital vs. Analog:
+ Analog: Uses continuous signals (e.g., old clock with hands)
+ Digital: Uses 0s and 1s (e.g., digital clock with numbers)
+Why "Digital"? Computers understand only two states: ON (1) and OFF (0). All information is
+converted to combinations of 0s and 1s called binary code.
+IMPORTANCE OF DIGITAL TECHNOLOGY
+1. Communication:
+ Send messages instantly worldwide
+ Video calls with family
+ WhatsApp, email, social media
+2. Education:
+ Research for homework online
+ YouTube tutorials
+ E-books and online libraries
+ Virtual classrooms
+3. Entertainment:
+ Stream music and movies (Netflix, YouTube)
+ Mobile games
+3
+ Social media
+4. Business and Banking:
+ Mobile banking (transfer money)
+ Online shopping (Jumia, Konga)
+ Pay bills from home
+5. Healthcare:
+ Digital medical records
+ Online appointment booking
+ Digital thermometers
+6. Information Access:
+ Read news online
+ Check weather forecasts
+ Learn new skills
+EXAMPLES OF DIGITAL DEVICES
+1. Computers:
+ Desktop: Large computer for desk
+ Laptop: Portable computer
+ Uses: Schoolwork, internet, typing, games
+2. Smartphones:
+ Small computers in your pocket
+ Examples: iPhone, Samsung, Tecno, Infinix
+ Uses: Calls, texts, WhatsApp, social media, camera
+4
+3. Tablets:
+ Bigger than phones, smaller than laptops
+ Examples: iPad, Samsung Galaxy Tab
+ Uses: Reading, watching videos, games
+4. Smart TVs:
+ Television connected to internet
+ Uses: Netflix, YouTube, regular TV
+5. Digital Cameras:
+ Take photos and videos digitally
+6. Printers and Scanners:
+ Print documents or convert paper to digital
+7. ATM Machines:
+ Withdraw money and check balance
+8. POS Terminals:
+ Card payment machines in shops
+BENEFITS OF DIGITAL TECHNOLOGY:
+ Fast and accurate
+ Stores lots of information
+ Makes life easier
+ Saves time and money
+CHALLENGES:
+ Devices can be expensive
+ Need electricity to work
+5
+ Security risks (hacking, viruses)
+ Must learn how to use properly
+EVALUATION:
+1. What is digital technology?
+2. State three importance of digital technology.
+3. Name five digital devices and their uses.
+4. What is the difference between analog and digital?
+5. Mention two benefits and two challenges of digital technology.
+ASSIGNMENT:
+1. Explain what digital technology means.
+2. List six examples of digital devices with their uses.
+3. Describe four ways digital technology helps in education.
+4. State three benefits of digital technology in modern life.
+6
+WEEK 2: HISTORICAL DEVELOPMENT OF DIGITAL DEVICES
+SUBTOPICS:
+ EARLY CALCULATING TOOLS
+ GENERATIONS OF COMPUTERS
+ EVOLUTION FROM ANALOG TO DIGITAL
+ MODERN DIGITAL TRENDS
+EARLY CALCULATING TOOLS
+1. ABACUS (3000 BC)
+ Wooden frame with beads on rods
+ Used for counting and simple calculations
+ Still used in some countries today
+2. NAPIER'S BONES (1617)
+ Numbered rods made by John Napier
+ Used for multiplication and division
+ Made calculations easier
+3. PASCALINE (1642)
+ First mechanical calculator by Blaise Pascal
+ Used gears and wheels to add numbers
+4. CHARLES BABBAGE'S ANALYTICAL ENGINE (1837)
+ Designed by Charles Babbage (Father of the Computer)
+ Never fully built but had all parts of modern computer
+7
+ Ada Lovelace wrote first computer program for it
+GENERATIONS OF COMPUTERS
+FIRST GENERATION (1940-1956): VACUUM TUBES
+Technology: Large glass tubes (vacuum tubes)
+Characteristics:
+ Very large (filled entire rooms)
+ Very heavy
+ Generated much heat
+ Used lots of electricity
+ Expensive
+Example: ENIAC (1946) - weighed 30 tons!
+8
+SECOND GENERATION (1956-1963): TRANSISTORS
+Technology: Transistors (small devices that replaced vacuum tubes)
+Characteristics:
+ Smaller than first generation
+ Less heat
+ More reliable
+ Faster
+ Less expensive
+THIRD GENERATION (1964-1971): INTEGRATED CIRCUITS
+Technology: Integrated Circuits (ICs) - many transistors on one chip
+Characteristics:
+ Much smaller
+ Faster
+ More reliable
+ Keyboard and monitor introduced
+ Operating systems developed
+Example: IBM 360 series
+FOURTH GENERATION (1971-Present): MICROPROCESSORS
+Technology: Microprocessor - entire CPU on one chip
+Characteristics:
+ Very small (personal computers possible)
+9
+ Very fast
+ Affordable
+ Personal computers (PCs) for homes and offices
+ GUIs (Graphical User Interface) - icons and mouse
+Examples:
+ Apple II (1977)
+ IBM PC (1981)
+ Modern laptops and smartphones
+FIFTH GENERATION (Present-Future): ARTIFICIAL INTELLIGENCE
+Technology: AI and advanced computing
+Characteristics:
+ Voice recognition (Siri, Alexa)
+ Machine learning
+ Robotics
+ Quantum computing (developing)
+Examples:
+ Smartphones with AI
+ Self-driving cars (developing)
+ Smart assistants
+EVOLUTION FROM ANALOG TO DIGITAL
+Analog Era:
+10
+ Mechanical devices
+ Continuous signals
+ Examples: Typewriter, film cameras, cassette tapes, vinyl records
+Digital Era:
+ Electronic devices
+ Digital signals (0s and 1s)
+ Examples: Computers, digital cameras, smartphones, MP3 players
+Why Digital Replaced Analog:
+1. Better Quality: Digital doesn't degrade over time
+2. Easy Copying: Make perfect copies
+3. Easy Storage: Store more in less space
+4. Easy Editing: Can edit without losing quality
+5. Easy Sharing: Send over internet
+Transition Examples:
+Analog Digital
+Typewriter Computer/Word Processor
+Film Camera Digital Camera
+Cassette Tapes MP3 Players/Streaming
+Landline Phones Mobile Phones
+Letters Email/WhatsApp
+Physical Books E-books
+11
+Video Cassettes (VHS) DVDs/Streaming
+MODERN DIGITAL TRENDS
+1. ARTIFICIAL INTELLIGENCE (AI)
+ Machines that can "think" and learn
+ Examples: Siri, Alexa, Google Assistant
+ Self-driving cars (developing)
+2. INTERNET OF THINGS (IoT)
+ Everyday objects connected to internet
+ Examples: Smart homes (lights, locks, thermostats controlled by phone)
+3. CLOUD COMPUTING
+ Store data on internet instead of your device
+ Examples: Google Drive, iCloud, Dropbox
+ Access files from anywhere
+4. MOBILE TECHNOLOGY
+ Smartphones everywhere
+ Mobile apps for everything
+ Mobile banking, learning, shopping
+5. SOCIAL MEDIA
+ Connect with people worldwide
+ Examples: Facebook, Instagram, Twitter, TikTok
+ Share photos, videos, messages
+6. VIRTUAL REALITY (VR) AND AUGMENTED REALITY (AR)
+12
+ VR: Enter computer-generated world (VR headsets)
+ AR: Add digital elements to real world (Pokémon Go)
+7. E-COMMERCE
+ Shopping online
+ Examples: Jumia, Konga, Amazon
+ Pay and receive delivery at home
+8. DIGITAL PAYMENTS
+ Pay without cash
+ Examples: Bank apps, POS, USSD codes
+ Mobile money (M-Pesa in Kenya)
+9. STREAMING SERVICES
+ Watch/listen without downloading
+ Examples: Netflix (movies), Spotify (music), YouTube (videos)
+10. REMOTE WORK AND LEARNING
+ Work/study from home
+ Video conferencing (Zoom, Google Meet)
+IMPACT OF DIGITAL EVOLUTION
+Positive:
+ Faster communication
+ More access to information
+ Better entertainment
+ Easier business
+13
+ Global connectivity
+Negative:
+ Less face-to-face interaction
+ Cybercrime increased
+ Privacy concerns
+ Digital addiction
+ Job displacement (machines replacing humans)
+EVALUATION:
+1. Name three early calculating tools.
+2. Who is called the "Father of the Computer"?
+3. State the five generations of computers with their main technology.
+4. Give three examples of how analog devices became digital.
+5. Name three modern digital trends.
+ASSIGNMENT:
+1. Describe three early calculating tools.
+2. Explain the five generations of computers.
+3. What is the difference between analog and digital devices? Give three examples.
+4. List and explain five modern digital trends.
+5. State three positive and three negative impacts of digital technology.
+14
+WEEK 3: CAREER OPPORTUNITIES IN INFORMATION TECHNOLOGY
+CAREERS IN ICT
+1. SOFTWARE CAREERS
+Career What They Do Skills Needed
+Software Developer Write programs and apps Python, Java, C++
+Web Developer Build websites HTML, CSS, JavaScript
+Mobile App Developer Create phone/tablet apps Android/iOS programming
+Game Developer Design video games Programming, graphics, creativity
+15
+2. HARDWARE CAREERS
+Career What They Do
+Computer Engineer Design computer components (processors, motherboards)
+Computer Technician Fix and repair computers, upgrade systems
+Hardware Installation Specialist Install and set up computer systems
+3. NETWORKING CAREERS
+Career What They Do
+Network Administrator Manage networks, ensure internet works
+Network Engineer Design and build networks (Wi-Fi systems)
+Telecommunications Specialist Work on phone/internet communication systems
+4. DATA CAREERS
+Career What They Do
+Data Analyst Analyze data for patterns and insights
+Data Scientist Use advanced methods for big data analysis
+Database Administrator Manage databases (customer records, student info)
+5. OTHER ICT CAREERS
+ IT Support Specialist: Help with computer problems
+ ICT Teacher: Teach computer studies
+ Systems Analyst: Study how systems solve business problems
+ Technical Writer: Write software/hardware manuals
+16
+EMERGING DIGITAL CAREERS
+Career What They Do Example
+AI Specialist Create smart computer
+systems
+Siri, Alexa, recommendations
+Cybersecurity Expert Protect systems from hackers Secure banks, prevent data theft
+Robotics Engineer Design and build robots Factory robots, drones
+Digital Marketer Promote businesses online Social media, Google ads
+Cloud Computing
+Specialist
+Manage cloud services Google Drive, iCloud
+Drone Operator Operate drones Photography, delivery, agriculture
+UX/UI Designer Design app/website look and
+feel
+User experience and interface
+Social Media Manager Manage company social
+accounts
+Content posting, customer
+engagement
+E-Commerce Specialist Manage online stores Jumia shops, online business
+Blockchain Developer Work with blockchain Cryptocurrency, secure
+transactions
+Content Creator Create digital content YouTube, TikTok, blogs
+SKILLS NEEDED FOR IT CAREERS
+TECHNICAL SKILLS (Hard Skills)
+1. Programming: Python, Java, C++, JavaScript
+2. Computer Literacy: MS Office, internet, email
+17
+3. Problem-Solving: Logical thinking, finding solutions
+4. Mathematics: Logic, algorithms, data analysis
+5. Typing Skills: Fast and accurate
+6. Hardware Understanding: Components, troubleshooting
+7. Networking Knowledge: How internet works
+SOFT SKILLS (Personal Skills)
+1. Communication: Explain technical concepts simply
+2. Teamwork: Collaborate on projects
+3. Creativity: Innovative solutions and designs
+4. Continuous Learning: Stay updated with technology
+5. Attention to Detail: Careful and thorough work
+6. Time Management: Meet deadlines, manage tasks
+7. Patience: Debugging and problem-solving
+8. Adaptability: Flexible with changing technology
+HOW TO PREPARE FOR IT CAREERS
+Now (JSS1-3):
+ Excel in Math and English
+ Use computers regularly
+ Practice typing
+ Learn basic coding (Scratch, Python)
+ Join computer/robotics clubs
+18
+ Stay curious, ask questions
+Resources:
+ Online: Code.org, Khan Academy, YouTube tutorials
+ Practice: Build simple projects, design websites
+ Clubs: Computer club, STEM programs
+Education Path:
+1. JSS1-3: Learn basics, develop interest
+2. SSS1-3: Choose Science, focus on Math/Physics
+3. University: Computer Science, Software Engineering
+4. Certifications: Cisco, Microsoft, etc.
+5. Internships: Gain practical experience
+6. Career: Start working in IT
+WHY CHOOSE IT CAREER?
+Advantages:
+ High demand (many jobs)
+ Good salaries
+ Work from anywhere (remote work)
+ Continuous learning (never boring)
+ Create useful products
+ Global opportunities
+EVALUATION
+19
+1. Name three software careers and their functions
+2. What does a cybersecurity expert do?
+3. List five technical skills for IT careers
+4. State three important soft skills
+5. How can JSS1 students prepare for IT careers?
+ASSIGNMENT
+1. Describe four ICT careers with functions
+2. Explain five emerging digital careers
+3. List six technical and four soft skills needed
+4. Why is cybersecurity important today?
+5. What steps can you take now for IT career preparation?
+20
+WEEK 4: BASIC COMPUTER HARDWARE COMPONENTS I
+MEANING OF HARDWARE
+Hardware: Physical parts of a computer you can see and touch.
+Hardware vs Software:
+ Hardware = Physical parts (can touch) | Body
+ Software = Programs/instructions (cannot touch) | Thoughts
+21
+MAIN PARTS OF COMPUTER
+1. System Unit: Contains CPU, motherboard, RAM (brain of computer)
+2. Monitor: Display screen
+3. Keyboard: Typing device
+4. Mouse: Pointing device
+INPUT DEVICES
+Input Device: Hardware used to enter data into computer
+Device Description Uses
+Keyboard Keys in QWERTY layout; alphanumeric,
+function (F1-F12), arrow keys
+Typing documents, entering
+data, commands
+Mouse Pointing device; left/right buttons, scroll
+wheel
+Click, select, drag, scroll
+Microphone Captures sound Voice recording, video calls,
+voice commands
+Webcam Digital camera Video calls, taking photos
+Scanner Converts paper to digital Scan documents/photos
+Joystick/Gamepad Game controller Playing video games
+Touchscreen Touch-sensitive screen Smartphones, tablets, ATMs
+Digital Camera Takes photos/videos Photography, transfer to
+computer
+Barcode Reader Reads product barcodes Shops, libraries
+Biometric Devices Fingerprint/face scanner Security, attendance
+22
+Mouse Actions:
+ Click: Press left once
+ Double-click: Press left twice quickly
+ Right-click: Opens menu
+ Drag: Hold and move
+Keyboard Types: Wired (USB) or Wireless (Bluetooth)
+OUTPUT DEVICES
+Output Device: Displays/presents information from computer
+Device Description Uses
+Monitor Display screen (LCD, LED, OLED) View documents, videos, games
+Printer Prints on paper Documents, photos, projects
+Speakers Output sound Music, videos, notifications
+Headphones Personal sound device Private listening, online classes, gaming
+Projector Projects screen onto wall Presentations, movies
+Plotter Large technical drawings Architecture, engineering, posters
+Printer Types:
+ Inkjet: Sprays ink; cheap, good for color photos, slow
+ Laser: Uses toner; fast, good text quality, expensive to buy
+ 3D Printer: Prints 3D objects layer by layer
+23
+INPUT & OUTPUT DEVICES (Both)
+ Touchscreen: Input (touch) + Output (display)
+ Headset with Mic: Input (mic) + Output (headphones)
+ Multifunction Printer: Input (scan) + Output (print)
+DEVICE IDENTIFICATION
+By Shape: Keyboard (rectangular keys), Mouse (palm-sized), Monitor (large screen)
+By Connection: Check ports (USB, HDMI) By Function: Input (sends data) or Output (receives
+data)
+MAINTENANCE PRACTICES
+1. Gentle Handling: Don't drop, carry carefully, no hitting
+2. Proper Connections: Plug gently, don't force, right port
+3. Avoid Liquids: No drinks near devices, dry hands
+4. Dust Regularly: Use soft cloth, compressed air
+5. Proper Storage: Safe place, avoid extreme temperatures/moisture
+6. Use Correctly: Follow instructions, don't overload
+7. Update Drivers: Software for hardware (ask teacher/parent)
+8. Report Problems Early: Tell teacher immediately
+SAFETY RULES
+ Don't open devices yourself
+ Unplug before cleaning
+24
+ Wash hands before/after use
+ Don't eat near devices
+ Report damage immediately
+EVALUATION
+1. What is hardware? Give three examples
+2. Differentiate input and output devices
+3. Name five input devices and functions
+4. State three keyboard maintenance practices
+5. List four output devices with uses
+ASSIGNMENT
+1. Explain hardware with five examples
+2. Describe six input devices with functions
+3. Describe five output devices with uses
+4. State five maintenance practices
+5. Why is proper hardware maintenance important?
+25
+WEEK 6: BASIC COMPUTER HARDWARE - STORAGE UNITS
+MEANING OF STORAGE
+Computer Storage: Space where data and information are kept.
+Why Needed: Save work, store files, keep programs, backup data
+TYPES OF STORAGE
+PRIMARY STORAGE (Main Memory)
+Characteristics: Inside computer, temporary, fast, loses data when power is off
+26
+1. RAM (Random Access Memory)
+ Temporary "working memory"
+ Holds currently running programs and data
+ Volatile: Loses data when power off
+ Fast: Very quick access
+ Sizes: 2GB, 4GB, 8GB, 16GB, 32GB
+ Analogy: Like your desk - cleared when you leave
+2. ROM (Read-Only Memory)
+ Permanent memory
+ Stores startup instructions (BIOS)
+ Non-volatile: Keeps data when power off
+ Read-only: Cannot easily change
+RAM vs ROM:
+RAM ROM
+Temporary Permanent
+Volatile Non-volatile
+Stores current work Stores startup instructions
+Can read and write Mostly read-only
+SECONDARY STORAGE (Permanent Storage)
+Characteristics: Long-term, keeps data when power is off
+1. Hard Disk Drive (HDD)
+27
+ Main storage inside computers
+ Spinning magnetic disks
+ Capacity: 500GB, 1TB, 2TB, 4TB+
+ Stores: OS, programs, documents, media
+ Cheaper but slower than SSD
+2. Solid State Drive (SSD)
+ Modern HDD alternative, no moving parts
+ Advantages: Much faster, durable, quiet, less power
+ Disadvantages: More expensive, smaller capacity for same price
+ Common in modern laptops
+3. USB Flash Drive (Pen Drive)
+ Portable, pocket-sized
+ Plug into USB port
+ Sizes: 4GB - 256GB
+ Uses: Transfer files, backup documents
+ Care: Eject safely before unplugging
+4. Memory Card (SD Card)
+ Small cards for phones, cameras, tablets
+ Types: SD, MicroSD, CF
+ Sizes: 8GB - 512GB
+ Use card reader to connect to computer
+5. Optical Discs
+28
+Type Capacity Uses
+CD 700MB Music, software, backup
+DVD 4.7GB - 8.5GB Movies, large software
+Blu-ray 25GB - 50GB HD movies, large games
+Types: ROM (read-only), R (recordable once), RW (rewritable)
+6. External Hard Drive
+ Portable HDD/SSD in external case
+ Connects via USB
+ Sizes: 500GB - 8TB
+ Uses: Backup, extra storage, transfer large files
+7. Cloud Storage
+ Storage on internet servers
+ Examples: Google Drive, iCloud, Dropbox, OneDrive
+Advantages:
+ Access anywhere with internet
+ No physical device to lose
+ Automatic backup, easy sharing
+Disadvantages:
+ Need internet connection
+ Privacy concerns
+ Limited free space (5-15GB)
+STORAGE MEASUREMENTS
+29
+Unit Equals Example
+Bit (b) Smallest unit (0 or 1) One binary digit
+Byte (B) 8 bits One character
+Kilobyte (KB) 1,024 Bytes Small text file
+Megabyte (MB) 1,024 KB Photo, 1-min song
+Gigabyte (GB) 1,024 MB Movie, 250 songs
+Terabyte (TB) 1,024 GB 1,000 movies
+Petabyte (PB) 1,024 TB Very large (big companies)
+Memory Aid: Bite Kitchen Meat Good Today Please
+Approximate File Sizes:
+ Text document: 50 KB
+ Photo: 3-5 MB
+ Song: 3-5 MB
+ HD Movie: 1-4 GB
+ Computer game: 20-100 GB
+IMPORTANCE OF DATA STORAGE
+1. Save Work: Don't lose progress
+2. Organize: Keep files in folders, easy to find
+3. Backup: Important files in 2-3 places
+4. Share: Collaborate on projects
+5. Records: Keep documents, photos, history
+30
+6. Software: Programs need storage space
+STORAGE TIPS
+ Organize: Create clear folders (School, Photos, Music)
+ Backup regularly: Save important work in two places
+ Delete unused files: Free up space
+ Check space: Don't fill completely
+ Use appropriate storage: Flash drive for small files, cloud for important work
+ Protect data: Use passwords, scan for viruses, don't share carelessly
+EVALUATION
+1. Difference between primary and secondary storage?
+2. Differentiate RAM and ROM
+3. List five secondary storage devices with capacities
+4. What is cloud storage? Give two examples
+5. Arrange: Byte, Gigabyte, Terabyte, Kilobyte, Megabyte
+ASSIGNMENT
+1. Explain primary and secondary storage with examples
+2. Compare RAM and ROM in a table
+3. Describe five secondary storage devices with uses
+4. Explain storage measurements from Bit to Terabyte
+5. Why is data storage important? (five reasons)
+31
+6. Advantages and disadvantages of cloud storage
+32
+WEEK 8: BASIC SOFTWARE CONCEPTS
+MEANING OF SOFTWARE
+Software: Set of instructions (programs) that tell the computer what to do. Intangible (cannot
+touch).
+Analogy: Hardware = Car body, Software = Driver
+Hardware + Software = Working Computer
+TYPES OF SOFTWARE
+33
+1. SYSTEM SOFTWARE
+Definition: Manages and controls computer hardware
+Main Type: Operating System (OS)
+Operating Systems Examples:
+ Windows: Most common for PCs (Windows 10, 11)
+ macOS: For Apple Mac computers
+ Linux: Free, open-source (Ubuntu, Fedora)
+ Android: For smartphones/tablets (by Google)
+ iOS: For iPhone/iPad (by Apple)
+ Chrome OS: For Chromebooks
+Other System Software:
+ Device Drivers: Help hardware work (printer driver, graphics driver)
+ Utility Programs: Antivirus, disk cleanup, backup software
+2. APPLICATION SOFTWARE
+Definition: Programs for specific user tasks
+Common Types:
+Type Examples Uses
+Word Processors MS Word, Google Docs Essays, letters, reports
+Spreadsheets Excel, Google Sheets Calculations, budgets, charts
+Presentations PowerPoint, Google Slides Slideshows, class presentations
+34
+Web Browsers Chrome, Firefox, Edge Internet access, YouTube, email
+Email Programs Gmail, Yahoo Mail, Outlook Send/receive messages
+Multimedia VLC, Photoshop, Paint Photos, videos, music
+Graphics/Design CorelDRAW, Canva Logos, posters, illustrations
+Communication WhatsApp, Zoom, Teams Chat, video calls, meetings
+Games FIFA, Minecraft, Fortnite Entertainment
+Security Norton, Avast, McAfee Virus protection
+Educational Duolingo, Khan Academy Learning, practice
+SYSTEM VS APPLICATION SOFTWARE
+System Software Application Software
+Manages computer Helps user do tasks
+Runs in background User interacts directly
+Example: Windows Example: MS Word
+Computer needs it Optional, based on needs
+Controls hardware Uses hardware through OS
+FUNCTIONS OF OPERATING SYSTEM
+1. Managing Hardware: Controls all devices (printer, monitor, etc.)
+2. Running Programs: Allows apps to run, manages multiple programs
+3. File Management: Organizes files/folders, create/delete/copy/move
+4. User Interface: GUI (icons, windows) or CLI (commands)
+35
+5. Memory Management: Allocates RAM to programs
+6. Security: User accounts, passwords, virus protection
+7. Error Detection: Finds and reports errors, troubleshooting
+8. Backup & Recovery: Saves copies, restores lost files
+SOFTWARE CARE
+ Update regularly: OS and programs for security and performance
+ Use antivirus: Scan regularly, avoid suspicious links
+ Avoid pirated software: May contain viruses
+ Close properly: Use Exit/Close button, save work first
+ Uninstall unused programs: Frees space, improves speed
+EVALUATION
+1. What is software? How is it different from hardware?
+2. Name the two main types of software
+3. What is an OS? Give three examples
+4. List five application software with uses
+5. State four functions of an OS
+ASSIGNMENT
+1. Differentiate hardware and software
+2. Explain system and application software with examples
+3. Name and describe five types of application software
+4. List and explain six OS functions
+36
+5. Why is an OS important?
+37
+WEEK 9: COMPUTER BOOTING AND SHUTDOWN
+MEANING OF BOOTING
+Booting: Starting up a computer and loading the operating system.
+ Computer checks hardware
+ Loads OS from hard disk to RAM
+ Prepares computer for use
+TYPES OF BOOTING
+1. Cold Booting (Hard Boot)
+38
+ Starting from completely powered-off state
+ Full startup process (slower)
+ Used: First start of day, after power failure
+2. Warm Booting (Restart)
+ Restarting while computer is on
+ Faster than cold boot
+ Used: After installing software, fixing problems
+BOOTING PROCESS (What Happens)
+1. POST (Power-On Self-Test): Checks hardware, beeps if OK
+2. BIOS Activation: Locates operating system
+3. Load Boot Loader: Small program loads OS
+4. Load OS: Windows/macOS loads into RAM
+5. Load Startup Programs: Antivirus, etc. start automatically
+6. Desktop Appears: Computer ready to use
+Time: 30 seconds to 2 minutes
+PROPER BOOTING PROCEDURE
+1. Check all connections (monitor, keyboard, mouse, power)
+2. Turn on monitor
+3. Press computer power button once
+4. Wait patiently (don't touch anything)
+5. Login if required (username/password)
+39
+6. Wait for desktop to fully load
+SHUTTING DOWN A COMPUTER
+Why Proper Shutdown Matters:
+ Saves work and closes programs properly
+ Prevents data loss and file corruption
+ Protects hard disk
+NEVER:
+ Press power button without shutdown process
+ Unplug while on
+ Turn off at wall socket directly
+PROPER SHUTDOWN PROCEDURE (Windows)
+1. Save work and close all programs
+2. Click Start menu (Windows button)
+3. Click Power icon
+4. Choose Shut down
+5. Wait for complete shutdown (lights off, fans stop)
+6. Turn off monitor
+7. Turn off wall socket (optional, especially during storms)
+POWER OPTIONS
+40
+Option Description When to Use
+Sleep Low power, quick wake-up Short breaks
+Hibernate Saves to disk, no power Longer breaks
+Shut Down Completely off End of day
+Restart Close and reopen OS After software install, troubleshooting
+SAFE HANDLING OF DEVICES
+Physical Care:
+ Handle gently, keep on stable surface
+ Don't move while on or block air vents
+ No heavy objects on computer
+Environmental Care:
+ Keep away from: water, extreme temperatures, direct sunlight, dust, magnets
+Electrical Safety:
+ Use surge protectors
+ Correct voltage (220V in Nigeria)
+ Unplug during thunderstorms
+ Don't overload sockets
+Food & Cleanliness:
+ No food/drinks near computer
+ Dust regularly with soft cloth
+ Clean keyboard and mouse
+41
+Laptop-Specific:
+ Battery: Charge at 20-30%, don't overcharge
+ Transport: Use laptop bag, close lid, shutdown first
+ Screen: Don't touch or press hard, clean with soft cloth
+ Ventilation: Use on hard, flat surface (not bed/pillow)
+COMMON PROBLEMS
+Problem Solution
+Won't start Check power/connections, try different socket
+Starts then goes off May be overheating, report to technician
+Takes long to boot May need cleaning/more RAM
+Won't shut down Close programs manually, wait 5 min, last resort: hold power button 5 sec
+GOOD HABITS
+ Boot and shut down properly daily
+ Save work regularly
+ Keep workspace clean
+ Report problems early
+EVALUATION
+1. What is booting? Name two types
+2. List the booting process steps
+42
+3. Why is proper shutdown important?
+4. Describe correct shutdown procedure
+5. State four safe handling practices
+ASSIGNMENT
+1. Differentiate cold booting and warm booting
+2. Explain the 6-step booting process
+3. Describe proper shutdown procedure
+4. Difference between Sleep and Shut Down?
+5. List eight safe handling practices
+43
+WEEK 10: MS WORD (INTRODUCTION)
+WHAT IS MICROSOFT WORD?
+A word processing software for creating, editing, and printing documents. Uses: Letters, reports,
+certificates, invitations, posters, stories
+OPENING MS WORD
+ Start Menu: Click Start → Find Microsoft Word → Click
+ Desktop: Double-click Word icon
+ Search: Type "Word" in search box
+44
+ Taskbar: Click Word icon (if pinned)
+THE WORD WINDOW
+Key Parts:
+1. Title Bar: Shows document name, minimize/maximize/close buttons
+2. Ribbon: Contains tools organized in tabs (Home, Insert, Design, Layout, Review, View)
+3. Quick Access Toolbar: Save, Undo, Redo buttons
+4. Document Area: White space for typing
+5. Status Bar: Shows page number, word count
+6. Zoom Slider: Adjust text size on screen
+BASIC DOCUMENT OPERATIONS
+Creating New Document: File → New → Blank Document
+Saving (First Time): File → Save As → Choose location → Type filename → Save Quick
+Save: Ctrl + S or click Save icon (�)
+Opening Existing Document: File → Open → Browse → Select file → Open
+EDITING TEXT
+Selecting Text:
+ Click and drag
+ Triple-click (whole paragraph)
+ Ctrl + A (all text)
+Copy/Cut/Paste:
+45
+ Copy: Ctrl + C
+ Cut: Ctrl + X
+ Paste: Ctrl + V
+Undo/Redo:
+ Undo: Ctrl + Z
+ Redo: Ctrl + Y
+FORMATTING TEXT
+Font Styles:
+ Bold: Ctrl + B
+ Italic: Ctrl + I
+ <u>Underline:</u> Ctrl + U
+Alignment:
+ Left: Ctrl + L
+ Center: Ctrl + E
+ Right: Ctrl + R
+ Justify: Ctrl + J
+Other Formatting:
+ Font type and size: Select from Home tab dropdowns
+ Font color: Click A button with colored line
+ Highlight: Click highlight button
+ Bullets/Numbering: Click respective buttons on Home tab
+46
+INSERTING ELEMENTS
+Pictures: Insert tab → Pictures → Select source → Insert Shapes: Insert tab → Shapes →
+Choose → Draw WordArt: Insert tab → WordArt → Choose style → Type text
+PAGE SETUP (Layout Tab)
+ Margins: Normal, Narrow, Wide, Custom
+ Orientation: Portrait (vertical) or Landscape (horizontal)
+ Paper Size: A4 (standard), Letter
+CHECKING & PRINTING
+Spell Check:
+ Red underline = spelling error
+ Blue underline = grammar error
+ Review tab → Spelling & Grammar
+Printing: File → Print → Check settings → Click Print
+EVALUATION
+1. What is Microsoft Word used for?
+2. Name five parts of the Word window
+3. How do you save a document for the first time?
+4. Keyboard shortcuts for: (a) Copy (b) Paste (c) Bold
+5. How do you insert a picture?
+ASSIGNMENT
+47
+1. Describe three methods to open MS Word
+2. List six parts of the Word window
+3. Explain: (a) Saving new document (b) Opening existing document
+4. Describe five formatting options with shortcuts
+5. How do you check spelling and print?
+PRACTICAL TASK
+Type a paragraph about yourself with:
+ Bold title
+ Different colors
+ Bullet points
+ One picture
+ Save with your name as filename
+48
+WEEK 11: REVISION
+COMPREHENSIVE REVIEW OF FIRST TERM
+KEY TOPICS SUMMARY:
+1. INTRODUCTION TO DIGITAL TECHNOLOGY
+ Digital devices use 0s and 1s (binary)
+ Importance: Communication, education, entertainment, banking
+ Examples: Computers, smartphones, tablets, ATMs
+2. HISTORICAL DEVELOPMENT
+49
+ Early tools: Abacus, Napier's Bones, Pascaline
+ Charles Babbage: Father of Computer
+ Five Generations:
+1. Vacuum Tubes (large, hot)
+2. Transistors (smaller, cooler)
+3. Integrated Circuits (chips)
+4. Microprocessors (personal computers)
+5. AI (present-future)
+ Evolution: Analog → Digital
+ Modern trends: AI, IoT, Cloud, VR/AR
+3. CAREER OPPORTUNITIES
+ Software: Developer, Web developer, App creator
+ Hardware: Technician, Engineer
+ Networking: Network Administrator
+ Data: Data Analyst, Database Admin
+ Emerging: AI Specialist, Cybersecurity Expert, Robotics
+ Skills needed: Programming, problem-solving, teamwork
+4. HARDWARE COMPONENTS I
+ Input devices: Keyboard, mouse, microphone, scanner, webcam
+ Output devices: Monitor, printer, speakers, projector
+ Maintenance: Clean regularly, gentle handling, proper storage
+5. STORAGE UNITS
+ Primary: RAM (temporary), ROM (permanent)
+50
+ Secondary: HDD, SSD, Flash drive, Memory card, CD/DVD, Cloud
+ Measurements: Bit → Byte → KB → MB → GB → TB → PB
+ Importance: Save work, backup, organize
+6. SOFTWARE CONCEPTS
+ System Software: OS (Windows, Android, iOS), Drivers, Utilities
+ Application Software: Word processors, Browsers, Games
+ OS Functions: Manage hardware, run programs, file management
+7. BOOTING AND SHUTDOWN
+ Booting: Starting computer (Cold/Warm)
+ Process: POST → BIOS → Load OS → Desktop
+ Shutdown: Save → Close programs → Start menu → Shut down
+ Safe handling: Gentle, away from water, proper voltage
+8. MS WORD
+ Word processor for documents
+ Opening: Start menu, desktop shortcut
+ Saving: File → Save As (first time), Ctrl+S (after)
+ Formatting: Bold, Italic, Underline, Font, Size, Color
+ Insert: Pictures, Shapes, WordArt
+ Page Setup: Margins, Orientation, Size
+ Printing: File → Print
+51
+JSS1 DIGITAL TECHNOLOGIES LESSON NOTES
+SECOND TERM
+WEEK 1: MS POWERPOINT (INTRODUCTION)
+SUBTOPICS:
+ MEANING AND USES OF PRESENTATION SOFTWARE
+ CREATING AND SAVING SLIDES
+ ADDING TEXT, IMAGES, TRANSITIONS
+WHAT IS MICROSOFT POWERPOINT?
+PowerPoint is a presentation software used to create slideshows that combine text, images, and
+effects.
+Other Presentation Software: Google Slides, Apple Keynote, Canva
+52
+USES OF POWERPOINT:
+ Teachers present lessons
+ Students present projects
+ Business meetings
+ Photo slideshows
+ Church presentations
+PARTS OF POWERPOINT WINDOW:
+1. Title Bar: Shows presentation name
+2. Ribbon: Contains tools (Home, Insert, Design, Transitions, Animations)
+3. Slide Panel (Left): Shows all slides
+4. Slide Area (Center): Where you design
+5. Notes Section (Bottom): Speaker notes
+OPENING POWERPOINT:
+ Start menu → Microsoft PowerPoint
+ OR Desktop shortcut
+CREATING NEW PRESENTATION:
+1. Open PowerPoint (blank presentation appears)
+2. OR File → New → Blank Presentation
+WORKING WITH SLIDES:
+53
+Add New Slide: Home tab → New Slide (or Ctrl + M) Delete Slide: Click slide → Press Delete
+Move Slides: Drag slide up/down in left panel Copy Slide: Right-click → Duplicate Slide
+ADDING TEXT:
+1. Click "Click to add title" or "Click to add text"
+2. Type your content
+3. Format using Home tab (Font, Size, Bold, Color)
+ADDING IMAGES:
+1. Insert tab → Pictures
+2. Choose "This Device" or "Online Pictures"
+3. Select image → Insert
+4. Resize by dragging corners
+ADDING SHAPES:
+1. Insert tab → Shapes
+2. Choose shape
+3. Click and drag to draw
+DESIGN AND THEMES:
+1. Design tab → Choose theme
+2. Applies colors, fonts, and backgrounds to all slides
+TRANSITIONS:
+What are Transitions? Effects when moving from one slide to another.
+Adding Transitions:
+1. Select slide
+54
+2. Transitions tab → Choose effect (Fade, Push, Wipe)
+3. Set duration (speed)
+4. "Apply To All" for all slides
+ANIMATIONS:
+What are Animations? Effects for objects on slides (text, images).
+Adding Animations:
+1. Select object
+2. Animations tab → Choose animation (Appear, Fly In, Fade)
+SAVING PRESENTATION:
+First Time:
+1. File → Save As
+2. Choose location
+3. Type file name → Save
+After Editing: Ctrl + S
+RUNNING SLIDESHOW:
+ Slide Show tab → From Beginning
+ OR Press F5
+ Click or Spacebar for next slide
+ Esc to exit
+TIPS FOR GOOD PRESENTATIONS:
+1. Keep text simple (short sentences)
+2. Use large fonts (at least size 24)
+55
+3. Choose clear colors
+4. Don't overcrowd slides
+5. Use relevant images
+6. Practice before presenting
+EVALUATION:
+1. What is PowerPoint used for?
+2. How do you add a new slide?
+3. What is the difference between transitions and animations?
+4. Name three parts of the PowerPoint window.
+5. How do you save a presentation?
+ASSIGNMENT:
+1. Explain what presentation software is with examples.
+2. Describe how to add text and images in PowerPoint.
+3. What are transitions? How do you add them?
+4. List five tips for creating good presentations.
+56
+WEEK 2: 3D MODELLING WITH PAINT 3D
+SUBTOPICS:
+ INTRODUCTION TO PAINT 3D
+ DRAWING BASIC SHAPES AND MODELS
+ SAVING AND EXPORTING 3D PROJECTS
+WHAT IS PAINT 3D?
+Paint 3D is a free Microsoft app for creating 2D images and 3D objects.
+Difference from Regular Paint:
+ Regular Paint: Only flat (2D) drawings
+ Paint 3D: Can create 3D objects you can rotate
+57
+OPENING PAINT 3D: Start menu → Type "Paint 3D" → Open
+PARTS OF PAINT 3D:
+1. Canvas: Center workspace
+2. Tool Menu (Left): Brushes, 2D shapes, 3D shapes, Stickers, Text, Effects
+3. Color Picker (Right): Choose colors and materials
+2D VS 3D:
+ 2D: Flat (like paper)
+ 3D: Has depth (like real objects you can rotate)
+USING BRUSHES:
+1. Click Brushes icon
+2. Choose brush type (Pencil, Marker, Watercolor)
+3. Select color
+4. Draw on canvas
+2D SHAPES:
+1. Click "2D shapes"
+2. Choose shape (Circle, Square, Star)
+3. Click and drag on canvas
+4. Customize fill color, line color, thickness
+3D SHAPES:
+1. Click "3D shapes"
+2. Choose shape (Cube, Sphere, Cylinder, Cone, Pyramid)
+3. Shape appears on canvas
+58
+Working with 3D Objects:
+ Move: Click and drag
+ Rotate: Use rotation circles
+ Resize: Drag corner handles
+ Color: Click color on right panel
+ Material: Choose Matte, Gloss, or Metal
+CREATING SIMPLE MODELS:
+Example 1: Snowman
+1. Add 3 spheres (large, medium, small)
+2. Stack vertically
+3. Color white
+4. Add small spheres for eyes/buttons
+5. Add cone for nose (orange)
+Example 2: Simple House
+1. Add cube (house body)
+2. Add pyramid on top (roof)
+3. Add small rectangles (windows/door)
+4. Color each part
+STICKERS:
+ Ready-made images you can add
+ Click Stickers → Choose sticker → Place on canvas
+59
+TEXT:
+ 2D Text: Flat text
+ 3D Text: Text you can rotate
+Steps:
+1. Click Text icon
+2. Choose 2D or 3D
+3. Type text
+4. Format (font, size, color)
+SAVING YOUR PROJECT:
+1. Menu (top left) → Save or Save As
+2. Choose location
+3. Name file → Save
+4. Saves as .3mf file
+EXPORTING:
+As Image:
+1. Menu → Save as → Image
+2. Choose PNG or JPEG
+3. Save
+As Video:
+1. Menu → Save as → Video
+2. Creates rotating video of your 3D model
+60
+PROJECT IDEAS:
+ Solar system (different sized spheres)
+ Robot (cubes and cylinders)
+ Birthday cake (stacked cylinders)
+ Simple car or airplane
+EVALUATION:
+1. What is Paint 3D used for?
+2. Name five 3D shapes available.
+3. How do you rotate a 3D object?
+4. What is the difference between 2D and 3D?
+5. How do you save your project?
+ASSIGNMENT:
+1. Explain Paint 3D and how it differs from regular Paint.
+2. List the materials available for 3D objects.
+3. Describe how to create a simple snowman.
+4. How do you export a project as an image?
+61
+WEEK 3: DATA PROCESSING
+SUBTOPICS:
+ MEANING AND STAGES OF DATA PROCESSING
+ MANUAL VS ELECTRONIC DATA PROCESSING
+ IMPORTANCE IN REAL-LIFE APPLICATIONS
+MEANING OF DATA PROCESSING
+Data: Raw facts without meaning (names, numbers, dates) Information: Processed data with
+meaning
+62
+Example:
+ Data: John, 78
+ Information: John scored 78 marks in Mathematics
+Data Processing: Converting raw data into useful information.
+STAGES OF DATA PROCESSING:
+1. DATA COLLECTION (Input)
+ Gathering raw data
+ Methods: Forms, surveys, keyboard, scanners
+ Example: School collects student names and ages
+2. VALIDATION
+ Checking if data is correct
+ Ensures accuracy
+ Example: Age can't be 200 or letters
+3. PROCESSING
+ Performing operations on data
+ Operations: Sorting, calculating, grouping, searching
+ Example: Calculating total marks, arranging names alphabetically
+4. STORAGE
+ Saving information for future use
+ Methods: Files, computer hard drive, cloud
+ Example: Keeping student records
+5. RETRIEVAL (Output)
+63
+ Getting stored information when needed
+ Forms: Screen, printed paper, audio
+ Example: Teacher getting report cards
+6. COMMUNICATION
+ Sharing information with others
+ Methods: Reports, email, presentations
+ Example: Sending report cards to parents
+TYPES OF DATA PROCESSING:
+1. MANUAL DATA PROCESSING
+Definition: Processing by hand without computers
+Tools: Pen, paper, calculator, files, registers
+Examples:
+ Teacher marks attendance in register
+ Shopkeeper writes sales in notebook
+ Library cards filled by hand
+Advantages:
+ No electricity needed
+ No expensive equipment
+ Simple
+Disadvantages:
+ Very slow
+ Many errors possible
+64
+ Tiring
+ Hard to store large amounts
+2. ELECTRONIC DATA PROCESSING
+Definition: Processing using computers
+Tools: Computers, software, databases, internet
+Examples:
+ School management system
+ Bank ATM
+ Supermarket barcode scanner
+ Online registration
+Advantages:
+ Very fast
+ Accurate
+ Can handle large amounts of data
+ Easy to search
+ Automatic
+Disadvantages:
+ Expensive
+ Needs electricity
+ Requires training
+ Can have technical problems
+COMPARISON:
+65
+Feature Manual Electronic
+Speed Slow Very fast
+Accuracy Many errors Few errors
+Cost Cheap Expensive
+Storage Large space Small space
+Retrieval Slow Instant
+REAL-LIFE APPLICATIONS:
+1. Education: Student records, report cards, timetables
+2. Healthcare: Patient records, appointments, test results
+3. Banking: Account balance, transfers, ATM
+4. Business: Sales, inventory, customer data
+5. Government: Census, ID cards, elections
+EVALUATION:
+1. What is data processing?
+2. Name the six stages of data processing.
+3. Differentiate between manual and electronic data processing.
+4. Give three advantages of electronic processing.
+5. State three real-life uses of data processing.
+ASSIGNMENT:
+1. Explain the difference between data and information.
+2. Describe the six stages of data processing.
+3. Compare manual and electronic data processing.
+66
+4. How is data processing used in schools and banks?
+67
+WEEK 4: BASIC COMPUTER COMMUNICATION
+SUBTOPICS:
+ MEANING AND IMPORTANCE OF COMMUNICATION
+ TYPES: WIRED AND WIRELESS
+ INTRODUCTION TO THE INTERNET
+MEANING OF COMPUTER COMMUNICATION
+Computer Communication: Sharing data between computers or devices.
+Elements:
+68
+1. Sender: Device sending information
+2. Message: Information being sent
+3. Medium: Path for message (cable, Wi-Fi)
+4. Receiver: Device receiving information
+5. Protocol: Rules for communication
+IMPORTANCE:
+ Fast information sharing
+ Global reach
+ Cost-effective
+ Collaboration
+ Access to resources
+ Entertainment and education
+TYPES OF COMPUTER COMMUNICATION:
+1. WIRED COMMUNICATION
+Definition: Communication through physical cables.
+Types of Cables:
+A. Ethernet Cable:
+ Most common for networks
+ Connects computer to router
+ Also called LAN cable
+B. Fiber Optic Cable:
+69
+ Uses light to transmit data
+ Very fast
+ Used for high-speed internet
+Advantages of Wired:
+ Fast and reliable
+ Secure
+ Stable connection
+Disadvantages:
+ Limited mobility
+ Installation needed
+ Cables can be messy
+2. WIRELESS COMMUNICATION
+Definition: Communication without cables, using electromagnetic waves.
+Types:
+A. Wi-Fi
+ Wireless internet network
+ Router broadcasts signal
+ Devices connect by entering password
+ Range: 30-50 meters
+Uses: Home internet, schools, cafés
+Advantages:
+ Mobility (move while connected)
+ Multiple devices
+70
+ No cables
+Disadvantages:
+ Slower than wired
+ Limited range
+ Can be hacked if not secured
+B. Bluetooth
+ Short-range wireless (about 10 meters)
+ Connects devices directly
+Uses: Wireless headphones, mouse, keyboard, file transfer
+C. Mobile/Cellular Networks (3G, 4G, 5G)
+ Wireless through phone towers
+ Mobile internet and calls
+Advantages: Wide coverage, works while moving Disadvantages: Data charges, speed varies
+D. Satellite
+ Uses satellites in space
+ Global coverage
+ Used for GPS, satellite TV
+COMPARISON:
+Feature Wired Wireless
+Speed Faster Slower
+Mobility Limited High
+Security More secure Less secure
+Installation Complex Easy
+71
+INTRODUCTION TO THE INTERNET
+What is the Internet? A global network of connected computers that share information.
+How to Access Internet:
+1. Device (computer, phone, tablet)
+2. Internet connection (Wi-Fi, mobile data)
+3. ISP account (MTN, Airtel, Glo, 9mobile)
+4. Web browser (Chrome, Firefox, Edge)
+What You Can Do:
+1. Communication: Email, WhatsApp, video calls
+2. Information: Google search, news, Wikipedia
+3. Education: Online courses, YouTube tutorials
+4. Entertainment: Netflix, YouTube, music, games
+5. Shopping: Jumia, Konga, online stores
+6. Banking: Check balance, transfer money
+Important Terms:
+ Website: Collection of web pages (www.google.com)
+ URL: Web address
+ Browser: Software to view websites (Chrome)
+ Search Engine: Helps find information (Google, Bing)
+ Download: Copy from internet to device
+ Upload: Send from device to internet
+ Streaming: Watch/listen without downloading
+72
+EVALUATION:
+1. What is computer communication?
+2. Name three types of wireless communication.
+3. Give three advantages of wired communication.
+4. What is the Internet?
+5. State five uses of the Internet.
+ASSIGNMENT:
+1. Explain computer communication and its importance.
+2. Compare wired and wireless communication.
+3. Describe Wi-Fi and Bluetooth.
+4. What is the Internet and how do you access it?
+5. List six things you can do on the Internet.
+73
+WEEK 6: INTRODUCTION TO COMPUTER NETWORKS
+SUBTOPICS:
+ DEFINITION OF A NETWORK
+ COMPONENTS OF A NETWORK
+ BENEFITS OF NETWORKING
+WHAT IS A COMPUTER NETWORK?
+Network: Two or more computers connected together to share resources and information.
+Simple Example: Computers in your school computer lab connected together.
+WHY CREATE NETWORKS?
+ Share files and printers
+ Share internet connection
+ Communicate easily
+ Work together on projects
+TYPES OF NETWORKS:
+1. LAN (Local Area Network)
+ Small area (one building)
+ School, office, home
+ Fast and cheap
+2. WAN (Wide Area Network)
+ Large area (city, country, world)
+74
+ Internet is the largest WAN
+ More expensive
+3. MAN (Metropolitan Area Network)
+ Covers a city
+ Between LAN and WAN
+COMPONENTS OF A NETWORK:
+1. COMPUTERS/DEVICES
+ Desktops, laptops, tablets, phones
+ Called "nodes" or "hosts"
+75
+2. NETWORK INTERFACE CARD (NIC)
+ Hardware inside computer
+ Allows computer to connect to network
+ Has unique MAC address
+3. CABLES
+ Ethernet Cable: Most common
+ Connects devices together
+4. ROUTER
+ Connects network to internet
+ Directs data to correct destination
+ Wi-Fi routers broadcast wireless signal
+5. SWITCH
+ Connects multiple devices
+ Allows them to communicate
+6. MODEM
+ Converts signals for internet connection
+ Often combined with router
+7. SERVER
+ Powerful computer that provides services
+ Stores files, manages network
+8. NETWORK SOFTWARE
+ Operating system
+ Network protocols (rules)
+76
+ Security software
+HOW A NETWORK WORKS (Simple):
+1. Computer A wants to send file to Computer B
+2. File broken into small packets
+3. Packets travel through network (cables/Wi-Fi)
+4. Switch/router directs packets to Computer B
+5. Computer B receives and reassembles file
+6. All happens in seconds!
+BENEFITS OF NETWORKING:
+1. RESOURCE SHARING
+ Printers: One printer for many computers
+ Files: Share documents easily
+ Internet: One connection for all
+ Software: Share programs
+Example: School computer lab - 20 computers share 2 printers
+2. COMMUNICATION
+ Send messages instantly
+ Email within organization
+ Video conferencing
+ Group chats
+3. DATA STORAGE
+77
+ Central storage on server
+ Access files from any computer
+ Easy backup
+4. COST SAVINGS
+ Share expensive devices (printers, scanners)
+ One internet connection
+ Shared software licenses
+5. COLLABORATION
+ Work together on projects
+ Share ideas
+ Real-time updates
+6. SECURITY
+ Central backup
+ Better virus protection
+ Controlled access
+ Monitor network activity
+7. FLEXIBILITY
+ Access from anywhere in network
+ Add new devices easily
+NETWORK TOPOLOGIES (Arrangement):
+1. BUS TOPOLOGY
+ All computers on single cable
+78
+ Simple and cheap
+ If cable breaks, network fails
+2. STAR TOPOLOGY
+ All computers connect to central hub/switch
+ Most common
+ If one cable breaks, others still work
+3. RING TOPOLOGY
+ Computers in circular arrangement
+ Data travels in one direction
+NETWORK SECURITY:
+ Passwords and user accounts
+ Firewall (blocks unauthorized access)
+ Antivirus software
+ Encryption (scrambles data)
+EVALUATION:
+1. What is a computer network?
+2. Differentiate between LAN and WAN.
+3. Name five components of a network.
+4. State four benefits of networking.
+5. What does a router do?
+ASSIGNMENT:
+1. Define computer network with examples.
+79
+2. Describe six components of a network.
+3. Explain five benefits of networking.
+4. What is the difference between LAN, WAN, and MAN?
+5. Draw and explain star topology.
+80
+WEEK 8: BASIC INTERNET CONCEPTS
+SUBTOPICS:
+ MEANING OF INTERNET
+ COMMON TERMS
+ RESPONSIBLE INTERNET USE
+MEANING OF INTERNET
+Internet: Global network of connected computers sharing information.
+Also called: The Net, The Web, Cyberspace
+81
+Brief History:
+ Started in 1960s (ARPANET)
+ Public in 1990s
+ World Wide Web created by Tim Berners-Lee (1989)
+ Now billions of users worldwide
+COMMON INTERNET TERMS:
+1. WEBSITE
+ Collection of web pages
+ Has unique address
+ Example: www.bbc.com
+2. URL (Uniform Resource Locator)
+ Web address
+ Example: https://www.google.com
+ Parts:
+o https://: Protocol (secure)
+o www: World Wide Web
+o google: Domain name
+o .com: Extension (commercial)
+3. BROWSER
+ Software to view websites
+ Examples: Chrome, Firefox, Edge, Safari
+How to use:
+82
+1. Open browser
+2. Type URL in address bar
+3. Press Enter
+4. Website loads
+4. SEARCH ENGINE
+ Helps find information online
+ Examples: Google, Bing, Yahoo
+How to search:
+1. Go to google.com
+2. Type what you want to find
+3. Press Enter or click Search
+4. Results appear
+5. HOMEPAGE
+ First page of a website
+ Main page
+6. HYPERLINK (Link)
+ Clickable text/image
+ Takes you to another page
+ Usually blue and underlined
+7. DOWNLOAD
+ Copy file from internet to your device
+ Example: Download a song, document
+8. UPLOAD
+83
+ Send file from your device to internet
+ Example: Upload photo to Facebook
+9. BANDWIDTH
+ Speed of internet connection
+ Measured in Mbps (Megabits per second)
+ Higher = faster
+10. STREAMING
+ Watch/listen without downloading
+ Example: YouTube videos, Spotify
+11. ONLINE/OFFLINE
+ Online: Connected to internet
+ Offline: Not connected
+12. ISP (Internet Service Provider)
+ Company providing internet
+ Nigeria: MTN, Airtel, Glo, 9mobile
+13. EMAIL (Electronic Mail)
+ Sending messages online
+ Example: Gmail, Yahoo Mail
+14. SOCIAL MEDIA
+ Websites for connecting with people
+ Example: Facebook, Instagram, Twitter, TikTok
+15. CLOUD
+ Storage on internet servers
+84
+ Access from anywhere
+ Example: Google Drive, iCloud
+TYPES OF WEBSITES:
+1. Educational: Schools, online courses (Khan Academy)
+2. News: BBC, CNN, Punch, Vanguard
+3. Entertainment: YouTube, Netflix, Spotify
+4. Social Media: Facebook, Instagram
+5. E-commerce: Jumia, Konga, Amazon
+6. Search Engines: Google, Bing
+7. Government: Official government sites (.gov.ng)
+USING A BROWSER:
+Basic Browser Functions:
+Address Bar:
+ Type web address
+ Shows current URL
+Back/Forward Buttons:
+ Go to previous/next page
+Refresh Button:
+ Reload current page
+Bookmarks/Favorites:
+ Save websites you visit often
+85
+Tabs:
+ Open multiple websites at once
+Search Bar:
+ Quick search without going to search engine
+History:
+ See websites you visited before
+RESPONSIBLE INTERNET USE:
+1. USE FOR GOOD PURPOSES
+ Educational research
+ Learning new skills
+ Positive communication
+ Creative projects
+2. DON'T:
+ Cyberbully others
+ Cheat on homework
+ Visit inappropriate sites
+ Spread false information
+ Waste too much time
+3. TIME MANAGEMENT
+ Set limits
+ Balance with other activities
+ Don't use late at night
+86
+4. RESPECT OTHERS
+ Be polite online
+ No mean comments
+ Respect privacy
+ Don't share others' photos without permission
+5. VERIFY INFORMATION
+ Not everything online is true
+ Check multiple sources
+ Be critical
+6. ASK PERMISSION
+ Ask parents before:
+o Creating accounts
+o Downloading
+o Making purchases
+o Sharing personal information
+INTERNET ETIQUETTE (Netiquette):
+1. Use proper language (no insults)
+2. Don't type in ALL CAPS (shouting)
+3. Think before posting
+4. Give credit to sources
+5. Respect copyright
+EVALUATION:
+87
+1. What is the Internet?
+2. Explain: Website, URL, Browser, Search Engine
+3. What is the difference between download and upload?
+4. Name three types of websites with examples.
+5. State four rules for responsible internet use.
+ASSIGNMENT:
+1. Define Internet and explain how it works simply.
+2. Explain five common internet terms.
+3. Describe how to use a search engine.
+4. What is responsible internet use? Give five examples.
+5. List six browser functions.
+88
+WEEK 9: ONLINE SAFETY RULES
+SUBTOPICS:
+ DANGERS OF THE INTERNET
+ SAFE BROWSING HABITS
+ RESPONSIBLE USE OF DIGITAL DEVICES
+DANGERS OF THE INTERNET:
+1. CYBERBULLYING
+ Bullying online (mean messages, posts, threats)
+89
+ Can happen on social media, chats, gaming
+What to do:
+ Don't respond to bullies
+ Save evidence (screenshots)
+ Tell parent/teacher
+ Block the person
+ Report to platform
+2. ONLINE PREDATORS
+ Strangers who pretend to be friends
+ Want to harm or trick you
+Warning signs:
+ Ask personal questions
+ Want to meet in person
+ Ask for photos
+ Tell you to keep secrets
+What to do:
+ Don't talk to strangers online
+ Never share personal information
+ Tell parents immediately
+3. INAPPROPRIATE CONTENT
+ Violent, sexual, or disturbing material
+ Not suitable for your age
+How to avoid:
+90
+ Use kid-safe search engines
+ Ask parents to set parental controls
+ Don't click suspicious links
+ Exit immediately if you see bad content
+4. SCAMS AND FRAUD
+ Tricks to steal money or information
+ "You won a prize!" or "Free gift!"
+Warning signs:
+ Too good to be true
+ Asks for money
+ Urgent/pressuring messages
+ Poor spelling/grammar
+What to do:
+ Don't click suspicious links
+ Don't give personal/financial information
+ Tell parents
+5. IDENTITY THEFT
+ Someone steals your personal information
+ Uses it to pretend to be you
+6. MALWARE (Viruses)
+ Harmful software that damages device
+ Gets in through downloads, links
+7. PHISHING
+91
+ Fake emails/messages pretending to be real companies
+ Trick you into giving information
+8. CYBERSTALKING
+ Someone following your online activities
+ Harassing you
+9. OVERSHARING
+ Sharing too much personal information
+ Can be used against you
+10. ADDICTION
+ Spending too much time online
+ Affects studies, health, relationships
+SAFE BROWSING HABITS:
+1. KEEP PERSONAL INFORMATION PRIVATE
+Never share online:
+ Full name
+ Address
+ Phone number
+ School name
+ Age/date of birth
+ Photos of yourself
+ Parents' information
+ Where you go/what you do
+92
+2. USE STRONG PASSWORDS
+ At least 8 characters
+ Mix of letters, numbers, symbols
+ Don't use: Your name, birthday, "password123"
+ Change regularly
+ Don't share passwords
+3. CHECK WEBSITE SECURITY
+ Look for "https://" (s = secure)
+ Padlock icon in address bar
+ Be careful on sites without these
+4. THINK BEFORE CLICKING
+ Don't click suspicious links
+ Hover over links to see real destination
+ Don't download from unknown sources
+5. USE PARENTAL CONTROLS
+ Ask parents to set filters
+ Blocks inappropriate content
+ Limits screen time
+6. PRIVACY SETTINGS
+ Set social media accounts to private
+ Control who sees your posts
+ Limit friend requests to people you know
+7. BE CAREFUL WITH PUBLIC WI-FI
+93
+ Not secure
+ Don't enter passwords or buy things
+ Use at home or secure networks
+8. DON'T MEET ONLINE FRIENDS
+ People may not be who they say
+ Never meet without parents
+ If you must, bring parent to public place
+9. LOG OUT
+ Always log out when done
+ Especially on shared computers
+10. REPORT PROBLEMS
+ Tell parents/teachers about:
+o Mean messages
+o Inappropriate content
+o Strangers contacting you
+o Anything that makes you uncomfortable
+RESPONSIBLE USE OF DIGITAL DEVICES:
+1. SCREEN TIME LIMITS
+ Not more than 2 hours daily (outside schoolwork)
+ Take breaks every 30 minutes
+ No screens 1 hour before bed
+2. BALANCE ACTIVITIES
+94
+ Homework first
+ Physical activity
+ Reading
+ Family time
+ Then screen time
+3. APPROPRIATE CONTENT
+ Age-appropriate games, videos, websites
+ Educational content
+ Ask parents if unsure
+4. PROPER POSTURE
+ Sit up straight
+ Device at eye level
+ Good lighting
+ Protect your eyes
+5. DEVICE CARE
+ Handle gently
+ Keep away from water
+ Charge properly
+ Clean screen regularly
+6. FAMILY RULES
+ Follow parents' rules
+ Devices off during meals
+ No devices in bedroom at night
+95
+ Be honest about usage
+7. BE A GOOD DIGITAL CITIZEN
+ Be kind online
+ Help others
+ Stand up against bullying
+ Report problems
+RULES FOR SOCIAL MEDIA (When Older):
+1. Follow age restrictions (most require 13+)
+2. Private accounts only
+3. Only accept friend requests from people you know
+4. Think before posting (it's permanent!)
+5. No location sharing
+6. Don't respond to mean comments
+RED FLAGS (Tell Parent Immediately):
+ Someone asks you to keep secrets
+ Receives gifts from strangers
+ Stranger wants to meet you
+ Asked for photos/videos
+ Uncomfortable messages
+ Threats or bullying
+96
+EVALUATION:
+1. Name five dangers of the Internet.
+2. What should you never share online?
+3. What is cyberbullying? What should you do?
+4. State five safe browsing habits.
+5. How much screen time is recommended daily?
+ASSIGNMENT:
+1. Explain five dangers of the Internet.
+2. Describe eight safe browsing habits.
+3. What personal information should you never share online?
+4. What are the warning signs of online predators?
+5. List six rules for responsible use of digital devices.
+97
+WEEK 10: ONLINE PRIVACY AND SECURITY
+MEANING OF ONLINE PRIVACY
+Online Privacy: Protecting your personal information on the internet.
+Why Privacy Matters:
+ Prevent identity theft and scams
+ Safety from predators
+ Control your reputation
+ Protect family
+Personal Information Includes: Name, address, phone, photos, school, family info, passwords,
+location, browsing history
+98
+PROTECTING YOUR PRIVACY
+Area How to Protect
+Social Media Privacy settings (friends only), don't accept strangers, think before posting, no
+location tags
+Emails Don't open from strangers, don't click suspicious links, don't reply to spam
+Apps/Games Read permissions, don't give unnecessary access, use parental controls
+Photos/Videos No private photos, careful with background, no school uniform photos, ask
+permission before posting others
+Browsing Use secure sites (https), clear history on shared devices, use incognito mode
+PASSWORD CREATION AND MANAGEMENT
+Password: Secret word/phrase that protects your accounts
+Why Important: Protects personal info, prevents unauthorized access, keeps accounts safe
+CREATING STRONG PASSWORDS
+GOOD PASSWORD Must Have:
+ At least 8 characters (longer better)
+ Uppercase and lowercase letters
+ Numbers
+ Special symbols (@, #, $, !)
+ Not a real word
+ Unique for each account
+Examples of Strong Passwords:
+99
+ MyDog#2024@Home
+ Sch00l&Fun123!
+ Blue$Sky#88
+BAD PASSWORDS (Don't Use):
+ Your name, birthdate, simple words (password, 123456), phone number, consecutive
+numbers
+PASSWORD TIPS
+1. Create Memorable Passwords:
+o Use phrase: "I love playing football" = ILP@f00tb@ll!
+o Replace letters: E=3, A=@, O=0, I=1
+o "School is fun" = Sch00l1sFun!
+2. Use Different Passwords:
+o Don't use same everywhere
+o Different for: email, social media, gaming
+3. Change Regularly:
+o Every 3-6 months
+o Immediately if suspicious activity
+4. Never Share:
+o Don't tell friends
+o Don't write where others see
+o Parents only (if necessary)
+100
+5. Password Managers:
+o Apps that remember passwords
+o One master password
+TWO-FACTOR AUTHENTICATION (2FA)
+ Extra security layer
+ Password + code sent to phone
+ Enable when available
+AVOIDING SCAMS AND PHISHING
+Scam: Trick to steal money or information
+COMMON ONLINE SCAMS
+Scam Type How It Works
+"You Won!" Scam Claims you won prize, asks for info/payment (you didn't enter contest)
+Free Gift Scam "Free iPhone/games!" asks for info/payment (nothing is free)
+Phishing Fake email pretending to be real company, asks to verify info or click
+link
+Fake Charity Asks for donations, money goes to scammer
+Online Shopping
+Scam
+Fake stores take money, don't send product
+WARNING SIGNS OF SCAMS
+1. Too Good to Be True: Amazing offers, huge discounts, free expensive items
+101
+2. Urgent/Threatening: "Act now!" "Account closes!" Creates panic
+3. Asks for Personal Info: Real companies don't ask for passwords via email
+4. Poor Grammar/Spelling: Many mistakes, unprofessional
+5. Suspicious Email Address: Looks similar but not exact (amaz0n.com)
+6. Unknown Sender: Don't know person/company
+HOW TO AVOID SCAMS
+1. Don't Click Suspicious Links: Hover to check, don't click if suspicious
+2. Verify Independently: Go directly to website, don't use email links
+3. Don't Give Information: Real companies don't ask for passwords
+4. Check URL: Real: amazon.com vs Fake: amaz0n-deals.com
+5. Use Antivirus: Protects from malicious links
+6. Report: Tell parents, mark as spam, report to platform
+7. If in Doubt, Don't: Ask parent/teacher
+WHAT TO DO IF SCAMMED
+1. Tell parents immediately
+2. Change passwords
+3. Report to platform
+4. Monitor accounts
+5. Learn from experience
+SAFE ONLINE PRACTICES
+102
+DO ✓
+ Use strong, unique passwords
+ Enable two-factor authentication
+ Check website security (https, padlock)
+ Think before clicking
+ Keep software updated
+ Use antivirus
+ Tell parents about problems
+ Verify before trusting
+DON'T ✗
+ Share personal information
+ Use weak passwords
+ Click suspicious links
+ Download from unknown sources
+ Trust strangers online
+ Respond to suspicious messages
+ Meet online friends alone
+ Share passwords
+EVALUATION
+1. What is online privacy and why is it important?
+2. What makes a strong password? Give an example
+103
+3. What is phishing?
+4. Name five warning signs of online scams
+5. What should you do if you receive suspicious email?
+ASSIGNMENT
+1. Explain online privacy and why it matters
+2. Describe how to create strong passwords with examples
+3. What is two-factor authentication?
+4. Explain five common online scams
+5. List eight ways to avoid scams and phishing
+104
+WEEK 11: REVISION
+COMPREHENSIVE REVIEW OF SECOND TERM
+KEY TOPICS SUMMARY:
+1. MS POWERPOINT
+ Presentation software for slideshows
+ Create slides with text, images, animations
+ Transitions: effects between slides
+ Save and present to audience
+2. PAINT 3D
+ Create 2D and 3D objects
+ 3D shapes: Cube, sphere, cylinder, cone
+ Rotate, color, resize objects
+ Save as image or video
+105
+3. DATA PROCESSING
+ Converting data to information
+ Stages: Collection, Validation, Processing, Storage, Retrieval, Communication
+ Manual vs Electronic
+ Used in schools, banks, hospitals
+4. COMPUTER COMMUNICATION
+ Wired (Ethernet, Fiber optic)
+ Wireless (Wi-Fi, Bluetooth, Mobile network)
+ Internet: Global network of computers
+ Uses: Communication, education, entertainment
+5. COMPUTER NETWORKS
+ LAN: Local area (school, office)
+ WAN: Wide area (city, country)
+ Components: Computers, router, switch, cables
+ Benefits: Resource sharing, communication
+6. INTERNET CONCEPTS
+ Website, URL, Browser, Search engine
+ Download, Upload, Streaming
+ Use responsibly
+7. ONLINE SAFETY
+ Dangers: Cyberbullying, predators, scams, inappropriate content
+ Safe browsing: Strong passwords, privacy settings, verify information
+ Don't share personal information
+106
+8. PRIVACY AND SECURITY
+ Protect personal information
+ Strong passwords (8+ characters, mix types)
+ Two-factor authentication
+ Avoid phishing: Don't click suspicious links, verify sender
+107
+JSS 1 DIGITAL TECHNOLOGIES LESSON NOTES
+THIRD TERM
+WEEK 1: INTERNET COMMUNICATION PRACTICES
+Meaning of Internet Communication
+Internet communication is the exchange of information between individuals or groups using the
+internet as a medium. It enables instant global connectivity, breaking geographical barriers and
+allowing multimedia sharing (text, images, audio, video). Key advantages include speed, costeffectiveness,
+accessibility, and the ability to maintain digital records of conversations.
+Communication Tools
+108
+Email (Electronic Mail)
+Email is a formal, professional communication tool used for sending messages and attachments
+to one or multiple recipients.
+Key Features:
+ Subject lines for message organization
+ CC and BCC options for multiple recipients
+ Attachment capabilities (documents, images, files)
+ Folders and filters for organization
+ Search functionality
+Email Structure:
+ Recipient address
+ Subject line
+ Greeting
+ Body (main message)
+ Closing/signature
+ Attachments (if needed)
+Common Providers: Gmail, Yahoo Mail, Outlook, ProtonMail
+Instant Messaging (IM)
+Real-time text-based communication for quick, informal conversations.
+Popular Platforms: WhatsApp, Telegram, Messenger, Signal, iMessage
+Features:
+ Read receipts and typing indicators
+ Voice messages and multimedia sharing
+109
+ Group chats
+ Stickers and emojis
+ File sharing
+ Status updates
+Video Conferencing
+Face-to-face communication over the internet with audio, video, and screen-sharing capabilities.
+Popular Platforms: Zoom, Google Meet, Microsoft Teams, Skype
+Features:
+ Screen sharing for presentations
+ Virtual backgrounds
+ Recording capabilities
+ Chat functionality
+ Breakout rooms
+ Waiting rooms for security
+Common Uses: Online classes, business meetings, family gatherings, medical consultations, job
+interviews
+Netiquette (Internet Etiquette)
+Netiquette refers to acceptable behavior and communication standards online.
+Core Principles:
+1. Respect Others: Treat people online as you would in person
+2. Think Before Posting: Content can be permanent; consider consequences
+3. Use Appropriate Language: Avoid offensive or aggressive words
+4. Avoid ALL CAPS: Interpreted as shouting
+110
+5. Be Clear and Concise: Respect others' time
+6. Respect Privacy: Don't share others' information without permission
+7. Give Credit: Acknowledge sources and original creators
+8. Proofread: Check spelling and grammar
+9. Be Patient: Allow time for responses
+10. Use Professional Tone: Especially in formal settings
+EVALUATION
+1. Define internet communication and state three advantages it has over traditional
+communication methods.
+2. Compare email and instant messaging. Give two uses of each.
+3. Explain five netiquette rules that should be followed when communicating online.
+4. List four features of video conferencing platforms and explain how they support online
+learning.
+5. Why is it important to "think before you post" online? Give two examples.
+ASSIGNMENT
+1. Write a properly formatted email to your class teacher requesting permission to be absent
+from school for a family event.
+2. Create a list of 8 differences between email and instant messaging in a table format.
+3. Design a colorful poster showing 10 netiquette rules for students using the school
+computer lab.
+4. Interview a parent or guardian about the internet communication tools they use for work.
+Write a 150-word report.
+111
+5. Research one video conferencing platform not discussed in class and write a paragraph
+about its features and uses.
+112
+WEEK 2: SPAM AND ONLINE THREATS
+Meaning of Spam
+Spam refers to unsolicited, unwanted messages sent in bulk over the internet, typically for
+advertising, phishing, or spreading malware. It wastes time, clogs systems, and can pose security
+risks.
+Types of Spam:
+ Email spam
+ SMS/text spam
+ Comment spam on websites
+113
+ Social media spam
+ Search engine spam
+Why Spam is Harmful:
+ Wastes time and bandwidth
+ Can spread viruses and malware
+ May lead to identity theft
+ Clogs email servers
+ Used for phishing attacks
+Common Online Scams
+1. Phishing Scams
+Fake messages pretending to be from legitimate organizations to steal personal information.
+Warning Signs:
+ Generic greetings ("Dear Customer")
+ Urgent language creating panic
+ Spelling and grammar errors
+ Suspicious sender addresses
+ Requests for passwords or financial details
+2. Lottery/Prize Scams
+Claims of winning money or prizes, requiring fees or personal information to claim.
+Red Flags:
+ You didn't enter any contest
+ Requests for payment to claim winnings
+ Pressure to act quickly
+114
+ Claims from unknown foreign sources
+3. Romance Scams (Catfishing)
+Fake online relationships developed to eventually request money for fabricated emergencies.
+Prevention:
+ Be cautious with people you've never met
+ Never send money to online-only contacts
+ Use video chat to verify identity
+ Research profile photos using reverse image search
+4. Fake Online Stores
+Fraudulent websites that take payment but never deliver products.
+Identifying Signs:
+ Deals too good to be true
+ Poor website design
+ No physical address or contact information
+ Only accepts untraceable payment methods
+ Recently created websites
+5. Tech Support Scams
+Scammers pose as technical support, claiming device problems and requesting remote access or
+payment.
+Warning Signs:
+ Unsolicited calls about computer problems
+ Pressure to act immediately
+ Requests for remote device access
+115
+ Payment demands for fake fixes
+Preventive Measures
+Password Security:
+ Use strong passwords (8-12 characters mixing uppercase, lowercase, numbers, symbols)
+ Different passwords for different accounts
+ Change passwords regularly
+ Never share passwords
+Email and Message Safety:
+ Verify sender identity before clicking links
+ Check email addresses for misspellings
+ Don't open attachments from unknown sources
+ Use spam filters
+ Report suspicious messages
+Account Protection:
+ Enable two-factor authentication (2FA)
+ Use biometric authentication when available
+ Log out from shared computers
+ Monitor account activity regularly
+Software and Device Security:
+ Keep all software updated
+ Use antivirus software
+ Enable firewalls
+ Download apps only from official stores
+116
+ Scan downloads before opening
+General Best Practices:
+ Trust your instincts
+ Research before acting
+ Don't rush decisions
+ Report scams to authorities
+ Educate family members
+ Keep personal information private on social media
+ Monitor financial statements
+EVALUATION
+1. What is spam? Explain three types of spam and state why it is harmful.
+2. Describe how phishing scams work and list four warning signs.
+3. What is two-factor authentication (2FA)? Explain why it improves account security.
+4. List and explain five ways to protect yourself from online threats.
+5. Your friend receives an email claiming their bank account will be closed unless they click
+a link and enter their password. What type of scam is this? What should they do?
+ASSIGNMENT
+1. Create an awareness poster about ONE online scam. Include what it is, how it works,
+warning signs, and prevention tips.
+2. Write a short story (200 words) about a student who recognizes and avoids an online
+scam. Highlight the warning signs they noticed.
+117
+3. Design a password security checklist with 10 tips that could be displayed in your school
+computer lab.
+4. Research a real online scam case (with guidance). Write a 150-word report explaining
+what happened and lessons learned.
+5. Explain in a paragraph why using the same password for all accounts is dangerous.
+Suggest a safe alternative method.
+118
+WEEK 3: INTELLECTUAL PROPERTY
+Meaning of Intellectual Property
+Intellectual Property (IP) refers to creations of the human mind that have commercial or artistic
+value and are protected by law. These include inventions, artistic works, designs, symbols,
+names, and images. IP rights give creators legal ownership and control over their work,
+preventing unauthorized use.
+Why IP Protection Matters:
+ Encourages creativity and innovation
+ Protects creators' financial interests
+119
+ Ensures proper credit to original creators
+ Prevents theft of ideas and work
+ Supports economic growth
+Types of Intellectual Property
+1. Copyright
+Legal protection for original creative works including books, music, films, software, artwork,
+photographs, and digital content.
+What Copyright Protects:
+ Literary works (books, articles, poems)
+ Musical compositions and recordings
+ Artistic works (paintings, sculptures, photographs)
+ Dramatic works (plays, scripts)
+ Films and videos
+ Computer programs and software
+ Architectural designs
+Copyright Duration: Generally lasts for the creator's lifetime plus 50-70 years (varies by
+country).
+Rights of Copyright Holders:
+ Reproduce the work
+ Distribute copies
+ Create adaptations or derivative works
+ Perform or display publicly
+ License others to use the work
+120
+Copyright Symbol: © followed by year and owner's name
+2. Trademark
+A distinctive sign, symbol, word, phrase, logo, or design that identifies and distinguishes
+products or services of one company from others.
+Examples:
+ Nike's swoosh logo
+ McDonald's golden arches
+ Apple's apple logo
+ Coca-Cola's script font
+ Company slogans
+Purpose of Trademarks:
+ Brand identification
+ Consumer protection
+ Business reputation
+ Market differentiation
+Trademark Symbol: ™ (for unregistered) or ® (for registered trademarks)
+3. Plagiarism
+The act of using someone else's work, ideas, or words without giving proper credit or obtaining
+permission, presenting them as your own.
+Forms of Plagiarism:
+ Direct plagiarism: Copying word-for-word without quotes or citation
+ Self-plagiarism: Reusing your own previous work without disclosure
+ Mosaic plagiarism: Mixing copied phrases with your own words
+121
+ Accidental plagiarism: Forgetting to cite or improperly paraphrasing
+Consequences of Plagiarism:
+ Academic penalties (failing grades, suspension, expulsion)
+ Legal action and fines
+ Damage to reputation
+ Loss of credibility
+ Career consequences
+How to Avoid Plagiarism:
+ Always cite sources properly
+ Use quotation marks for direct quotes
+ Paraphrase in your own words
+ Keep track of sources while researching
+ Use plagiarism detection tools
+ Ask for clarification when unsure
+Respecting Digital Content Ownership
+Best Practices:
+1. Give Credit: Always acknowledge original creators with proper citations
+2. Seek Permission: Ask before using someone's work, especially for commercial purposes
+3. Use Legal Alternatives:
+o Royalty-free images (Unsplash, Pexels)
+o Creative Commons licensed content
+o Public domain works
+4. Understand Licenses: "Free to view" doesn't mean "free to use"
+122
+5. Avoid Piracy: Don't illegally download or share copyrighted music, movies, software, or
+books
+6. Respect Social Media Content: Don't repost others' photos or videos without permission
+7. Create Original Work: Develop your own content whenever possible
+Creative Commons Licenses: Flexible copyright licenses allowing creators to specify how
+others can use their work:
+ CC BY: Credit must be given
+ CC BY-SA: Credit given, share alike
+ CC BY-ND: Credit given, no derivatives
+ CC BY-NC: Credit given, non-commercial use only
+Digital Citizenship: Being a responsible digital citizen means respecting intellectual property
+rights, supporting creators by using legal sources, and promoting ethical online behavior.
+EVALUATION
+1. Define intellectual property and explain why it is important to protect it.
+2. Differentiate between copyright and trademark. Give two examples of each.
+3. What is plagiarism? List four types of plagiarism and explain how to avoid it.
+4. Explain three consequences a student might face for plagiarizing a school assignment.
+5. What is Creative Commons? Explain how it helps content creators and users.
+ASSIGNMENT
+1. Find three examples of trademarks from popular Nigerian or international companies. For
+each, describe the trademark and explain what makes it memorable.
+123
+2. Write an original short story (150 words), then explain how copyright protects your work
+and what rights you have as the creator.
+3. Create an infographic showing the differences between copyright, trademark, and patent
+(research patent on your own).
+4. Rewrite the following plagiarized paragraph in your own words with proper citation:
+"The internet has revolutionized communication. It allows instant connection across the
+world" (Source: Digital Age Book, 2020).
+5. Research and list 5 websites where students can find royalty-free images for school
+projects. Write one sentence about each.
+124
+WEEK 4: SAFETY AND SECURITY FEATURES ON DIGITAL DEVICES
+Antivirus Software
+Antivirus software is a program designed to detect, prevent, and remove malicious software
+(malware) from computers and devices. It acts as a shield protecting your device from various
+threats.
+Types of Malware:
+ Viruses: Programs that attach to files and spread when files are shared
+ Worms: Self-replicating malware that spreads across networks
+ Trojans: Disguised as legitimate software but perform harmful actions
+125
+ Spyware: Secretly monitors and collects user information
+ Ransomware: Encrypts files and demands payment for decryption
+ Adware: Displays unwanted advertisements
+How Antivirus Works:
+1. Scanning: Examines files and programs for known malware signatures
+2. Real-time Protection: Monitors system activity continuously
+3. Quarantine: Isolates suspicious files to prevent damage
+4. Removal: Deletes or repairs infected files
+5. Updates: Downloads latest threat definitions regularly
+Popular Antivirus Programs:
+ Windows Defender (built into Windows)
+ Norton
+ McAfee
+ Avast
+ Kaspersky
+ Bitdefender
+Best Practices:
+ Keep antivirus software updated
+ Run regular full system scans
+ Enable real-time protection
+ Don't disable antivirus temporarily
+ Scan external drives before use
+Security Features
+126
+Screen Locks
+Screen locks prevent unauthorized access to devices when not in use.
+Types of Screen Locks:
+1. Password: Alphanumeric combination
+2. PIN: Numeric code (usually 4-6 digits)
+3. Pattern: Connecting dots in a specific sequence
+4. Fingerprint: Biometric scan of fingerprint
+5. Face Recognition: Facial feature identification
+6. Iris Scan: Eye pattern recognition
+Importance:
+ Protects personal data
+ Prevents unauthorized access
+ Secures financial information
+ Protects privacy
+ Deters theft
+Tips:
+ Use strong, unpredictable codes
+ Don't share with others
+ Change regularly
+ Enable automatic lock (30 seconds to 2 minutes)
+ Use biometric options when available
+Firewalls
+127
+A firewall is security software or hardware that monitors and controls incoming and outgoing
+network traffic based on predetermined security rules. It creates a barrier between trusted internal
+networks and untrusted external networks (like the internet).
+Types of Firewalls:
+ Software Firewalls: Programs installed on individual devices
+ Hardware Firewalls: Physical devices protecting entire networks
+Functions:
+ Blocks unauthorized access attempts
+ Filters malicious traffic
+ Prevents data leaks
+ Logs network activity
+ Alerts to suspicious behavior
+How It Works:
+ Examines data packets
+ Compares against security rules
+ Allows or blocks based on rules
+ Creates access logs
+Parental Controls
+Tools that help parents manage and monitor children's device usage and online activities.
+Features:
+ Content Filtering: Blocks inappropriate websites and apps
+ Screen Time Limits: Sets daily usage limits
+ App Restrictions: Controls which apps can be installed or used
+128
+ Location Tracking: Shows device location
+ Activity Reports: Provides usage summaries
+ Safe Search: Filters search engine results
+ Purchase Controls: Requires approval for downloads/purchases
+Popular Parental Control Tools:
+ Google Family Link
+ Microsoft Family Safety
+ Apple Screen Time
+ Norton Family
+ Qustodio
+Why They're Important:
+ Protects children from inappropriate content
+ Prevents cyberbullying
+ Manages screen time
+ Prevents online predators
+ Monitors social media activity
+ Prevents unauthorized purchases
+Device Maintenance
+Regular maintenance keeps devices running efficiently and securely.
+Essential Maintenance Tasks:
+1. Software Updates
+o Install operating system updates promptly
+o Update apps regularly
+129
+o Enable automatic updates when possible
+o Updates include security patches and bug fixes
+2. Storage Management
+o Delete unnecessary files and apps
+o Clear cache and temporary files
+o Empty recycle bin/trash regularly
+o Use cloud storage for important files
+o Keep at least 15-20% storage free
+3. Data Backup
+o Regular backups (weekly or monthly)
+o Use external drives or cloud services
+o Test backups to ensure they work
+o Follow 3-2-1 rule: 3 copies, 2 different media, 1 offsite
+4. Battery Care
+o Avoid complete discharges
+o Don't overcharge (unplug when full)
+o Keep battery between 20-80%
+o Use original chargers
+o Avoid extreme temperatures
+5. Physical Cleaning
+o Wipe screens with microfiber cloth
+o Clean keyboards with compressed air
+o Remove dust from vents
+130
+o Don't use harsh chemicals
+o Keep devices in protective cases
+6. Security Checks
+o Review installed apps monthly
+o Remove unused applications
+o Check for suspicious activity
+o Verify account security settings
+o Monitor storage for unknown files
+7. Performance Optimization
+o Close unused apps
+o Disable unnecessary startup programs
+o Restart devices weekly
+o Clear browser history and cookies
+o Defragment hard drives (for traditional HDDs)
+8. Protection Measures
+o Use surge protectors
+o Avoid eating/drinking near devices
+o Keep devices away from water
+o Handle with clean, dry hands
+o Store in cool, dry places
+EVALUATION
+1. What is antivirus software? Explain how it protects devices from malware.
+131
+2. List and describe five types of screen locks. Which do you think is most secure and why?
+3. What is a firewall? Explain its function in protecting devices and networks.
+4. Describe four features of parental controls and explain why they are important for child
+safety.
+5. List six device maintenance practices that help keep digital devices secure and running
+efficiently.
+ASSIGNMENT
+1. Research three antivirus programs. Create a comparison table showing their features, cost
+(free/paid), and compatibility with different operating systems.
+2. Design a step-by-step guide (with illustrations) showing how to set up a screen lock on a
+smartphone.
+3. Interview a parent or guardian about what parental controls they use (if any). Write a
+150-word report on your findings and suggest additional controls they could implement.
+4. Create a monthly device maintenance checklist that includes at least 12 tasks. Organize
+them by weekly, bi-weekly, and monthly activities.
+5. Write a paragraph (100-150 words) explaining why regular software updates are
+important for device security. Include examples of what could happen if updates are
+ignored.
+132
+WEEK 6: INTRODUCTION TO GRAPHIC DESIGN
+Meaning and Importance of Graphic Design
+Graphic design is the art and practice of visual communication that combines images, words,
+colors, and ideas to convey information to a specific audience. It's both creative and strategic,
+solving problems through visual solutions.
+Definition: The creative process of planning and projecting ideas through visual and textual
+content.
+Importance of Graphic Design:
+1. Visual Communication: Conveys messages quickly and effectively without many words
+133
+2. Brand Identity: Creates recognizable logos, colors, and styles for businesses
+3. Attracts Attention: Eye-catching designs draw people in
+4. Professionalism: Quality design shows credibility and trustworthiness
+5. Information Organization: Makes complex data easy to understand
+6. Emotional Connection: Colors and images evoke feelings and responses
+7. Competitive Advantage: Good design helps businesses stand out
+8. User Experience: Improves interaction with websites and apps
+Where Graphic Design is Used:
+ Advertisements and marketing materials
+ Websites and mobile apps
+ Social media posts and graphics
+ Logos and brand identity
+ Posters and flyers
+ Magazines and newspapers
+ Product packaging
+ Books and publications
+ Billboards and signage
+ Presentations and infographics
+Elements of Design
+Design elements are the basic building blocks used to create visual compositions.
+1. Color
+Color is one of the most powerful design elements, influencing emotions, behavior, and
+perception.
+134
+Color Psychology:
+ Red: Energy, passion, urgency, danger, excitement
+ Blue: Trust, calm, professionalism, security, stability
+ Green: Nature, growth, health, harmony, freshness
+ Yellow: Happiness, optimism, warmth, caution
+ Orange: Enthusiasm, creativity, confidence, friendliness
+ Purple: Luxury, wisdom, creativity, spirituality
+ Black: Elegance, sophistication, power, formality
+ White: Purity, simplicity, cleanliness, innocence
+ Brown: Earthiness, reliability, stability, comfort
+Color Concepts:
+ Primary Colors: Red, blue, yellow (cannot be created by mixing)
+ Secondary Colors: Green, orange, purple (mix of two primaries)
+ Tertiary Colors: Mix of primary and secondary colors
+ Complementary Colors: Opposite on color wheel (red/green, blue/orange)
+ Analogous Colors: Next to each other on color wheel
+ Color Harmony: Pleasing arrangement of colors
+Using Color Effectively:
+ Consider cultural meanings
+ Maintain contrast for readability
+ Limit color palette (3-5 colors)
+ Use color to create hierarchy
+ Test designs in black and white first
+135
+2. Shape
+Shapes are defined areas created by lines, color, or texture. They give structure and meaning to
+designs.
+Types of Shapes:
+Geometric Shapes:
+ Circles: Unity, completeness, harmony, infinity
+ Squares/Rectangles: Stability, reliability, order, professionalism
+ Triangles: Direction, movement, energy, conflict, stability
+Organic Shapes:
+ Natural, flowing, irregular forms
+ Found in nature (leaves, clouds, water)
+ Feel more friendly and approachable
+Abstract Shapes:
+ Simplified versions of natural forms
+ Recognizable but stylized
+ Used in logos and icons
+Uses of Shapes:
+ Create visual interest
+ Direct eye movement
+ Organize information
+ Convey meaning symbolically
+ Build brand identity
+3. Typography
+136
+Typography is the art and technique of arranging text to make written language readable, legible,
+and visually appealing.
+Font Categories:
+Serif Fonts:
+ Have small lines/strokes at letter ends
+ Examples: Times New Roman, Georgia, Garamond
+ Feel: Traditional, formal, authoritative, trustworthy
+ Best for: Print materials, formal documents, body text
+Sans-Serif Fonts:
+ Clean, without decorative strokes
+ Examples: Arial, Helvetica, Calibri, Roboto
+ Feel: Modern, clean, minimal, straightforward
+ Best for: Digital screens, headings, contemporary designs
+Script Fonts:
+ Mimic handwriting or calligraphy
+ Examples: Brush Script, Pacifico, Dancing Script
+ Feel: Elegant, personal, creative, decorative
+ Best for: Invitations, logos, special occasions
+Display Fonts:
+ Decorative, unique, attention-grabbing
+ Used sparingly for headlines
+ Feel: Varied depending on style
+ Best for: Titles, logos, short text
+137
+Typography Principles:
+ Hierarchy: Different sizes/weights show importance
+ Alignment: How text lines up (left, right, center, justified)
+ Spacing: Letter spacing (kerning) and line spacing (leading)
+ Contrast: Different fonts/sizes create visual interest
+ Readability: Easy to read and understand
+ Consistency: Use 2-3 fonts maximum per design
+Additional Design Elements:
+Line:
+ Can be straight, curved, thick, thin, solid, dashed
+ Creates structure, directs eye movement
+ Separates or connects elements
+Texture:
+ Surface quality or appearance
+ Can be actual (physical) or visual (implied)
+ Adds depth and interest
+Space (White Space):
+ Empty areas around elements
+ Gives designs room to breathe
+ Improves readability and focus
+ Shows sophistication
+Size/Scale:
+ Relative size of elements
+138
+ Creates hierarchy and emphasis
+ Guides viewer's attention
+Balance:
+ Visual weight distribution
+ Symmetrical or asymmetrical
+ Creates harmony and stability
+EVALUATION
+1. Define graphic design and explain four areas where it is commonly used.
+2. Describe the psychology of three colors and give examples of when each would be
+appropriate to use in design.
+3. Compare serif and sans-serif fonts. When would you use each type and why?
+4. Explain the difference between geometric shapes and organic shapes in design. Give two
+examples of each.
+5. What is typography? List four principles of good typography.
+ASSIGNMENT
+1. Create a color mood board showing five colors. For each color, include: color name, what
+emotion it represents, and an example of where it's used effectively.
+2. Design a simple logo for a fictional school club using only geometric shapes. Explain
+your choice of shapes and colors.
+3. Find three examples of graphic design in your environment (posters, product packaging,
+advertisements). For each, identify the design elements used (color, shape, typography)
+and write a brief analysis (50 words each).
+139
+4. Create a typography showcase displaying your name in three different font styles (serif,
+sans-serif, script). Explain what feeling or message each style communicates.
+5. Research one famous graphic designer (e.g., Paul Rand, Saul Bass, Milton Glaser). Write
+a 150-word report about their work and contributions to graphic design.
+140
+WEEK 8: INTRODUCTION TO CANVA
+Getting Started with Canva
+Canva is a free, user-friendly online graphic design platform that allows users to create
+professional-looking designs without advanced technical skills. It's accessible through web
+browsers (www.canva.com) or mobile apps for iOS and Android.
+What Makes Canva Special:
+ Beginner-friendly: Intuitive drag-and-drop interface
+ Free version available: Access to thousands of templates and elements
+ Cloud-based: Work from any device with internet
+141
+ Collaborative: Share and work with others
+ Versatile: Create various design types
+ Templates: Pre-designed layouts to customize
+ No software installation: Works in web browsers
+Creating a Canva Account:
+1. Visit www.canva.com
+2. Sign up with email, Google, or Facebook account
+3. Choose account type (student/teacher accounts have extra features)
+4. Verify email address
+5. Complete profile setup
+6. Start designing
+Important: Students should create accounts with parent/teacher supervision and use school
+email addresses when available.
+Canva Interface Overview
+Main Components:
+1. Homepage/Dashboard:
+o Recent designs
+o Design suggestions
+o Create button
+o Templates gallery
+o Search bar
+2. Templates Library:
+o Thousands of pre-designed layouts
+142
+o Organized by category
+o Free and Pro (paid) options
+o Customizable to your needs
+3. Design Canvas/Workspace:
+o Central area where you create
+o Shows design dimensions
+o Rulers and guides for alignment
+o Zoom controls
+4. Elements Panel (Left Sidebar):
+o Photos and images
+o Graphics and illustrations
+o Videos and audio
+o Text styles
+o Shapes and lines
+o Charts and frames
+o Free and paid options
+5. Top Toolbar:
+o File menu (save, download, print)
+o Undo/Redo buttons
+o Resize design
+o Share options
+o Comments
+6. Properties Panel (Right Side):
+143
+o Appears when element selected
+o Color options
+o Position and size
+o Effects and filters
+o Layer management
+Creating and Editing Designs
+Starting a New Design:
+Method 1: Choose Design Type
+1. Click "Create a design" button
+2. Select from popular types (Poster, Presentation, Social Media Post)
+3. Or enter custom dimensions
+4. Blank canvas appears
+Method 2: Start with Template
+1. Browse template library
+2. Click on category (e.g., School Posters)
+3. Preview templates
+4. Click "Customize this template"
+5. Template loads for editing
+Basic Design Functions:
+Adding Elements:
+1. Click "Elements" in sidebar
+2. Browse or search for items
+3. Click to add to canvas
+144
+4. Drag to position
+Working with Text:
+1. Click "Text" in sidebar
+2. Choose text style (heading, subheading, body)
+3. Click on canvas to place
+4. Type your content
+5. Use properties panel to:
+o Change font style
+o Adjust size
+o Modify color
+o Apply effects (bold, italic, underline)
+o Change alignment
+o Add letter spacing
+Manipulating Objects:
+ Move: Click and drag element
+ Resize: Drag corner handles (hold Shift for proportional)
+ Rotate: Use rotation handle or enter degrees
+ Duplicate: Right-click > Duplicate or Ctrl+D
+ Delete: Select and press Delete key
+ Layer Order: Right-click > Bring forward/Send backward
+Changing Colors:
+1. Select element
+2. Click color box in toolbar
+145
+3. Choose from palette or enter color code
+4. Apply to fills or borders
+Adding Images:
+1. Click "Uploads" to add your own photos
+2. Or select from Canva's photo library
+3. Drag image to canvas
+4. Resize and position as needed
+5. Apply filters or effects
+Applying Effects:
+ Transparency/Opacity adjustments
+ Shadows and glows
+ Frames and borders
+ Filters (brightness, contrast, saturation)
+ Background removal (Pro feature)
+Aligning Elements:
+ Use alignment tools in toolbar
+ Distribute evenly
+ Snap to guides and grids
+ Group elements together (Ctrl+G)
+Saving Your Work:
+ Canva auto-saves to cloud
+ Manual save: File > Save
+ Download: Click Download button
+146
+ Choose format (PNG, JPG, PDF)
+Templates and Customization
+Understanding Templates: Templates are pre-designed layouts created by professionals that
+serve as starting points for your designs. They include placeholder text and images that you
+customize with your own content.
+Popular Template Categories:
+For School:
+ Posters and flyers
+ Presentations
+ Reports and assignments
+ Certificates
+ Class schedules
+ Book covers
+ Worksheets
+For Social Media:
+ Instagram posts and stories
+ Facebook posts
+ YouTube thumbnails
+ Twitter headers
+For Personal Use:
+ Birthday cards
+ Invitations
+ Photo collages
+147
+ Resumes
+ Calendars
+Customization Process:
+Step 1: Select Template
+ Browse by category or search
+ Preview before selecting
+ Consider color scheme and layout
+ Choose template matching your purpose
+Step 2: Replace Text
+ Click on placeholder text
+ Delete and type your content
+ Adjust font size if needed
+ Change font style to match your preference
+Step 3: Replace Images
+ Click on placeholder image
+ Upload your photo or choose from library
+ Adjust positioning using crop tool
+ Apply filters if desired
+Step 4: Adjust Colors
+ Change background color
+ Modify element colors to match theme
+ Ensure good contrast for readability
+ Use color picker for consistency
+148
+Step 5: Add Personal Touches
+ Include additional elements (icons, shapes)
+ Add decorative elements
+ Insert your logo or signature
+ Apply unique effects
+Step 6: Review and Refine
+ Check spelling and grammar
+ Ensure all elements aligned properly
+ Test readability from distance
+ Get feedback from others
+ Make final adjustments
+Tips for Effective Customization:
+ Maintain design balance
+ Don't overcrowd with elements
+ Keep color palette consistent (3-4 colors)
+ Use high-quality images
+ Ensure text is readable
+ Stay true to design purpose
+ Test different variations
+Sharing and Exporting:
+ Download: Various formats available
+ Share Link: Collaborate with others
+ Present: Full-screen presentation mode
+149
+ Print: High-quality print options
+ Social Media: Direct posting to platforms
+EVALUATION
+1. What is Canva? List four reasons why it is suitable for beginners in graphic design.
+2. Describe the main components of the Canva interface and their functions.
+3. Explain the step-by-step process of creating a design from a template in Canva.
+4. What are five basic editing functions you can perform on elements in Canva?
+5. Describe the process of customizing a Canva template for a school poster about "Reading
+Week."
+ASSIGNMENT
+1. Create a Canva account (with teacher/parent supervision). Take screenshots of the
+homepage and write a brief description (100 words) of what you see.
+2. Using Canva, design a birthday card for a friend or family member. Include personalized
+text, images, and colors. Download and print or share digitally.
+3. Create a simple poster in Canva promoting your favorite book. Include: book title, author,
+brief description, and appealing graphics. Download as PNG.
+4. Watch a Canva tutorial video (provided by teacher) and write a 150-word summary of
+three new features you learned.
+5. Design a personal study timetable for one week using Canva. Include all subjects, time
+slots, and use colors to differentiate subjects. Download as PDF.
+150
+WEEK 9: DIGITAL MEDIA
+Meaning and Types of Digital Media
+Definition: Digital media refers to any content created, stored, distributed, and consumed in
+digital electronic format using digital technology.
+Characteristics:
+ Exists in binary code (0s and 1s)
+ Easily copied and distributed
+ Can be edited and manipulated
+ Accessible across multiple devices
+151
+ Interactive and engaging
+Types of Digital Media
+1. Text-Based Media
+Written content in digital format.
+Examples: Blogs, e-books, articles, social media posts, websites, emails, e-magazines
+Uses: Information sharing, education, communication, entertainment, marketing
+2. Images/Visual Media
+Still visual content in digital form.
+Examples: Photographs, graphics (logos, illustrations), infographics, memes, digital art,
+screenshots
+Formats: JPEG, PNG, GIF, SVG, TIFF
+Uses: Visual storytelling, brand identity, social media content, documentation, artistic expression
+3. Audio Media
+Sound content in digital format.
+Examples: Music, podcasts, audiobooks, sound effects, voice messages, radio streams
+Formats: MP3, WAV, AAC, FLAC
+Uses: Entertainment, education, communication, storytelling
+4. Video Media
+Moving visual content with audio.
+152
+Examples: Movies, YouTube videos, tutorials, documentaries, animations, live streams, short
+videos (TikTok, Instagram Reels)
+Formats: MP4, AVI, MOV, MKV
+Uses: Entertainment, education and training, marketing, news, social connection
+5. Interactive Media
+Digital content that responds to user input.
+Examples: Video games, mobile apps, interactive websites, Virtual Reality (VR), Augmented
+Reality (AR), educational software, simulations
+Uses: Entertainment, learning and skill development, professional training, social interaction,
+problem-solving
+Ethics and Responsible Use of Digital Media
+Digital Ethics Principles
+1. Verify Before Sharing
+ Check facts and sources
+ Avoid spreading misinformation
+ Cross-reference information
+ Use fact-checking websites
+2. Respect Copyright and Give Credit
+ Don't use others' work without permission
+ Provide proper attribution
+ Use royalty-free or licensed content
+153
+ Link to original sources
+3. Protect Privacy
+ Respect others' personal information
+ Don't share private photos/videos without consent
+ Be careful with location sharing
+ Ask permission before posting about others
+4. Avoid Cyberbullying and Hate Speech
+ Treat others with respect online
+ Don't participate in or share harmful content
+ Report bullying when you see it
+ Think about impact of your words
+5. Be Mindful of Screen Time
+ Balance online and offline activities
+ Set time limits for device use
+ Take regular breaks (20-20-20 rule)
+ Prioritize sleep over screen time
+6. Consider Your Digital Footprint
+ Everything online can be permanent
+ Future employers/schools may see your content
+ Think long-term before posting
+ Build a positive online presence
+7. Practice Critical Thinking
+ Question content you see
+154
+ Recognize bias and manipulation
+ Identify clickbait and sensationalism
+ Don't believe everything you see
+8. Be Authentic
+ Don't create fake profiles or impersonate others
+ Be honest in online interactions
+ Take responsibility for your actions
+ Admit mistakes and apologize when wrong
+Sharing and Collaboration Tools
+Cloud Storage Services
+Google Drive:
+ 15GB free storage
+ Document, spreadsheet, presentation creation
+ Real-time collaboration
+ Sharing with permissions (view, comment, edit)
+ Works across devices
+Dropbox:
+ File storage and syncing
+ Easy sharing via links
+ Version history
+ Good for large files
+Microsoft OneDrive:
+155
+ Integrated with Microsoft Office
+ 5GB free storage
+ Automatic backup options
+ Collaboration on Office documents
+iCloud:
+ For Apple users
+ 5GB free storage
+ Automatic device syncing
+ Photo and document storage
+Collaboration Platforms
+Google Workspace (Docs, Sheets, Slides):
+ Multiple users edit simultaneously
+ See who's editing in real-time
+ Comment and suggest modes
+ Revision history
+ Chat while editing
+Uses: Group projects, shared note-taking, collaborative presentations, team planning
+Microsoft Teams:
+ Team communication hub
+ Video meetings
+ File sharing and collaboration
+ Integration with Office apps
+156
+Slack:
+ Team messaging platform
+ Organized channels
+ File sharing
+ Video/audio calls
+File Transfer Tools
+Email Attachments:
+ Quick for small files (under 25MB)
+ Familiar and universal
+WeTransfer:
+ Transfer files up to 2GB free
+ No account needed
+ Email delivery
+ Good for large media files
+File-Sharing Links:
+ Create shareable links from cloud storage
+ Control access permissions
+ Track who downloads
+ Can set expiration dates
+Social Media Sharing
+Instagram:
+157
+ Visual content sharing
+ Stories (24 hours)
+ Reels for short videos
+ Direct messaging
+YouTube:
+ Video hosting and sharing
+ Public, unlisted, or private options
+ Comments and community interaction
+ Educational content platform
+Facebook:
+ Multiple content types (text, photos, videos)
+ Groups for communities
+ Events organization
+ Long-form content support
+Best Practices for Sharing and Collaboration
+ Set clear permissions (who can view/edit)
+ Organize files with clear names and folders
+ Communicate expectations with collaborators
+ Back up important work
+ Respect deadlines and commitments
+ Give constructive feedback
+ Keep sensitive information secure
+158
+EVALUATION
+1. Define digital media and list the five main types with one example of each.
+2. Explain four ethical principles that should guide the responsible use of digital media.
+3. What is a digital footprint? Why is it important to consider your digital footprint when
+posting online?
+4. Compare Google Drive and Dropbox. List three features of each cloud storage service.
+5. Describe three ways digital media can be used for education and learning.
+ASSIGNMENT
+1. Create a chart categorizing 10 different digital media examples you use or encounter
+daily. Classify each under: Text, Image, Audio, Video, or Interactive.
+2. Write a 200-word essay on "The Impact of Social Media on Students." Include both
+positive and negative effects and your recommendations for responsible use.
+3. Design an infographic (using Canva or paper) showing 5 rules for ethical digital media
+use. Make it colorful and easy to understand.
+4. Research one collaboration tool (Google Docs, Microsoft Teams, or Slack). Write a 150-
+word guide explaining how students can use it for group projects.
+5. Keep a "digital media diary" for one day. Record all types of digital media you consume
+and create. Calculate time spent and write a reflection (100 words) on your findings.
+159
+WEEK 10: COMPUTER WASTE MANAGEMENT
+Meaning of E-waste
+Definition: Electronic waste (e-waste) refers to discarded electrical or electronic devices and
+their components that have reached the end of their useful life.
+Common Examples:
+ Computing Devices: Computers, laptops, tablets, keyboards, mice
+ Mobile Devices: Smartphones, smartwatches
+ Display Equipment: Monitors, televisions, projectors
+160
+ Peripherals: Printers, scanners, hard drives, USB drives
+ Home Appliances: Microwaves, refrigerators, washing machines (with electronics)
+ Entertainment: Game consoles, DVD players, cameras, speakers
+ Batteries and Accessories: Chargers, headphones, adapters
+Why E-waste is a Problem
+Environmental Concerns
+1. Toxic Materials E-waste contains hazardous substances:
+ Lead: Damages nervous system (in batteries, monitors)
+ Mercury: Affects brain and kidneys (in switches, screens)
+ Cadmium: Causes kidney damage (in rechargeable batteries)
+ Chromium: Can cause cancer (in metal casings)
+ Brominated Flame Retardants: Disrupt hormones (in circuit boards)
+2. Soil and Water Contamination
+ Toxins leach into soil from landfills
+ Contaminate groundwater
+ Enter food chain through plants and animals
+3. Air Pollution
+ Burning e-waste releases toxic fumes
+ Health risks for nearby communities
+Health Concerns
+ Respiratory problems
+ Skin diseases and allergies
+161
+ Neurological damage
+ Increased cancer risk
+ Particularly dangerous for children
+Resource Waste
+ E-waste contains valuable materials (gold, silver, copper, platinum)
+ Throwing away means losing these resources
+ Requires more mining for new materials
+Global Scale
+ Over 50 million tons generated globally per year
+ Fastest-growing waste stream
+ Only 17-20% properly recycled
+Safe Disposal Methods
+1. Return to Manufacturer
+How it works: Check manufacturer's website for take-back programs; some offer trade-in
+incentives
+Examples: Apple Recycling Program, Dell Reconnect, HP, Samsung
+Benefits: Ensures proper handling, may receive discount on new purchase
+2. Donation
+Give working or repairable devices to those who need them.
+Where to Donate: Schools, community centers, non-profit organizations, churches, libraries,
+charities
+162
+Before Donating:
+ Ensure device works properly
+ Delete all personal data
+ Include cables and accessories
+ Clean the device
+Benefits: Extends device lifespan, helps others access technology, reduces e-waste
+3. Certified E-waste Recyclers
+Specialized facilities that safely process electronic waste.
+What They Do:
+ Safely dismantle electronics
+ Separate hazardous materials
+ Recover valuable metals and components
+ Follow environmental regulations
+How to Find: Search online for certified recyclers with R2 or e-Stewards certifications
+4. Government Collection Centers
+Features: Free drop-off locations with regular collection hours
+Finding Centers: Contact local government environmental office or check municipal websites
+5. Retail Store Take-Back Programs
+Examples: Best Buy, Staples, Office Depot
+Features: Often free for small electronics; can combine with shopping trips
+163
+Important: Never Do These
+ ❌ Don't throw in regular trash
+ ❌ Don't burn electronic waste
+ ❌ Don't dump in nature or water
+ ❌ Don't dismantle without proper training
+ ❌ Don't give to uncertified collectors
+Before Disposal - Data Security
+1. Back up important data
+2. Factory reset device
+3. Remove SIM cards and memory cards
+4. Log out of all accounts
+5. For computers: wipe hard drive or physically destroy
+Recycling Practices
+The E-waste Recycling Process
+Step 1: Collection and Transportation
+ E-waste collected and transported to recycling facilities
+Step 2: Manual Sorting
+ Devices categorized by type
+ Working items identified for reuse
+ Batteries and hazardous materials removed
+164
+Step 3: Mechanical Shredding
+ Items broken into small pieces
+Step 4: Separation
+ Magnetic separation removes iron and steel
+ Water separation divides plastic from metal
+ Screening sorts by size
+Step 5: Material Recovery
+ Precious metals extracted (gold, silver, platinum)
+ Base metals recovered (copper, aluminum)
+ Plastics sorted and processed
+Step 6: Purification
+ Metals refined to pure form
+ Materials prepared for reuse in new products
+Benefits of E-waste Recycling
+Environmental Benefits:
+ Reduces landfill waste by 80-90%
+ Prevents soil and water pollution
+ Conserves natural resources
+ Reduces greenhouse gas emissions
+Economic Benefits:
+ Creates jobs in recycling industry
+ Recovers valuable materials worth billions
+165
+ Supports circular economy
+Resource Conservation:
+ One ton of e-waste contains more gold than 17 tons of gold ore
+ Recoverable copper, silver, aluminum, and rare earth elements
+Individual Actions for E-waste Management
+1. Extend Device Lifespan
+ Proper care and maintenance
+ Use protective cases
+ Regular software updates
+2. Repair Instead of Replace
+ Fix minor problems
+ Seek authorized repair services
+ Support right-to-repair movement
+3. Upgrade Components
+ Add RAM to computers
+ Replace hard drives with SSDs
+ Often cheaper than buying new
+4. Buy Responsibly
+ Choose durable, quality products
+ Consider repairability before purchasing
+ Avoid unnecessary upgrades
+5. Data Management
+166
+ Always wipe data before disposal
+ Use data destruction software
+6. Educate Others
+ Share information about proper disposal
+ Organize community awareness programs
+7. Participate in Collection Programs
+ Attend e-waste collection events
+ Organize school or community drives
+The Circular Economy Approach
+ Design: Create products easy to repair and recycle
+ Use: Maximize product lifespan
+ Reuse: Pass on working devices
+ Recycle: Properly process end-of-life electronics
+ Recover: Extract materials for new products
+EVALUATION
+1. What is e-waste? List six common examples of electronic waste.
+2. Explain four reasons why improper e-waste disposal is harmful to the environment and
+human health.
+3. Describe three safe methods for disposing of electronic waste properly.
+4. What are the benefits of recycling e-waste? Explain at least four benefits.
+5. List and explain five ways individuals can help reduce e-waste generation.
+167
+ASSIGNMENT
+1. Conduct an e-waste audit of your home. List all unused or broken electronic devices you
+find. Write a 150-word report suggesting proper disposal methods for each item.
+2. Create an educational poster promoting proper e-waste disposal. Include: what e-waste is,
+why it matters, where to dispose it, and what happens during recycling. Use colors and
+illustrations.
+3. Research an e-waste recycling center in Nigeria (or your country). Write a report (200
+words) about: location, what they accept, their process, and how people can use their
+services.
+4. Design a step-by-step guide (with illustrations) showing how to safely prepare a
+smartphone for disposal or donation. Include data security steps.
+5. Write a proposal (250 words) for starting an e-waste collection program at your school.
+Include: objectives, collection methods, partnerships needed, and expected benefits.
+168
+WEEK 11: REVISION
+Comprehensive Review of Third Term Topics
+Week 1: Internet Communication Practices
+ Key Points to Review:
+o Definition and advantages of internet communication
+o Email structure and uses
+o Instant messaging features and platforms
+o Video conferencing tools and applications
+169
+o Netiquette principles and rules
+o Proper online communication etiquette
+Week 2: Spam and Online Threats
+ Key Points to Review:
+o Definition and types of spam
+o Common online scams (phishing, lottery, romance, fake stores, tech support)
+o Warning signs of scams
+o Preventive measures and security practices
+o Two-factor authentication
+o Password security best practices
+Week 3: Intellectual Property
+ Key Points to Review:
+o Definition of intellectual property
+o Copyright: protection, duration, rights
+o Trademark: purpose and examples
+o Plagiarism: types and consequences
+o Creative Commons licenses
+o Respecting digital content ownership
+o Proper citation and attribution
+Week 4: Safety and Security Features
+170
+ Key Points to Review:
+o Antivirus software and malware types
+o Screen lock methods
+o Firewall functions
+o Parental controls features
+o Device maintenance practices
+o Battery care and physical cleaning
+o Backup procedures
+Week 6: Introduction to Graphic Design
+ Key Points to Review:
+o Definition and importance of graphic design
+o Color psychology and meanings
+o Types of shapes and their uses
+o Typography categories (serif, sans-serif, script, display)
+o Design principles (hierarchy, balance, spacing)
+o Where graphic design is used
+Week 8: Introduction to Canva
+ Key Points to Review:
+o What Canva is and its features
+o Interface components (canvas, elements panel, toolbar)
+o Creating designs from templates
+171
+o Basic editing functions (resize, rotate, color change)
+o Customization process
+o Adding text and images
+o Sharing and exporting options
+Week 9: Digital Media
+ Key Points to Review:
+o Definition of digital media
+o Five types (text, images, audio, video, interactive)
+o Ethical principles for digital media use
+o Digital footprint and its importance
+o Sharing and collaboration tools
+o Cloud storage services
+o Responsible online behavior
+Week 10: Computer Waste Management
+ Key Points to Review:
+o Definition of e-waste and examples
+o Environmental and health impacts
+o Toxic materials in electronics
+o Safe disposal methods (return, donate, recycle)
+o Certified recyclers and collection centers
+o Benefits of recycling
+172
+o Individual actions to reduce e-waste
+o Data security before disposal
