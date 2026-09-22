@@ -1,0 +1,1878 @@
+1
+SS2 HORTICULTURE AND CROP PRODUCTION LESSON NOTES
+FIRST TERM
+WEEK 1: HORTICULTURAL CROP IMPROVEMENT
+1.1 INTRODUCTION
+Horticultural crop improvement, also known as plant breeding, is the art and science of changing
+the genetic traits of plants to develop new varieties with more desirable characteristics. It is a
+deliberate, human-driven evolution of crops to better suit human needs.
+1.2 AIMS OF CROP IMPROVEMENT
+The primary goal is to make plants more useful and productive. Specific aims include:
+1. Increased Yield: Developing crops that produce more food, fibre, or ornamental value
+per unit area (e.g., tomatoes with more fruits per plant, maize with larger cobs).
+2. Improved Quality:
+2
+o Nutritional Quality: Enhancing vitamin, protein, or mineral content (e.g.,
+"Golden Rice" enriched with Vitamin A).
+o Eating Quality: Better taste, flavour, tenderness, or texture.
+o Aesthetic Quality: Brighter colours, larger flowers, or more attractive shapes for
+ornamental plants.
+o Keeping Quality: Longer shelf-life for fruits and vegetables, reducing postharvest
+losses.
+3. Pest and Disease Resistance: Breeding plants that can naturally defend themselves
+against specific insects, fungi, bacteria, or viruses (e.g., cassava resistant to Cassava
+Mosaic Disease).
+4. Abiotic Stress Tolerance: Developing "hardy" crops that can withstand difficult
+environmental conditions like:
+o Drought tolerance (e.g., maize that survives with less water).
+o Salinity tolerance (for coastal or irrigated areas).
+o Heat or cold tolerance.
+5. Desirable Plant Architecture: Modifying the plant's shape or structure (e.g., creating
+dwarf rice varieties that don't fall over, or climbing bean varieties for vertical gardens).
+6. Ease of Harvesting: Breeding crops that mature uniformly for mechanical harvesting or
+have fewer thorns.
+1.3 METHODS OF CROP IMPROVEMENT
+Plant breeders use several established methods to achieve these aims.
+1. SELECTION
+This is the oldest and most basic method. It involves identifying plants with desirable traits and
+using them to create the next generation.
+ Mass Selection:
+o Process: A large number of plants (a "mass") are evaluated in the field. The
+"best" looking plants (phenotype) are selected and harvested. Their seeds are
+bulked together and planted to form the next generation.
+3
+o Use: Common for cross-pollinated crops. It's simple and cheap but slow and not
+very precise.
+ Pure-line Selection:
+o Process: Used for self-pollinating crops. A breeder selects a single superior plant.
+The seeds from this one plant are collected and grown out. Since the plant selfpollinates,
+all its offspring are genetically very similar (a "pure-line").
+o Use: Good for creating highly uniform varieties (e.g., a new tomato or bean
+variety).
+ Clonal Selection:
+o Process: Used for crops that are propagated vegetatively (asexually) like cassava,
+yams, bananas, or potatoes. A breeder identifies a single superior plant (e.g., a
+cassava plant with huge tubers). Cuttings ("clones") are taken from this one plant
+and multiplied.
+o Use: All offspring are genetically identical to the superior parent.
+2. HYBRIDIZATION (CROSS-BREEDING)
+This is the most powerful traditional breeding method. It involves crossing two parent plants
+with different desirable traits, to produce offspring that combines those traits.
+ Process:
+1. Parent Selection: Choose two parents (Parent A and Parent B).
+ Example: Parent A (Tomato) = High-yielding but disease-susceptible.
+Parent B (Tomato) = Low-yielding but disease-resistant.
+ Goal: Create a new variety that is High-yielding AND Disease-resistant.
+2. Emasculation: To prevent self-pollination, the breeder must carefully remove the
+male parts (stamens/anthers) from the flower of Parent A (the designated "female"
+parent) before it produces pollen.
+3. Pollination: The breeder collects pollen from the flower of Parent B (the "male"
+parent) and manually transfers it to the stigma (female part) of the emasculated
+flower of Parent A.
+4
+4. Bagging: The pollinated flower is covered with a small bag (paper or cloth) to
+prevent stray, unwanted pollen from landing on it.
+5. Harvesting F1: The flower develops into a fruit (a tomato). The seeds inside are
+the "First Filial" (F1) generation. These seeds contain genes from both parents.
+6. Growing F1 & F2: The F1 seeds are planted. The F1 plants are often selfpollinated
+to produce the "Second Filial" (F2) generation.
+7. Selection (The long part): The F2 generation is where all the gene combinations
+appear. The breeder must plant thousands of F2 seeds and select the very few
+individual plants that show the desired combination (high yield + disease
+resistance).
+8. Stabilization: These selected plants are grown and re-selected over many (6-10)
+generations until their desirable traits are "fixed" (i.e., they breed true).
+ Types of Hybridization:
+o Intraspecific: Crossing two different varieties within the same species (e.g., Zea
+mays 'A' x Zea mays 'B'). This is the most common type.
+o Interspecific: Crossing two different (but related) species (e.g., to transfer a wild,
+disease-resistant gene into a cultivated species).
+EVALUATION (WEEK 1)
+1. Define horticultural crop improvement in your own words.
+2. List four distinct aims of a plant breeding programme.
+3. Explain the difference between "Pure-line Selection" and "Clonal Selection," stating
+which type of crop each is used for.
+4. What is "Emasculation" in the context of hybridization, and why is it necessary?
+5. A farmer has a maize variety that tastes sweet (Trait A) and another that is droughttolerant
+(Trait B). Which method of crop improvement would be best to combine these
+two traits?
+ASSIGNMENT (WEEK 1)
+1. Visit a local market or farm.
+5
+2. Identify two different varieties of the same crop (e.g., two types of mango, two types of
+pepper, or two types of cassava - yellow vs. white).
+3. In your notebook, list the observable differences (phenotype) between them (e.g., size,
+colour, shape, texture).
+4. Write a short paragraph speculating on what "aims" a breeder might have had when
+developing one of the varieties.
+6
+WEEK 2: GENETIC PRINCIPLES IN CROP PRODUCTION
+2.1 INTRODUCTION
+Genetics is the science of heredity. It explains how traits are passed from parents to offspring.
+This is the "science" behind the "art" of plant breeding. The foundation of this science was laid
+by Gregor Mendel.
+2.2 KEY GENETIC TERMINOLOGY
+ Gene: The basic unit of heredity; a segment of DNA that codes for a specific trait (e.g.,
+the gene for flower colour).
+ Allele: Different forms of the same gene (e.g., for the flower colour gene, the alleles
+might be 'R' for red and 'r' for white).
+ Phenotype: The physical appearance or observable trait of an organism (e.g., "The
+flower is red").
+ Genotype: The genetic makeup of an organism; the combination of alleles it has (e.g.,
+'RR', 'Rr', or 'rr').
+7
+ Homozygous: Having two identical alleles for a trait (e.g., RR or rr). This is "truebreeding."
+ Heterozygous: Having two different alleles for a trait (e.g., Rr).
+ Dominant Allele: An allele that masks the effect of a recessive allele when present (e.g.,
+if 'R' is dominant, both RR and Rr genotypes will have red flowers). Represented by a
+capital letter.
+ Recessive Allele: An allele that is masked by a dominant allele. It is only expressed in
+the phenotype when it is homozygous (e.g., rr for white flowers). Represented by a small
+letter.
+2.3 MENDEL'S LAWS OF HEREDITY
+1. MENDEL'S FIRST LAW: THE LAW OF SEGREGATION
+ Concept: For any trait, an organism inherits two alleles, one from each parent. These two
+alleles segregate (separate) from each other during the formation of gametes (pollen or
+ovules), so that each gamete contains only one allele for that trait.
+ Example (Monohybrid Cross):
+o A homozygous dominant plant (RR - Red) is crossed with a homozygous
+recessive plant (rr - white).
+o P (Parent) Generation: RR x rr
+o Gametes: The RR parent only makes R gametes. The rr parent only makes r
+gametes.
+o F1 Generation: All offspring receive one 'R' and one 'r', so all are Rr (genotype)
+and all have Red flowers (phenotype).
+o Now, cross two F1 plants: Rr x Rr
+o Gametes: Each F1 parent produces gametes that are 50% R and 50% r.
+o F2 Generation (Using a Punnett Square): | | R | r | | :---: | :---: | :---: | | R | RR |
+Rr | | r | Rr | rr |
+o Phenotypic Ratio: 3 Red : 1 White (75% Red, 25% White)
+o Genotypic Ratio: 1 RR : 2 Rr : 1 rr (25% Homozygous Dominant, 50%
+Heterozygous, 25% Homozygous Recessive)
+8
+ Significance: This law explains why traits can "disappear" in the F1 generation (white)
+and "reappear" in the F2 generation.
+2. MENDEL'S SECOND LAW: THE LAW OF INDEPENDENT ASSORTMENT
+ Concept: Alleles for different traits are inherited independently of one another. The
+inheritance of one trait (like flower colour) does not affect the inheritance of another trait
+(like plant height).
+ Example (Dihybrid Cross):
+o A parent that is heterozygous for two traits: Round, Yellow seeds (RrYy)
+o The gene for shape (R/r) and the gene for colour (Y/y) are on different
+chromosomes.
+o When this plant makes gametes, the alleles "assort independently." It can make
+four types of gametes: RY, Ry, rY, ry.
+o When two such plants are crossed (RrYy x RrYy), it results in the classic 9:3:3:1
+phenotypic ratio (9 Round-Yellow, 3 Round-green, 3 wrinkled-Yellow, 1
+wrinkled-green).
+ Significance: This is the scientific reason why hybridization (Week 1) works! It shows
+that we can create new combinations of traits. We can take "Round seeds" from one
+parent and "Yellow colour" from another and combine them.
+2.4 APPLICATIONS IN CROP PRODUCTION
+1. Systematic Breeding: Mendel's laws turned plant breeding from guesswork into a
+predictive science. Breeders can now use Punnett squares to predict the outcomes of their
+crosses.
+2. Hybrid Vigour (Heterosis): This is a key application. It is the phenomenon where the
+F1 hybrid (e.g., Rr) is superior to both of its homozygous parents (e.g., RR and rr). It
+might be bigger, more disease-resistant, or higher-yielding. The entire hybrid seed
+industry (e.g., hybrid maize) is built on this principle. Farmers buy F1 seeds, get the
+hybrid vigour, but cannot save the seeds, as the F2 generation will segregate and lose the
+superior traits.
+9
+3. Understanding Recessive Traits: Breeders can now understand why a undesirable trait
+(like susceptibility to a disease) might be "hidden" as a recessive allele in a heterozygous
+plant.
+EVALUATION (WEEK 2)
+1. Differentiate between "Genotype" and "Phenotype" using a clear example.
+2. What does it mean for an organism to be "heterozygous" for a trait?
+3. State Mendel's Law of Segregation.
+4. In tomato plants, red fruit (R) is dominant over yellow fruit (r). You cross a heterozygous
+(Rr) plant with a yellow-fruited (rr) plant. What is the expected phenotypic ratio of the
+offspring? (Use a Punnett square to show your work).
+5. What is "Hybrid Vigour" (Heterosis), and why is it important in commercial agriculture?
+ASSIGNMENT (WEEK 2)
+1. Define "Dihybrid Cross."
+2. Draw the 16-box Punnett square for a Dihybrid Cross between two parents that are
+heterozygous for both Round (R) and Yellow (Y) seeds (RrYy x RrYy).
+3. Count and list the four different phenotypes and their 9:3:3:1 ratio.
+10
+WEEK 3: BIOTECHNOLOGY IN HORTICULTURE
+3.1 INTRODUCTION
+Biotechnology involves using living organisms or their products to make or modify products for
+a specific use. In horticulture, it allows for rapid and precise plant improvement, far beyond the
+speed of traditional breeding.
+3.2 TISSUE CULTURE (MICROPROPAGATION)
+A. DEFINITION
+Tissue culture is an in-vitro (in glass) technique of growing new plants from tiny pieces of plant
+tissue (like a leaf, stem, or root tip) on a sterile, artificial nutrient medium (like a jelly). The
+small piece of tissue used is called an explant. The key principle is totipotency – the ability of a
+single plant cell to grow into a complete, new plant.
+B. THE PROCESS
+11
+1. Explant Selection: A small, healthy piece of the desired plant (the "mother plant") is
+selected (e.g., the meristem tip, a leaf section, a bud).
+2. Sterilization: This is the most critical step. The explant is surface-sterilized (using bleach
+or alcohol) to kill all fungi and bacteria. The nutrient medium and all tools are also
+sterilized (usually in an autoclave). The work is done in a laminar flow hood which
+provides sterile air.
+3. Inoculation: The sterile explant is placed onto the sterile nutrient medium (a gel
+containing water, sugar, macro/micro-nutrients, and vitamins) in a test tube or jar.
+4. Incubation: The jar is placed in a growth room with controlled light and temperature.
+5. Callus & Shoot Formation: The explant cells divide and form an undifferentiated mass
+of cells called a callus. By adding specific plant hormones (auxins and cytokinins) to
+the medium, the breeder can encourage the callus to form shoots.
+6. Rooting: The new, small shoots are transferred to a different medium containing
+hormones that promote root growth.
+7. Acclimatization (Hardening Off): The small "plantlets" are removed from the sterile,
+high-humidity jars. Their roots are washed, and they are planted in sterile soil in a
+greenhouse. They must be slowly adapted (acclimatized) to the "real world" conditions of
+lower humidity and natural soil.
+C. APPLICATIONS OF TISSUE CULTURE
+1. Mass Propagation (Cloning): One explant can produce thousands or millions of
+genetically identical (clonal) plantlets in a short time. This is vital for commercial
+production of ornamentals (e.g., orchids) and crops like bananas, plantains, and yams.
+2. Production of Disease-Free Plants: The meristem tip (the very tip of a growing shoot) is
+often free of viruses, even if the mother plant is infected. By tissue-culturing the
+meristem, "clean" planting material can be produced.
+3. Germplasm Conservation: Plant varieties can be stored as tiny, slow-growing tissue
+cultures in a lab ("gene bank"), saving space and protecting against field losses.
+4. Speeding up Breeding: Allows breeders to grow new hybrids or conduct genetic
+experiments much faster than in the field.
+12
+3.3 GENETIC MODIFICATION (GM CROPS)
+A. DEFINITION
+Genetic Modification (GM), or Genetic Engineering (GE), is a biotechnology technique that
+involves directly inserting a specific gene from one organism (e.g., a bacterium, virus, or another
+plant) into the DNA of another organism (the crop). The resulting plant is a "Genetically
+Modified Organism" (GMO) or a "transgenic" plant. This is different from hybridization, which
+can only cross related species.
+B. THE PROCESS (SIMPLIFIED)
+1. Gene Identification: A scientist identifies a useful gene (e.g., the Bt gene from the
+bacterium Bacillus thuringiensis, which is toxic to insects).
+2. Gene Isolation: The gene is isolated ("cut out") using special "restriction" enzymes.
+3. Gene Insertion (Transformation): The isolated gene is inserted into the plant's cells.
+Two common methods are:
+o Gene Gun: The gene is coated onto tiny gold particles and "shot" into the plant
+cells.
+o Agrobacterium tumefaciens: Using a natural soil bacterium that has the ability to
+transfer its own DNA (on a "Ti plasmid") into a plant. Scientists replace the
+bacterium's DNA with the desired gene.
+4. Selection & Regeneration: The cells are grown using tissue culture. The medium
+contains an "antibiotic marker" so that only the cells that successfully took up the new
+gene will survive. These cells are then regenerated into whole plants.
+C. APPLICATIONS OF GM CROPS
+1. Insect Resistance: Bt Cotton and Bt Maize. They produce a protein that kills specific
+insect pests (like the bollworm), reducing the need for chemical insecticides.
+2. Herbicide Tolerance: "Roundup Ready" Soybeans or Maize. They are engineered to be
+resistant to the herbicide glyphosate. This allows a farmer to plant the crop and then spray
+the entire field with the herbicide, killing the weeds but not the crop.
+13
+3. Nutritional Enhancement: "Golden Rice." It is engineered to produce beta-carotene, a
+precursor to Vitamin A, to help combat vitamin deficiency in developing countries.
+4. Disease Resistance: Engineering plants to be resistant to viruses (e.g., Papaya Ringspot
+Virus).
+D. BENEFITS AND CONCERNS
+ Benefits: Increased yields, reduced pesticide use, improved nutrition, enhanced food
+security.
+ Concerns (The Controversy):
+o Environmental: Risk of "superweeds" (herbicide resistance spreading) or harm to
+non-target insects.
+o Human Health: Concerns (largely unproven) about long-term safety or allergies.
+o Economic: Control of seeds by a few large corporations; farmers cannot save GM
+seeds.
+EVALUATION (WEEK 3)
+1. What is "totipotency," and why is it the central principle of tissue culture?
+2. Describe the process of "Acclimatization" (Hardening Off) and explain why it is
+necessary.
+3. List three major applications (uses) of tissue culture in horticulture.
+4. What is the key difference between traditional hybridization and genetic modification
+(GM)?
+5. Explain what Bt Cotton is. Where did the Bt gene come from, and what is the benefit to
+the farmer?
+ASSIGNMENT (WEEK 3)
+1. Draw a simple flowchart (diagram with arrows) showing the 7 main steps of tissue
+culture, starting from "Explant Selection" and ending at "Acclimatization."
+2. Write a short paragraph explaining the difference between "Herbicide Tolerant" GM
+crops and "Insect Resistant" GM crops.
+14
+WEEK 4: ORGANIC HORTICULTURE
+4.1 INTRODUCTION
+Organic horticulture is a holistic production system that avoids the use of synthetic (man-mat)
+fertilizers, pesticides, and herbicides. It focuses on building healthy soil and working with natural
+ecological cycles to produce nutritious food.
+4.2 PRINCIPLES OF ORGANIC HORTICULTURE
+The philosophy is guided by four main principles:
+1. Principle of Health: Aims to produce healthy soil, healthy plants, healthy animals, and
+healthy people. It avoids inputs that can harm health.
+2. Principle of Ecology: Works with living ecological systems, not against them. It
+emphasizes recycling, biodiversity, and balance in nature.
+3. Principle of Fairness: Seeks to ensure fairness in relationships with all involved, from
+farmers and workers to consumers.
+15
+4. Principle of Care: Emphasizes caution and responsibility in managing the farm to
+protect the environment and the well-being of future generations.
+4.3 KEY PRACTICES IN ORGANIC HORTICULTURE
+Organic farmers replace synthetic inputs with natural, knowledge-based practices.
+A. SOIL FERTILITY MANAGEMENT
+(Goal: "Feed the soil, not the plant.")
+1. Composting: The controlled decomposition of organic matter (kitchen scraps, leaves,
+grass clippings, small amounts of manure) by microorganisms. The result, "compost," is a
+dark, nutrient-rich soil conditioner.
+2. Animal Manures: Using waste from poultry, goats, or cattle. It must be composted or
+"aged" first, as raw manure can burn plants and contain pathogens.
+3. Green Manures / Cover Cropping:
+o Cover Crop: A crop (like Mucuna, Centrosema, or Pueraria) planted between
+cash crops or during the off-season to cover bare soil.
+o Green Manure: A cover crop that is specifically grown to be cut down and tilled
+into the soil to add organic matter. Leguminous cover crops (beans, peas) are
+special because they "fix" nitrogen from the air into the soil.
+4. Crop Rotation: Not planting the same crop in the same spot year after year. (e.g., Plant
+maize (heavy feeder) -> then beans (nitrogen fixer) -> then yams (root crop)). This breaks
+pest cycles and balances soil nutrient use.
+B. PEST AND DISEASE CONTROL
+(Goal: Not to eliminate all pests, but to keep them at a manageable, non-damaging level.)
+1. Cultural Control:
+o Crop Rotation: (As above) Prevents soil-borne diseases from building up.
+o Intercropping: Planting two or more different crops together (e.g., maize and
+cassava). This confuses pests.
+16
+o Sanitation: Removing and destroying diseased plants and crop debris.
+2. Biological Control:
+o Encouraging "beneficial" insects (like ladybugs, which eat aphids) by planting
+flowers they like.
+o Using microbial pesticides like Bacillus thuringiensis (Bt) – (Note: this is the
+natural bacteria, not the GM crop).
+3. Physical/Mechanical Control:
+o Hand-picking large insects (like caterpillars) off plants.
+o Using insect traps or reflective mulches.
+4. Natural Pesticides:
+o Using plant-based sprays like Neem Oil (Azadirachta indica), garlic spray, or hot
+pepper spray. These are biodegradable but must still be used with care.
+C. WEED CONTROL
+1. Mulching: Covering the soil surface with organic materials (straw, grass clippings, wood
+chips). This blocks sunlight, preventing weed seeds from germinating, and also conserves
+soil moisture.
+2. Cover Cropping: (As above) A dense cover crop will "choke out" and smother weeds.
+3. Hand Weeding / Hoeing: Mechanical removal of weeds.
+4.4 BENEFITS AND CHALLENGES
+ Benefits:
+o Environmental: No chemical runoff to pollute water; improves soil health and
+biodiversity.
+o Health: Food is free of synthetic pesticide residues.
+o Sustainability: Builds long-term soil fertility.
+o Economic: (Potentially) Higher "premium" price for certified organic food; lower
+cost of inputs (no chemicals).
+ Challenges:
+o Labour Intensive: Weeding and compost-making require more physical work.
+17
+o Lower Yields: (Sometimes, especially in the transition period).
+o Certification: The process to become "Certified Organic" can be complex and
+expensive for small farmers.
+EVALUATION (WEEK 4)
+1. What is the core philosophy of organic horticulture regarding soil? ("Feed the...")
+2. Explain the difference between a "Cover Crop" and "Green Manure."
+3. Why is "Crop Rotation" a key practice in organic farming? (Give two reasons).
+4. List three non-chemical methods an organic farmer can use to control insect pests.
+5. What are two benefits and one challenge of organic horticulture?
+ASSIGNMENT (WEEK 4)
+1. Describe how you would make a small compost heap or pile at home or in the school
+garden.
+2. List five "GREEN" materials (Nitrogen-rich, e.g., kitchen scraps, fresh grass) and five
+"BROWN" materials (Carbon-rich, e.g., dry leaves, cardboard, sawdust) that can be used
+for compost.
+18
+WEEK 5: MIDTERM EXAMINATION
+This week is for assessment of all topics covered in Weeks 1-4.
+19
+WEEK 6: GREENHOUSE TECHNOLOGY
+6.1 INTRODUCTION
+A greenhouse (or glasshouse) is a structure designed to provide a controlled, protected
+environment for growing crops. It is covered with a transparent or translucent material (like glass
+or plastic) that allows sunlight to enter and heats the interior.
+6.2 STRUCTURES AND TYPES
+1. Glasshouses: The traditional structure, using glass panels in a metal (aluminum) frame.
+o Pros: Very long-lasting (30+ years), best light transmission.
+o Cons: Very expensive, heavy, fragile (can break), traps heat (a major problem in
+Nigeria).
+2. Polytunnels (Hoop Houses):
+o Structure: Arched hoops (metal or PVC) covered with a single or double layer of
+UV-stabilized polyethylene (polythene) plastic.
+o Pros: Much cheaper, easy to build, good for extending seasons.
+o Cons: Plastic needs replacing every 3-5 years, can be damaged by wind.
+20
+3. Net Houses (Shade Houses):
+o Structure: A simple frame (wood or metal) covered with shade net or insectproof
+netting.
+o Pros: Very suitable for Nigerian/tropical climates. Does not trap heat; provides
+shade (reducing heat stress); and physically excludes insect pests (like whiteflies).
+o Cons: Does not protect from heavy rain.
+6.3 ENVIRONMENTAL CONTROL (THE "TECHNOLOGY")
+A greenhouse allows the grower to become a "weather man" and control key factors:
+1. Temperature:
+o Cooling (Critical in Nigeria): Ventilation is key. This includes side-vents that
+roll up, roof vents that open, and large "extraction" fans to pull hot air out.
+"Evaporative cooling" (using wet pads and fans) is a more advanced method.
+o Heating (For cold climates/nights): Using electric or gas heaters.
+2. Light:
+o Reducing: Using shade cloths (nets) over the roof to reduce intense sunlight.
+o Adding: Using artificial "grow lights" (e.g., LEDs) to supplement light on cloudy
+days or extend the "day length."
+3. Water & Humidity:
+o Irrigation: Drip irrigation (delivering water directly to the plant's roots) is the
+most common and efficient method.
+o Humidity: Misters or foggers can be used to raise humidity for seedlings or
+certain crops.
+4. Pest & Disease Control:
+o The structure is a physical barrier.
+o Double-door entry systems act as an "airlock" to stop insects from flying in.
+o Fine insect netting on all vents and openings.
+6.4 BENEFITS OF GREENHOUSE TECHNOLOGY
+21
+1. Year-Round Production: Allows farmers to grow crops (especially high-value
+vegetables like tomatoes, peppers, cucumbers) even in the off-season.
+2. Protection from Elements: Protects crops from heavy rain (which can spread disease),
+strong winds, and hailstones.
+3. Pest and Disease Control: Drastically reduces pest and disease pressure, leading to less
+pesticide use and higher quality produce.
+4. Increased Yield: Optimized conditions (water, nutrients) lead to much higher yields per
+square meter.
+5. Water Efficiency: Drip irrigation in a greenhouse uses up to 90% less water than
+traditional field irrigation.
+6.5 CHALLENGES IN NIGERIA
+1. High Initial Cost: The setup cost for glasshouses or well-equipped polytunnels is very
+high.
+2. Overheating: This is the number one challenge. A poorly designed, poorly ventilated
+greenhouse will become an "oven" in the tropical sun and kill plants.
+3. Constant Power Supply: Advanced systems (fans, pumps, coolers) require a reliable
+electricity source, which is a major problem (requiring generators or large solar setups).
+4. Technical Know-How: Managing a greenhouse environment requires training and skill.
+5. Availability of Materials: Sourcing high-quality UV-treated plastic, shade nets, and
+parts can be difficult or expensive.
+EVALUATION (WEEK 6)
+1. What is a greenhouse?
+2. Compare a "Glasshouse" and a "Polytunnel" in terms of cost and durability.
+3. Why is a "Net House" or "Shade House" often more suitable for a tropical climate like
+Nigeria than a fully enclosed plastic greenhouse?
+4. List three environmental factors a grower can control in a greenhouse.
+5. What is the single biggest challenge of using greenhouse technology in Nigeria, and what
+is the primary method to combat it?
+22
+ASSIGNMENT (WEEK 6)
+1. Sketch a simple design for a "Net House" suitable for growing tomatoes.
+2. Label the following parts: (a) Frame (wood or metal), (b) Shade net roof, (c) Insect-proof
+net sides, (d) Drip irrigation lines, (e) Double-door entry.
+WEEK 7: MIDTERM BREAK
+This is a break from instruction. Students are encouraged to review the first half of the term's
+work.
+23
+WEEK 8: URBAN AND PERI-URBAN HORTICULTURE
+8.1 DEFINITIONS
+ Urban Horticulture: The practice of growing horticultural crops (fruits, vegetables,
+flowers) inside the city boundaries. This includes backyards, balconies, rooftops, and
+community gardens.
+ Peri-Urban Horticulture: The practice of growing crops on the immediate fringes or
+edges of a city, often on small-scale commercial farms, to supply the city market.
+8.2 IMPORTANCE OF URBAN/PERI-URBAN HORTICULTURE
+1. Food Security & Nutrition: Provides direct access to fresh, nutritious food (especially
+vegetables) for city dwellers, improving family diets.
+2. Income Generation: Creates jobs and business opportunities (selling fresh produce,
+seedlings, or compost).
+3. Environmental Improvement:
+o "Greens" the city, improving air quality and reducing the "urban heat island"
+effect.
+24
+o Reduces "Food Miles" (the distance food travels from farm to plate), saving
+energy and reducing carbon emissions.
+o Waste Recycling: Can utilize composted urban organic waste.
+4. Social & Educational: Community gardens bring people together. School gardens are
+powerful teaching tools.
+8.3 PRACTICES AND SYSTEMS FOR URBAN HORTICULTURE
+Since space is the biggest limitation, these methods focus on growing in small, intensive spaces.
+1. Container Gardening: Growing plants in any available container: plastic pots, buckets,
+"Grow Bags," old car tires, wooden boxes.
+2. Sack (Bag) Gardening: Filling large woven sacks (like those for rice or garri) with soil
+and compost. Plants (like leafy greens) are planted on the top and in holes cut in the sides.
+Very space-efficient.
+3. Vertical Gardening: Growing plants upwards to save space.
+o Using trellises for climbing plants (beans, cucumbers).
+o Using "stackable" pots or "living wall" systems.
+4. Rooftop Gardens: Using flat roofs as growing spaces. This requires:
+o Ensuring the roof is strong enough to hold the weight of wet soil.
+o Waterproofing and good drainage to protect the building.
+5. Community Gardens: A single, larger piece of land (often on "borrowed" land) that is
+divided into small plots for different families to farm.
+8.4 HYDROPONICS: SOIL-LESS HORTICULTURE
+Hydroponics is an advanced form of urban horticulture that does not use soil.
+ Definition: A method of growing plants in a "nutrient solution" (water mixed with all the
+essential plant nutrients) or in an inert growing medium (like gravel, perlite, or coconut
+coir).
+ Common Systems:
+25
+o Nutrient Film Technique (NFT): A thin "film" of nutrient water flows
+continuously in a channel over the bare plant roots. (Common for lettuce).
+o Deep Water Culture (DWC): Plant roots are suspended directly in a large,
+aerated (bubbling) tank of nutrient solution.
+ Pros (Advantages):
+o No Soil Needed: Can be done anywhere (a roof, a warehouse, a balcony).
+o Extremely Fast Growth: Plants get exactly the nutrients they need, 24/7.
+o Very High Yield: Produces more food in less space.
+o Water Efficient: The water is recycled; uses 70-90% less water than soil farming.
+ Cons (Disadvantages):
+o High Initial Cost: Need for pumps, tanks, plumbing, and nutrient salts.
+o Technical Skill: Requires knowledge of chemistry to mix the nutrient solution.
+o Reliant on Electricity: The pumps and aerators must run 24/7. A power cut can
+kill the entire crop.
+EVALUATION (WEEK 8)
+1. What is the main difference between "Urban" and "Peri-Urban" horticulture?
+2. List three (3) important benefits of urban horticulture for a city like Lagos or Abuja.
+3. Describe "Sack Gardening."
+4. Define Hydroponics.
+5. What are two major advantages and two major disadvantages of hydroponics?
+ASSIGNMENT (WEEK 8)
+1. Look around your own home, compound, or school.
+2. Identify three (3) "un-used" spaces that could be used for urban horticulture (e.g., a flat
+roof, a balcony, a patch of bare soil, a sunny wall).
+3. For each space, suggest one appropriate "practice" (e.g., container garden, vertical garden)
+and one "crop" (e.g., pepper, lettuce, pumpkin) that could be grown there.
+26
+WEEK 9: AGROFORESTRY
+9.1 MEANING AND DEFINITION
+Agroforestry is a sustainable land management system that deliberately combines woody
+perennials (trees, shrubs) with agricultural crops and/or livestock, either at the same time or in
+sequence, on the same piece of land.
+It is the opposite of "monoculture" (planting only one crop) and is a more integrated and
+"natural" way of farming. A traditional Nigerian compound farm (with fruit trees, yams,
+vegetables, and chickens) is a classic example of agroforestry.
+9.2 AGROFORESTRY PRACTICES (SYSTEMS)
+1. Alley Cropping (Hedgerow Intercropping):
+o What: Planting food crops (like maize, cassava, or vegetables) in the "alleys" or
+"lanes" between rows of fast-growing, nitrogen-fixing trees or shrubs (like
+Leucaena, Gliricidia, or Faidherbia albida).
+27
+o How it works: The trees are pruned regularly, and the leaves (which are rich in
+nitrogen) are used as mulch and "green manure" for the crops in the alleys.
+2. Multi-storey Cropping (Home Gardens):
+o What: A system that copies a natural forest, with different "layers" of crops.
+o Example:
+ Top Layer (Tall trees): Coconut, Oil Palm, Mango, Ogbono.
+ Middle Layer (Medium trees/shrubs): Pawpaw, Banana, Plantain,
+Cocoa, Coffee.
+ Low Layer (Food crops): Cassava, Yams (with trellises), Cocoyam,
+Peppers.
+ Ground Cover (On the soil): Pumpkin, Melon, Sweet Potato.
+3. Silvopasture:
+o What: Combining trees with pasture (grass) and livestock (animals).
+o How it works: Animals (goats, sheep, cattle) graze on the grass growing under
+the trees. The trees provide shade for the animals and can also be a source of
+fodder (food).
+4. Windbreaks / Shelterbelts:
+o What: One or more rows of trees and shrubs planted around the border of a farm
+or field.
+o Purpose: To protect crops, soil, and animals from strong, damaging winds. They
+also prevent wind erosion.
+9.3 IMPORTANCE AND BENEFITS OF AGROFORESTRY
+1. Improved Soil Fertility:
+o Leguminous trees (like Gliricidia) "fix" nitrogen from the air.
+o Tree leaf litter (mulch) decomposes, adding rich organic matter to the soil.
+o Tree roots can "pump" nutrients from deep in the soil back up to the surface.
+2. Soil and Water Conservation:
+o Tree roots bind the soil, preventing water and wind erosion.
+o The "canopy" (tree leaves) slows down heavy rain, so it "soaks in" rather than
+"runs off."
+28
+o Mulch on the soil surface reduces water evaporation.
+3. Diversified Income (Economic Security):
+o The farmer is not reliant on one crop.
+o They get short-term income (food crops), medium-term income (fruit), and longterm
+income (timber, firewood). This spreads the risk.
+4. Improved Microclimate:
+o The tree canopy provides shade, which lowers soil temperature and reduces heat
+stress on crops and animals.
+5. Environmental Benefits:
+o Increases biodiversity (provides a habitat for birds and "good" insects).
+o Sequesters carbon (trees absorb CO2), helping to fight climate change.
+EVALUATION (WEEK 9)
+1. Define agroforestry in your own words.
+2. What is "Alley Cropping"? Explain how the trees help to fertilize the crops.
+3. Sketch and label the four "layers" of a multi-storey home garden.
+4. List four (4) distinct benefits of agroforestry.
+5. What is the primary function of a "windbreak"?
+ASSIGNMENT (WEEK 9)
+1. Read about the tree Gliricidia sepium (often called "Quick-stick").
+2. Write a short report (one page) on why this tree is so important in agroforestry systems in
+West Africa. (Hint: Look up its uses for fodder, green manure, and living fences).
+29
+WEEK 10: ENVIRONMENTAL SUSTAINABILITY IN HORTICULTURE
+10.1 INTRODUCTION
+Sustainable horticulture means growing food in a way that is:
+1. Ecologically Sound: Does not harm the environment (soil, water, air).
+2. Economically Viable: Farmers can make a good living.
+3. Socially Just: Good for families and communities.
+The goal is to meet our present need for food without compromising the ability of future
+generations to meet their own needs. This topic ties together everything we have learned this
+term (organic farming, agroforestry, water management).
+10.2 KEY PILLARS OF ENVIRONMENTAL SUSTAINABILITY
+A. SOIL CONSERVATION AND HEALTH
+ The Problem: Soil erosion, loss of organic matter, and "dead" soil.
+ Sustainable Practices:
+30
+1. Conservation Tillage (Zero/Minimum Tillage): A method of planting without
+ploughing or tilling the soil. A new crop is planted directly into the "stubble"
+(residue) of the previous crop. This protects the soil from erosion, saves water,
+and builds organic matter.
+2. Cover Cropping & Mulching: (From Week 4 & 9) The number one rule of soil
+conservation: Never leave the soil bare. A cover crop (like Mucuna) or a layer of
+mulch (like straw) acts as "armour" for the soil, protecting it from sun, wind, and
+rain.
+3. Contour Ploughing / Terracing: On sloping land, all farming activities
+(ploughing, planting) must be done across the slope (on the contour), not up and
+down it. This creates small ridges that trap water and prevent it from "rushing"
+downhill and causing erosion.
+B. WATER MANAGEMENT AND CONSERVATION
+ The Problem: Water is scarce, rainfall is unreliable, and traditional irrigation is wasteful.
+ Sustainable Practices:
+1. Drip Irrigation: (From Week 6) The most efficient method. Delivers water in
+slow "drips" directly to the root zone of each plant. This eliminates evaporation
+and runoff, saving 70-90% of water.
+2. Rainwater Harvesting: Collecting and storing rainwater.
+ Small-scale: From roofs into plastic tanks.
+ Large-scale: Building small farm ponds or "earth dams" to capture and
+store runoff water for use in the dry season.
+3. Mulching: (As above) A layer of mulch is also one of the best water conservation
+techniques, as it dramatically reduces water loss from evaporation at the soil
+surface.
+C. INTEGRATED PEST MANAGEMENT (IPM)
+ The Problem: Over-reliance on chemical pesticides kills beneficial insects, pollutes
+water, and creates "resistant" pests.
+31
+ IPM is a "middle-ground" approach: It's a pyramid strategy.
+1. Base (Foundation): Prevention: Use cultural methods first (crop rotation,
+resistant varieties, farm sanitation).
+2. Middle: Biological/Physical: Use biological controls (beneficial insects) and
+physical controls (traps, hand-picking).
+3. Top (Last Resort): Chemicals: Use chemical pesticides only when the pest level
+is high enough to cause economic damage, and use the least-toxic, most-specific
+chemical available.
+D. ENHANCING BIODIVERSITY
+ The Problem: Monoculture (planting a single crop) is an "invitation" to pests and
+diseases.
+ Sustainable Practices:
+o Polyculture / Intercropping: Planting many different crops together.
+o Agroforestry: (From Week 9) Integrating trees creates habitats.
+o Planting Flower Borders: Attracts pollinators (bees) and beneficial insects (pest
+predators).
+EVALUATION (WEEK 10)
+1. What are the three "pillars" of sustainability? (Ecological, Economic, ...)
+2. Define "Conservation Tillage." How does it protect the soil?
+3. Explain why farming on the contour (across a slope) is a vital soil conservation practice.
+4. What is "Rainwater Harvesting"? Give one small-scale and one large-scale example.
+5. What is "Integrated Pest Management (IPM)"? At what stage is it acceptable to use a
+chemical pesticide in an IPM system?
+ASSIGNMENT (WEEK 10)
+1. Draw a diagram of an "IPM Pyramid."
+2. Label the four levels, from the bottom (most-used) to the top (least-used).
+o Level 1: Cultural & Preventive
+32
+o Level 2: Physical & Mechanical
+o Level 3: Biological
+o Level 4: Chemical (Last Resort)
+33
+WEEK 11: REVISION
+ Review of Key Concepts:
+o Week 1 (Improvement): Aims (yield, quality, resistance). Methods (Selection,
+Hybridization - Emasculation, Pollination).
+o Week 2 (Genetics): Mendel's Laws (Segregation, Independent Assortment).
+Terms (Gene, Allele, Dominant, Recessive, Phenotype, Genotype). Hybrid
+Vigour.
+o Week 3 (Biotech): Tissue Culture (Explant, Sterilization, Callus, Acclimatization,
+Disease-free). GM Crops (Bt, Herbicide Tolerance).
+o Week 4 (Organic): Principles (Health, Ecology). Practices (Compost, Green
+Manure, Crop Rotation, Neem Oil, Mulching).
+o Week 6 (Greenhouse): Types (Glass, Polytunnel, Net House). Benefits (Yearround,
+Protection, Water-saving). Challenges (Cost, Overheating).
+o Week 8 (Urban): Importance (Food security, Income). Practices (Containers,
+Sack gardens, Vertical). Hydroponics (NFT, DWC, Pros/Cons).
+o Week 9 (Agroforestry): Systems (Alley cropping, Multi-storey, Silvopasture,
+Windbreaks). Benefits (Soil fertility, Conservation, Diversified income).
+o Week 10 (Sustainability): Soil (Contour ploughing, Zero-tillage). Water (Drip
+irrigation, Rain harvesting). Pest (IPM Pyramid).
+EVALUATION (WEEK 11)
+1. What is the difference between Mendel's Law of Segregation and the Law of Independent
+Assortment?
+2. A farmer has a virus-infected banana plant but wants to propagate it. What biotechnology
+technique could be used to create clean, virus-free plantlets?
+3. Compare "Alley Cropping" and "Hydroponics" based on their (a) use of soil, (b) use of
+technology, and (c) key benefits.
+4. A farmer with a field on a gentle slope is losing topsoil to erosion. Recommend three (3)
+sustainable practices to help solve this problem.
+34
+SS2 HORTICULTURE AND CROP PRODUCTION LESSON NOTES
+SECOND TERM
+WEEK 1: CROP ROTATION
+1.1 INTRODUCTION
+Crop rotation is a fundamental and ancient agricultural practice. It is a systematic, planned
+sequence of growing different types of crops (from different plant families) on the same piece of
+land over a period of years. It is the opposite of monocropping (growing the same crop on the
+same land year after year), which is a practice that can degrade soil and increase pest problems.
+1.2 PRINCIPLES OF CROP ROTATION
+The success of crop rotation relies on several key agronomic principles. The plan is designed to
+ensure that different crops, with their unique characteristics, contribute to the soil and the farm
+ecosystem in a balanced way.
+1. Nutrient Management (Legumes vs. Feeders):
+35
+o Heavy Feeders: Some crops, like maize and tomatoes, are "heavy feeders" that
+consume large amounts of soil nutrients, especially nitrogen.
+o Nitrogen-Fixers (Legumes): Crops from the legume family (e.g., cowpea,
+groundnuts, soybeans, Mucuna) have a symbiotic relationship with bacteria
+(Rhizobium) in their root nodules. These bacteria "fix" atmospheric nitrogen (N₂)
+into a form (ammonia) that plants can use.
+o The Principle: By planting a legume crop after a heavy feeder, the farmer
+naturally replenishes the soil's nitrogen supply, reducing the need for expensive
+synthetic fertilizers.
+2. Pest and Disease Cycle Disruption:
+o Many soil-borne pests (like nematodes) and diseases (like fungal wilts) are cropspecific.
+They build up in the soil when their preferred host crop is planted
+repeatedly.
+o The Principle: When you plant a non-host crop, the pest or pathogen "starves" or
+its life cycle is broken. For example, the nematodes that attack yams will not
+survive on a crop of maize. By rotating, the pest population crashes, ensuring a
+healthier field for the next time the susceptible crop is planted.
+3. Varying Rooting Depths (Soil Structure):
+o Shallow-rooted crops (e.g., onions, lettuce) primarily use the top layer of soil.
+o Deep-rooted crops (e.g., cassava, sunflowers, some cover crops) can break
+through compacted soil layers ("hardpan") and draw nutrients and water from
+deep within the soil profile.
+o The Principle: Rotating between deep and shallow-rooted crops improves soil
+aeration, water infiltration, and overall soil structure. The deep-rooted crops also
+"recycle" nutrients by bringing them up to the surface, where they become
+available to the next crop after the plant decomposes.
+4. Weed Control:
+o Different crops compete with weeds differently.
+o Smother Crops: Some crops (like cassava, sweet potatoes, or Mucuna) develop a
+dense canopy that "chokes" or "smothers" weeds by blocking sunlight.
+o Poor Competitors: Other crops (like onions or carrots) are easily overgrown.
+36
+o The Principle: Rotating a "smother crop" into the sequence can naturally reduce
+the "weed seed bank" in the soil, making it easier to manage weeds in the next,
+more sensitive crop.
+1.3 ADVANTAGES OF CROP ROTATION
+1. Improved Soil Fertility & Health: Balances nutrient levels, increases soil organic
+matter (when cover crops are used), and promotes a healthy soil microbiome.
+2. Reduced Chemical Use: Decreases the need for synthetic fertilizers (due to legumes)
+and pesticides/nematicides (due to pest cycle disruption). This saves the farmer money
+and protects the environment.
+3. Increased Crop Yields: Healthier, more fertile soil leads to higher yields over the long
+term.
+4. Risk Diversification: By planting different crops, the farmer is less vulnerable. If market
+prices for one crop crash, or a specific pest attacks, they still have other crops to rely on
+for income.
+5. Better Soil Structure: Improves water holding capacity and aeration, and reduces soil
+erosion.
+1.4 EXAMPLES OF A 4-YEAR CROP ROTATION PLAN
+A good rotation plan will typically include a crop from each of these categories:
+ A - Fruit/Leaf: (e.g., Maize, Tomato, Okra) - Heavy Feeder
+ B - Legume: (e.g., Cowpea, Groundnut, Soybean) - Nitrogen Fixer
+ C - Root/Tuber: (e.g., Yam, Cassava, Potato) - Heavy Potash (K) Feeder
+ D - Fallow/Cover Crop: (e.g., Mucuna, Pueraria) - Soil Builder
+Example Plan for a Single Plot of Land:
+ Year 1: Maize (Heavy nitrogen feeder)
+ Year 2: Cowpea (Replenishes nitrogen)
+37
+ Year 3: Yams (Use the high organic matter and residual nitrogen; followed by cassava,
+which is a deep-rooted, heavy potash feeder)
+ Year 4: Fallow with Mucuna (To rest the soil, add massive organic matter, and control
+weeds)
+EVALUATION (WEEK 1)
+1. Define Crop Rotation.
+2. What is the main difference between crop rotation and monocropping?
+3. Explain the principle of "Pest and Disease Cycle Disruption."
+4. Why is it a good idea to plant a legume (like groundnuts) after a cereal (like maize)?
+5. Design a simple 3-year crop rotation for a local farm, and justify your choice for each
+year.
+ASSIGNMENT (WEEK 1)
+1. Interview a local farmer (a family member or neighbour).
+2. Ask them if they practice crop rotation. If yes, what is their sequence of crops?
+3. If they practice monocropping, what challenges do they face (e.g., "The soil is tired," "I
+have to buy more fertilizer," "Weevils are a big problem")?
+4. Write a one-page report on your findings.
+38
+WEEK 2: MIXED CROPPING AND INTERCROPPING
+2.1 INTRODUCTION
+These are traditional farming systems, common throughout Nigeria and West Africa, where
+multiple crops are grown on the same piece of land at the same time. This is a form of
+polyculture and contrasts sharply with the "monoculture" of large-scale commercial farming.
+2.2 DEFINITIONS
+ Mixed Cropping (or Mixed-Intercropping):
+o Definition: The practice of growing two or more crops simultaneously on the
+same field, with no distinct row arrangement.
+o Example: A traditional farm where maize, cassava, and pumpkin seeds are all
+planted, scattered or mixed together in the same space. It appears random.
+ Intercropping (or Strip-Cropping/Row Intercropping):
+o Definition: The practice of growing two or more crops simultaneously on the
+same field in a specific, patterned arrangement. This is a more systematic and
+modern approach.
+39
+o Examples:
+ Row Intercropping: One row of maize, followed by one row of cowpea,
+followed by one row of maize.
+ Strip Intercropping: A 1-meter "strip" of maize, followed by a 1-meter
+"strip" of soybeans.
+2.3 BENEFITS OF MIXED/INTERCROPPING
+1. Risk Diversification (Main Benefit): This is the farmer's "insurance policy." If one crop
+fails due to drought, pests, or low prices, the other crops may survive and provide food
+and income. It is the principle of "not putting all your eggs in one basket."
+2. Higher Total Yield (Land Equivalent Ratio - LER): LER is a measure of efficiency.
+An LER greater than 1.0 means the intercrop is more productive than growing the crops
+separately. For example, if you get 0.7-ha-worth of maize and 0.5-ha-worth of cowpea
+from a 1-ha intercrop, your LER is 1.2. This happens because the crops use resources
+(light, water, nutrients) more efficiently together.
+3. Pest and Disease Suppression:
+o Pest Confusion: Pests that find their host plant by smell are "confused" by the
+other crop's smell.
+o Trap Cropping: One crop (the "trap crop") can be planted to attract pests away
+from the main, more valuable crop.
+o Physical Barrier: Tall crops (like maize) can act as a barrier, preventing flying
+pests from reaching the shorter crop (like beans).
+4. Weed Suppression: Planting low-growing, spreading crops (like melon, pumpkin, or
+sweet potato) as a "ground cover" under a tall crop (like maize or cassava) smothers
+weeds by blocking sunlight.
+5. Improved Soil Fertility: When a legume (like cowpea) is intercropped with a cereal
+(like maize), the legume provides some nitrogen to the cereal.
+6. Better Use of Resources: Different crops have different needs:
+o Light: A tall, sun-loving crop (maize) can grow alongside a short, shade-tolerant
+crop (cocoyam).
+40
+o Roots: A deep-rooted crop (cassava) can grow with a shallow-rooted crop
+(onions), using different soil layers.
+2.4 LIMITATIONS (CHALLENGES)
+1. Mechanization is Difficult or Impossible: This is the biggest disadvantage. You cannot
+use tractors, planters, or combine harvesters on a mixed-crop field. This limits the farm
+size and relies heavily on manual labour.
+2. Interspecific Competition: If the crops are not chosen carefully, they will compete with
+each other for light, water, and nutrients. This can lead to lower yields for both crops.
+3. Complex Management: All operations (planting, fertilizing, weeding, harvesting) are
+more complicated. The crops may have different planting times, nutrient needs, and
+harvesting times.
+4. Pest Control Complexity: A pesticide that is safe for one crop might kill the other (e.g.,
+a herbicide for maize might kill the intercropped beans).
+EVALUATION (WEEK 2)
+1. What is the main difference between Mixed Cropping and Intercropping?
+2. Explain the concept of "Risk Diversification" in the context of mixed cropping.
+3. What is the "Land Equivalent Ratio (LER)"? What does an LER of 1.3 mean?
+4. Give one example of how intercropping can help control weeds.
+5. What is the single greatest limitation of mixed/intercropping that prevents it from being
+used on large commercial farms?
+ASSIGNMENT (WEEK 2)
+1. Visit a local farm or market garden (or observe farms on the side of the road).
+2. Identify a field where intercropping or mixed cropping is being practiced.
+3. Draw a simple diagram of the field. Identify the crops being grown together.
+4. Write a short paragraph explaining the likely benefits the farmer is getting from this
+specific combination (e.g., "The farmer is growing maize and melon. The melon (ground
+cover) is suppressing weeds and the maize (cereal) is providing food").
+41
+WEEK 3: CROP YIELD MEASUREMENT
+3.1 INTRODUCTION
+"Yield" is the measure of agricultural output (the harvested product) per unit area of land. It is
+the most common way to measure farm productivity and efficiency.
+ Definition: Yield is the mass, volume, or count of a crop produced from a defined unit of
+land.
+ Standard Unit: The standard international unit for yield is kilograms per hectare
+(kg/ha) or tonnes per hectare (t/ha).
+3.2 IMPORTANCE OF MEASURING YIELD
+Why bother measuring yield accurately?
+1. Economic Performance: To calculate profit and loss. A farmer must know their yield
+(income) to compare against their costs (inputs).
+2. Decision Making & Comparison:
+42
+o Variety Trials: To know which variety of maize (e.g., 'A' vs. 'B') actually
+produces more.
+o Treatment Effects: To scientifically test if a new fertilizer or a new irrigation
+method actually increased production.
+o Farm Management: To identify which fields are high-performing and which are
+low-performing.
+3. Planning and Forecasting:
+o Farmer: To know how much storage to prepare and how much income to expect.
+o Government/NGO: To forecast national food production, predict potential
+famines, and manage food imports/exports.
+3.3 METHODS OF CROP YIELD MEASUREMENT
+1. FULL FIELD MEASUREMENT (CENSUS METHOD)
+ Process: The farmer harvests the entire field. The entire harvest is collected, cleaned, and
+weighed. The total weight is then divided by the total area of the field.
+ Example: A farmer harvests a 2-hectare field and gets a total of 8,000 kg of dry maize.
+o Yield = 8,000 kg / 2 ha = 4,000 kg/ha (or 4 t/ha).
+ Pros: 100% accurate.
+ Cons: Only practical for the farmer after harvest; not useful for researchers who need to
+sample many plots; time-consuming.
+2. SAMPLING METHOD (QUADRANT ANALYSIS)
+This is the standard scientific and estimation method used by researchers, agricultural officers,
+and assessors.
+ Process:
+1. Define the Sampling Unit: A small, fixed-size frame (a "quadrant") is used. A
+common size is 1 meter x 1 meter (1m²).
+43
+2. Randomization: The quadrant is thrown or placed randomly at multiple locations
+in the field. This is critical to avoid bias (e.g., not just picking the "best-looking"
+spots).
+3. Harvest and Weigh: The crop inside the quadrant is carefully harvested, and its
+weight is recorded.
+4. Repeat: This is done multiple times (e.g., 10-20 times) across the field to get a
+reliable average.
+5. Calculate the Average: All the weights are added up and divided by the number
+of samples.
+ e.g., 10 samples (throws) produce a total of 6 kg.
+ Average = 6 kg / 10 samples = 0.6 kg per 1m² (the average yield).
+ Extrapolation (The Calculation):
+o Step 1: You know the average yield per 1m² (e.g., 0.6 kg/m²).
+o Step 2: You know the number of square meters in one hectare: 1 ha = 10,000 m².
+o Step 3: Multiply the average yield by the area.
+ Estimated Yield = 0.6 kg/m² × 10,000 m² = 6,000 kg/ha (or 6 t/ha).
+3.4 IMPORTANT CONSIDERATIONS
+1. Moisture Content: The yield of grain (like maize) must be corrected to a standard
+moisture content (e.g., 12.5% or 15%). A farmer harvesting wet maize (25% moisture)
+will have a higher weight, but it's not the "true" dry yield.
+2. Edge Effects: The outer rows of a field often behave differently (more sun, more wind).
+Samples should avoid the very edge of the field.
+3. Harvestable Yield vs. Biological Yield: "Biological yield" is the total plant mass.
+"Harvestable (or Economic) yield" is only the part that is sold (e.g., the grain, not the
+stalk).
+EVALUATION (WEEK 3)
+1. Define "Crop Yield" and state the standard international unit used to measure it.
+2. List three (3) distinct reasons why it is important to measure yield.
+44
+3. Describe the "Full Field Measurement" (Census) method.
+4. Explain the process of the "Sampling Method" (Quadrant Analysis).
+5. You use a 1m² quadrant to sample a maize field. You take 5 samples with the following
+weights: 0.5 kg, 0.4 kg, 0.6 kg, 0.5 kg, 0.5 kg.
+o (a) What is the average yield in kg/m²?
+o (b) What is the extrapolated yield in kg/ha?
+ASSIGNMENT (WEEK 3)
+1. Find a patch of grass on the school field or at home.
+2. Create a simple quadrant (e.g., a 1m x 1m square using sticks, or a 0.5m x 0.5m square).
+3. Randomly place it 5 times and count a "crop" (e.g., the number of a specific weed, or the
+number of stones).
+4. Calculate the average number of that item per square meter.
+5. Write a paragraph explaining how this "sampling" process is similar to how a scientist
+would estimate crop yield.
+45
+WEEK 4: FARM MECHANIZATION IN CROP PRODUCTION
+4.1 INTRODUCTION
+Farm mechanization is the process of using agricultural machinery to replace human and animal
+(draught) labour in farming operations. It ranges from simple hand tools to advanced GPSguided
+combine harvesters. It is a key component of modernizing agriculture.
+4.2 LEVELS OF MECHANIZATION
+1. Level 1: Hand-Tool Technology (Manual):
+o The farmer uses simple tools (hoe, cutlass, sickle, digging stick).
+o Pros: Low cost, no maintenance, suitable for any land size.
+o Cons: Extremely slow, high drudgery (back-breaking work), limits farm size to 1-
+2 ha (subsistence).
+2. Level 2: Animal-Draught Technology:
+o Uses trained animals (e.g., oxen, donkeys) to pull simple implements (plough,
+ridger, cart).
+o Pros: Faster than manual, can cultivate larger areas (5-10 ha), provides manure.
+46
+o Cons: Animals get sick, need food/water, requires training.
+3. Level 3: Engine-Powered Technology (Motorized):
+o Uses engines (petrol or diesel) to power machinery.
+o Examples: Tractors, combine harvesters, water pumps, motorized tillers, maize
+shellers.
+4.3 SIMPLE MACHINES & EQUIPMENT (The focus for smallholders)
+While tractors are a symbol of mechanization, intermediate mechanization is more practical for
+many farmers.
+ Land Preparation: Hand-held tillers, small 2-wheel tractors (power tillers).
+ Planting: Hand-push planters, simple seed drills.
+ Weed Control: Motorized brush cutters.
+ Harvesting: Small-scale rice reapers.
+ Post-Harvest Processing (Crucial):
+o Cassava Graters: Motorized graters have revolutionized garri production.
+o Rice Threshers/Mills: Separate grain from stalk and husk.
+o Maize Shellers: Quickly remove kernels from the cob.
+o Oil Palm Presses: Extract palm oil much more efficiently than by hand.
+4.4 ADVANTAGES OF MECHANIZATION
+1. Timeliness of Operations: This is the most important advantage. In rain-fed agriculture,
+a farmer has a very small "window" to plant. A tractor can plough 5 hectares in one day;
+a man with a hoe would take weeks.
+2. Reduces Drudgery: Frees farmers from the hardest, most boring, and back-breaking
+physical labour.
+3. Increases Farm Size (Scalability): Mechanization allows a single farmer to cultivate a
+much larger area of land, moving from subsistence to commercial farming.
+4. Improved Efficiency and Quality:
+o Planting: A planter places seeds at a uniform depth and spacing, leading to better
+germination.
+47
+o Harvesting: A combine harvester reduces grain loss.
+o Processing: A cassava grater or oil press extracts more product with less waste.
+4.5 LIMITATIONS AND CHALLENGES IN NIGERIA
+1. High Initial Cost: This is the #1 barrier. Tractors and implements are extremely
+expensive, far beyond the reach of most small-scale farmers.
+2. Lack of Maintenance & Spare Parts: A tractor is useless if it's broken. There is a
+severe shortage of trained mechanics and affordable, genuine spare parts in rural areas.
+3. Land Tenure & Fragmentation: Most farmers have small (0.5-2 ha) plots that are
+scattered in different locations. This "land fragmentation" is highly unsuitable for large
+machinery.
+4. Soil Compaction: Heavy tractors, especially in wet soil, can compact the earth, creating
+a "hardpan" that roots cannot penetrate and water cannot infiltrate.
+5. Job Displacement: Mechanization can lead to rural unemployment, as one machine can
+do the work of 50 labourers.
+6. Lack of Technical Know-How: Farmers need to be trained to operate and maintain the
+machinery correctly.
+EVALUATION (WEEK 4)
+1. Define Farm Mechanization.
+2. What is the most important advantage of mechanization, especially in rain-fed agriculture?
+3. Give two (2) examples of simple, post-harvest processing machines.
+4. List four (4) major limitations or challenges to farm mechanization in Nigeria.
+5. What is "Land Fragmentation," and why is it a barrier to mechanization?
+ASSIGNMENT (WEEK 4)
+1. Choose one common post-harvest operation (e.g., shelling maize, grating cassava,
+pressing palm oil).
+2. Describe the "traditional/manual" method of doing this job.
+3. Describe the "mechanized" method of doing the same job.
+48
+4. List three advantages the mechanized method has over the manual one.
+WEEK 5: MIDTERM EXAMINATION
+This week is for assessment of all topics covered in Weeks 1-4.
+49
+WEEK 6: IRRIGATION SYSTEMS
+6.1 INTRODUCTION
+Irrigation is the artificial application of water to land to supplement rainfall. It is essential for:
+ Dry Season Farming: Growing crops year-round, not just in the rainy season.
+ Drought Mitigation: Saving a crop during an unexpected "dry spell."
+ Arid/Semi-Arid Regions: Making agriculture possible in dry areas.
+6.2 TRADITIONAL IRRIGATION (THE PROBLEM)
+ Surface / Flood Irrigation: This involves "flooding" the entire field or running water
+down "furrows" (channels) between crop rows.
+ Pros: Very cheap to set up, low-tech, requires no special equipment.
+ Cons: Extremely wasteful. Up to 60% of the water is lost to evaporation, deep
+percolation (sinking too deep), and runoff. It also promotes weed growth and can lead to
+soil salinization.
+6.3 MODERN METHODS (WATER CONSERVATION)
+50
+Modern systems focus on "Water Use Efficiency" (WUE) – getting "more crop per drop."
+1. SPRINKLER IRRIGATION
+ How it Works: Water is pumped through pipes and sprayed into the air through
+"sprinkler heads" (e.g., impact sprinklers, pop-up sprinklers, or large "rain guns"). It falls
+on the crops like artificial rain.
+ Pros:
+o Much more efficient (approx. 75-85%) than flood irrigation.
+o Suitable for most crops and soil types.
+o Can cover large areas.
+ Cons:
+o High initial cost (pumps, pipes, sprinklers).
+o High energy cost to pressurize the water.
+o Water can be lost to wind drift and evaporation before it even hits the ground.
+o Wets the leaves, which can increase fungal diseases.
+ Types: Center-Pivot (giant, moving arms for massive fields), Rain Guns (for large, open
+fields).
+51
+2. DRIP IRRIGATION (MICRO-IRRIGATION)
+ How it Works: Water is delivered very slowly, in drops or a "micro-stream," directly to
+the soil at the base (root zone) of each individual plant. It uses a network of plastic pipes
+("drip lines") and small nozzles called "emitters."
+ Pros:
+o Highest Efficiency: The most water-efficient method (90-98%).
+o Water Conservation: Virtually no water is lost to evaporation or runoff.
+o Weed Control: The "alleys" between rows stay dry, which suppresses weed
+growth.
+o Fertigation: Allows for "fertigation" – the application of liquid fertilizer through
+the irrigation water, delivering nutrients directly to the roots.
+o Reduces fungal diseases (as leaves stay dry).
+ Cons:
+o High Initial Cost: Very expensive to install (pipes, emitters, filters).
+o Clogging: The tiny emitters can easily get clogged by sand, dirt, or algae.
+Requires filters and maintenance.
+52
+o Not for all crops: Best for high-value, row crops (vegetables, orchards,
+greenhouses), not for broadcast crops like wheat.
+EVALUATION (WEEK 6)
+1. Define Irrigation.
+2. What is the main problem (disadvantage) of "Surface/Flood Irrigation"?
+3. Describe how "Sprinkler Irrigation" works.
+4. Describe how "Drip Irrigation" works.
+5. You are given a small plot to farm high-value tomatoes in a dry region. You have a
+limited water supply. Which modern irrigation system would you choose, and why? (List
+3 reasons for your choice).
+ASSIGNMENT (WEEK 6)
+1. Draw a simple diagram comparing Sprinkler Irrigation and Drip Irrigation.
+2. Your diagram for Drip Irrigation should show the water going to the roots of individual
+plants.
+3. Your diagram for Sprinkler Irrigation should show the water being sprayed over the
+whole area.
+4. Label the key parts (pump, pipes, sprinkler head, drip emitter).
+53
+WEEK 7: MIDTERM BREAK
+This is a break from instruction. Students are encouraged to review the first half of the term's
+work.
+54
+WEEK 8: STORAGE STRUCTURES
+8.1 INTRODUCTION
+Post-harvest losses are a massive problem in Nigeria. It is estimated that 30-50% of food
+(especially perishables) is lost after it is harvested, before it reaches a consumer. Proper storage
+is the key to preventing this loss.
+Importance of Storage:
+1. Prevent Post-Harvest Losses: Protects crops from spoilage, pests (weevils, rats), and
+moisture.
+2. Ensure Food Security: Allows food to be available during the "lean season" (off-season).
+3. Price Stabilization (Economic): Allows a farmer to store their harvest when prices are
+low (at harvest time) and sell it months later when prices are high.
+8.2 TYPES OF STORAGE STRUCTURES
+1. FOR DRY GRAINS (MAIZE, RICE, COWPEA, SOYBEANS)
+55
+ Traditional (Low-tech):
+o Rhombus: A traditional mud-walled, thatched-roof structure, often raised on
+stilts. Problem: Prone to rodents and insects.
+o Bag Storage: Storing in woven polypropylene (WPP) or jute bags, stacked on
+wooden "pallets" (not on the bare floor) in a ventilated room.
+ Modern (Improved):
+o Silos: Large, cylindrical towers made of metal or concrete. Used for bulk
+(unbagged) storage of grain on a large commercial scale (e.t., by big farms or
+food processing companies like Flour Mills). They are airtight and protect from
+all pests and weather.
+o Hermetic Storage Bags (e.g., PICS Bags): A "low-tech, high-impact" modern
+solution. It's a "bag-within-a-bag" system. An inner plastic liner is made of a
+special material that is airtight. After dry grain is put in and the bag is sealed, the
+insects (weevils) inside use up the oxygen, suffocate themselves, and die.
+2. FOR TUBERS (YAMS, POTATOES)
+ Traditional:
+o Yam Barn: A traditional open-air structure with vertical wooden poles and crosspieces.
+Yams are tied individually to the frame. It is designed for maximum
+ventilation to prevent rot and allow farmers to monitor the yams.
+o Sand Boxes: Storing root crops (like carrots) in boxes of cool, slightly damp sand.
+ Modern:
+o Ventilated Sheds: Modern "barns" made of wood/metal, with slatted shelves to
+store tubers in a cool, dark, and well-ventilated space.
+3. FOR PERISHABLES (TOMATOES, PEPPERS, FRUITS, VEGETABLES)
+ The Problem: These have high water content and "breathe" (respire) fast, so they spoil
+very quickly. They need cold storage.
+ Refrigerators: For small-scale, short-term storage (e.g., retailers, homes).
+ Cold Rooms (Walk-in Coolers):
+56
+o Definition: A large, insulated room or container with a refrigeration unit. It is a
+walk-in refrigerator.
+o Function: They are the backbone of the modern food supply chain. They slow
+down respiration, inhibit microbial growth, and can extend the shelf life of
+tomatoes from 3 days to 21 days.
+ Evaporative Coolers: A low-cost, "off-grid" alternative. A simple frame covered with
+charcoal or jute bags, which are kept wet. As water evaporates, it draws heat from the air
+inside, making the "cooler" 10-15°C colder than the outside air.
+EVALUATION (WEEK 8)
+1. What is a "post-harvest loss"? Give two (2) main reasons why farmers should store their
+crops.
+2. What is a "Silo," and what type of crop is it used for?
+3. Describe how a "Hermetic Bag" (like a PICS bag) controls insects.
+4. Why is "ventilation" the most important principle for a traditional "Yam Barn"?
+5. What is the main difference between a "Silo" and a "Cold Room" in terms of what they
+store and how they work?
+ASSIGNMENT (WEEK 8)
+1. Design a simple, low-cost "storage structure" for one of the following crops: (a) Yams, (b)
+Maize (in bags), (c) Tomatoes (short-term).
+2. Draw your design.
+3. Label the key features and write a short paragraph explaining why your design will help
+prevent spoilage (e.g., "I used pallets to keep the bags off the floor," "I used netting for
+ventilation," "I used charcoal and water for cooling").
+57
+WEEK 9: AGRICULTURAL EXTENSION SERVICES
+9.1 INTRODUCTION
+There is a large "knowledge gap" in agriculture. Researchers at universities (e.g., OAU, ABU)
+and institutes (e.g., IITA, NCRI) develop new technologies (new seeds, new methods, new pest
+controls). However, most farmers, especially in rural areas, do not have access to this
+information.
+ Definition: An Agricultural Extension Service is a system that "bridges" this
+knowledge gap. The Extension Agent (or Officer) is the link, the messenger, and the
+teacher who takes knowledge from the researcher and extends it to the farmer. It is also
+a two-way street, as they take problems from the farmer back to the researcher.
+9.2 ROLES OF AGRICULTURAL EXTENSION
+The role of the extension agent is multi-faceted:
+58
+1. Education and Training: This is the primary role. They teach farmers modern and
+appropriate farming practices (e.g., how to use fertilizer, correct crop spacing, pest
+identification, crop rotation).
+2. Technology Transfer: They are responsible for introducing new technologies to farmers,
+such as:
+o Improved seed varieties (e.g., disease-resistant cassava).
+o Simple machines (e.g., maize shellers).
+o New methods (e.g., drip irrigation).
+3. Facilitation and Farmer Organization: They help farmers form groups, such as the
+cooperatives (see Week 10). This helps farmers get a collective voice, access loans, and
+buy inputs in bulk.
+4. Feedback Channel: The extension agent listens to the farmers' problems (e.g., "A new
+insect is destroying our maize," "The new cassava variety yields well, but the garri does
+not taste good"). They then report this feedback to the researchers, who can then try to
+solve the real-world problem.
+5. Advisory Services: Acting as a "farm doctor," visiting farms, diagnosing problems (pests,
+diseases, nutrient deficiencies), and recommending solutions.
+9.3 EXTENSION TEACHING METHODS
+ Individual Methods:
+o Farm & Home Visits: Visiting a farmer directly. Very effective, but slow (can
+only see a few farmers a day).
+ Group Methods:
+o Demonstration Plots (Method & Result): This is the most effective method.
+ The agent sets up two small plots side-by-side.
+ Plot A (Farmer's Practice): Uses the traditional method.
+ Plot B (Recommended Practice): Uses the new seed/fertilizer.
+ At the end of the season, all the farmers see the result. "Seeing is
+believing."
+o Farmers' Field Days: A large meeting at the demonstration plot to discuss the
+results.
+59
+ Mass Media Methods:
+o Radio: The most important mass-media tool in rural Africa. Farmers listen to
+agricultural programs in their local language.
+o Posters, Leaflets, and (increasingly) Mobile Phones (SMS/Video).
+9.4 IMPORTANCE OF EXTENSION
+ Improves farm productivity and farmer income.
+ Increases national food security.
+ Accelerates the adoption of new, helpful technologies.
+ Connects researchers to the real-world problems of farmers.
+ Empowers rural communities.
+EVALUATION (WEEK 9)
+1. Define "Agricultural Extension." What is the "knowledge gap" it tries to bridge?
+2. What is the name of the person who acts as the "link" between the researcher and the
+farmer?
+3. List four (4) distinct roles of the extension service.
+4. Explain what a "Demonstration Plot" is and why it is such an effective teaching method.
+5. Why is "radio" considered such an important tool for mass-media extension?
+ASSIGNMENT (WEEK 9)
+1. Imagine you are an extension agent, and you need to teach farmers in your village how to
+use "Drip Irrigation."
+2. Which teaching method (Individual, Group, or Mass Media) would you use, and why?
+3. Describe the steps you would take to teach this new technology.
+60
+WEEK 10: AGRICULTURAL COOPERATIVES
+10.1 INTRODUCTION
+The Core Problem: A single, small-scale farmer has no bargaining power.
+ When they buy inputs (fertilizer, seeds), they buy in small quantities at a high retail price.
+ When they sell produce (maize, cocoa), they sell small quantities to a "middleman" at a
+low farm-gate price.
+Definition: An Agricultural Cooperative Society is a business organization that is voluntarily
+owned, controlled, and operated by its members (the farmers) for their mutual social and
+economic benefit. It is a "self-help" group.
+10.2 FUNCTIONS (TYPES) OF COOPERATIVES
+Cooperatives solve the "core problem" by using the power of bulk buying and selling.
+1. Marketing Cooperatives:
+61
+o Function: Farmers pool or bulk their produce together. Instead of 100 farmers
+selling 1 bag of cocoa each, the cooperative sells 100 bags (or more) directly to a
+large buyer or exporter.
+o Benefit: They cut out the middleman and negotiate a much higher price for all
+their members.
+2. Purchasing (Input Supply) Cooperatives:
+o Function: The cooperative buys fertilizer, seeds, and chemicals in bulk
+(wholesale) directly from the manufacturer.
+o Benefit: It then sells these inputs to its members at a low price, much cheaper
+than the local retail shop.
+3. Credit Cooperatives (Savings & Loans):
+o Function: Members contribute regular savings (e.g., ₦500 per week). This pool
+of money ("capital") is then given out as small, low-interest loans to members.
+o Benefit: Provides farmers with access to credit to buy inputs or hire labour, which
+traditional banks will not provide.
+4. Service Cooperatives:
+o Function: The cooperative jointly owns or hires a large piece of equipment that
+no single farmer could afford.
+o Benefit: Provides members with access to services like a tractor, a storage
+warehouse (silo), or a processing machine (e.g., a "Cooperative Rice Mill").
+10.3 ADVANTAGES OF COOPERATIVES
+1. Economic: Higher profits for farmers (sell high, buy low).
+2. Bargaining Power: Gives farmers a "collective voice" in the market and in dealing with
+the government.
+3. Access to Credit & Services: Provides access to loans, inputs, and machinery.
+4. Empowerment: Trains farmers in leadership, business management, and record keeping.
+5. Risk Reduction: Helps members manage risks and supports them in times of need.
+10.4 CHALLENGES OF COOPERATIVES IN NIGERIA
+62
+1. Mismanagement and Corruption: This is the #1 cause of failure. Poor leadership or
+outright theft of funds destroys the cooperative.
+2. Low Member Participation: If members do not attend meetings or feel involved, they
+lose trust and the cooperative weakens.
+3. Lack of Capital: Many cooperatives struggle to raise enough capital to buy a tractor or
+build a warehouse.
+4. Poor Loan Repayment: Members taking loans and defaulting (refusing to pay back) can
+bankrupt a credit cooperative.
+EVALUATION (WEEK 10)
+1. Define "Agricultural Cooperative." Who owns and controls it?
+2. What is the "core problem" a single, small-scale farmer faces that a cooperative tries to
+solve?
+3. Explain the function of a "Marketing Cooperative."
+4. Explain the function of a "Purchasing (Input Supply) Cooperative."
+5. List two (2) major advantages and two (2) major challenges of cooperatives.
+ASSIGNMENT (WEEK 10)
+1. You and 50 other students in your class are all small-scale poultry (chicken) farmers. You
+are all facing high costs for feed.
+2. Write a one-page proposal on why you should all form a "Cooperative."
+3. Explain what type of cooperative it would be and what function it would perform to solve
+your "high feed cost" problem.
+63
+WEEK 11: REVISION
+ Review of Key Concepts:
+o Week 1 (Crop Rotation): Principles (Nutrients, Pests, Soil, Weeds) &
+Advantages (Fertility, Less chemicals, Risk reduction).
+o Week 2 (Intercropping): Definitions (Mixed vs. Intercropping) & Benefits (Risk,
+LER, Pest/Weed suppression) & Limitations (Mechanization).
+o Week 3 (Yield): Importance (Economics, Decisions) & Methods (Census vs.
+Sampling) & Calculation (kg/ha).
+o Week 4 (Mechanization): Advantages (Timeliness, Scale) & Limitations (Cost,
+Maintenance, Land Fragmentation).
+o Week 6 (Irrigation): Problem (Flood) & Modern Methods (Sprinkler vs. Drip) &
+Benefit of Drip (Efficiency, Fertigation, Weed control).
+o Week 8 (Storage): Importance (Post-harvest loss, Price) & Structures (Silos,
+Barns, Cold Rooms) & Low-cost Tech (PICS bags).
+o Week 9 (Extension): Definition (The "Link") & Roles (Education, Tech Transfer,
+Feedback) & Methods (Demo Plot).
+o Week 10 (Cooperatives): Definition (Member-owned) & Functions (Marketing,
+Purchasing, Credit, Service) & Benefits (Bargaining power).
+EVALUATION (WEEK 11)
+1. What is the main difference between Crop Rotation (Week 1) and Intercropping (Week
+2)?
+2. A farmer with 20 hectares of land wants to grow maize. What is the main barrier (Week
+4) to him using a tractor, and why would an Extension Agent (Week 9) be needed to help
+him?
+3. A tomato farmer wants to start dry-season farming. What irrigation system (Week 6)
+would you recommend, and what storage structure (Week 8) would he need to invest in
+to market his produce effectively?
+4. How can a Cooperative (Week 10) help a group of farmers solve the problem of high
+fertilizer costs and low selling prices?
+64
+SS2 HORTICULTURE AND CROP PRODUCTION LESSON NOTES
+THIRD TERM
+WEEK 1: CEREAL CROPS
+1.1 INTRODUCTION TO CEREALS
+Cereal crops (or grains) are plants from the grass family (Poaceae) cultivated for their edible
+starchy seeds (grains). They are the most important source of carbohydrates and staple food for
+the majority of the world's population. In Nigeria, they are critical for food security.
+1.2 MAIZE (Zea mays)
+ Importance: A primary staple food (eaten as 'agbado', 'oka', pap, or 'eko'), a key
+component of animal feed (especially for poultry), and an industrial raw material (for
+flour, corn starch, oil).
+ Ecology:
+65
+o Climate: Requires warm, sunny weather. Needs adequate rainfall (600-1500mm)
+spread throughout the growing season, especially during the "tasseling"
+(flowering) and grain-filling stages. It needs a dry period for harvest and drying.
+o Soil: Prefers deep, well-drained, fertile loamy soils with a high organic matter
+content. pH 6.0-7.0.
+ Cultivation Practices:
+o Land Preparation: Clear land, plough, and harrow to create a fine tilth. Ridges
+or beds can be made.
+o Planting: Planted by seed. In Nigeria, there are two seasons: Early (March-April)
+and Late (August-September).
+o Spacing: 75-90cm between rows, 25-30cm within rows. Plant 2-3 seeds per hole,
+3-5cm deep.
+o Fertilizer: Maize is a heavy feeder, especially of Nitrogen. A split application is
+best:
+1. At Planting: Apply NPK 15:15:15 or 20:10:10 (basal application).
+2. 4-6 Weeks After Planting: Top-dress with Urea (Nitrogen) to boost
+vegetative growth.
+o Weed Control: This is critical in the first 6 weeks. Weeds severely reduce yield.
+Can be done by hoeing or with pre-emergence (e.g., Atrazine) and postemergence
+herbicides.
+ Pests & Diseases:
+o Pests: Stem Borers (larvae tunnel into the stem), Armyworms (especially the Fall
+Armyworm, which devastates crops), Weevils (in storage).
+o Diseases: Maize Streak Virus, Rust, Downy Mildew.
+ Harvesting: 90-120 days after planting. Matures when the husk turns brown and dry, and
+the "black layer" forms at the kernel base.
+ Post-Harvest: Harvest cobs, de-husk, dry (to 12-14% moisture), shell (remove kernels),
+and store (in bags, PICS bags, or silos) to protect from weevils.
+1.3 RICE (Oryza sativa)
+ Importance: A major staple food in Nigeria, with enormous (and growing) demand.
+66
+ Ecology (Two Main Types):
+1. Lowland/Swamp/Paddy Rice: Grown in flooded fields ("paddies") or river
+valleys (fadamas). Requires bunds (walls) to hold water.
+2. Upland Rice: Grown on rain-fed land, just like maize or sorghum.
+ Cultivation Practices:
+o Land Preparation:
+ Lowland: Plough, harrow, and then "puddle" the soil (mix soil and water)
+to create a soft, level, water-holding mud.
+ Upland: Plough and harrow to a fine tilth.
+o Planting:
+1. Direct Seeding: Broadcasting or drilling seeds directly into the field.
+2. Transplanting: (Common for lowland) Seeds are first grown in a "nursery" for 21-30
+days. The seedlings are then uprooted and transplanted manually into the puddled field.
+o Water Management: This is the key. Lowland rice needs 5-10cm of standing
+water for most of its growth. Upland rice relies entirely on rainfall.
+o Weed Control: The major problem, especially in upland rice. Flooding in
+lowland rice naturally suppresses many weeds.
+ Pests & Diseases:
+o Pests: Stem Borers, Birds (a major pest that eats ripening grain), Termites.
+o Diseases: Rice Blast, Rice Yellow Mottle Virus (RYMV).
+ Harvesting: 100-150 days. Harvest when 80-90% of the panicles (heads) are goldenyellow
+and drooping. Cut with sickles.
+ Post-Harvest: Thresh (beat to separate grain from stalk), Dry (on tarps or floors),
+Winnow (remove chaff), Parboil (a key process in Nigeria: soak, steam, and re-dry to
+improve milling and nutrition), Mill (remove husk and bran), De-stone.
+1.4 SORGHUM (Sorghum bicolor) & MILLET (Pennisetum glaucum)
+ Importance: The primary staple food crops of the arid and semi-arid Northern zones
+(Sudan and Sahel savanna). They are vital for food security in dry regions.
+67
+ Ecology: Their defining feature is drought tolerance.
+o Climate: Thrive in high temperatures and low rainfall (300-600mm) where maize
+and rice would fail.
+o Soil: Can grow on poorer, sandier soils.
+ Cultivation: Similar land preparation to maize, but planted on ridges. Often intercropped
+with cowpea.
+ Pests & Diseases:
+o Pests: Stem Borers, Birds (Quelea birds), which fly in massive flocks and can
+destroy a whole field.
+o Diseases: Smut (replaces grain with a black powder), Downy Mildew.
+ Harvesting: Cut the seed heads (panicles), dry them, and thresh.
+EVALUATION (WEEK 1)
+1. Why is maize considered a "heavy feeder," and what is the standard 2-step fertilizer
+application method for it?
+2. What is the most significant ecological difference between Upland Rice and Lowland
+Rice?
+3. What is "Parboiling" in rice processing?
+4. Why are sorghum and millet the dominant cereals in Northern Nigeria?
+5. Name one major pest of Maize, one of Rice, and one of Sorghum.
+ASSIGNMENT (WEEK 1)
+1. Define "Fall Armyworm." Find out when it arrived in Nigeria and why it is such a
+devastating pest for maize farmers. Write a one-page report.
+68
+WEEK 2: LEGUMINOUS CROPS
+2.1 INTRODUCTION TO LEGUMES
+Legumes (from the Fabaceae family) are crops grown for their edible seeds ("pulses") or pods.
+ Key Characteristic: Their ability to fix nitrogen. They have nodules on their roots
+containing Rhizobium bacteria, which convert atmospheric nitrogen (N₂) into a usable
+form.
+ Importance:
+1. Protein: They are the "poor man's meat," a critical source of plant-based protein.
+2. Soil Fertility: They naturally enrich the soil with nitrogen, making them perfect
+for crop rotation and intercropping with cereals.
+2.2 COWPEA (Vigna unguiculata)
+ Importance: The most important food legume in Nigeria (used for beans, 'akara', 'moinmoin').
+69
+ Ecology: A warm-weather crop, relatively drought-tolerant (but needs water at
+flowering). Prefers well-drained sandy loam.
+ Cultivation:
+o Planting: Plant seeds directly, 2-3 per hole. Spacing (e.g., 60x30cm).
+o Fertilizer: Does not require Nitrogen fertilizer. A small "starter" dose of NPK or
+just P and K (e.g., SSP) is sufficient.
+ Pests & Diseases:
+o Pests: This is the major limiting factor for cowpea. It is attacked by a complex
+of pests at every stage:
+ Seedling: Aphids.
+ Flowering: Thrips (cause flowers to dry up and fall off).
+ Podding: Maruca Pod Borer (larva bores into pods).
+ Late Pod: Pod-sucking Bugs (cause shrivelled seeds).
+o Control: Requires multiple, timed insecticide sprays to get a good yield.
+ Harvest & Storage: Pods are picked as they dry, then threshed. The grains must be
+protected from Bruchids (Weevils), which destroy them in storage. PICS bags (hermetic
+storage) are an excellent solution.
+2.3 SOYBEAN (Glycine max)
+ Importance: A major global commodity. Used for oil (vegetable oil), animal feed
+(Soybean Meal), and food (soymilk, awara - local tofu).
+ Ecology: Needs more water and better soil than cowpea.
+ Cultivation:
+o Inoculation: In new fields, seeds must be inoculated with the correct bacteria
+(Bradyrhizobium japonicum) to ensure nitrogen fixation.
+o Planting: Drilled in rows. Weeds must be controlled.
+ Harvesting: A key challenge is pod shattering. The whole plant is harvested (cut or
+uprooted) when 90% of leaves have fallen and pods are dry. If left too long, pods will
+shatter and spill the seeds.
+ Processing: Threshed, dried, and stored.
+70
+2.4 GROUNDNUT / PEANUT (Arachis hypogaea)
+ Importance: Grown for its edible seeds (eaten raw, boiled, roasted) and for its oil.
+ Botany (Geocarpy): A unique plant. It flowers above ground, but after pollination, a
+"peg" (stalk) grows from the flower down into the soil, where the pod (the "nut")
+develops.
+ Ecology: Requires light, sandy, friable (loose) soil to allow the pegs to penetrate easily.
+ Cultivation: Planted on ridges or beds.
+ Pests & Diseases:
+o Groundnut Rosette Disease: A virus (spread by aphids) that stunts the plant.
+o Aflatoxin: A major problem. A fungus (Aspergillus flavus) grows on the pods if
+they are not dried properly. This fungus produces aflatoxin, a deadly toxin and
+potent carcinogen.
+ Harvesting: Uproot the entire plant. Curing (letting the plants dry in the field for a few
+days) is essential to reduce moisture. Pods are then picked and dried thoroughly.
+EVALUATION (WEEK 2)
+1. What is the single most important agronomic (soil) benefit of planting legumes?
+2. List the three (3) main pests that attack cowpea after flowering.
+3. Why are "PICS bags" recommended for storing cowpea?
+4. What is "Geocarpy" in groundnuts?
+5. What is Aflatoxin, and under what conditions does it develop?
+ASSIGNMENT (WEEK 2)
+1. Draw a simple diagram of a root nodule on a legume.
+2. Explain the "symbiotic relationship" between the Rhizobium bacteria and the plant (i.e.,
+what does the plant get, and what does the bacteria get?).
+71
+WEEK 3: TUBER CROPS
+3.1 INTRODUCTION TO TUBERS
+Root and Tuber crops are plants grown for their starchy, bulky, underground storage organs.
+They are staple "energy foods" and crucial for food security in West Africa. They are mostly
+propagated vegetatively (clonally).
+3.2 CASSAVA (Manihot esculenta)
+ Importance: The most widely cultivated tuber in Nigeria. A food security crop.
+ Ecology: Its main advantage is its hardiness. It tolerates drought, grows on poor/acidic
+soils where other crops fail, and can be "stored" in the ground (left unharvested).
+ Planting Material: Stem cuttings (25-30cm long), taken from the woody part of the stem.
+ Cultivation:
+o Land Prep: Planted on ridges or mounds to promote tuber growth.
+o Planting: Cuttings are planted at an angle, 1m x 1m spacing.
+ The Cyanide Problem: Cassava roots contain cyanogenic glycosides (which produce
+cyanide, a poison).
+72
+o Sweet Varieties: Low cyanide, can be boiled and eaten.
+o Bitter Varieties: High cyanide, are toxic if eaten raw. Must be processed.
+ Processing (Essential): Processing (grating, fermenting, boiling, frying) removes the
+cyanide.
+o Garri: Peeled, grated, fermented, de-watered, and fried (toasted).
+o Fufu/Akpu: Fermented in water, sieved, boiled, and pounded.
+o Lafun: Peeled, chopped, dried, and milled into flour.
+ Pests & Diseases: Cassava Mosaic Disease (CMD) (virus), Cassava Green Mite, Cassava
+Mealybug.
+ Harvest: 8-18 months. Uproot roots. Problem: Harvested roots are highly perishable
+and will rot in 2-3 days. Must be processed immediately.
+3.3 YAM (Dioscorea spp.)
+ Importance: A culturally significant crop ("The King of Crops"), especially in Nigeria
+(the world's largest producer).
+ Ecology: Requires deep, fertile, loose, well-drained soil. Cannot tolerate waterlogging.
+Needs high rainfall.
+ Planting Material: "Setts" (pieces of a yam tuber, 250-500g).
+ Cultivation:
+o Land Prep: Requires deep soil. Planted in large mounds or high ridges.
+o Staking: This is essential for most varieties. A stake (pole) is provided for the
+yam vine to climb. This exposes leaves to maximum sunlight, leading to large
+tubers.
+ Harvest: 9-12 months. Requires careful digging to avoid bruising the tubers.
+ Storage: Unlike cassava, yams can be stored fresh for months. They are stored in a Yam
+Barn – a shaded, well-ventilated structure where yams are tied to poles.
+3.4 COCOYAM (Colocasia esculenta & Xanthosoma sagittifolium)
+ Importance: A key staple in some parts of the SE/SW.
+73
+ Ecology: Opposite of most crops. It is shade-tolerant and water-loving. It thrives in
+damp, humid conditions and is often intercropped under tree crops (e.g., cocoa, plantain).
+ Planting Material: Cormels or small setts.
+3.5 POTATO (IRISH POTATO) (Solanum tuberosum)
+ Ecology: This is a temperate crop, not a tropical one. It requires cool temperatures to
+form tubers.
+ In Nigeria: It is only grown in high-altitude, cool areas: Jos Plateau (Plateau State) and
+Mambilla Plateau (Taraba State).
+EVALUATION (WEEK 3)
+1. What is the main ecological advantage of cassava?
+2. Why is processing (e.g., into garri) essential for bitter cassava varieties?
+3. Why must cassava be processed within 2-3 days of harvesting?
+4. What is "staking" in yam cultivation, and why is it necessary?
+5. Why can't "Irish" potatoes be grown in Lagos or Port Harcourt?
+ASSIGNMENT (WEEK 3)
+1. Draw a diagram of a traditional "Yam Barn."
+2. Write a short paragraph explaining the three key principles of yam storage: (1) Good
+ventilation, (2) No contact with the ground, (3) Shaded from sun.
+74
+WEEK 4: OIL CROPS
+4.1 INTRODUCTION
+Oil crops are plants cultivated primarily for the oil extracted from their seeds or fruits. These oils
+are used for cooking, industrial applications, soap making (saponification), and biofuels.
+4.2 OIL PALM (Elaeis guineensis)
+ Importance: The most important oil crop in Nigeria.
+ Ecology: A humid tropical crop. Requires high rainfall (2000mm+), high humidity, and
+high temperatures. Needs deep, moist, fertile soils. (Dominant in the South-East and
+South-South).
+ Planting Material: Seedlings. The Tenera hybrid (a cross between Dura and Pisifera) is
+the preferred commercial variety because it has a thick, fleshy part (mesocarp) and a thin
+shell, giving the highest oil yield.
+ Cultivation: A plantation crop. Spacing is wide (e.g., 9m triangular).
+ Harvesting: Begins 3-4 years after planting. Fresh Fruit Bunches (FFB) are harvested
+using a cutlass (for short trees) or a "Malaysian knife" (a long pole with a sickle).
+75
+ Processing (Two Oils):
+1. Palm Oil (Red Oil): Extracted from the outer fleshy part (mesocarp).
+ Process: Bunches are sterilized (boiled), fruits are stripped, digested
+(pounded), pressed (to extract oil), and the oil is clarified.
+2. Palm Kernel Oil (PKO): Extracted from the nut/kernel inside the hard shell.
+ Process: The nuts are separated, cracked, the kernels are roasted, and then
+pressed to extract PKO.
+4.3 COCONUT (Cocos nucifera)
+ Importance: A versatile crop ("tree of life").
+ Ecology: A coastal crop. It is salt-tolerant and thrives in sandy, well-drained soils in
+high-humidity areas (e.g., Lagos, Badagry).
+ Products:
+o Copra: The dried kernel (flesh). This is the part from which coconut oil is pressed.
+o Coconut Water: The liquid inside the young nut.
+o Coir: The fibre from the outer husk, used for ropes, mats, etc.
+o Coconut Milk: Extracted from the grated fresh kernel.
+4.4 SUNFLOWER (Helianthus annuus)
+ Importance: A minor but growing oil crop.
+ Botany: Unlike the others (which are perennial trees), this is an annual crop (grows and
+dies in one season).
+ Ecology: More adaptable and drought-tolerant than oil palm.
+ Cultivation: Grown in rows, similar to maize. The large "head" contains the seeds.
+ Products: High-quality cooking oil and seeds (snacks).
+EVALUATION (WEEK 4)
+1. Name the two different types of oil that are extracted from the Oil Palm fruit.
+2. Which part of the fruit does Palm Oil come from, and which part does Palm Kernel Oil
+come from?
+76
+3. Why is the "Tenera" hybrid the preferred variety for oil palm plantations?
+4. What is "Copra"?
+5. What is the main ecological difference between oil palm and sunflower cultivation?
+ASSIGNMENT (WEEK 4)
+1. Draw a cross-section of an Oil Palm fruit.
+2. Label the four main parts: (1) Exocarp (skin), (2) Mesocarp (flesh - source of palm oil),
+(3) Endocarp (shell), (4) Kernel (source of PKO).
+77
+WEEK 5: MIDTERM EXAMINATION
+This week is for assessment of all topics covered in Weeks 1-4.
+78
+WEEK 6: VEGETABLES
+6.1 INTRODUCTION
+Vegetables are parts of plants consumed by humans as food. They are "protective foods,"
+essential for health as they provide vitamins, minerals, and fibre. They are high-value, perishable
+crops.
+79
+6.2 TOMATO (Solanum lycopersicum)
+ Importance: A major vegetable, used in virtually every Nigerian stew, sauce, and Jollof
+rice.
+ Ecology: Requires warm, sunny days. Problem: High humidity and rainfall promote
+fungal diseases. Therefore, dry season production (using irrigation) is the most reliable
+and productive, resulting in better quality fruit.
+ Cultivation:
+o Nursery: Seeds are not planted directly. They are raised in a "nursery" (a
+protected bed) for 3-4 weeks.
+o Transplanting: Seedlings are carefully moved to the main field.
+o Staking: Indeterminate (tall/climbing) varieties must be staked to keep fruit off
+the ground, prevent rot, and make spraying easier.
+ Pests & Diseases:
+o Diseases: The major problem. Fungal blights (Early & Late Blight), bacterial wilt,
+Tomato Yellow Leaf Curl Virus (TYLCV).
+o Pests: Whiteflies (spreads TYLCV), Tuta absoluta (Tomato Leaf Miner) is a
+devastating pest.
+ Problem: Nigeria has a massive tomato deficit due to post-harvest losses and poor dryseason
+production.
+6.3 PEPPER (Capsicum spp.)
+ Importance: A key ingredient for flavour and heat.
+ Types in Nigeria:
+o Ata Rodo / Habanero (C. chinense): Very hot, aromatic.
+o Ata Jije / Bird's Eye (C. frutescens): Small, very hot.
+o Tatashe / Bell (C. annuum): Mild, large, used for colour.
+ Cultivation: Very similar to tomato (nursery, transplanting). They are generally hardier
+and more disease-resistant than tomatoes.
+6.4 OKRA (Abelmoschus esculentus)
+80
+ Importance: A popular vegetable, used as a "thickener" for soups ('draw soup').
+ Cultivation: Planted directly by seed.
+ Harvesting: This is the key point. Pods must be harvested every 2-3 days while they are
+young and tender. If left on the plant, they quickly become fibrous and inedible. Regular
+harvesting also encourages the plant to produce more flowers.
+6.5 LEAFY VEGETABLES (SPINACH, AMARANTH)
+ Types:
+o Amaranth (Amaranthus spp.): "Efo Tete," "Green."
+o Lagos Spinach / Fluted Pumpkin (Telfairia occidentalis): "Efo Ugwu." (A
+vine).
+o Celosia (Celosia argentea): "Efo Shoko."
+ Cultivation:
+o Land Prep: Planted on raised beds to ensure good drainage.
+o Planting: Seeds are tiny and are often "broadcast" (scattered) over the bed and
+lightly raked in.
+o Fertilizer: These are "leaf" crops, so they respond very well to Nitrogen (e.g.,
+Urea or poultry manure) to promote lush leaf growth.
+ Harvesting: Can be "once-over" (uprooting the whole plant) or "multiple-cut" (cutting
+the leaves, allowing the plant to re-sprout for 2-3 more harvests).
+EVALUATION (WEEK 6)
+1. Why is tomato production often more successful in the dry season?
+2. What is the advantage of raising tomato/pepper seedlings in a "nursery" first?
+3. What is the most important management practice for harvesting Okra, and why?
+4. Which primary nutrient (N, P, or K) do leafy vegetables like Amaranth require in large
+amounts, and why?
+5. Name the 3 main species of pepper grown in Nigeria.
+ASSIGNMENT (WEEK 6)
+81
+1. Find out the full name of the "Ugwu" leaf (Telfairia occidentalis).
+2. Unlike Amaranth, it is not grown from seed on a bed. How is it propagated, and how is it
+grown (i.e., does it climb or spread)? Write a short report.
+82
+WEEK 7: MIDTERM BREAK
+This is a break from instruction. Students are encouraged to review the first half of the term's
+work.
+83
+WEEK 8: FRUITS
+8.1 INTRODUCTION
+Fruits are the mature, seed-bearing ovaries of flowering plants, typically eaten raw. They are
+sources of sugar (energy), vitamins (especially C and A), and fibre. They are high-value
+horticultural crops.
+8.2 MANGO (Mangifera indica)
+ Importance: A popular seasonal fruit.
+ Propagation:
+o Seed: (Traditional) Easy, but the tree may not be "true-to-type" (like the parent)
+and takes long (7+ years) to fruit.
+o Grafting/Budding: (Modern/Commercial) This is the best method. A bud or
+branch from a superior tree (e.g., 'Kent', 'Keith') is joined onto a hardy
+"rootstock." This guarantees the fruit type and quality, and the tree fruits much
+faster (3-4 years).
+ Problems:
+84
+o Alternate Bearing: A tendency to fruit heavily one year and very poorly the next.
+o Anthracnose: A fungal disease that causes black spots on leaves, flowers, and
+fruits, leading to rot.
+8.3 CITRUS (Citrus spp.)
+ Importance: Includes Sweet Orange (C. sinensis), Lemon (C. limon), Lime (C.
+aurantifolia), and Grapefruit (C. paradisi).
+ Propagation:
+o Budding (T-Budding): This is the standard commercial method. A bud from the
+desired variety is inserted under the bark of a hardy rootstock (e.g., rough lemon).
+This ensures uniformity and disease resistance.
+ Cultivation: A plantation crop, requires good soil, fertilizer, and pest control.
+8.4 BANANA & PLANTAIN (Musa spp.)
+ Botany: These are giant herbs, not trees. The "trunk" is a "pseudostem" made of rolled
+leaf sheaths.
+ Propagation: They do not (normally) produce seeds. They are propagated vegetatively
+using "suckers" (also called "pups") that grow from the base of the mother plant.
+ Management:
+o De-suckering: Removing excess suckers, leaving only 1 or 2 to replace the
+mother plant.
+o Propping: The fruit bunch is heavy. The plant must be "propped" with a forked
+stick to prevent it from falling over.
+ Pests & Diseases: Banana Weevil, Black Sigatoka (a fungal leaf disease).
+8.5 PINEAPPLE (Ananas comosus)
+ Propagation (Vegetative):
+o Suckers: Grow from the base.
+o Slips: Grow from the stalk just below the fruit.
+o Crown: The leafy top of the fruit itself.
+85
+ Cultivation: A terrestrial (ground) plant. Planted on raised beds, often with black plastic
+mulch (to control weeds and warm the soil).
+ Harvest: Takes 1.5 - 2 years from planting.
+EVALUATION (WEEK 8)
+1. What is the best propagation method for commercial mango and citrus trees, and why is it
+better than planting a seed?
+2. What is "Alternate Bearing" in mango?
+3. How are bananas and plantains propagated?
+4. What is "De-suckering" in plantain management?
+5. List the three (3) materials that can be used to plant a pineapple.
+ASSIGNMENT (WEEK 8)
+1. Buy a pineapple.
+2. Twist off the "crown" (the leafy top).
+3. Pull off the bottom 3-4 layers of small leaves to expose the "stem" base.
+4. Place it in a cup of water (with the base submerged) and put it on a windowsill.
+5. Observe it for 2 weeks. Write down what happens (e.g., "Small white roots began to
+grow"). This is you, propagating a pineapple.
+86
+WEEK 9: SPICES AND CONDIMENTS
+9.1 INTRODUCTION
+Spices and condiments are substances added to food in small quantities to add flavour, aroma,
+colour, or "heat" (pungency). They are not eaten as a main course but are essential for making
+food palatable.
+87
+9.2 GINGER (Zingiber officinale)
+ Botany: The part used is the rhizome (a fleshy, underground stem), not a root.
+ Ecology: A tropical plant that needs a warm, humid climate, high rainfall, and some
+shade. It does well in forest or semi-forest conditions.
+ In Nigeria: Kaduna State (Southern Kaduna) is the undisputed hub of ginger production.
+ Cultivation:
+o Planting: Small pieces of the rhizome ("setts"), each with a few "eyes" or buds,
+are planted in beds or ridges.
+o Mulching: The beds are heavily mulched (with grass) to conserve moisture, keep
+the soil cool, and suppress weeds.
+ Harvest: 8-10 months. The rhizomes are carefully dug up, washed, and dried. Sold fresh
+or dry.
+9.3 GARLIC (Allium sativum)
+ Botany: A member of the onion family. The part used is the bulb, which is composed of
+"cloves."
+ Ecology: This is not a humid-tropical crop. It requires a cool, dry season (Harmattan)
+for the bulb to form properly.
+ In Nigeria: Grown almost exclusively in the far North (e.g., Sokoto, Kano) during the
+dry season using irrigation.
+ Cultivation: Individual "cloves" are separated and planted.
+9.4 PEPPER (BLACK PEPPER) (Piper nigrum)
+ Important Distinction: This is not the same as Capsicum (Ata rodo/Tatashe). This is the
+small, round peppercorn (Black, White, or Green pepper).
+ Botany: It is a climbing vine.
+ Cultivation: It must be "staked" or grown up a support (a pole or a living tree).
+ Products:
+o Black Pepper: The unripe (green) fruit, harvested and dried in the sun, which
+makes it turn black and shrivel.
+88
+o White Pepper: The ripe (red) fruit, soaked in water (retting) to remove the outer
+flesh, leaving the white seed, which is then dried.
+9.5 CLOVES (Syzygium aromaticum)
+ Botany: Cloves are the un-opened, dried flower buds of a tropical evergreen tree.
+ Harvest: The buds are hand-picked just before they open (when they turn pink) and are
+dried in the sun until they turn dark brown.
+EVALUATION (WEEK 9)
+1. What part of the ginger plant is harvested and used?
+2. Why is ginger production concentrated in Southern Kaduna (ecologically)?
+3. Why is garlic production concentrated in the far North (ecologically)?
+4. Explain the difference between Capsicum pepper (Tatashe) and Piper nigrum (Black
+Pepper).
+5. What part of the plant are "Cloves"?
+ASSIGNMENT (WEEK 9)
+1. Go to a kitchen or market.
+2. Find Black Pepper and White Pepper.
+3. Write a paragraph explaining that they both come from the same plant, and describe what
+process makes one black and the other white.
+89
+WEEK 10: MEDICINAL PLANTS
+10.1 INTRODUCTION (ETHNOBOTANY)
+Medicinal plants are plants that are used for their therapeutic properties to treat, cure, or prevent
+illness in humans and animals. This is the foundation of "Traditional Medicine." Many modern
+drugs are derived from compounds first discovered in plants.
+90
+10.2 NEEM (Azadirachta indica)
+ Common Name: "Dogonyaro" (Hausa).
+ Origin: Native to India, but now widespread ("naturalized") all over Nigeria. It's a hardy,
+drought-tolerant tree.
+ Medicinal Uses:
+o Antimalarial: The leaves and bark are boiled into a bitter tea (Agbo) to treat
+fever and malaria.
+o Skin: The oil and leaf-paste are used to treat skin diseases (e.g., eczema, rashes).
+ Horticultural Use (Very Important):
+o Natural Insecticide: The seeds contain a powerful compound called
+Azadirachtin. This is extracted to make "Neem Oil," a safe, biodegradable
+insecticide used in organic farming to control pests.
+10.3 MORINGA (Moringa oleifera)
+ Common Names: "Miracle Tree," "Zogale" (Hausa).
+ Importance: A fast-growing tree valued for its incredible nutritional and medicinal
+properties.
+ Medicinal/Nutritional Uses:
+o Nutrition: The leaves are a "superfood." They are packed with protein, Vitamin
+A, Vitamin C, calcium, and potassium. Used to combat malnutrition.
+o Water Purification: The seeds, when crushed, act as a "flocculant." They cause
+dirt and microbes in water to clump together and sink, clarifying the water.
+o Blood Pressure: The leaves are used to make a tea to help regulate blood
+pressure.
+10.4 ALOE VERA (Aloe barbadensis)
+ Botany: A succulent plant that stores water in its thick, fleshy leaves.
+ Uses:
+o Skin (Topical Use): The clear gel inside the leaf is a famous remedy for:
+ Burns: Cools and soothes fresh burns (sunburn, kitchen burns).
+91
+ Skin Irritation: Treats rashes, insect bites, and eczema.
+o Internal Use: The juice (a different part, the yellow "latex") is a powerful
+laxative, used to treat constipation. Must be used with care.
+EVALUATION (WEEK 10)
+1. What is the active compound in Neem seeds, and what is its main horticultural use?
+2. Why is Moringa often called the "Miracle Tree"? List two of its uses.
+3. Explain how Moringa seeds can be used to purify water.
+4. What is the primary medicinal use of the gel from an Aloe Vera leaf?
+ASSIGNMENT (WEEK 10)
+1. Safely (with permission) get one leaf of Aloe Vera.
+2. Cut it open. Observe and describe the clear "gel."
+3. Research the difference between the "clear gel" (used for skin) and the "yellow latex"
+(used as a laxative) in the Aloe leaf. Write a paragraph explaining why you should not
+just eat the whole leaf.
+92
+WEEK 11: REVISION
+ Review of Key Concepts:
+o Week 1 (Cereals): Maize (NPK, Fall Armyworm), Rice (Upland vs. Lowland,
+Parboiling), Sorghum/Millet (Drought).
+o Week 2 (Legumes): N-Fixation. Cowpea (Pest complex, PICS bags), Soybean
+(Shattering, Inoculation), Groundnut (Geocarpy, Aflatoxin).
+o Week 3 (Tubers): Cassava (Hardy, Cyanide, Processing, Perishable), Yam
+(Staking, Mounds, Barn storage), Cocoyam (Shade/Water), Potato (Cool climate).
+o Week 4 (Oils): Oil Palm (Tenera, Palm Oil vs. PKO), Coconut (Copra),
+Sunflower (Annual).
+o Week 6 (Veg): Tomato (Nursery, Dry season), Okra (Harvest frequency), Leafy
+(N-fertilizer).
+o Week 8 (Fruits): Propagation (Grafting/Budding vs. Suckers), Mango (Alternate
+bearing), Banana (De-suckering).
+o Week 9 (Spices): Ginger (Rhizome, Kaduna), Garlic (Bulb, North), Pepper
+(Piper nigrum), Cloves (Flower bud).
+o Week 10 (Medicinal): Neem (Insecticide), Moringa (Nutrition, Water), Aloe
+(Skin gel).
+EVALUATION (WEEK 11)
+1. Compare and contrast the planting material used for Yam, Cassava, and Rice
+(transplanted).
+2. A farmer has a field in Jos and a field in Calabar. Which locations are suitable for: (a)
+Irish Potato, (b) Oil Palm, (c) Garlic, (d) Yam?
+3. What is the key difference between the propagation of Citrus and the propagation of
+Plantain?
+4. Aflatoxin is a major problem in which Week 2 crop? Tuta absoluta is a pest of which
+Week 6 crop? Fall Armyworm is a pest of which Week 1 crop?
