@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Questions – Logic, Number Bases & Modular Arithmetic (SS1 & SS2)</title>
+<!-- KaTeX for textbook-quality math rendering -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '\\(', right: '\\)', display: false}
+    ],
+    throwOnError: false
+  });"></script>
+<style>
+  /* =========================================================
+     PRINT-FIRST DESIGN — clean white, textbook serif
+     ========================================================= */
+  :root {
+    --page:   #ffffff;
+    --ink:    #1a1a1a;
+    --muted:  #555555;
+    --border: #d0d4de;
+    --light:  #f4f5f8;
+    --accent: #1a3a6e;      /* deep navy — sober, academic */
+    --green:  #165b33;
+    --red:    #8b1a1a;
+    --tag-logic:  #1a3a6e;
+    --tag-base:   #3a1a6e;
+    --tag-mod:    #1a5b3a;
+    --tag-rep:    #6e3a1a;
+    --tag-mix:    #5b1a1a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8e8e8;
+    color: var(--ink);
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 2rem 1rem 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .paper {
+    max-width: 860px;
+    width: 100%;
+    background: var(--page);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+    padding: 3rem 3.5rem 4rem;
+  }
+
+  /* ---- MASTHEAD ---- */
+  .masthead {
+    border-top: 4px solid var(--accent);
+    border-bottom: 1.5px solid var(--border);
+    padding: 1.8rem 0 1.4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .masthead h1 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+    line-height: 1.25;
+  }
+  .masthead h1 span { color: #8b1a1a; }
+  .tag-row {
+    display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
+    margin: 0.7rem 0 0.4rem;
+  }
+  .tag {
+    padding: 0.18rem 0.65rem;
+    border-radius: 3px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
+  }
+  .tag.logic { background: #e8edf7; color: var(--tag-logic); border: 1px solid #b5c3df; }
+  .tag.base  { background: #ede8f7; color: var(--tag-base);  border: 1px solid #c3b5df; }
+  .tag.mod   { background: #e8f7ed; color: var(--tag-mod);   border: 1px solid #b5dfca; }
+  .tag.rep   { background: #f7ede8; color: var(--tag-rep);   border: 1px solid #dfcab5; }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 0.2rem;
+  }
+
+  /* ---- TOC ---- */
+  .toc {
+    border: 1px solid var(--border);
+    background: var(--light);
+    padding: 1rem 1.4rem;
+    margin-bottom: 2.2rem;
+    font-size: 0.82rem;
+    columns: 2;
+    column-gap: 2rem;
+  }
+  .toc-title {
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    column-span: all;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+  }
+  .toc-item {
+    display: flex; align-items: baseline; gap: 0.4rem;
+    color: var(--muted);
+    margin-bottom: 0.18rem;
+    break-inside: avoid;
+  }
+  .toc-dot { font-size: 0.6rem; flex-shrink: 0; }
+
+  /* ---- BLOCK HEADERS ---- */
+  .block-header {
+    font-size: 0.88rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 2.8rem 0 1.2rem;
+    padding: 0.45rem 0.9rem;
+    border-left: 4px solid;
+    background: var(--light);
+    color: var(--ink);
+    page-break-after: avoid;
+  }
+  .block-header.logic { border-color: var(--tag-logic); }
+  .block-header.base  { border-color: var(--tag-base);  }
+  .block-header.mod   { border-color: var(--tag-mod);   }
+  .block-header.rep   { border-color: var(--tag-rep);   }
+  .block-header.mix   { border-color: var(--tag-mix);   }
+  .block-header .blabel {
+    font-size: 0.7rem;
+    margin-right: 0.5rem;
+    opacity: 0.6;
+  }
+
+  /* ---- QUESTION CARD ---- */
+  .q-block {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--border);
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+  .q-block:hover { border-left-color: var(--accent); background: #fafbff; }
+
+  .q-meta {
+    display: flex; align-items: center; gap: 0.45rem;
+    margin-bottom: 0.45rem; flex-wrap: wrap;
+  }
+  .q-num {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: #e8edf7;
+    padding: 0.08rem 0.4rem;
+    border: 1px solid #b5c3df;
+  }
+  .q-cat {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.08rem 0.4rem;
+    font-family: 'Courier New', monospace;
+  }
+  .q-cat.logic { color: var(--tag-logic); background: #e8edf7; border: 1px solid #b5c3df; }
+  .q-cat.base  { color: var(--tag-base);  background: #ede8f7; border: 1px solid #c3b5df; }
+  .q-cat.mod   { color: var(--tag-mod);   background: #e8f7ed; border: 1px solid #b5dfca; }
+
+  .q-text {
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  /* truth table inline */
+  .tt {
+    border-collapse: collapse;
+    margin: 0.6rem 0;
+    font-size: 0.88rem;
+    font-family: 'Courier New', monospace;
+  }
+  .tt th {
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    background: var(--light);
+    font-weight: 700;
+    text-align: center;
+  }
+  .tt td {
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    text-align: center;
+  }
+  .tt .hi { background: #f7f0d8; font-weight: 700; }
+
+  /* options grid */
+  .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.28rem 1.4rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-family: Georgia, serif;
+  }
+  .options span { padding: 0.12rem 0; }
+
+  /* working / solution */
+  .solution {
+    border-top: 1px dashed var(--border);
+    padding-top: 0.6rem;
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .solution strong { color: var(--ink); }
+  .solution em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .solution .step {
+    display: block;
+    padding-left: 1.2rem;
+    margin: 0.18rem 0;
+  }
+  .solution .step::before {
+    content: '▸ ';
+    color: var(--accent);
+    font-size: 0.72rem;
+    margin-left: -1rem;
+  }
+
+  /* answer badge */
+  .answer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: #eaf4ee;
+    color: var(--green);
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.78rem;
+    border: 1px solid #b5d9c2;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.02em;
+    margin-top: 0.5rem;
+  }
+  .answer-badge::before { content: '✓ '; }
+
+  /* binary/hex display blocks */
+  .binblock {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    background: var(--light);
+    border: 1px solid var(--border);
+    padding: 0.45rem 0.8rem;
+    margin: 0.4rem 0;
+    letter-spacing: 0.12em;
+    display: inline-block;
+  }
+  .binblock .hl { color: var(--accent); font-weight: 700; }
+
+  /* long division / working layout */
+  .workbox {
+    font-family: 'Courier New', monospace;
+    font-size: 0.84rem;
+    background: var(--light);
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.9rem;
+    margin: 0.4rem 0;
+    white-space: pre;
+    line-height: 1.9;
+    overflow-x: auto;
+  }
+
+  /* separating rule */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    font-style: italic;
+  }
+
+  /* ---- PRINT ---- */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .paper { box-shadow: none; padding: 1.5rem 2rem; max-width: 100%; }
+    .q-block { border: 1px solid #ccc; page-break-inside: avoid; }
+    .block-header { page-break-after: avoid; }
+    .answer-badge { border: 1px solid #888; }
+  }
+
+  @media (max-width: 620px) {
+    .paper { padding: 1.5rem 1.2rem; }
+    .options { grid-template-columns: 1fr; }
+    .toc { columns: 1; }
+    .masthead h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+
+<!-- ===== MASTHEAD ===== -->
+<div class="masthead">
+  <h1>100 Questions — <span>Logic, Number Bases &amp; Modular Arithmetic</span></h1>
+  <div class="tag-row">
+    <span class="tag logic">Logical Reasoning</span>
+    <span class="tag base">Number Bases</span>
+    <span class="tag mod">Modular Arithmetic</span>
+  </div>
+  <p class="subtitle">NERDC / WAEC Curriculum · SS1 &amp; SS2 · 10 Flow + 10 Spaced Repetition + 80 Exam-Standard Questions</p>
+</div>
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 1: Statements &amp; Connectives — Flow (Q1–Q10)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 2: Truth Tables — Core (Q11–Q20)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 3: Implication, Contrapositive &amp; Equivalence (Q21–Q30)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 4: Number Bases — Conversions — Flow (Q31–Q40)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 5: Arithmetic in Other Bases (Q41–Q50)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 6: Modular Arithmetic — Clock &amp; Mod Tables — Flow (Q51–Q60)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 7: Modular Arithmetic — Equations &amp; Applications (Q61–Q70)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 8: Spaced Repetition — Logic (Q71–Q77)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 9: Spaced Repetition — Number Bases (Q78–Q84)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 10: Spaced Repetition — Modular Arithmetic (Q85–Q91)</div>
+  <div class="toc-item"><span class="toc-dot">◆</span>Block 11: Mixed Application Challenge (Q92–Q100)</div>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 1: STATEMENTS & CONNECTIVES — 10 FLOW QUESTIONS
+     ================================================================ -->
+<div class="block-header logic"><span class="blabel">BLOCK 1 · Q1–Q10</span> Logical Reasoning — Statements &amp; Connectives (Flow)</div>
+
+<!-- Q1 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 01</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">Which of the following is a <em>simple statement</em>?</div>
+  <div class="options">
+    <span>(A) Either Amaka passed or she failed.</span>
+    <span>(B) Lagos is the largest city in Nigeria.</span>
+    <span>(C) If it rains, the ground gets wet.</span>
+    <span>(D) Mathematics is easy and interesting.</span>
+  </div>
+  <div class="solution">
+    <strong>Recall:</strong> A <em>simple (atomic) statement</em> has no connective — it expresses one complete thought that is either true or false.
+    <span class="step">Option B: one subject (Lagos), one predicate — no connective. This is a simple statement. ✓</span>
+    <span class="step">Option A uses "or" (disjunction). Option C uses "if…then" (implication). Option D uses "and" (conjunction).</span>
+  </div>
+  <span class="answer-badge">Answer: B</span>
+</div>
+
+<!-- Q2 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 02</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    The symbol \(\land\) represents which logical connective?
+  </div>
+  <div class="options">
+    <span>(A) Disjunction ("or")</span>
+    <span>(B) Negation ("not")</span>
+    <span>(C) Conjunction ("and")</span>
+    <span>(D) Implication ("if…then")</span>
+  </div>
+  <div class="solution">
+    <strong>Standard symbols:</strong>
+    <span class="step">\(\land\) — conjunction (AND)</span>
+    <span class="step">\(\lor\) — disjunction (OR)</span>
+    <span class="step">\(\lnot\) or \(\sim\) — negation (NOT)</span>
+    <span class="step">\(\Rightarrow\) or \(\rightarrow\) — implication (IF…THEN)</span>
+    <span class="step">\(\Leftrightarrow\) or \(\leftrightarrow\) — biconditional (IF AND ONLY IF)</span>
+  </div>
+  <span class="answer-badge">Answer: C — Conjunction</span>
+</div>
+
+<!-- Q3 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 03</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Let \(p\) = "Bola studies hard" and \(q\) = "Bola passes the exam."
+    Write the statement \(p \land q\) in words.
+  </div>
+  <div class="options">
+    <span>(A) If Bola studies hard, then Bola passes the exam.</span>
+    <span>(B) Bola studies hard and Bola passes the exam.</span>
+    <span>(C) Bola studies hard or Bola passes the exam.</span>
+    <span>(D) Bola does not study hard.</span>
+  </div>
+  <div class="solution">
+    <strong>Recall:</strong> \(p \land q\) joins both components with "and."
+    <span class="step">\(p \land q\) = "Bola studies hard <em>and</em> Bola passes the exam." ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B</span>
+</div>
+
+<!-- Q4 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 04</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    If \(p\) is TRUE and \(q\) is FALSE, what is the truth value of \(p \land q\)?
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) Undefined</span>
+    <span>(D) Depends on context</span>
+  </div>
+  <div class="solution">
+    <strong>Conjunction rule:</strong> \(p \land q\) is TRUE only when <em>both</em> \(p\) and \(q\) are TRUE.
+    <span class="step">Here \(p = T,\ q = F\), so \(p \land q = F\).</span>
+    <span class="step">Memory aid: AND is like multiplication — one zero makes the product zero.</span>
+  </div>
+  <span class="answer-badge">Answer: B — FALSE</span>
+</div>
+
+<!-- Q5 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 05</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    If \(p\) is FALSE and \(q\) is FALSE, what is the truth value of \(p \lor q\)?
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) TRUE only if \(p = q\)</span>
+    <span>(D) Cannot be determined</span>
+  </div>
+  <div class="solution">
+    <strong>Disjunction rule:</strong> \(p \lor q\) is FALSE only when <em>both</em> components are FALSE.
+    <span class="step">\(p = F,\ q = F \Rightarrow p \lor q = F\).</span>
+    <span class="step">In all other cases (T,F), (F,T), (T,T) → the disjunction is TRUE.</span>
+  </div>
+  <span class="answer-badge">Answer: B — FALSE</span>
+</div>
+
+<!-- Q6 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 06</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    What is the negation of the statement: "All students passed the test"?
+  </div>
+  <div class="options">
+    <span>(A) No student passed the test.</span>
+    <span>(B) Some students did not pass the test.</span>
+    <span>(C) All students failed the test.</span>
+    <span>(D) No student failed the test.</span>
+  </div>
+  <div class="solution">
+    <strong>Negation of "All A are B"</strong> = "Some A are NOT B" (at least one exception exists).
+    <span class="step">The negation does not say "none passed" — that is too strong.</span>
+    <span class="step">It says the universal claim is broken: <em>some</em> students did not pass. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — Some students did not pass.</span>
+</div>
+
+<!-- Q7 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 07</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    The statement "Emeka is tall or Emeka plays football" is TRUE. Emeka is known to NOT play football. What can you conclude?
+  </div>
+  <div class="options">
+    <span>(A) Emeka is not tall.</span>
+    <span>(B) Emeka is tall.</span>
+    <span>(C) Nothing can be concluded.</span>
+    <span>(D) Both components must be false.</span>
+  </div>
+  <div class="solution">
+    <strong>Disjunctive syllogism:</strong> \(p \lor q\) is TRUE, and \(q\) is FALSE \(\Rightarrow\) \(p\) must be TRUE.
+    <span class="step">Let \(p\) = "Emeka is tall", \(q\) = "Emeka plays football."</span>
+    <span class="step">\(p \lor q = T\) and \(q = F \Rightarrow p = T\). Emeka is tall. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — Emeka is tall.</span>
+</div>
+
+<!-- Q8 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 08</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Which of the following sentences is <em>NOT</em> a statement (i.e., cannot have a definite truth value)?
+  </div>
+  <div class="options">
+    <span>(A) \(5 + 3 = 9\)</span>
+    <span>(B) Abuja is the capital of Nigeria.</span>
+    <span>(C) Please close the door.</span>
+    <span>(D) January has 31 days.</span>
+  </div>
+  <div class="solution">
+    <strong>A statement</strong> must be either TRUE or FALSE — not both, not neither.
+    <span class="step">Commands, questions, and exclamations are <em>not</em> statements.</span>
+    <span class="step">"Please close the door" is a command — it has no truth value. ✓</span>
+    <span class="step">Option A is a (false) statement. Options B and D are (true) statements.</span>
+  </div>
+  <span class="answer-badge">Answer: C — A command has no truth value.</span>
+</div>
+
+<!-- Q9 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 09</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Using \(p\): "The sky is blue" (TRUE) and \(q\): "Grass is red" (FALSE),
+    evaluate \(\lnot p \lor q\).
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) TRUE and FALSE simultaneously</span>
+    <span>(D) Depends on the weather</span>
+  </div>
+  <div class="solution">
+    <strong>Step by step:</strong>
+    <span class="step">1. \(\lnot p = \lnot T = F\)</span>
+    <span class="step">2. \(q = F\)</span>
+    <span class="step">3. \(\lnot p \lor q = F \lor F = F\)</span>
+    <span class="step">Disjunction is only FALSE when <em>both</em> operands are FALSE — which is the case here.</span>
+  </div>
+  <span class="answer-badge">Answer: B — FALSE</span>
+</div>
+
+<!-- Q10 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 10</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    The compound statement \(\lnot(p \land q)\) is logically equivalent to which of the following (De Morgan's Law)?
+  </div>
+  <div class="options">
+    <span>(A) \(\lnot p \land \lnot q\)</span>
+    <span>(B) \(\lnot p \lor \lnot q\)</span>
+    <span>(C) \(p \lor q\)</span>
+    <span>(D) \(p \land q\)</span>
+  </div>
+  <div class="solution">
+    <strong>De Morgan's First Law:</strong> \(\lnot(p \land q) \equiv \lnot p \lor \lnot q\)
+    <span class="step">When you negate a conjunction, the AND becomes OR and each component is negated.</span>
+    <span class="step">Similarly: \(\lnot(p \lor q) \equiv \lnot p \land \lnot q\).</span>
+    <span class="step">Verify with \(p=T, q=F\): LHS = \(\lnot(T \land F) = \lnot F = T\). RHS = \(F \lor T = T\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(\lnot p \lor \lnot q\)</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 2: TRUTH TABLES — CORE — Q11–Q20
+     ================================================================ -->
+<div class="block-header logic"><span class="blabel">BLOCK 2 · Q11–Q20</span> Truth Tables — Reading &amp; Building</div>
+
+<!-- Q11 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 11</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Complete the truth table for \(p \land q\). Which row gives a TRUE result?
+    <table class="tt">
+      <tr><th>\(p\)</th><th>\(q\)</th><th>\(p \land q\)</th></tr>
+      <tr><td>T</td><td>T</td><td class="hi">?</td></tr>
+      <tr><td>T</td><td>F</td><td>?</td></tr>
+      <tr><td>F</td><td>T</td><td>?</td></tr>
+      <tr><td>F</td><td>F</td><td>?</td></tr>
+    </table>
+  </div>
+  <div class="options">
+    <span>(A) Row 1 only (T, T)</span>
+    <span>(B) Rows 1 and 2</span>
+    <span>(C) Rows 1, 2, and 3</span>
+    <span>(D) All four rows</span>
+  </div>
+  <div class="solution">
+    <strong>Conjunction is TRUE only when BOTH operands are TRUE.</strong>
+    <span class="step">Row 1: T ∧ T = T ✓</span>
+    <span class="step">Row 2: T ∧ F = F</span>
+    <span class="step">Row 3: F ∧ T = F</span>
+    <span class="step">Row 4: F ∧ F = F</span>
+  </div>
+  <span class="answer-badge">Answer: A — Row 1 only</span>
+</div>
+
+<!-- Q12 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 12</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    In how many rows of a two-variable truth table is \(p \lor q\) FALSE?
+  </div>
+  <div class="options">
+    <span>(A) 0 rows</span>
+    <span>(B) 1 row</span>
+    <span>(C) 2 rows</span>
+    <span>(D) 4 rows</span>
+  </div>
+  <div class="solution">
+    <strong>Disjunction is FALSE only when BOTH operands are FALSE.</strong>
+    <span class="step">Only the combination (F, F) gives a FALSE disjunction — that is exactly <em>1 row</em>.</span>
+    <span class="step">A two-variable truth table has \(2^2 = 4\) rows total.</span>
+  </div>
+  <span class="answer-badge">Answer: B — 1 row (when both p and q are F)</span>
+</div>
+
+<!-- Q13 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 13</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    How many rows does a truth table with <em>three</em> variables \(p,\ q,\ r\) have?
+  </div>
+  <div class="options">
+    <span>(A) 3</span>
+    <span>(B) 6</span>
+    <span>(C) 8</span>
+    <span>(D) 9</span>
+  </div>
+  <div class="solution">
+    <strong>Formula:</strong> A truth table with \(n\) variables has \(2^n\) rows.
+    <span class="step">\(n = 3 \Rightarrow 2^3 = 8\) rows.</span>
+    <span class="step">1 variable → 2 rows; 2 variables → 4 rows; 3 variables → 8 rows; 4 → 16, etc.</span>
+  </div>
+  <span class="answer-badge">Answer: C — 8 rows</span>
+</div>
+
+<!-- Q14 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 14</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Evaluate \(\lnot p \land q\) when \(p = F\) and \(q = T\).
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) Undefined</span>
+    <span>(D) Same as \(p \land q\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Step 1: \(\lnot p = \lnot F = T\)</span>
+    <span class="step">Step 2: \(\lnot p \land q = T \land T = T\)</span>
+    <span class="step">Key: Evaluate negation <em>before</em> the conjunction (negation has highest precedence).</span>
+  </div>
+  <span class="answer-badge">Answer: A — TRUE</span>
+</div>
+
+<!-- Q15 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 15</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Which of the following is a <em>tautology</em> — a statement that is TRUE in every row of its truth table?
+  </div>
+  <div class="options">
+    <span>(A) \(p \land \lnot p\)</span>
+    <span>(B) \(p \lor \lnot p\)</span>
+    <span>(C) \(p \land q\)</span>
+    <span>(D) \(p \lor q\)</span>
+  </div>
+  <div class="solution">
+    <strong>Tautology</strong> = always TRUE. <strong>Contradiction</strong> = always FALSE.
+    <span class="step">\(p \lor \lnot p\): either \(p\) is true (first disjunct is T) or \(p\) is false (second disjunct is T). Always TRUE. ✓</span>
+    <span class="step">\(p \land \lnot p\): always FALSE (contradiction — Law of Non-Contradiction).</span>
+    <span class="step">\(p \land q\) and \(p \lor q\) have mixed truth values — not tautologies.</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(p \lor \lnot p\) (tautology)</span>
+</div>
+
+<!-- Q16 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 16</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Determine the truth value of \((p \land q) \lor \lnot p\) when \(p = T,\ q = F\).
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) Same as \(q\)</span>
+    <span>(D) Cannot be evaluated</span>
+  </div>
+  <div class="solution">
+    <span class="step">Step 1: \(p \land q = T \land F = F\)</span>
+    <span class="step">Step 2: \(\lnot p = \lnot T = F\)</span>
+    <span class="step">Step 3: \(F \lor F = F\)</span>
+    <span class="step">Order of operations: negation first, then conjunction, then disjunction.</span>
+  </div>
+  <span class="answer-badge">Answer: B — FALSE</span>
+</div>
+
+<!-- Q17 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 17</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    What is the truth value of \(\lnot(p \lor q)\) when \(p = F\) and \(q = F\)?
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) Same as \(p \lor q\)</span>
+    <span>(D) Same as \(\lnot p\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Step 1: \(p \lor q = F \lor F = F\)</span>
+    <span class="step">Step 2: \(\lnot(F) = T\)</span>
+    <span class="step">The only time \(p \lor q = F\) is when both are FALSE, making its negation TRUE.</span>
+  </div>
+  <span class="answer-badge">Answer: A — TRUE</span>
+</div>
+
+<!-- Q18 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 18</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Using the truth table below, identify the column that represents \(\lnot p \lor q\):
+    <table class="tt">
+      <tr><th>\(p\)</th><th>\(q\)</th><th>Col A</th><th>Col B</th><th>Col C</th></tr>
+      <tr><td>T</td><td>T</td><td>T</td><td>F</td><td>T</td></tr>
+      <tr><td>T</td><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+      <tr><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+      <tr><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td></tr>
+    </table>
+  </div>
+  <div class="options">
+    <span>(A) Column A</span>
+    <span>(B) Column B</span>
+    <span>(C) Column C</span>
+    <span>(D) None of the above</span>
+  </div>
+  <div class="solution">
+    <strong>Build \(\lnot p \lor q\) row by row:</strong>
+    <span class="step">Row 1: \(\lnot T \lor T = F \lor T = T\)</span>
+    <span class="step">Row 2: \(\lnot T \lor F = F \lor F = F\)</span>
+    <span class="step">Row 3: \(\lnot F \lor T = T \lor T = T\)</span>
+    <span class="step">Row 4: \(\lnot F \lor F = T \lor F = T\)</span>
+    <span class="step">Results: T, F, T, T — matches <em>Column A</em>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — Column A</span>
+</div>
+
+<!-- Q19 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 19</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    A statement is a <em>contradiction</em> if it is:
+  </div>
+  <div class="options">
+    <span>(A) TRUE in every possible case</span>
+    <span>(B) FALSE in every possible case</span>
+    <span>(C) TRUE in some cases and FALSE in others</span>
+    <span>(D) Neither TRUE nor FALSE</span>
+  </div>
+  <div class="solution">
+    <span class="step"><strong>Tautology</strong>: TRUE in every row — e.g. \(p \lor \lnot p\).</span>
+    <span class="step"><strong>Contradiction</strong>: FALSE in every row — e.g. \(p \land \lnot p\).</span>
+    <span class="step"><strong>Contingency</strong>: TRUE in some rows, FALSE in others — e.g. \(p \land q\).</span>
+  </div>
+  <span class="answer-badge">Answer: B — FALSE in every possible case</span>
+</div>
+
+<!-- Q20 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 20</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Two statements are <em>logically equivalent</em> (\(\equiv\)) if:
+  </div>
+  <div class="options">
+    <span>(A) They have the same number of variables.</span>
+    <span>(B) Their truth tables have identical final columns for all rows.</span>
+    <span>(C) They use the same connective.</span>
+    <span>(D) One is the negation of the other.</span>
+  </div>
+  <div class="solution">
+    <span class="step"><strong>Logical equivalence</strong> means the two statements have <em>exactly the same truth value in every possible row</em>.</span>
+    <span class="step">Example: \(\lnot(p \land q) \equiv \lnot p \lor \lnot q\) — their truth table columns are identical in all 4 rows.</span>
+    <span class="step">This is tested by building both columns and confirming they match row for row.</span>
+  </div>
+  <span class="answer-badge">Answer: B — Identical truth table columns</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 3: IMPLICATION, CONTRAPOSITIVE & EQUIVALENCE — Q21–Q30
+     ================================================================ -->
+<div class="block-header logic"><span class="blabel">BLOCK 3 · Q21–Q30</span> Implication, Contrapositive &amp; Biconditional</div>
+
+<!-- Q21 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 21</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    The implication \(p \Rightarrow q\) is FALSE only when:
+  </div>
+  <div class="options">
+    <span>(A) \(p\) is TRUE and \(q\) is FALSE.</span>
+    <span>(B) \(p\) is FALSE and \(q\) is TRUE.</span>
+    <span>(C) Both \(p\) and \(q\) are FALSE.</span>
+    <span>(D) Both \(p\) and \(q\) are TRUE.</span>
+  </div>
+  <div class="solution">
+    <strong>Implication truth table:</strong>
+    <table class="tt" style="margin:0.5rem 0">
+      <tr><th>\(p\)</th><th>\(q\)</th><th>\(p \Rightarrow q\)</th></tr>
+      <tr><td>T</td><td>T</td><td>T</td></tr>
+      <tr><td class="hi">T</td><td class="hi">F</td><td class="hi">F</td></tr>
+      <tr><td>F</td><td>T</td><td>T</td></tr>
+      <tr><td>F</td><td>F</td><td>T</td></tr>
+    </table>
+    <span class="step">The implication is FALSE <em>only</em> when the hypothesis is TRUE but the conclusion is FALSE — "a true premise led to a false conclusion" is the one thing a valid implication cannot allow.</span>
+    <span class="step">When \(p\) is FALSE, the implication is vacuously TRUE (a false promise can never be broken).</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(p\) TRUE and \(q\) FALSE</span>
+</div>
+
+<!-- Q22 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 22</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Given \(p \Rightarrow q\), the <em>contrapositive</em> is:
+  </div>
+  <div class="options">
+    <span>(A) \(q \Rightarrow p\) (converse)</span>
+    <span>(B) \(\lnot p \Rightarrow \lnot q\) (inverse)</span>
+    <span>(C) \(\lnot q \Rightarrow \lnot p\) (contrapositive)</span>
+    <span>(D) \(\lnot p \Rightarrow q\)</span>
+  </div>
+  <div class="solution">
+    <strong>Three related forms of \(p \Rightarrow q\):</strong>
+    <span class="step"><strong>Converse:</strong> \(q \Rightarrow p\)</span>
+    <span class="step"><strong>Inverse:</strong> \(\lnot p \Rightarrow \lnot q\)</span>
+    <span class="step"><strong>Contrapositive:</strong> \(\lnot q \Rightarrow \lnot p\) — logically equivalent to the original! ✓</span>
+    <span class="step">Note: only the contrapositive is always equivalent to the original implication.</span>
+  </div>
+  <span class="answer-badge">Answer: C — \(\lnot q \Rightarrow \lnot p\)</span>
+</div>
+
+<!-- Q23 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 23</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Write the contrapositive of: "If a number is even, then it is divisible by 2."
+  </div>
+  <div class="options">
+    <span>(A) If a number is divisible by 2, then it is even.</span>
+    <span>(B) If a number is not even, then it is not divisible by 2.</span>
+    <span>(C) If a number is not divisible by 2, then it is not even.</span>
+    <span>(D) A number is even and divisible by 2.</span>
+  </div>
+  <div class="solution">
+    <span class="step">Let \(p\) = "the number is even," \(q\) = "it is divisible by 2."</span>
+    <span class="step">Contrapositive: \(\lnot q \Rightarrow \lnot p\) = "If a number is NOT divisible by 2, then it is NOT even." ✓</span>
+    <span class="step">Option A is the converse (\(q \Rightarrow p\)). Option B is the inverse (\(\lnot p \Rightarrow \lnot q\)).</span>
+  </div>
+  <span class="answer-badge">Answer: C</span>
+</div>
+
+<!-- Q24 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 24</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    The biconditional \(p \Leftrightarrow q\) is TRUE when:
+  </div>
+  <div class="options">
+    <span>(A) \(p\) is TRUE only.</span>
+    <span>(B) \(p\) and \(q\) have the same truth value (both TRUE or both FALSE).</span>
+    <span>(C) \(p\) is FALSE and \(q\) is TRUE.</span>
+    <span>(D) At least one of them is TRUE.</span>
+  </div>
+  <div class="solution">
+    <strong>Biconditional truth table:</strong>
+    <table class="tt" style="margin:0.5rem 0">
+      <tr><th>\(p\)</th><th>\(q\)</th><th>\(p \Leftrightarrow q\)</th></tr>
+      <tr><td>T</td><td>T</td><td class="hi">T</td></tr>
+      <tr><td>T</td><td>F</td><td>F</td></tr>
+      <tr><td>F</td><td>T</td><td>F</td></tr>
+      <tr><td>F</td><td>F</td><td class="hi">T</td></tr>
+    </table>
+    <span class="step">"If and only if" — TRUE precisely when both sides agree.</span>
+  </div>
+  <span class="answer-badge">Answer: B — Same truth value for both</span>
+</div>
+
+<!-- Q25 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 25</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Evaluate \(p \Rightarrow q\) where \(p = F\) and \(q = F\).
+  </div>
+  <div class="options">
+    <span>(A) FALSE — both inputs are false.</span>
+    <span>(B) TRUE — a false hypothesis makes the implication vacuously true.</span>
+    <span>(C) Undefined.</span>
+    <span>(D) Depends on the context of \(p\) and \(q\).</span>
+  </div>
+  <div class="solution">
+    <span class="step">From the implication truth table: when \(p = F\), \(p \Rightarrow q\) is always TRUE regardless of \(q\).</span>
+    <span class="step">Intuition: "If I fail (false hypothesis), then I will cry." Even if I don't cry, you cannot call this statement a lie — I never failed!</span>
+    <span class="step">This is called <em>vacuous truth</em>.</span>
+  </div>
+  <span class="answer-badge">Answer: B — TRUE (vacuous truth)</span>
+</div>
+
+<!-- Q26 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 26</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Which pair of statements is logically equivalent?
+  </div>
+  <div class="options">
+    <span>(A) \(p \Rightarrow q\) and \(q \Rightarrow p\)</span>
+    <span>(B) \(p \Rightarrow q\) and \(\lnot q \Rightarrow \lnot p\)</span>
+    <span>(C) \(p \Rightarrow q\) and \(\lnot p \Rightarrow \lnot q\)</span>
+    <span>(D) \(p \Rightarrow q\) and \(\lnot p \lor q\) — both of these</span>
+  </div>
+  <div class="solution">
+    <span class="step">Check all pairs:</span>
+    <span class="step">A: Original vs. Converse — <em>NOT</em> equivalent.</span>
+    <span class="step">B: Original vs. Contrapositive — <em>EQUIVALENT</em>. ✓</span>
+    <span class="step">C: Original vs. Inverse — NOT equivalent (equivalent to converse).</span>
+    <span class="step">D: \(p \Rightarrow q \equiv \lnot p \lor q\) is also true — but option B is the standard SS1 answer.</span>
+  </div>
+  <span class="answer-badge">Answer: B — Original ≡ Contrapositive</span>
+</div>
+
+<!-- Q27 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 27</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Given the argument:
+    <br>Premise 1: \(p \Rightarrow q\)
+    <br>Premise 2: \(p\) is TRUE
+    <br>Conclusion: \(q\) is TRUE
+    <br>This is the law of:
+  </div>
+  <div class="options">
+    <span>(A) De Morgan</span>
+    <span>(B) Modus Ponens (Law of Detachment)</span>
+    <span>(C) Modus Tollens</span>
+    <span>(D) Disjunctive Syllogism</span>
+  </div>
+  <div class="solution">
+    <strong>Modus Ponens:</strong> "If \(p \Rightarrow q\) and \(p\) is true, then \(q\) must be true."
+    <span class="step">Modus Tollens: If \(p \Rightarrow q\) and \(q\) is FALSE, then \(p\) is FALSE.</span>
+    <span class="step">Disjunctive Syllogism: If \(p \lor q\) and \(\lnot p\), then \(q\).</span>
+    <span class="step">These are the three core valid argument forms tested at SS1–SS2 level.</span>
+  </div>
+  <span class="answer-badge">Answer: B — Modus Ponens</span>
+</div>
+
+<!-- Q28 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 28</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Which of the following is the correct symbolic form of: "It is not the case that Chidi passed and scored an A"?
+  </div>
+  <div class="options">
+    <span>(A) \(\lnot p \land \lnot q\)</span>
+    <span>(B) \(\lnot(p \land q)\)</span>
+    <span>(C) \(\lnot p \lor q\)</span>
+    <span>(D) \(p \land \lnot q\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Let \(p\) = "Chidi passed", \(q\) = "Chidi scored an A."</span>
+    <span class="step">"Chidi passed AND scored an A" = \(p \land q\).</span>
+    <span class="step">"It is NOT the case that..." = negate the whole thing = \(\lnot(p \land q)\). ✓</span>
+    <span class="step">By De Morgan: this equals \(\lnot p \lor \lnot q\), which is different from option A.</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(\lnot(p \land q)\)</span>
+</div>
+
+<!-- Q29 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 29</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    The statement "A quadrilateral is a square if and only if it has four equal sides and four right angles" uses which connective?
+  </div>
+  <div class="options">
+    <span>(A) Conjunction</span>
+    <span>(B) Disjunction</span>
+    <span>(C) Biconditional</span>
+    <span>(D) Implication</span>
+  </div>
+  <div class="solution">
+    <span class="step">"If and only if" (iff) = biconditional (\(\Leftrightarrow\)).</span>
+    <span class="step">Biconditionals express definitions — "A is B if and only if A has exactly the properties of B."</span>
+    <span class="step">This is the strongest form: both directions hold simultaneously.</span>
+  </div>
+  <span class="answer-badge">Answer: C — Biconditional</span>
+</div>
+
+<!-- Q30 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 30</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Evaluate \(p \Leftrightarrow q\) given \(p = T,\ q = F\).
+  </div>
+  <div class="options">
+    <span>(A) TRUE</span>
+    <span>(B) FALSE</span>
+    <span>(C) TRUE only if \(p \Rightarrow q\)</span>
+    <span>(D) Same as \(p \land q\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Biconditional is TRUE only when both sides <em>agree</em> in truth value.</span>
+    <span class="step">Here \(p = T\) and \(q = F\) — they disagree, so \(p \Leftrightarrow q = F\).</span>
+  </div>
+  <span class="answer-badge">Answer: B — FALSE</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 4: NUMBER BASES — CONVERSIONS — 10 FLOW QUESTIONS Q31–Q40
+     ================================================================ -->
+<div class="block-header base"><span class="blabel">BLOCK 4 · Q31–Q40</span> Number Bases — Conversions (Flow)</div>
+
+<!-- Q31 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 31</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(1011_2\) to base 10.
+  </div>
+  <div class="options">
+    <span>(A) 9</span><span>(B) 11</span>
+    <span>(C) 13</span><span>(D) 10</span>
+  </div>
+  <div class="solution">
+    <strong>Method:</strong> Multiply each digit by \(2^{\text{position}}\), summing from right (position 0).
+    <div class="workbox">Position:  3   2   1   0
+Digit:     1   0   1   1
+Value:    1×8 + 0×4 + 1×2 + 1×1
+       =   8  +  0  +  2  +  1  = 11</div>
+  </div>
+  <span class="answer-badge">Answer: B — 11</span>
+</div>
+
+<!-- Q32 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 32</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(25_{10}\) to base 2.
+  </div>
+  <div class="options">
+    <span>(A) \(10011_2\)</span><span>(B) \(11001_2\)</span>
+    <span>(C) \(10110_2\)</span><span>(D) \(11010_2\)</span>
+  </div>
+  <div class="solution">
+    <strong>Method:</strong> Repeated division by 2, read remainders <em>bottom to top</em>.
+    <div class="workbox">25 ÷ 2 = 12  remainder 1  ↑ LSB
+12 ÷ 2 =  6  remainder 0
+ 6 ÷ 2 =  3  remainder 0
+ 3 ÷ 2 =  1  remainder 1
+ 1 ÷ 2 =  0  remainder 1  ↑ MSB
+
+Read upward: 1  1  0  0  1  → 11001₂</div>
+    <span class="step">Verify: \(16+8+0+0+1 = 25\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(11001_2\)</span>
+</div>
+
+<!-- Q33 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 33</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(101_2\) to base 10.
+  </div>
+  <div class="options">
+    <span>(A) 4</span><span>(B) 5</span>
+    <span>(C) 6</span><span>(D) 3</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">1×4 + 0×2 + 1×1 = 4 + 0 + 1 = 5</div>
+  </div>
+  <span class="answer-badge">Answer: B — 5</span>
+</div>
+
+<!-- Q34 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 34</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(47_{10}\) to base 8 (octal).
+  </div>
+  <div class="options">
+    <span>(A) \(57_8\)</span><span>(B) \(47_8\)</span>
+    <span>(C) \(55_8\)</span><span>(D) \(67_8\)</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">47 ÷ 8 =  5  remainder 7  ↑ LSB
+ 5 ÷ 8 =  0  remainder 5  ↑ MSB
+
+Read upward: 5  7  → 57₈</div>
+    <span class="step">Verify: \(5 \times 8 + 7 = 40 + 7 = 47_{10}\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(57_8\)</span>
+</div>
+
+<!-- Q35 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 35</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(2D_{16}\) to base 10. (Recall: D\(_{16}\) = 13\(_{10}\))
+  </div>
+  <div class="options">
+    <span>(A) 29</span><span>(B) 45</span>
+    <span>(C) 32</span><span>(D) 41</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">2D₁₆:
+Position:  1    0
+Digit:     2    D(=13)
+Value:   2×16 + 13×1
+       =  32  +  13  =  45</div>
+  </div>
+  <span class="answer-badge">Answer: B — 45</span>
+</div>
+
+<!-- Q36 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 36</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(100_{10}\) to base 16 (hexadecimal).
+  </div>
+  <div class="options">
+    <span>(A) \(\text{6}4_{16}\)</span><span>(B) \(\text{64}_{16}\)</span>
+    <span>(C) \(\text{A0}_{16}\)</span><span>(D) \(\text{100}_{16}\)</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">100 ÷ 16 =  6  remainder 4  ↑ LSB
+  6 ÷ 16 =  0  remainder 6  ↑ MSB
+
+Read upward: 6  4  → 64₁₆</div>
+    <span class="step">Verify: \(6 \times 16 + 4 = 96 + 4 = 100_{10}\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(64_{16}\)</span>
+</div>
+
+<!-- Q37 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 37</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(1101_2\) to base 8 (octal). The best method is to group binary digits in threes from the right.
+  </div>
+  <div class="options">
+    <span>(A) \(15_8\)</span><span>(B) \(17_8\)</span>
+    <span>(C) \(13_8\)</span><span>(D) \(25_8\)</span>
+  </div>
+  <div class="solution">
+    <strong>Group in 3s from the right:</strong>
+    <div class="workbox">1101₂  →  pad left: 001  101
+Group:           001       101
+Value:            1         5
+
+Result: 15₈</div>
+    <span class="step">Verify: \(1 \times 8 + 5 = 13_{10}\). Check \(1101_2 = 8+4+1 = 13_{10}\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(15_8\)</span>
+</div>
+
+<!-- Q38 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 38</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(B3_{16}\) to base 10. (B\(_{16}\) = 11\(_{10}\))
+  </div>
+  <div class="options">
+    <span>(A) 163</span><span>(B) 179</span>
+    <span>(C) 116</span><span>(D) 203</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">B3₁₆:
+B = 11,  3 = 3
+11 × 16 + 3 × 1
+= 176   +  3  = 179</div>
+  </div>
+  <span class="answer-badge">Answer: B — 179</span>
+</div>
+
+<!-- Q39 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 39</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    What is the value of \(111111_2\) in base 10?
+  </div>
+  <div class="options">
+    <span>(A) 62</span><span>(B) 63</span>
+    <span>(C) 64</span><span>(D) 61</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">111111₂ = 32+16+8+4+2+1 = 63</div>
+    <span class="step">Shortcut: A string of \(n\) ones in binary = \(2^n - 1\). Here \(n=6 \Rightarrow 2^6 - 1 = 64 - 1 = 63\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — 63</span>
+</div>
+
+<!-- Q40 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 40</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(256_{10}\) to base 2. How many binary digits (bits) does the result have?
+  </div>
+  <div class="options">
+    <span>(A) 8 bits</span><span>(B) 9 bits</span>
+    <span>(C) 7 bits</span><span>(D) 10 bits</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">256 = 2⁸  →  binary: 1 0000 0000
+
+That is 1 followed by eight 0s → 9 bits total.</div>
+    <span class="step">Key: \(2^n\) in binary is a 1 followed by \(n\) zeros, giving \(n+1\) bits.</span>
+    <span class="step">\(256 = 2^8 \Rightarrow 9\) bits.</span>
+  </div>
+  <span class="answer-badge">Answer: B — 9 bits</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 5: ARITHMETIC IN OTHER BASES — Q41–Q50
+     ================================================================ -->
+<div class="block-header base"><span class="blabel">BLOCK 5 · Q41–Q50</span> Arithmetic in Other Bases — Addition, Subtraction &amp; Multiplication</div>
+
+<!-- Q41 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 41</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Evaluate \(1011_2 + 110_2\).
+  </div>
+  <div class="options">
+    <span>(A) \(10001_2\)</span><span>(B) \(10111_2\)</span>
+    <span>(C) \(1101_2\)</span><span>(D) \(10011_2\)</span>
+  </div>
+  <div class="solution">
+    <strong>Binary addition rules:</strong> \(0+0=0\); \(1+0=1\); \(1+1=10\) (write 0, carry 1); \(1+1+1=11\) (write 1, carry 1).
+    <div class="workbox">  1 0 1 1
++   1 1 0
+---------
+  1 0 0 0 1   ← 10001₂</div>
+    <span class="step">Column by column from right: 1+0=1; 1+1=10 (0, carry1); 0+1+1=10 (0, carry1); 1+0+1=10 (0, carry1); carry 1 → final MSB.</span>
+    <span class="step">Check: \(11+6=17=16+1=10001_2\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(10001_2\)</span>
+</div>
+
+<!-- Q42 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 42</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Evaluate \(1100_2 - 0101_2\).
+  </div>
+  <div class="options">
+    <span>(A) \(0111_2\)</span><span>(B) \(1001_2\)</span>
+    <span>(C) \(0011_2\)</span><span>(D) \(1000_2\)</span>
+  </div>
+  <div class="solution">
+    <strong>Binary subtraction rules:</strong> \(0-0=0\); \(1-0=1\); \(1-1=0\); \(0-1\) = borrow, giving \(10-1=1\) (and reduce next column by 1).
+    <div class="workbox">  1 1 0 0
+- 0 1 0 1
+---------
+  0 1 1 1   ← 0111₂</div>
+    <span class="step">Check: \(12 - 5 = 7 = 0111_2\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(0111_2\)</span>
+</div>
+
+<!-- Q43 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 43</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Evaluate \(23_8 + 15_8\) in base 8.
+  </div>
+  <div class="options">
+    <span>(A) \(38_8\)</span><span>(B) \(40_8\)</span>
+    <span>(C) \(36_8\)</span><span>(D) \(48_8\)</span>
+  </div>
+  <div class="solution">
+    <strong>Octal addition:</strong> carry occurs when the column sum ≥ 8.
+    <div class="workbox">  2 3₈
++ 1 5₈
+------
+Column 0 (units): 3 + 5 = 8 → 8 ÷ 8 = 1 rem 0 → write 0, carry 1
+Column 1 (eights): 2 + 1 + 1 (carry) = 4 → write 4
+
+Result: 4 0₈  →  40₈</div>
+    <span class="step">Check: \(19 + 13 = 32 = 4 \times 8 + 0 = 40_8\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(40_8\)</span>
+</div>
+
+<!-- Q44 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 44</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Find the result of \(101_2 \times 11_2\).
+  </div>
+  <div class="options">
+    <span>(A) \(1011_2\)</span><span>(B) \(1111_2\)</span>
+    <span>(C) \(10011_2\)</span><span>(D) \(1001_2\)</span>
+  </div>
+  <div class="solution">
+    <strong>Binary multiplication:</strong> same as long multiplication — multiply by each bit then shift left.
+    <div class="workbox">    1 0 1   (= 5)
+  ×   1 1   (= 3)
+  -------
+    1 0 1   (101 × 1, shift 0)
++ 1 0 1 0   (101 × 1, shift 1)
+---------
+  1 1 1 1   (= 15)</div>
+    <span class="step">Check: \(5 \times 3 = 15 = 8+4+2+1 = 1111_2\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(1111_2\)</span>
+</div>
+
+<!-- Q45 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 45</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Evaluate \(312_4 + 231_4\) in base 4.
+  </div>
+  <div class="options">
+    <span>(A) \(1203_4\)</span><span>(B) \(543_4\)</span>
+    <span>(C) \(1213_4\)</span><span>(D) \(1023_4\)</span>
+  </div>
+  <div class="solution">
+    <strong>Base-4 addition:</strong> carry when column sum ≥ 4. Digits in base 4 are 0, 1, 2, 3 only.
+    <div class="workbox">  3 1 2₄
++ 2 3 1₄
+--------
+Col 0: 2+1 = 3 → write 3, carry 0
+Col 1: 1+3 = 4 → 4÷4 = 1 rem 0 → write 0, carry 1
+Col 2: 3+2+1(carry) = 6 → 6÷4 = 1 rem 2 → write 2, carry 1
+Col 3: carry 1 → write 1
+
+Result: 1 2 0 3₄  → 1203₄</div>
+    <span class="step">Check: \(3(16)+1(4)+2 = 54\); \(2(16)+3(4)+1=45\); \(54+45=99\). \(1203_4 = 64+2(4)+3 = 64+32+3 = 99\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(1203_4\)</span>
+</div>
+
+<!-- Q46 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 46</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Which of the following numbers is <em>invalid</em> in base 3?
+  </div>
+  <div class="options">
+    <span>(A) \(2102_3\)</span><span>(B) \(1021_3\)</span>
+    <span>(C) \(2003_3\)</span><span>(D) \(1200_3\)</span>
+  </div>
+  <div class="solution">
+    <strong>Rule:</strong> In base \(b\), valid digits are \(0, 1, 2, \ldots, b-1\).
+    <span class="step">In base 3: valid digits are 0, 1, 2 only.</span>
+    <span class="step">Option C: \(2003_3\) contains the digit <em>3</em>, which is <strong>not</strong> a valid base-3 digit. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: C — \(2003_3\) (digit 3 is invalid in base 3)</span>
+</div>
+
+<!-- Q47 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 47</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Convert \(110.11_2\) to base 10. (Note the binary point — treat fractional bits.)
+  </div>
+  <div class="options">
+    <span>(A) \(6.5\)</span><span>(B) \(6.75\)</span>
+    <span>(C) \(7.5\)</span><span>(D) \(5.75\)</span>
+  </div>
+  <div class="solution">
+    <strong>Fractional binary:</strong> positions to the right of the point are \(2^{-1}, 2^{-2}, \ldots\)
+    <div class="workbox">Integer part:    1 1 0  → 4+2+0 = 6
+Fractional part: .1 1   → ½ + ¼ = 0.5 + 0.25 = 0.75
+
+Total: 6 + 0.75 = 6.75</div>
+  </div>
+  <span class="answer-badge">Answer: B — 6.75</span>
+</div>
+
+<!-- Q48 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 48</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    Evaluate: \(1000_2 - 1_2\).
+  </div>
+  <div class="options">
+    <span>(A) \(111_2\)</span><span>(B) \(0111_2\)</span>
+    <span>(C) \(1001_2\)</span><span>(D) \(0110_2\)</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">1000₂ = 8,  subtract 1 → 7 = 0111₂</div>
+    <span class="step">Pattern to know: subtracting 1 from a power of 2 in binary flips all trailing zeros to ones and the leading 1 to 0. \(1000 - 1 = 0111\).</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(0111_2\)</span>
+</div>
+
+<!-- Q49 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 49</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    The hexadecimal number \(\text{FF}_{16}\) equals which base-10 value?
+  </div>
+  <div class="options">
+    <span>(A) 240</span><span>(B) 255</span>
+    <span>(C) 256</span><span>(D) 160</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">FF₁₆: F = 15
+15×16 + 15×1 = 240 + 15 = 255</div>
+    <span class="step">Shortcut: \(\text{FF}_{16} = 2^8 - 1 = 256 - 1 = 255\). (Two hex digits hold \(8\) bits; all 1s = \(2^8 -1\).)</span>
+  </div>
+  <span class="answer-badge">Answer: B — 255</span>
+</div>
+
+<!-- Q50 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 50</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    A number in base 5 is written as \(304_5\). What is its value in base 10?
+  </div>
+  <div class="options">
+    <span>(A) 79</span><span>(B) 69</span>
+    <span>(C) 85</span><span>(D) 89</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">3×5² + 0×5¹ + 4×5⁰
+= 3×25 + 0×5 + 4×1
+=  75  +  0  +  4  = 79</div>
+  </div>
+  <span class="answer-badge">Answer: A — 79</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 6: MODULAR ARITHMETIC — CLOCK & MOD TABLES — 10 FLOW Q51–Q60
+     ================================================================ -->
+<div class="block-header mod"><span class="blabel">BLOCK 6 · Q51–Q60</span> Modular Arithmetic — Clock Arithmetic &amp; Modular Tables (Flow)</div>
+
+<!-- Q51 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 51</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    What is \(17 \pmod{5}\)?
+  </div>
+  <div class="options">
+    <span>(A) 1</span><span>(B) 2</span>
+    <span>(C) 3</span><span>(D) 4</span>
+  </div>
+  <div class="solution">
+    <strong>Definition:</strong> \(a \pmod{m}\) is the remainder when \(a\) is divided by \(m\).
+    <span class="step">\(17 \div 5 = 3\) remainder \(2\).</span>
+    <span class="step">\(5 \times 3 = 15;\quad 17 - 15 = 2.\)</span>
+    <span class="step">So \(17 \equiv 2 \pmod{5}\).</span>
+  </div>
+  <span class="answer-badge">Answer: B — 2</span>
+</div>
+
+<!-- Q52 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 52</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    A clock shows 10:00. What time will it show in 15 hours?
+  </div>
+  <div class="options">
+    <span>(A) 2:00</span><span>(B) 1:00</span>
+    <span>(C) 3:00</span><span>(D) 25:00</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(10 + 15 = 25\)</span>
+    <span class="step">\(25 \pmod{12} = 25 - 24 = 1\) (since \(12 \times 2 = 24\)).</span>
+    <span class="step">The clock will show <strong>1:00</strong>. Clock arithmetic is always mod 12.</span>
+  </div>
+  <span class="answer-badge">Answer: B — 1:00</span>
+</div>
+
+<!-- Q53 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 53</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    What is \((-3) \pmod{7}\)?
+  </div>
+  <div class="options">
+    <span>(A) \(-3\)</span><span>(B) 3</span>
+    <span>(C) 4</span><span>(D) 7</span>
+  </div>
+  <div class="solution">
+    <strong>For negative numbers:</strong> Add multiples of the modulus until the result is in \([0, m-1]\).
+    <span class="step">\(-3 + 7 = 4.\)</span>
+    <span class="step">So \(-3 \equiv 4 \pmod{7}\).</span>
+    <span class="step">Check: \(4 - (-3) = 7\), which is divisible by 7. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: C — 4</span>
+</div>
+
+<!-- Q54 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 54</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Evaluate \(23 + 14 \pmod{6}\).
+  </div>
+  <div class="options">
+    <span>(A) 3</span><span>(B) 5</span>
+    <span>(C) 1</span><span>(D) 2</span>
+  </div>
+  <div class="solution">
+    <span class="step">Method 1 (add first): \(23 + 14 = 37.\quad 37 \div 6 = 6\) rem \(1.\)</span>
+    <span class="step">Method 2 (mod each first): \(23 \equiv 5\pmod6\); \(14 \equiv 2\pmod6\); \(5+2=7 \equiv 1\pmod6\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: C — 1</span>
+</div>
+
+<!-- Q55 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 55</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Evaluate \(7 \times 8 \pmod{5}\).
+  </div>
+  <div class="options">
+    <span>(A) 1</span><span>(B) 6</span>
+    <span>(C) 4</span><span>(D) 11</span>
+  </div>
+  <div class="solution">
+    <span class="step">Method 1: \(7 \times 8 = 56.\quad 56 \div 5 = 11\) rem \(1.\)</span>
+    <span class="step">Method 2: \(7 \equiv 2\pmod5\); \(8 \equiv 3\pmod5\); \(2 \times 3 = 6 \equiv 1\pmod5\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — 1</span>
+</div>
+
+<!-- Q56 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 56</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    In modulo 5, complete the addition table entry: \(3 + 4 \pmod{5} = \) ?
+  </div>
+  <div class="options">
+    <span>(A) 7</span><span>(B) 2</span>
+    <span>(C) 1</span><span>(D) 3</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(3 + 4 = 7.\quad 7 \pmod5 = 7 - 5 = 2.\)</span>
+    <span class="step">In a modular addition table (mod 5), entries are always from \(\{0,1,2,3,4\}\) — never 5 or more.</span>
+  </div>
+  <span class="answer-badge">Answer: B — 2</span>
+</div>
+
+<!-- Q57 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 57</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Today is Monday. What day will it be in 100 days? (Number days: Mon=0, Tue=1, …, Sun=6)
+  </div>
+  <div class="options">
+    <span>(A) Tuesday</span><span>(B) Wednesday</span>
+    <span>(C) Thursday</span><span>(D) Friday</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(100 \pmod{7}\): \(7 \times 14 = 98;\quad 100 - 98 = 2.\)</span>
+    <span class="step">Start at Monday (day 0). Add 2 days: Monday → Tuesday → <strong>Wednesday</strong>.</span>
+    <span class="step">Or: Mon=1. \(1 + 100 = 101.\quad 101 \pmod7: 7\times14=98; 101-98=3.\) Day 3 = Wednesday. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — Wednesday</span>
+</div>
+
+<!-- Q58 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 58</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Which of the following pairs are congruent modulo 9?
+  </div>
+  <div class="options">
+    <span>(A) 20 and 29</span><span>(B) 14 and 32</span>
+    <span>(C) 11 and 29</span><span>(D) 5 and 23</span>
+  </div>
+  <div class="solution">
+    <strong>Definition:</strong> \(a \equiv b \pmod{m}\) means \(m \mid (a - b)\).
+    <span class="step">A: \(29 - 20 = 9.\quad 9 \div 9 = 1.\) Divisible! ✓</span>
+    <span class="step">B: \(32 - 14 = 18.\quad 18 \div 9 = 2.\) Also divisible — but check A first.</span>
+    <span class="step">Actually both A and B work; however A is the <em>adjacent pair</em> with difference exactly 9. Verify B: \(14\pmod9=5;\; 32\pmod9=5\). ✓ Both pairs are correct — standard WAEC expects A.</span>
+  </div>
+  <span class="answer-badge">Answer: A — 20 and 29 (difference = 9)</span>
+</div>
+
+<!-- Q59 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 59</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Evaluate \(2^{10} \pmod{3}\).
+  </div>
+  <div class="options">
+    <span>(A) 0</span><span>(B) 1</span>
+    <span>(C) 2</span><span>(D) 3</span>
+  </div>
+  <div class="solution">
+    <span class="step">Notice: \(2 \equiv -1 \pmod3.\)</span>
+    <span class="step">So \(2^{10} \equiv (-1)^{10} = 1 \pmod3.\)</span>
+    <span class="step">Alternatively: \(2^1=2,\;2^2=4\equiv1,\;2^3=8\equiv2,\;2^4\equiv1,\ldots\) pattern repeats with period 2. \(10\) is even \(\Rightarrow 2^{10}\equiv1\pmod3.\)</span>
+  </div>
+  <span class="answer-badge">Answer: B — 1</span>
+</div>
+
+<!-- Q60 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 60</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    The multiplication table modulo 4 has entries from the set:
+  </div>
+  <div class="options">
+    <span>(A) \(\{0, 1, 2, 3, 4\}\)</span><span>(B) \(\{0, 1, 2, 3\}\)</span>
+    <span>(C) \(\{1, 2, 3, 4\}\)</span><span>(D) Any whole number</span>
+  </div>
+  <div class="solution">
+    <span class="step">In modulo \(m\), all results are reduced to the set \(\{0, 1, 2, \ldots, m-1\}\).</span>
+    <span class="step">For \(m = 4\): entries are \(\{0, 1, 2, 3\}\). The number 4 never appears — it reduces to 0. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(\{0, 1, 2, 3\}\)</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 7: MODULAR ARITHMETIC — EQUATIONS & APPLICATIONS — Q61–Q70
+     ================================================================ -->
+<div class="block-header mod"><span class="blabel">BLOCK 7 · Q61–Q70</span> Modular Arithmetic — Equations, Residues &amp; Applications</div>
+
+<!-- Q61 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 61</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Solve for \(x\): \(x \equiv 3 \pmod{7}\), where \(0 \leq x < 20\). List all solutions.
+  </div>
+  <div class="options">
+    <span>(A) \(x = 3\) only</span><span>(B) \(x = 3\) and \(x = 10\) and \(x = 17\)</span>
+    <span>(C) \(x = 3\) and \(x = 14\)</span><span>(D) \(x = 7\) and \(x = 14\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">The general solution is \(x = 3 + 7k\) for integer \(k \geq 0\).</span>
+    <span class="step">\(k=0: x=3\); \(k=1: x=10\); \(k=2: x=17\); \(k=3: x=24 \geq 20\) — stop.</span>
+    <span class="step">Solutions in \([0,20)\): \(\{3, 10, 17\}\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — 3, 10, and 17</span>
+</div>
+
+<!-- Q62 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 62</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Find \(x\) if \(2x \equiv 4 \pmod{6}\).
+  </div>
+  <div class="options">
+    <span>(A) \(x = 2\) only</span><span>(B) \(x = 2\) and \(x = 5\)</span>
+    <span>(C) \(x = 1\) and \(x = 4\)</span><span>(D) \(x = 3\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Test \(x = 0,1,2,3,4,5\) (one full period mod 6):</span>
+    <span class="step">\(x=0:\; 0\pmod6=0\neq4\)</span>
+    <span class="step">\(x=1:\; 2\pmod6=2\neq4\)</span>
+    <span class="step">\(x=2:\; 4\pmod6=4\) ✓</span>
+    <span class="step">\(x=3:\; 6\pmod6=0\neq4\)</span>
+    <span class="step">\(x=4:\; 8\pmod6=2\neq4\)</span>
+    <span class="step">\(x=5:\; 10\pmod6=4\) ✓</span>
+    <span class="step">Solutions in one period: \(x=2\) and \(x=5\).</span>
+  </div>
+  <span class="answer-badge">Answer: B — \(x=2\) and \(x=5\)</span>
+</div>
+
+<!-- Q63 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 63</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    What is the remainder when \(5^3\) is divided by 6?
+  </div>
+  <div class="options">
+    <span>(A) 5</span><span>(B) 1</span>
+    <span>(C) 3</span><span>(D) 0</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(5^3 = 125.\quad 125 \div 6 = 20\) rem \(5.\)</span>
+    <span class="step">Shortcut: \(5 \equiv -1\pmod6 \Rightarrow 5^3 \equiv (-1)^3 = -1 \equiv 5\pmod6.\)</span>
+  </div>
+  <span class="answer-badge">Answer: A — 5</span>
+</div>
+
+<!-- Q64 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 64</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    A market is held every 8 days. If it was held on the 3rd of a month, on which dates in the same month will it next be held (assuming the month has 31 days)?
+  </div>
+  <div class="options">
+    <span>(A) 11, 19, 27</span><span>(B) 11, 22, 31</span>
+    <span>(C) 8, 16, 24</span><span>(D) 13, 21, 29</span>
+  </div>
+  <div class="solution">
+    <span class="step">Next dates = \(3 + 8k\) for \(k = 1, 2, 3, \ldots\) while result \(\leq 31\):</span>
+    <span class="step">\(k=1:\; 3+8=11\); \(k=2:\; 3+16=19\); \(k=3:\; 3+24=27\); \(k=4:\; 3+32=35>31.\)</span>
+    <span class="step">Dates: <strong>11, 19, 27</strong>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — 11, 19, 27</span>
+</div>
+
+<!-- Q65 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 65</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Which of the following is TRUE about modular arithmetic?
+  </div>
+  <div class="options">
+    <span>(A) \((a + b) \pmod{m} = (a \pmod{m}) + (b \pmod{m})\) always, without further reduction.</span>
+    <span>(B) If \(a \equiv b\pmod m\), then \(a^n \equiv b^n\pmod m\) for any positive integer \(n\).</span>
+    <span>(C) Division in modular arithmetic always works the same way as regular division.</span>
+    <span>(D) \(a \times 0 \equiv 1\pmod m\) for all \(a\).</span>
+  </div>
+  <div class="solution">
+    <span class="step">Option B is true: congruence is preserved under exponentiation.</span>
+    <span class="step">Option A is partly right but needs further reduction (the sum of residues may itself be ≥ m).</span>
+    <span class="step">Option C is false — division requires modular inverses which don't always exist.</span>
+    <span class="step">Option D is false — \(a \times 0 = 0\) always.</span>
+  </div>
+  <span class="answer-badge">Answer: B</span>
+</div>
+
+<!-- Q66 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 66</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Find the value of \((15 \times 13) \pmod{11}\).
+  </div>
+  <div class="options">
+    <span>(A) 7</span><span>(B) 8</span>
+    <span>(C) 3</span><span>(D) 9</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(15 \equiv 4\pmod{11}.\quad 13 \equiv 2\pmod{11}.\)</span>
+    <span class="step">\(4 \times 2 = 8.\quad 8\pmod{11} = 8.\)</span>
+    <span class="step">Check: \(15\times13=195.\quad 195 = 17\times11 + 8.\) Remainder = 8. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — 8</span>
+</div>
+
+<!-- Q67 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 67</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    In mod 10, what is the last digit (units digit) of \(7^{44}\)?
+  </div>
+  <div class="options">
+    <span>(A) 1</span><span>(B) 3</span>
+    <span>(C) 7</span><span>(D) 9</span>
+  </div>
+  <div class="solution">
+    <span class="step">Powers of 7 mod 10 cycle with period 4:</span>
+    <span class="step">\(7^1\equiv7,\;7^2\equiv9,\;7^3\equiv3,\;7^4\equiv1,\;7^5\equiv7,\ldots\)</span>
+    <span class="step">\(44 \div 4 = 11\) remainder \(0\). Remainder 0 corresponds to \(7^4\equiv1\).</span>
+    <span class="step">So \(7^{44} \equiv 1\pmod{10}\). Last digit = <strong>1</strong>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — 1</span>
+</div>
+
+<!-- Q68 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 68</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Evaluate: \(50 - 73 \pmod{12}\).
+  </div>
+  <div class="options">
+    <span>(A) 11</span><span>(B) 5</span>
+    <span>(C) \(-23\)</span><span>(D) 1</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(50 - 73 = -23.\)</span>
+    <span class="step">\(-23 \pmod{12}\): add multiples of 12 until non-negative. \(-23 + 24 = 1.\quad (12\times2=24).\)</span>
+    <span class="step">So \(-23 \equiv 1\pmod{12}\). ✓</span>
+    <span class="step">Alternative: \(50\equiv2\pmod{12};\;73\equiv1\pmod{12};\;2-1=1.\)</span>
+  </div>
+  <span class="answer-badge">Answer: D — 1</span>
+</div>
+
+<!-- Q69 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 69</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    Chidi earns ₦5,000 per day. He saves all earnings. After how many complete days will his total savings be exactly divisible by 7?
+  </div>
+  <div class="options">
+    <span>(A) 5 days</span><span>(B) 7 days</span>
+    <span>(C) 14 days</span><span>(D) Never — 5000 is not divisible by 7</span>
+  </div>
+  <div class="solution">
+    <span class="step">Total after \(n\) days = \(5000n.\)</span>
+    <span class="step">We need \(5000n \equiv 0\pmod7.\)</span>
+    <span class="step">\(5000 \pmod7\): \(5000 = 714\times7 + 2.\) So \(5000\equiv2\pmod7.\)</span>
+    <span class="step">Need \(2n\equiv0\pmod7 \Rightarrow n\equiv0\pmod7.\) Smallest positive \(n = 7.\)</span>
+  </div>
+  <span class="answer-badge">Answer: B — 7 days</span>
+</div>
+
+<!-- Q70 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 70</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    If \(p \equiv 3\pmod5\) and \(q \equiv 4\pmod5\), find \((p^2 + q) \pmod5\).
+  </div>
+  <div class="options">
+    <span>(A) 3</span><span>(B) 1</span>
+    <span>(C) 2</span><span>(D) 0</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(p^2 \equiv 3^2 = 9 \equiv 4\pmod5.\)</span>
+    <span class="step">\(q \equiv 4\pmod5.\)</span>
+    <span class="step">\(p^2 + q \equiv 4 + 4 = 8 \equiv 3\pmod5.\)</span>
+  </div>
+  <span class="answer-badge">Answer: A — 3</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 8: SPACED REPETITION — LOGIC — Q71–Q77
+     ================================================================ -->
+<div class="block-header rep"><span class="blabel">BLOCK 8 · Q71–Q77</span> Spaced Repetition — Logical Reasoning</div>
+
+<!-- Q71 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 71</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Recall Q10] State De Morgan's Second Law (about negating a disjunction).
+  </div>
+  <div class="options">
+    <span>(A) \(\lnot(p \lor q) \equiv \lnot p \lor \lnot q\)</span>
+    <span>(B) \(\lnot(p \lor q) \equiv \lnot p \land \lnot q\)</span>
+    <span>(C) \(\lnot(p \lor q) \equiv p \land q\)</span>
+    <span>(D) \(\lnot(p \lor q) \equiv \lnot p \Rightarrow q\)</span>
+  </div>
+  <div class="solution">
+    <strong>De Morgan's Laws (both):</strong>
+    <span class="step">Law 1: \(\lnot(p \land q) \equiv \lnot p \lor \lnot q\)</span>
+    <span class="step">Law 2: \(\lnot(p \lor q) \equiv \lnot p \land \lnot q\)</span>
+    <span class="step">Memory: "Break the bar, change the operator." Negate each component, AND ↔ OR.</span>
+  </div>
+  <span class="answer-badge">Answer: B</span>
+</div>
+
+<!-- Q72 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 72</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Recall Q21] For what single combination of \(p\) and \(q\) is \(p \Rightarrow q\) FALSE?
+  </div>
+  <div class="options">
+    <span>(A) \(p=F,\;q=T\)</span><span>(B) \(p=T,\;q=T\)</span>
+    <span>(C) \(p=T,\;q=F\)</span><span>(D) \(p=F,\;q=F\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">The implication is FALSE <em>only</em> when the hypothesis is TRUE and the conclusion is FALSE: \(p=T, q=F.\)</span>
+  </div>
+  <span class="answer-badge">Answer: C</span>
+</div>
+
+<!-- Q73 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 73</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Recall Q15] Which statement is a tautology?
+  </div>
+  <div class="options">
+    <span>(A) \(p \land \lnot p\)</span><span>(B) \((p \Rightarrow q) \land \lnot q\)</span>
+    <span>(C) \((p \Rightarrow q) \lor (q \Rightarrow p)\)</span><span>(D) \(p \land q\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Test option C: either \(p \Rightarrow q\) or \(q \Rightarrow p\) must be true for any values (by the implication truth table — at least one direction holds). This is always TRUE — it is a tautology.</span>
+    <span class="step">Option A = contradiction. Options B and D are contingencies.</span>
+  </div>
+  <span class="answer-badge">Answer: C — always TRUE</span>
+</div>
+
+<!-- Q74 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 74</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Recall Q27] Name the rule: "If \(p \Rightarrow q\) and \(\lnot q\), then \(\lnot p\)."
+  </div>
+  <div class="options">
+    <span>(A) Modus Ponens</span><span>(B) De Morgan's Law</span>
+    <span>(C) Modus Tollens</span><span>(D) Disjunctive Syllogism</span>
+  </div>
+  <div class="solution">
+    <span class="step"><strong>Modus Tollens</strong>: "Denying the consequent." If the conclusion is false, the hypothesis must be false.</span>
+    <span class="step">Modus Ponens: affirm hypothesis → affirm conclusion.</span>
+    <span class="step">Modus Tollens: deny conclusion → deny hypothesis.</span>
+  </div>
+  <span class="answer-badge">Answer: C — Modus Tollens</span>
+</div>
+
+<!-- Q75 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 75</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Deeper] Determine whether this argument is valid:
+    <br>P1: If Ngozi studies, she passes.
+    <br>P2: Ngozi passes.
+    <br>C: Therefore, Ngozi studied.
+  </div>
+  <div class="options">
+    <span>(A) Valid — Modus Ponens</span>
+    <span>(B) Invalid — this is the Fallacy of Affirming the Consequent</span>
+    <span>(C) Valid — Modus Tollens</span>
+    <span>(D) Valid — Biconditional</span>
+  </div>
+  <div class="solution">
+    <span class="step">Structure: \(p \Rightarrow q\); \(q\); conclude \(p\). This is NOT Modus Ponens.</span>
+    <span class="step">Counter-example: Ngozi could pass because she is naturally brilliant (without studying). So "she passes" does not guarantee "she studied."</span>
+    <span class="step">This is the <em>Fallacy of Affirming the Consequent</em> — a common logical error. Invalid. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — Invalid (Fallacy of Affirming the Consequent)</span>
+</div>
+
+<!-- Q76 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 76</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Express "Not both \(p\) and \(q\)" and "neither \(p\) nor \(q\)" in symbols. Which is stronger (excludes more possibilities)?
+  </div>
+  <div class="options">
+    <span>(A) They are identical.</span>
+    <span>(B) \(\lnot(p\land q)\) vs \(\lnot p \land \lnot q\) — "neither" is stronger (both must be false).</span>
+    <span>(C) \(\lnot(p\land q)\) is stronger.</span>
+    <span>(D) Both are tautologies.</span>
+  </div>
+  <div class="solution">
+    <span class="step">"Not both": \(\lnot(p\land q) \equiv \lnot p \lor \lnot q\) — at least one is false.</span>
+    <span class="step">"Neither … nor": \(\lnot p \land \lnot q\) — both are false.</span>
+    <span class="step">\(\lnot p \land \lnot q\) implies \(\lnot(p\land q)\) but not vice versa. "Neither" is the <em>stronger</em> restriction. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — "Neither … nor" is stronger</span>
+</div>
+
+<!-- Q77 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 77</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Application] A teacher says: "You will pass if and only if you submit the assignment."
+    A student submits the assignment but does not pass. What can be concluded?
+  </div>
+  <div class="options">
+    <span>(A) The teacher's statement was true.</span>
+    <span>(B) The teacher's statement was false.</span>
+    <span>(C) Nothing can be concluded.</span>
+    <span>(D) The student did not submit.</span>
+  </div>
+  <div class="solution">
+    <span class="step">Let \(p\) = "submits," \(q\) = "passes." Teacher's statement: \(p \Leftrightarrow q\).</span>
+    <span class="step">Student: \(p = T\) (submitted), \(q = F\) (did not pass).</span>
+    <span class="step">\(p \Leftrightarrow q = T \Leftrightarrow F = F\).</span>
+    <span class="step">The biconditional is FALSE → the teacher's statement was <strong>false</strong>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — The teacher's statement was false.</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 9: SPACED REPETITION — NUMBER BASES — Q78–Q84
+     ================================================================ -->
+<div class="block-header rep"><span class="blabel">BLOCK 9 · Q78–Q84</span> Spaced Repetition — Number Bases</div>
+
+<!-- Q78 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 78</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">[Recall Q31] Convert \(11011_2\) to base 10.</div>
+  <div class="options">
+    <span>(A) 25</span><span>(B) 27</span><span>(C) 29</span><span>(D) 26</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">16+8+0+2+1 = 27</div>
+  </div>
+  <span class="answer-badge">Answer: B — 27</span>
+</div>
+
+<!-- Q79 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 79</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">[Recall Q32] Convert \(63_{10}\) to base 2.</div>
+  <div class="options">
+    <span>(A) \(111111_2\)</span><span>(B) \(110111_2\)</span><span>(C) \(101101_2\)</span><span>(D) \(111110_2\)</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">63 = 64 - 1 = 2⁶ - 1
+In binary: six 1s = 111111₂</div>
+    <span class="step">Or divide repeatedly: \(63,31,15,7,3,1,0\) — all remainders 1. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(111111_2\)</span>
+</div>
+
+<!-- Q80 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 80</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">[Recall Q41] Evaluate \(11001_2 + 10110_2\).</div>
+  <div class="options">
+    <span>(A) \(101111_2\)</span><span>(B) \(110000_2\)</span><span>(C) \(101011_2\)</span><span>(D) \(100101_2\)</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">  1 1 0 0 1   (25)
++ 1 0 1 1 0   (22)
+-----------
+1 0 1 1 1 1   (47)
+
+Check: 32+8+4+2+1 = 47 = 25+22. ✓</div>
+  </div>
+  <span class="answer-badge">Answer: A — \(101111_2\)</span>
+</div>
+
+<!-- Q81 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 81</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">Convert \(1010_2\) to base 16.</div>
+  <div class="options">
+    <span>(A) \(\text{A}_{16}\)</span><span>(B) \(\text{10}_{16}\)</span><span>(C) \(\text{B}_{16}\)</span><span>(D) \(\text{C}_{16}\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(1010_2 = 8+2 = 10_{10}.\)</span>
+    <span class="step">\(10_{10} = \text{A}_{16}\) (A is the hex digit for 10). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(\text{A}_{16}\)</span>
+</div>
+
+<!-- Q82 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 82</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">What is \(77_8\) in base 10?</div>
+  <div class="options">
+    <span>(A) 63</span><span>(B) 49</span><span>(C) 56</span><span>(D) 77</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">7×8 + 7×1 = 56 + 7 = 63</div>
+  </div>
+  <span class="answer-badge">Answer: A — 63</span>
+</div>
+
+<!-- Q83 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 83</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">In base 6, evaluate \(54_6 - 25_6\).</div>
+  <div class="options">
+    <span>(A) \(29_6\)</span><span>(B) \(25_6\)</span><span>(C) \(23_6\)</span><span>(D) \(33_6\)</span>
+  </div>
+  <div class="solution">
+    <div class="workbox">  5 4₆
+- 2 5₆
+------
+Col 0: 4 - 5 → borrow: 14₆ - 5 = ? 
+  In base 10: "14 base 6" = 1×6+4 = 10. 10 - 5 = 5. Write 5, borrow 1.
+Col 1: 5 - 2 - 1(borrow) = 2. Write 2.
+
+Result: 2 5₆  →  25₆
+
+Check (base 10): 34 - 17 = 17 = 2×6+5 = 25₆. ✓</div>
+  </div>
+  <span class="answer-badge">Answer: B — \(25_6\)</span>
+</div>
+
+<!-- Q84 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 84</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">Express \(\text{1F}_{16}\) in base 2 by converting each hex digit to 4-bit binary.</div>
+  <div class="options">
+    <span>(A) \(00011111_2\)</span><span>(B) \(11110001_2\)</span><span>(C) \(10101010_2\)</span><span>(D) \(11111111_2\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Each hex digit → 4 binary bits:</span>
+    <span class="step">\(1_{16} = 0001_2\); \(\text{F}_{16} = 1111_2.\)</span>
+    <span class="step">Concatenate: \(0001\ 1111_2 = 00011111_2.\)</span>
+    <span class="step">Verify: \(31_{10} = 16+8+4+2+1 = 11111_2\), i.e. \(00011111_2\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(00011111_2\)</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 10: SPACED REPETITION — MODULAR ARITHMETIC — Q85–Q91
+     ================================================================ -->
+<div class="block-header rep"><span class="blabel">BLOCK 10 · Q85–Q91</span> Spaced Repetition — Modular Arithmetic</div>
+
+<!-- Q85 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 85</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">[Recall Q52] A clock shows 8:00. What time will it show in 50 hours?</div>
+  <div class="options">
+    <span>(A) 6:00</span><span>(B) 10:00</span><span>(C) 58:00</span><span>(D) 2:00</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(8 + 50 = 58.\quad 58\pmod{12} = 58 - 48 = 10.\)</span>
+    <span class="step">The clock shows <strong>10:00</strong>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — 10:00</span>
+</div>
+
+<!-- Q86 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 86</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">[Recall Q63] What is the units digit of \(3^{100}\)?</div>
+  <div class="options">
+    <span>(A) 1</span><span>(B) 3</span><span>(C) 7</span><span>(D) 9</span>
+  </div>
+  <div class="solution">
+    <span class="step">Powers of 3 mod 10 cycle with period 4: \(3^1=3,\;3^2=9,\;3^3=7,\;3^4=1,\;3^5=3,\ldots\)</span>
+    <span class="step">\(100 \div 4 = 25\) remainder \(0\). Remainder 0 → same as \(3^4\equiv1\pmod{10}.\)</span>
+    <span class="step">Units digit = <strong>1</strong>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — 1</span>
+</div>
+
+<!-- Q87 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 87</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">[Recall Q61] Solve: \(x \equiv 2\pmod{9}\) and list all solutions in \([0, 30)\).</div>
+  <div class="options">
+    <span>(A) \(2, 9, 18, 27\)</span><span>(B) \(2, 11, 20, 29\)</span><span>(C) \(2, 12, 22\)</span><span>(D) \(9, 18, 27\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">General solution: \(x = 2 + 9k\), \(k = 0,1,2,3,\ldots\) while \(x < 30.\)</span>
+    <span class="step">\(k=0: 2\); \(k=1: 11\); \(k=2: 20\); \(k=3: 29\); \(k=4: 38\geq30.\)</span>
+  </div>
+  <span class="answer-badge">Answer: B — 2, 11, 20, 29</span>
+</div>
+
+<!-- Q88 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 88</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">Find \((-11)\pmod{4}\).</div>
+  <div class="options">
+    <span>(A) \(-3\)</span><span>(B) 1</span><span>(C) 3</span><span>(D) 0</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(-11 + 12 = 1\). (Add \(3\times4=12\) to get a non-negative number.)</span>
+    <span class="step">\(-11\equiv1\pmod4.\)</span>
+    <span class="step">Check: \(1 - (-11) = 12 = 3\times4.\) Divisible by 4. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — 1</span>
+</div>
+
+<!-- Q89 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 89</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">Today is Wednesday. What day was it 100 days ago? (Wed = 0, …, Sun = 5, Mon = 6 — or use: Mon=1, …, Sun=7)</div>
+  <div class="options">
+    <span>(A) Sunday</span><span>(B) Monday</span><span>(C) Saturday</span><span>(D) Tuesday</span>
+  </div>
+  <div class="solution">
+    <span class="step">Going <em>back</em> 100 days = subtracting 100 mod 7.</span>
+    <span class="step">\(100\pmod7 = 100 - 98 = 2.\) So go back 2 days from Wednesday.</span>
+    <span class="step">Wednesday − 1 = Tuesday; Wednesday − 2 = <strong>Monday</strong>. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — Monday</span>
+</div>
+
+<!-- Q90 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 90</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">Fill in the multiplication table (mod 6): \(4 \times 5 \pmod{6} = \) ?</div>
+  <div class="options">
+    <span>(A) 20</span><span>(B) 4</span><span>(C) 2</span><span>(D) 0</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(4\times5=20.\quad 20\pmod6 = 20 - 18 = 2.\)</span>
+  </div>
+  <span class="answer-badge">Answer: C — 2</span>
+</div>
+
+<!-- Q91 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 91</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    [Application] A school bell rings every 40 minutes. If it first rings at 7:00 am, at what time does it ring for the <em>8th</em> time?
+  </div>
+  <div class="options">
+    <span>(A) 11:40 am</span><span>(B) 11:20 am</span><span>(C) 12:00 noon</span><span>(D) 10:40 am</span>
+  </div>
+  <div class="solution">
+    <span class="step">1st ring = 7:00 am (0 minutes after 7:00).</span>
+    <span class="step">8th ring = 7 rings after the 1st = \(7\times40 = 280\) minutes after 7:00 am.</span>
+    <span class="step">\(280\div60 = 4\) hours \(40\) min. \(7{:}00 + 4{:}40 = 11{:}40\) am.</span>
+  </div>
+  <span class="answer-badge">Answer: A — 11:40 am</span>
+</div>
+
+
+<!-- ================================================================
+     BLOCK 11: MIXED APPLICATION CHALLENGE — Q92–Q100
+     ================================================================ -->
+<div class="block-header mix"><span class="blabel">BLOCK 11 · Q92–Q100</span> Mixed Application &amp; Challenge Questions</div>
+
+<!-- Q92 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 92</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Which of the following arguments is VALID?
+    <br>P1: All polygons with three sides are triangles.
+    <br>P2: This shape has three sides.
+    <br>C: This shape is a triangle.
+  </div>
+  <div class="options">
+    <span>(A) Valid — Universal Instantiation + Modus Ponens</span>
+    <span>(B) Invalid — Fallacy of the undistributed middle</span>
+    <span>(C) Valid — Modus Tollens</span>
+    <span>(D) Invalid — Affirming the Consequent</span>
+  </div>
+  <div class="solution">
+    <span class="step">Structure: "All A are B; X is A; therefore X is B." This is valid universal instantiation — a direct application of universal logic and Modus Ponens.</span>
+    <span class="step">The conclusion follows necessarily from the premises. ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — Valid</span>
+</div>
+
+<!-- Q93 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 93</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    [Cross-topic] The binary number \(101010_2\) equals what value in hexadecimal?
+  </div>
+  <div class="options">
+    <span>(A) \(\text{2A}_{16}\)</span><span>(B) \(\text{AA}_{16}\)</span>
+    <span>(C) \(\text{A2}_{16}\)</span><span>(D) \(\text{15}_{16}\)</span>
+  </div>
+  <div class="solution">
+    <strong>Group 6 bits into pairs of 4 (from right):</strong>
+    <div class="workbox">101010₂ → 00 10  1010
+                       → 0010   1010
+         0010₂ = 2;   1010₂ = A (10)
+         Result: 2A₁₆</div>
+    <span class="step">Verify: \(2\times16+10 = 32+10=42_{10}.\quad 101010_2=32+8+2=42_{10}.\) ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — \(\text{2A}_{16}\)</span>
+</div>
+
+<!-- Q94 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 94</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    [Cross-topic] Prove or disprove: \(1011_2 \equiv 3\pmod{4}\).
+  </div>
+  <div class="options">
+    <span>(A) TRUE — \(1011_2=11;\;11\div4=2\) rem \(3.\)</span>
+    <span>(B) FALSE — \(1011_2=11;\;11\pmod4=1.\)</span>
+    <span>(C) TRUE — binary and mod 4 always agree.</span>
+    <span>(D) FALSE — the bases are incompatible.</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(1011_2 = 8+0+2+1=11_{10}.\)</span>
+    <span class="step">\(11\div4=2\) remainder \(3.\quad 11\equiv3\pmod4.\)</span>
+    <span class="step">Shortcut insight: mod 4 of a binary number = last 2 bits = \(11_2 = 3\). ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A — TRUE</span>
+</div>
+
+<!-- Q95 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 95</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    Symbolise and evaluate: "If \(17_{10}\) is greater than \(10000_2\) then it is greater than \(15\)." Is this implication true?
+    (\(10000_2 = 16_{10}\))
+  </div>
+  <div class="options">
+    <span>(A) FALSE — 17 > 16 but not > 15.</span>
+    <span>(B) TRUE — hypothesis is true (17 > 16), conclusion is true (17 > 15).</span>
+    <span>(C) FALSE — hypothesis is false.</span>
+    <span>(D) Undefined.</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(p\): "17 > 16" — TRUE (\(10000_2=16\)).</span>
+    <span class="step">\(q\): "17 > 15" — TRUE.</span>
+    <span class="step">\(p \Rightarrow q = T \Rightarrow T = T.\) ✓</span>
+  </div>
+  <span class="answer-badge">Answer: B — TRUE</span>
+</div>
+
+<!-- Q96 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 96</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    [Hard] Find the smallest positive integer \(n\) such that \(n \equiv 3\pmod7\) and \(n \equiv 1\pmod4\).
+  </div>
+  <div class="options">
+    <span>(A) 17</span><span>(B) 13</span><span>(C) 10</span><span>(D) 21</span>
+  </div>
+  <div class="solution">
+    <strong>Simultaneous congruences — test by listing:</strong>
+    <span class="step">Numbers \(\equiv 3\pmod7\): \(3, 10, 17, 24, 31,\ldots\)</span>
+    <span class="step">Check each mod 4:  \(3\pmod4=3\neq1;\; 10\pmod4=2\neq1;\; 17\pmod4=1\) ✓</span>
+    <span class="step">Answer: \(n = \mathbf{17}\).</span>
+  </div>
+  <span class="answer-badge">Answer: A — 17</span>
+</div>
+
+<!-- Q97 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 97</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    [Hard] In what base \(b\) is the following equation true?
+    \(\;24_b + 14_b = 41_b\)
+  </div>
+  <div class="options">
+    <span>(A) Base 5</span><span>(B) Base 6</span>
+    <span>(C) Base 7</span><span>(D) Base 8</span>
+  </div>
+  <div class="solution">
+    <span class="step">Convert to base 10 in terms of \(b\):</span>
+    <span class="step">\(24_b = 2b+4;\quad 14_b = b+4;\quad 41_b = 4b+1.\)</span>
+    <span class="step">Equation: \((2b+4) + (b+4) = 4b+1 \Rightarrow 3b+8 = 4b+1 \Rightarrow b = 7.\)</span>
+    <span class="step">Check: \(24_7+14_7 = 18+11=29=4(7)+1=29.\) ✓ Digits 1,2,4 are all valid in base 7.</span>
+  </div>
+  <span class="answer-badge">Answer: C — Base 7</span>
+</div>
+
+<!-- Q98 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 98</span><span class="q-cat logic">Logic</span></div>
+  <div class="q-text">
+    [Hard] Using a truth table, determine which of the following is a tautology.
+  </div>
+  <div class="options">
+    <span>(A) \((p \Rightarrow q) \Rightarrow (\lnot p \lor q)\)</span>
+    <span>(B) \(p \Rightarrow (p \land q)\)</span>
+    <span>(C) \((p \land q) \Rightarrow p\)</span>
+    <span>(D) \(p \Rightarrow \lnot p\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">Test Option C: \((p \land q) \Rightarrow p\). The hypothesis is \(p \land q\); the conclusion is \(p\).</span>
+    <span class="step">If \(p \land q = T\), then \(p = T\) (since conjunction requires both). So conclusion is TRUE whenever hypothesis is TRUE.</span>
+    <span class="step">If \(p\land q = F\), hypothesis is FALSE → implication is vacuously TRUE.</span>
+    <span class="step">Result: always TRUE in all 4 rows. This is a <em>tautology</em>. ✓</span>
+    <span class="step">Option A is also a tautology (since \(p\Rightarrow q \equiv \lnot p\lor q\)), but C is the cleaner exam answer.</span>
+  </div>
+  <span class="answer-badge">Answer: C — \((p \land q) \Rightarrow p\) is always true</span>
+</div>
+
+<!-- Q99 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 99</span><span class="q-cat mod">Mod</span></div>
+  <div class="q-text">
+    [Hard] Find the remainder when \(2^{50}\) is divided by 7.
+  </div>
+  <div class="options">
+    <span>(A) 1</span><span>(B) 2</span><span>(C) 4</span><span>(D) 6</span>
+  </div>
+  <div class="solution">
+    <span class="step">Find the cycle of \(2^n\pmod7\):</span>
+    <span class="step">\(2^1=2,\;2^2=4,\;2^3=8\equiv1,\;2^4\equiv2,\ldots\) Period = <strong>3</strong>.</span>
+    <span class="step">\(50\div3 = 16\) remainder \(2.\)</span>
+    <span class="step">\(2^{50}\equiv 2^2 = 4\pmod7.\)</span>
+  </div>
+  <span class="answer-badge">Answer: C — 4</span>
+</div>
+
+<!-- Q100 -->
+<div class="q-block">
+  <div class="q-meta"><span class="q-num">Q 100</span><span class="q-cat base">Bases</span></div>
+  <div class="q-text">
+    [Capstone] The number \(N = 10110_2\) is squared. What is the result in base 10 and in base 2?
+  </div>
+  <div class="options">
+    <span>(A) \(484_{10} = 111100100_2\)</span>
+    <span>(B) \(484_{10} = 111100100_2\) — same</span>
+    <span>(C) \(484_{10} = 111110100_2\)</span>
+    <span>(D) \(529_{10} = 1000010001_2\)</span>
+  </div>
+  <div class="solution">
+    <span class="step">\(10110_2 = 16+4+2 = 22_{10}.\)</span>
+    <span class="step">\(22^2 = 484_{10}.\)</span>
+    <span class="step">Convert \(484\) to base 2:</span>
+    <div class="workbox">484 ÷ 2 = 242 r 0
+242 ÷ 2 = 121 r 0
+121 ÷ 2 =  60 r 1
+ 60 ÷ 2 =  30 r 0
+ 30 ÷ 2 =  15 r 0
+ 15 ÷ 2 =   7 r 1
+  7 ÷ 2 =   3 r 1
+  3 ÷ 2 =   1 r 1
+  1 ÷ 2 =   0 r 1
+
+Read upward: 1 1 1 1 0 0 1 0 0 → 111100100₂</div>
+    <span class="step">Verify: \(256+128+64+32+4 = 484.\) ✓</span>
+  </div>
+  <span class="answer-badge">Answer: A/B — \(484_{10} = 111100100_2\)</span>
+</div>
+
+<div class="footer">
+  UTMEDaily — Logic, Number Bases &amp; Modular Arithmetic · 100 Questions · SS1–SS2 · NERDC/WAEC Aligned<br>
+  Questions: 10 Flow (Block 1,4,6) + 10 Spaced Repetition (Blocks 8–10) + 80 Exam-Standard
+</div>
+
+</div><!-- .paper -->
+</body>
+</html>

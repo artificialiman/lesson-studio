@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Functions — Practice Questions (Notation, Domain &amp; Inverse)</title>
+<style>
+  /* ============================================================
+     PAGE SETUP
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+  }
+
+  :root {
+    --ink:        #12181f;
+    --muted:      #5c6874;
+    --accent:     #1b4f8a;
+    --accent-lt:  #e8f0f8;
+    --rule:       #d3dbe3;
+    --paper:      #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 34px 16px 70px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 820px;
+    padding: 46px 54px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+  }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .head {
+    text-align: center;
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+    border-bottom: 2.5px solid var(--accent);
+  }
+
+  .head .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  .head h1 {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.3px;
+    margin-bottom: 5px;
+  }
+
+  .head .sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============================================================
+     INFO STRIP
+     ============================================================ */
+  .strip {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    font-size: 10.5px;
+  }
+
+  .strip > div {
+    flex: 1;
+    padding: 9px 14px;
+    border-right: 1px solid var(--rule);
+    background: #fafcfd;
+  }
+
+  .strip > div:last-child { border-right: 0; }
+
+  .strip .lbl {
+    display: block;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+
+  .strip .val {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ============================================================
+     INSTRUCTIONS
+     ============================================================ */
+  .instructions {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 20px;
+    margin-bottom: 34px;
+    font-size: 10.5px;
+    color: #24313d;
+    line-height: 1.6;
+  }
+
+  .instructions strong { color: var(--accent); }
+
+  /* ============================================================
+     SECTION HEADINGS
+     ============================================================ */
+  .sec {
+    margin-bottom: 30px;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 7px;
+    border-bottom: 1.6px solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sec-head .tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sec-head h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.1px;
+  }
+
+  .sec-head .range {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+  }
+
+  /* ============================================================
+     QUESTION LIST
+     ============================================================ */
+  ol.q {
+    list-style: none;
+    counter-reset: qq;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.q > li {
+    counter-increment: qq;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 12px 8px 14px;
+    margin-bottom: 5px;
+    border-left: 3px solid var(--accent-lt);
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.q > li:nth-child(odd) {
+    background: #fafcfd;
+  }
+
+  ol.q > li::before {
+    content: counter(qq) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.q > li .body {
+    flex: 1;
+    font-size: 11pt;
+    line-height: 1.62;
+  }
+
+  /* ============================================================
+     MATH STYLES
+     ============================================================ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+
+  sup {
+    font-size: 0.68em;
+    vertical-align: 0.44em;
+    line-height: 0;
+  }
+
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.93em;
+    line-height: 1.08;
+    margin: 0 0.14em;
+    position: relative;
+    top: -0.06em;
+  }
+
+  .frac .n {
+    display: block;
+    padding: 0 0.32em 0.12em;
+    border-bottom: 1pt solid currentColor;
+  }
+
+  .frac .d {
+    display: block;
+    padding: 0.12em 0.32em 0;
+  }
+
+  .sqrt { white-space: nowrap; }
+  .sqrt::before { content: "\221A"; margin-right: 0.06em; }
+  .sqrt > span {
+    border-top: 1pt solid currentColor;
+    padding: 0 0.18em;
+  }
+
+  .cbrt::before { content: "\221B"; margin-right: 0.06em; }
+  .cbrt > span {
+    border-top: 1pt solid currentColor;
+    padding: 0 0.18em;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .foot {
+    margin-top: 36px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ============================================================
+     PRINT
+     ============================================================ */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      font-size: 10.5pt;
+    }
+
+    .sheet {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .sec-head,
+    .instructions,
+    .strip {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    ol.q > li:nth-child(odd) {
+      background: #fbfdfe;
+    }
+  }
+
+  /* ============================================================
+     NARROW SCREENS
+     ============================================================ */
+  @media (max-width: 640px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .head h1 { font-size: 19px; }
+    .strip { flex-direction: column; }
+    .strip > div { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .strip > div:last-child { border-bottom: 0; }
+    .sec-head { flex-wrap: wrap; }
+    .sec-head .range { margin-left: 0; width: 100%; }
+    ol.q > li .body { font-size: 10.5pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ================= HEADER ================= -->
+  <header class="head">
+    <div class="kicker">Mathematics &bull; Functions</div>
+    <h1>Functions — Practice Questions</h1>
+    <div class="sub">Evaluating &bull; Domain &amp; Range &bull; Composite &bull; Inverse &amp; Restrictions</div>
+  </header>
+
+  <!-- ================= INFO STRIP ================= -->
+  <div class="strip">
+    <div>
+      <span class="lbl">Total Questions</span>
+      <span class="val">30</span>
+    </div>
+    <div>
+      <span class="lbl">Sections</span>
+      <span class="val">3</span>
+    </div>
+    <div>
+      <span class="lbl">Topic</span>
+      <span class="val">Basics &amp; Inverse</span>
+    </div>
+    <div>
+      <span class="lbl">Working</span>
+      <span class="val">Show all steps</span>
+    </div>
+  </div>
+
+  <!-- ================= INSTRUCTIONS ================= -->
+  <div class="instructions">
+    <strong>Instructions:</strong> Answer all 30 questions. For inverse functions, write your answer
+    in the form <span class="m">f<sup>&minus;1</sup>(x) = &hellip;</span> and state any domain
+    restrictions where necessary. Where a restriction follows a comma — such as
+    <span class="m">x &ne; 3</span> or <span class="m">x &ge; 0</span> — it tells you which inputs
+    the function is allowed to accept. Show all working.
+  </div>
+
+  <!-- ================= SECTION A ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>Evaluating &amp; Domain Restrictions</h2>
+      <span class="range">Questions 1&ndash;10</span>
+    </div>
+
+    <ol class="q">
+      <li><div class="body">
+        Given <span class="m">f(x) = 5x &minus; 3</span>, find <span class="m">f(6)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">g(x) = x<sup>2</sup> &minus; 4x</span>, find <span class="m">g(&minus;2)</span>.
+      </div></li>
+
+      <li><div class="body">
+        State the domain of <span class="m">f(x) = <span class="frac"><span class="n">1</span><span class="d">x &minus; 5</span></span></span>.
+        Write your answer using the &ldquo;not equal to&rdquo; symbol.
+      </div></li>
+
+      <li><div class="body">
+        State the domain of <span class="m">f(x) = <span class="frac"><span class="n">3</span><span class="d">x + 4</span></span></span>.
+      </div></li>
+
+      <li><div class="body">
+        Find the range of <span class="m">f(x) = x<sup>2</sup> + 3</span> for <span class="m">x &isin; &#8477;</span>.
+      </div></li>
+
+      <li><div class="body">
+        Find the range of <span class="m">f(x) = x<sup>2</sup> &minus; 7</span> for <span class="m">x &isin; &#8477;</span>.
+      </div></li>
+
+      <li><div class="body">
+        State the domain of <span class="m">h(x) = <span class="sqrt"><span>x &minus; 6</span></span></span>.
+        Write your answer using the &ldquo;greater than or equal to&rdquo; symbol.
+      </div></li>
+
+      <li><div class="body">
+        State the domain of <span class="m">h(x) = <span class="sqrt"><span>x + 7</span></span></span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = <span class="frac"><span class="n">x &minus; 1</span><span class="d">x + 2</span></span></span>,
+        find <span class="m">f(3)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = <span class="frac"><span class="n">2x + 3</span><span class="d">x &minus; 1</span></span></span>,
+        find <span class="m">f(2)</span> and state the value of <span class="m">x</span> that must be excluded from the domain.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= SECTION B ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Composite Functions &amp; Substitution</h2>
+      <span class="range">Questions 11&ndash;20</span>
+    </div>
+
+    <ol class="q" start="11">
+      <li><div class="body">
+        Given <span class="m">f(x) = 3x + 1</span> and <span class="m">g(x) = x<sup>2</sup></span>,
+        find <span class="m">(f &compfn; g)(x)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = 2x &minus; 3</span> and <span class="m">g(x) = x<sup>2</sup></span>,
+        find <span class="m">(f &compfn; g)(x)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = x + 5</span> and <span class="m">g(x) = 2x</span>,
+        find <span class="m">(g &compfn; f)(3)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = x &minus; 2</span> and <span class="m">g(x) = 4x</span>,
+        find <span class="m">(g &compfn; f)(5)</span>.
+      </div></li>
+
+      <li><div class="body">
+        If <span class="m">f(x) = 5x</span> and <span class="m">g(x) = x + 3</span>,
+        find <span class="m">f(g(2))</span>.
+      </div></li>
+
+      <li><div class="body">
+        If <span class="m">f(x) = 3x</span> and <span class="m">g(x) = x &minus; 4</span>,
+        find <span class="m">f(g(6))</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = x<sup>2</sup> + 2</span>, find <span class="m">f(a + 3)</span> in simplest form.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = x<sup>2</sup> &minus; 3</span>, find <span class="m">f(a &minus; 2)</span> in simplest form.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = 2x + 1</span> and <span class="m">g(x) = <span class="frac"><span class="n">1</span><span class="d">x</span></span></span>,
+        find <span class="m">(f &compfn; g)(x)</span>, stating any restriction on <span class="m">x</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = x<sup>2</sup> &minus; 1</span> and <span class="m">g(x) = <span class="sqrt"><span>x</span></span></span>,
+        find <span class="m">(f &compfn; g)(x)</span>, stating any restriction on <span class="m">x</span>.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= SECTION C ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section C</span>
+      <h2>Inverse Functions &amp; Their Restrictions</h2>
+      <span class="range">Questions 21&ndash;30</span>
+    </div>
+
+    <ol class="q" start="21">
+      <li><div class="body">
+        Find the inverse of <span class="m">f(x) = 4x + 7</span>.
+      </div></li>
+
+      <li><div class="body">
+        Find <span class="m">f<sup>&minus;1</sup>(x)</span> for <span class="m">f(x) = <span class="frac"><span class="n">x</span><span class="d">5</span></span> &minus; 3</span>.
+      </div></li>
+
+      <li><div class="body">
+        Find the inverse of <span class="m">g(x) = 9 &minus; 2x</span>.
+      </div></li>
+
+      <li><div class="body">
+        Find the inverse of <span class="m">h(x) = <span class="frac"><span class="n">x &minus; 4</span><span class="d">3</span></span></span>.
+      </div></li>
+
+      <li><div class="body">
+        If <span class="m">f(x) = x<sup>3</sup> + 5</span>, find <span class="m">f<sup>&minus;1</sup>(x)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Find the inverse of <span class="m">f(x) = <span class="frac"><span class="n">5</span><span class="d">x &minus; 2</span></span></span>
+        for <span class="m">x &ne; 2</span>, stating the restriction on the domain of <span class="m">f<sup>&minus;1</sup></span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">f(x) = 6x &minus; 1</span>, find <span class="m">f<sup>&minus;1</sup>(5)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Show that <span class="m">f(f<sup>&minus;1</sup>(x)) = x</span> for <span class="m">f(x) = 3x + 8</span>.
+      </div></li>
+
+      <li><div class="body">
+        Find the inverse of <span class="m">f(x) = <span class="sqrt"><span>x &minus; 5</span></span></span>
+        for <span class="m">x &ge; 5</span>, stating the domain of <span class="m">f<sup>&minus;1</sup></span>.
+      </div></li>
+
+      <li><div class="body">
+        The function <span class="m">f(x) = <span class="frac"><span class="n">4x + 1</span><span class="d">x &minus; 2</span></span></span>
+        has an inverse. Find <span class="m">f<sup>&minus;1</sup>(x)</span>, stating any restriction on <span class="m">x</span>.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="foot">
+    Functions — Practice Questions &bull; 30 Items &bull; Show All Working
+  </footer>
+
+</div>
+
+</body>
+</html>

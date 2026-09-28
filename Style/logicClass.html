@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logic — The Classroom Edition</title>
+<style>
+  /* ============================================================
+     PAGE SETUP
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 17mm 15mm 17mm 15mm;
+  }
+
+  :root {
+    --ink:        #12181f;
+    --body:       #2a333d;
+    --muted:      #5c6874;
+    --accent:     #1b4f8a;
+    --accent-dk:  #123a67;
+    --accent-lt:  #e8f0f8;
+    --warm:       #a8562a;
+    --warm-lt:    #faf1ea;
+    --green:      #2d6a4f;
+    --green-lt:   #e8f5ee;
+    --red:        #9b2226;
+    --red-lt:     #fbeaea;
+    --purple:     #5a3e8e;
+    --purple-lt:  #f0ebf8;
+    --rule:       #d3dbe3;
+    --rule-soft:  #e8edf2;
+    --paper:      #ffffff;
+    --tint:       #f7fafc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--body);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.58;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 34px 16px 70px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 880px;
+    padding: 46px 52px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+  }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .head {
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 2.5px solid var(--accent);
+  }
+
+  .head .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+
+  .head h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+
+  .head .sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============================================================
+     DRAMATIS PERSONAE — the cast
+     ============================================================ */
+  .cast {
+    background: var(--purple-lt);
+    border: 1px solid #ddd0ee;
+    border-left: 4px solid var(--purple);
+    border-radius: 0 5px 5px 0;
+    padding: 18px 24px 20px;
+    margin-bottom: 34px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cast h2 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 12px;
+  }
+
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+
+  .cast-item {
+    font-size: 10.7px;
+    line-height: 1.55;
+    display: flex;
+    gap: 10px;
+  }
+
+  .cast-item .name {
+    font-weight: 700;
+    color: var(--accent-dk);
+    min-width: 74px;
+    flex-shrink: 0;
+  }
+
+  /* ============================================================
+     INTRO NOTE
+     ============================================================ */
+  .intro {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 15px 20px;
+    margin-bottom: 34px;
+    font-size: 10.5px;
+    color: #23303c;
+    line-height: 1.62;
+  }
+
+  .intro strong { color: var(--accent-dk); }
+
+  /* ============================================================
+     SECTION HEADINGS
+     ============================================================ */
+  .sec {
+    margin-bottom: 34px;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 7px;
+    border-bottom: 1.7px solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sec-head .tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 3px 11px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sec-head h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.2px;
+  }
+
+  /* ============================================================
+     CONCEPT CARDS
+     ============================================================ */
+  .concept {
+    background: var(--tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 5px 5px 0;
+    padding: 16px 22px 17px;
+    margin-bottom: 14px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .concept h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--warm);
+    margin-bottom: 7px;
+    letter-spacing: -0.1px;
+  }
+
+  .concept p {
+    font-size: 10.7px;
+    line-height: 1.62;
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+
+  .concept p:last-child { margin-bottom: 0; }
+
+  .concept .formal {
+    display: block;
+    background: #fff;
+    border: 1px dashed #d9c3b0;
+    border-radius: 4px;
+    padding: 7px 12px;
+    margin: 8px 0;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 11pt;
+    color: var(--accent-dk);
+    text-align: center;
+  }
+
+  .concept .eg {
+    display: block;
+    font-size: 10.3px;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 2px solid var(--rule);
+  }
+
+  .concept .eg strong {
+    color: var(--purple);
+  }
+
+  /* ============================================================
+     TRUTH TABLES
+     ============================================================ */
+  .tt-wrap {
+    margin: 12px 0;
+    overflow-x: auto;
+  }
+
+  table.tt {
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 10.5pt;
+    background: #fff;
+  }
+
+  table.tt th,
+  table.tt td {
+    border: 1px solid var(--rule);
+    padding: 5px 14px;
+    text-align: center;
+    min-width: 46px;
+  }
+
+  table.tt th {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    letter-spacing: 0.3px;
+  }
+
+  table.tt td.t {
+    color: var(--green);
+    font-weight: 700;
+    background: var(--green-lt);
+  }
+
+  table.tt td.f {
+    color: var(--red);
+    font-weight: 700;
+    background: var(--red-lt);
+  }
+
+  table.tt tr:nth-child(even) td:not(.t):not(.f) {
+    background: #fafcfd;
+  }
+
+  /* ============================================================
+     QUESTION LIST
+     ============================================================ */
+  ol.q {
+    list-style: none;
+    counter-reset: qq;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.q > li {
+    counter-increment: qq;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 12px 9px 14px;
+    margin-bottom: 5px;
+    border-left: 3px solid var(--accent-lt);
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.q > li:nth-child(odd) {
+    background: #fafcfd;
+  }
+
+  ol.q > li::before {
+    content: counter(qq) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.q > li .body {
+    flex: 1;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     SOLUTION LIST
+     ============================================================ */
+  ol.sol {
+    list-style: none;
+    counter-reset: ss;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.sol > li {
+    counter-increment: ss;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #f6fafb;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 11px 16px 11px 14px;
+    margin-bottom: 7px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.sol > li::before {
+    content: counter(ss) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.sol > li .sol-body {
+    flex: 1;
+    font-size: 10.7pt;
+    line-height: 1.66;
+  }
+
+  ol.sol > li .sol-body .step {
+    display: block;
+  }
+
+  ol.sol > li .sol-body .step + .step {
+    margin-top: 2px;
+  }
+
+  ol.sol > li .sol-body .ans {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    background: #e2edf5;
+    padding: 1px 8px;
+    border-radius: 3px;
+  }
+
+  /* ============================================================
+     MATH / LOGIC STYLES
+     ============================================================ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+
+  .sym {
+    display: inline-block;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-weight: 700;
+    color: var(--warm);
+    padding: 0 2px;
+  }
+
+  .sym-alt {
+    display: inline-block;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-weight: 700;
+    color: var(--purple);
+    padding: 0 2px;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .foot {
+    margin-top: 38px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ============================================================
+     PRINT
+     ============================================================ */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      font-size: 10.3pt;
+    }
+
+    .sheet {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .sec-head, .concept, .intro, .cast, .tt-wrap {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    ol.q > li:nth-child(odd) { background: #fbfdfe; }
+
+    table.tt { font-size: 9.5pt; }
+    table.tt th, table.tt td { padding: 4px 10px; }
+  }
+
+  /* ============================================================
+     NARROW SCREENS
+     ============================================================ */
+  @media (max-width: 680px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .head h1 { font-size: 19px; }
+    .sec-head { flex-wrap: wrap; }
+    .concept p, .intro { text-align: left; }
+    .cast-grid { grid-template-columns: 1fr; }
+    ol.q > li .body { font-size: 10.5pt; }
+    ol.sol > li .sol-body { font-size: 10.2pt; }
+    table.tt { font-size: 9pt; }
+    table.tt th, table.tt td { padding: 3px 8px; min-width: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ================= HEADER ================= -->
+  <header class="head">
+    <div class="kicker">Mathematics &bull; Discrete Structures</div>
+    <h1>Logic — The Classroom Edition</h1>
+    <div class="sub">Every Example, Question, and Solution Drawn from One Continuous Classroom Scene</div>
+  </header>
+
+  <!-- ================= CAST ================= -->
+  <div class="cast">
+    <h2>The Cast — Mrs. Adeyemi's JSS 3B Class</h2>
+    <div class="cast-grid">
+      <div class="cast-item"><span class="name">Mrs. Adeyemi</span> the class teacher, who sets the rules</div>
+      <div class="cast-item"><span class="name">Tunde</span> a student who loves mathematics</div>
+      <div class="cast-item"><span class="name">Ngozi</span> a student who plays football after school</div>
+      <div class="cast-item"><span class="name">Emeka</span> a student who reads in the library every break</div>
+      <div class="cast-item"><span class="name">Fatima</span> the class prefect, always prepared</div>
+      <div class="cast-item"><span class="name">Chidi</span> a student who sometimes forgets his homework</div>
+      <div class="cast-item"><span class="name">Amina</span> a student who sits by the window</div>
+      <div class="cast-item"><span class="name">Bola</span> a student who is new this term</div>
+    </div>
+  </div>
+
+  <!-- ================= INTRO ================= -->
+  <div class="intro">
+    <strong>Why a classroom?</strong> Logic is the study of valid reasoning, and there is no better
+    place to watch reasoning happen than in a room full of students answering questions, making
+    claims, and occasionally getting things wrong. Every statement, connective, and truth table below
+    is built from things Mrs. Adeyemi, Tunde, Ngozi, and the rest of JSS 3B actually say and do. By
+    the end, you will not be memorising abstract symbols — you will be reading the classroom.
+  </div>
+
+  <!-- ================= SECTION A ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>The Concepts, as They Happen in the Room</h2>
+    </div>
+
+    <!-- STATEMENTS -->
+    <div class="concept">
+      <h3>1. Statements and Truth Values — Claims That Can Be Checked</h3>
+      <p>
+        A <strong>statement</strong> is a sentence that is unambiguously either true or false — you
+        could, in principle, walk into the classroom and verify it. Questions, commands, and
+        exclamations are not statements because they cannot be labelled true or false.
+      </p>
+      <span class="formal">
+        <span class="m">P</span> = "Tunde submitted his mathematics homework." &nbsp; (True or False?)
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> Mrs. Adeyemi asks the class for statements about today's lesson.
+        Fatima says, <em>"Ngozi is wearing a green shirt."</em> — a statement, because it can be checked.
+        Chidi says, <em>"Please open the window."</em> — not a statement, because it is a command.
+        Amina says, <em>"What is the answer to number five?"</em> — not a statement, because it is a question.
+      </span>
+    </div>
+
+    <!-- NEGATION -->
+    <div class="concept">
+      <h3>2. Negation — NOT (<span class="sym">&not;</span>) — The Opposite Claim</h3>
+      <p>
+        The <strong>negation</strong> of a statement is the claim that the original is false. It flips
+        the truth value: what was true becomes false, and what was false becomes true.
+      </p>
+      <div class="tt-wrap">
+        <table class="tt">
+          <tr><th>P</th><th>&not;P</th></tr>
+          <tr><td class="t">T</td><td class="f">F</td></tr>
+          <tr><td class="f">F</td><td class="t">T</td></tr>
+        </table>
+      </div>
+      <span class="eg">
+        <strong>In the room:</strong> Tunde says, <em>"Emeka reads in the library every break."</em>
+        The negation is <em>"Emeka does not read in the library every break."</em> If the first claim is
+        true, the second is false, and vice versa — exactly one of them can be true.
+      </span>
+    </div>
+
+    <!-- CONJUNCTION -->
+    <div class="concept">
+      <h3>3. Conjunction — AND (<span class="sym">&and;</span>) — Both Conditions Must Hold</h3>
+      <p>
+        <span class="m">P &and; Q</span> is true only when <em>both</em> claims are true. It is the
+        strict rule: one failure collapses the whole statement. Mrs. Adeyemi's classroom rules are
+        built entirely on conjunctions.
+      </p>
+      <div class="tt-wrap">
+        <table class="tt">
+          <tr><th>P</th><th>Q</th><th>P &and; Q</th></tr>
+          <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+          <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+          <tr><td class="f">F</td><td class="t">T</td><td class="f">F</td></tr>
+          <tr><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+        </table>
+      </div>
+      <span class="eg">
+        <strong>In the room:</strong> Mrs. Adeyemi says, <em>"To go on the excursion, you must bring
+        your permission slip <strong>and</strong> pay the fee."</em> Tunde brings the slip but forgets
+        the fee — the rule is not satisfied. Ngozi pays but forgets the slip — still not satisfied.
+        Only Fatima, who does both, is allowed to go.
+      </span>
+    </div>
+
+    <!-- DISJUNCTION -->
+    <div class="concept">
+      <h3>4. Disjunction — OR (<span class="sym">&or;</span>) — At Least One Must Hold</h3>
+      <p>
+        <span class="m">P &or; Q</span> is true when <em>at least one</em> claim is true. This is the
+        inclusive "or" — being in either group qualifies you, and being in both qualifies you too.
+      </p>
+      <div class="tt-wrap">
+        <table class="tt">
+          <tr><th>P</th><th>Q</th><th>P &or; Q</th></tr>
+          <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+          <tr><td class="t">T</td><td class="f">F</td><td class="t">T</td></tr>
+          <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+          <tr><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+        </table>
+      </div>
+      <span class="eg">
+        <strong>In the room:</strong> The school announces, <em>"Free lunch is available to students
+        who play football <strong>or</strong> who are in the drama club."</em> Ngozi plays football,
+        so she eats. Emeka is in drama, so he eats. Bola does both — still eats. Only a student in
+        neither group goes hungry.
+      </span>
+    </div>
+
+    <!-- IMPLICATION -->
+    <div class="concept">
+      <h3>5. Implication — IF&hellip;THEN (<span class="sym">&rarr;</span>) — A Promise That Can Be Broken</h3>
+      <p>
+        <span class="m">P &rarr; Q</span> is a promise: if <span class="m">P</span> happens, then
+        <span class="m">Q</span> must follow. It is false <em>only</em> when the promise is broken —
+        that is, when <span class="m">P</span> is true but <span class="m">Q</span> turns out false.
+        When <span class="m">P</span> never happens, no promise was made, so nothing is broken.
+      </p>
+      <div class="tt-wrap">
+        <table class="tt">
+          <tr><th>P</th><th>Q</th><th>P &rarr; Q</th></tr>
+          <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+          <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+          <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+          <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td></tr>
+        </table>
+      </div>
+      <span class="eg">
+        <strong>In the room:</strong> Mrs. Adeyemi promises, <em>"If you score above 80 in the test,
+        you will get a gold star."</em> Fatima scores 85 and gets the star — promise kept. Chidi scores
+        85 but does <em>not</em> get the star — promise broken, the only failure. Bola scores 60 and
+        gets no star — nothing was promised, so no complaint. Amina scores 60 but receives a star for
+        neatness — still fine, the promise was never about her.
+      </span>
+    </div>
+
+    <!-- BICONDITIONAL -->
+    <div class="concept">
+      <h3>6. Biconditional — IF AND ONLY IF (<span class="sym">&harr;</span>) — Standing or Falling Together</h3>
+      <p>
+        <span class="m">P &harr; Q</span> is true when the two statements carry the <em>same</em> truth
+        value. It means each depends on the other completely — neither can be true without the other.
+      </p>
+      <div class="tt-wrap">
+        <table class="tt">
+          <tr><th>P</th><th>Q</th><th>P &harr; Q</th></tr>
+          <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+          <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+          <tr><td class="f">F</td><td class="t">T</td><td class="f">F</td></tr>
+          <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td></tr>
+        </table>
+      </div>
+      <span class="eg">
+        <strong>In the room:</strong> The school's official rule: <em>"A student is the class prefect
+        if and only if the student is the highest scorer in the term's assessments."</em> Fatima is the
+        highest scorer, so she is prefect. If Fatima were prefect but not the highest scorer, the rule
+        would be broken. If Fatima were the highest scorer but not prefect, also broken. The two facts
+        stand or fall together.
+      </span>
+    </div>
+
+    <!-- TAUTOLOGY -->
+    <div class="concept">
+      <h3>7. Tautology, Contradiction, and Contingency — Always, Never, or Sometimes</h3>
+      <p>
+        A <strong>tautology</strong> is true in every possible state of the classroom.
+        A <strong>contradiction</strong> is false in every possible state. A
+        <strong>contingency</strong> depends on what actually happens.
+      </p>
+      <span class="formal">
+        Tautology &nbsp;&rarr;&nbsp; all <span class="m">T</span> &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+        Contradiction &nbsp;&rarr;&nbsp; all <span class="m">F</span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> <em>"Either Ngozi is in class today, or Ngozi is not in class
+        today."</em> — this is a tautology; it cannot fail no matter what. <em>"Ngozi is in class
+        today and Ngozi is not in class today."</em> — a contradiction; impossible. <em>"Ngozi is in
+        class today."</em> — a contingency; it depends on the day.
+      </span>
+    </div>
+
+    <!-- EQUIVALENCE -->
+    <div class="concept">
+      <h3>8. Logical Equivalence and the Classroom Laws</h3>
+      <p>
+        Two statements are <strong>logically equivalent</strong> (written <span class="m">&equiv;</span>)
+        if they behave identically across every possible classroom situation. The standard laws are
+        simply sentences from the room, rewritten.
+      </p>
+      <span class="formal">
+        <strong>De Morgan:</strong> <span class="m">&not;(P &and; Q) &equiv; &not;P &or; &not;Q</span>
+      </span>
+      <span class="formal">
+        <strong>Implication:</strong> <span class="m">P &rarr; Q &equiv; &not;P &or; Q</span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> Mrs. Adeyemi says, <em>"It is not the case that both Tunde and
+        Ngozi passed."</em> De Morgan tells us this is the same as saying, <em>"Either Tunde did not
+        pass, or Ngozi did not pass."</em> Same rule, stated two ways.
+      </span>
+    </div>
+  </section>
+
+  <!-- ================= SECTION B ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Practice Questions</h2>
+      <span class="range">Questions 1&ndash;25</span>
+    </div>
+
+    <ol class="q">
+      <li><div class="body">
+        Mrs. Adeyemi writes four sentences on the board. State which are
+        <em>statements</em>:
+        (a) "Fatima is the class prefect."
+        (b) "Sit down and open your books."
+        (c) "Emeka reads in the library every break."
+        (d) "How many students are present today?"
+      </div></li>
+
+      <li><div class="body">
+        Write the negation of each claim:
+        (a) "Tunde submitted his homework."
+        (b) "Ngozi plays football after school."
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m">P</span> = "Bola is new this term" and
+        <span class="m">Q</span> = "Bola sits at the front." Write in words:
+        <span class="m">P &and; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m">P</span> and <span class="m">Q</span>, write in words:
+        <span class="m">P &or; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m">P</span> and <span class="m">Q</span>, write in words:
+        <span class="m">P &rarr; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m">P</span> = "Chidi brought his textbook" (True) and
+        <span class="m">Q</span> = "Chidi brought his workbook" (False). Evaluate
+        <span class="m">P &and; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same values as above, evaluate <span class="m">P &or; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same values, evaluate <span class="m">P &rarr; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m">P</span> = "Amina sits by the window" (False) and
+        <span class="m">Q</span> = "Amina sits at the back" (False). Evaluate
+        <span class="m">P &harr; Q</span>.
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m">P</span> = "Fatima is prepared" (True) and
+        <span class="m">Q</span> = "The lesson starts on time" (True). Evaluate
+        <span class="m">&not;(P &and; Q)</span>.
+      </div></li>
+
+      <li><div class="body">
+        Construct the truth table for <span class="m">P &and; &not;Q</span>, where
+        <span class="m">P</span> = "The library is open" and
+        <span class="m">Q</span> = "Emeka is reading there."
+      </div></li>
+
+      <li><div class="body">
+        Construct the truth table for <span class="m">&not;P &or; Q</span>, where
+        <span class="m">P</span> = "It is raining" and
+        <span class="m">Q</span> = "Break is held indoors."
+      </div></li>
+
+      <li><div class="body">
+        Construct the truth table for <span class="m">(P &or; Q) &and; &not;P</span>, where
+        <span class="m">P</span> = "Tunde is in the science club" and
+        <span class="m">Q</span> = "Tunde is in the drama club."
+      </div></li>
+
+      <li><div class="body">
+        Construct the truth table for <span class="m">P &rarr; (Q &or; R)</span>, where
+        <span class="m">P</span> = "Mrs. Adeyemi gives homework,"
+        <span class="m">Q</span> = "The students complain," and
+        <span class="m">R</span> = "The students complete it quietly."
+      </div></li>
+
+      <li><div class="body">
+        Show, using a truth table, that <span class="m">P &or; &not;P</span> is a tautology, where
+        <span class="m">P</span> = "Ngozi is present in class today."
+      </div></li>
+
+      <li><div class="body">
+        Show, using a truth table, that <span class="m">P &and; &not;P</span> is a contradiction,
+        where <span class="m">P</span> = "The bell has rung for break."
+      </div></li>
+
+      <li><div class="body">
+        Classify <span class="m">P &rarr; Q</span> as a tautology, contradiction, or contingency,
+        where <span class="m">P</span> = "Chidi studies" and
+        <span class="m">Q</span> = "Chidi passes."
+      </div></li>
+
+      <li><div class="body">
+        Mrs. Adeyemi says, <em>"It is not the case that both Tunde and Ngozi passed."</em> Use De
+        Morgan's law to rewrite this statement.
+      </div></li>
+
+      <li><div class="body">
+        Mrs. Adeyemi says, <em>"It is not the case that either Emeka or Fatima will represent the
+        class."</em> Use De Morgan's law to rewrite this statement.
+      </div></li>
+
+      <li><div class="body">
+        Rewrite <span class="m">P &rarr; Q</span> using only <span class="m">&not;</span> and
+        <span class="m">&or;</span>, where <span class="m">P</span> = "You finish your assignment"
+        and <span class="m">Q</span> = "You go out to play."
+      </div></li>
+
+      <li><div class="body">
+        Write the contrapositive of: "If a student is in JSS 3B, then that student is in the science
+        block."
+      </div></li>
+
+      <li><div class="body">
+        Write the converse of: "If it rains, break is held indoors."
+        Is the converse logically equivalent to the original?
+      </div></li>
+
+      <li><div class="body">
+        Determine whether <span class="m">P &rarr; Q</span> and <span class="m">&not;P &or; Q</span>
+        are logically equivalent, using a truth table. Let <span class="m">P</span> = "Amina finishes
+        her homework" and <span class="m">Q</span> = "Amina is allowed to play."
+      </div></li>
+
+      <li><div class="body">
+        Determine whether <span class="m">P &and; (Q &or; R)</span> and
+        <span class="m">(P &and; Q) &or; (P &and; R)</span> are logically equivalent, where
+        <span class="m">P</span> = "Fatima brings her notes,"
+        <span class="m">Q</span> = "Fatima brings her textbook," and
+        <span class="m">R</span> = "Fatima brings her calculator."
+      </div></li>
+
+      <li><div class="body">
+        Mrs. Adeyemi tells the class, <em>"You will go on the excursion only if you submit your
+        permission slip."</em> Using <span class="m">P</span> = "You go on the excursion" and
+        <span class="m">Q</span> = "You submit your permission slip," express this as a logical
+        implication. State whether this is <span class="m">P &rarr; Q</span> or
+        <span class="m">Q &rarr; P</span>, and explain why.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= SECTION C ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section C</span>
+      <h2>Full Worked Solutions</h2>
+      <span class="range">Questions 1&ndash;25</span>
+    </div>
+
+    <ol class="sol">
+      <!-- 1 -->
+      <li><div class="sol-body">
+        <span class="step">A statement must be either true or false.</span>
+        <span class="step">(a) Statement — Fatima either is or is not prefect.</span>
+        <span class="step">(b) Not a statement — it is a command.</span>
+        <span class="step">(c) Statement — Emeka either does or does not read there.</span>
+        <span class="step">(d) Not a statement — it is a question.</span>
+        <span class="ans">Statements: (a) and (c) only</span>
+      </div></li>
+
+      <!-- 2 -->
+      <li><div class="sol-body">
+        <span class="step">(a) "Tunde did <strong>not</strong> submit his homework."</span>
+        <span class="step">(b) "Ngozi does <strong>not</strong> play football after school."</span>
+        <span class="ans">Negations as above</span>
+      </div></li>
+
+      <!-- 3 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &and; Q</span> means both claims hold.</span>
+        <span class="ans">"Bola is new this term and Bola sits at the front."</span>
+      </div></li>
+
+      <!-- 4 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &or; Q</span> means at least one holds.</span>
+        <span class="ans">"Bola is new this term or Bola sits at the front."</span>
+      </div></li>
+
+      <!-- 5 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &rarr; Q</span> means P leads to Q.</span>
+        <span class="ans">"If Bola is new this term, then Bola sits at the front."</span>
+      </div></li>
+
+      <!-- 6 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &and; Q</span> is true only when both are true.</span>
+        <span class="step"><span class="m">T &and; F = F</span></span>
+        <span class="ans">F — Chidi did not bring both</span>
+      </div></li>
+
+      <!-- 7 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &or; Q</span> is true when at least one is true.</span>
+        <span class="step"><span class="m">T &or; F = T</span></span>
+        <span class="ans">T — Chidi brought at least one</span>
+      </div></li>
+
+      <!-- 8 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &rarr; Q</span> is false only when P is true and Q is false.</span>
+        <span class="step"><span class="m">T &rarr; F = F</span></span>
+        <span class="ans">F — the promise was broken</span>
+      </div></li>
+
+      <!-- 9 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &harr; Q</span> is true when both have the same truth value.</span>
+        <span class="step"><span class="m">F &harr; F = T</span></span>
+        <span class="ans">T — the two false claims stand together</span>
+      </div></li>
+
+      <!-- 10 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">P &and; Q = T &and; T = T</span></span>
+        <span class="step"><span class="m">&not;(P &and; Q) = &not;T = F</span></span>
+        <span class="ans">F</span>
+      </div></li>
+
+      <!-- 11 -->
+      <li><div class="sol-body">
+        <span class="step">Truth table for <span class="m">P &and; &not;Q</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>&not;Q</th><th>P &and; &not;Q</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td><td class="f">F</td></tr>
+          </table>
+        </div>
+        <span class="ans">True only when the library is open and Emeka is not reading there</span>
+      </div></li>
+
+      <!-- 12 -->
+      <li><div class="sol-body">
+        <span class="step">Truth table for <span class="m">&not;P &or; Q</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>&not;P</th><th>&not;P &or; Q</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+          </table>
+        </div>
+        <span class="ans">False only when it is raining and break is not held indoors</span>
+      </div></li>
+
+      <!-- 13 -->
+      <li><div class="sol-body">
+        <span class="step">Truth table for <span class="m">(P &or; Q) &and; &not;P</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>P &or; Q</th><th>&not;P</th><th>(P &or; Q) &and; &not;P</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="t">T</td><td class="f">F</td></tr>
+          </table>
+        </div>
+        <span class="ans">True only when Tunde is in drama and not in science</span>
+      </div></li>
+
+      <!-- 14 -->
+      <li><div class="sol-body">
+        <span class="step">Truth table for <span class="m">P &rarr; (Q &or; R)</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>R</th><th>Q &or; R</th><th>P &rarr; (Q &or; R)</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="t">T</td></tr>
+          </table>
+        </div>
+        <span class="ans">False only when homework is given, students neither complain nor work quietly</span>
+      </div></li>
+
+      <!-- 15 -->
+      <li><div class="sol-body">
+        <span class="step">Truth table for <span class="m">P &or; &not;P</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>&not;P</th><th>P &or; &not;P</th></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+          </table>
+        </div>
+        <span class="step">Final column is all T.</span>
+        <span class="ans">Tautology — Ngozi either is or is not present, with no third possibility</span>
+      </div></li>
+
+      <!-- 16 -->
+      <li><div class="sol-body">
+        <span class="step">Truth table for <span class="m">P &and; &not;P</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>&not;P</th><th>P &and; &not;P</th></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="f">F</td></tr>
+          </table>
+        </div>
+        <span class="step">Final column is all F.</span>
+        <span class="ans">Contradiction — the bell cannot both have rung and not have rung</span>
+      </div></li>
+
+      <!-- 17 -->
+      <li><div class="sol-body">
+        <span class="step">From the truth table for implication:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>P &rarr; Q</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td></tr>
+          </table>
+        </div>
+        <span class="step">The column contains both T and F.</span>
+        <span class="ans">Contingency — whether studying leads to passing depends on the student</span>
+      </div></li>
+
+      <!-- 18 -->
+      <li><div class="sol-body">
+        <span class="step">De Morgan: <span class="m">&not;(P &and; Q) &equiv; &not;P &or; &not;Q</span></span>
+        <span class="ans">"Either Tunde did not pass, or Ngozi did not pass."</span>
+      </div></li>
+
+      <!-- 19 -->
+      <li><div class="sol-body">
+        <span class="step">De Morgan: <span class="m">&not;(P &or; Q) &equiv; &not;P &and; &not;Q</span></span>
+        <span class="ans">"Emeka will not represent the class, and Fatima will not represent the class."</span>
+      </div></li>
+
+      <!-- 20 -->
+      <li><div class="sol-body">
+        <span class="step">Implication equivalence: <span class="m">P &rarr; Q &equiv; &not;P &or; Q</span></span>
+        <span class="ans">"You did not finish your assignment, or you go out to play."</span>
+      </div></li>
+
+      <!-- 21 -->
+      <li><div class="sol-body">
+        <span class="step">Original: If P then Q, where P = "in JSS 3B" and Q = "in the science block."</span>
+        <span class="step">Contrapositive: <span class="m">&not;Q &rarr; &not;P</span></span>
+        <span class="ans">"If a student is not in the science block, then that student is not in JSS 3B."</span>
+      </div></li>
+
+      <!-- 22 -->
+      <li><div class="sol-body">
+        <span class="step">Original: If P then Q, with P = "it rains" and Q = "break is held indoors."</span>
+        <span class="step">Converse: swap to get <span class="m">Q &rarr; P</span>.</span>
+        <span class="ans">"If break is held indoors, then it rains."</span>
+        <span class="step">The converse is <em>not</em> logically equivalent — break could be indoors for another reason, such as heat or an assembly.</span>
+      </div></li>
+
+      <!-- 23 -->
+      <li><div class="sol-body">
+        <span class="step">Compare columns for <span class="m">P &rarr; Q</span> and <span class="m">&not;P &or; Q</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>P &rarr; Q</th><th>&not;P</th><th>&not;P &or; Q</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+          </table>
+        </div>
+        <span class="step">Columns 3 and 5 are identical.</span>
+        <span class="ans">Logically equivalent — the promise and the "not&hellip;or" both fail only when Amina finishes but is not allowed to play</span>
+      </div></li>
+
+      <!-- 24 -->
+      <li><div class="sol-body">
+        <span class="step">Compare <span class="m">P &and; (Q &or; R)</span> with <span class="m">(P &and; Q) &or; (P &and; R)</span>:</span>
+        <div class="tt-wrap">
+          <table class="tt">
+            <tr><th>P</th><th>Q</th><th>R</th><th>Q&or;R</th><th>P&and;(Q&or;R)</th><th>P&and;Q</th><th>P&and;R</th><th>(P&and;Q)&or;(P&and;R)</th></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="t">T</td></tr>
+            <tr><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="t">T</td><td class="f">F</td><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="t">T</td><td class="t">T</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+            <tr><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td><td class="f">F</td></tr>
+          </table>
+        </div>
+        <span class="step">Columns 5 and 8 are identical.</span>
+        <span class="ans">Logically equivalent — this is the distributive law, read as "Fatima brings her notes and at least one of the other two"</span>
+      </div></li>
+
+      <!-- 25 -->
+      <li><div class="sol-body">
+        <span class="step">"P only if Q" means P cannot happen without Q — that is, P implies Q.</span>
+        <span class="step">Formally: <span class="m">P &rarr; Q</span></span>
+        <span class="step">Why not <span class="m">Q &rarr; P</span>? Because submitting your slip does not guarantee going on the excursion — it is necessary, not sufficient. A student might submit the slip but be barred for another reason.</span>
+        <span class="ans">P &rarr; Q — "If you go on the excursion, then you submitted your permission slip." The slip is a necessary condition, not a guarantee</span>
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="foot">
+    Logic — The Classroom Edition &bull; Every Symbol Traced Back to Mrs. Adeyemi's JSS 3B
+  </footer>
+
+</div>
+
+</body>
+</html>

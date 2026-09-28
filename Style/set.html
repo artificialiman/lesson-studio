@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sets — The Classroom Edition</title>
+<style>
+  /* ============================================================
+     PAGE SETUP
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 17mm 15mm 17mm 15mm;
+  }
+
+  :root {
+    --ink:        #12181f;
+    --body:       #2a333d;
+    --muted:      #5c6874;
+    --accent:     #1b4f8a;
+    --accent-dk:  #123a67;
+    --accent-lt:  #e8f0f8;
+    --warm:       #a8562a;
+    --warm-lt:    #faf1ea;
+    --green:      #2d6a4f;
+    --green-lt:   #e8f5ee;
+    --red:        #9b2226;
+    --red-lt:     #fbeaea;
+    --purple:     #5a3e8e;
+    --purple-lt:  #f0ebf8;
+    --rule:       #d3dbe3;
+    --rule-soft:  #e8edf2;
+    --paper:      #ffffff;
+    --tint:       #f7fafc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--body);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.58;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 34px 16px 70px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 880px;
+    padding: 46px 52px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+  }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .head {
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 2.5px solid var(--accent);
+  }
+
+  .head .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+
+  .head h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+
+  .head .sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============================================================
+     CAST
+     ============================================================ */
+  .cast {
+    background: var(--purple-lt);
+    border: 1px solid #ddd0ee;
+    border-left: 4px solid var(--purple);
+    border-radius: 0 5px 5px 0;
+    padding: 18px 24px 20px;
+    margin-bottom: 34px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cast h2 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 12px;
+  }
+
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+
+  .cast-item {
+    font-size: 10.7px;
+    line-height: 1.55;
+    display: flex;
+    gap: 10px;
+  }
+
+  .cast-item .name {
+    font-weight: 700;
+    color: var(--accent-dk);
+    min-width: 74px;
+    flex-shrink: 0;
+  }
+
+  /* ============================================================
+     INTRO
+     ============================================================ */
+  .intro {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 15px 20px;
+    margin-bottom: 34px;
+    font-size: 10.5px;
+    color: #23303c;
+    line-height: 1.62;
+  }
+
+  .intro strong { color: var(--accent-dk); }
+
+  /* ============================================================
+     SECTION HEADINGS
+     ============================================================ */
+  .sec {
+    margin-bottom: 34px;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 7px;
+    border-bottom: 1.7px solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sec-head .tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 3px 11px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sec-head h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.2px;
+  }
+
+  /* ============================================================
+     CONCEPT CARDS
+     ============================================================ */
+  .concept {
+    background: var(--tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 5px 5px 0;
+    padding: 16px 22px 17px;
+    margin-bottom: 14px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .concept h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--warm);
+    margin-bottom: 7px;
+    letter-spacing: -0.1px;
+  }
+
+  .concept p {
+    font-size: 10.7px;
+    line-height: 1.62;
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+
+  .concept p:last-child { margin-bottom: 0; }
+
+  .concept .formal {
+    display: block;
+    background: #fff;
+    border: 1px dashed #d9c3b0;
+    border-radius: 4px;
+    padding: 7px 12px;
+    margin: 8px 0;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 11pt;
+    color: var(--accent-dk);
+    text-align: center;
+  }
+
+  .concept .eg {
+    display: block;
+    font-size: 10.3px;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 2px solid var(--rule);
+  }
+
+  .concept .eg strong {
+    color: var(--purple);
+  }
+
+  /* ============================================================
+     VENN DIAGRAM
+     ============================================================ */
+  .venn-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 14px 0 8px;
+  }
+
+  .venn-wrap svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .venn-caption {
+    text-align: center;
+    font-size: 10px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* ============================================================
+     QUESTION LIST
+     ============================================================ */
+  ol.q {
+    list-style: none;
+    counter-reset: qq;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.q > li {
+    counter-increment: qq;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 12px 9px 14px;
+    margin-bottom: 5px;
+    border-left: 3px solid var(--accent-lt);
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.q > li:nth-child(odd) {
+    background: #fafcfd;
+  }
+
+  ol.q > li::before {
+    content: counter(qq) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.q > li .body {
+    flex: 1;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     SOLUTION LIST
+     ============================================================ */
+  ol.sol {
+    list-style: none;
+    counter-reset: ss;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.sol > li {
+    counter-increment: ss;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #f6fafb;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 11px 16px 11px 14px;
+    margin-bottom: 7px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.sol > li::before {
+    content: counter(ss) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.sol > li .sol-body {
+    flex: 1;
+    font-size: 10.7pt;
+    line-height: 1.66;
+  }
+
+  ol.sol > li .sol-body .step {
+    display: block;
+  }
+
+  ol.sol > li .sol-body .step + .step {
+    margin-top: 2px;
+  }
+
+  ol.sol > li .sol-body .ans {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    background: #e2edf5;
+    padding: 1px 8px;
+    border-radius: 3px;
+  }
+
+  /* ============================================================
+     MATH STYLES
+     ============================================================ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+
+  .sym {
+    display: inline-block;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-weight: 700;
+    color: var(--warm);
+    padding: 0 2px;
+  }
+
+  .sym-alt {
+    display: inline-block;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-weight: 700;
+    color: var(--purple);
+    padding: 0 2px;
+  }
+
+  .setname {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--accent-dk);
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .foot {
+    margin-top: 38px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ============================================================
+     PRINT
+     ============================================================ */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      font-size: 10.3pt;
+    }
+
+    .sheet {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .sec-head, .concept, .intro, .cast, .venn-wrap {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    ol.q > li:nth-child(odd) { background: #fbfdfe; }
+  }
+
+  /* ============================================================
+     NARROW SCREENS
+     ============================================================ */
+  @media (max-width: 680px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .head h1 { font-size: 19px; }
+    .sec-head { flex-wrap: wrap; }
+    .concept p, .intro { text-align: left; }
+    .cast-grid { grid-template-columns: 1fr; }
+    ol.q > li .body { font-size: 10.5pt; }
+    ol.sol > li .sol-body { font-size: 10.2pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ================= HEADER ================= -->
+  <header class="head">
+    <div class="kicker">Mathematics &bull; Discrete Structures</div>
+    <h1>Sets — The Classroom Edition</h1>
+    <div class="sub">Every Example, Question, and Solution Drawn from One Continuous Classroom Scene</div>
+  </header>
+
+  <!-- ================= CAST ================= -->
+  <div class="cast">
+    <h2>The Cast — Mrs. Adeyemi's JSS 3B Class</h2>
+    <div class="cast-grid">
+      <div class="cast-item"><span class="name">Mrs. Adeyemi</span> the class teacher, who assigns the clubs</div>
+      <div class="cast-item"><span class="name">Tunde</span> a student who loves mathematics</div>
+      <div class="cast-item"><span class="name">Ngozi</span> a student who plays football after school</div>
+      <div class="cast-item"><span class="name">Emeka</span> a student who reads in the library every break</div>
+      <div class="cast-item"><span class="name">Fatima</span> the class prefect, always prepared</div>
+      <div class="cast-item"><span class="name">Chidi</span> a student who sometimes forgets his homework</div>
+      <div class="cast-item"><span class="name">Amina</span> a student who sits by the window</div>
+      <div class="cast-item"><span class="name">Bola</span> a student who is new this term</div>
+    </div>
+  </div>
+
+  <!-- ================= INTRO ================= -->
+  <div class="intro">
+    <strong>Why a classroom?</strong> A set is simply a collection of things — and JSS 3B is a room
+    full of collections: students who play football, students who read in the library, students who
+    brought their homework. Every symbol below (curly brackets, unions, intersections, complements)
+    is just a compact way of saying something about these groups. By the end, you will not be
+    memorising notation — you will be reading the classroom.
+  </div>
+
+  <!-- ================= SECTION A ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>The Concepts, as They Happen in the Room</h2>
+    </div>
+
+    <!-- SETS AND NOTATION -->
+    <div class="concept">
+      <h3>1. Sets and Set Notation — Writing Down a Group</h3>
+      <p>
+        A <strong>set</strong> is a well-defined collection of distinct objects, called
+        <strong>elements</strong> or members. The two ways to write a set are the
+        <strong>roster method</strong> (listing every member inside curly brackets) and the
+        <strong>set-builder method</strong> (describing the rule a member must satisfy). An element
+        belongs to a set, written <span class="m">&isin;</span>, or does not, written
+        <span class="m">&notin;</span>.
+      </p>
+      <span class="formal">
+        <span class="setname">S</span> = { Tunde, Ngozi, Emeka, Fatima, Chidi } &nbsp;&bull;&nbsp;
+        <span class="m">Tunde &isin; <span class="setname">S</span></span> &nbsp;&bull;&nbsp;
+        <span class="m">Bola &notin; <span class="setname">S</span></span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> Mrs. Adeyemi says, <em>"Write down the set of students who
+        brought their mathematics textbook today."</em> That roster might be
+        <span class="m">{ Tunde, Fatima, Amina }</span> — three students, no one written twice.
+      </span>
+    </div>
+
+    <!-- TYPES OF SETS -->
+    <div class="concept">
+      <h3>2. Types of Sets — Empty, Finite, Infinite, Universal</h3>
+      <p>
+        The <strong>empty set</strong> <span class="m">&empty;</span> (or <span class="m">{ }</span>)
+        has no members at all. A <strong>finite set</strong> has a countable number of members; an
+        <strong>infinite set</strong> does not. The <strong>universal set</strong>
+        <span class="m">&xi;</span> (or <span class="m">U</span>) is the largest set in the problem —
+        it contains every object under discussion.
+      </p>
+      <span class="formal">
+        <span class="m">&empty; = { }</span> &nbsp;&bull;&nbsp;
+        Finite: { Tunde, Ngozi } &nbsp;&bull;&nbsp;
+        Infinite: { 1, 2, 3, &hellip; }
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> <em>"The set of students in JSS 3B who have a pet lion"</em> is
+        the empty set. <em>"The set of students in JSS 3B"</em> is finite — it has a definite
+        number. The <strong>universal set</strong> for a class question is all of JSS 3B; for a
+        school question, all of the school.
+      </span>
+    </div>
+
+    <!-- SUBSETS -->
+    <div class="concept">
+      <h3>3. Subsets — A Group Inside a Group</h3>
+      <p>
+        Set <span class="m"><span class="setname">A</span></span> is a <strong>subset</strong> of set
+        <span class="m"><span class="setname">B</span></span> if every member of
+        <span class="m"><span class="setname">A</span></span> is also a member of
+        <span class="m"><span class="setname">B</span></span>, written
+        <span class="m"><span class="setname">A</span> &sube; <span class="setname">B</span></span>.
+        A <strong>proper subset</strong> is smaller than the original, written
+        <span class="m">&sub;</span>. Every set is a subset of itself.
+      </p>
+      <span class="formal">
+        <span class="setname">A</span> = { Tunde, Fatima } &nbsp;&sube;&nbsp;
+        <span class="setname">B</span> = { Tunde, Fatima, Ngozi, Emeka }
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> The set of students who brought <em>both</em> their textbook
+        and their workbook is a subset of the set who brought their textbook. A smaller circle
+        sitting entirely inside a bigger one.
+      </span>
+    </div>
+
+    <!-- UNION -->
+    <div class="concept">
+      <h3>4. Union — Everyone in Either Group</h3>
+      <p>
+        The <strong>union</strong> of two sets, written
+        <span class="m"><span class="setname">A</span> &cup; <span class="setname">B</span></span>,
+        is the set of all elements that are in <span class="m"><span class="setname">A</span></span>,
+        or in <span class="m"><span class="setname">B</span></span>, or in both. No one is counted
+        twice — even if a student appears in both groups, they appear only once in the union.
+      </p>
+      <span class="formal">
+        <span class="m"><span class="setname">A</span> &cup; <span class="setname">B</span> = { x : x &isin; <span class="setname">A</span> or x &isin; <span class="setname">B</span> }</span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> Mrs. Adeyemi asks for the set of students who play football
+        <em>or</em> read in the library. That is the union — Ngozi (football only), Emeka (library
+        only), and anyone who does both, each listed once.
+      </span>
+    </div>
+
+    <!-- INTERSECTION -->
+    <div class="concept">
+      <h3>5. Intersection — Only the Overlap</h3>
+      <p>
+        The <strong>intersection</strong> of two sets, written
+        <span class="m"><span class="setname">A</span> &cap; <span class="setname">B</span></span>,
+        is the set of elements that are in <em>both</em> <span class="m"><span class="setname">A</span></span>
+        <em>and</em> <span class="m"><span class="setname">B</span></span>. If the two groups share
+        no members, their intersection is the empty set.
+      </p>
+      <span class="formal">
+        <span class="m"><span class="setname">A</span> &cap; <span class="setname">B</span> = { x : x &isin; <span class="setname">A</span> and x &isin; <span class="setname">B</span> }</span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> The set of students who play football <em>and</em> read in the
+        library. If Ngozi plays football but never visits the library, she is not in the
+        intersection. Only students who do both appear.
+      </span>
+    </div>
+
+    <!-- COMPLEMENT -->
+    <div class="concept">
+      <h3>6. Complement — Everyone Outside the Group</h3>
+      <p>
+        The <strong>complement</strong> of a set <span class="m"><span class="setname">A</span></span>,
+        written <span class="m"><span class="setname">A</span>&prime;</span> or
+        <span class="m"><span class="setname">A</span><sup>c</sup></span>, is the set of all elements
+        in the universal set that are <em>not</em> in <span class="m"><span class="setname">A</span></span>.
+        Together, a set and its complement make up the whole universal set.
+      </p>
+      <span class="formal">
+        <span class="m"><span class="setname">A</span>&prime; = { x &isin; &xi; : x &notin; <span class="setname">A</span> }</span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> If <span class="m"><span class="setname">F</span></span> is the
+        set of students who play football, then <span class="m"><span class="setname">F</span>&prime;</span>
+        is the set of students in JSS 3B who do <em>not</em> play football.
+      </span>
+    </div>
+
+    <!-- VENN -->
+    <div class="concept">
+      <h3>7. Venn Diagrams — Drawing the Room</h3>
+      <p>
+        A <strong>Venn diagram</strong> uses overlapping circles inside a rectangle. The rectangle
+        is the universal set <span class="m">&xi;</span>; each circle is a set. Where two circles
+        overlap is the intersection; the combined area of both circles is the union; the region
+        outside a circle but inside the rectangle is its complement.
+      </p>
+      <div class="venn-wrap">
+        <svg viewBox="0 0 340 190" width="340" height="190" role="img" aria-label="Two overlapping circles inside a rectangle">
+          <!-- Universal rectangle -->
+          <rect x="10" y="10" width="320" height="170" fill="#fbfdfe" stroke="#1b4f8a" stroke-width="1.6" rx="3"/>
+          <text x="22" y="30" font-family="Cambria, serif" font-size="14" font-style="italic" fill="#1b4f8a">&xi;</text>
+
+          <!-- Circle A -->
+          <circle cx="125" cy="100" r="62" fill="rgba(27,79,138,0.10)" stroke="#1b4f8a" stroke-width="1.6"/>
+          <text x="75" y="60" font-family="Cambria, serif" font-size="13" font-style="italic" fill="#1b4f8a">A</text>
+
+          <!-- Circle B -->
+          <circle cx="215" cy="100" r="62" fill="rgba(90,62,142,0.10)" stroke="#5a3e8e" stroke-width="1.6"/>
+          <text x="260" y="60" font-family="Cambria, serif" font-size="13" font-style="italic" fill="#5a3e8e">B</text>
+
+          <!-- Labels -->
+          <text x="72" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#3a4753" text-anchor="middle">A only</text>
+          <text x="170" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#3a4753" text-anchor="middle">A &cap; B</text>
+          <text x="268" y="105" font-family="Segoe UI, sans-serif" font-size="10" fill="#3a4753" text-anchor="middle">B only</text>
+          <text x="170" y="172" font-family="Segoe UI, sans-serif" font-size="10" fill="#5c6874" text-anchor="middle">outside = (A &cup; B)&prime;</text>
+        </svg>
+      </div>
+      <p class="venn-caption">Two sets drawn as overlapping circles: union, intersection, and complement are all visible at a glance.</p>
+      <span class="eg">
+        <strong>In the room:</strong> Circle A = students who play football, Circle B = students who
+        read in the library. The overlap holds students who do both; the region outside both circles
+        holds students who do neither.
+      </span>
+    </div>
+
+    <!-- LAWS -->
+    <div class="concept">
+      <h3>8. Number of Elements and De Morgan's Laws</h3>
+      <p>
+        The notation <span class="m">n(<span class="setname">A</span>)</span> means "the number of
+        members of <span class="m"><span class="setname">A</span></span>." For two sets, the count
+        of the union is <em>not</em> simply the sum of counts — the intersection is counted twice
+        unless we subtract it. This is the <strong>addition principle</strong>.
+      </p>
+      <span class="formal">
+        <span class="m">n(<span class="setname">A</span> &cup; <span class="setname">B</span>) = n(<span class="setname">A</span>) + n(<span class="setname">B</span>) &minus; n(<span class="setname">A</span> &cap; <span class="setname">B</span>)</span>
+      </span>
+      <p>
+        <strong>De Morgan's laws</strong> tell us how complements interact with unions and
+        intersections.
+      </p>
+      <span class="formal">
+        <span class="m">(<span class="setname">A</span> &cup; <span class="setname">B</span>)&prime; = <span class="setname">A</span>&prime; &cap; <span class="setname">B</span>&prime;</span>
+        &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+        <span class="m">(<span class="setname">A</span> &cap; <span class="setname">B</span>)&prime; = <span class="setname">A</span>&prime; &cup; <span class="setname">B</span>&prime;</span>
+      </span>
+      <span class="eg">
+        <strong>In the room:</strong> If 12 students play football, 9 read in the library, and 4 do
+        both, then <span class="m">n(F &cup; L) = 12 + 9 &minus; 4 = 17</span>. The four students
+        doing both would have been counted twice without subtracting.
+      </span>
+    </div>
+  </section>
+
+  <!-- ================= SECTION B ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Practice Questions</h2>
+      <span class="range">Questions 1&ndash;25</span>
+    </div>
+
+    <ol class="q">
+      <li><div class="body">
+        Mrs. Adeyemi writes down the set of students present today:
+        <span class="m"><span class="setname">P</span> = { Tunde, Ngozi, Emeka, Fatima, Chidi }</span>.
+        State whether each of the following is true or false:
+        (a) <span class="m">Ngozi &isin; <span class="setname">P</span></span>
+        (b) <span class="m">Bola &isin; <span class="setname">P</span></span>
+        (c) <span class="m">Fatima &notin; <span class="setname">P</span></span>
+      </div></li>
+
+      <li><div class="body">
+        Write the set of students in JSS 3B who brought <em>no</em> textbook today if the full class
+        is <span class="m">{ Tunde, Ngozi, Emeka, Fatima, Chidi, Amina, Bola }</span> and the ones
+        who brought a textbook are <span class="m">{ Tunde, Fatima, Amina }</span>.
+      </div></li>
+
+      <li><div class="body">
+        Classify each set as empty, finite, or infinite:
+        (a) <span class="m">{ students in JSS 3B }</span>
+        (b) <span class="m">{ students in JSS 3B who own a private jet }</span>
+        (c) <span class="m">{ 1, 2, 3, 4, &hellip; }</span>
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m"><span class="setname">A</span> = { Tunde, Fatima }</span> and
+        <span class="m"><span class="setname">B</span> = { Tunde, Fatima, Ngozi, Emeka }</span>.
+        Is <span class="m"><span class="setname">A</span> &sube; <span class="setname">B</span></span>?
+        Explain.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m"><span class="setname">A</span></span> and
+        <span class="m"><span class="setname">B</span></span>, list
+        <span class="m"><span class="setname">A</span> &cup; <span class="setname">B</span></span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same sets, list
+        <span class="m"><span class="setname">A</span> &cap; <span class="setname">B</span></span>.
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m"><span class="setname">F</span> = { Ngozi, Chidi }</span> be the students
+        who play football, and <span class="m"><span class="setname">L</span> = { Emeka, Fatima }</span>
+        be the students who read in the library. Find
+        <span class="m"><span class="setname">F</span> &cap; <span class="setname">L</span></span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m"><span class="setname">F</span></span> and
+        <span class="m"><span class="setname">L</span></span>, find
+        <span class="m"><span class="setname">F</span> &cup; <span class="setname">L</span></span>.
+      </div></li>
+
+      <li><div class="body">
+        The universal set is
+        <span class="m">&xi; = { Tunde, Ngozi, Emeka, Fatima, Chidi, Amina, Bola }</span> and
+        <span class="m"><span class="setname">F</span> = { Ngozi, Chidi }</span>.
+        List <span class="m"><span class="setname">F</span>&prime;</span>.
+      </div></li>
+
+      <li><div class="body">
+        The universal set is
+        <span class="m">&xi; = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }</span>.
+        If <span class="m"><span class="setname">E</span> = { even numbers }</span>, list
+        <span class="m"><span class="setname">E</span>&prime;</span>.
+      </div></li>
+
+      <li><div class="body">
+        In JSS 3B, 14 students play football, 10 students read in the library, and 4 do both.
+        How many students play football <em>or</em> read in the library?
+      </div></li>
+
+      <li><div class="body">
+        In a class of 30 students, 18 study French, 15 study Spanish, and 7 study both. How many
+        students study neither language?
+      </div></li>
+
+      <li><div class="body">
+        A survey of 40 students found that 25 bring their own lunch, 20 buy from the canteen, and
+        10 do both. How many students neither bring lunch nor buy from the canteen?
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m">&xi; = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }</span>,
+        <span class="m"><span class="setname">A</span> = { 1, 2, 3, 4, 5 }</span>, and
+        <span class="m"><span class="setname">B</span> = { 4, 5, 6, 7 }</span>.
+        Find <span class="m"><span class="setname">A</span> &cap; <span class="setname">B</span></span>
+        and <span class="m"><span class="setname">A</span> &cup; <span class="setname">B</span></span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same sets as Question 14, find
+        <span class="m">(<span class="setname">A</span> &cup; <span class="setname">B</span>)&prime;</span>.
+      </div></li>
+
+      <li><div class="body">
+        Using the same sets, verify De Morgan's law:
+        <span class="m">(<span class="setname">A</span> &cup; <span class="setname">B</span>)&prime; = <span class="setname">A</span>&prime; &cap; <span class="setname">B</span>&prime;</span>.
+      </div></li>
+
+      <li><div class="body">
+        In JSS 3B, the students who passed mathematics are
+        <span class="m"><span class="setname">M</span> = { Tunde, Fatima, Amina, Bola }</span> and
+        those who passed English are
+        <span class="m"><span class="setname">E</span> = { Fatima, Amina, Chidi, Ngozi }</span>.
+        List the students who passed <em>both</em> subjects.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m"><span class="setname">M</span></span> and
+        <span class="m"><span class="setname">E</span></span>, list the students who passed at
+        least one of the two subjects.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m"><span class="setname">M</span></span> and
+        <span class="m"><span class="setname">E</span></span>, list the students who passed
+        mathematics but not English.
+      </div></li>
+
+      <li><div class="body">
+        Using the same <span class="m"><span class="setname">M</span></span> and
+        <span class="m"><span class="setname">E</span></span>, list the students who passed English
+        but not mathematics.
+      </div></li>
+
+      <li><div class="body">
+        In a class of 50 students, 30 play football, 25 play basketball, and 12 play both.
+        Draw a Venn diagram and find how many play exactly one sport.
+      </div></li>
+
+      <li><div class="body">
+        Using the same data as Question 21, how many students play neither sport?
+      </div></li>
+
+      <li><div class="body">
+        Let <span class="m"><span class="setname">A</span> = { 2, 4, 6, 8 }</span> and
+        <span class="m"><span class="setname">B</span> = { 1, 3, 5, 7 }</span>. Find
+        <span class="m"><span class="setname">A</span> &cap; <span class="setname">B</span></span>.
+        What does the result tell you about the two sets?
+      </div></li>
+
+      <li><div class="body">
+        If <span class="m">n(<span class="setname">A</span>) = 12</span>,
+        <span class="m">n(<span class="setname">B</span>) = 9</span>, and
+        <span class="m">n(<span class="setname">A</span> &cap; <span class="setname">="B</span>) = 5</span>,
+        find <span class="m">n(<span class="setname">A</setspan> &cup; <span class="setname">B</span>)</span>.
+      </div></li>
+
+      <nameli><div class="body">
+        In JSS 3B, every student either plays football or reads in the library (or both). There are
+        14 footballers, 10 readers, and ">4 who do both. How many students are in the class?
+      </div></li>
+    </ol>
+  </Psection>
+
+  <!-- ================= SECTION C ================= -->
+  <section class="sec">
+    <div class="sec-head">
+</      <span class="tag">Section C</span>
+      <h2>Full Worked Solutions</h2>
+      <span class="range">Questions 1&ndash;25</span>
+    </div>
+
+    <ol class="sol">
+      <!-- 1 -->
+      <li><div class="sol-body">
+        <span class="step">(a) Ngozi is listed in <span class="m"><span class="setname">P</span></span>: <strong>True</strong>.</span>
+        <span class="step">(b) Bola is not listed in <span class="m"><span class="setname">P</span></span>: <strong>False</strong>.</span>
+        <span class="step">(c) Fatima <em>is</em> listed, so <span class="m">Fatima &notin; <span classspan></span> is <strong>False</strong>.</span>
+        <span class="ans">(a) True, (b) False, (c) False</span>
+      </div></li>
+
+      <!-- 2 -->
+      <li><div class="sol-body">
+        <span class="step">Class = { Tunde, Ngozi, Emeka, Fatima, Chidi, Amina, Bola }</span>
+        <span class="step">Brought textbook = { Tunde, Fatima, Amina }</span>
+        <span class="step">No textbook = class minus those three = { Ngozi, Emeka, Chidi, Bola }</span>
+        <span class="ans">{ Ngozi, Emeka, Chidi, Bola }</span>
+      </div></li>
+
+      <!-- 3 -->
+      <li><div class="sol-body">
+        <span class="step">(a) JSS 3B has a definite number of students: <strong>finite</strong>.</span>
+        <span class="step">(b) No JSS 3B student owns a private jet: <strong>empty set</strong>.</span>
+        <span class="step">(c) The counting numbers never end: <strong>infinite</strong>.</span>
+        <span class="ans">(a) finite, (b) empty, (c) infinite</span>
+      </div></li>
+
+      <!-- 4 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">A</span> = { Tunde, Fatima }</span>
+        <span class="step">Both members of <span class="setname">A</span> appear in <span class="setname">B</span>.</span>
+        <span class="ans">Yes, <span class="setname">A</span> &sube; <span class="setname">B</span></span>
+      </div></li>
+
+      <!-- 5 -->
+      <li><div class="sol-body">
+        <span class="step">Union = every element from either set, listed once.</span>
+        <span class="ans">{ Tunde, Fatima, Ngozi, Emeka }</span>
+      </div></li>
+
+      <!-- 6 -->
+      <li><div class="sol-body">
+        <span class="step">Intersection = elements common to both.</span>
+        <span class="step">Both <span class="setname">A</span> and <span class="setname">B</span> contain Tunde and Fatima.</span>
+        <span class="ans">{ Tunde, Fatima }</span>
+      </div></li>
+
+      <!-- 7 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">F</span> = { Ngozi, Chidi }</span>
+        <span class="step"><span class="setname">L</span> = { Emeka, Fatima }</span>
+        <span class="step">No names appear in both sets.</span>
+        <span class="ans"><span class="setname">F</span> &cap; <span class="setname">L</span> = &empty;</span>
+      </div></li>
+
+      <!-- 8 -->
+      <li><div class="sol-body">
+        <span class="step">Union = all names from both groups, listed once.</span>
+        <span class="ans">{ Ngozi, Chidi, Emeka, Fatima }</span>
+      </div></li>
+
+      <!-- 9 -->
+      <li><div class="sol-body">
+        <span class="step">Complement = everything in &xi; not in <span class="setname">F</span>.</span>
+        <span class="step">&xi; = { Tunde, Ngozi, Emeka, Fatima, Chidi, Amina, Bola }</span>
+        <span class="step">Remove Ngozi and Chidi.</span>
+        <span class="ans"><span class="setname">F</span>&prime; = { Tunde, Emeka, Fatima, Amina, Bola }</span>
+      </div></li>
+
+      <!-- 10 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">E</span> = { 2, 4, 6, 8, 10 }</span>
+        <span class="step">Complement = odd numbers in &xi;.</span>
+        <span class="ans"><span class="setname">E</span>&prime; = { 1, 3, 5, 7, 9 }</span>
+      </div></li>
+
+      <!-- 11 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">n(F &cup; L) = n(F) + n(L) &minus; n(F &cap; L)</span></span>
+        <span class="step"><span class="m">= 14 + 10 &minus; 4</span></span>
+        <span class="step"><span class="m">= 20</span></span>
+        <span class="ans">20 students</span>
+      </div></li>
+
+      <!-- 12 -->
+      <li><div class="sol-body">
+        <span class="step">Students studying at least one language: <span class="m">18 + 15 &minus; 7 = 26</span></span>
+        <span class="step">Students studying neither: <span class="m">30 &minus; 26 = 4</span></span>
+        <span class="ans">4 students</span>
+      </div></li>
+
+      <!-- 13 -->
+      <li><div class="sol-body">
+        <span class="step">Bring or buy: <span class="m">25 + 20 &minus; 10 = 35</span></span>
+        <span class="step">Neither: <span class="m">40 &minus; 35 = 5</span></span>
+        <span class="ans">5 students</span>
+      </div></li>
+
+      <!-- 14 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">A</span> = { 1, 2, 3, 4, 5 }</span>
+        <span class="step"><span class="setname">B</span> = { 4, 5, 6, 7 }</span>
+        <span class="step">Intersection: common elements = { 4, 5 }</span>
+        <span class="step">Union: all elements from both = { 1, 2, 3, 4, 5, 6, 7 }</span>
+        <span class="ans"><span class="setname">A</span> &cap; <span class="setname">B</span> = { 4, 5 }; &nbsp; <span class="setname">A</span> &cup; <span class="setname">B</span> = { 1, 2, 3, 4, 5, 6, 7 }</span>
+      </div></li>
+
+      <!-- 15 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">A</span> &cup; <span class="setname">B</span> = { 1, 2, 3, 4, 5, 6, 7 }</span>
+        <span class="step">&xi; = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }</span>
+        <span class="step">Complement = what remains in &xi;: { 8, 9, 10 }</span>
+        <span class="ans">(<span class="setname">A</span> &cup; <span class="setname">B</span>)&prime; = { 8, 9, 10 }</span>
+      </div></li>
+
+      <!-- 16 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">A</span>&prime; = &xi; minus <span class="setname">A</span> = { 6, 7, 8, 9, 10 }</span>
+        <span class="step"><span class="setname">B</span>&prime; = &xi; minus <span class="setname">B</span> = { 1, 2, 3, 8, 9, 10 }</span>
+        <span class="step"><span class="setname">A</span>&prime; &cap; <span class="setname">B</span>&prime; = { 8, 9, 10 }</span>
+        <span class="step">Compare with Q15: (<span class="setname">A</span> &cup; <span class="setname">B</span>)&prime; = { 8, 9, 10 } — identical.</span>
+        <span class="ans">Verified: (<span class="setname">A</span> &cup; <span class="setname">B</span>)&prime; = <span class="setname">A</span>&prime; &cap; <span class="setname">B</span>&prime;</span>
+      </div></li>
+
+      <!-- 17 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">M</span> = { Tunde, Fatima, Amina, Bola }</span>
+        <span class="step"><span class="setname">E</span> = { Fatima, Amina, Chidi, Ngozi }</span>
+        <span class="step">Both lists contain Fatima and Amina.</span>
+        <span class="ans"><span class="setname">M</span> &cap; <span class="setname">E</span> = { Fatima, Amina }</span>
+      </div></li>
+
+      <!-- 18 -->
+      <li><div class="sol-body">
+        <span class="step">Union = all names appearing in either set, listed once.</span>
+        <span class="ans"><span class="setname">M</span> &cup; <span class="setname">E</span> = { Tunde, Fatima, Amina, Bola, Chidi, Ngozi }</span>
+      </div></li>
+
+      <!-- 19 -->
+      <li><div class="sol-body">
+        <span class="step">Mathematics-only = members of <span class="setname">M</span> not in <span class="setname">E</span>.</span>
+        <span class="step">Remove Fatima and Amina (who are in both).</span>
+        <span class="ans">{ Tunde, Bola }</span>
+      </div></li>
+
+      <!-- 20 -->
+      <li><div class="sol-body">
+        <span class="step">English-only = members of <span class="setname">E</span> not in <span class="setname">M</span>.</span>
+        <span class="step">Remove Fatima and Amina.</span>
+        <span class="ans">{ Chidi, Ngozi }</span>
+      </div></li>
+
+      <!-- 21 -->
+      <li><div class="sol-body">
+        <span class="step">Total = 50. Football = 30, Basketball = 25, Both = 12.</span>
+        <span class="step">Football only = 30 &minus; 12 = 18</span>
+        <span class="step">Basketball only = 25 &minus; 12 = 13</span>
+        <span class="step">Exactly one sport = 18 + 13 = 31</span>
+        <div class="venn-wrap">
+          <svg viewBox="0 0 340 190" width="340" height="190" role="img" aria-label="Venn diagram of football and basketball">
+            <rect x="10" y="10" width="320" height="170" fill="#fbfdfe" stroke="#1b4f8a" stroke-width="1.6" rx="3"/>
+            <text x="22" y="30" font-family="Cambria, serif" font-size="14" font-style="italic" fill="#1b4f8a">&xi;</text>
+            <circle cx="125" cy="100" r="62" fill="rgba(27,79,138,0.10)" stroke="#1b4f8a" stroke-width="1.6"/>
+            <text x="75" y="60" font-family="Cambria, serif" font-size="13" font-style="italic" fill="#1b4f8a">F</text>
+            <circle cx="215" cy="100" r="62" fill="rgba(90,62,142,0.10)" stroke="#5a3e8e" stroke-width="1.6"/>
+            <text x="260" y="60" font-family="Cambria, serif" font-size="13" font-style="italic" fill="#5a3e8e">B</text>
+            <text x="80" y="105" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#1b4f8a" text-anchor="middle">18</text>
+            <text x="170" y="105" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#3a4753" text-anchor="middle">12</text>
+            <text x="260" y="105" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold" fill="#5a3e8e" text-anchor="middle">13</text>
+            <text x="170" y="172" font-family="Segoe UI, sans-serif" font-size="11" fill="#5c6874" text-anchor="middle">Outside = 50 &minus; 18 &minus; 12 &minus; 13 = 7</text>
+          </svg>
+        </div>
+        <span class="ans">31 students play exactly one sport</span>
+      </div></li>
+
+      <!-- 22 -->
+      <li><div class="sol-body">
+        <span class="step">Students playing at least one sport = 18 + 12 + 13 = 43</span>
+        <span class="step">Neither = 50 &minus; 43 = 7</span>
+        <span class="ans">7 students</span>
+      </div></li>
+
+      <!-- 23 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="setname">A</span> = { 2, 4, 6, 8 } (even numbers)</span>
+        <span class="step"><span class="setname">B</span> = { 1, 3, 5, 7 } (odd numbers)</span>
+        <span class="step">No number is both even and odd.</span>
+        <span class="ans"><span class="setname">A</span> &cap; <span class="setname">B</span> = &empty; — the sets are disjoint</span>
+      </div></li>
+
+      <!-- 24 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">n(A &cup; B) = n(A) + n(B) &minus; n(A &cap; B)</span></span>
+        <span class="step"><span class="m">= 12 + 9 &minus; 5</span></span>
+        <span class="step"><span class="m">= 16</span></span>
+        <span class="ans">n(<span class="setname">A</span> &cup; <span class="setname">B</span>) = 16</span>
+      </div></li>
+
+      <!-- 25 -->
+      <li><div class="sol-body">
+        <span class="step">Every student is in the union, so the class size equals <span class="m">n(F &cup; L)</span>.</span>
+        <span class="step"><span class="m">n(F &cup; L) = 14 + 10 &minus; 4 = 20</span></span>
+        <span class="ans">20 students in JSS 3B</span>
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="foot">
+    Sets — The Classroom Edition &bull; Every Symbol Traced Back to Mrs. Adeyemi's JSS 3B
+  </footer>
+
+</div>
+
+</body>
+</html>

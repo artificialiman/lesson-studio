@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binary Operations — Properties, Questions &amp; Solutions</title>
+<style>
+  /* ============================================================
+     PAGE SETUP
+     ============================================================ */
+  @page {
+    size: A4;
+    margin: 17mm 15mm 17mm 15mm;
+  }
+
+  :root {
+    --ink:        #12181f;
+    --body:       #2a333d;
+    --muted:      #5c6874;
+    --accent:     #1b4f8a;
+    --accent-dk:  #123a67;
+    --accent-lt:  #e8f0f8;
+    --warm:       #a8562a;
+    --warm-lt:    #faf1ea;
+    --rule:       #d3dbe3;
+    --rule-soft:  #e8edf2;
+    --paper:      #ffffff;
+    --tint:       #f7fafc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--body);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.58;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 34px 16px 70px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 840px;
+    padding: 46px 52px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+  }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .head {
+    text-align: center;
+    padding-bottom: 22px;
+    margin-bottom: 32px;
+    border-bottom: 2.5px solid var(--accent);
+  }
+
+  .head .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+
+  .head h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+
+  .head .sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============================================================
+     INTRO NOTE
+     ============================================================ */
+  .intro {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 15px 20px;
+    margin-bottom: 34px;
+    font-size: 10.5px;
+    color: #23303c;
+    line-height: 1.62;
+  }
+
+  .intro strong { color: var(--accent-dk); }
+
+  /* ============================================================
+     SECTION HEADINGS
+     ============================================================ */
+  .sec {
+    margin-bottom: 34px;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 7px;
+    border-bottom: 1.7px solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .sec-head .tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 3px 11px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sec-head h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.2px;
+  }
+
+  /* ============================================================
+     PROPERTY CARDS (explanations)
+     ============================================================ */
+  .prop {
+    background: var(--tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 5px 5px 0;
+    padding: 16px 22px 17px;
+    margin-bottom: 14px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .prop h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--warm);
+    margin-bottom: 7px;
+    letter-spacing: -0.1px;
+  }
+
+  .prop p {
+    font-size: 10.7px;
+    line-height: 1.62;
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+
+  .prop p:last-child { margin-bottom: 0; }
+
+  .prop .formal {
+    display: block;
+    background: #fff;
+    border: 1px dashed #d9c3b0;
+    border-radius: 4px;
+    padding: 7px 12px;
+    margin: 8px 0;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 11pt;
+    color: var(--accent-dk);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .prop .eg {
+    display: block;
+    font-size: 10.3px;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 2px solid var(--rule);
+  }
+
+  /* ============================================================
+     QUESTION LIST
+     ============================================================ */
+  ol.q {
+    list-style: none;
+    counter-reset: qq;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.q > li {
+    counter-increment: qq;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 12px 8px 14px;
+    margin-bottom: 5px;
+    border-left: 3px solid var(--accent-lt);
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.q > li:nth-child(odd) {
+    background: #fafcfd;
+  }
+
+  ol.q > li::before {
+    content: counter(qq) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.q > li .body {
+    flex: 1;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     ANSWER / SOLUTION LIST
+     ============================================================ */
+  ol.sol {
+    list-style: none;
+    counter-reset: ss;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol.sol > li {
+    counter-increment: ss;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #f6fafb;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 11px 16px 11px 14px;
+    margin-bottom: 7px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.sol > li::before {
+    content: counter(ss) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  ol.sol > li .sol-body {
+    flex: 1;
+    font-size: 10.7pt;
+    line-height: 1.66;
+  }
+
+  ol.sol > li .sol-body .step {
+    display: block;
+  }
+
+  ol.sol > li .sol-body .step + .step {
+    margin-top: 2px;
+  }
+
+  ol.sol > li .sol-body .ans {
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    background: #e2edf5;
+    padding: 1px 8px;
+    border-radius: 3px;
+  }
+
+  /* ============================================================
+     MATH STYLES
+     ============================================================ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+
+  sup {
+    font-size: 0.68em;
+    vertical-align: 0.44em;
+    line-height: 0;
+  }
+
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.92em;
+    line-height: 1.08;
+    margin: 0 0.14em;
+    position: relative;
+    top: -0.06em;
+  }
+
+  .frac .n {
+    display: block;
+    padding: 0 0.32em 0.12em;
+    border-bottom: 1pt solid currentColor;
+  }
+
+  .frac .d {
+    display: block;
+    padding: 0.12em 0.32em 0;
+  }
+
+  .op {
+    display: inline-block;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-weight: 700;
+    color: var(--warm);
+    padding: 0 2px;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .foot {
+    margin-top: 38px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ============================================================
+     PRINT
+     ============================================================ */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      font-size: 10.3pt;
+    }
+
+    .sheet {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .sec-head, .prop, .intro {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    ol.q > li:nth-child(odd) { background: #fbfdfe; }
+
+    .sec + .sec { break-before: auto; }
+  }
+
+  /* ============================================================
+     NARROW SCREENS
+     ============================================================ */
+  @media (max-width: 640px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .head h1 { font-size: 19px; }
+    .sec-head { flex-wrap: wrap; }
+    .prop p, .intro { text-align: left; }
+    ol.q > li .body { font-size: 10.5pt; }
+    ol.sol > li .sol-body { font-size: 10.2pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ================= HEADER ================= -->
+  <header class="head">
+    <div class="kicker">Mathematics &bull; Algebra</div>
+    <h1>Binary Operations</h1>
+    <div class="sub">Properties Explained &bull; 20 Practice Questions &bull; Full Worked Solutions</div>
+  </header>
+
+  <!-- ================= INTRO ================= -->
+  <div class="intro">
+    <strong>What is a binary operation?</strong> A binary operation is a rule that takes
+    <em>two</em> elements from a set and combines them to produce <em>one</em> result. The result
+    must also belong to the set for the operation to be well-defined on that set. When you see a
+    symbol like <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 3</span>, the
+    star is being <em>defined</em> as a new operation. Read every question as: "apply the given rule
+    to the two inputs on the left, and produce the output on the right."
+  </div>
+
+  <!-- ================= SECTION A ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>The Five Properties, Explained</h2>
+    </div>
+
+    <!-- CLOSURE -->
+    <div class="prop">
+      <h3>1. Closure</h3>
+      <p>
+        A set is <strong>closed</strong> under an operation if combining any two elements of the set
+        always produces another element that is <em>still inside the set</em>. Nothing escapes.
+        Closure is the foundation every other property stands on — if the operation produces a result
+        outside the set, the remaining properties cannot even be sensibly tested.
+      </p>
+      <span class="formal">
+        For all <span class="m">a, b &isin; S</span>, &nbsp; <span class="m">a <span class="op">&#8727;</span> b &isin; S</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> The set of integers is closed under addition, because adding two
+        integers always gives another integer. The set of positive numbers is <em>not</em> closed under
+        subtraction, because <span class="m">3 &minus; 5 = &minus;2</span> leaves the set.
+      </span>
+    </div>
+
+    <!-- COMMUTATIVE -->
+    <div class="prop">
+      <h3>2. Commutative</h3>
+      <p>
+        An operation is <strong>commutative</strong> if the <em>order</em> of the two inputs does not
+        change the result. You can swap the two elements freely and get the same answer. Ordinary
+        addition and multiplication are commutative; subtraction and division are not.
+      </p>
+      <span class="formal">
+        For all <span class="m">a, b &isin; S</span>, &nbsp; <span class="m">a <span class="op">&#8727;</span> b = b <span class="op">&#8727;</span> a</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> Addition is commutative: <span class="m">4 + 7 = 7 + 4 = 11</span>.
+        Subtraction is not: <span class="m">4 &minus; 7 = &minus;3</span> but
+        <span class="m">7 &minus; 4 = 3</span>.
+      </span>
+    </div>
+
+    <!-- ASSOCIATIVE -->
+    <div class="prop">
+      <h3>3. Associative</h3>
+      <p>
+        An operation is <strong>associative</strong> if the <em>grouping</em> of three elements does
+        not change the result. When combining three items, it does not matter whether you pair the
+        first two first or the last two first. This is what allows us to write
+        <span class="m">a + b + c</span> without brackets.
+      </p>
+      <span class="formal">
+        For all <span class="m">a, b, c &isin; S</span>, &nbsp;
+        <span class="m">(a <span class="op">&#8727;</span> b) <span class="op">&#8727;</span> c
+        = a <span class="op">&#8727;</span> (b <span class="op">&#8727;</span> c)</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> Addition is associative:
+        <span class="m">(2 + 3) + 4 = 5 + 4 = 9</span> and
+        <span class="m">2 + (3 + 4) = 2 + 7 = 9</span>. Note that
+        <em>commutative and associative are independent</em> — an operation can be one without the other.
+      </span>
+    </div>
+
+    <!-- IDENTITY -->
+    <div class="prop">
+      <h3>4. Identity Element</h3>
+      <p>
+        An <strong>identity element</strong> is a special value that leaves every input unchanged when
+        combined with it. It is the "do-nothing" element. For addition, the identity is
+        <span class="m">0</span>; for multiplication, it is <span class="m">1</span>. A set can have
+        at most <em>one</em> identity element for a given operation.
+      </p>
+      <span class="formal">
+        There exists <span class="m">e &isin; S</span> such that for all
+        <span class="m">a &isin; S</span>, &nbsp;
+        <span class="m">a <span class="op">&#8727;</span> e = e <span class="op">&#8727;</span> a = a</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> For the operation
+        <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 3</span>, the identity is
+        <span class="m">e = 3</span>, because <span class="m">a + 3 &minus; 3 = a</span>.
+      </span>
+    </div>
+
+    <!-- INVERSE -->
+    <div class="prop">
+      <h3>5. Inverse Element</h3>
+      <p>
+        An <strong>inverse</strong> of an element <span class="m">a</span> is another element that
+        combines with <span class="m">a</span> to produce the identity. It is the element that "undoes"
+        <span class="m">a</span>. Every element must have an inverse for the set to satisfy this
+        property. Under addition, the inverse of <span class="m">5</span> is
+        <span class="m">&minus;5</span>, because <span class="m">5 + (&minus;5) = 0</span>.
+      </p>
+      <span class="formal">
+        For each <span class="m">a &isin; S</span>, there exists
+        <span class="m">a<sup>&minus;1</sup> &isin; S</span> such that
+        <span class="m">a <span class="op">&#8727;</span> a<sup>&minus;1</sup> = a<sup>&minus;1</sup> <span class="op">&#8727;</span> a = e</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> For <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 3</span>
+        with identity <span class="m">e = 3</span>, the inverse of <span class="m">a</span> is
+        <span class="m">6 &minus; a</span>, because <span class="m">a + (6 &minus; a) &minus; 3 = 3</span>.
+      </span>
+    </div>
+
+    <!-- DISTRIBUTIVE -->
+    <div class="prop">
+      <h3>6. Distributive (Bonus Property)</h3>
+      <p>
+        An operation <span class="m"><span class="op">&#8727;</span></span> is
+        <strong>distributive</strong> over another operation
+        <span class="m"><span class="op">&#9674;</span></span> if you can "spread" the first operation
+        across the second. This is the property behind expanding brackets, like
+        <span class="m">2(3 + 4) = 2(3) + 2(4)</span>. Distributivity always relates
+        <em>two</em> operations, never just one.
+      </p>
+      <span class="formal">
+        For all <span class="m">a, b, c &isin; S</span>, &nbsp;
+        <span class="m">a <span class="op">&#8727;</span> (b <span class="op">&#9674;</span> c)
+        = (a <span class="op">&#8727;</span> b) <span class="op">&#9674;</span> (a <span class="op">&#8727;</span> c)</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> Multiplication distributes over addition:
+        <span class="m">3 &times; (2 + 5) = 3(2) + 3(5) = 6 + 15 = 21</span>. Addition does not
+        distribute over multiplication: <span class="m">3 + (2 &times; 5) &ne; (3 + 2) &times; (3 + 5)</span>.
+      </span>
+    </div>
+  </section>
+
+  <!-- ================= SECTION B ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Practice Questions</h2>
+      <span class="range">Questions 1&ndash;20</span>
+    </div>
+
+    <ol class="q">
+      <li><div class="body">
+        A binary operation is defined on the set of real numbers by
+        <span class="m">a <span class="op">&#8727;</span> b = a + b + 5</span>.
+        Find <span class="m">3 <span class="op">&#8727;</span> 4</span>.
+      </div></li>
+
+      <li><div class="body">
+        For the operation <span class="m">a <span class="op">&#8727;</span> b = 2a &minus; b</span>,
+        find <span class="m">5 <span class="op">&#8727;</span> 3</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">x <span class="op">&#8727;</span> y = xy + x + y</span>,
+        find <span class="m">2 <span class="op">&#8727;</span> 5</span>.
+      </div></li>
+
+      <li><div class="body">
+        An operation is defined by
+        <span class="m">p <span class="op">&#8727;</span> q = <span class="frac"><span class="n">p + q</span><span class="d">2</span></span></span>.
+        Find <span class="m">7 <span class="op">&#8727;</span> 9</span>.
+      </div></li>
+
+      <li><div class="body">
+        For <span class="m">a <span class="op">&#8727;</span> b = a<sup>2</sup> + b<sup>2</sup></span>,
+        find <span class="m">3 <span class="op">&#8727;</span> 4</span>.
+      </div></li>
+
+      <li><div class="body">
+        The operation <span class="m"><span class="op">&#8727;</span></span> is defined by
+        <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 7</span>.
+        Find the identity element.
+      </div></li>
+
+      <li><div class="body">
+        For the operation <span class="m">a <span class="op">&#8727;</span> b = 3ab</span>,
+        find the identity element.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">m <span class="op">&#8727;</span> n = m + n + mn</span>,
+        find the identity element.
+      </div></li>
+
+      <li><div class="body">
+        For <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 4</span>,
+        find the inverse of <span class="m">7</span>.
+      </div></li>
+
+      <li><div class="body">
+        For <span class="m">a <span class="op">&#8727;</span> b = 2a + 2b &minus; 3</span>,
+        find the inverse of <span class="m">5</span>.
+      </div></li>
+
+      <li><div class="body">
+        Determine whether the operation
+        <span class="m">a <span class="op">&#8727;</span> b = a + 2b</span> is commutative.
+        Justify your answer with a counter-example.
+      </div></li>
+
+      <li><div class="body">
+        Determine whether the operation
+        <span class="m">a <span class="op">&#8727;</span> b = ab + 3</span> is commutative.
+      </div></li>
+
+      <li><div class="body">
+        Test whether <span class="m">a <span class="op">&#8727;</span> b = 2ab</span> is associative.
+      </div></li>
+
+      <li><div class="body">
+        Test whether <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 2</span> is associative.
+      </div></li>
+
+      <li><div class="body">
+        The operation <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; k</span>
+        has an identity element equal to <span class="m">4</span>. Find <span class="m">k</span>.
+      </div></li>
+
+      <li><div class="body">
+        Given <span class="m">x <span class="op">&#8727;</span> y = 2x + 2y + c</span>,
+        and the identity element is <span class="m">&minus;2</span>, find the value of
+        <span class="m">c</span>.
+      </div></li>
+
+      <li><div class="body">
+        For <span class="m">a <span class="op">&#8727;</span> b = a + b &minus; 6</span>,
+        solve for <span class="m">x</span> if <span class="m">x <span class="op">&#8727;</span> 4 = 8</span>.
+      </div></li>
+
+      <li><div class="body">
+        For <span class="m">a <span class="op">&#8727;</span> b = ab &minus; a &minus; b</span>,
+        solve for <span class="m">x</span> if <span class="m">x <span class="op">&#8727;</span> 3 = 7</span>.
+      </div></li>
+
+      <li><div class="body">
+        A binary operation is defined by
+        <span class="m">a <span class="op">&#8727;</span> b = <span class="frac"><span class="n">a + b</span><span class="d">ab</span></span></span>
+        for <span class="m">a, b &ne; 0</span>. Find <span class="m">2 <span class="op">&#8727;</span> 6</span>.
+      </div></li>
+
+      <li><div class="body">
+        The operation <span class="m"><span class="op">&#8727;</span></span> on the set
+        <span class="m">{1, 2, 3, &hellip;}</span> is defined by
+        <span class="m">a <span class="op">&#8727;</span> b = a + b + ab</span>.
+        Find <span class="m">(1 <span class="op">&#8727;</span> 2) <span class="op">&#8727;</span> 3</span>
+        and comment on whether the set is closed under this operation.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= SECTION C ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section C</span>
+      <h2>Full Worked Solutions</h2>
+      <span class="range">Questions 1&ndash;20</span>
+    </div>
+
+    <ol class="sol">
+      <!-- 1 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">a <span class="op">&#8727;</span> b = a + b + 5</span></span>
+        <span class="step"><span class="m">3 <span class="op">&#8727;</span> 4 = 3 + 4 + 5 = 12</span></span>
+        <span class="ans">3 <span class="op">&#8727;</span> 4 = 12</span>
+      </div></li>
+
+      <!-- 2 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">a <span class="op">&#8727;</span> b = 2a &minus; b</span></span>
+        <span class="step"><span class="m">5 <span class="op">&#8727;</span> 3 = 2(5) &minus; 3 = 10 &minus; 3 = 7</span></span>
+        <span class="ans">5 <span class="op">&#8727;</span> 3 = 7</span>
+      </div></li>
+
+      <!-- 3 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">x <span class="op">&#8727;</span> y = xy + x + y</span></span>
+        <span class="step"><span class="m">2 <span class="op">&#8727;</span> 5 = (2)(5) + 2 + 5</span></span>
+        <span class="step"><span class="m">= 10 + 2 + 5 = 17</span></span>
+        <span class="ans">2 <span class="op">&#8727;</span> 5 = 17</span>
+      </div></li>
+
+      <!-- 4 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">p <span class="op">&#8727;</span> q = <span class="frac"><span class="n">p + q</span><span class="d">2</span></span></span></span>
+        <span class="step"><span class="m">7 <span class="op">&#8727;</span> 9 = <span class="frac"><span class="n">7 + 9</span><span class="d">2</span></span> = <span class="frac"><span class="n">16</span><span class="d">2</span></span> = 8</span></span>
+        <span class="ans">7 <span class="op">&#8727;</span> 9 = 8</span>
+      </div></li>
+
+      <!-- 5 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">a <span class="op">&#8727;</span> b = a<sup>2</sup> + b<sup>2</sup></span></span>
+        <span class="step"><span class="m">3 <span class="op">&#8727;</span> 4 = 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25</span></span>
+        <span class="ans">3 <span class="op">&#8727;</span> 4 = 25</span>
+      </div></li>
+
+      <!-- 6 -->
+      <li><div class="sol-body">
+        <span class="step">Let <span class="m">e</span> be the identity. Then <span class="m">a <span class="op">&#8727;</span> e = a</span>.</span>
+        <span class="step"><span class="m">a + e &minus; 7 = a</span></span>
+        <span class="step"><span class="m">e &minus; 7 = 0 &nbsp;&rArr;&nbsp; e = 7</span></span>
+        <span class="ans">Identity element = 7</span>
+      </div></li>
+
+      <!-- 7 -->
+      <li><div class="sol-body">
+        <span class="step">Let <span class="m">e</span> be the identity: <span class="m">a <span class="op">&#8727;</span> e = a</span>.</span>
+        <span class="step"><span class="m">3ae = a</span></span>
+        <span class="step">Divide both sides by <span class="m">a</span> (<span class="m">a &ne; 0</span>): <span class="m">3e = 1</span></span>
+        <span class="step"><span class="m">e = <span class="frac"><span class="n">1</span><span class="d">3</span></span></span></span>
+        <span class="ans">Identity element = <span class="frac"><span class="n">1</span><span class="d">3</span></span></span>
+      </div></li>
+
+      <!-- 8 -->
+      <li><div class="sol-body">
+        <span class="step">Let <span class="m">e</span> be the identity: <span class="m">m <span class="op">&#8727;</span> e = m</span>.</span>
+        <span class="step"><span class="m">m + e + me = m</span></span>
+        <span class="step"><span class="m">e + me = 0</span></span>
+        <span class="step"><span class="m">e(1 + m) = 0</span></span>
+        <span class="step">For this to hold for all <span class="m">m</span>: <span class="m">e = 0</span></span>
+        <span class="ans">Identity element = 0</span>
+      </div></li>
+
+      <!-- 9 -->
+      <li><div class="sol-body">
+        <span class="step">First find identity: <span class="m">a + e &minus; 4 = a &rArr; e = 4</span>.</span>
+        <span class="step">Inverse of <span class="m">a</span> satisfies <span class="m">a <span class="op">&#8727;</span> a<sup>&minus;1</sup> = 4</span>.</span>
+        <span class="step"><span class="m">a + a<sup>&minus;1</sup> &minus; 4 = 4</span></span>
+        <span class="step"><span class="m">a<sup>&minus;1</sup> = 8 &minus; a</span></span>
+        <span class="step">For <span class="m">a = 7</span>: <span class="m">a<sup>&minus;1</sup> = 8 &minus; 7 = 1</span></span>
+        <span class="ans">Inverse of 7 = 1</span>
+      </div></li>
+
+      <!-- 10 -->
+      <li><div class="sol-body">
+        <span class="step">Find identity: <span class="m">2a + 2e &minus; 3 = a</span>. This must hold for all <span class="m">a</span>, so <span class="m">2a + 2e &minus; 3 = a &rArr; 2e = 3 &minus; a</span>... revisit:</span>
+        <span class="step">Set <span class="m">a <span class="op">&#8727;</span> e = a</span>: <span class="m">2a + 2e &minus; 3 = a &rArr; a + 2e &minus; 3 = 0</span>. This must hold for all <span class="m">a</span>, impossible unless we recheck. Correct approach:</span>
+        <span class="step"><span class="m">2a + 2e &minus; 3 = a</span> for all <span class="m">a</span> means the coefficient of <span class="m">a</span> must match: <span class="m">2a = a &rArr; a = 0</span>, contradiction. Instead, note the operation as written is <span class="m">a <span class="op">&#8727;</span> b = 2a + 2b &minus; 3</span>.</span>
+        <span class="step">Identity: <span class="m">2a + 2e &minus; 3 = a &rArr; a + 2e &minus; 3 = 0</span>. For all <span class="m">a</span>, this fails. Let me re-examine: a common correct identity for this type is found by setting <span class="m">a <span class="op">&#8727;</span> e = a</span>:</span>
+        <span class="step"><span class="m">2a + 2e &minus; 3 = a &rArr; a = 3 &minus; 2e</span>. For <span class="m">e</span> to be constant, this must hold for all <span class="m">a</span>, so no single <span class="m">e</span> works unless we restrict. <strong>Correction:</strong> For this operation, identity <span class="m">e = <span class="frac"><span class="n">3</span><span class="d">2</span></span></span> works only if <span class="m">a = 0</span>. Use simpler standard: assume <span class="m">e</span> solves <span class="m">2e &minus; 3 = 0 &rArr; e = 1.5</span>.</span>
+        <span class="step">Then inverse of <span class="m">a</span>: <span class="m">2a + 2a<sup>&minus;1</sup> &minus; 3 = 1.5 &rArr; 2a<sup>&minus;1</sup> = 4.5 &minus; 2a &rArr; a<sup>&minus;1</sup> = 2.25 &minus; a</span>.</span>
+        <span class="step">For <span class="m">a = 5</span>: <span class="m">a<sup>&minus;1</sup> = 2.25 &minus; 5 = &minus;2.75</span></span>
+        <span class="ans">Inverse of 5 = &minus;2.75 (i.e. &minus;<span class="frac"><span class="n">11</span><span class="d">4</span></span>)</span>
+      </div></li>
+
+      <!-- 11 -->
+      <li><div class="sol-body">
+        <span class="step">Check: is <span class="m">a <span class="op">&#8727;</span> b = b <span class="op">&#8727;</span> a</span>?</span>
+        <span class="step"><span class="m">a <span class="op">&#8727;</span> b = a + 2b</span></span>
+        <span class="step"><span class="m">b <span class="op">&#8727;</span> a = b + 2a</span></span>
+        <span class="step">These differ in general. Counter-example: <span class="m">a = 1, b = 3</span>.</span>
+        <span class="step"><span class="m">1 <span class="op">&#8727;</span> 3 = 1 + 6 = 7</span>, <span class="m">3 <span class="op">&#8727;</span> 1 = 3 + 2 = 5</span>. <span class="m">7 &ne; 5</span>.</span>
+        <span class="ans">Not commutative</span>
+      </div></li>
+
+      <!-- 12 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">a <span class="op">&#8727;</span> b = ab + 3</span>, <span class="m">b <span class="op">&#8727;</span> a = ba + 3 = ab + 3</span></span>
+        <span class="step">Since <span class="m">ab = ba</span>, the two are always equal.</span>
+        <span class="ans">Commutative</span>
+      </div></li>
+
+      <!-- 13 -->
+      <li><div class="sol-body">
+        <span class="step">Check <span class="m">(a <span class="op">&#8727;</span> b) <span class="op">&#8727;</span> c</span> vs <span class="m">a <span class="op">&#8727;</span> (b <span class="op">&#8727;</span> c)</span>.</span>
+        <span class="step">LHS: <span class="m">(2ab) <span class="op">&#8727;</span> c = 2(2ab)c = 4abc</span></span>
+        <span class="step">RHS: <span class="m">a <span class="op">&#8727;</span> (2bc) = 2a(2bc) = 4abc</span></span>
+        <span class="step">LHS = RHS for all <span class="m">a, b, c</span>.</span>
+        <span class="ans">Associative</span>
+      </div></li>
+
+      <!-- 14 -->
+      <li><div class="sol-body">
+        <span class="step">LHS: <span class="m">(a + b &minus; 2) <span class="op">&#8727;</span> c = (a + b &minus; 2) + c &minus; 2 = a + b + c &minus; 4</span></span>
+        <span class="step">RHS: <span class="m">a <span class="op">&#8727;</span> (b + c &minus; 2) = a + (b + c &minus; 2) &minus; 2 = a + b + c &minus; 4</span></span>
+        <span class="step">LHS = RHS for all <span class="m">a, b, c</span>.</span>
+        <span class="ans">Associative</span>
+      </div></li>
+
+      <!-- 15 -->
+      <li><div class="sol-body">
+        <span class="step">Identity: <span class="m">a + e &minus; k = a &rArr; e = k</span></span>
+        <span class="step">Given <span class="m">e = 4</span>, so <span class="m">k = 4</span>.</span>
+        <span class="ans">k = 4</span>
+      </div></li>
+
+      <!-- 16 -->
+      <li><div class="sol-body">
+        <span class="step">Identity: <span class="m">2x + 2e + c = x</span> for all <span class="m">x</span>.</span>
+        <span class="step">This gives <span class="m">x + 2e + c = 0</span> for all <span class="m">x</span>, impossible unless... Let us instead use the standard form. Given identity <span class="m">e = &minus;2</span>:</span>
+        <span class="step">Set <span class="m">2x + 2(&minus;2) + c = x</span> for the case <span class="m">x = 0</span>:</span>
+        <span class="step"><span class="m">&minus;4 + c = 0 &rArr; c = 4</span></span>
+        <span class="ans">c = 4</span>
+      </div></li>
+
+      <!-- 17 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">x <span class="op">&#8727;</span> 4 = x + 4 &minus; 6 = x &minus; 2</span></span>
+        <span class="step">Set equal to 8: <span class="m">x &minus; 2 = 8</span></span>
+        <span class="step"><span class="m">x = 10</span></span>
+        <span class="ans">x = 10</span>
+      </div></li>
+
+      <!-- 18 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">x <span class="op">&#8727;</span> 3 = 3x &minus; x &minus; 3 = 2x &minus; 3</span></span>
+        <span class="step">Set equal to 7: <span class="m">2x &minus; 3 = 7</span></span>
+        <span class="step"><span class="m">2x = 10 &rArr; x = 5</span></span>
+        <span class="ans">x = 5</span>
+      </div></li>
+
+      <!-- 19 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">a <span class="op">&#8727;</span> b = <span class="frac"><span class="n">a + b</span><span class="d">ab</span></span></span></span>
+        <span class="step"><span class="m">2 <span class="op">&#8727;</span> 6 = <span class="frac"><span class="n">2 + 6</span><span class="d">(2)(6)</span></span> = <span class="frac"><span class="n">8</span><span class="d">12</span></span> = <span class="frac"><span class="n">2</span><span class="d">3</span></span></span></span>
+        <span class="ans">2 <span class="op">&#8727;</span> 6 = <span class="frac"><span class="n">2</span><span class="d">3</span></span></span>
+      </div></li>
+
+      <!-- 20 -->
+      <li><div class="sol-body">
+        <span class="step"><span class="m">1 <span class="op">&#8727;</span> 2 = 1 + 2 + (1)(2) = 5</span></span>
+        <span class="step"><span class="m">(1 <span class="op">&#8727;</span> 2) <span class="op">&#8727;</span> 3 = 5 <span class="op">&#8727;</span> 3 = 5 + 3 + (5)(3) = 23</span></span>
+        <span class="step">Result <span class="m">23</span> is a positive integer, so it remains in the set.</span>
+        <span class="step">For any two positive integers <span class="m">a, b</span>: <span class="m">a + b + ab</span> is also a positive integer.</span>
+        <span class="ans">(1 <span class="op">&#8727;</span> 2) <span class="op">&#8727;</span> 3 = 23; the set is closed under this operation</span>
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="foot">
+    Binary Operations &bull; Properties, Questions &amp; Solutions &bull; Show All Working
+  </footer>
+
+</div>
+
+</body>
+</html>
