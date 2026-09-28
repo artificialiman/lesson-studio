@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 2 Agricultural Science — First Term</title>
+<style>
+/* ============================================================
+   SS 2 AGRICULTURAL SCIENCE — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #6e1a1a;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #6e1a1a;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#6e1a1a;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#6e1a1a;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#6e1a1a;
+  border-bottom:1.4pt solid #e3d4d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #c1b9b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f8f4f2;
+  border-color:#c8b2a8;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #a79a9a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#4a4848;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#6e1a1a;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#6e1a1a;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#f3eeee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #6e1a1a;
+  color:#6e1a1a;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 2 Agricultural Science — First Term</h1>
+  <p class="term">Weeks 1–11 · Farm Surveying, Planning, Forest Management, Agro-Forestry, Ornamental Plants · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — FARM SURVEYING AND PLANNING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Farm Surveying and Planning</h2>
+  <p class="meta"><b>Content:</b> Definition, importance, types, equipment, procedures, and farm planning.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define farm surveying and farm planning.</li>
+      <li>State the importance of farm surveying.</li>
+      <li>Describe the types of farm surveying.</li>
+      <li>List and explain basic surveying equipment.</li>
+      <li>Outline the procedures in conducting a farm survey.</li>
+      <li>Explain the factors to consider in farm planning.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">FARM SURVEYING EQUIPMENT</text>
+      <!-- Equipment boxes -->
+      <rect x="20" y="50" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="80" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Measuring Chain</text>
+      <text x="80" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Linear distances</text>
+
+      <rect x="150" y="50" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="210" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Prismatic Compass</text>
+      <text x="210" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Direction & bearings</text>
+
+      <rect x="280" y="50" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="340" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Ranging Poles</text>
+      <text x="340" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Aligning survey lines</text>
+
+      <rect x="410" y="50" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="470" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Theodolite</text>
+      <text x="470" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Horizontal/vertical angles</text>
+
+      <rect x="540" y="50" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="600" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Dumpy Level</text>
+      <text x="600" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Elevation differences</text>
+
+      <rect x="20" y="110" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="80" y="130" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Surveying Pegs</text>
+      <text x="80" y="145" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Marking points</text>
+
+      <rect x="150" y="110" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="210" y="130" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Plumb Bob</text>
+      <text x="210" y="145" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Vertical alignment</text>
+
+      <rect x="280" y="110" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="340" y="130" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Abney Level</text>
+      <text x="340" y="145" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Slope/gradient</text>
+
+      <rect x="410" y="110" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="470" y="130" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Plane Table</text>
+      <text x="470" y="145" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Field plotting</text>
+
+      <rect x="540" y="110" width="120" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="600" y="130" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Survey Plan</text>
+      <text x="600" y="145" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Final scaled map</text>
+    </svg>
+    <figcaption>Fig. 1.1 — Basic farm surveying equipment and their uses.</figcaption>
+  </figure>
+
+  <h3>1.1 Definition of Farm Surveying</h3>
+  <p><b>Farm surveying</b> is the process of measuring and mapping out the physical features of a farmland, including its boundaries, elevations, slopes, and existing structures, to obtain data useful for planning and proper land use.</p>
+
+  <h3>1.2 Definition of Farm Planning</h3>
+  <p><b>Farm planning</b> refers to the systematic arrangement and scheduling of farm resources—land, labour, capital, and equipment—to achieve set production goals efficiently.</p>
+
+  <h3>1.3 Importance of Farm Surveying</h3>
+  <ol class="tight">
+    <li><b>Boundary Determination:</b> Establishes true boundaries, prevents encroachment and land disputes.</li>
+    <li><b>Farm Layout:</b> Provides data for designing roads, irrigation channels, fences, and drainage systems.</li>
+    <li><b>Soil Conservation:</b> Analyzes slope and elevation to implement terracing or contour plowing.</li>
+    <li><b>Water Management:</b> Reveals natural water flow patterns for irrigation and drainage design.</li>
+    <li><b>Infrastructure Placement:</b> Guides strategic placement of barns, silos, poultry houses, fish ponds.</li>
+    <li><b>Resource Allocation:</b> Assists in allocating land to various enterprises based on suitability.</li>
+  </ol>
+
+  <h3>1.4 Types of Farm Surveying</h3>
+  <table>
+    <tr><th style="width:22%">Type</th><th>Description</th></tr>
+    <tr><td class="k">a. Chain Surveying</td><td>Measures linear distances using chains or tapes. Suitable for small, level plots. Tools: chain (20 or 30 m), arrows, ranging rods, pegs.</td></tr>
+    <tr><td class="k">b. Compass Surveying</td><td>Measures directions or bearings using a compass. Useful for uneven, vegetated, or irregular terrain. More accurate than chain surveying.</td></tr>
+    <tr><td class="k">c. Plane Table Surveying</td><td>Graphical method where field observations are directly plotted on a drawing board. Uses alidade, compass, drawing tools. Reduces data transfer errors.</td></tr>
+    <tr><td class="k">d. Theodolite Surveying</td><td>Highly accurate method using a theodolite to measure horizontal and vertical angles. Used for large-scale farm development (irrigation, terraces, roads).</td></tr>
+    <tr><td class="k">e. Aerial Surveying</td><td>Modern method using drones, aircraft, or satellites. Processed with GIS and photogrammetry. Ideal for large-scale commercial farms and precision agriculture.</td></tr>
+  </table>
+
+  <h3>1.5 Basic Surveying Equipment</h3>
+  <table>
+    <tr><th style="width:28%">Instrument</th><th>Use</th></tr>
+    <tr><td class="k">Measuring Chain/Tape</td><td>Measuring straight-line distances</td></tr>
+    <tr><td class="k">Prismatic Compass</td><td>Determining direction and bearings of survey lines</td></tr>
+    <tr><td class="k">Ranging Poles</td><td>Aligning and marking survey lines</td></tr>
+    <tr><td class="k">Theodolite</td><td>Measuring horizontal and vertical angles with precision</td></tr>
+    <tr><td class="k">Dumpy Level</td><td>Determining differences in elevation between points</td></tr>
+    <tr><td class="k">Surveying Pegs</td><td>Marking points and boundaries on the ground</td></tr>
+    <tr><td class="k">Plumb Bob</td><td>Ensuring vertical alignment</td></tr>
+    <tr><td class="k">Abney Level/Hand Level</td><td>Estimating slope or gradient of the land</td></tr>
+    <tr><td class="k">Plane Table</td><td>Field plotting of observations onto a sheet</td></tr>
+  </table>
+
+  <h3>1.6 Procedures in Conducting a Farm Survey</h3>
+  <ol class="tight">
+    <li><b>Reconnaissance Survey:</b> Preliminary inspection of the land to understand its physical characteristics and plan the survey strategy.</li>
+    <li><b>Setting of Control Points:</b> Establish fixed reference points marked with pegs or poles.</li>
+    <li><b>Measurement:</b> Collect actual data on distances between points using chains, tapes, or digital meters.</li>
+    <li><b>Angle and Bearing Determination:</b> Measure angles or bearings using compass or theodolite.</li>
+    <li><b>Levelling:</b> Determine relative heights or elevations of different points using dumpy level, Abney level.</li>
+    <li><b>Recording and Plotting:</b> Record all observations in a field book; plot data onto a chart or drawing paper.</li>
+    <li><b>Preparation of Survey Plan:</b> Prepare a scaled, detailed map showing boundaries, control points, structures, and elevation markers.</li>
+  </ol>
+
+  <h3>1.7 Farm Planning</h3>
+  <p><b>Importance of Farm Planning:</b></p>
+  <ul class="tight">
+    <li>Maximises land use.</li>
+    <li>Reduces waste (duplication of efforts, unnecessary overlap).</li>
+    <li>Enhances productivity (smoother operations, labour efficiency).</li>
+    <li>Facilitates mechanisation (adequate space and access roads).</li>
+    <li>Promotes safety (hazardous areas sited away from residential zones).</li>
+    <li>Environmental conservation (drainage, windbreaks, contour farming).</li>
+  </ul>
+
+  <p><b>Factors to Consider in Farm Planning:</b></p>
+  <ol class="tight">
+    <li><b>Topography:</b> Slope, elevation, drainage.</li>
+    <li><b>Soil Type and Fertility:</b> Sandy, loamy, clay; nutrient levels.</li>
+    <li><b>Climate:</b> Rainfall, temperature, humidity, wind direction.</li>
+    <li><b>Water Availability:</b> Rivers, streams, boreholes.</li>
+    <li><b>Accessibility:</b> Access roads and transportation networks.</li>
+    <li><b>Security:</b> Safety of crops, animals, and infrastructure.</li>
+    <li><b>Land Tenure System:</b> Ownership and legal rights over land use.</li>
+  </ol>
+
+  <p><b>Components of a Farm Plan:</b></p>
+  <ul class="tight">
+    <li>Residential Area</li>
+    <li>Cropland</li>
+    <li>Pasture/Grazing Area</li>
+    <li>Animal Pens</li>
+    <li>Storage Facilities</li>
+    <li>Irrigation and Drainage Systems</li>
+    <li>Access Roads</li>
+    <li>Processing Unit</li>
+    <li>Fencing</li>
+  </ul>
+
+  <p><b>Types of Farm Layouts:</b></p>
+  <ul class="tight">
+    <li><b>Ridge Layout:</b> Raised ridges for root crops (yam, cassava, potatoes).</li>
+    <li><b>Bed Layout:</b> Flat, raised sections for vegetables (onions, lettuce, carrots).</li>
+    <li><b>Contour Layout:</b> Follows natural contours on sloping land to reduce erosion.</li>
+    <li><b>Block Layout:</b> Farm divided into blocks for different enterprises (crops, livestock, agroforestry).</li>
+  </ul>
+
+  <p><b>Types of Farm Plans:</b></p>
+  <ul class="tight">
+    <li><b>Operational Plan:</b> Short-term; daily, weekly, or seasonal activities.</li>
+    <li><b>Strategic Plan:</b> Long-term; future development, expansion, new enterprises.</li>
+    <li><b>Budget Plan:</b> Financial plan; expected income and expenditures.</li>
+    <li><b>Enterprise Plan:</b> Specific to one enterprise (poultry, aquaculture).</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is farm surveying?</li>
+        <li>Mention four instruments used in farm surveying and state one use of each.</li>
+        <li>List and explain five factors to consider in farm planning.</li>
+        <li>State three reasons why farm planning is important.</li>
+        <li>Describe three components that should be included in a farm layout plan.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a simple farm layout plan showing the residential area, cropland, animal pens, and storage facilities.</li>
+        <li>Write a 250-word essay on "The Importance of Farm Surveying in Modern Agriculture."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — FARM PLANNING (DETAILED)
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Farm Planning (Detailed)</h2>
+  <p class="meta"><b>Content:</b> Meaning, objectives, importance, factors, components, types, steps, and problems.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define farm planning and state its objectives.</li>
+      <li>Explain the importance of farm planning.</li>
+      <li>Discuss the factors to consider in farm planning.</li>
+      <li>Describe the components of a farm plan.</li>
+      <li>Differentiate between farm planning and farm layout.</li>
+      <li>Outline the steps in farm planning.</li>
+      <li>Identify the problems of farm planning in Nigeria.</li>
+    </ol>
+  </div>
+
+  <h3>2.1 Meaning of Farm Planning</h3>
+  <p><b>Farm planning</b> is the systematic process of arranging and allocating farm resources such as land, labour, capital, and equipment to maximise production and profit while ensuring sustainability. It involves setting clear goals, evaluating existing resources, choosing suitable enterprises, and making well-informed decisions.</p>
+
+  <h3>2.2 Objectives of Farm Planning</h3>
+  <ul class="tight">
+    <li>Ensure effective and efficient use of available resources.</li>
+    <li>Guide the farmer in achieving higher productivity by choosing suitable enterprises.</li>
+    <li>Maximise profit through proper scheduling of farm operations.</li>
+    <li>Ensure sustainability—preserving natural resources for long-term use.</li>
+    <li>Support better financial management and decision-making.</li>
+  </ul>
+
+  <h3>2.3 Importance of Farm Planning</h3>
+  <ol class="tight">
+    <li><b>Organised Farm Operations:</b> Helps avoid confusion and duplication of efforts.</li>
+    <li><b>Efficient Use of Resources:</b> Ensures land, labour, and capital are allocated to areas where they will be most productive.</li>
+    <li><b>Proper Budgeting and Record Keeping:</b> Allows the farmer to track expenses, income, and productivity.</li>
+    <li><b>Attraction of Credit Facilities:</b> A good farm plan reflects seriousness and feasibility, helping farmers access loans.</li>
+    <li><b>Integration of Modern Practices:</b> Allows the integration of mechanisation, disease control, irrigation, and sustainable practices.</li>
+  </ol>
+
+  <h3>2.4 Factors to Consider in Farm Planning</h3>
+  <table>
+    <tr><th style="width:26%">Factor</th><th>Explanation</th></tr>
+    <tr><td class="k">i. Nature of the Soil</td><td>Texture, structure, fertility, drainage, pH level influence crop type and farming system.</td></tr>
+    <tr><td class="k">ii. Topography of the Land</td><td>Slopes, hills, valleys, plains influence farm layout and choice of enterprises.</td></tr>
+    <tr><td class="k">iii. Climate</td><td>Rainfall, temperature, humidity, sunlight duration determine suitable crops and animals.</td></tr>
+    <tr><td class="k">iv. Availability of Capital</td><td>Determines scale of farming, inputs to purchase, and infrastructure.</td></tr>
+    <tr><td class="k">v. Accessibility and Transportation</td><td>Farms should be accessible by roads for movement of produce and inputs.</td></tr>
+    <tr><td class="k">vi. Water Supply</td><td>Reliable water source (rivers, boreholes, dams) for irrigation and livestock.</td></tr>
+    <tr><td class="k">vii. Land Tenure System</td><td>Secure land tenure encourages investment; uncertain rights discourage long-term planning.</td></tr>
+    <tr><td class="k">viii. Labour Availability</td><td>Number and type of workers available influence operations.</td></tr>
+    <tr><td class="k">ix. Market Demand</td><td>Understanding demand helps produce what is needed, reducing overproduction and losses.</td></tr>
+  </table>
+
+  <h3>2.5 Components of a Farm Plan</h3>
+  <ol class="tight">
+    <li><b>Farmstead or Residential Area:</b> Farmer's house and workers' quarters; centrally located for supervision.</li>
+    <li><b>Crop Plots:</b> Designated fields for crop cultivation based on soil fertility, crop rotation, accessibility.</li>
+    <li><b>Livestock Pens:</b> Housing for animals, designed for welfare, waste management, biosecurity; located downwind.</li>
+    <li><b>Pasture Land:</b> Reserved grazing areas; rotational grazing for sustainability.</li>
+    <li><b>Water Sources and Irrigation Systems:</b> Water storage tanks, irrigation pipes, pumps.</li>
+    <li><b>Storage and Processing Facilities:</b> Warehouses, silos, barns, processing units to reduce post-harvest losses.</li>
+    <li><b>Access Roads:</b> Internal and external roads for movement of people, inputs, and produce.</li>
+    <li><b>Drainage and Erosion Control Structures:</b> Drainage ditches, contour ridges.</li>
+    <li><b>Waste Disposal Area:</b> Composting for organic waste; proper disposal for non-biodegradable waste.</li>
+    <li><b>Fencing:</b> Demarcates boundaries and protects from intruders or stray animals.</li>
+  </ol>
+
+  <h3>2.6 Types of Farm Plans</h3>
+  <ul class="tight">
+    <li><b>Operational Farm Plan:</b> Daily and seasonal activities (planting, weeding, fertilising, harvesting).</li>
+    <li><b>Strategic Farm Plan:</b> Long-term (3–5 years); vision of the farm, major investments, expansion.</li>
+    <li><b>Financial or Budget Plan:</b> Income, expenditures, profitability; crucial for loans.</li>
+    <li><b>Enterprise Plan:</b> Specific to each crop or animal enterprise; inputs, expected output, timing, profitability.</li>
+  </ul>
+
+  <h3>2.7 Farm Layout versus Farm Planning</h3>
+  <table>
+    <tr><th style="width:20%">Aspect</th><th>Farm Planning</th><th>Farm Layout</th></tr>
+    <tr><td class="k">Definition</td><td>Broader process of deciding what to do and how to do it.</td><td>Physical arrangement of farm structures and fields.</td></tr>
+    <tr><td class="k">Focus</td><td>Decision-making and strategy.</td><td>Design and structure (spatial arrangement).</td></tr>
+    <tr><td class="k">Scope</td><td>Encompasses all resources and activities.</td><td>Deals with location of each component.</td></tr>
+  </table>
+
+  <h3>2.8 Steps in Farm Planning</h3>
+  <ol class="tight">
+    <li>Survey the land to assess topography, soil type, drainage, boundaries.</li>
+    <li>Set goals and objectives for the farm (profit targets, crop yields).</li>
+    <li>Assess available resources (land, capital, labour, machinery).</li>
+    <li>Select enterprises (crops/livestock) based on suitability and market demand.</li>
+    <li>Design a layout of the farm indicating where each component will be located.</li>
+    <li>Prepare a budget showing expected income and expenditure.</li>
+    <li>Create a timetable of operations to guide farming activities.</li>
+    <li>Implement the plan and begin operations.</li>
+    <li>Monitor progress and make adjustments when necessary.</li>
+  </ol>
+
+  <h3>2.9 Problems of Farm Planning in Nigeria</h3>
+  <ul class="tight">
+    <li><b>Inadequate Capital:</b> Limits ability to implement well-designed plans.</li>
+    <li><b>Lack of Formal Training:</b> Many farmers lack technical know-how.</li>
+    <li><b>Unclear Land Tenure:</b> Discourages long-term investment.</li>
+    <li><b>Poor Rural Roads:</b> Complicates planning and implementation.</li>
+    <li><b>Limited Access to Extension Services:</b> Farmers lack guidance.</li>
+    <li><b>Climate Variability:</b> Unreliable weather data increases uncertainty.</li>
+    <li><b>Absence of Reliable Market Data:</b> Reduces planning effectiveness.</li>
+  </ul>
+
+  <h3>2.10 Remedies to Planning Challenges</h3>
+  <ul class="tight">
+    <li>Governments and financial institutions should offer accessible credit and grants.</li>
+    <li>Strengthen extension services to educate farmers on planning techniques.</li>
+    <li>Reform land tenure policies to guarantee security and encourage investment.</li>
+    <li>Invest in rural infrastructure (roads, water supply).</li>
+    <li>Promote the use of ICT tools for planning, data analysis, and weather forecasting.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>State and explain five major factors to consider when planning a farm.</li>
+        <li>Describe five important components of a farm plan and state their roles in farm productivity.</li>
+        <li>List and explain three types of farm plans and discuss how each helps in farm management.</li>
+        <li>Differentiate between farm planning and farm layout.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Role of Farm Planning in Achieving Food Security in Nigeria."</li>
+        <li>Draw a farm layout plan showing all ten components of a farmstead.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — PRINCIPLES OF FARMSTEAD PLANNING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Principles of Farmstead Planning and Location of Buildings/Structures</h2>
+  <p class="meta"><b>Content:</b> Meaning, importance, principles, and location of buildings on the farmstead.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define farmstead and explain its importance.</li>
+      <li>State and explain nine principles of farmstead planning.</li>
+      <li>Describe the location of various buildings and structures on the farm.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="280" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">PRINCIPLES OF FARMSTEAD PLANNING</text>
+      <!-- Central house -->
+      <rect x="310" y="140" width="80" height="50" rx="4" fill="#6e1a1a"/>
+      <text x="350" y="165" text-anchor="middle" font-size="9" font-weight="900" fill="#fff">FARMHOUSE</text>
+      <text x="350" y="178" text-anchor="middle" font-size="7" font-weight="700" fill="#fff">(Central)</text>
+      <!-- Arrows and labels -->
+      <text x="120" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">1. Accessibility</text>
+      <text x="120" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Roads, Footpaths</text>
+      <line x1="120" y1="95" x2="310" y2="150" stroke="#6e1a1a" stroke-width="1.5"/>
+
+      <text x="580" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">2. Centralisation</text>
+      <text x="580" y="85" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Operations Radiate</text>
+      <line x1="580" y1="95" x2="390" y2="150" stroke="#6e1a1a" stroke-width="1.5"/>
+
+      <text x="120" y="200" text-anchor="middle" font-size="9" font-weight="900" fill="#333">3. Proximity to Water</text>
+      <text x="120" y="215" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Borehole, River</text>
+      <line x1="120" y1="210" x2="310" y2="180" stroke="#6e1a1a" stroke-width="1.5"/>
+
+      <text x="580" y="200" text-anchor="middle" font-size="9" font-weight="900" fill="#333">4. Security</text>
+      <text x="580" y="215" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Fencing, Lighting</text>
+      <line x1="580" y1="210" x2="390" y2="180" stroke="#6e1a1a" stroke-width="1.5"/>
+
+      <text x="350" y="60" text-anchor="middle" font-size="9" font-weight="900" fill="#333">5. Proper Drainage</text>
+      <text x="350" y="75" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Elevated, Drains</text>
+      <line x1="350" y1="85" x2="350" y2="140" stroke="#6e1a1a" stroke-width="1.5"/>
+
+      <text x="350" y="240" text-anchor="middle" font-size="9" font-weight="900" fill="#333">6. Future Expansion</text>
+      <text x="350" y="255" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Space for Growth</text>
+      <line x1="350" y1="230" x2="350" y2="190" stroke="#6e1a1a" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Fig. 3.1 — Key principles of farmstead planning.</figcaption>
+  </figure>
+
+  <h3>3.1 Meaning of Farmstead</h3>
+  <p>A <b>farmstead</b> refers to the central hub of farm activities, usually comprising the residential area of the farmer, farm buildings, processing and storage facilities, equipment sheds, livestock pens, and other structures essential for farm operations.</p>
+
+  <h3>3.2 Importance of Farmstead Planning</h3>
+  <ul class="tight">
+    <li>Improves efficiency and reduces cost.</li>
+    <li>Saves time and fuel by minimising unnecessary movement.</li>
+    <li>Ensures adequate drainage and reduces disease transmission.</li>
+    <li>Helps prevent environmental pollution.</li>
+    <li>Enhances security and facilitates future expansion.</li>
+  </ul>
+
+  <h3>3.3 Principles of Farmstead Planning</h3>
+  <table>
+    <tr><th style="width:24%">Principle</th><th>Explanation</th></tr>
+    <tr><td class="k">a. Accessibility</td><td>Farmstead should be easy to reach by road or footpath; all buildings connected by roads/footpaths.</td></tr>
+    <tr><td class="k">b. Centralisation</td><td>Farmstead placed centrally in relation to operational units; reduces distance and time.</td></tr>
+    <tr><td class="k">c. Proximity to Water Supply</td><td>Located close to a reliable water source (river, borehole, stream, well).</td></tr>
+    <tr><td class="k">d. Security</td><td>Fenced or hedged; proper lighting, gates, security personnel.</td></tr>
+    <tr><td class="k">e. Proper Drainage</td><td>Sited on slightly elevated, well-drained land; open drains, contour bunds, gravel walkways.</td></tr>
+    <tr><td class="k">f. Future Expansion</td><td>Plan should include spaces for possible additions (more pens, processing facilities).</td></tr>
+    <tr><td class="k">g. Separation of Noisy and Smelly Units</td><td>Pig pens, poultry houses, compost pits located away from residential and processing areas.</td></tr>
+    <tr><td class="k">h. Grouping of Similar Activities</td><td>Related functions located near one another (equipment sheds near workshops; storage barns near threshing areas).</td></tr>
+    <tr><td class="k">i. Orientation to Sun and Wind</td><td>Residential and livestock buildings sited to receive adequate sunlight and cross ventilation.</td></tr>
+  </table>
+
+  <h3>3.4 Location of Buildings and Structures</h3>
+  <table>
+    <tr><th style="width:26%">Building/Structure</th><th>Location Considerations</th></tr>
+    <tr><td class="k">a. Farmhouse/Residential Building</td><td>Sited on slightly raised ground; centrally located; close to main access road but away from noisy/polluted areas.</td></tr>
+    <tr><td class="k">b. Livestock Pens and Housing</td><td>Downwind of residential area; close to feed storage and water supply; adequate spacing for light, ventilation, cleaning.</td></tr>
+    <tr><td class="k">c. Machinery and Equipment Shed</td><td>Close to crop fields and farmhouse; firm, dry ground; workshops nearby for repairs.</td></tr>
+    <tr><td class="k">d. Processing and Storage Facilities</td><td>Near production areas but far from animal pens and waste disposal; accessible for trucks and carts.</td></tr>
+    <tr><td class="k">e. Drainage Channels</td><td>Built around all major buildings; connected to natural drainage lines or constructed ditches.</td></tr>
+    <tr><td class="k">f. Roads and Pathways</td><td>Connect major buildings and fields; properly planned; well-compacted surface.</td></tr>
+    <tr><td class="k">g. Fencing and Boundaries</td><td>Entire farmstead fenced; gates at appropriate positions; hedges as natural barriers.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>State and explain five principles that should guide the planning of a farmstead.</li>
+        <li>Describe how the location of livestock pens, equipment shed, and processing facilities affects farm productivity.</li>
+        <li>Discuss five important considerations when deciding where to site a farmhouse.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a farmstead layout showing the farmhouse, livestock pens, equipment shed, and storage facilities.</li>
+        <li>Write a 250-word essay on "The Importance of Proper Farmstead Planning."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — FOREST MANAGEMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Forest Management</h2>
+  <p class="meta"><b>Content:</b> Meaning of forest, forest management, importance, methods, and government roles.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define forest and forest management.</li>
+      <li>Explain the importance of forest management.</li>
+      <li>Describe the methods of forest management.</li>
+      <li>State the roles of government in forest management.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="200" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">METHODS OF FOREST MANAGEMENT</text>
+      <!-- Seven boxes -->
+      <rect x="20" y="50" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="90" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">1. Selective Exploitation</text>
+      <text x="90" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Cut only mature trees</text>
+
+      <rect x="170" y="50" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="240" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">2. Afforestation</text>
+      <text x="240" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Plant on new land</text>
+
+      <rect x="320" y="50" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="390" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">3. Reforestation</text>
+      <text x="390" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Replace removed trees</text>
+
+      <rect x="470" y="50" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="540" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">4. Taungya System</text>
+      <text x="540" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Crops between trees</text>
+
+      <rect x="20" y="100" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="90" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">5. Forest Reservation</text>
+      <text x="90" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Protected areas</text>
+
+      <rect x="170" y="100" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="240" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">6. Controlled Grazing</text>
+      <text x="240" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Limit livestock</text>
+
+      <rect x="320" y="100" width="140" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="390" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">7. Regulate Felling</text>
+      <text x="390" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Permits, replanting</text>
+    </svg>
+    <figcaption>Fig. 4.1 — Methods of forest management.</figcaption>
+  </figure>
+
+  <h3>4.1 Meaning of Forest</h3>
+  <p>A <b>forest</b> is a large expanse of land covered predominantly with trees, undergrowth, shrubs, and a wide variety of plant and animal species. Forests may be natural (virgin) or man-made (plantation).</p>
+
+  <h3>4.2 Meaning of Forest Management</h3>
+  <p><b>Forest management</b> refers to the application of scientific, economic, and social principles in the administration, care, and use of forests to meet specific objectives—sustainable timber production, biodiversity conservation, water cycle regulation, or recreation.</p>
+
+  <h3>4.3 Importance of Forest Management</h3>
+  <ol class="tight">
+    <li><b>Conservation of Natural Resources:</b> Conserves water, soil, biodiversity.</li>
+    <li><b>Sustainable Production of Timber and Non-Timber Products:</b> Ensures resources are harvested sustainably.</li>
+    <li><b>Control of Climate and Air Quality:</b> Carbon sequestration; mitigates climate change.</li>
+    <li><b>Prevention of Flooding and Desertification:</b> Forests absorb rainfall; act as barriers to desert encroachment.</li>
+    <li><b>Employment and Revenue Generation:</b> Timber processing, paper manufacturing, herbal medicine.</li>
+    <li><b>Tourism and Recreation:</b> Game reserves and national parks attract tourists.</li>
+  </ol>
+
+  <h3>4.4 Methods of Forest Management</h3>
+  <table>
+    <tr><th style="width:24%">Method</th><th>Description</th></tr>
+    <tr><td class="k">a. Selective Exploitation</td><td>Cutting only mature and economically valuable trees; leaves younger trees and non-commercial species.</td></tr>
+    <tr><td class="k">b. Afforestation</td><td>Planting trees on land not previously forested; increases forest cover.</td></tr>
+    <tr><td class="k">c. Reforestation</td><td>Planting trees to replace those removed by logging, farming, or natural disasters.</td></tr>
+    <tr><td class="k">d. Taungya System</td><td>Combines forestry with agriculture; farmers cultivate food crops between rows of young forest trees.</td></tr>
+    <tr><td class="k">e. Forest Reservation</td><td>Setting aside specific areas as protected forest reserves.</td></tr>
+    <tr><td class="k">f. Controlled Grazing</td><td>Restricting the number and movement of livestock within forest areas.</td></tr>
+    <tr><td class="k">g. Regulation of Tree Felling</td><td>Enforcing rules on when, where, and how trees may be felled; permits and replanting.</td></tr>
+  </table>
+
+  <h3>4.5 Roles of Government in Forest Management</h3>
+  <ul class="tight">
+    <li><b>Legislation and Regulation:</b> Enacts forest laws to control land use, tree felling, and forest exploitation.</li>
+    <li><b>Establishment of Forest Reserves and Parks:</b> Creates protected forest areas for conservation, tourism, research.</li>
+    <li><b>Public Awareness and Education:</b> Sponsors educational programmes; includes environmental education in school curricula.</li>
+    <li><b>Support for Research and Development:</b> Funds research institutes such as Forestry Research Institute of Nigeria (FRIN).</li>
+    <li><b>Provision of Incentives:</b> Tax reliefs, grants, or land allocation to individuals and organisations engaged in afforestation and conservation.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Describe five methods used in forest management and explain their importance to forest conservation.</li>
+        <li>Explain the roles of government in forest management with specific examples from Nigeria.</li>
+        <li>Discuss the importance of forest management to the environment and economy of a country.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Effects of Deforestation and the Need for Forest Management in Nigeria."</li>
+        <li>List five forest reserves in Nigeria and their locations.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — AGRO-FORESTRY PRACTICES IN NIGERIA
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Agro-Forestry Practices in Nigeria</h2>
+  <p class="meta"><b>Content:</b> Meaning, types, importance, and challenges of agro-forestry.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define agro-forestry.</li>
+      <li>Explain five types of agro-forestry systems practised in Nigeria.</li>
+      <li>Discuss the importance of agro-forestry.</li>
+      <li>Identify the challenges of agro-forestry in Nigeria.</li>
+      <li>Suggest solutions to the challenges.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">TYPES OF AGRO-FORESTRY SYSTEMS</text>
+      <!-- Five boxes -->
+      <rect x="20" y="50" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="120" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#333">a. Agrisilvicultural</text>
+      <text x="120" y="88" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Crops + Trees</text>
+
+      <rect x="240" y="50" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="340" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#333">b. Silvopastoral</text>
+      <text x="340" y="88" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Trees + Pasture/Livestock</text>
+
+      <rect x="460" y="50" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="560" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#333">c. Agrosilvopastoral</text>
+      <text x="560" y="88" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Crops + Trees + Livestock</text>
+
+      <rect x="130" y="120" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="230" y="142" text-anchor="middle" font-size="10" font-weight="900" fill="#333">d. Alley Cropping</text>
+      <text x="230" y="158" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Crops between hedgerows</text>
+
+      <rect x="370" y="120" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1.5"/>
+      <text x="470" y="142" text-anchor="middle" font-size="10" font-weight="900" fill="#333">e. Taungya System</text>
+      <text x="470" y="158" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Crops + Young Forest Trees</text>
+    </svg>
+    <figcaption>Fig. 5.1 — Five types of agro-forestry systems.</figcaption>
+  </figure>
+
+  <h3>5.1 Meaning of Agro-Forestry</h3>
+  <p><b>Agro-forestry</b> is an integrated land-use system where trees and shrubs are deliberately planted or retained on the same plot of land as crops and/or animals. The components interact positively to enhance productivity and sustainability.</p>
+
+  <h3>5.2 Types of Agro-Forestry Systems in Nigeria</h3>
+  <table>
+    <tr><th style="width:24%">System</th><th>Description</th></tr>
+    <tr><td class="k">a. Agrisilvicultural System</td><td>Agricultural crops cultivated together with trees on the same piece of land. Trees may be planted in rows; crops grown between rows. Examples: <i>Leucaena leucocephala</i>, <i>Gliricidia sepium</i>, mango, guava.</td></tr>
+    <tr><td class="k">b. Silvopastoral System</td><td>Trees and pasture or animals integrated on the same land. Trees provide shade and fodder; grasses serve as grazing land. Suitable in northern Nigeria; prevents desertification and soil erosion.</td></tr>
+    <tr><td class="k">c. Agrosilvopastoral System</td><td>Combines crops, trees, and livestock on the same plot. Practised where land is limited. Example: cassava + maize + goats + neem/moringa.</td></tr>
+    <tr><td class="k">d. Alley Cropping</td><td>Crops planted in alleys between rows of leguminous trees/shrubs that are regularly pruned. Prunings serve as green manure or mulch. Trees: <i>Gliricidia</i>, <i>Leucaena</i>.</td></tr>
+    <tr><td class="k">e. Taungya System</td><td>Temporary cultivation of food crops alongside young forest trees during early years of a plantation. Practised in government forest reserves.</td></tr>
+  </table>
+
+  <h3>5.3 Importance of Agro-Forestry in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Improvement of Soil Fertility:</b> Leguminous trees fix nitrogen; fallen leaves decompose to form humus.</li>
+    <li><b>Erosion Control:</b> Tree roots hold soil; canopies reduce raindrop impact.</li>
+    <li><b>Biodiversity Conservation:</b> Maintains tree cover; creates mini-ecosystems for birds, insects, microorganisms.</li>
+    <li><b>Climate Change Mitigation:</b> Trees absorb carbon dioxide; combat global warming.</li>
+    <li><b>Economic Diversification and Food Security:</b> Multiple income sources (timber, fruits, medicinal plants, fuelwood, food crops).</li>
+    <li><b>Employment Creation:</b> Jobs in tree nursery operations, pruning, harvesting, processing, livestock rearing.</li>
+    <li><b>Sustainable Land Use:</b> Maintains ecological balance; combats land degradation.</li>
+  </ol>
+
+  <h3>5.4 Challenges of Agro-Forestry in Nigeria</h3>
+  <ul class="tight">
+    <li><b>Lack of Awareness:</b> Many farmers are not informed about agro-forestry practices.</li>
+    <li><b>Land Tenure Issues:</b> Farmers reluctant to plant trees on land they do not legally own.</li>
+    <li><b>Inadequate Government Support:</b> Limited funding, training, and extension services.</li>
+    <li><b>Competition Between Trees and Crops:</b> Trees may compete for light, water, and nutrients.</li>
+    <li><b>Bush Burning and Overgrazing:</b> Destroy young trees; make it hard to establish systems.</li>
+  </ul>
+
+  <h3>5.5 Solutions and Way Forward</h3>
+  <ul class="tight">
+    <li>Promote awareness through extension services and media.</li>
+    <li>Reform land tenure policies to encourage tree planting.</li>
+    <li>Provide government support (funding, training, inputs).</li>
+    <li>Proper planning to minimise tree-crop competition.</li>
+    <li>Enforce laws against bush burning and uncontrolled grazing.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain five types of agro-forestry systems practised in Nigeria and state one advantage of each.</li>
+        <li>Discuss the importance of agro-forestry to soil conservation and climate change mitigation.</li>
+        <li>List and explain four problems facing the practice of agro-forestry in Nigeria and suggest practical solutions to each.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a diagram of an alley cropping system showing hedgerows and crop alleys.</li>
+        <li>Write a 250-word essay on "The Role of Agro-Forestry in Sustainable Agriculture in Nigeria."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — IMPORTANCE OF ORNAMENTAL PLANTS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Importance of Ornamental Plants</h2>
+  <p class="meta"><b>Content:</b> Meaning, importance, and classification of ornamental plants.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define ornamental plants.</li>
+      <li>Explain the importance of ornamental plants.</li>
+      <li>Classify ornamental plants with examples.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">IMPORTANCE OF ORNAMENTAL PLANTS</text>
+      <!-- Six boxes -->
+      <rect x="20" y="50" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="120" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#333">1. Aesthetic & Beautification</text>
+      <text x="120" y="88" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Visual appeal, colour, fragrance</text>
+
+      <rect x="240" y="50" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#333">2. Environmental Benefits</text>
+      <text x="340" y="88" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Air purification, shade, windbreak</text>
+
+      <rect x="460" y="50" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="560" y="72" text-anchor="middle" font-size="10" font-weight="900" fill="#333">3. Psychological & Health</text>
+      <text x="560" y="88" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Stress reduction, improved mood</text>
+
+      <rect x="130" y="120" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="230" y="142" text-anchor="middle" font-size="10" font-weight="900" fill="#333">4. Economic Value</text>
+      <text x="230" y="158" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Employment, nursery, landscaping</text>
+
+      <rect x="370" y="120" width="200" height="50" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="470" y="142" text-anchor="middle" font-size="10" font-weight="900" fill="#333">5. Cultural & Religious</text>
+      <text x="470" y="158" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Rituals, weddings, festivals</text>
+    </svg>
+    <figcaption>Fig. 6.1 — Importance of ornamental plants.</figcaption>
+  </figure>
+
+  <h3>6.1 Meaning of Ornamental Plants</h3>
+  <p><b>Ornamental plants</b> are cultivated primarily for decorative and aesthetic purposes rather than for food or other agricultural uses. They enhance the beauty of homes, gardens, parks, offices, schools, and public spaces. They include flowering plants, shrubs, trees, climbers, grasses, and groundcovers.</p>
+
+  <h3>6.2 Importance of Ornamental Plants</h3>
+  <table>
+    <tr><th style="width:26%">Importance</th><th>Explanation</th></tr>
+    <tr><td class="k">1. Aesthetic and Beautification Value</td><td>Improves visual appeal of surroundings. Flowering plants (roses, lilies, marigolds) bring vibrant colours; foliage plants add greenery.</td></tr>
+    <tr><td class="k">2. Environmental Benefits</td><td>Absorb carbon dioxide, release oxygen; reduce noise pollution; act as windbreaks; stabilise soil; reduce urban heat island effect.</td></tr>
+    <tr><td class="k">3. Psychological and Health Benefits</td><td>Create serene atmospheres; reduce stress and anxiety; improve mood and productivity; promote faster recovery in patients.</td></tr>
+    <tr><td class="k">4. Economic Value</td><td>Horticulture and landscaping industries provide employment (nursery operators, landscape designers, gardeners, florists). Ornamental plants are sold in nurseries.</td></tr>
+    <tr><td class="k">5. Cultural and Religious Significance</td><td>Flowers used in religious rituals, weddings, naming ceremonies, festivals. Hibiscus used in Nigerian communities.</td></tr>
+    <tr><td class="k">6. Habitat for Wildlife</td><td>Shrubs and flowering trees provide food and shelter for birds, insects, bees, butterflies.</td></tr>
+    <tr><td class="k">7. Education and Recreation</td><td>Gardens and parks for leisure, learning, nature appreciation. Botanical gardens visited by students, researchers, tourists.</td></tr>
+  </table>
+
+  <h3>6.3 Examples of Common Ornamental Plants in Nigeria</h3>
+  <ul class="tight">
+    <li><b>Hibiscus rosa-sinensis:</b> Bright red or pink flowers.</li>
+    <li><b>Bougainvillea:</b> Climbing plant with colourful bracts.</li>
+    <li><b>Ixora:</b> Clusters of small flowers.</li>
+    <li><b>Dracaena:</b> Striped green leaves.</li>
+    <li><b>Royal palm (Roystonea regia):</b> Tall tree for avenue planting.</li>
+    <li><b>Croton (Codiaeum variegatum):</b> Brightly coloured foliage.</li>
+  </ul>
+
+  <h3>6.4 Classification of Ornamental Plants</h3>
+  <table>
+    <tr><th style="width:26%">Class</th><th>Description and Examples</th></tr>
+    <tr><td class="k">1. Flowering Plants</td><td>Grown for colourful blossoms (rose, hibiscus).</td></tr>
+    <tr><td class="k">2. Foliage Plants</td><td>Valued for attractive leaves (croton, caladium).</td></tr>
+    <tr><td class="k">3. Shrubs</td><td>Low-growing woody plants used for hedges (duranta).</td></tr>
+    <tr><td class="k">4. Climbers and Creepers</td><td>Plants that need support to grow upward (allamanda).</td></tr>
+    <tr><td class="k">5. Trees</td><td>Tall plants that offer shade and beauty (flamboyant tree).</td></tr>
+    <tr><td class="k">6. Grasses and Ground Covers</td><td>Used for lawns and covering bare soil (carpet grass).</td></tr>
+    <tr><td class="k">7. Indoor Ornamental Plants</td><td>Suited for growing inside homes, offices (peace lily, snake plant).</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define ornamental plants and state four examples commonly used in landscaping in Nigeria.</li>
+        <li>Discuss five importance of ornamental plants to man and the environment.</li>
+        <li>Explain three classifications of ornamental plants with suitable examples under each.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Visit a local garden or park. Identify and list five ornamental plants you see.</li>
+        <li>Draw a chart showing the classification of ornamental plants with examples.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — COMMON TYPES OF ORNAMENTAL PLANTS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Common Types of Ornamental Plants</h2>
+  <p class="meta"><b>Content:</b> Detailed classification and examples of ornamental plants.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>List and explain seven types of ornamental plants.</li>
+      <li>Give examples of each type.</li>
+      <li>Differentiate between flowering plants and foliage plants.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">TYPES OF ORNAMENTAL PLANTS</text>
+      <!-- Seven boxes -->
+      <rect x="20" y="50" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="110" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">1. Flowering Plants</text>
+      <text x="110" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Rose, Hibiscus, Ixora</text>
+
+      <rect x="260" y="50" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="350" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">2. Foliage Plants</text>
+      <text x="350" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Croton, Caladium, Dracaena</text>
+
+      <rect x="500" y="50" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="590" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">3. Shrubs</text>
+      <text x="590" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Duranta, Hibiscus, Golden Bells</text>
+
+      <rect x="20" y="110" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="110" y="128" text-anchor="middle" font-size="9" font-weight="900" fill="#333">4. Trees</text>
+      <text x="110" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Royal Palm, Flamboyant, Jacaranda</text>
+
+      <rect x="260" y="110" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="350" y="128" text-anchor="middle" font-size="9" font-weight="900" fill="#333">5. Climbers & Creepers</text>
+      <text x="350" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Bougainvillea, Allamanda, Ivy</text>
+
+      <rect x="500" y="110" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="590" y="128" text-anchor="middle" font-size="9" font-weight="900" fill="#333">6. Grasses & Ground Covers</text>
+      <text x="590" y="142" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Carpet Grass, Lippia, Centipede</text>
+
+      <rect x="260" y="170" width="180" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="350" y="188" text-anchor="middle" font-size="9" font-weight="900" fill="#333">7. Indoor Ornamental Plants</text>
+      <text x="350" y="202" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Peace Lily, Snake Plant, ZZ Plant</text>
+    </svg>
+    <figcaption>Fig. 7.1 — Seven types of ornamental plants with examples.</figcaption>
+  </figure>
+
+  <h3>7.1 Flowering Ornamental Plants</h3>
+  <p>Grown for colourful, fragrant, or uniquely shaped flowers. Can be seasonal (annuals/biennials) or perennial.</p>
+  <p><b>Examples:</b> Roses (<i>Rosa spp.</i>), Hibiscus (<i>Hibiscus rosa-sinensis</i>), Ixora (<i>Ixora coccinea</i>), Bougainvillea, Allamanda.</p>
+  <p><b>Uses:</b> Flower beds, borders, fences, pots.</p>
+
+  <h3>7.2 Foliage Ornamental Plants</h3>
+  <p>Grown mainly for attractive leaves (colour, shape, texture, pattern). Suited for indoor decoration and shade gardens.</p>
+  <p><b>Examples:</b> Croton (<i>Codiaeum variegatum</i>), Caladium, Dracaena, Dieffenbachia, Aglaonema.</p>
+
+  <h3>7.3 Shrubs</h3>
+  <p>Woody ornamental plants smaller than trees; multiple stems branching from the base. Used for hedges, screens, foundation plantings.</p>
+  <p><b>Examples:</b> Duranta, Euphorbia, Hibiscus, Golden Bells.</p>
+
+  <h3>7.4 Trees</h3>
+  <p>Cultivated for stature, attractive foliage, flowers, fruits, or overall form. Provide shade, structure, and visual interest.</p>
+  <p><b>Examples:</b> Royal Palm (<i>Roystonea regia</i>), Flamboyant Tree (<i>Delonix regia</i>), Jacaranda (<i>Jacaranda mimosifolia</i>), Neem (<i>Azadirachta indica</i>), Almond Tree (<i>Terminalia catappa</i>).</p>
+
+  <h3>7.5 Climbers and Creepers</h3>
+  <p>Climbers grow vertically using tendrils, twining stems, or adhesive roots. Creepers spread across the ground. Valuable for wall decoration, arches, trellises, ground covers.</p>
+  <p><b>Examples:</b> Bougainvillea, Allamanda, Morning Glory (<i>Ipomoea spp.</i>), Money Plant (<i>Epipremnum aureum</i>), Ivy (<i>Hedera spp.</i>).</p>
+
+  <h3>7.6 Grasses and Ground Covers</h3>
+  <p>Low-growing plants that spread horizontally to cover soil. Prevent erosion, suppress weeds, improve visual appeal.</p>
+  <p><b>Examples:</b> Carpet Grass (<i>Axonopus compressus</i>), Centipede Grass, Lippia, Dwarf Elephant Grass.</p>
+
+  <h3>7.7 Indoor Ornamental Plants</h3>
+  <p>Suited for growing inside homes, offices, and enclosed spaces. Require indirect sunlight; improve air quality.</p>
+  <p><b>Examples:</b> Peace Lily (<i>Spathiphyllum spp.</i>), Snake Plant (<i>Sansevieria spp.</i>), Spider Plant (<i>Chlorophytum comosum</i>), ZZ Plant (<i>Zamioculcas zamiifolia</i>), Philodendron.</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>List and explain five types of ornamental plants with one example for each.</li>
+        <li>Differentiate between flowering plants and foliage plants, giving two examples of each.</li>
+        <li>Discuss the importance of climbers and ground covers in landscape design.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw and label five types of ornamental plants.</li>
+        <li>Write a 250-word essay on "The Role of Ornamental Plants in Urban Beautification."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — SETTINGS AND LOCATIONS FOR PLANTING ORNAMENTAL PLANTS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Settings and Locations for Planting Ornamental Plants</h2>
+  <p class="meta"><b>Content:</b> Suitable settings and locations for each type of ornamental plant.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Identify suitable settings for planting different types of ornamental plants.</li>
+      <li>Explain why each location is appropriate for each plant type.</li>
+      <li>Give examples of plants suitable for each setting.</li>
+    </ol>
+  </div>
+
+  <h3>8.1 Flowering Plants – Suitable Settings</h3>
+  <p>Flourish where they receive adequate sunlight, air circulation, and space for blooming.</p>
+  <ul class="tight">
+    <li><b>Front yards and flower beds:</b> Colourful welcome around homes.</li>
+    <li><b>Borderlines and walkways:</b> Edging gardens and paths with vibrant colour.</li>
+    <li><b>Around patios and porches:</b> Aesthetic value and natural fragrance.</li>
+    <li><b>Public parks and roundabouts:</b> Mass planting for dramatic displays.</li>
+  </ul>
+  <p><b>Examples:</b> Roses in front gardens; Bougainvillea along fences; Hibiscus in hedges.</p>
+
+  <h3>8.2 Foliage Plants – Suitable Settings</h3>
+  <p>Ideal for creating a soothing green backdrop or adding texture. Tolerate shade or low light.</p>
+  <ul class="tight">
+    <li><b>Indoor spaces:</b> Living rooms, hallways, offices; act as air purifiers.</li>
+    <li><b>Shaded parts of the garden:</b> Under trees or along shaded walls.</li>
+    <li><b>Verandas and balconies:</b> Potted foliage plants with indirect sunlight.</li>
+    <li><b>Background of flower beds:</b> Enhance contrast and complement flowering plants.</li>
+  </ul>
+  <p><b>Examples:</b> Caladiums along shaded paths; Dracaena and Croton in pots; Aglaonema and Dieffenbachia indoors.</p>
+
+  <h3>8.3 Shrubs – Suitable Settings</h3>
+  <p>Versatile; used for decorative or functional purposes (privacy, fencing, partitioning).</p>
+  <ul class="tight">
+    <li><b>Perimeter of residential compounds:</b> Ornamental hedges or natural fences.</li>
+    <li><b>Garden partitions:</b> Separate different garden zones.</li>
+    <li><b>Under windows and near walls:</b> Height won't obstruct views.</li>
+    <li><b>Road medians and institutional landscapes:</b> Low-maintenance landscaping.</li>
+  </ul>
+  <p><b>Examples:</b> Hibiscus for hedging; Duranta along pathways; Golden Bells in home gardens.</p>
+
+  <h3>8.4 Trees – Suitable Settings</h3>
+  <p>Require ample space due to height and canopy spread. Planted for beauty, shade, structure, and environmental benefits.</p>
+  <ul class="tight">
+    <li><b>Avenues and streets:</b> Shade and decorative alignment.</li>
+    <li><b>Parks and public gardens:</b> Centrepieces or shade providers.</li>
+    <li><b>School compounds and playgrounds:</b> Shade and recreation.</li>
+    <li><b>Lawn centres or open fields:</b> Focal points in the landscape.</li>
+  </ul>
+  <p><b>Examples:</b> Flamboyant Tree along roadsides; Royal Palm in resort entrances; Jacaranda in civic parks.</p>
+
+  <h3>8.5 Climbers and Creepers – Suitable Settings</h3>
+  <p>Need physical support or ground space to spread. Add vertical interest; cover walls or fences.</p>
+  <ul class="tight">
+    <li><b>Garden fences and gates:</b> Soft green edge.</li>
+    <li><b>Walls and pergolas:</b> Natural wall covering or shading.</li>
+    <li><b>Gazebos and arches:</b> Romantic or cool shaded spaces.</li>
+    <li><b>Ground level (for creepers):</b> Cover bare soil or decorate rock gardens.</li>
+  </ul>
+  <p><b>Examples:</b> Bougainvillea on trellises; Allamanda on fences; Ivy on brick walls; Morning Glory at arch entrances.</p>
+
+  <h3>8.6 Ground Covers and Grasses – Suitable Settings</h3>
+  <p>Protect and beautify ground surface. Control erosion, suppress weeds, provide uniform green coverage.</p>
+  <ul class="tight">
+    <li><b>Lawns and playgrounds:</b> Soft, even surface.</li>
+    <li><b>Sloping lands and embankments:</b> Prevent soil erosion.</li>
+    <li><b>Around large trees:</b> Where sunlight is limited, grass can thrive.</li>
+    <li><b>In between paving stones:</b> Soften hard surfaces.</li>
+  </ul>
+  <p><b>Examples:</b> Carpet Grass for sports fields; Lippia for sloping ground; Centipede Grass in shaded and sunlit areas.</p>
+
+  <h3>8.7 Indoor Ornamental Plants – Suitable Settings</h3>
+  <p>Selected for ability to survive in low-light and confined environments. Decorative; purify air.</p>
+  <ul class="tight">
+    <li><b>Living rooms and bedrooms:</b> Relaxation and freshness.</li>
+    <li><b>Office desks and corridors:</b> Reduce stress, improve aesthetics.</li>
+    <li><b>Reception areas in hotels or institutions:</b> Welcome guests with greenery.</li>
+    <li><b>Indoor corners and staircases:</b> Fill empty spaces with life.</li>
+  </ul>
+  <p><b>Examples:</b> Peace Lily in low-light indoor spaces; Snake Plant in bedrooms; Spider Plant hanging near windows; Philodendron on shelves.</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain the suitable location for planting: (a) Hibiscus, (b) Bougainvillea, and (c) Carpet Grass.</li>
+        <li>Discuss four ideal settings for planting ornamental trees and state one example for each setting.</li>
+        <li>Differentiate between the suitable planting locations for indoor plants and climbers.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a landscape plan for a school compound showing where you would plant trees, shrubs, flowering plants, and ground covers.</li>
+        <li>Write a 250-word essay on "The Importance of Proper Placement of Ornamental Plants in Landscape Design."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — METHODS OF CULTIVATING ORNAMENTAL PLANTS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Methods of Cultivating Ornamental Plants</h2>
+  <p class="meta"><b>Content:</b> Seven methods of propagating and cultivating ornamental plants.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Describe seven methods of cultivating ornamental plants.</li>
+      <li>Give examples of plants suitable for each method.</li>
+      <li>State one advantage of each method.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">METHODS OF CULTIVATING ORNAMENTAL PLANTS</text>
+      <!-- Seven boxes -->
+      <rect x="20" y="50" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="120" y="70" text-anchor="middle" font-size="10" font-weight="900" fill="#333">1. Direct Seeding</text>
+      <text x="120" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Zinnias, Sunflowers, Marigolds</text>
+
+      <rect x="240" y="50" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="70" text-anchor="middle" font-size="10" font-weight="900" fill="#333">2. Transplanting</text>
+      <text x="340" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Petunias, Impatiens, Begonias</text>
+
+      <rect x="460" y="50" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="560" y="70" text-anchor="middle" font-size="10" font-weight="900" fill="#333">3. Cuttings</text>
+      <text x="560" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Hibiscus, Croton, Bougainvillea</text>
+
+      <rect x="20" y="110" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="120" y="130" text-anchor="middle" font-size="10" font-weight="900" fill="#333">4. Grafting & Budding</text>
+      <text x="120" y="145" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Roses, Flamboyant Trees</text>
+
+      <rect x="240" y="110" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="130" text-anchor="middle" font-size="10" font-weight="900" fill="#333">5. Layering</text>
+      <text x="340" y="145" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Bougainvillea, Hibiscus, Allamanda</text>
+
+      <rect x="460" y="110" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="560" y="130" text-anchor="middle" font-size="10" font-weight="900" fill="#333">6. Division</text>
+      <text x="560" y="145" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Lily, Chrysanthemum, Daylilies</text>
+
+      <rect x="240" y="170" width="200" height="45" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="190" text-anchor="middle" font-size="10" font-weight="900" fill="#333">7. Bulbs, Corms & Tubers</text>
+      <text x="340" y="205" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Tulips, Lilies, Gladiolus, Dahlia</text>
+    </svg>
+    <figcaption>Fig. 9.1 — Seven methods of cultivating ornamental plants.</figcaption>
+  </figure>
+
+  <h3>9.1 Direct Seeding (Sowing)</h3>
+  <p>Planting seeds directly into the soil or container where the plant will grow permanently. Soil must be rich, loose, and well-drained. Seeds sown at appropriate depths and spacing.</p>
+  <p><b>Examples:</b> Zinnias, Sunflowers, Cosmos, Marigolds.</p>
+  <p><b>Advantage:</b> Cost-effective; ideal for fast-growing annuals that do not tolerate transplanting.</p>
+
+  <h3>9.2 Transplanting</h3>
+  <p>Raising seedlings in a nursery or container, then transferring them to their permanent location once strong enough.</p>
+  <p><b>Examples:</b> Petunias, Impatiens, Begonias.</p>
+  <p><b>Advantages:</b> Allows close monitoring of early growth; reduces competition; ensures even spacing.</p>
+
+  <h3>9.3 Use of Cuttings</h3>
+  <p>Vegetative method where a portion of a plant (stem, leaf, or root) is cut and planted to grow into a new plant. Common type is stem cutting.</p>
+  <p><b>Types:</b> Stem cuttings (Hibiscus, Croton, Bougainvillea); Leaf cuttings (Sansevieria); Root cuttings (some perennials).</p>
+  <p><b>Advantage:</b> Economical; new plant retains traits of parent plant.</p>
+
+  <h3>9.4 Grafting and Budding</h3>
+  <p>Advanced vegetative propagation combining desirable qualities from two plants. In grafting, a scion is joined to a rootstock. In budding, a single bud is inserted under the bark of the rootstock.</p>
+  <p><b>Examples:</b> Roses, Flamboyant Trees.</p>
+  <p><b>Uses:</b> Improving flower colour and size; increasing disease resistance; enhancing growth vigour.</p>
+
+  <h3>9.5 Layering</h3>
+  <p>A branch or stem of a parent plant is bent down to touch the soil, and roots develop while still attached to the parent. Once roots form, the new plant is cut off and transplanted.</p>
+  <p><b>Types:</b> Simple layering, Mound layering, Air layering.</p>
+  <p><b>Examples:</b> Bougainvillea, Hibiscus, Allamanda.</p>
+  <p><b>Advantage:</b> Produces stronger plants; avoids transplant shock.</p>
+
+  <h3>9.6 Division</h3>
+  <p>Separating a mature plant into several parts, each with roots and shoots, which are then replanted to grow independently. Used for plants that grow in clumps or have rhizomes, bulbs, or tubers.</p>
+  <p><b>Examples:</b> Lily, Chrysanthemum, Daylilies, Agapanthus.</p>
+  <p><b>Advantage:</b> Rejuvenates old plants; helps control overcrowding.</p>
+
+  <h3>9.7 Use of Bulbs, Corms, and Tubers</h3>
+  <p>Many ornamental plants grow from underground storage organs. Bulbs, corms, and tubers are planted directly into the soil, where they sprout into new plants during their growing season.</p>
+  <p><b>Examples:</b> Tulips and Lilies (from bulbs); Gladiolus (from corms); Dahlia and Begonia (from tubers).</p>
+  <p><b>Advantage:</b> Store food; survive dormancy; ideal for seasonal planting.</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Describe three methods of propagating ornamental plants and give two examples of plants suitable for each.</li>
+        <li>Explain the difference between transplanting and layering as methods of cultivating ornamental plants.</li>
+        <li>Outline five methods of cultivating ornamental plants and state one advantage of each.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw and label the steps involved in stem cutting propagation.</li>
+        <li>Write a 250-word essay on "The Advantages and Disadvantages of Sexual vs. Asexual Propagation of Ornamental Plants."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — MAINTENANCE OF ORNAMENTAL PLANTS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Maintenance of Ornamental Plants</h2>
+  <p class="meta"><b>Content:</b> Ten maintenance practices for ornamental plants.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain ten maintenance practices for ornamental plants.</li>
+      <li>State the importance of each practice.</li>
+      <li>Apply these practices to specific ornamental plants.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#6e1a1a">MAINTENANCE PRACTICES FOR ORNAMENTAL PLANTS</text>
+      <!-- Ten boxes -->
+      <rect x="20" y="50" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="120" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">1. Watering</text>
+      <text x="120" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Regular, avoid overwatering</text>
+
+      <rect x="240" y="50" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">2. Weeding</text>
+      <text x="340" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Remove unwanted plants</text>
+
+      <rect x="460" y="50" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="560" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">3. Pruning & Trimming</text>
+      <text x="560" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Remove dead/diseased parts</text>
+
+      <rect x="20" y="100" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="120" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">4. Fertiliser Application</text>
+      <text x="120" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Organic/inorganic nutrients</text>
+
+      <rect x="240" y="100" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">5. Pest & Disease Control</text>
+      <text x="340" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Cultural, chemical, biological</text>
+
+      <rect x="460" y="100" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="560" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">6. Mulching</text>
+      <text x="560" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Conserves moisture, suppresses weeds</text>
+
+      <rect x="20" y="150" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="120" y="168" text-anchor="middle" font-size="9" font-weight="900" fill="#333">7. Staking & Supporting</text>
+      <text x="120" y="182" text-anchor="middle" font-size="7" font-weight="700" fill="#555">For weak-stemmed plants</text>
+
+      <rect x="240" y="150" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="168" text-anchor="middle" font-size="9" font-weight="900" fill="#333">8. Deadheading</text>
+      <text x="340" y="182" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Remove faded flowers</text>
+
+      <rect x="460" y="150" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="560" y="168" text-anchor="middle" font-size="9" font-weight="900" fill="#333">9. Re-potting</text>
+      <text x="560" y="182" text-anchor="middle" font-size="7" font-weight="700" fill="#555">For potted ornamentals</text>
+
+      <rect x="240" y="200" width="200" height="40" rx="4" fill="#f0e8e8" stroke="#6e1a1a" stroke-width="1"/>
+      <text x="340" y="218" text-anchor="middle" font-size="9" font-weight="900" fill="#333">10. Lawn Care</text>
+      <text x="340" y="232" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Mowing, irrigation, aeration</text>
+    </svg>
+    <figcaption>Fig. 10.1 — Ten maintenance practices for ornamental plants.</figcaption>
+  </figure>
+
+  <h3>10.1 Maintenance Practices</h3>
+  <table>
+    <tr><th style="width:26%">Practice</th><th>Importance/Description</th></tr>
+    <tr><td class="k">1. Watering</td><td>Maintains turgidity and freshness; supports flowering. Must be regular, especially in dry seasons. Avoid overwatering to prevent root rot.</td></tr>
+    <tr><td class="k">2. Weeding</td><td>Reduces competition for nutrients, water, and space; reduces pests and diseases; enhances aesthetic appeal.</td></tr>
+    <tr><td class="k">3. Pruning and Trimming</td><td>Improves air circulation; reduces disease infestation; encourages bushier growth; maintains desired shape (hedges, topiary).</td></tr>
+    <tr><td class="k">4. Fertiliser Application</td><td>Supplements soil nutrients. Organic (compost, manure) and inorganic (NPK 15:15:15). Nitrogen for leafy growth; phosphorus for blooming; potassium for stems/roots.</td></tr>
+    <tr><td class="k">5. Pest and Disease Control</td><td>Ensures plant remains healthy and attractive. Cultural practices (spacing, sanitation); chemical (insecticides, fungicides); biological (beneficial insects).</td></tr>
+    <tr><td class="k">6. Mulching</td><td>Conserves soil moisture; suppresses weed growth; regulates soil temperature. Organic mulches (sawdust, grass clippings) decompose and improve soil.</td></tr>
+    <tr><td class="k">7. Staking and Supporting</td><td>Provides physical support for climbers and weak-stemmed plants. Prevents lodging; improves plant health and display aesthetics.</td></tr>
+    <tr><td class="k">8. Deadheading and Flower Removal</td><td>Encourages more flowers rather than seed formation. Improves visual appearance; prevents fungal growth on decaying flowers.</td></tr>
+    <tr><td class="k">9. Re-potting (For Potted Ornamentals)</td><td>Provides more room for root growth; prevents root binding; rejuvenates the plant. Done during the plant's dormant period.</td></tr>
+    <tr><td class="k">10. Lawn Care (For Ornamental Grass)</td><td>Regular mowing, irrigation, fertilisation, and aeration. Keeps lawns healthy and enhances overall landscape beauty.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain five practices necessary for the maintenance of ornamental plants and state one reason each is important.</li>
+        <li>Discuss the role of pruning and fertiliser application in the upkeep of ornamental plants.</li>
+        <li>Describe how mulching and staking help in maintaining ornamental plants.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a maintenance schedule for a garden containing roses, hibiscus, and carpet grass.</li>
+        <li>Visit a local garden and observe three maintenance practices being carried out. Write a report.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — REVISION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>Revision — First Term</h2>
+  <p class="meta"><b>Content:</b> Comprehensive review of Weeks 1–10.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Review all topics covered this term.</li>
+      <li>Identify areas of strength and weakness.</li>
+      <li>Prepare effectively for the end-of-term examination.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for revision week. This page is a checklist and study guide.</p>
+
+  <h3>11.1 Key Topics Checklist</h3>
+  <table>
+    <tr><th style="width:24%">Topic</th><th>Key Concepts to Remember</th></tr>
+    <tr>
+      <td class="k">Farm Surveying and Planning</td>
+      <td>Definition of farm surveying and farm planning. Importance of surveying (boundary, layout, soil conservation, water management, infrastructure, resource allocation). Types of surveying (Chain, Compass, Plane Table, Theodolite, Aerial). Equipment (chain, compass, ranging poles, theodolite, dumpy level, pegs). Procedures (reconnaissance, control points, measurement, angles/bearings, levelling, recording, survey plan). Farm planning factors and components.</td>
+    </tr>
+    <tr>
+      <td class="k">Farm Planning (Detailed)</td>
+      <td>Meaning, objectives, importance. Factors (soil, topography, climate, capital, accessibility, water, land tenure, labour, market). Components of a farm plan (residential, cropland, pasture, pens, storage, irrigation, roads, processing, fencing). Types of farm plans (operational, strategic, budget, enterprise). Farm layout vs. farm planning. Steps in farm planning. Problems and remedies.</td>
+    </tr>
+    <tr>
+      <td class="k">Farmstead Planning</td>
+      <td>Meaning of farmstead. Importance. Principles (accessibility, centralisation, proximity to water, security, drainage, future expansion, separation of noisy/smelly units, grouping of similar activities, orientation to sun/wind). Location of buildings (farmhouse, livestock pens, machinery shed, processing/storage, drainage, roads, fencing).</td>
+    </tr>
+    <tr>
+      <td class="k">Forest Management</td>
+      <td>Meaning of forest and forest management. Importance (conservation, sustainable production, climate control, flood prevention, employment, tourism). Methods (selective exploitation, afforestation, reforestation, taungya, forest reservation, controlled grazing, regulated felling). Government roles (legislation, reserves, awareness, research, incentives).</td>
+    </tr>
+    <tr>
+      <td class="k">Agro-Forestry</td>
+      <td>Meaning of agro-forestry. Types (agrisilvicultural, silvopastoral, agrosilvopastoral, alley cropping, taungya). Importance (soil fertility, erosion control, biodiversity, climate mitigation, economic diversification, employment, sustainable land use). Challenges (awareness, land tenure, government support, competition, bush burning). Solutions.</td>
+    </tr>
+    <tr>
+      <td class="k">Ornamental Plants</td>
+      <td>Meaning and importance (aesthetic, environmental, psychological, economic, cultural, habitat, education). Classification (flowering, foliage, shrubs, climbers, trees, grasses, indoor). Examples of each. Types and examples.</td>
+    </tr>
+    <tr>
+      <td class="k">Settings for Ornamental Plants</td>
+      <td>Suitable locations for flowering plants (front yards, borders, patios, parks). Foliage plants (indoors, shaded gardens, verandas). Shrubs (perimeter, partitions, under windows). Trees (avenues, parks, school compounds). Climbers (fences, walls, pergolas). Ground covers (lawns, slopes). Indoor plants (living rooms, offices).</td>
+    </tr>
+    <tr>
+      <td class="k">Cultivation Methods</td>
+      <td>Direct seeding, transplanting, cuttings, grafting/budding, layering, division, bulbs/corms/tubers. Examples for each. Advantages of each method.</td>
+    </tr>
+    <tr>
+      <td class="k">Maintenance of Ornamental Plants</td>
+      <td>Watering, weeding, pruning, fertiliser application, pest/disease control, mulching, staking, deadheading, re-potting, lawn care. Importance of each.</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    <h4>Exam Strategy</h4>
+    <ul class="tight">
+      <li><b>Read the question carefully:</b> Identify the key verb — "Define," "Explain," "Discuss," "Compare," "List."</li>
+      <li><b>Plan your answer:</b> Jot down main points before writing.</li>
+      <li><b>Use the "Define, Explain, Example" method.</b></li>
+      <li><b>Be specific:</b> Use names, dates, and specific examples.</li>
+      <li><b>Structure your essay:</b> Introduction, body with numbered points, conclusion.</li>
+    </ul>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <h4>Practice Essay Questions</h4>
+      <ol class="tight">
+        <li>Define farm surveying and explain five of its importance.</li>
+        <li>Describe three types of farm surveying.</li>
+        <li>List and explain five factors to consider in farm planning.</li>
+        <li>Explain five principles of farmstead planning.</li>
+        <li>Describe five methods of forest management.</li>
+        <li>Explain five types of agro-forestry systems.</li>
+        <li>Discuss five importance of ornamental plants.</li>
+        <li>Describe three methods of cultivating ornamental plants.</li>
+        <li>Explain five maintenance practices for ornamental plants.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Select one past WAEC/NECO essay question from any of the weeks in this term and write a full, detailed answer under timed conditions (45 minutes).</li>
+        <li>Create a set of 10 flashcards for the key terms covered this term.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>
