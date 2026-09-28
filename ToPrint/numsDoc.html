@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Number Systems — Lesson, Properties & Worked Solutions</title>
+<style>
+  @page {
+    size: A4;
+    margin: 17mm 15mm 17mm 15mm;
+  }
+
+  :root {
+    --ink:        #12181f;
+    --body:       #2a333d;
+    --muted:      #5c6874;
+    --accent:     #17233F;   /* brand navy */
+    --accent-dk:  #0E1729;
+    --accent-lt:  #e8ecf4;
+    --warm:       #C95545;   /* brand coral */
+    --warm-lt:    #faf1ef;
+    --rule:       #d3dbe3;
+    --rule-soft:  #e8edf2;
+    --paper:      #ffffff;
+    --tint:       #f7fafc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--body);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.58;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 34px 16px 70px;
+  }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 840px;
+    padding: 46px 52px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+    position: relative;
+  }
+
+  /* ============ BRAND MARK ============ */
+  .brand {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    width: 54px;
+    height: 54px;
+    opacity: 0.92;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+
+  /* ============ HEADER ============ */
+  .head {
+    text-align: center;
+    padding-bottom: 22px;
+    margin-bottom: 32px;
+    border-bottom: 2.5px solid var(--accent);
+    padding-right: 70px;   /* clear the brand mark */
+  }
+  .head .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 10px;
+  }
+  .head h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.4px;
+    margin-bottom: 6px;
+  }
+  .head .sub {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ============ INTRO ============ */
+  .intro {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 15px 20px;
+    margin-bottom: 34px;
+    font-size: 10.5px;
+    color: #23303c;
+    line-height: 1.62;
+  }
+  .intro strong { color: var(--accent-dk); }
+
+  /* ============ SECTIONS ============ */
+  .sec { margin-bottom: 34px; }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 7px;
+    border-bottom: 1.7px solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .sec-head .tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 3px 11px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .sec-head h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.2px;
+  }
+
+  /* ============ PROPERTY CARDS ============ */
+  .prop {
+    background: var(--tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 5px 5px 0;
+    padding: 16px 22px 17px;
+    margin-bottom: 14px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .prop h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--warm);
+    margin-bottom: 7px;
+    letter-spacing: -0.1px;
+  }
+  .prop p {
+    font-size: 10.7px;
+    line-height: 1.62;
+    margin-bottom: 8px;
+    text-align: justify;
+  }
+  .prop p:last-child { margin-bottom: 0; }
+  .prop .formal {
+    display: block;
+    background: #fff;
+    border: 1px dashed #d9b8b0;
+    border-radius: 4px;
+    padding: 7px 12px;
+    margin: 8px 0;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 11pt;
+    color: var(--accent-dk);
+    text-align: center;
+  }
+  .prop .eg {
+    display: block;
+    font-size: 10.3px;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-left: 12px;
+    border-left: 2px solid var(--rule);
+  }
+
+  /* ============ QUESTION LIST ============ */
+  ol.q {
+    list-style: none;
+    counter-reset: qq;
+    padding: 0;
+    margin: 0;
+  }
+  ol.q > li {
+    counter-increment: qq;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 12px 8px 14px;
+    margin-bottom: 5px;
+    border-left: 3px solid var(--accent-lt);
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.q > li:nth-child(odd) { background: #fafcfd; }
+  ol.q > li::before {
+    content: counter(qq) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  ol.q > li .body {
+    flex: 1;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  /* ============ SOLUTIONS ============ */
+  ol.sol {
+    list-style: none;
+    counter-reset: ss;
+    padding: 0;
+    margin: 0;
+  }
+  ol.sol > li {
+    counter-increment: ss;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #f6fafb;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 11px 16px 11px 14px;
+    margin-bottom: 7px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.sol > li::before {
+    content: counter(ss) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  ol.sol > li .sol-body {
+    flex: 1;
+    font-size: 10.7pt;
+    line-height: 1.66;
+  }
+  ol.sol > li .sol-body .step { display: block; }
+  ol.sol > li .sol-body .step + .step { margin-top: 2px; }
+  ol.sol > li .sol-body .ans {
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    background: #e2edf5;
+    padding: 1px 8px;
+    border-radius: 3px;
+  }
+
+  /* ============ MATH ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+  sup {
+    font-size: 0.68em;
+    vertical-align: 0.44em;
+    line-height: 0;
+  }
+  sub {
+    font-size: 0.68em;
+    vertical-align: -0.2em;
+    line-height: 0;
+  }
+  .base {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--accent-dk);
+  }
+  .bin {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    letter-spacing: 1px;
+    color: var(--warm);
+    font-weight: 600;
+  }
+
+  /* ============ WORKED TABLE ============ */
+  table.wk {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px;
+    font-size: 10.4px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  table.wk th, table.wk td {
+    border: 1px solid var(--rule);
+    padding: 6px 9px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.wk th {
+    background: var(--accent-lt);
+    color: var(--accent-dk);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+  }
+  table.wk td.mono {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    margin-top: 38px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { background: #fff; padding: 0; font-size: 10.3pt; }
+    .sheet {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+    .sec-head, .prop, .intro, table.wk {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    ol.q > li:nth-child(odd) { background: #fbfdfe; }
+    .sec + .sec { break-before: auto; }
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .brand { width: 42px; height: 42px; top: 18px; right: 18px; }
+    .head h1 { font-size: 19px; }
+    .head { padding-right: 54px; }
+    .sec-head { flex-wrap: wrap; }
+    .prop p, .intro { text-align: left; }
+    ol.q > li .body { font-size: 10.5pt; }
+    ol.sol > li .sol-body { font-size: 10.2pt; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ===== BRAND DETAIL (top-right of every page) ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="head">
+    <div class="kicker">Digital Technologies • Data Representation</div>
+    <h1>Number Systems</h1>
+    <div class="sub">Binary • Octal • Decimal • Hexadecimal — Conversions, Arithmetic &amp; Properties</div>
+  </header>
+
+  <!-- ===== INTRO ===== -->
+  <div class="intro">
+    <strong>What is a number system?</strong> A number system is a consistent way of
+    writing quantities using a fixed set of digits and a <em>base</em> (radix). The base
+    tells you how many distinct digit symbols exist and how much each position is worth.
+    Digital systems use <span class="m">base 2</span> (binary) because circuits have two
+    reliable states — <em>on</em> and <em>off</em>. Humans prefer
+    <span class="m">base 10</span>. Programmers use <span class="m">base 8</span> and
+    <span class="m">base 16</span> as compact shorthands for binary. Every system works on
+    the same principle: <strong>each position is worth the base raised to a power</strong>.
+  </div>
+
+  <!-- ===== SECTION A ===== -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>The Four Systems, Explained</h2>
+    </div>
+
+    <div class="prop">
+      <h3>1. Decimal (Base 10)</h3>
+      <p>
+        The everyday system. Ten digit symbols — <span class="m">0–9</span> — and each
+        position is worth ten times the one to its right. It is a <em>positional</em>
+        system: the value of a digit depends on where it sits.
+      </p>
+      <span class="formal">
+        <span class="m">N = d<sub>n</sub>…d<sub>1</sub>d<sub>0</sub> = Σ d<sub>i</sub> × 10<sup>i</sup></span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong>
+        <span class="m">4 7 2 = 4×10<sup>2</sup> + 7×10<sup>1</sup> + 2×10<sup>0</sup> = 400 + 70 + 2</span>.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>2. Binary (Base 2)</h3>
+      <p>
+        Only two digit symbols — <span class="m">0</span> and <span class="m">1</span> —
+        which map directly onto a circuit being <em>off</em> or <em>on</em>. Every position
+        doubles in value from right to left: <span class="m">1, 2, 4, 8, 16, 32…</span>
+        This is the native language of all digital hardware.
+      </p>
+      <span class="formal">
+        <span class="m">N<sub>2</sub> = Σ b<sub>i</sub> × 2<sup>i</sup>  where b<sub>i</sub> ∈ {0, 1}</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong>
+        <span class="m">1 0 1 1<sub>2</sub> = 8 + 0 + 2 + 1 = 11<sub>10</sub></span>.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>3. Octal (Base 8)</h3>
+      <p>
+        Eight digit symbols — <span class="m">0–7</span>. Its great convenience is that
+        <em>one octal digit maps to exactly three binary digits</em>
+        (<span class="m">2<sup>3</sup> = 8</span>), so octal is a compact shorthand for
+        binary. Used historically in early computing and in Unix file permissions.
+      </p>
+      <span class="formal">
+        <span class="m">N<sub>8</sub> = Σ o<sub>i</sub> × 8<sup>i</sup>  where o<sub>i</sub> ∈ {0…7}</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong>
+        <span class="m">7 5 3<sub>8</sub> = 7×64 + 5×8 + 3 = 448 + 40 + 3 = 491<sub>10</sub></span>.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>4. Hexadecimal (Base 16)</h3>
+      <p>
+        Sixteen digit symbols. Because we only have ten numeral glyphs, hex borrows letters:
+        <span class="m">A=10, B=11, C=12, D=13, E=14, F=15</span>. Its key convenience is
+        that <em>one hex digit maps to exactly four binary digits</em>
+        (<span class="m">2<sup>4</sup> = 16</span>), making it the standard compact notation
+        for memory addresses, colour codes, and machine code.
+      </p>
+      <span class="formal">
+        <span class="m">N<sub>16</sub> = Σ h<sub>i</sub> × 16<sup>i</sup>  where h<sub>i</sub> ∈ {0…9, A…F}</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong>
+        <span class="m">2 A F<sub>16</sub> = 2×256 + 10×16 + 15 = 512 + 160 + 15 = 687<sub>10</sub></span>.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>5. Why Bases Are Grouped: 2 / 8 / 16</h3>
+      <p>
+        Octal and hexadecimal are not arbitrary — they are powers of two. Three binary bits
+        group perfectly into one octal digit; four binary bits group perfectly into one hex
+        digit. This means converting between binary and octal/hex is pure <em>regrouping</em>,
+        never arithmetic.
+      </p>
+      <span class="formal">
+        <span class="m">2<sup>3</sup> = 8   •   2<sup>4</sup> = 16</span>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong>
+        <span class="m">1101 0110<sub>2</sub> → 1101|0110 → D6<sub>16</sub></span>
+        (one hex digit per 4-bit group).
+      </span>
+    </div>
+  </section>
+
+  <!-- ===== SECTION B ===== -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Place-Value Reference Table</h2>
+    </div>
+
+    <table class="wk">
+      <thead>
+        <tr>
+          <th>Decimal</th>
+          <th>Binary (2)</th>
+          <th>Octal (8)</th>
+          <th>Hex (16)</th>
+          <th>Place value check</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">0</td><td class="mono">0000</td><td class="mono">0</td><td class="mono">0</td><td>all systems start at zero</td></tr>
+        <tr><td class="mono">5</td><td class="mono">0101</td><td class="mono">5</td><td class="mono">5</td><td>4 + 1</td></tr>
+        <tr><td class="mono">8</td><td class="mono">1000</td><td class="mono">10</td><td class="mono">8</td><td>2³ = 8</td></tr>
+        <tr><td class="mono">10</td><td class="mono">1010</td><td class="mono">12</td><td class="mono">A</td><td>8 + 2</td></tr>
+        <tr><td class="mono">15</td><td class="mono">1111</td><td class="mono">17</td><td class="mono">F</td><td>max single hex digit</td></tr>
+        <tr><td class="mono">16</td><td class="mono">10000</td><td class="mono">20</td><td class="mono">10</td><td>16¹, first carry</td></tr>
+        <tr><td class="mono">255</td><td class="mono">11111111</td><td class="mono">377</td><td class="mono">FF</td><td>max 8-bit value</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== SECTION C ===== -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section C</span>
+      <h2>Practice Questions</h2>
+      <span class="range">Questions 1–20</span>
+    </div>
+
+    <ol class="q">
+      <li><div class="body">
+        Convert <span class="m">1101<sub>2</sub></span> to decimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">10110<sub>2</sub></span> to decimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">45<sub>10</sub></span> to binary.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">77<sub>10</sub></span> to binary.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">753<sub>8</sub></span> to decimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">2AF<sub>16</sub></span> to decimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">200<sub>10</sub></span> to octal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">255<sub>10</sub></span> to hexadecimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">11010110<sub>2</sub></span> to hexadecimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">B7<sub>16</sub></span> to binary.
+      </div></li>
+      <li><div class="body">
+        Add in binary: <span class="m">1011<sub>2</sub> + 1101<sub>2</sub></span>.
+      </div></li>
+      <li><div class="body">
+        Add in binary: <span class="m">1111<sub>2</sub> + 0001<sub>2</sub></span>.
+      </div></li>
+      <li><div class="body">
+        Subtract in binary: <span class="m">1101<sub>2</sub> − 0110<sub>2</sub></span>.
+      </div></li>
+      <li><div class="body">
+        State the base of the system that uses digits
+        <span class="m">0–7</span> only, and explain how many binary bits one of its
+        digits represents.
+      </div></li>
+      <li><div class="body">
+        Why is hexadecimal preferred over binary when displaying memory addresses?
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">3E8<sub>16</sub></span> to decimal.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">1000<sub>10</sub></span> to hexadecimal.
+      </div></li>
+      <li><div class="body">
+        A colour is stored as <span class="m">#FF8000</span>. Split it into its three
+        hexadecimal byte values and state the decimal value of the green channel.
+      </div></li>
+      <li><div class="body">
+        Convert <span class="m">101101<sub>2</sub></span> to octal (group the bits in
+        threes from the right).
+      </div></li>
+      <li><div class="body">
+        An 8-bit register holds <span class="m">11111111<sub>2</sub></span>. State its
+        decimal value, and explain what happens if you add
+        <span class="m">1<sub>2</sub></span> to it in an 8-bit system.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ===== SECTION D ===== -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section D</span>
+      <h2>Full Worked Solutions</h2>
+      <span class="range">Questions 1–20</span>
+    </div>
+
+    <ol class="sol">
+      <li><div class="sol-body">
+        <span class="step"><span class="m">1 1 0 1<sub>2</sub></span> → positions 3,2,1,0</span>
+        <span class="step"><span class="m">= 1×8 + 1×4 + 0×2 + 1×1</span></span>
+        <span class="step"><span class="m">= 8 + 4 + 0 + 1 = 13</span></span>
+        <span class="ans">1101₂ = 13₁₀</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">1 0 1 1 0<sub>2</sub></span></span>
+        <span class="step"><span class="m">= 16 + 0 + 4 + 2 + 0</span></span>
+        <span class="ans">10110₂ = 22₁₀</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Divide by 2 repeatedly, collect remainders bottom-up:</span>
+        <span class="step"><span class="m">45 ÷ 2 = 22 r 1</span>; <span class="m">22 ÷ 2 = 11 r 0</span>; <span class="m">11 ÷ 2 = 5 r 1</span>; <span class="m">5 ÷ 2 = 2 r 1</span>; <span class="m">2 ÷ 2 = 1 r 0</span>; <span class="m">1 ÷ 2 = 0 r 1</span></span>
+        <span class="step">Read upward: <span class="m">101101</span></span>
+        <span class="ans">45₁₀ = 101101₂</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">77 ÷ 2 = 38 r 1</span>; <span class="m">38 ÷ 2 = 19 r 0</span>; <span class="m">19 ÷ 2 = 9 r 1</span>; <span class="m">9 ÷ 2 = 4 r 1</span>; <span class="m">4 ÷ 2 = 2 r 0</span>; <span class="m">2 ÷ 2 = 1 r 0</span>; <span class="m">1 ÷ 2 = 0 r 1</span></span>
+        <span class="step">Read upward: <span class="m">1001101</span></span>
+        <span class="ans">77₁₀ = 1001101₂</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">7 5 3<sub>8</sub> = 7×8<sup>2</sup> + 5×8<sup>1</sup> + 3×8<sup>0</sup></span></span>
+        <span class="step"><span class="m">= 7×64 + 5×8 + 3×1</span></span>
+        <span class="step"><span class="m">= 448 + 40 + 3 = 491</span></span>
+        <span class="ans">753₈ = 491₁₀</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">2 A F<sub>16</sub> = 2×16<sup>2</sup> + 10×16<sup>1</sup> + 15×16<sup>0</sup></span></span>
+        <span class="step"><span class="m">= 2×256 + 160 + 15</span></span>
+        <span class="step"><span class="m">= 512 + 160 + 15 = 687</span></span>
+        <span class="ans">2AF₁₆ = 687₁₀</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">200 ÷ 8 = 25 r 0</span>; <span class="m">25 ÷ 8 = 3 r 1</span>; <span class="m">3 ÷ 8 = 0 r 3</span></span>
+        <span class="step">Read upward: <span class="m">310</span></span>
+        <span class="ans">200₁₀ = 310₈</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">255 ÷ 16 = 15 r 15</span>; <span class="m">15 ÷ 16 = 0 r 15</span></span>
+        <span class="step">Remainders <span class="m">15, 15</span> → <span class="m">F, F</span></span>
+        <span class="ans">255₁₀ = FF₁₆</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Group bits in fours from the right:</span>
+        <span class="step"><span class="m">1101 | 0110</span></span>
+        <span class="step"><span class="m">1101 = D</span>, <span class="m">0110 = 6</span></span>
+        <span class="ans">11010110₂ = D6₁₆</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">B = 1011</span>, <span class="m">7 = 0111</span></span>
+        <span class="ans">B7₁₆ = 10110111₂</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">  1011</span></span>
+        <span class="step"><span class="m">+ 1101</span></span>
+        <span class="step">Right to left: <span class="m">1+1=10</span> (0 carry 1); <span class="m">1+0+1=10</span> (0 carry 1); <span class="m">0+1+1=10</span> (0 carry 1); <span class="m">1+1+1=11</span> (1 carry 1)</span>
+        <span class="step">Result: <span class="m">11000</span></span>
+        <span class="ans">1011₂ + 1101₂ = 11000₂  (= 24₁₀)</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">  1111</span></span>
+        <span class="step"><span class="m">+ 0001</span></span>
+        <span class="step">Cascade of carries through all four bits: <span class="m">1111 + 1 = 10000</span></span>
+        <span class="ans">1111₂ + 0001₂ = 10000₂  (= 16₁₀)</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">  1101</span></span>
+        <span class="step"><span class="m">− 0110</span></span>
+        <span class="step">Borrow where needed: <span class="m">1101 − 0110 = 0111</span></span>
+        <span class="ans">1101₂ − 0110₂ = 0111₂  (= 7₁₀)</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Digits <span class="m">0–7</span> → base 8 (octal).</span>
+        <span class="step">Because <span class="m">2<sup>3</sup> = 8</span>, one octal digit represents exactly <strong>three</strong> binary bits.</span>
+        <span class="ans">Base 8 (octal); 1 octal digit = 3 binary bits</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Binary addresses are long strings of 0s and 1s — hard to read and error-prone.</span>
+        <span class="step">One hex digit represents exactly four binary bits, so a 32-bit address becomes just 8 hex characters.</span>
+        <span class="ans">Hex is 4× more compact and far less error-prone than raw binary</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">3 E 8<sub>16</sub> = 3×256 + 14×16 + 8</span></span>
+        <span class="step"><span class="m">= 768 + 224 + 8 = 1000</span></span>
+        <span class="ans">3E8₁₆ = 1000₁₀</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">1000 ÷ 16 = 62 r 8</span>; <span class="m">62 ÷ 16 = 3 r 14</span>; <span class="m">3 ÷ 16 = 0 r 3</span></span>
+        <span class="step">Remainders <span class="m">3, 14, 8</span> → <span class="m">3, E, 8</span></span>
+        <span class="ans">1000₁₀ = 3E8₁₆</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">#FF8000</span> → bytes <span class="m">FF | 80 | 00</span></span>
+        <span class="step">Green channel = <span class="m">80<sub>16</sub> = 8×16 + 0 = 128</span></span>
+        <span class="ans">Channels FF, 80, 00; green = 128₁₀</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Pad to a multiple of 3: <span class="m">101 101</span></span>
+        <span class="step"><span class="m">101 = 5</span>, <span class="m">101 = 5</span></span>
+        <span class="ans">101101₂ = 55₈</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">11111111<sub>2</sub> = 128+64+32+16+8+4+2+1 = 255</span></span>
+        <span class="step">Adding <span class="m">1</span> gives <span class="m">100000000</span>, which needs 9 bits.</span>
+        <span class="step">In an 8-bit register the 9th bit is discarded → register resets to <span class="m">00000000</span>.</span>
+        <span class="ans">255₁₀; adding 1 causes overflow / wraparound to 0</span>
+      </div></li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    Number Systems • Digital Technologies • Lesson &amp; Worked Solutions
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shortcuts to Relevant Applications — Practice Worksheets</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+
+  :root {
+    --ink: #111111;
+    --muted: #5a6672;
+    --accent: #17233F;
+    --accent-soft: #e8ecf4;
+    --warm: #C95545;
+    --rule: #c9d3dd;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.6pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet { max-width: 180mm; margin: 0 auto; position: relative; }
+
+  /* ============ BRAND ============ */
+  .brand {
+    position: absolute;
+    top: 0; right: 0;
+    width: 44px; height: 44px;
+    opacity: 0.92;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+
+  /* ============ HEADINGS ============ */
+  h1 {
+    font-size: 17pt;
+    margin: 0 0 1.5mm;
+    color: var(--accent);
+    letter-spacing: .2px;
+    padding-right: 54px;
+  }
+  .subtitle {
+    font-size: 9.4pt;
+    color: var(--muted);
+    margin: 0 0 6mm;
+    padding-right: 54px;
+  }
+  h2 {
+    font-size: 12.5pt;
+    color: var(--accent);
+    margin: 7mm 0 3mm;
+    padding: 0 0 1.4mm;
+    border-bottom: 1.6pt solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-size: 11pt;
+    margin: 5mm 0 2mm;
+    color: var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ============ MATH / KEYS ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+  kbd {
+    display: inline-block;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9pt;
+    background: #fff;
+    border: 1px solid #c3ccd6;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    padding: 0 5px;
+    color: var(--accent);
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* ============ QUESTION LISTS ============ */
+  ol.q { margin: 0; padding-left: 9mm; }
+  ol.q > li {
+    margin: 0 0 2.1mm;
+    padding-left: 1.2mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.q > li::marker {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ============ ANSWER KEY ============ */
+  .keybox {
+    background: var(--accent-soft);
+    border-left: 3pt solid var(--accent);
+    padding: 4mm 5mm 5mm;
+    border-radius: 1mm;
+    break-inside: avoid-page;
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6mm 7mm;
+    margin-top: 2.5mm;
+  }
+  .answers.two { grid-template-columns: repeat(2, 1fr); }
+  .answers > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 1.2mm 0;
+    border-bottom: .5pt dotted var(--rule);
+    font-size: 10pt;
+  }
+  .answers .num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 1.4mm;
+  }
+
+  /* ============ UTILITIES ============ */
+  .newpage {
+    break-before: page;
+    page-break-before: always;
+  }
+  .note {
+    font-size: 9.2pt;
+    color: var(--muted);
+    margin: 0 0 5mm;
+    padding: 2.5mm 4mm;
+    border: .6pt solid var(--rule);
+    border-radius: 1mm;
+  }
+  hr.sep {
+    border: 0;
+    border-top: .6pt solid var(--rule);
+    margin: 6mm 0;
+  }
+
+  /* ============ SCREEN PREVIEW ============ */
+  @media screen {
+    body { background: #eef2f6; padding: 10mm 0; }
+    .sheet {
+      background: #fff;
+      padding: 14mm 15mm;
+      box-shadow: 0 2px 14px rgba(0,0,0,.12);
+      border-radius: 1mm;
+    }
+  }
+  @media print {
+    .sheet { max-width: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ===== BRAND ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <!-- ============================ WORKSHEET 1: OFFICE SUITE ============================ -->
+  <h1>Shortcuts — Office Suite (Word, Excel, PowerPoint)</h1>
+  <p class="subtitle">Practice Worksheet (Set A) — 30 Questions</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 30 questions. Write shortcuts using the
+    <kbd>Ctrl</kbd> + <kbd>X</kbd> notation. For "state the principle" questions, answer
+    in one or two full sentences.
+  </p>
+
+  <h2>Section A — Microsoft Word (Questions 1–10)</h2>
+  <ol class="q">
+    <li>State the shortcut to <strong>save</strong> a document, and the shortcut to
+        <strong>Save As</strong>.</li>
+    <li>Which shortcut <strong>centres</strong> a paragraph, and why is the letter E used
+        rather than C?</li>
+    <li>Give the shortcut to select <strong>one word to the right</strong> of the cursor.</li>
+    <li>What does <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> do, and why is it useful?</li>
+    <li>State the shortcut to insert a <strong>page break</strong> and the shortcut to
+        insert a <strong>line break</strong>. Explain the difference.</li>
+    <li>Which function key starts <strong>spell check</strong> in Word?</li>
+    <li>Give the shortcut to apply <strong>Heading 1</strong> style.</li>
+    <li>What does <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> do, and how does it pair
+        with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>?</li>
+    <li>State the shortcut to jump to the <strong>end of the document</strong>.</li>
+    <li>Explain the mnemonic principle behind Word's Ctrl-letter shortcuts, and give two
+        exceptions.</li>
+  </ol>
+
+  <h2>Section B — Microsoft Excel (Questions 11–20)</h2>
+  <ol class="q" start="11">
+    <li>What does <kbd>Ctrl</kbd>+<kbd>arrow key</kbd> do in Excel, and how does its
+        behaviour differ when the adjacent cell is empty vs. non-empty?</li>
+    <li>State the shortcut to select an <strong>entire row</strong> and the shortcut to
+        select an <strong>entire column</strong>.</li>
+    <li>Which key <strong>edits</strong> the active cell without deleting its contents?</li>
+    <li>What does <kbd>F4</kbd> do inside a formula, and what does it do outside a formula?</li>
+    <li>Give the shortcut for <strong>AutoSum</strong>.</li>
+    <li>State the shortcut to open the <strong>Format Cells</strong> dialog.</li>
+    <li>What does <kbd>Ctrl</kbd>+<kbd>`</kbd> (backtick) do?</li>
+    <li>Explain the difference between <kbd>Ctrl</kbd>+<kbd>letter</kbd> and
+        <kbd>Alt</kbd>+<kbd>letter</kbd> in Excel.</li>
+    <li>Give the shortcut to move between <strong>sheet tabs</strong>.</li>
+    <li>State the shortcut to fill all selected cells with the same entry.</li>
+  </ol>
+
+  <h2>Section C — Microsoft PowerPoint (Questions 21–30)</h2>
+  <ol class="q" start="21">
+    <li>State the shortcut to create a <strong>new slide</strong>.</li>
+    <li>Give the shortcut to start a presentation <strong>from the beginning</strong> and
+        the shortcut to start <strong>from the current slide</strong>.</li>
+    <li>What do <kbd>B</kbd> and <kbd>W</kbd> do during a presentation, and when would
+        you use them?</li>
+    <li>What does <kbd>Ctrl</kbd>+<kbd>P</kbd> do <em>during</em> a presentation, and why
+        is this surprising?</li>
+    <li>State the shortcut to move a slide <strong>up</strong> in the deck.</li>
+    <li>Give the shortcut to start <strong>Presenter View</strong>.</li>
+    <li>How do you jump to <strong>slide 7</strong> during a presentation?</li>
+    <li>State the shortcut to <strong>group</strong> selected objects and the shortcut to
+        <strong>ungroup</strong>.</li>
+    <li>What does <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>↑</kbd> do in PowerPoint?</li>
+    <li>Explain why presentation shortcuts matter more than editing shortcuts for a
+        speaker.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: OFFICE SUITE ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Office Suite</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Microsoft Word</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span><kbd>Ctrl</kbd>+<kbd>S</kbd>; <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd></div>
+      <div><span class="num">2.</span><kbd>Ctrl</kbd>+<kbd>E</kbd>; E = cEntre (C is already Copy)</div>
+      <div><span class="num">3.</span><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>→</kbd></div>
+      <div><span class="num">4.</span>Paste as plain text; strips formatting from copied content</div>
+      <div><span class="num">5.</span><kbd>Ctrl</kbd>+<kbd>Enter</kbd> (page); <kbd>Shift</kbd>+<kbd>Enter</kbd> (line); page break starts new page, line break stays in same paragraph</div>
+      <div><span class="num">6.</span><kbd>F7</kbd></div>
+      <div><span class="num">7.</span><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>1</kbd></div>
+      <div><span class="num">8.</span>Copies formatting; pairs with Ctrl+Shift+V to paste it elsewhere</div>
+      <div><span class="num">9.</span><kbd>Ctrl</kbd>+<kbd>End</kbd></div>
+      <div><span class="num">10.</span>Ctrl + first letter of the command; exceptions: Ctrl+V (paste, positional), Ctrl+E (centre, C taken)</div>
+    </div>
+
+    <h3>Section B — Microsoft Excel</h3>
+    <div class="answers two">
+      <div><span class="num">11.</span>Jump to edge of data block; stops at last contiguous cell if non-empty, jumps to next non-empty if empty</div>
+      <div><span class="num">12.</span><kbd>Shift</kbd>+<kbd>Space</kbd> (row); <kbd>Ctrl</kbd>+<kbd>Space</kbd> (column)</div>
+      <div><span class="num">13.</span><kbd>F2</kbd></div>
+      <div><span class="num">14.</span>Inside formula: cycles absolute/relative refs; outside: repeats last action</div>
+      <div><span class="num">15.</span><kbd>Alt</kbd>+<kbd>=</kbd></div>
+      <div><span class="num">16.</span><kbd>Ctrl</kbd>+<kbd>1</kbd></div>
+      <div><span class="num">17.</span>Shows formulas instead of results</div>
+      <div><span class="num">18.</span>Ctrl+letter = direct action; Alt+letter = ribbon menu navigation</div>
+      <div><span class="num">19.</span><kbd>Ctrl</kbd>+<kbd>Page Up</kbd> / <kbd>Page Down</kbd></div>
+      <div><span class="num">20.</span><kbd>Ctrl</kbd>+<kbd>Enter</kbd></div>
+    </div>
+
+    <h3>Section C — Microsoft PowerPoint</h3>
+    <div class="answers two">
+      <div><span class="num">21.</span><kbd>Ctrl</kbd>+<kbd>M</kbd></div>
+      <div><span class="num">22.</span><kbd>F5</kbd> (beginning); <kbd>Shift</kbd>+<kbd>F5</kbd> (current slide)</div>
+      <div><span class="num">23.</span>Blank screen black / white; use during Q&amp;A to focus attention on speaker</div>
+      <div><span class="num">24.</span>Switches to pen tool (not print); presentation mode repurposes the binding</div>
+      <div><span class="num">25.</span><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>↑</kbd></div>
+      <div><span class="num">26.</span><kbd>Alt</kbd>+<kbd>F5</kbd></div>
+      <div><span class="num">27.</span>Type <kbd>7</kbd> then <kbd>Enter</kbd></div>
+      <div><span class="num">28.</span><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> (group); <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> (ungroup)</div>
+      <div><span class="num">29.</span>Send to front (z-order)</div>
+      <div><span class="num">30.</span>Speaker cannot comfortably use a mouse while talking; shortcuts keep the presentation flowing</div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 2: TERMINALS, IDEs & SDKs ============================ -->
+  <div class="newpage"></div>
+  <h1>Shortcuts — Terminals, IDEs &amp; SDKs</h1>
+  <p class="subtitle">Practice Worksheet (Set B) — 30 Questions</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 30 questions. For command questions, write
+    the exact syntax. For principle questions, answer in full sentences.
+  </p>
+
+  <h2>Section A — Command Prompt &amp; PowerShell (Questions 1–10)</h2>
+  <ol class="q">
+    <li>State the shortcut to view your <strong>command history</strong> in cmd, and the
+        shortcut to repeat the <strong>last command</strong>.</li>
+    <li>What does <kbd>Tab</kbd> do in the command line?</li>
+    <li>Name three file-management commands available in cmd and state what each does.</li>
+    <li>Explain what the <strong>pipe</strong> operator (<code>|</code>) does and give one
+        example.</li>
+    <li>What is the difference between <code>&gt;</code> and <code>&gt;&gt;</code> in a
+        shell?</li>
+    <li>State the PowerShell principle that governs cmdlet naming, and give three
+        examples.</li>
+    <li>What is the difference between <strong>cmd</strong> and <strong>PowerShell</strong>
+        in terms of data passed between commands?</li>
+    <li>Name three PowerShell cmdlets for <strong>discovery</strong> and state their
+        purpose.</li>
+    <li>What is the <strong>execution policy</strong> in PowerShell, and why does it
+        exist?</li>
+    <li>Explain why aliases like <code>dir</code> and <code>ls</code> should not be used
+        in saved PowerShell scripts.</li>
+  </ol>
+
+  <h2>Section B — IDEs (Questions 11–20)</h2>
+  <ol class="q" start="11">
+    <li>Name the <strong>master search key</strong> in each of: VS Code, JetBrains IDEs,
+        and Visual Studio.</li>
+    <li>State the shortcuts for <strong>Step Over</strong>, <strong>Step Into</strong>,
+        and <strong>Step Out</strong> during debugging.</li>
+    <li>What does <kbd>F9</kbd> do in an IDE?</li>
+    <li>Give the universal shortcut to <strong>toggle a line comment</strong>.</li>
+    <li>What does <kbd>F12</kbd> do in an IDE?</li>
+    <li>What does <kbd>Shift</kbd>+<kbd>F12</kbd> do, and how does it relate to F12?</li>
+    <li>Give the shortcut to <strong>rename a symbol</strong> across a project, and explain
+        why this is safer than find-and-replace.</li>
+    <li>State two shortcuts unique to VS Code for <strong>multi-cursor editing</strong>.</li>
+    <li>Give the JetBrains shortcut to <strong>reformat code</strong> and the shortcut to
+        <strong>show intention actions</strong>.</li>
+    <li>Explain why IDE shortcuts can differ between installations of the same IDE.</li>
+  </ol>
+
+  <h2>Section C — SDKs (Questions 21–30)</h2>
+  <ol class="q" start="21">
+    <li>List <strong>five components</strong> typically included in an SDK.</li>
+    <li>State three JDK command-line tools and what each does.</li>
+    <li>Give the npm commands to: (a) initialise a project, (b) install a dependency,
+        (c) install a dev dependency, (d) run a script.</li>
+    <li>State three <code>dotnet</code> CLI commands and their purposes.</li>
+    <li>Name three <code>adb</code> commands used in Android development and state their
+        purpose.</li>
+    <li>What are environment variables, and why do SDKs depend on them?</li>
+    <li>State the purpose of <code>JAVA_HOME</code> and <code>ANDROID_HOME</code>.</li>
+    <li>What is a <strong>version manager</strong>, and why is it preferred over manually
+        setting environment variables?</li>
+    <li>Give one example each of a version manager for Node.js, Python, and Java.</li>
+    <li>Explain the phrase "an SDK turns a language into a workflow."</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: TERMINALS, IDEs, SDKs ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Terminals, IDEs &amp; SDKs</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Command Prompt &amp; PowerShell</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span><kbd>F7</kbd> (history menu); <kbd>F3</kbd> (repeat last)</div>
+      <div><span class="num">2.</span>Auto-completes file and folder names</div>
+      <div><span class="num">3.</span><code>copy</code> (copy file), <code>del</code> (delete), <code>dir</code> (list), <code>robocopy</code> (mirror folder tree)</div>
+      <div><span class="num">4.</span>Sends output of one command as input to the next; e.g. <code>dir /b | findstr ".txt"</code></div>
+      <div><span class="num">5.</span><code>&gt;</code> overwrites file; <code>&gt;&gt;</code> appends</div>
+      <div><span class="num">6.</span>Verb-Noun; e.g. Get-Process, Set-Item, New-Item</div>
+      <div><span class="num">7.</span>cmd passes text; PowerShell passes .NET objects</div>
+      <div><span class="num">8.</span>Get-Command (find cmdlets), Get-Help (documentation), Get-Member (inspect object)</div>
+      <div><span class="num">9.</span>Security policy blocking unsigned scripts; prevents malicious script execution</div>
+      <div><span class="num">10.</span>Aliases may not exist on other systems; full cmdlet names are portable</div>
+    </div>
+
+    <h3>Section B — IDEs</h3>
+    <div class="answers two">
+      <div><span class="num">11.</span>VS Code: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>; JetBrains: <kbd>Shift</kbd>+<kbd>Shift</kbd>; Visual Studio: <kbd>Ctrl</kbd>+<kbd>T</kbd></div>
+      <div><span class="num">12.</span><kbd>F10</kbd> (over); <kbd>F11</kbd> (into); <kbd>Shift</kbd>+<kbd>F11</kbd> (out)</div>
+      <div><span class="num">13.</span>Toggle breakpoint</div>
+      <div><span class="num">14.</span><kbd>Ctrl</kbd>+<kbd>/</kbd></div>
+      <div><span class="num">15.</span>Go to definition</div>
+      <div><span class="num">16.</span>Find all references; F12 goes to the definition, Shift+F12 finds every use</div>
+      <div><span class="num">17.</span><kbd>F2</kbd>; understands scope, so it won't rename a variable in an unrelated scope</div>
+      <div><span class="num">18.</span><kbd>Alt</kbd>+<kbd>Click</kbd> (add cursor); <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>↑/↓</kbd> (cursor above/below)</div>
+      <div><span class="num">19.</span><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> (reformat); <kbd>Alt</kbd>+<kbd>Enter</kbd> (intentions)</div>
+      <div><span class="num">20.</span>Extensions and user customisation can override default keybindings</div>
+    </div>
+
+    <h3>Section C — SDKs</h3>
+    <div class="answers two">
+      <div><span class="num">21.</span>Compiler/interpreter, libraries/APIs, CLI tools, documentation, debuggers/profilers</div>
+      <div><span class="num">22.</span>javac (compile), java (run), jar (package), javadoc (document), jps (list processes)</div>
+      <div><span class="num">23.</span>(a) <code>npm init -y</code>; (b) <code>npm install &lt;pkg&gt;</code>; (c) <code>npm install -D &lt;pkg&gt;</code>; (d) <code>npm run &lt;script&gt;</code></div>
+      <div><span class="num">24.</span><code>dotnet new</code> (scaffold), <code>dotnet build</code> (compile), <code>dotnet run</code> (build+run), <code>dotnet test</code> (test), <code>dotnet publish</code> (deploy)</div>
+      <div><span class="num">25.</span><code>adb devices</code> (list), <code>adb install</code> (install APK), <code>adb logcat</code> (stream logs)</div>
+      <div><span class="num">26.</span>OS-level named values; SDKs use them to locate binaries and libraries regardless of working directory</div>
+      <div><span class="num">27.</span>JAVA_HOME: JDK install path; ANDROID_HOME: Android SDK install path</div>
+      <div><span class="num">28.</span>Tool that switches SDK versions per project without editing system settings</div>
+      <div><span class="num">29.</span>nvm (Node); pyenv (Python); sdkman (Java)</div>
+      <div><span class="num">30.</span>SDK provides not just a language but the full toolchain — build, test, package, deploy — so you work in a repeatable workflow rather than ad-hoc commands</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

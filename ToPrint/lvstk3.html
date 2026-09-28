@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 3 Livestock Farming — First Term</title>
+<style>
+/* ============================================================
+   SS 3 LIVESTOCK FARMING — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #1a4a6e;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #1a4a6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a4a6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a4a6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a4a6e;
+  border-bottom:1.4pt solid #d4e3e3;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #b9c1c1;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f7f8;
+  border-color:#a8c0c8;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa7a7;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#485252;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#1a4a6e;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a4a6e;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3f3;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #1a4a6e;
+  color:#1a4a6e;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 3 Livestock Farming — First Term</h1>
+  <p class="term">Weeks 1–13 · Biotechnology, Welfare, Sustainability & Entrepreneurship · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — INTRODUCTION TO ANIMAL BIOTECHNOLOGY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Introduction to Animal Biotechnology</h2>
+  <p class="meta"><b>Content:</b> Meaning and importance of animal biotechnology in livestock improvement.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define animal biotechnology.</li>
+      <li>Explain the importance of biotechnology in livestock improvement.</li>
+      <li>Identify the major areas of biotechnology application in livestock.</li>
+      <li>Discuss the ethical considerations surrounding biotechnology.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="300" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">APPLICATIONS OF ANIMAL BIOTECHNOLOGY</text>
+      <!-- Central hub -->
+      <ellipse cx="350" cy="160" rx="85" ry="38" fill="#1a4a6e" stroke="#0a2a4a" stroke-width="2"/>
+      <text x="350" y="155" text-anchor="middle" font-size="13" font-weight="900" fill="#fff">ANIMAL</text>
+      <text x="350" y="172" text-anchor="middle" font-size="13" font-weight="900" fill="#fff">BIOTECHNOLOGY</text>
+      <!-- Branch 1 -->
+      <rect x="30" y="60" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="95" y="80" text-anchor="middle" font-size="10" font-weight="900" fill="#333">REPRODUCTIVE</text>
+      <text x="95" y="95" text-anchor="middle" font-size="9" font-weight="700" fill="#555">AI, Embryo Transfer</text>
+      <line x1="160" y1="85" x2="270" y2="145" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 2 -->
+      <rect x="30" y="140" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="95" y="160" text-anchor="middle" font-size="10" font-weight="900" fill="#333">GENETIC</text>
+      <text x="95" y="175" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Selection, GMO</text>
+      <line x1="160" y1="165" x2="270" y2="165" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 3 -->
+      <rect x="30" y="220" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="95" y="240" text-anchor="middle" font-size="10" font-weight="900" fill="#333">HEALTH</text>
+      <text x="95" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Vaccines, Diagnostics</text>
+      <line x1="160" y1="245" x2="270" y2="185" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 4 -->
+      <rect x="540" y="60" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="605" y="80" text-anchor="middle" font-size="10" font-weight="900" fill="#333">NUTRITION</text>
+      <text x="605" y="95" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Feed Additives, Enzymes</text>
+      <line x1="540" y1="85" x2="430" y2="145" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 5 -->
+      <rect x="540" y="140" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="605" y="160" text-anchor="middle" font-size="10" font-weight="900" fill="#333">PRODUCTS</text>
+      <text x="605" y="175" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Milk, Meat, Vaccines</text>
+      <line x1="540" y1="165" x2="430" y2="165" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 6 -->
+      <rect x="540" y="220" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="605" y="240" text-anchor="middle" font-size="10" font-weight="900" fill="#333">ENVIRONMENT</text>
+      <text x="605" y="255" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Waste Management</text>
+      <line x1="540" y1="245" x2="430" y2="185" stroke="#1a4a6e" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Fig. 1.1 — Major applications of animal biotechnology.</figcaption>
+  </figure>
+
+  <h3>1.1 Meaning of Animal Biotechnology</h3>
+  <p><b>Animal biotechnology</b> is the application of scientific techniques and technologies to living organisms (animals) or their components to develop or modify products, improve animal health, enhance reproduction, and increase productivity. It is the use of biological systems to solve problems and create useful products in livestock production.</p>
+
+  <h3>1.2 Importance of Animal Biotechnology</h3>
+  <table>
+    <tr><th style="width:24%">Area</th><th>Importance</th></tr>
+    <tr><td class="k">Genetic Improvement</td><td>Faster, more precise selection of superior animals; introduction of desirable genes (disease resistance, growth).</td></tr>
+    <tr><td class="k">Reproduction</td><td>Artificial Insemination (AI), Embryo Transfer (ET), and cloning allow rapid multiplication of superior genetics.</td></tr>
+    <tr><td class="k">Health</td><td>Development of vaccines (e.g., recombinant vaccines), diagnostic tools, and disease-resistant animals.</td></tr>
+    <tr><td class="k">Nutrition</td><td>Enzyme supplements, probiotics, and improved feed efficiency.</td></tr>
+    <tr><td class="k">Production</td><td>Increased milk yield, faster growth rates, improved meat quality.</td></tr>
+    <tr><td class="k">Conservation</td><td>Gene banks, cryopreservation of semen and embryos; preservation of endangered breeds.</td></tr>
+  </table>
+
+  <h3>1.3 Ethical Considerations</h3>
+  <ul class="tight">
+    <li><b>Animal Welfare:</b> Concerns about the treatment of animals in biotech procedures.</li>
+    <li><b>Genetic Modification:</b> "Playing God" debates; potential long-term effects on ecosystems.</li>
+    <li><b>Access and Equity:</b> High cost of biotech may exclude small-scale farmers.</li>
+    <li><b>Biodiversity:</b> Risk of reducing genetic diversity through over-reliance on a few superior breeds.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define animal biotechnology.</li>
+        <li>List four areas of application of biotechnology in livestock.</li>
+        <li>Explain two importance of biotechnology in animal breeding.</li>
+        <li>Discuss one ethical concern about animal biotechnology.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Role of Biotechnology in Modern Livestock Farming."</li>
+        <li>Research and list three specific biotech products used in Nigerian livestock farming.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — REPRODUCTIVE TECHNOLOGIES
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Reproductive Technologies</h2>
+  <p class="meta"><b>Content:</b> Artificial insemination; Embryo transfer; Cloning.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain Artificial Insemination (AI) and its advantages.</li>
+      <li>Describe Embryo Transfer (ET) and its applications.</li>
+      <li>Define cloning and its significance in livestock.</li>
+      <li>Compare these technologies in terms of cost and application.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="280" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">REPRODUCTIVE TECHNOLOGIES IN LIVESTOCK</text>
+      <!-- AI -->
+      <rect x="20" y="50" width="210" height="200" rx="6" fill="#f0f5f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="125" y="75" text-anchor="middle" font-size="12" font-weight="900" fill="#1a4a6e">ARTIFICIAL INSEMINATION</text>
+      <!-- Semen straw -->
+      <rect x="60" y="100" width="50" height="12" rx="2" fill="#c8d8e8" stroke="#1a4a6e" stroke-width="1"/>
+      <text x="85" y="110" text-anchor="middle" font-size="6" font-weight="700" fill="#1a4a6e">STRAW</text>
+      <!-- AI gun -->
+      <rect x="120" y="95" width="70" height="20" rx="3" fill="#d8d8e8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="155" y="109" text-anchor="middle" font-size="8" font-weight="700" fill="#1a4a6e">AI GUN</text>
+      <line x1="190" y1="105" x2="220" y2="105" stroke="#1a4a6e" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#1a4a6e"/>
+        </marker>
+      </defs>
+      <text x="125" y="145" text-anchor="middle" font-size="9" font-weight="700" fill="#333">Semen from superior bull</text>
+      <text x="125" y="160" text-anchor="middle" font-size="9" font-weight="700" fill="#333">inserted into cow</text>
+      <text x="125" y="185" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">✓ Rapid genetic improvement</text>
+      <text x="125" y="200" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">✓ Disease control</text>
+      <text x="125" y="215" text-anchor="middle" font-size="8" font-weight="700" fill="#a83a3a">✗ Needs skilled technician</text>
+
+      <!-- ET -->
+      <rect x="245" y="50" width="210" height="200" rx="6" fill="#f0f8f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="350" y="75" text-anchor="middle" font-size="12" font-weight="900" fill="#3a7a3a">EMBRYO TRANSFER</text>
+      <!-- Donor and recipient -->
+      <ellipse cx="300" cy="120" rx="30" ry="18" fill="#d8c8a8" stroke="#8a5a1a" stroke-width="1.5"/>
+      <text x="300" y="124" text-anchor="middle" font-size="8" font-weight="700" fill="#333">DONOR</text>
+      <ellipse cx="400" cy="120" rx="30" ry="18" fill="#e8d8a8" stroke="#8a5a1a" stroke-width="1.5"/>
+      <text x="400" y="124" text-anchor="middle" font-size="8" font-weight="700" fill="#333">RECIPIENT</text>
+      <line x1="330" y1="120" x2="370" y2="120" stroke="#3a7a3a" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="350" y="150" text-anchor="middle" font-size="9" font-weight="700" fill="#333">Embryo flushed from donor</text>
+      <text x="350" y="165" text-anchor="middle" font-size="9" font-weight="700" fill="#333">and implanted in recipient</text>
+      <text x="350" y="190" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">✓ One donor can produce</text>
+      <text x="350" y="205" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">many embryos/year</text>
+      <text x="350" y="220" text-anchor="middle" font-size="8" font-weight="700" fill="#a83a3a">✗ Expensive, needs expertise</text>
+
+      <!-- Cloning -->
+      <rect x="470" y="50" width="210" height="200" rx="6" fill="#f8f0f8" stroke="#8a3a8a" stroke-width="1.5"/>
+      <text x="575" y="75" text-anchor="middle" font-size="12" font-weight="900" fill="#8a3a8a">CLONING</text>
+      <!-- DNA -->
+      <circle cx="575" cy="120" r="25" fill="#e8d8e8" stroke="#8a3a8a" stroke-width="1.5"/>
+      <text x="575" y="125" text-anchor="middle" font-size="8" font-weight="700" fill="#333">SOMATIC CELL</text>
+      <text x="575" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#333">Nucleus transferred to</text>
+      <text x="575" y="170" text-anchor="middle" font-size="9" font-weight="700" fill="#333">enucleated egg cell</text>
+      <text x="575" y="195" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">✓ Exact genetic copy</text>
+      <text x="575" y="210" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">of superior animal</text>
+      <text x="575" y="225" text-anchor="middle" font-size="8" font-weight="700" fill="#a83a3a">✗ Very low success rate</text>
+    </svg>
+    <figcaption>Fig. 2.1 — Artificial insemination, embryo transfer, and cloning.</figcaption>
+  </figure>
+
+  <h3>2.1 Artificial Insemination (AI)</h3>
+  <p><b>Definition:</b> The manual deposition of semen from a superior male into the reproductive tract of a female in heat.</p>
+  <p><b>Process:</b> Semen collection → evaluation → dilution → freezing (liquid nitrogen) → thawing → insemination.</p>
+  <p><b>Advantages:</b> Rapid genetic improvement, disease control, safety, cost-effective, access to global genetics.</p>
+  <p><b>Disadvantages:</b> Requires skilled technician, accurate heat detection, lower conception rate if mistimed.</p>
+
+  <h3>2.2 Embryo Transfer (ET)</h3>
+  <p><b>Definition:</b> A technique where embryos are collected from a genetically superior female (donor) and transferred to a surrogate female (recipient) for gestation.</p>
+  <p><b>Process:</b> Superovulation of donor → insemination → embryo collection (flushing) → transfer to recipient → pregnancy.</p>
+  <p><b>Advantages:</b> One superior female can produce many offspring per year; bypasses the limitation of gestation.</p>
+  <p><b>Disadvantages:</b> Expensive, requires advanced technical skills and equipment.</p>
+
+  <h3>2.3 Cloning</h3>
+  <p><b>Definition:</b> Producing a genetically identical copy of an animal using somatic cell nuclear transfer (SCNT).</p>
+  <p><b>Process:</b> Somatic cell from superior animal → nucleus removed → transferred to enucleated egg cell → stimulated to divide → embryo → implanted in surrogate.</p>
+  <p><b>Advantages:</b> Exact genetic copy of a superior animal; preservation of elite genetics.</p>
+  <p><b>Disadvantages:</b> Very low success rate, high cost, ethical concerns, potential health problems in clones.</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define Artificial Insemination and list three advantages.</li>
+        <li>What is Embryo Transfer? How does it differ from AI?</li>
+        <li>Define cloning and explain its significance.</li>
+        <li>Compare the cost and technical difficulty of AI, ET, and cloning.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a flowchart comparing AI, ET, and cloning.</li>
+        <li>Research the first cloned animal (Dolly the sheep). Write a short report.</li>
+        <li>Discuss the ethical implications of cloning in livestock production.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — GENETIC IMPROVEMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Genetic Improvement</h2>
+  <p class="meta"><b>Content:</b> Selective breeding; Hybrid vigour; Genetic modification.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain selective breeding and its methods.</li>
+      <li>Define hybrid vigour (heterosis) and its importance.</li>
+      <li>Describe genetic modification (GM) in livestock.</li>
+      <li>Discuss the advantages and concerns of GM animals.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">METHODS OF GENETIC IMPROVEMENT</text>
+      <!-- Selective Breeding -->
+      <rect x="30" y="50" width="190" height="180" rx="6" fill="#f0f5f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="125" y="75" text-anchor="middle" font-size="11" font-weight="900" fill="#3a7a3a">SELECTIVE BREEDING</text>
+      <!-- Two parents -->
+      <ellipse cx="80" cy="120" rx="25" ry="15" fill="#d8c8a8" stroke="#8a5a1a" stroke-width="1.5"/>
+      <ellipse cx="170" cy="120" rx="25" ry="15" fill="#d8c8a8" stroke="#8a5a1a" stroke-width="1.5"/>
+      <text x="80" y="124" text-anchor="middle" font-size="7" font-weight="700" fill="#333">BEST</text>
+      <text x="170" y="124" text-anchor="middle" font-size="7" font-weight="700" fill="#333">BEST</text>
+      <line x1="105" y1="120" x2="145" y2="120" stroke="#3a7a3a" stroke-width="2"/>
+      <!-- Offspring -->
+      <ellipse cx="125" cy="160" rx="20" ry="12" fill="#e8e8d8" stroke="#8a5a1a" stroke-width="1"/>
+      <text x="125" y="164" text-anchor="middle" font-size="7" font-weight="700" fill="#333">BETTER</text>
+      <text x="125" y="195" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">Choose best parents</text>
+      <text x="125" y="210" text-anchor="middle" font-size="8" font-weight="700" fill="#3a7a3a">for next generation</text>
+
+      <!-- Hybrid Vigour -->
+      <rect x="250" y="50" width="200" height="180" rx="6" fill="#f5f5f0" stroke="#8a8a3a" stroke-width="1.5"/>
+      <text x="350" y="75" text-anchor="middle" font-size="11" font-weight="900" fill="#8a8a3a">HYBRID VIGOUR</text>
+      <!-- Breed A and B -->
+      <ellipse cx="300" cy="120" rx="25" ry="15" fill="#a8a8a8" stroke="#5a5a5a" stroke-width="1.5"/>
+      <ellipse cx="400" cy="120" rx="25" ry="15" fill="#d8c8a8" stroke="#8a5a1a" stroke-width="1.5"/>
+      <text x="300" y="124" text-anchor="middle" font-size="7" font-weight="700" fill="#fff">BREED A</text>
+      <text x="400" y="124" text-anchor="middle" font-size="7" font-weight="700" fill="#333">BREED B</text>
+      <line x1="325" y1="120" x2="375" y2="120" stroke="#8a8a3a" stroke-width="2"/>
+      <!-- Hybrid -->
+      <ellipse cx="350" cy="160" rx="25" ry="14" fill="#e8e8c8" stroke="#8a8a3a" stroke-width="1.5"/>
+      <text x="350" y="164" text-anchor="middle" font-size="7" font-weight="700" fill="#333">HYBRID</text>
+      <text x="350" y="195" text-anchor="middle" font-size="8" font-weight="700" fill="#8a8a3a">Offspring superior</text>
+      <text x="350" y="210" text-anchor="middle" font-size="8" font-weight="700" fill="#8a8a3a">to both parents</text>
+
+      <!-- Genetic Modification -->
+      <rect x="480" y="50" width="190" height="180" rx="6" fill="#f8f0f0" stroke="#8a3a3a" stroke-width="1.5"/>
+      <text x="575" y="75" text-anchor="middle" font-size="11" font-weight="900" fill="#8a3a3a">GENETIC MODIFICATION</text>
+      <!-- DNA helix -->
+      <path d="M540,110 Q560,90 580,110 Q600,130 620,110" fill="none" stroke="#8a3a3a" stroke-width="2"/>
+      <path d="M540,130 Q560,110 580,130 Q600,150 620,130" fill="none" stroke="#8a3a3a" stroke-width="2"/>
+      <text x="580" y="170" text-anchor="middle" font-size="8" font-weight="700" fill="#333">Inserting foreign gene</text>
+      <text x="575" y="195" text-anchor="middle" font-size="8" font-weight="700" fill="#8a3a3a">✓ Disease resistance</text>
+      <text x="575" y="210" text-anchor="middle" font-size="8" font-weight="700" fill="#8a3a3a">✓ Faster growth</text>
+      <text x="575" y="225" text-anchor="middle" font-size="8" font-weight="700" fill="#a83a3a">✗ Ethical concerns</text>
+    </svg>
+    <figcaption>Fig. 3.1 — Selective breeding, hybrid vigour, and genetic modification.</figcaption>
+  </figure>
+
+  <h3>3.1 Selective Breeding</h3>
+  <p><b>Definition:</b> The process of choosing animals with desirable traits to be parents of the next generation.</p>
+  <p><b>Methods:</b> Mass selection, pedigree selection, progeny testing.</p>
+  <p><b>Goal:</b> To accumulate desirable genes in the population over generations.</p>
+
+  <h3>3.2 Hybrid Vigour (Heterosis)</h3>
+  <p><b>Definition:</b> The phenomenon where the crossbred offspring is superior to the average of its parents.</p>
+  <p><b>Example:</b> Crossbreeding a Muturu (hardy) with a Holstein-Friesian (high milk) produces a hybrid that is both hardy and productive.</p>
+  <p><b>Importance:</b> Improved growth rate, disease resistance, fertility, and productivity.</p>
+
+  <h3>3.3 Genetic Modification (GM)</h3>
+  <p><b>Definition:</b> The direct manipulation of an organism's genes using biotechnology to introduce a new trait.</p>
+  <p><b>Examples in Livestock:</b> Growth hormone genes (faster growth), disease resistance genes, improved milk composition.</p>
+  <p><b>Advantages:</b> Faster genetic gain, novel traits, disease resistance.</p>
+  <p><b>Concerns:</b> Ethical issues, long-term environmental effects, animal welfare, public acceptance.</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define selective breeding and list two methods.</li>
+        <li>What is hybrid vigour? Give an example.</li>
+        <li>Define genetic modification.</li>
+        <li>List two advantages and two concerns of GM animals.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Benefits and Risks of Genetically Modified Animals."</li>
+        <li>Research one GM animal (e.g., AquAdvantage salmon) and write a short report.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — ANIMAL WELFARE AND ETHICS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Animal Welfare and Ethics</h2>
+  <p class="meta"><b>Content:</b> Animal rights; Humane treatment; Slaughtering methods.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define animal welfare and animal rights.</li>
+      <li>Explain the Five Freedoms of animal welfare.</li>
+      <li>Describe humane slaughter methods.</li>
+      <li>Discuss the importance of ethical treatment of farm animals.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="280" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">THE FIVE FREEDOMS OF ANIMAL WELFARE</text>
+      <!-- Five boxes -->
+      <rect x="30" y="50" width="120" height="70" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="90" y="75" text-anchor="middle" font-size="10" font-weight="900" fill="#333">1. FROM</text>
+      <text x="90" y="90" text-anchor="middle" font-size="10" font-weight="900" fill="#333">HUNGER</text>
+      <text x="90" y="105" text-anchor="middle" font-size="8" font-weight="700" fill="#555">& THIRST</text>
+
+      <rect x="165" y="50" width="120" height="70" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="225" y="75" text-anchor="middle" font-size="10" font-weight="900" fill="#333">2. FROM</text>
+      <text x="225" y="90" text-anchor="middle" font-size="10" font-weight="900" fill="#333">DISCOMFORT</text>
+      <text x="225" y="105" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Shelter</text>
+
+      <rect x="300" y="50" width="120" height="70" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="360" y="75" text-anchor="middle" font-size="10" font-weight="900" fill="#333">3. FROM PAIN,</text>
+      <text x="360" y="90" text-anchor="middle" font-size="10" font-weight="900" fill="#333">INJURY</text>
+      <text x="360" y="105" text-anchor="middle" font-size="8" font-weight="700" fill="#555">& DISEASE</text>
+
+      <rect x="435" y="50" width="120" height="70" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="495" y="75" text-anchor="middle" font-size="10" font-weight="900" fill="#333">4. TO EXPRESS</text>
+      <text x="495" y="90" text-anchor="middle" font-size="10" font-weight="900" fill="#333">NORMAL</text>
+      <text x="495" y="105" text-anchor="middle" font-size="8" font-weight="700" fill="#555">BEHAVIOUR</text>
+
+      <rect x="570" y="50" width="120" height="70" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="630" y="75" text-anchor="middle" font-size="10" font-weight="900" fill="#333">5. FROM FEAR</text>
+      <text x="630" y="90" text-anchor="middle" font-size="10" font-weight="900" fill="#333">& DISTRESS</text>
+      <text x="630" y="105" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Mental</text>
+
+      <!-- Bottom note -->
+      <text x="350" y="160" text-anchor="middle" font-size="11" font-weight="900" fill="#1a4a6e">HUMANE SLAUGHTER METHODS</text>
+      <text x="350" y="185" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Stunning → Bleeding → Dressing → Chilling</text>
+      <text x="350" y="205" text-anchor="middle" font-size="9" font-weight="700" fill="#3a7a3a">✓ Reduces pain and stress</text>
+      <text x="350" y="220" text-anchor="middle" font-size="9" font-weight="700" fill="#3a7a3a">✓ Improves meat quality</text>
+      <text x="350" y="235" text-anchor="middle" font-size="9" font-weight="700" fill="#3a7a3a">✓ Ensures food safety</text>
+    </svg>
+    <figcaption>Fig. 4.1 — The Five Freedoms of animal welfare and humane slaughter.</figcaption>
+  </figure>
+
+  <h3>4.1 Definition of Animal Welfare and Animal Rights</h3>
+  <ul class="tight">
+    <li><b>Animal Welfare:</b> The physical and mental well-being of animals. It focuses on how animals are treated and whether their basic needs are met.</li>
+    <li><b>Animal Rights:</b> The philosophical view that animals have inherent rights, similar to humans, and should not be used for food, clothing, or research.</li>
+  </ul>
+
+  <h3>4.2 The Five Freedoms</h3>
+  <ol class="tight">
+    <li><b>Freedom from Hunger and Thirst:</b> Access to fresh water and a diet to maintain health and vigor.</li>
+    <li><b>Freedom from Discomfort:</b> Appropriate environment, including shelter and a comfortable resting area.</li>
+    <li><b>Freedom from Pain, Injury, and Disease:</b> Prevention or rapid diagnosis and treatment.</li>
+    <li><b>Freedom to Express Normal Behaviour:</b> Sufficient space, proper facilities, and company of the animal's own kind.</li>
+    <li><b>Freedom from Fear and Distress:</b> Conditions and treatment that avoid mental suffering.</li>
+  </ol>
+
+  <h3>4.3 Humane Slaughter Methods</h3>
+  <p><b>Definition:</b> The process of killing animals for food in a way that minimizes pain, stress, and suffering.</p>
+  <p><b>Steps:</b></p>
+  <ol class="tight">
+    <li><b>Stunning:</b> Rendering the animal unconscious before slaughter (e.g., captive bolt, electrical stunning, CO₂).</li>
+    <li><b>Bleeding (Sticking):</b> Severing major blood vessels to ensure death and improve meat quality.</li>
+    <li><b>Dressing:</b> Removing hides, internal organs, and separating the carcass.</li>
+    <li><b>Chilling:</b> Rapid cooling to prevent bacterial growth.</li>
+  </ol>
+  <p><b>Importance:</b> Reduces pain and stress; improves meat quality; ensures food safety; complies with regulations.</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define animal welfare and animal rights.</li>
+        <li>List the Five Freedoms of animal welfare.</li>
+        <li>Describe the steps of humane slaughter.</li>
+        <li>Why is humane slaughter important for meat quality?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Importance of Animal Welfare in Livestock Production."</li>
+        <li>Research the Nigerian Animal Welfare Act and write a short report.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM TEST
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Midterm Test</h2>
+  <p class="meta"><b>Content:</b> Assessment covering Weeks 1–4.</p>
+
+  <div class="box obj">
+    <h4>Scope</h4>
+    <ol class="cols2 tight">
+      <li>Introduction to Animal Biotechnology.</li>
+      <li>Reproductive Technologies.</li>
+      <li>Genetic Improvement.</li>
+      <li>Animal Welfare and Ethics.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for this week. This is for assessment.</p>
+
+  <h3>Suggested Structure</h3>
+  <table>
+    <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+    <tr><td class="k">A — Objectives</td><td>20 marks</td><td>Twenty multiple-choice questions covering Weeks 1–4.</td></tr>
+    <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+    <tr><td class="k">C — Essay</td><td>20 marks</td><td>Two essay questions requiring detailed explanations.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Revision Focus</h4>
+    <ul class="cols2 tight">
+      <li>Meaning and importance of biotechnology.</li>
+      <li>Artificial Insemination (AI).</li>
+      <li>Embryo Transfer (ET).</li>
+      <li>Cloning.</li>
+      <li>Selective breeding.</li>
+      <li>Hybrid vigour.</li>
+      <li>Genetic modification.</li>
+      <li>Five Freedoms of animal welfare.</li>
+      <li>Humane slaughter.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — SUSTAINABLE LIVESTOCK FARMING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Sustainable Livestock Farming</h2>
+  <p class="meta"><b>Content:</b> Organic livestock farming; Waste management.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define sustainable livestock farming.</li>
+      <li>Explain the principles of organic livestock farming.</li>
+      <li>Describe methods of waste management in livestock.</li>
+      <li>Discuss the importance of sustainability in livestock production.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">WASTE MANAGEMENT IN LIVESTOCK</text>
+      <!-- Central hub -->
+      <ellipse cx="350" cy="140" rx="80" ry="35" fill="#1a4a6e" stroke="#0a2a4a" stroke-width="2"/>
+      <text x="350" y="135" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">ANIMAL</text>
+      <text x="350" y="152" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">WASTE</text>
+      <!-- Branch 1 -->
+      <rect x="30" y="50" width="130" height="50" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="95" y="70" text-anchor="middle" font-size="10" font-weight="900" fill="#333">COMPOSTING</text>
+      <text x="95" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Organic Fertilizer</text>
+      <line x1="160" y1="75" x2="270" y2="125" stroke="#3a7a3a" stroke-width="1.5"/>
+      <!-- Branch 2 -->
+      <rect x="30" y="120" width="130" height="50" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="95" y="140" text-anchor="middle" font-size="10" font-weight="900" fill="#333">BIOGAS</text>
+      <text x="95" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Methane → Energy</text>
+      <line x1="160" y1="145" x2="270" y2="145" stroke="#3a7a3a" stroke-width="1.5"/>
+      <!-- Branch 3 -->
+      <rect x="30" y="190" width="130" height="50" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="95" y="210" text-anchor="middle" font-size="10" font-weight="900" fill="#333">DIRECT LAND</text>
+      <text x="95" y="225" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Application</text>
+      <line x1="160" y1="215" x2="270" y2="165" stroke="#3a7a3a" stroke-width="1.5"/>
+      <!-- Branch 4 -->
+      <rect x="540" y="50" width="130" height="50" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="605" y="70" text-anchor="middle" font-size="10" font-weight="900" fill="#333">ANIMAL FEED</text>
+      <text x="605" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Poultry litter for cattle</text>
+      <line x1="540" y1="75" x2="430" y2="125" stroke="#3a7a3a" stroke-width="1.5"/>
+      <!-- Branch 5 -->
+      <rect x="540" y="120" width="130" height="50" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="605" y="140" text-anchor="middle" font-size="10" font-weight="900" fill="#333">FISH FEED</text>
+      <text x="605" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Aquaculture</text>
+      <line x1="540" y1="145" x2="430" y2="145" stroke="#3a7a3a" stroke-width="1.5"/>
+      <!-- Branch 6 -->
+      <rect x="540" y="190" width="130" height="50" rx="6" fill="#e8f0e8" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="605" y="210" text-anchor="middle" font-size="10" font-weight="900" fill="#333">BEDDING</text>
+      <text x="605" y="225" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Reuse as litter</text>
+      <line x1="540" y1="215" x2="430" y2="165" stroke="#3a7a3a" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Fig. 6.1 — Methods of livestock waste management.</figcaption>
+  </figure>
+
+  <h3>6.1 Sustainable Livestock Farming</h3>
+  <p><b>Definition:</b> A system of livestock production that meets the needs of the present without compromising the ability of future generations to meet their own needs. It integrates environmental health, economic profitability, and social equity.</p>
+
+  <h3>6.2 Organic Livestock Farming</h3>
+  <p><b>Definition:</b> A system of production that relies on natural processes, biodiversity, and cycles adapted to local conditions, rather than synthetic inputs like chemical fertilizers, pesticides, and hormones.</p>
+  <p><b>Principles:</b></p>
+  <ul class="tight">
+    <li>Use of organic feed (no synthetic additives).</li>
+    <li>Access to outdoor areas (free-range).</li>
+    <li>No use of antibiotics for growth promotion.</li>
+    <li>Humane treatment of animals.</li>
+    <li>Environmental stewardship.</li>
+  </ul>
+
+  <h3>6.3 Waste Management in Livestock</h3>
+  <table>
+    <tr><th style="width:22%">Method</th><th>Description</th><th>Benefit</th></tr>
+    <tr><td class="k">Composting</td><td>Controlled decomposition of manure and bedding.</td><td>Produces organic fertilizer; reduces pathogens.</td></tr>
+    <tr><td class="k">Biogas Production</td><td>Anaerobic digestion of manure to produce methane.</td><td>Renewable energy for cooking and electricity.</td></tr>
+    <tr><td class="k">Direct Land Application</td><td>Spreading manure on crop fields.</td><td>Recycles nutrients (N, P, K) back to soil.</td></tr>
+    <tr><td class="k">Animal Feed</td><td>Poultry litter used as feed for cattle.</td><td>Reduces feed cost; recycles nutrients.</td></tr>
+    <tr><td class="k">Fish Feed</td><td>Manure used to fertilize fish ponds.</td><td>Promotes plankton growth for fish.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define sustainable livestock farming.</li>
+        <li>List three principles of organic livestock farming.</li>
+        <li>Describe two methods of livestock waste management.</li>
+        <li>What is biogas and how is it produced?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Importance of Waste Management in Livestock Farming."</li>
+        <li>Draw a diagram of a biogas digester and explain how it works.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No new academic content. The source marks this as the midterm break.</p>
+
+  <div class="box obj">
+    <h4>Suggested Holiday Tasks</h4>
+    <ol class="cols2 tight">
+      <li>Read ahead: Livestock Business Planning.</li>
+      <li>Visit a local farm and observe their waste management practices.</li>
+      <li>Interview a farmer about the challenges they face in livestock production.</li>
+      <li>Research a successful livestock entrepreneur in Nigeria.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for the midterm break. This page is intentionally short so it can serve as a divider sheet.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — LIVESTOCK BUSINESS PLANNING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Livestock Business Planning</h2>
+  <p class="meta"><b>Content:</b> Business plan preparation; Funding sources.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define a business plan and explain its importance.</li>
+      <li>Identify the key components of a livestock business plan.</li>
+      <li>List and explain sources of funding for livestock enterprises.</li>
+      <li>Prepare a simple business plan for a livestock venture.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">COMPONENTS OF A LIVESTOCK BUSINESS PLAN</text>
+      <!-- Central hub -->
+      <ellipse cx="350" cy="150" rx="80" ry="35" fill="#1a4a6e" stroke="#0a2a4a" stroke-width="2"/>
+      <text x="350" y="145" text-anchor="middle" font-size="11" font-weight="900" fill="#fff">BUSINESS</text>
+      <text x="350" y="162" text-anchor="middle" font-size="11" font-weight="900" fill="#fff">PLAN</text>
+      <!-- Branch 1 -->
+      <rect x="20" y="50" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">EXECUTIVE</text>
+      <text x="85" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">SUMMARY</text>
+      <line x1="150" y1="75" x2="270" y2="135" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 2 -->
+      <rect x="20" y="120" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="140" text-anchor="middle" font-size="9" font-weight="900" fill="#333">PRODUCT</text>
+      <text x="85" y="155" text-anchor="middle" font-size="9" font-weight="900" fill="#333">DESCRIPTION</text>
+      <line x1="150" y1="145" x2="270" y2="150" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 3 -->
+      <rect x="20" y="190" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="210" text-anchor="middle" font-size="9" font-weight="900" fill="#333">MARKET</text>
+      <text x="85" y="225" text-anchor="middle" font-size="9" font-weight="900" fill="#333">ANALYSIS</text>
+      <line x1="150" y1="215" x2="270" y2="165" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 4 -->
+      <rect x="550" y="50" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="615" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">OPERATIONS</text>
+      <text x="615" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">PLAN</text>
+      <line x1="550" y1="75" x2="430" y2="135" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 5 -->
+      <rect x="550" y="120" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="615" y="140" text-anchor="middle" font-size="9" font-weight="900" fill="#333">FINANCIAL</text>
+      <text x="615" y="155" text-anchor="middle" font-size="9" font-weight="900" fill="#333">PLAN</text>
+      <line x1="550" y1="145" x2="430" y2="150" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 6 -->
+      <rect x="550" y="190" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="615" y="210" text-anchor="middle" font-size="9" font-weight="900" fill="#333">RISK</text>
+      <text x="615" y="225" text-anchor="middle" font-size="9" font-weight="900" fill="#333">ANALYSIS</text>
+      <line x1="550" y1="215" x2="430" y2="165" stroke="#1a4a6e" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Fig. 8.1 — Components of a livestock business plan.</figcaption>
+  </figure>
+
+  <h3>8.1 Business Plan</h3>
+  <p><b>Definition:</b> A written document that describes the nature of the business, its goals, target market, strategies, and financial forecasts. It is a roadmap for success.</p>
+  <p><b>Importance:</b> Attracts investors, guides decision-making, helps secure loans, and provides a benchmark for measuring performance.</p>
+
+  <h3>8.2 Key Components of a Livestock Business Plan</h3>
+  <ol class="tight">
+    <li><b>Executive Summary:</b> A brief overview of the entire plan.</li>
+    <li><b>Business Description:</b> Type of livestock, location, scale, goals.</li>
+    <li><b>Market Analysis:</b> Target market, competitors, pricing strategy.</li>
+    <li><b>Operations Plan:</b> Housing, feeding, breeding, health management.</li>
+    <li><b>Financial Plan:</b> Start-up capital, projected income and expenses, break-even analysis.</li>
+    <li><b>Risk Analysis:</b> Potential risks (disease, market fluctuations) and mitigation strategies.</li>
+  </ol>
+
+  <h3>8.3 Funding Sources for Livestock Enterprises</h3>
+  <table>
+    <tr><th style="width:22%">Source</th><th>Description</th></tr>
+    <tr><td class="k">Personal Savings</td><td>Own funds; no interest, but limited.</td></tr>
+    <tr><td class="k">Family and Friends</td><td>Informal loans; flexible terms, but may strain relationships.</td></tr>
+    <tr><td class="k">Bank Loans</td><td>Commercial banks, microfinance banks; requires collateral and interest.</td></tr>
+    <tr><td class="k">Government Schemes</td><td>Agricultural loans, grants (e.g., CBN Anchor Borrowers' Programme).</td></tr>
+    <tr><td class="k">Cooperatives</td><td>Pooled funds from members; low interest.</td></tr>
+    <tr><td class="k">NGOs and Donors</td><td>Grants for development projects.</td></tr>
+    <tr><td class="k">Investors</td><td>Equity investors; share ownership and profits.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define a business plan and state its importance.</li>
+        <li>List six components of a livestock business plan.</li>
+        <li>List four sources of funding for livestock enterprises.</li>
+        <li>Why is a financial plan important in a business plan?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Prepare a one-page business plan for a small poultry farm.</li>
+        <li>Compare bank loans and government schemes as funding sources.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — FARM PROJECT DEVELOPMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Farm Project Development</h2>
+  <p class="meta"><b>Content:</b> Practical steps in establishing a livestock enterprise.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Outline the steps in establishing a livestock enterprise.</li>
+      <li>Identify the factors to consider when selecting a site.</li>
+      <li>Explain the importance of feasibility studies.</li>
+      <li>Describe the process of setting up a small livestock farm.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="280" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">STEPS IN ESTABLISHING A LIVESTOCK ENTERPRISE</text>
+      <!-- Flowchart -->
+      <rect x="30" y="50" width="110" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">1. IDEA &</text>
+      <text x="85" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">FEASIBILITY</text>
+      <line x1="140" y1="75" x2="170" y2="75" stroke="#1a4a6e" stroke-width="2" marker-end="url(#arrowBlue)"/>
+      <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#1a4a6e"/>
+        </marker>
+      </defs>
+
+      <rect x="175" y="50" width="110" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="230" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">2. SITE</text>
+      <text x="230" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">SELECTION</text>
+      <line x1="285" y1="75" x2="315" y2="75" stroke="#1a4a6e" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+      <rect x="320" y="50" width="110" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="375" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">3. CAPITAL &</text>
+      <text x="375" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">FUNDING</text>
+      <line x1="430" y1="75" x2="460" y2="75" stroke="#1a4a6e" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+      <rect x="465" y="50" width="110" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="520" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">4. HOUSING &</text>
+      <text x="520" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">EQUIPMENT</text>
+      <line x1="575" y1="75" x2="605" y2="75" stroke="#1a4a6e" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+      <rect x="610" y="50" width="70" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="645" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">5.</text>
+      <text x="645" y="85" text-anchor="middle" font-size="9" font-weight="900" fill="#333">STOCK</text>
+
+      <!-- Bottom row -->
+      <rect x="30" y="160" width="110" height="50" rx="6" fill="#f0f8f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="85" y="180" text-anchor="middle" font-size="9" font-weight="900" fill="#333">6. FEED &</text>
+      <text x="85" y="195" text-anchor="middle" font-size="9" font-weight="900" fill="#333">NUTRITION</text>
+      <line x1="140" y1="185" x2="170" y2="185" stroke="#3a7a3a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+      <defs>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0,0 8,3 0,6" fill="#3a7a3a"/>
+        </marker>
+      </defs>
+
+      <rect x="175" y="160" width="110" height="50" rx="6" fill="#f0f8f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="230" y="180" text-anchor="middle" font-size="9" font-weight="900" fill="#333">7. HEALTH</text>
+      <text x="230" y="195" text-anchor="middle" font-size="9" font-weight="900" fill="#333">MANAGEMENT</text>
+      <line x1="285" y1="185" x2="315" y2="185" stroke="#3a7a3a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+      <rect x="320" y="160" width="110" height="50" rx="6" fill="#f0f8f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="375" y="180" text-anchor="middle" font-size="9" font-weight="900" fill="#333">8. BREEDING</text>
+      <text x="375" y="195" text-anchor="middle" font-size="9" font-weight="900" fill="#333">PROGRAM</text>
+      <line x1="430" y1="185" x2="460" y2="185" stroke="#3a7a3a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+      <rect x="465" y="160" width="110" height="50" rx="6" fill="#f0f8f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="520" y="180" text-anchor="middle" font-size="9" font-weight="900" fill="#333">9. RECORD</text>
+      <text x="520" y="195" text-anchor="middle" font-size="9" font-weight="900" fill="#333">KEEPING</text>
+      <line x1="575" y1="185" x2="605" y2="185" stroke="#3a7a3a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+      <rect x="610" y="160" width="70" height="50" rx="6" fill="#f0f8f0" stroke="#3a7a3a" stroke-width="1.5"/>
+      <text x="645" y="180" text-anchor="middle" font-size="9" font-weight="900" fill="#333">10.</text>
+      <text x="645" y="195" text-anchor="middle" font-size="9" font-weight="900" fill="#333">MARKET</text>
+
+      <text x="350" y="240" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Continuous cycle: Monitor → Evaluate → Improve</text>
+    </svg>
+    <figcaption>Fig. 9.1 — Steps in establishing a livestock enterprise.</figcaption>
+  </figure>
+
+  <h3>9.1 Steps in Establishing a Livestock Enterprise</h3>
+  <ol class="tight">
+    <li><b>Idea Generation and Feasibility Study:</b> Identify the type of livestock, market demand, and profitability.</li>
+    <li><b>Site Selection:</b> Choose a location with good drainage, water supply, accessibility, and security.</li>
+    <li><b>Capital and Funding:</b> Estimate start-up costs and secure funding.</li>
+    <li><b>Housing and Equipment:</b> Construct appropriate housing and purchase equipment.</li>
+    <li><b>Stock Acquisition:</b> Purchase healthy foundation stock from reputable sources.</li>
+    <li><b>Feed and Nutrition:</b> Plan a feeding program using balanced rations.</li>
+    <li><b>Health Management:</b> Establish a vaccination and deworming schedule.</li>
+    <li><b>Breeding Program:</b> Plan for replacement stock and genetic improvement.</li>
+    <li><b>Record Keeping:</b> Maintain production, financial, and health records.</li>
+    <li><b>Marketing:</b> Identify market outlets and develop a marketing strategy.</li>
+  </ol>
+
+  <h3>9.2 Factors in Site Selection</h3>
+  <ul class="tight">
+    <li><b>Topography:</b> Well-drained, gently sloping land.</li>
+    <li><b>Water Supply:</b> Access to clean, constant water.</li>
+    <li><b>Accessibility:</b> Good roads for feed delivery and product transport.</li>
+    <li><b>Proximity to Market:</b> Close to consumers to reduce transport costs.</li>
+    <li><b>Security:</b> Protection from theft and predators.</li>
+    <li><b>Environmental Factors:</b> Away from residential areas to avoid nuisance.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>List five steps in establishing a livestock enterprise.</li>
+        <li>What is a feasibility study?</li>
+        <li>List four factors to consider in site selection.</li>
+        <li>Why is record keeping important in a livestock enterprise?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word report on the steps you would take to establish a small poultry farm.</li>
+        <li>Draw a flowchart of the farm establishment process.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — ENTREPRENEURSHIP IN LIVESTOCK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Entrepreneurship in Livestock</h2>
+  <p class="meta"><b>Content:</b> Opportunities; Success stories; Challenges.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define entrepreneurship and its role in livestock development.</li>
+      <li>Identify business opportunities in livestock farming.</li>
+      <li>Discuss success stories of livestock entrepreneurs in Nigeria.</li>
+      <li>Examine the challenges facing livestock entrepreneurs.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="28" text-anchor="middle" font-size="16" font-weight="900" fill="#1a4a6e">ENTREPRENEURIAL OPPORTUNITIES IN LIVESTOCK</text>
+      <!-- Central hub -->
+      <ellipse cx="350" cy="150" rx="80" ry="35" fill="#1a4a6e" stroke="#0a2a4a" stroke-width="2"/>
+      <text x="350" y="145" text-anchor="middle" font-size="11" font-weight="900" fill="#fff">LIVESTOCK</text>
+      <text x="350" y="162" text-anchor="middle" font-size="11" font-weight="900" fill="#fff">BUSINESS</text>
+      <!-- Branch 1 -->
+      <rect x="20" y="50" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">POULTRY</text>
+      <text x="85" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Eggs, Meat, Chicks</text>
+      <line x1="150" y1="75" x2="270" y2="135" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 2 -->
+      <rect x="20" y="120" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="140" text-anchor="middle" font-size="9" font-weight="900" fill="#333">FISH FARMING</text>
+      <text x="85" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Catfish, Tilapia</text>
+      <line x1="150" y1="145" x2="270" y2="150" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 3 -->
+      <rect x="20" y="190" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="85" y="210" text-anchor="middle" font-size="9" font-weight="900" fill="#333">PIGGERY</text>
+      <text x="85" y="225" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Pork, Bacon</text>
+      <line x1="150" y1="215" x2="270" y2="165" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 4 -->
+      <rect x="550" y="50" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="615" y="70" text-anchor="middle" font-size="9" font-weight="900" fill="#333">FEED MILL</text>
+      <text x="615" y="85" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Feed Production</text>
+      <line x1="550" y1="75" x2="430" y2="135" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 5 -->
+      <rect x="550" y="120" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="615" y="140" text-anchor="middle" font-size="9" font-weight="900" fill="#333">PROCESSING</text>
+      <text x="615" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Meat, Milk, Leather</text>
+      <line x1="550" y1="145" x2="430" y2="150" stroke="#1a4a6e" stroke-width="1.5"/>
+      <!-- Branch 6 -->
+      <rect x="550" y="190" width="130" height="50" rx="6" fill="#e8f0f8" stroke="#1a4a6e" stroke-width="1.5"/>
+      <text x="615" y="210" text-anchor="middle" font-size="9" font-weight="900" fill="#333">VET SERVICES</text>
+      <text x="615" y="225" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Drugs, Vaccines, Clinics</text>
+      <line x1="550" y1="215" x2="430" y2="165" stroke="#1a4a6e" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Fig. 10.1 — Entrepreneurial opportunities in the livestock value chain.</figcaption>
+  </figure>
+
+  <h3>10.1 Definition of Entrepreneurship</h3>
+  <p><b>Entrepreneurship</b> is the process of identifying a business opportunity, mobilizing resources, and taking calculated risks to establish and manage a venture for profit. A livestock entrepreneur is someone who starts and runs a livestock business.</p>
+
+  <h3>10.2 Opportunities in Livestock Entrepreneurship</h3>
+  <table>
+    <tr><th style="width:24%">Area</th><th>Opportunities</th></tr>
+    <tr><td class="k">Poultry</td><td>Broiler production, Layer (egg) production, Hatchery, Poultry feed production, Egg marketing.</td></tr>
+    <tr><td class="k">Fish Farming</td><td>Catfish farming, Tilapia farming, Fish feed production, Fish processing and smoking.</td></tr>
+    <tr><td class="k">Piggery</td><td>Pig production, Pork processing (bacon, ham, sausages), Pig feed production.</td></tr>
+    <tr><td class="k">Ruminants</td><td>Cattle fattening, Dairy production, Goat/sheep rearing, Leather processing.</td></tr>
+    <tr><td class="k">Micro-Livestock</td><td>Rabbit farming, Grasscutter farming, Snail farming, Beekeeping (apiculture).</td></tr>
+    <tr><td class="k">Support Services</td><td>Feed mill, Veterinary services, Equipment sales, Transportation, Marketing.</td></tr>
+  </table>
+
+  <h3>10.3 Success Stories</h3>
+  <p>Several Nigerian entrepreneurs have built successful livestock businesses. Examples include:</p>
+  <ul class="tight">
+    <li><b>Obasanjo Farms (Ota, Ogun State):</b> One of the largest poultry farms in Nigeria, founded by former President Olusegun Obasanjo.</li>
+    <li><b>Chi Farms:</b> A leading integrated poultry and fish farming company in Nigeria.</li>
+    <li><b>Agro-Allied Entrepreneurs:</b> Many small-scale farmers who have grown from backyard operations to commercial enterprises.</li>
+  </ul>
+
+  <h3>10.4 Challenges Facing Livestock Entrepreneurs</h3>
+  <ul class="tight">
+    <li><b>High Cost of Feed:</b> Feed accounts for 60-70% of production cost.</li>
+    <li><b>Disease Outbreaks:</b> Can wipe out entire flocks or herds.</li>
+    <li><b>Access to Credit:</b> High interest rates and collateral requirements.</li>
+    <li><b>Market Fluctuations:</b> Price instability for inputs and products.</li>
+    <li><b>Infrastructure:</b> Poor roads, unreliable electricity, inadequate water supply.</li>
+    <li><b>Government Policies:</b> Import bans, taxation, and inconsistent policies.</li>
+    <li><b>Security:</b> Theft, banditry, and farmer-herder conflicts.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define entrepreneurship.</li>
+        <li>List five business opportunities in livestock farming.</li>
+        <li>Name two successful livestock entrepreneurs in Nigeria.</li>
+        <li>List five challenges facing livestock entrepreneurs.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Role of Entrepreneurship in Livestock Development."</li>
+        <li>Interview a local livestock farmer and write a report on their challenges and successes.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — REVISION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>Revision — First Term</h2>
+  <p class="meta"><b>Content:</b> Comprehensive review of Weeks 1–10 and examination preparation.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Review all topics covered this term.</li>
+      <li>Identify areas of strength and weakness.</li>
+      <li>Practice past examination questions.</li>
+      <li>Prepare effectively for the end-of-term examination.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for revision week. This page is a checklist and study guide.</p>
+
+  <h3>11.1 Key Topics Checklist</h3>
+  <table>
+    <tr><th style="width:24%">Topic</th><th>Key Concepts to Remember</th></tr>
+    <tr>
+      <td class="k">Animal Biotechnology</td>
+      <td>Meaning, importance, applications (Reproductive, Genetic, Health, Nutrition, Products, Environment). Ethical considerations (animal welfare, GMO concerns).</td>
+    </tr>
+    <tr>
+      <td class="k">Reproductive Technologies</td>
+      <td>Artificial Insemination (AI) – rapid genetic improvement, disease control. Embryo Transfer (ET) – one donor, many offspring. Cloning – exact genetic copy, low success rate.</td>
+    </tr>
+    <tr>
+      <td class="k">Genetic Improvement</td>
+      <td>Selective Breeding (mass, pedigree, progeny). Hybrid Vigour (Heterosis) – offspring superior to parents. Genetic Modification (GM) – direct gene manipulation.</td>
+    </tr>
+    <tr>
+      <td class="k">Animal Welfare and Ethics</td>
+      <td>Animal Welfare vs. Animal Rights. Five Freedoms (Hunger, Discomfort, Pain, Normal Behaviour, Fear). Humane Slaughter (Stunning, Bleeding, Dressing, Chilling).</td>
+    </tr>
+    <tr>
+      <td class="k">Sustainable Livestock</td>
+      <td>Definition. Organic Farming (natural inputs, free-range, no antibiotics). Waste Management (Composting, Biogas, Direct Land Application, Animal Feed, Fish Feed).</td>
+    </tr>
+    <tr>
+      <td class="k">Business Planning</td>
+      <td>Definition, importance. Components (Executive Summary, Description, Market Analysis, Operations, Financial, Risk). Funding Sources (Savings, Banks, Government, Cooperatives, NGOs).</td>
+    </tr>
+    <tr>
+      <td class="k">Farm Project Development</td>
+      <td>Steps (Idea, Site, Capital, Housing, Stock, Feed, Health, Breeding, Records, Marketing). Site Selection (Topography, Water, Access, Market, Security).</td>
+    </tr>
+    <tr>
+      <td class="k">Entrepreneurship</td>
+      <td>Definition. Opportunities (Poultry, Fish, Piggery, Ruminants, Micro-livestock, Support Services). Challenges (Feed cost, Disease, Credit, Market, Infrastructure, Policy, Security).</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    <h4>Exam Strategy</h4>
+    <ul class="tight">
+      <li><b>Read the question carefully:</b> Identify the key verb — "Define," "Explain," "Discuss," "Compare," "List." Your answer must match the command word.</li>
+      <li><b>Plan your answer:</b> For essay questions, take a minute to jot down the main points you want to make before you start writing.</li>
+      <li><b>Use the "Define, Explain, Example" method:</b> For "explain" or "discuss" questions, start with a clear definition, provide a detailed explanation, and then give a specific example to support your point.</li>
+      <li><b>Be specific:</b> Use names, dates, and specific events (e.g., "AI," "ET," "Five Freedoms," "Biogas," "NAPRI") to show depth of knowledge.</li>
+      <li><b>Structure your essay:</b> Use an introduction, a body with clearly numbered points, and a brief conclusion.</li>
+    </ul>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <h4>Practice Essay Questions</h4>
+      <ol class="tight">
+        <li>Define animal biotechnology and explain five of its importance in livestock production.</li>
+        <li>Compare and contrast Artificial Insemination, Embryo Transfer, and Cloning.</li>
+        <li>Explain the concept of Hybrid Vigour and its importance in livestock breeding.</li>
+        <li>List and explain the Five Freedoms of animal welfare.</li>
+        <li>Describe the steps involved in humane slaughter of farm animals.</li>
+        <li>Discuss three methods of livestock waste management and their benefits.</li>
+        <li>List six components of a livestock business plan.</li>
+        <li>Outline the steps in establishing a livestock enterprise.</li>
+        <li>Discuss five challenges facing livestock entrepreneurs in Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Select one past WAEC/NECO essay question from any of the weeks in this term and write a full, detailed answer under timed conditions (45 minutes).</li>
+        <li>Create a set of 10 flashcards for the key terms covered this term (e.g., "AI," "ET," "Hybrid Vigor," "Five Freedoms," "Biogas," "Feasibility Study").</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 12 — EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 12</span>Examination</h2>
+  <p class="meta"><b>Content:</b> End-of-term examination covering all topics from Weeks 1–11.</p>
+
+  <div class="box obj">
+    <h4>Examination Structure</h4>
+    <table>
+      <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+      <tr><td class="k">A — Objectives</td><td>40 marks</td><td>Forty multiple-choice questions covering Weeks 1–11.</td></tr>
+      <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+      <tr><td class="k">C — Essay</td><td>40 marks</td><td>Four essay questions requiring detailed explanations and diagrams.</td></tr>
+    </table>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for examination week. This page is a divider sheet.</p>
+
+  <div class="box">
+    <h4>Final Tips</h4>
+    <ul class="tight">
+      <li>Review all diagrams and be prepared to draw and label them.</li>
+      <li>Practice defining key terms in your own words.</li>
+      <li>Use specific Nigerian examples wherever possible.</li>
+      <li>Manage your time: don't spend too long on one question.</li>
+      <li>Read all questions carefully before answering.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 13 — CLOSING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 13</span>Closing</h2>
+  <p class="meta"><b>Content:</b> End of term activities and vacation.</p>
+
+  <div class="box obj">
+    <h4>End of Term Activities</h4>
+    <ol class="cols2 tight">
+      <li>Review of examination performance.</li>
+      <li>Distribution of results.</li>
+      <li>Collection of holiday assignments.</li>
+      <li>Preparation for next term.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for closing week. This page is a divider sheet.</p>
+
+  <div class="box">
+    <h4>Holiday Reading</h4>
+    <ul class="tight">
+      <li>Preview SS3 Second Term topics: Dairy Technology, Meat Science, Hide and Skin Processing, Egg Technology.</li>
+      <li>Visit a local abattoir or dairy farm and observe the processing practices.</li>
+      <li>Keep a journal of any livestock-related observations during the holiday.</li>
+    </ul>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>

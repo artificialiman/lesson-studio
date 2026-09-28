@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quadratics, Indices &amp; Functions — Practice Worksheets</title>
+<style>
+  /* ============ PAGE SETUP ============ */
+  @page {
+    size: A4;
+    margin: 16mm 15mm 16mm 15mm;
+  }
+
+  :root {
+    --ink: #111111;
+    --muted: #5a6672;
+    --accent: #1b4f8a;
+    --accent-soft: #e8f0f8;
+    --rule: #c9d3dd;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.8pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet { max-width: 180mm; margin: 0 auto; }
+
+  /* ============ HEADINGS ============ */
+  h1 {
+    font-size: 18pt;
+    margin: 0 0 1.5mm;
+    color: var(--accent);
+    letter-spacing: .2px;
+  }
+
+  .subtitle {
+    font-size: 9.5pt;
+    color: var(--muted);
+    margin: 0 0 6mm;
+  }
+
+  h2 {
+    font-size: 13pt;
+    color: var(--accent);
+    margin: 7mm 0 3mm;
+    padding: 0 0 1.4mm;
+    border-bottom: 1.6pt solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  h3 {
+    font-size: 11.5pt;
+    margin: 5mm 0 2mm;
+    color: var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ============ MATH STYLES ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+
+  sup {
+    font-size: .70em;
+    vertical-align: .45em;
+    line-height: 0;
+  }
+
+  .sqrt { white-space: nowrap; }
+
+  /* CSS-drawn fractions — render as real stacked fractions in the PDF */
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: .94em;
+    line-height: 1.06;
+    margin: 0 .12em;
+    position: relative;
+    top: -.06em;
+  }
+  .frac .n {
+    display: block;
+    padding: 0 .32em .4mm;
+    border-bottom: 1pt solid currentColor;
+  }
+  .frac .d {
+    display: block;
+    padding: .4mm .32em 0;
+  }
+
+  /* ============ QUESTION LISTS ============ */
+  ol.q {
+    margin: 0;
+    padding-left: 9mm;
+  }
+
+  ol.q > li {
+    margin: 0 0 2.1mm;
+    padding-left: 1.2mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  ol.q > li::marker {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ============ ANSWER KEY ============ */
+  .keybox {
+    background: var(--accent-soft);
+    border-left: 3pt solid var(--accent);
+    padding: 4mm 5mm 5mm;
+    border-radius: 1mm;
+    break-inside: avoid-page;
+  }
+
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6mm 7mm;
+    margin-top: 2.5mm;
+  }
+
+  .answers.two { grid-template-columns: repeat(2, 1fr); }
+
+  .answers > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 1.2mm 0;
+    border-bottom: .5pt dotted var(--rule);
+    font-size: 10.2pt;
+  }
+
+  .answers .num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 1.4mm;
+  }
+
+  /* ============ UTILITIES ============ */
+  .newpage {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .note {
+    font-size: 9.3pt;
+    color: var(--muted);
+    margin: 0 0 5mm;
+    padding: 2.5mm 4mm;
+    border: .6pt solid var(--rule);
+    border-radius: 1mm;
+  }
+
+  hr.sep {
+    border: 0;
+    border-top: .6pt solid var(--rule);
+    margin: 6mm 0;
+  }
+
+  /* ============ SCREEN PREVIEW ONLY ============ */
+  @media screen {
+    body { background: #eef2f6; padding: 10mm 0; }
+    .sheet {
+      background: #fff;
+      padding: 14mm 15mm;
+      box-shadow: 0 2px 14px rgba(0,0,0,.12);
+      border-radius: 1mm;
+    }
+  }
+
+  @media print {
+    .sheet { max-width: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ============================ WORKSHEET 1: QUADRATICS ============================ -->
+  <h1>Quadratic Equations — Practice Worksheet</h1>
+  <p class="subtitle">Completing the Square &bull; Factorization &bull; Quadratic Formula &bull; Remainder Theorem</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 30 questions. For questions marked
+    “exact answers” or “surd form”, leave your answer with a root sign
+    (e.g. <span class="m">2 &plusmn; &radic;5</span>). For questions marked
+    “2 decimal places”, round correctly. Show all working.
+  </p>
+
+  <h2>Section A — Completing the Square (Questions 1&ndash;8)</h2>
+  <ol class="q">
+    <li>Express <span class="m">x<sup>2</sup> + 6x + 5</span> in completed-square form.</li>
+    <li>Solve by completing the square: <span class="m">x<sup>2</sup> &minus; 8x + 7 = 0</span>.</li>
+    <li>Write <span class="m">2x<sup>2</sup> + 12x + 13</span> in the form <span class="m">a(x + p)<sup>2</sup> + q</span>.</li>
+    <li>Solve <span class="m">x<sup>2</sup> + 4x &minus; 12 = 0</span> by completing the square.</li>
+    <li>Complete the square: <span class="m">x<sup>2</sup> &minus; 10x + 21</span>.</li>
+    <li>Solve <span class="m">3x<sup>2</sup> &minus; 6x &minus; 1 = 0</span> by completing the square.</li>
+    <li>Express <span class="m">x<sup>2</sup> + 5x + 2</span> in the form <span class="m">(x + p)<sup>2</sup> + q</span>.</li>
+    <li>Find the minimum value of <span class="m">y = x<sup>2</sup> &minus; 6x + 11</span> by completing the square.</li>
+  </ol>
+
+  <h2>Section B — Factorization (Questions 9&ndash;16)</h2>
+  <ol class="q" start="9">
+    <li>Factorize <span class="m">x<sup>2</sup> &minus; 7x + 12</span>.</li>
+    <li>Factorize <span class="m">x<sup>2</sup> + 5x &minus; 24</span>.</li>
+    <li>Factorize <span class="m">2x<sup>2</sup> + 7x + 3</span>.</li>
+    <li>Solve by factorization: <span class="m">x<sup>2</sup> &minus; 5x = 0</span>.</li>
+    <li>Factorize <span class="m">6x<sup>2</sup> &minus; x &minus; 2</span>.</li>
+    <li>Solve by factorization: <span class="m">x<sup>2</sup> + 3x &minus; 10 = 0</span>.</li>
+    <li>Factorize <span class="m">4x<sup>2</sup> &minus; 25</span>.</li>
+    <li>Solve by factorization: <span class="m">2x<sup>2</sup> &minus; 9x + 4 = 0</span>.</li>
+  </ol>
+
+  <h2>Section C — Quadratic Formula (Questions 17&ndash;24)</h2>
+  <ol class="q" start="17">
+    <li>Solve <span class="m">x<sup>2</sup> &minus; 4x &minus; 1 = 0</span> using the quadratic formula. Leave your answer in surd form.</li>
+    <li>Solve <span class="m">2x<sup>2</sup> + 5x &minus; 3 = 0</span> using the quadratic formula.</li>
+    <li>Solve <span class="m">3x<sup>2</sup> &minus; 2x &minus; 4 = 0</span>, giving answers to 2 decimal places.</li>
+    <li>Solve <span class="m">x<sup>2</sup> + 6x + 2 = 0</span>, giving exact answers.</li>
+    <li>Use the quadratic formula to solve <span class="m">5x<sup>2</sup> &minus; 7x + 1 = 0</span>, giving answers to 2 decimal places.</li>
+    <li>Solve <span class="m">4x<sup>2</sup> + 4x &minus; 1 = 0</span>, giving exact answers.</li>
+    <li>Solve <span class="m">x<sup>2</sup> &minus; 2x &minus; 15 = 0</span> using the quadratic formula.</li>
+    <li>Solve <span class="m">2x<sup>2</sup> + 3x &minus; 7 = 0</span>, giving exact answers.</li>
+  </ol>
+
+  <h2>Section D — Basic Remainder Theorem (Questions 25&ndash;30)</h2>
+  <ol class="q" start="25">
+    <li>Find the remainder when <span class="m">x<sup>3</sup> &minus; 3x<sup>2</sup> + 4x &minus; 5</span> is divided by <span class="m">x &minus; 2</span>.</li>
+    <li>Find the remainder when <span class="m">2x<sup>3</sup> + x<sup>2</sup> &minus; 5x + 3</span> is divided by <span class="m">x + 1</span>.</li>
+    <li>If <span class="m">f(x) = x<sup>3</sup> + kx &minus; 4</span> and <span class="m">f(2) = 6</span>, find <span class="m">k</span>.</li>
+    <li>Use the remainder theorem to find the remainder when <span class="m">x<sup>4</sup> &minus; 2x<sup>2</sup> + 3</span> is divided by <span class="m">x &minus; 3</span>.</li>
+    <li>Find <span class="m">a</span> if <span class="m">x &minus; 1</span> is a factor of <span class="m">x<sup>3</sup> + ax<sup>2</sup> &minus; 3x + 2</span>.</li>
+    <li>Find the remainder when <span class="m">3x<sup>3</sup> &minus; 4x<sup>2</sup> + 2x &minus; 7</span> is divided by <span class="m">2x &minus; 1</span>.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: QUADRATICS ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Quadratic Equations</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Completing the Square</h3>
+    <div class="answers">
+      <div><span class="num">1.</span><span class="m">(x + 3)<sup>2</sup> &minus; 4</span></div>
+      <div><span class="num">2.</span><span class="m">x = 7, &nbsp;1</span></div>
+      <div><span class="num">3.</span><span class="m">2(x + 3)<sup>2</sup> &minus; 5</span></div>
+      <div><span class="num">4.</span><span class="m">x = 2, &minus;6</span></div>
+      <div><span class="num">5.</span><span class="m">(x &minus; 5)<sup>2</sup> &minus; 4</span></div>
+      <div><span class="num">6.</span><span class="m">x = 1 &plusmn; <span class="frac"><span class="n">2&radic;3</span><span class="d">3</span></span></span></div>
+      <div><span class="num">7.</span><span class="m">(x + <span class="frac"><span class="n">5</span><span class="d">2</span></span>)<sup>2</sup> &minus; <span class="frac"><span class="n">17</span><span class="d">4</span></span></span></div>
+      <div><span class="num">8.</span>Minimum value <span class="m">= 2</span></div>
+    </div>
+
+    <h3>Section B — Factorization</h3>
+    <div class="answers">
+      <div><span class="num">9.</span><span class="m">(x &minus; 3)(x &minus; 4)</span></div>
+      <div><span class="num">10.</span><span class="m">(x + 8)(x &minus; 3)</span></div>
+      <div><span class="num">11.</span><span class="m">(2x + 1)(x + 3)</span></div>
+      <div><span class="num">12.</span><span class="m">x = 0, &nbsp;5</span></div>
+      <div><span class="num">13.</span><span class="m">(3x &minus; 2)(2x + 1)</span></div>
+      <div><span class="num">14.</span><span class="m">x = &minus;5, &nbsp;2</span></div>
+      <div><span class="num">15.</span><span class="m">(2x &minus; 5)(2x + 5)</span></div>
+      <div><span class="num">16.</span><span class="m">x = <span class="frac"><span class="n">1</span><span class="d">2</span></span>, &nbsp;4</span></div>
+    </div>
+
+    <h3>Section C — Quadratic Formula</h3>
+    <div class="answers">
+      <div><span class="num">17.</span><span class="m">x = 2 &plusmn; &radic;5</span></div>
+      <div><span class="num">18.</span><span class="m">x = <span class="frac"><span class="n">1</span><span class="d">2</span></span>, &minus;3</span></div>
+      <div><span class="num">19.</span><span class="m">x &asymp; 1.54, &minus;0.87</span></div>
+      <div><span class="num">20.</span><span class="m">x = &minus;3 &plusmn; &radic;7</span></div>
+      <div><span class="num">21.</span><span class="m">x &asymp; 1.24, &nbsp;0.16</span></div>
+      <div><span class="num">22.</span><span class="m">x = <span class="frac"><span class="n">&minus;1 &plusmn; &radic;2</span><span class="d">2</span></span></span></div>
+      <div><span class="num">23.</span><span class="m">x = 5, &minus;3</span></div>
+      <div><span class="num">24.</span><span class="m">x = <span class="frac"><span class="n">&minus;3 &plusmn; &radic;65</span><span class="d">4</span></span></span></div>
+    </div>
+
+    <h3>Section D — Remainder Theorem</h3>
+    <div class="answers">
+      <div><span class="num">25.</span><span class="m">&minus;1</span></div>
+      <div><span class="num">26.</span><span class="m">7</span></div>
+      <div><span class="num">27.</span><span class="m">k = 1</span></div>
+      <div><span class="num">28.</span><span class="m">66</span></div>
+      <div><span class="num">29.</span><span class="m">a = 0</span></div>
+      <div><span class="num">30.</span><span class="m">&minus; <span class="frac"><span class="n">53</span><span class="d">8</span></span></span></div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 2: INDICES SET A ============================ -->
+  <div class="newpage"></div>
+  <h1>Indices — Practice Worksheet (Set A)</h1>
+  <p class="subtitle">Application of the Laws of Indices</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Simplify fully. Leave all answers in positive
+    index form unless the question asks you to evaluate. For the “solve”
+    questions, express both sides with the same base first.
+  </p>
+
+  <h2>Section A — Simplifying &amp; Evaluating (Questions 1&ndash;13)</h2>
+  <ol class="q">
+    <li>Simplify: <span class="m">x<sup>5</sup> &times; x<sup>7</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">a<sup>9</sup></span><span class="d">a<sup>4</sup></span></span></span></li>
+    <li>Simplify: <span class="m">(y<sup>3</sup>)<sup>5</sup></span></li>
+    <li>Simplify: <span class="m">(2x<sup>3</sup>)<sup>4</sup></span></li>
+    <li>Simplify: <span class="m">3a<sup>2</sup> &times; 4a<sup>5</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">12m<sup>7</sup></span><span class="d">4m<sup>3</sup></span></span></span></li>
+    <li>Evaluate: <span class="m">5<sup>0</sup> + 2<sup>&minus;3</sup></span></li>
+    <li>Simplify: <span class="m">(x<sup>2</sup>y<sup>3</sup>)<sup>2</sup> &times; x<sup>&minus;3</sup>y</span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">a<sup>5</sup>b<sup>&minus;2</sup></span><span class="d">a<sup>2</sup>b<sup>3</sup></span></span></span></li>
+    <li>Evaluate: <span class="m">27<sup>2/3</sup></span></li>
+    <li>Evaluate: <span class="m">16<sup>&minus;3/4</sup></span></li>
+    <li>Simplify: <span class="m">&radic;x &times; x<sup>3/2</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">x<sup>1/2</sup></span><span class="d">x<sup>&minus;1/2</sup></span></span></span></li>
+  </ol>
+
+  <h2>Section B — Solving Index Equations (Questions 14&ndash;20)</h2>
+  <ol class="q" start="14">
+    <li>Solve: <span class="m">2<sup>x+1</sup> = 32</span></li>
+    <li>Solve: <span class="m">3<sup>2x&minus;1</sup> = 27</span></li>
+    <li>Solve: <span class="m">5<sup>x</sup> = <span class="frac"><span class="n">1</span><span class="d">125</span></span></span></li>
+    <li>Simplify: <span class="m">(8x<sup>6</sup>)<sup>2/3</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">(2a<sup>3</sup>)<sup>2</sup></span><span class="d">4a<sup>&minus;1</sup></span></span></span></li>
+    <li>If <span class="m">2<sup>x</sup> = 8</span> and <span class="m">3<sup>y</sup> = 81</span>, find <span class="m">x + y</span>.</li>
+    <li>Simplify: <span class="m">(<span class="frac"><span class="n">x<sup>2</sup></span><span class="d">y<sup>3</sup></span></span>)<sup>&minus;2</sup> &times; <span class="frac"><span class="n">y<sup>6</sup></span><span class="d">x<sup>4</sup></span></span></span></li>
+  </ol>
+
+  <!-- ---------- ANSWERS: INDICES SET A ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Indices (Set A)</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Simplifying &amp; Evaluating</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span><span class="m">x<sup>12</sup></span></div>
+      <div><span class="num">2.</span><span class="m">a<sup>5</sup></span></div>
+      <div><span class="num">3.</span><span class="m">y<sup>15</sup></span></div>
+      <div><span class="num">4.</span><span class="m">16x<sup>12</sup></span></div>
+      <div><span class="num">5.</span><span class="m">12a<sup>7</sup></span></div>
+      <div><span class="num">6.</span><span class="m">3m<sup>4</sup></span></div>
+      <div><span class="num">7.</span><span class="m"><span class="frac"><span class="n">9</span><span class="d">8</span></span></span></div>
+      <div><span class="num">8.</span><span class="m">xy<sup>7</sup></span></div>
+      <div><span class="num">9.</span><span class="m"><span class="frac"><span class="n">a<sup>3</sup></span><span class="d">b<sup>5</sup></span></span></span></div>
+      <div><span class="num">10.</span><span class="m">9</span></div>
+      <div><span class="num">11.</span><span class="m"><span class="frac"><span class="n">1</span><span class="d">8</span></span></span></div>
+      <div><span class="num">12.</span><span class="m">x<sup>2</sup></span></div>
+      <div><span class="num">13.</span><span class="m">x</span></div>
+    </div>
+
+    <h3>Section B — Solving Index Equations</h3>
+    <div class="answers two">
+      <div><span class="num">14.</span><span class="m">x = 4</span></div>
+      <div><span class="num">15.</span><span class="m">x = 2</span></div>
+      <div><span class="num">16.</span><span class="m">x = &minus;3</span></div>
+      <div><span class="num">17.</span><span class="m">4x<sup>4</sup></span></div>
+      <div><span class="num">18.</span><span class="m">a<sup>7</sup></span></div>
+      <div><span class="num">19.</span><span class="m">x + y = 7</span></div>
+      <div><span class="num">20.</span><span class="m"><span class="frac"><span class="n">y<sup>12</sup></span><span class="d">x<sup>8</sup></span></span></span></div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 3: INDICES SET B ============================ -->
+  <div class="newpage"></div>
+  <h1>Indices — Practice Worksheet (Set B)</h1>
+  <p class="subtitle">Application of the Laws of Indices — Variation</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Simplify fully. Leave all answers in positive
+    index form unless the question asks you to evaluate. For the “solve”
+    questions, express both sides with the same base first.
+  </p>
+
+  <h2>Section A — Simplifying &amp; Evaluating (Questions 1&ndash;13)</h2>
+  <ol class="q">
+    <li>Simplify: <span class="m">a<sup>6</sup> &times; a<sup>4</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">x<sup>11</sup></span><span class="d">x<sup>5</sup></span></span></span></li>
+    <li>Simplify: <span class="m">(b<sup>4</sup>)<sup>3</sup></span></li>
+    <li>Simplify: <span class="m">(3y<sup>2</sup>)<sup>3</sup></span></li>
+    <li>Simplify: <span class="m">5p<sup>3</sup> &times; 2p<sup>6</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">18n<sup>9</sup></span><span class="d">6n<sup>2</sup></span></span></span></li>
+    <li>Evaluate: <span class="m">7<sup>0</sup> + 3<sup>&minus;2</sup></span></li>
+    <li>Simplify: <span class="m">(m<sup>3</sup>n<sup>2</sup>)<sup>2</sup> &times; m<sup>&minus;4</sup>n</span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">x<sup>4</sup>y<sup>&minus;3</sup></span><span class="d">x<sup>&minus;1</sup>y<sup>2</sup></span></span></span></li>
+    <li>Evaluate: <span class="m">64<sup>2/3</sup></span></li>
+    <li>Evaluate: <span class="m">81<sup>&minus;3/4</sup></span></li>
+    <li>Simplify: <span class="m"><sup>3</sup>&radic;x &times; x<sup>2/3</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">x<sup>2/3</sup></span><span class="d">x<sup>&minus;1/3</sup></span></span></span></li>
+  </ol>
+
+  <h2>Section B — Solving Index Equations (Questions 14&ndash;20)</h2>
+  <ol class="q" start="14">
+    <li>Solve: <span class="m">2<sup>x+2</sup> = 64</span></li>
+    <li>Solve: <span class="m">3<sup>2x+1</sup> = 81</span></li>
+    <li>Solve: <span class="m">4<sup>x</sup> = <span class="frac"><span class="n">1</span><span class="d">64</span></span></span></li>
+    <li>Simplify: <span class="m">(27x<sup>9</sup>)<sup>2/3</sup></span></li>
+    <li>Simplify: <span class="m"><span class="frac"><span class="n">(3a<sup>2</sup>)<sup>2</sup></span><span class="d">9a<sup>&minus;3</sup></span></span></span></li>
+    <li>If <span class="m">2<sup>x</sup> = 16</span> and <span class="m">5<sup>y</sup> = 125</span>, find <span class="m">x + y</span>.</li>
+    <li>Simplify: <span class="m">(<span class="frac"><span class="n">x<sup>3</sup></span><span class="d">y<sup>2</sup></span></span>)<sup>&minus;2</sup> &times; <span class="frac"><span class="n">y<sup>4</sup></span><span class="d">x<sup>5</sup></span></span></span></li>
+  </ol>
+
+  <!-- ---------- ANSWERS: INDICES SET B ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Indices (Set B)</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Simplifying &amp; Evaluating</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span><span class="m">a<sup>10</sup></span></div>
+      <div><span class="num">2.</span><span class="m">x<sup>6</sup></span></div>
+      <div><span class="num">3.</span><span class="m">b<sup>12</sup></span></div>
+      <div><span class="num">4.</span><span class="m">27y<sup>6</sup></span></div>
+      <div><span class="num">5.</span><span class="m">10p<sup>9</sup></span></div>
+      <div><span class="num">6.</span><span class="m">3n<sup>7</sup></span></div>
+      <div><span class="num">7.</span><span class="m"><span class="frac"><span class="n">10</span><span class="d">9</span></span></span></div>
+      <div><span class="num">8.</span><span class="m">m<sup>2</sup>n<sup>5</sup></span></div>
+      <div><span class="num">9.</span><span class="m"><span class="frac"><span class="n">x<sup>5</sup></span><span class="d">y<sup>5</sup></span></span></span></div>
+      <div><span class="num">10.</span><span class="m">16</span></div>
+      <div><span class="num">11.</span><span class="m"><span class="frac"><span class="n">1</span><span class="d">27</span></span></span></div>
+      <div><span class="num">12.</span><span class="m">x</span></div>
+      <div><span class="num">13.</span><span class="m">x</span></div>
+    </div>
+
+    <h3>Section B — Solving Index Equations</h3>
+    <div class="answers two">
+      <div><span class="num">14.</span><span class="m">x = 4</span></div>
+      <div><span class="num">15.</span><span class="m">x = <span class="frac"><span class="n">3</span><span class="d">2</span></span></span></div>
+      <div><span class="num">16.</span><span class="m">x = &minus;3</span></div>
+      <div><span class="num">17.</span><span class="m">9x<sup>6</sup></span></div>
+      <div><span class="num">18.</span><span class="m">a<sup>7</sup></span></div>
+      <div><span class="num">19.</span><span class="m">x + y = 7</span></div>
+      <div><span class="num">20.</span><span class="m"><span class="frac"><span class="n">y<sup>8</sup></span><span class="d">x<sup>11</sup></span></span></span></div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 4: FUNCTIONS SET A ============================ -->
+  <div class="newpage"></div>
+  <h1>Functions — Basics &amp; Inverse (Set A)</h1>
+  <p class="subtitle">Evaluating, Domain &amp; Range, Composite, and Inverse Functions</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 20 questions. Show all working.
+    For inverse functions, write your answer in the form
+    <span class="m">f<sup>&minus;1</sup>(x) = …</span>.
+  </p>
+
+  <h2>Section A — Basics of Functions (Questions 1&ndash;10)</h2>
+  <ol class="q">
+    <li>Given <span class="m">f(x) = 3x &minus; 5</span>, find <span class="m">f(4)</span>.</li>
+    <li>Given <span class="m">g(x) = x<sup>2</sup> + 2x</span>, find <span class="m">g(&minus;3)</span>.</li>
+    <li>Find the domain of <span class="m">f(x) = <span class="frac"><span class="n">1</span><span class="d">x &minus; 2</span></span></span>.</li>
+    <li>Find the range of <span class="m">f(x) = x<sup>2</sup> + 1</span> for <span class="m">x &isin; &#8477;</span>.</li>
+    <li>Given <span class="m">f(x) = 2x + 1</span> and <span class="m">g(x) = x<sup>2</sup></span>, find <span class="m">(f &compfn; g)(x)</span>.</li>
+    <li>Given <span class="m">f(x) = x + 3</span> and <span class="m">g(x) = 2x</span>, find <span class="m">(g &compfn; f)(2)</span>.</li>
+    <li>Evaluate <span class="m">f(2)</span> for <span class="m">f(x) = <span class="frac"><span class="n">x + 1</span><span class="d">x &minus; 1</span></span></span>.</li>
+    <li>Find the domain of <span class="m">h(x) = &radic;(x &minus; 4)</span>.</li>
+    <li>If <span class="m">f(x) = 2x</span> and <span class="m">g(x) = x + 1</span>, find <span class="m">f(g(3))</span>.</li>
+    <li>Given <span class="m">f(x) = x<sup>2</sup> &minus; 4</span>, find <span class="m">f(a + 1)</span> in simplest form.</li>
+  </ol>
+
+  <h2>Section B — Inverse Functions (Questions 11&ndash;20)</h2>
+  <ol class="q" start="11">
+    <li>Find the inverse of <span class="m">f(x) = 2x + 3</span>.</li>
+    <li>Find <span class="m">f<sup>&minus;1</sup>(x)</span> for <span class="m">f(x) = <span class="frac"><span class="n">x</span><span class="d">3</span></span> &minus; 2</span>.</li>
+    <li>Find the inverse of <span class="m">g(x) = 5 &minus; 4x</span>.</li>
+    <li>Find the inverse of <span class="m">h(x) = <span class="frac"><span class="n">x + 1</span><span class="d">2</span></span></span>.</li>
+    <li>If <span class="m">f(x) = x<sup>3</sup> + 1</span>, find <span class="m">f<sup>&minus;1</sup>(x)</span>.</li>
+    <li>Find the inverse of <span class="m">f(x) = <span class="frac"><span class="n">2</span><span class="d">x &minus; 1</span></span></span> for <span class="m">x &ne; 1</span>.</li>
+    <li>Given <span class="m">f(x) = 3x &minus; 2</span>, find <span class="m">f<sup>&minus;1</sup>(4)</span>.</li>
+    <li>Show that <span class="m">f(f<sup>&minus;1</sup>(x)) = x</span> for <span class="m">f(x) = 4x &minus; 7</span>.</li>
+    <li>Find the inverse of <span class="m">f(x) = &radic;(x &minus; 2)</span> for <span class="m">x &ge; 2</span>.</li>
+    <li>The function <span class="m">f(x) = <span class="frac"><span class="n">2x + 1</span><span class="d">x &minus; 3</span></span></span> has an inverse. Find <span class="m">f<sup>&minus;1</sup>(x)</span>.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: FUNCTIONS SET A ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Functions (Set A)</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Basics of Functions</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span><span class="m">f(4) = 7</span></div>
+      <div><span class="num">2.</span><span class="m">g(&minus;3) = 3</span></div>
+      <div><span class="num">3.</span>Domain: <span class="m">x &ne; 2</span></div>
+      <div><span class="num">4.</span>Range: <span class="m">f(x) &ge; 1</span></div>
+      <div><span class="num">5.</span><span class="m">(f &compfn; g)(x) = 2x<sup>2</sup> + 1</span></div>
+      <div><span class="num">6.</span><span class="m">(g &compfn; f)(2) = 10</span></div>
+      <div><span class="num">7.</span><span class="m">f(2) = 3</span></div>
+      <div><span class="num">8.</span>Domain: <span class="m">x &ge; 4</span></div>
+      <div><span class="num">9.</span><span class="m">f(g(3)) = 8</span></div>
+      <div><span class="num">10.</span><span class="m">f(a + 1) = a<sup>2</sup> + 2a &minus; 3</span></div>
+    </div>
+
+    <h3>Section B — Inverse Functions</h3>
+    <div class="answers two">
+      <div><span class="num">11.</span><span class="m">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">x &minus; 3</span><span class="d">2</span></span></span></div>
+      <div><span class="num">12.</span><span class="m">f<sup>&minus;1</sup>(x) = 3(x + 2)</span></div>
+      <div><span class="num">13.</span><span class="m">g<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">5 &minus; x</span><span class="d">4</span></span></span></div>
+      <div><span class="num">14.</span><span class="m">h<sup>&minus;1</sup>(x) = 2x &minus; 1</span></div>
+      <div><span class="num">15.</span><span class="m">f<sup>&minus;1</sup>(x) = <sup>3</sup>&radic;(x &minus; 1)</span></div>
+      <div><span class="num">16.</span><span class="m">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">2 + x</span><span class="d">x</span></span></span></div>
+      <div><span class="num">17.</span><span class="m">f<sup>&minus;1</sup>(4) = 2</span></div>
+      <div><span class="num">18.</span>Proof: <span class="m">4(<span class="frac"><span class="n">x + 7</span><span class="d">4</span></span>) &minus; 7 = x</span></div>
+      <div><span class="num">19.</span><span class="m">f<sup>&minus;1</sup>(x) = x<sup>2</sup> + 2, &nbsp;x &ge; 0</span></div>
+      <div><span class="num">20.</span><span class="m">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">3x + 1</span><span class="d">x &minus; 2</span></span></span></div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 5: FUNCTIONS SET B ============================ -->
+  <div class="newpage"></div>
+  <h1>Functions — Basics &amp; Inverse (Set B)</h1>
+  <p class="subtitle">Evaluating, Domain &amp; Range, Composite, and Inverse Functions — Variation</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 20 questions. Show all working.
+    For inverse functions, write your answer in the form
+    <span class="m">f<sup>&minus;1</sup>(x) = …</span>, stating any restriction
+    on the domain where necessary.
+  </p>
+
+  <h2>Section A — Basics of Functions (Questions 1&ndash;10)</h2>
+  <ol class="q">
+    <li>Given <span class="m">f(x) = 4x &minus; 7</span>, find <span class="m">f(3)</span>.</li>
+    <li>Given <span class="m">g(x) = x<sup>2</sup> &minus; 3x</span>, find <span class="m">g(&minus;2)</span>.</li>
+    <li>Find the domain of <span class="m">f(x) = <span class="frac"><span class="n">1</span><span class="d">x + 3</span></span></span>.</li>
+    <li>Find the range of <span class="m">f(x) = x<sup>2</sup> &minus; 5</span> for <span class="m">x &isin; &#8477;</span>.</li>
+    <li>Given <span class="m">f(x) = 3x &minus; 2</span> and <span class="m">g(x) = x<sup>2</sup></span>, find <span class="m">(f &compfn; g)(x)</span>.</li>
+    <li>Given <span class="m">f(x) = x &minus; 4</span> and <span class="m">g(x) = 3x</span>, find <span class="m">(g &compfn; f)(5)</span>.</li>
+    <li>Evaluate <span class="m">f(1)</span> for <span class="m">f(x) = <span class="frac"><span class="n">x &minus; 2</span><span class="d">x + 1</span></span></span>.</li>
+    <li>Find the domain of <span class="m">h(x) = &radic;(x + 5)</span>.</li>
+    <li>If <span class="m">f(x) = 3x</span> and <span class="m">g(x) = x &minus; 2</span>, find <span class="m">f(g(4))</span>.</li>
+    <li>Given <span class="m">f(x) = x<sup>2</sup> + 1</span>, find <span class="m">f(a &minus; 2)</span> in simplest form.</li>
+  </ol>
+
+  <h2>Section B — Inverse Functions (Questions 11&ndash;20)</h2>
+  <ol class="q" start="11">
+    <li>Find the inverse of <span class="m">f(x) = 3x + 5</span>.</li>
+    <li>Find <span class="m">f<sup>&minus;1</sup>(x)</span> for <span class="m">f(x) = <span class="frac"><span class="n">x</span><span class="d">4</span></span> &minus; 1</span>.</li>
+    <li>Find the inverse of <span class="m">g(x) = 7 &minus; 2x</span>.</li>
+    <li>Find the inverse of <span class="m">h(x) = <span class="frac"><span class="n">x &minus; 3</span><span class="d">5</span></span></span>.</li>
+    <li>If <span class="m">f(x) = x<sup>3</sup> &minus; 2</span>, find <span class="m">f<sup>&minus;1</sup>(x)</span>.</li>
+    <li>Find the inverse of <span class="m">f(x) = <span class="frac"><span class="n">3</span><span class="d">x + 2</span></span></span> for <span class="m">x &ne; &minus;2</span>.</li>
+    <li>Given <span class="m">f(x) = 5x + 1</span>, find <span class="m">f<sup>&minus;1</sup>(11)</span>.</li>
+    <li>Show that <span class="m">f(f<sup>&minus;1</sup>(x)) = x</span> for <span class="m">f(x) = 6x + 5</span>.</li>
+    <li>Find the inverse of <span class="m">f(x) = &radic;(x + 3)</span> for <span class="m">x &ge; &minus;3</span>, stating the domain of <span class="m">f<sup>&minus;1</sup></span>.</li>
+    <li>The function <span class="m">f(x) = <span class="frac"><span class="n">3x &minus; 1</span><span class="d">x + 2</span></span></span> has an inverse. Find <span class="m">f<sup>&minus;1</sup>(x)</span>.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: FUNCTIONS SET B ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Functions (Set B)</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Basics of Functions</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span><span class="m">f(3) = 5</span></div>
+      <div><span class="num">2.</span><span class="m">g(&minus;2) = 10</span></div>
+      <div><span class="num">3.</span>Domain: <span class="m">x &ne; &minus;3</span></div>
+      <div><span class="num">4.</span>Range: <span class="m">f(x) &ge; &minus;5</span></div>
+      <div><span class="num">5.</span><span class="m">(f &compfn; g)(x) = 3x<sup>2</sup> &minus; 2</span></div>
+      <div><span class="num">6.</span><span class="m">(g &compfn; f)(5) = 3</span></div>
+      <div><span class="num">7.</span><span class="m">f(1) = &minus;<span class="frac"><span class="n">1</span><span class="d">2</span></span></span></div>
+      <div><span class="num">8.</span>Domain: <span class="m">x &ge; &minus;5</span></div>
+      <div><span class="num">9.</span><span class="m">f(g(4)) = 6</span></div>
+      <div><span class="num">10.</span><span class="m">f(a &minus; 2) = a<sup>2</sup> &minus; 4a + 5</span></div>
+    </div>
+
+    <h3>Section B — Inverse Functions</h3>
+    <div class="answers two">
+      <div><span class="num">11.</span><span class="m">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">x &minus; 5</span><span class="d">3</span></span></span></div>
+      <div><span class="num">12.</span><span class="m">f<sup>&minus;1</sup>(x) = 4(x + 1)</span></div>
+      <div><span class="num">13.</span><span class="m">g<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">7 &minus; x</span><span class="d">2</span></span></span></div>
+      <div><span class="num">14.</span><span class="m">h<sup>&minus;1</sup>(x) = 5x + 3</span></div>
+      <div><span class="num">15.</span><span class="m">f<sup>&minus;1</sup>(x) = <sup>3</sup>&radic;(x + 2)</span></div>
+      <div><span class="num">16.</span><span class="m">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">3 &minus; 2x</span><span class="d">x</span></span></span></div>
+      <div><span class="num">17.</span><span class="m">f<sup>&minus;1</sup>(11) = 2</span></div>
+      <div><span class="num">18.</span>Proof: <span class="m">6(<span class="frac"><span class="n">x &minus; 5</span><span class="d">6</span></span>) + 5 = x</span></div>
+      <div><span class="num">19.</span><span class="m">f<sup>&minus;1</sup>(x) = x<sup>2</sup> &minus; 3, &nbsp;x &ge; 0</span></div>
+      <div><span class="num">20.</span><span class="m">f<sup>&minus;1</sup>(x) = <span class="frac"><span class="n">2x + 1</span><span class="d">3 &minus; x</span></span></span></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

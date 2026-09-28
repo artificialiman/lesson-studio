@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Number Systems — Practice Worksheets</title>
+<style>
+  /* ============ PAGE SETUP ============ */
+  @page {
+    size: A4;
+    margin: 16mm 15mm 16mm 15mm;
+  }
+
+  :root {
+    --ink: #111111;
+    --muted: #5a6672;
+    --accent: #17233F;        /* brand navy */
+    --accent-soft: #e8ecf4;
+    --warm: #C95545;          /* brand coral */
+    --rule: #c9d3dd;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.8pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet { max-width: 180mm; margin: 0 auto; position: relative; }
+
+  /* ============ BRAND MARK ============ */
+  .brand {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    opacity: 0.92;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+
+  /* ============ HEADINGS ============ */
+  h1 {
+    font-size: 18pt;
+    margin: 0 0 1.5mm;
+    color: var(--accent);
+    letter-spacing: .2px;
+    padding-right: 54px;   /* clear the brand mark */
+  }
+
+  .subtitle {
+    font-size: 9.5pt;
+    color: var(--muted);
+    margin: 0 0 6mm;
+    padding-right: 54px;
+  }
+
+  h2 {
+    font-size: 13pt;
+    color: var(--accent);
+    margin: 7mm 0 3mm;
+    padding: 0 0 1.4mm;
+    border-bottom: 1.6pt solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h2:first-of-type { margin-top: 0; }
+
+  h3 {
+    font-size: 11.5pt;
+    margin: 5mm 0 2mm;
+    color: var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ============ MATH ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+  sup { font-size: .70em; vertical-align: .45em; line-height: 0; }
+  sub { font-size: .70em; vertical-align: -.2em; line-height: 0; }
+
+  /* ============ QUESTION LISTS ============ */
+  ol.q { margin: 0; padding-left: 9mm; }
+  ol.q > li {
+    margin: 0 0 2.1mm;
+    padding-left: 1.2mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.q > li::marker {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ============ ANSWER KEY ============ */
+  .keybox {
+    background: var(--accent-soft);
+    border-left: 3pt solid var(--accent);
+    padding: 4mm 5mm 5mm;
+    border-radius: 1mm;
+    break-inside: avoid-page;
+  }
+
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6mm 7mm;
+    margin-top: 2.5mm;
+  }
+  .answers.two { grid-template-columns: repeat(2, 1fr); }
+
+  .answers > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 1.2mm 0;
+    border-bottom: .5pt dotted var(--rule);
+    font-size: 10.2pt;
+  }
+  .answers .num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 1.4mm;
+  }
+
+  /* ============ UTILITIES ============ */
+  .newpage {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .note {
+    font-size: 9.3pt;
+    color: var(--muted);
+    margin: 0 0 5mm;
+    padding: 2.5mm 4mm;
+    border: .6pt solid var(--rule);
+    border-radius: 1mm;
+  }
+
+  hr.sep {
+    border: 0;
+    border-top: .6pt solid var(--rule);
+    margin: 6mm 0;
+  }
+
+  /* ============ SCREEN PREVIEW ONLY ============ */
+  @media screen {
+    body { background: #eef2f6; padding: 10mm 0; }
+    .sheet {
+      background: #fff;
+      padding: 14mm 15mm;
+      box-shadow: 0 2px 14px rgba(0,0,0,.12);
+      border-radius: 1mm;
+    }
+  }
+
+  @media print {
+    .sheet { max-width: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ===== BRAND DETAIL ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <!-- ============================ WORKSHEET 1: BASES & CONVERSION ============================ -->
+  <h1>Number Systems — Bases &amp; Conversion</h1>
+  <p class="subtitle">Binary • Octal • Decimal • Hexadecimal — Practice Worksheet (Set A)</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 20 questions. Show all working.
+    Give subscripts for bases (e.g. <span class="m">1101<sub>2</sub></span>) and
+    show the place-value expansion where asked.
+  </p>
+
+  <h2>Section A — Base Conversion (Questions 1–13)</h2>
+  <ol class="q">
+    <li>Convert <span class="m">1101<sub>2</sub></span> to decimal.</li>
+    <li>Convert <span class="m">10110<sub>2</sub></span> to decimal.</li>
+    <li>Convert <span class="m">100111<sub>2</sub></span> to decimal.</li>
+    <li>Convert <span class="m">45<sub>10</sub></span> to binary.</li>
+    <li>Convert <span class="m">77<sub>10</sub></span> to binary.</li>
+    <li>Convert <span class="m">100<sub>10</sub></span> to binary.</li>
+    <li>Convert <span class="m">753<sub>8</sub></span> to decimal.</li>
+    <li>Convert <span class="m">200<sub>10</sub></span> to octal.</li>
+    <li>Convert <span class="m">2AF<sub>16</sub></span> to decimal.</li>
+    <li>Convert <span class="m">255<sub>10</sub></span> to hexadecimal.</li>
+    <li>Convert <span class="m">3E8<sub>16</sub></span> to decimal.</li>
+    <li>Convert <span class="m">11010110<sub>2</sub></span> to hexadecimal.</li>
+    <li>Convert <span class="m">B7<sub>16</sub></span> to binary.</li>
+  </ol>
+
+  <h2>Section B — Binary Arithmetic &amp; Reasoning (Questions 14–20)</h2>
+  <ol class="q" start="14">
+    <li>Add in binary: <span class="m">1011<sub>2</sub> + 1101<sub>2</sub></span>.</li>
+    <li>Add in binary: <span class="m">1111<sub>2</sub> + 0001<sub>2</sub></span>.</li>
+    <li>Subtract in binary: <span class="m">1101<sub>2</sub> − 0110<sub>2</sub></span>.</li>
+    <li>State the base of the system that uses digits <span class="m">0–7</span>
+        only, and explain how many binary bits one of its digits represents.</li>
+    <li>Why is hexadecimal preferred over binary when displaying memory addresses?</li>
+    <li>Convert <span class="m">101101<sub>2</sub></span> to octal (group bits in threes
+        from the right).</li>
+    <li>An 8-bit register holds <span class="m">11111111<sub>2</sub></span>. State its
+        decimal value and explain what happens when <span class="m">1<sub>2</sub></span>
+        is added in an 8-bit system.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: BASES & CONVERSION ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Bases &amp; Conversion</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Base Conversion</h3>
+    <div class="answers">
+      <div><span class="num">1.</span><span class="m">13<sub>10</sub></span></div>
+      <div><span class="num">2.</span><span class="m">22<sub>10</sub></span></div>
+      <div><span class="num">3.</span><span class="m">39<sub>10</sub></span></div>
+      <div><span class="num">4.</span><span class="m">101101<sub>2</sub></span></div>
+      <div><span class="num">5.</span><span class="m">1001101<sub>2</sub></span></div>
+      <div><span class="num">6.</span><span class="m">1100100<sub>2</sub></span></div>
+      <div><span class="num">7.</span><span class="m">491<sub>10</sub></span></div>
+      <div><span class="num">8.</span><span class="m">310<sub>8</sub></span></div>
+      <div><span class="num">9.</span><span class="m">687<sub>10</sub></span></div>
+      <div><span class="num">10.</span><span class="m">FF<sub>16</sub></span></div>
+      <div><span class="num">11.</span><span class="m">1000<sub>10</sub></span></div>
+      <div><span class="num">12.</span><span class="m">D6<sub>16</sub></span></div>
+      <div><span class="num">13.</span><span class="m">10110111<sub>2</sub></span></div>
+    </div>
+
+    <h3>Section B — Binary Arithmetic &amp; Reasoning</h3>
+    <div class="answers two">
+      <div><span class="num">14.</span><span class="m">11000<sub>2</sub></span></div>
+      <div><span class="num">15.</span><span class="m">10000<sub>2</sub></span></div>
+      <div><span class="num">16.</span><span class="m">0111<sub>2</sub></span></div>
+      <div><span class="num">17.</span>Base 8 (octal); 1 digit = 3 bits</div>
+      <div><span class="num">18.</span>4× more compact, less error-prone</div>
+      <div><span class="num">19.</span><span class="m">55<sub>8</sub></span></div>
+      <div><span class="num">20.</span><span class="m">255<sub>10</sub></span>; overflow / wraps to 0</div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 2: SYSTEMS & APPLICATION ============================ -->
+  <div class="newpage"></div>
+  <h1>Number Systems — Systems &amp; Application</h1>
+  <p class="subtitle">Properties, Digit Grouping &amp; Real-World Use — Practice Worksheet (Set B)</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 15 questions. Where a question asks for
+    reasoning, write in full sentences.
+  </p>
+
+  <h2>Section A — System Properties (Questions 1–8)</h2>
+  <ol class="q">
+    <li>How many distinct digit symbols does the hexadecimal system use? List them.</li>
+    <li>Explain why binary is the natural choice for digital circuits.</li>
+    <li>State the relationship between the number of bits and the number of
+        representable values (give the formula).</li>
+    <li>What is the largest decimal number representable with 4 bits?</li>
+    <li>What is the largest decimal number representable with 8 bits?</li>
+    <li>Explain why octal and hexadecimal are described as "shorthands for binary".</li>
+    <li>Convert <span class="m">1101 0110<sub>2</sub></span> to both octal and hexadecimal
+        by grouping bits.</li>
+    <li>Give one real-world example of hexadecimal being used in computing.</li>
+  </ol>
+
+  <h2>Section B — Applied Conversion (Questions 9–15)</h2>
+  <ol class="q" start="9">
+    <li>A colour is stored as <span class="m">#FF8000</span>. Split it into its three
+        hexadecimal byte values and state the decimal value of the green channel.</li>
+    <li>Convert <span class="m">1000<sub>10</sub></span> to hexadecimal.</li>
+    <li>Convert <span class="m">3E8<sub>16</sub></span> to octal (via binary).</li>
+    <li>A file is <span class="m">1 048 576</span> bytes. Express this in hexadecimal.</li>
+    <li>An IPv4 address is written <span class="m">192.168.1.1</span>. State the number
+        of bits in the address and explain how each octet relates to binary.</li>
+    <li>Convert <span class="m">10011010<sub>2</sub></span> to hexadecimal and decimal.</li>
+    <li>Explain what "overflow" means in the context of fixed-width binary registers.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: SYSTEMS & APPLICATION ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Systems &amp; Application</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — System Properties</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span>16: 0–9, A–F</div>
+      <div><span class="num">2.</span>Two stable states: on / off</div>
+      <div><span class="num">3.</span><span class="m">2<sup>n</sup></span> values for <span class="m">n</span> bits</div>
+      <div><span class="num">4.</span><span class="m">15<sub>10</sub></span></div>
+      <div><span class="num">5.</span><span class="m">255<sub>10</sub></span></div>
+      <div><span class="num">6.</span>One digit maps cleanly to 3 or 4 bits</div>
+      <div><span class="num">7.</span>Octal <span class="m">326<sub>8</sub></span>; hex <span class="m">D6<sub>16</sub></span></div>
+      <div><span class="num">8.</span>Memory addresses, colour codes, machine code</div>
+    </div>
+
+    <h3>Section B — Applied Conversion</h3>
+    <div class="answers two">
+      <div><span class="num">9.</span><span class="m">FF | 80 | 00</span>; green = 128</div>
+      <div><span class="num">10.</span><span class="m">3E8<sub>16</sub></span></div>
+      <div><span class="num">11.</span><span class="m">1750<sub>8</sub></span></div>
+      <div><span class="num">12.</span><span class="m">100000<sub>16</sub></span></div>
+      <div><span class="num">13.</span>32 bits; each octet = 8 bits</div>
+      <div><span class="num">14.</span><span class="m">9A<sub>16</sub></span>; <span class="m">154<sub>10</sub></span></div>
+      <div><span class="num">15.</span>Result too large for register width; extra bit discarded</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

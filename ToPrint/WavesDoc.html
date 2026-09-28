@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waves — General Principles, Properties &amp; Worked Solutions</title>
+<style>
+  @page { size: A4; margin: 17mm 15mm 17mm 15mm; }
+
+  :root {
+    --ink:        #12181f;
+    --body:       #2a333d;
+    --muted:      #5c6874;
+    --accent:     #17233F;
+    --accent-dk:  #0E1729;
+    --accent-lt:  #e8ecf4;
+    --warm:       #C95545;
+    --warm-lt:    #faf1ef;
+    --rule:       #d3dbe3;
+    --rule-soft:  #e8edf2;
+    --paper:      #ffffff;
+    --tint:       #f7fafc;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--body);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.6pt;
+    line-height: 1.58;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body { display: flex; justify-content: center; padding: 34px 16px 70px; }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 860px;
+    padding: 46px 52px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+    position: relative;
+  }
+
+  /* ============ BRAND ============ */
+  .brand {
+    position: absolute;
+    top: 26px; right: 30px;
+    width: 54px; height: 54px;
+    opacity: 0.92;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+
+  /* ============ HEADER ============ */
+  .head {
+    text-align: center;
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+    border-bottom: 2.5px solid var(--accent);
+    padding-right: 70px;
+  }
+  .head .kicker {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2.8px; text-transform: uppercase;
+    color: var(--warm); margin-bottom: 10px;
+  }
+  .head h1 {
+    font-size: 23px; font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.4px; margin-bottom: 6px;
+  }
+  .head .sub {
+    font-size: 11.5px; color: var(--muted); font-style: italic;
+  }
+
+  /* ============ INTRO ============ */
+  .intro {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    font-size: 10.3px;
+    line-height: 1.6;
+  }
+  .intro strong { color: var(--accent-dk); }
+
+  /* ============ SECTIONS ============ */
+  .sec { margin-bottom: 30px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 13px; padding-bottom: 6px;
+    border-bottom: 1.7px solid var(--accent);
+    break-after: avoid; page-break-after: avoid;
+  }
+  .sec-head .tag {
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 1.6px; text-transform: uppercase;
+    color: #fff; background: var(--accent);
+    padding: 3px 11px; border-radius: 20px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .sec-head h2 {
+    font-size: 15.5px; font-weight: 700;
+    color: var(--accent-dk); letter-spacing: -0.2px;
+  }
+  .sec-head .range {
+    margin-left: auto; font-size: 9.5px;
+    color: var(--muted); font-weight: 600;
+  }
+
+  h3.sub {
+    font-size: 12.5px; font-weight: 700;
+    color: var(--warm);
+    margin: 16px 0 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--rule-soft);
+    break-after: avoid; page-break-after: avoid;
+  }
+
+  /* ============ PROPERTY CARDS ============ */
+  .prop {
+    background: var(--tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 5px 5px 0;
+    padding: 14px 20px 15px;
+    margin-bottom: 12px;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .prop h3 {
+    font-size: 12.5px; font-weight: 700;
+    color: var(--warm); margin-bottom: 6px;
+  }
+  .prop p {
+    font-size: 10.2px; line-height: 1.58;
+    margin-bottom: 7px; text-align: justify;
+  }
+  .prop p:last-child { margin-bottom: 0; }
+  .prop .formal {
+    display: block; background: #fff;
+    border: 1px dashed #d9b8b0;
+    border-radius: 4px; padding: 7px 12px;
+    margin: 7px 0;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 10.8pt; color: var(--accent-dk);
+    text-align: center;
+  }
+  .prop .eg {
+    display: block; font-size: 9.9px; color: var(--muted);
+    margin-top: 5px; padding-left: 12px;
+    border-left: 2px solid var(--rule);
+  }
+
+  /* ============ KEY CAPS ============ */
+  kbd {
+    display: inline-block;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9.4px;
+    background: #fff;
+    border: 1px solid #c3ccd6;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    padding: 1px 6px;
+    color: var(--accent-dk);
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* ============ TABLES ============ */
+  table.sc {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px;
+    font-size: 9.7px;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  table.sc th, table.sc td {
+    border: 1px solid var(--rule);
+    padding: 5px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.sc th {
+    background: var(--accent-lt);
+    color: var(--accent-dk);
+    font-weight: 700; font-size: 9.3px;
+    letter-spacing: 0.3px;
+  }
+  table.sc td.k {
+    font-family: "Consolas", "Courier New", monospace;
+    color: var(--accent-dk);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  table.sc tr:nth-child(even) td { background: #fafcfd; }
+
+  /* ============ CALLOUTS ============ */
+  .callout {
+    background: var(--warm-lt);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 4px 4px 0;
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-size: 9.9px;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  .callout strong { color: var(--warm); }
+
+  .warn {
+    background: #fdf6e8;
+    border-left: 4px solid #c99a2e;
+    border-radius: 0 4px 4px 0;
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-size: 9.9px;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  .warn strong { color: #9a7514; }
+
+  /* ============ MATH ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+  sup { font-size: 0.68em; vertical-align: 0.44em; line-height: 0; }
+  sub { font-size: 0.68em; vertical-align: -0.2em; line-height: 0; }
+
+  .frac {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.94em;
+    line-height: 1.06;
+    margin: 0 .12em;
+    position: relative;
+    top: -.06em;
+  }
+  .frac .n {
+    display: block;
+    padding: 0 .32em .4mm;
+    border-bottom: 1pt solid currentColor;
+  }
+  .frac .d {
+    display: block;
+    padding: .4mm .32em 0;
+  }
+
+  /* ============ LISTS ============ */
+  ul.bul { margin: 6px 0 10px 20px; font-size: 10.2px; line-height: 1.55; }
+  ul.bul li { margin-bottom: 4px; }
+  ol.num { margin: 6px 0 10px 22px; font-size: 10.2px; line-height: 1.55; }
+  ol.num li { margin-bottom: 4px; }
+
+  /* ============ QUESTION LIST ============ */
+  ol.q {
+    list-style: none;
+    counter-reset: qq;
+    padding: 0;
+    margin: 0;
+  }
+  ol.q > li {
+    counter-increment: qq;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 12px 8px 14px;
+    margin-bottom: 5px;
+    border-left: 3px solid var(--accent-lt);
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.q > li:nth-child(odd) { background: #fafcfd; }
+  ol.q > li::before {
+    content: counter(qq) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  ol.q > li .body {
+    flex: 1;
+    font-size: 10.5pt;
+    line-height: 1.6;
+  }
+
+  /* ============ SOLUTIONS ============ */
+  ol.sol {
+    list-style: none;
+    counter-reset: ss;
+    padding: 0;
+    margin: 0;
+  }
+  ol.sol > li {
+    counter-increment: ss;
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    background: #f6fafb;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 11px 16px 11px 14px;
+    margin-bottom: 7px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.sol > li::before {
+    content: counter(ss) ".";
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 10.5px;
+    min-width: 24px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  ol.sol > li .sol-body {
+    flex: 1;
+    font-size: 10.4pt;
+    line-height: 1.66;
+  }
+  ol.sol > li .sol-body .step { display: block; }
+  ol.sol > li .sol-body .step + .step { margin-top: 2px; }
+  ol.sol > li .sol-body .ans {
+    display: inline-block;
+    margin-top: 4px;
+    font-weight: 700;
+    color: var(--accent-dk);
+    background: #e2edf5;
+    padding: 1px 8px;
+    border-radius: 3px;
+  }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    margin-top: 34px; padding-top: 13px;
+    border-top: 1px solid var(--rule);
+    text-align: center; font-size: 9.3px;
+    color: var(--muted); letter-spacing: 0.5px;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { background: #fff; padding: 0; font-size: 10pt; }
+    .sheet { box-shadow: none; border-radius: 0; max-width: 100%; padding: 0; }
+    .sec-head, .prop, .intro, table.sc, .callout, .warn {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+    ol.q > li:nth-child(odd) { background: #fbfdfe; }
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .brand { width: 42px; height: 42px; top: 18px; right: 18px; }
+    .head h1 { font-size: 18px; }
+    .head { padding-right: 54px; }
+    .sec-head { flex-wrap: wrap; }
+    .prop p, .intro { text-align: left; }
+    table.sc { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ===== BRAND ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="head">
+    <div class="kicker">Physics • Waves &amp; Oscillations</div>
+    <h1>Waves — General Principles</h1>
+    <div class="sub">Definitions • Wave Equation • Types • Superposition • Applications</div>
+  </header>
+
+  <!-- ===== INTRO ===== -->
+  <div class="intro">
+    <strong>What is a wave?</strong> A wave is a <em>disturbance that transfers energy
+    through a medium (or through space) without transferring matter</em>. When you drop a
+    stone into a pond, the water bobs up and down — but the water itself does not travel
+    to the edge. What travels is the <em>disturbance</em>, carrying energy outward. Waves
+    are the universe's way of moving energy and information without moving the material
+    that carries them: light from the Sun, sound from a speaker, radio from an antenna,
+    seismic shaking from an earthquake. This lesson covers the universal vocabulary and
+    laws of waves — the tools you will apply to sound, light, water, and electromagnetic
+    waves in later topics.
+  </div>
+
+  <!-- ================= SECTION A ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>Core Vocabulary &amp; Definitions</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      Every wave problem uses the same six quantities. Learn what each <em>is</em>, its
+      symbol, its SI unit, and what it means physically — not just its formula.
+    </p>
+
+    <div class="prop">
+      <h3>1. Amplitude (A)</h3>
+      <p>
+        The <strong>maximum displacement</strong> of a particle or field from its
+        equilibrium (rest) position. Amplitude measures how <em>big</em> the wave is —
+        how far the water rises, how far the pendulum swings, how bright the light is.
+      </p>
+      <span class="formal">
+        <span class="m">A</span> — measured in metres (m) for mechanical waves
+      </span>
+      <span class="eg">
+        <strong>Physical meaning:</strong> amplitude relates to <em>energy</em>. For a wave,
+        energy is proportional to <span class="m">A<sup>2</sup></span>. Double the amplitude,
+        quadruple the energy.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>2. Wavelength (λ)</h3>
+      <p>
+        The distance between two consecutive points in phase — crest to crest, trough to
+        trough, or any point to the next identical point. Wavelength measures the
+        <em>spatial period</em> of the wave.
+      </p>
+      <span class="formal">
+        <span class="m">λ</span> — measured in metres (m)
+      </span>
+      <span class="eg">
+        <strong>Memory aid:</strong> λ is the Greek letter lambda. Think "length" of one
+        complete cycle in space.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>3. Period (T)</h3>
+      <p>
+        The time taken for one complete oscillation — for one full wavelength to pass a
+        fixed point. Period measures the <em>temporal length</em> of one cycle.
+      </p>
+      <span class="formal">
+        <span class="m">T</span> — measured in seconds (s)
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> if a wave completes 5 cycles in 2 s, then
+        <span class="m">T = 2/5 = 0.4 s</span>.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>4. Frequency (f)</h3>
+      <p>
+        The number of complete oscillations per second. Frequency is the reciprocal of
+        period — how <em>often</em> a cycle repeats.
+      </p>
+      <span class="formal">
+        <span class="m">f = <span class="frac"><span class="n">1</span><span class="d">T</span></span></span>
+        &nbsp;&nbsp;measured in hertz (Hz) = s<sup>−1</sup>
+      </span>
+      <span class="eg">
+        <strong>Example:</strong> a wave with period <span class="m">T = 0.4 s</span> has
+        <span class="m">f = 1 / 0.4 = 2.5 Hz</span>.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>5. Wave Speed (v)</h3>
+      <p>
+        The speed at which the disturbance (energy) travels through the medium. Wave speed
+        depends on the <em>medium</em>, not the wave's amplitude or frequency.
+      </p>
+      <span class="formal">
+        <span class="m">v = f λ</span> &nbsp;&nbsp;measured in m s<sup>−1</sup>
+      </span>
+      <span class="eg">
+        <strong>Fundamental relationship:</strong> speed = frequency × wavelength. This
+        single equation drives almost every wave calculation you will meet.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>6. Angular Frequency (ω) &amp; Wave Number (k)</h3>
+      <p>
+        For mathematical work, frequency and wavelength are often expressed in
+        <em>angular</em> form. Angular frequency <span class="m">ω</span> is the rate of
+        change of phase; wave number <span class="m">k</span> is the spatial equivalent.
+      </p>
+      <span class="formal">
+        <span class="m">ω = 2πf</span> (rad s<sup>−1</sup>) &nbsp;&nbsp;•&nbsp;&nbsp;
+        <span class="m">k = <span class="frac"><span class="n">2π</span><span class="d">λ</span></span></span> (rad m<sup>−1</sup>)
+      </span>
+      <span class="eg">
+        <strong>Used in:</strong> the wave function
+        <span class="m">y = A sin(kx − ωt)</span>, and in interference calculations.
+      </span>
+    </div>
+
+    <div class="callout">
+      <strong>The master equation:</strong>
+      <span class="m">v = f λ</span>. From it, everything else follows:
+      <span class="m">f = v / λ</span>, <span class="m">λ = v / f</span>. If a wave
+      passes from one medium to another, <strong>frequency stays constant</strong>
+      (the source determines it), so <strong>speed and wavelength change
+      together</strong>.
+    </div>
+  </section>
+
+  <!-- ================= SECTION B ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Classification of Waves</h2>
+    </div>
+
+    <h3 class="sub">B.1 By Medium Requirement</h3>
+
+    <div class="prop">
+      <h3>Mechanical Waves</h3>
+      <p>
+        Waves that require a <strong>physical medium</strong> (solid, liquid, or gas) to
+        propagate. Without particles to vibrate, they cannot exist.
+      </p>
+      <span class="eg">
+        <strong>Examples:</strong> sound, water waves, seismic (earthquake) waves, waves
+        on a stretched string, ultrasound.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>Electromagnetic Waves</h3>
+      <p>
+        Waves that <strong>do not require a medium</strong> — they propagate through
+        vacuum. They consist of oscillating electric and magnetic fields perpendicular to
+        each other and to the direction of travel.
+      </p>
+      <span class="eg">
+        <strong>Examples:</strong> radio, microwave, infrared, visible light, ultraviolet,
+        X-rays, gamma rays. All travel at <span class="m">c = 3 × 10<sup>8</sup> m s<sup>−1</sup></span>
+        in vacuum.
+      </span>
+    </div>
+
+    <h3 class="sub">B.2 By Particle Motion vs. Wave Direction</h3>
+
+    <table class="sc">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Transverse Wave</th>
+          <th>Longitudinal Wave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Particle motion</td>
+          <td>Perpendicular to wave direction</td>
+          <td>Parallel to wave direction</td>
+        </tr>
+        <tr>
+          <td>Structure</td>
+          <td>Crests and troughs</td>
+          <td>Compressions and rarefactions</td>
+        </tr>
+        <tr>
+          <td>Can travel through</td>
+          <td>Solids and liquid surfaces</td>
+          <td>Solids, liquids, and gases</td>
+        </tr>
+        <tr>
+          <td>Polarisation</td>
+          <td>Can be polarised</td>
+          <td>Cannot be polarised</td>
+        </tr>
+        <tr>
+          <td>Examples</td>
+          <td>Light, waves on a string, water surface, seismic S-waves</td>
+          <td>Sound, ultrasound, seismic P-waves, compression in a spring</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warn">
+      <strong>Common misconception:</strong> water waves are <em>not</em> purely transverse.
+      Real water waves are a <strong>combination</strong> of transverse and longitudinal
+      motion — particles move in circles or ellipses, not straight lines. Only the
+      idealised "wave on a string" is purely transverse.
+    </div>
+
+    <h3 class="sub">B.3 By Propagation Geometry</h3>
+
+    <table class="sc">
+      <thead><tr><th>Type</th><th>Description</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="k">Pulse</td>
+          <td>A single disturbance, not repeating</td>
+          <td>A quick flick of a rope; a single clap</td>
+        </tr>
+        <tr>
+          <td class="k">Continuous / periodic</td>
+          <td>Repeating disturbance, generated continuously</td>
+          <td>A vibrating tuning fork; a radio transmitter</td>
+        </tr>
+        <tr>
+          <td class="k">Plane wave</td>
+          <td>Wavefronts are flat, parallel planes</td>
+          <td>Light from a distant source</td>
+        </tr>
+        <tr>
+          <td class="k">Spherical wave</td>
+          <td>Wavefronts are concentric spheres; spreads in 3D</td>
+          <td>Sound from a point source; light from a bulb</td>
+        </tr>
+        <tr>
+          <td class="k">Standing wave</td>
+          <td>Formed by superposition of two identical waves travelling in opposite directions; appears to stand still</td>
+          <td>Vibrating guitar string; air column in a flute</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ================= SECTION C ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section C</span>
+      <h2>Universal Wave Behaviour</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      Every wave, whatever its type, exhibits the same six behaviours. These are the
+      <em>phenomena</em> you will be tested on in topic-specific lessons.
+    </p>
+
+    <div class="prop">
+      <h3>1. Reflection</h3>
+      <p>
+        A wave <strong>bounces back</strong> when it meets a boundary between two media.
+        The angle of incidence equals the angle of reflection (measured from the normal).
+      </p>
+      <span class="formal">
+        <span class="m">θ<sub>i</sub> = θ<sub>r</sub></span>
+      </span>
+      <span class="eg">
+        <strong>Examples:</strong> echo (sound), mirror image (light), ripple tank
+        reflection (water).
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>2. Refraction</h3>
+      <p>
+        A wave <strong>changes direction</strong> when it passes from one medium to
+        another because its <em>speed changes</em>. Frequency is unchanged; wavelength
+        and speed change.
+      </p>
+      <span class="formal">
+        <span class="m"><span class="frac"><span class="n">sin θ<sub>1</sub></span><span class="d">sin θ<sub>2</sub></span></span> = <span class="frac"><span class="n">v<sub>1</sub></span><span class="d">v<sub>2</sub></span></span> = <span class="frac"><span class="n">λ<sub>1</sub></span><span class="d">λ<sub>2</sub></span></span> = n</span>
+      </span>
+      <span class="eg">
+        <strong>Rule of thumb:</strong> entering a <em>slower</em> medium, the wave bends
+        toward the normal; entering a <em>faster</em> medium, it bends away.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>3. Diffraction</h3>
+      <p>
+        A wave <strong>spreads out</strong> when it passes through a gap or around an
+        obstacle. Diffraction is most noticeable when the gap size is comparable to the
+        wavelength.
+      </p>
+      <span class="formal">
+        Significant diffraction when &nbsp; <span class="m">gap ≈ λ</span>
+      </span>
+      <span class="eg">
+        <strong>Examples:</strong> hearing sound around a corner; radio waves bending over
+        hills; the spreading of ripples through a narrow slit.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>4. Interference</h3>
+      <p>
+        When two waves meet, their displacements <strong>add</strong> (superposition).
+        If crests meet crests, we get <em>constructive</em> interference; if crest meets
+        trough, we get <em>destructive</em> interference.
+      </p>
+      <span class="formal">
+        Constructive: &nbsp;<span class="m">Δd = nλ</span> &nbsp;•&nbsp;
+        Destructive: &nbsp;<span class="m">Δd = (n + ½)λ</span>
+      </span>
+      <span class="eg">
+        <strong>Principle of superposition:</strong> the resultant displacement at any
+        point is the vector sum of the displacements due to each wave.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>5. Dispersion</h3>
+      <p>
+        The <strong>separation of a wave into its component frequencies</strong> as it
+        travels through a medium, because wave speed varies with frequency.
+      </p>
+      <span class="eg">
+        <strong>Examples:</strong> a prism splitting white light into a spectrum;
+        different colours of light travelling at slightly different speeds in glass.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>6. Polarisation</h3>
+      <p>
+        Restricting a <strong>transverse wave's oscillations to a single plane</strong>.
+        Only transverse waves can be polarised; longitudinal waves cannot.
+      </p>
+      <span class="eg">
+        <strong>Applications:</strong> polaroid sunglasses reduce glare; LCD screens use
+        polarised light; radio antennas respond to specific polarisations.
+      </span>
+    </div>
+
+    <div class="callout">
+      <strong>Test for a transverse wave:</strong> try to polarise it. If you can filter
+      out half the wave by rotating a filter, it is transverse. If polarisation has no
+      effect, it is longitudinal. This is the definitive experiment.
+    </div>
+  </section>
+
+  <!-- ================= SECTION D ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section D</span>
+      <h2>The Wave Equation &amp; Graphical Analysis</h2>
+    </div>
+
+    <h3 class="sub">D.1 Displacement–Distance vs. Displacement–Time Graphs</h3>
+
+    <p style="font-size:10.2px; margin-bottom:8px;">
+      This is the single most common point of confusion in wave physics. The <em>same
+      wave</em> looks different depending on which axis you plot. Learn to read both.
+    </p>
+
+    <table class="sc">
+      <thead>
+        <tr>
+          <th>Graph</th>
+          <th>x-axis</th>
+          <th>What a full cycle gives you</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Displacement–distance</td>
+          <td>position along the wave</td>
+          <td>the <strong>wavelength λ</strong></td>
+        </tr>
+        <tr>
+          <td>Displacement–time</td>
+          <td>time</td>
+          <td>the <strong>period T</strong> (and hence f = 1/T)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="warn">
+      <strong>Classic exam trap:</strong> a displacement–time graph does <em>not</em>
+      show the shape of the wave. It shows how <em>one point</em> moves over time. To
+      find wavelength, you need a displacement–distance graph (or "snapshot").
+    </div>
+
+    <h3 class="sub">D.2 The General Wave Function</h3>
+
+    <div class="prop">
+      <h3>Progressive Wave Equation</h3>
+      <p>
+        For a wave travelling in the <span class="m">+x</span> direction, the displacement
+        <span class="m">y</span> of a particle at position <span class="m">x</span> and
+        time <span class="m">t</span> is given by:
+      </p>
+      <span class="formal">
+        <span class="m">y = A sin(kx − ωt)</span> &nbsp;or&nbsp;
+        <span class="m">y = A sin 2π(<span class="frac"><span class="n">t</span><span class="d">T</span></span> − <span class="frac"><span class="n">x</span><span class="d">λ</span></span>)</span>
+      </span>
+      <span class="eg">
+        <strong>Sign rule:</strong> <span class="m">(kx − ωt)</span> means travelling in
+        <span class="m">+x</span>; <span class="m">(kx + ωt)</span> means travelling in
+        <span class="m">−x</span>.
+      </span>
+    </div>
+
+    <h3 class="sub">D.3 Standing Waves (Stationary Waves)</h3>
+
+    <div class="prop">
+      <h3>How Standing Waves Form</h3>
+      <p>
+        When a wave reflects and meets its own reflection travelling the opposite way,
+        they superimpose. At certain frequencies, the result appears to stand still,
+        with fixed points of zero displacement (<strong>nodes</strong>) and fixed points
+        of maximum displacement (<strong>antinodes</strong>).
+      </p>
+      <span class="formal">
+        Node spacing = <span class="m"><span class="frac"><span class="n">λ</span><span class="d">2</span></span></span> &nbsp;•&nbsp;
+        Antinode spacing = <span class="m"><span class="frac"><span class="n">λ</span><span class="d">2</span></span></span> &nbsp;•&nbsp;
+        Node to antinode = <span class="m"><span class="frac"><span class="n">λ</span><span class="d">4</span></span></span>
+      </span>
+      <span class="eg">
+        <strong>On a string fixed at both ends:</strong> the two ends must be nodes, so
+        <span class="m">L = nλ/2</span> where <span class="m">n = 1, 2, 3, …</span>
+        Each <span class="m">n</span> gives a <em>harmonic</em>.
+      </span>
+    </div>
+
+    <div class="callout">
+      <strong>Progressive vs. standing — the key distinction:</strong> a progressive wave
+      <em>transfers energy</em> from place to place. A standing wave <em>stores energy</em>
+      in place; net energy transfer is zero. All points in a standing wave between two
+      adjacent nodes oscillate in phase.
+    </div>
+  </section>
+
+  <!-- ================= SECTION E ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section E</span>
+      <h2>Key Formulas — Quick Reference</h2>
+    </div>
+
+    <table class="sc">
+      <thead><tr><th>Quantity</th><th>Formula</th><th>Units</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Wave speed</td><td class="k">v = f λ</td><td>m s<sup>−1</sup></td><td>The master equation</td></tr>
+        <tr><td>Frequency</td><td class="k">f = 1 / T</td><td>Hz</td><td>Reciprocal of period</td></tr>
+        <tr><td>Period</td><td class="k">T = 1 / f</td><td>s</td><td>Time for one cycle</td></tr>
+        <tr><td>Angular frequency</td><td class="k">ω = 2πf</td><td>rad s<sup>−1</sup></td><td>Rate of phase change</td></tr>
+        <tr><td>Wave number</td><td class="k">k = 2π / λ</td><td>rad m<sup>−1</sup></td><td>Spatial frequency</td></tr>
+        <tr><td>Wave function</td><td class="k">y = A sin(kx − ωt)</td><td>m</td><td>Progressive wave in +x</td></tr>
+        <tr><td>Speed on a string</td><td class="k">v = √(T/μ)</td><td>m s<sup>−1</sup></td><td>T = tension, μ = mass per unit length</td></tr>
+        <tr><td>Sound speed in air</td><td class="k">≈ 343 m s<sup>−1</sup></td><td>m s<sup>−1</sup></td><td>At 20 °C</td></tr>
+        <tr><td>Speed of light in vacuum</td><td class="k">c = 3 × 10<sup>8</sup> m s<sup>−1</sup></td><td>m s<sup>−1</sup></td><td>Exact: 299 792 458</td></tr>
+        <tr><td>Refractive index</td><td class="k">n = c / v</td><td>(no unit)</td><td>For light in a medium</td></tr>
+        <tr><td>Path difference (constructive)</td><td class="k">Δd = n λ</td><td>m</td><td>n = 0, 1, 2, …</td></tr>
+        <tr><td>Path difference (destructive)</td><td class="k">Δd = (n + ½) λ</td><td>m</td><td>n = 0, 1, 2, …</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ================= SECTION F ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section F</span>
+      <h2>Practice Questions</h2>
+      <span class="range">Questions 1–25</span>
+    </div>
+
+    <ol class="q">
+      <li><div class="body">
+        A wave has frequency <span class="m">50 Hz</span> and wavelength
+        <span class="m">4 m</span>. Calculate its speed.
+      </div></li>
+      <li><div class="body">
+        A sound wave travels at <span class="m">340 m s<sup>−1</sup></span> with a
+        frequency of <span class="m">170 Hz</span>. Find its wavelength.
+      </div></li>
+      <li><div class="body">
+        A wave has period <span class="m">0.02 s</span> and speed
+        <span class="m">300 m s<sup>−1</sup></span>. Find its wavelength.
+      </div></li>
+      <li><div class="body">
+        A wave completes <span class="m">12</span> oscillations in <span class="m">3 s</span>.
+        Find its frequency and period.
+      </div></li>
+      <li><div class="body">
+        An electromagnetic wave in vacuum has wavelength
+        <span class="m">600 nm</span>. Find its frequency.
+        <span class="m">(c = 3 × 10<sup>8</sup> m s<sup>−1</sup>)</span>
+      </div></li>
+      <li><div class="body">
+        Define <em>amplitude</em> and state how it relates to the energy of a wave.
+      </div></li>
+      <li><div class="body">
+        Distinguish between a <em>mechanical</em> wave and an
+        <em>electromagnetic</em> wave, giving one example of each.
+      </div></li>
+      <li><div class="body">
+        State two differences between transverse and longitudinal waves.
+      </div></li>
+      <li><div class="body">
+        Which type of wave can be polarised, and why?
+      </div></li>
+      <li><div class="body">
+        Explain why sound waves cannot travel through a vacuum.
+      </div></li>
+      <li><div class="body">
+        A wave travels from air into water. State what happens to its (a) frequency,
+        (b) speed, and (c) wavelength.
+      </div></li>
+      <li><div class="body">
+        Define <em>reflection</em> and state the law of reflection.
+      </div></li>
+      <li><div class="body">
+        Explain why a wave changes direction when it enters a new medium.
+      </div></li>
+      <li><div class="body">
+        A ripple tank produces waves with wavelength <span class="m">2 cm</span>. The
+        waves pass through a gap of <span class="m">2 cm</span>. Describe what is observed
+        and name the phenomenon.
+      </div></li>
+      <li><div class="body">
+        State the principle of superposition.
+      </div></li>
+      <li><div class="body">
+        Two waves with the same frequency travel to a point. Their path difference is
+        <span class="m">1.5 λ</span>. State whether interference is constructive or
+        destructive, and justify your answer.
+      </div></li>
+      <li><div class="body">
+        Explain what is meant by <em>dispersion</em> and give one example.
+      </div></li>
+      <li><div class="body">
+        A string of length <span class="m">0.8 m</span> is fixed at both ends and
+        vibrates in its fundamental mode. Find the wavelength.
+      </div></li>
+      <li><div class="body">
+        In a standing wave, the distance between two consecutive nodes is
+        <span class="m">0.25 m</span>. Find the wavelength.
+      </div></li>
+      <li><div class="body">
+        State two differences between a progressive wave and a standing wave.
+      </div></li>
+      <li><div class="body">
+        A wave is described by <span class="m">y = 0.05 sin(4x − 200t)</span>
+        (SI units). State the amplitude, wave number, and angular frequency.
+      </div></li>
+      <li><div class="body">
+        Using the wave in Q21, find its wavelength, frequency, and speed.
+      </div></li>
+      <li><div class="body">
+        Light of wavelength <span class="m">500 nm</span> in air enters glass of
+        refractive index <span class="m">1.5</span>. Find its speed and wavelength in
+        the glass.
+      </div></li>
+      <li><div class="body">
+        A wave on a string has tension <span class="m">80 N</span> and mass per unit
+        length <span class="m">0.02 kg m<sup>−1</sup></span>. Find the wave speed.
+      </div></li>
+      <li><div class="body">
+        Explain the difference between a displacement–distance graph and a
+        displacement–time graph, and state what quantity each gives you directly.
+      </div></li>
+    </ol>
+  </section>
+
+  <!-- ================= SECTION G ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section G</span>
+      <h2>Full Worked Solutions</h2>
+      <span class="range">Questions 1–25</span>
+    </div>
+
+    <ol class="sol">
+      <li><div class="sol-body">
+        <span class="step"><span class="m">v = f λ = 50 × 4</span></span>
+        <span class="ans">v = 200 m s⁻¹</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">λ = v / f = 340 / 170</span></span>
+        <span class="ans">λ = 2 m</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">f = 1 / T = 1 / 0.02 = 50 Hz</span></span>
+        <span class="step"><span class="m">λ = v / f = 300 / 50</span></span>
+        <span class="ans">λ = 6 m</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">f = 12 / 3 = 4 Hz</span></span>
+        <span class="step"><span class="m">T = 1 / f = 1 / 4</span></span>
+        <span class="ans">f = 4 Hz, T = 0.25 s</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">600 nm = 600 × 10<sup>−9</sup> m = 6 × 10<sup>−7</sup> m</span></span>
+        <span class="step"><span class="m">f = c / λ = (3 × 10<sup>8</sup>) / (6 × 10<sup>−7</sup>)</span></span>
+        <span class="ans">f = 5 × 10<sup>14</sup> Hz</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Amplitude is the maximum displacement from equilibrium.</span>
+        <span class="step">Energy is proportional to <span class="m">A<sup>2</sup></span>.</span>
+        <span class="ans">E ∝ A²</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Mechanical wave: requires a medium. Example: sound.</span>
+        <span class="step">EM wave: no medium required. Example: light.</span>
+        <span class="ans">As stated</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Transverse: particle motion ⊥ wave direction. Longitudinal: particle motion ∥ wave direction.</span>
+        <span class="step">Transverse can be polarised; longitudinal cannot.</span>
+        <span class="ans">As stated</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Only transverse waves can be polarised.</span>
+        <span class="step">Polarisation restricts oscillations to one plane — impossible when oscillation is along the direction of travel.</span>
+        <span class="ans">Transverse only</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Sound is a mechanical wave.</span>
+        <span class="step">Mechanical waves need particles to vibrate.</span>
+        <span class="step">A vacuum has no particles.</span>
+        <span class="ans">No medium, no sound</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">(a) Frequency is unchanged — set by the source.</span>
+        <span class="step">(b) Speed increases (sound travels faster in water).</span>
+        <span class="step">(c) Since <span class="m">v = fλ</span> and f is constant, λ increases.</span>
+        <span class="ans">f same; v and λ both increase</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Reflection: a wave bounces back from a boundary.</span>
+        <span class="step">Law: angle of incidence = angle of reflection (both measured from the normal).</span>
+        <span class="ans">θi = θr</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Speed changes because the medium changes.</span>
+        <span class="step">Frequency stays constant (source-determined).</span>
+        <span class="step">Since v = fλ, λ must change — this manifests as a change of direction.</span>
+        <span class="ans">Change of speed → change of direction</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Gap size ≈ wavelength.</span>
+        <span class="step">Waves spread out strongly on the far side of the gap.</span>
+        <span class="ans">Diffraction — significant spreading</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">At any point, the resultant displacement is the vector sum of the displacements due to each wave individually.</span>
+        <span class="ans">Principle of superposition</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Path difference = 1.5 λ = (1 + ½) λ.</span>
+        <span class="step">This matches the destructive condition: (n + ½) λ.</span>
+        <span class="ans">Destructive</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Dispersion: separation of a wave into component frequencies because speed depends on frequency.</span>
+        <span class="step">Example: prism splitting white light into a spectrum.</span>
+        <span class="ans">As stated</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Fixed at both ends, fundamental mode: L = λ/2.</span>
+        <span class="step"><span class="m">λ = 2L = 2 × 0.8</span></span>
+        <span class="ans">λ = 1.6 m</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Node spacing = λ/2.</span>
+        <span class="step"><span class="m">0.25 = λ/2 ⇒ λ = 0.5 m</span></span>
+        <span class="ans">λ = 0.5 m</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Progressive: transfers energy; amplitude same everywhere.</span>
+        <span class="step">Standing: stores energy; nodes (zero amplitude) and antinodes (max amplitude) alternate.</span>
+        <span class="ans">As stated</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Compare with <span class="m">y = A sin(kx − ωt)</span>.</span>
+        <span class="step">A = 0.05 m; k = 4 rad m⁻¹; ω = 200 rad s⁻¹.</span>
+        <span class="ans">A = 0.05 m, k = 4 rad m⁻¹, ω = 200 rad s⁻¹</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">k = 2π/λ ⇒ λ = 2π/4 = 1.57 m</span>
+        <span class="step">ω = 2πf ⇒ f = 200/(2π) ≈ 31.8 Hz</span>
+        <span class="step">v = fλ = 31.8 × 1.57 ≈ 50 m s⁻¹</span>
+        <span class="ans">λ ≈ 1.57 m, f ≈ 31.8 Hz, v ≈ 50 m s⁻¹</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">v = c / n = (3 × 10<sup>8</sup>) / 1.5 = 2 × 10<sup>8</sup> m s⁻¹</span>
+        <span class="step">Frequency unchanged, so λ' = λ / n = 500 / 1.5</span>
+        <span class="ans">v = 2 × 10<sup>8</sup> m s⁻¹, λ' ≈ 333 nm</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step"><span class="m">v = √(T/μ) = √(80 / 0.02)</span></span>
+        <span class="step"><span class="m">v = √4000 ≈ 63.2 m s⁻¹</span></span>
+        <span class="ans">v ≈ 63.2 m s⁻¹</span>
+      </div></li>
+
+      <li><div class="sol-body">
+        <span class="step">Displacement–distance: plots y vs. position. Gives wavelength directly.</span>
+        <span class="step">Displacement–time: plots y vs. time at one point. Gives period (and hence frequency).</span>
+        <span class="ans">As stated</span>
+      </div></li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    Waves — General Principles • Physics Lesson Note
+  </footer>
+
+</div>
+
+</body>
+</html>

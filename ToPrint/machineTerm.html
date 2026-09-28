@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machines — Lesson Note</title>
+<style>
+/* ============================================================
+   MACHINES — LESSON NOTE
+   Print-first. No JS. Weeks as units.
+   Template adapted from hor2.html (SS 2 Horticulture).
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+  position:relative;
+}
+
+/* ---------- brand mark ---------- */
+.brand{
+  position:absolute;
+  top:18px;
+  right:22px;
+  width:42px;
+  height:42px;
+  opacity:.92;
+}
+.brand svg{display:block;width:100%;height:100%}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #1c7a3a;
+  padding-bottom:10px;
+  margin-bottom:8px;
+  padding-right:56px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #1c7a3a;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1c7a3a;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1c7a3a;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1c7a3a;
+  border-bottom:1.4pt solid #cfe3d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:1.4pt solid #b9c1b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f8f4;
+  border-color:#a8c8b2;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa79a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#48524a;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#1c7a3a;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1c7a3a;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3ee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #1c7a3a;
+  color:#1c7a3a;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- math ---------- */
+.m{
+  font-family:Cambria,"Times New Roman",Georgia,serif;
+  white-space:nowrap;
+}
+sup{font-size:.70em;vertical-align:.45em;line-height:0}
+sub{font-size:.70em;vertical-align:-.2em;line-height:0}
+.frac{
+  display:inline-block;
+  vertical-align:middle;
+  text-align:center;
+  font-size:.94em;
+  line-height:1.06;
+  margin:0 .12em;
+  position:relative;
+  top:-.06em;
+}
+.frac .n{
+  display:block;
+  padding:0 .32em .4mm;
+  border-bottom:1pt solid currentColor;
+}
+.frac .d{
+  display:block;
+  padding:.4mm .32em 0;
+}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<!-- ===== BRAND ===== -->
+<div class="brand" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+    <title>Grant App CGPA</title>
+    <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+    <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+    <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+    <circle cx="602" cy="404" r="13" fill="#C95545"/>
+  </svg>
+</div>
+
+<header class="doc-head">
+  <h1>Machines — Lesson Note</h1>
+  <p class="term">Physics &amp; Technology · Mechanical Advantage, Levers, Pulleys, Inclined Plane, Gears, Efficiency</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — INTRODUCTION TO MACHINES
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Introduction to Machines</h2>
+  <p class="meta"><b>Content:</b> Meaning of a machine, functions, mechanical advantage, velocity ratio, efficiency, and the lever.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define a machine and state its three functions.</li>
+      <li>Distinguish between force multiplier and speed multiplier.</li>
+      <li>Define mechanical advantage, velocity ratio, and efficiency.</li>
+      <li>State the relationship <span class="m">MA = η × VR</span>.</li>
+      <li>Classify levers into the three orders with examples.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A three-panel plate of the lever orders: first (fulcrum between L and E), second (load between F and E), third (effort between F and L). Each panel labelled with F, L, E and the arm lengths. Also a small crowbar/wheelbarrow/fishing-rod triple. Not embedded in the source.</p>
+
+  <h3>1.1 What a Machine Is</h3>
+  <p>A <b>machine</b> is any device that makes work easier by changing the magnitude or direction of a force. It does not create energy — it only redirects or reshapes it. This is the single governing fact of the whole topic.</p>
+
+  <p>Three functions of a machine:</p>
+
+  <table>
+    <tr><th style="width:24%">Function</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td class="k">Force multiplier</td><td>Increases the applied effort so a smaller force moves a larger load</td><td>Crowbar, lever, pulley block</td></tr>
+    <tr><td class="k">Speed multiplier</td><td>Increases the distance or speed of the output</td><td>Bicycle gears, fishing rod</td></tr>
+    <tr><td class="k">Direction changer</td><td>Redirects force to a more convenient direction</td><td>Fixed pulley, block and tackle</td></tr>
+  </table>
+
+  <h3>1.2 The Core Quantities</h3>
+
+  <table>
+    <tr><th style="width:30%">Quantity</th><th>Symbol</th><th>Definition</th><th>Unit</th></tr>
+    <tr><td class="k">Load</td><td>L</td><td>Force the machine overcomes</td><td>N</td></tr>
+    <tr><td class="k">Effort</td><td>E</td><td>Force applied to the machine</td><td>N</td></tr>
+    <tr><td class="k">Mechanical Advantage</td><td>MA</td><td>Ratio of load to effort: <span class="m">MA = L / E</span></td><td>None</td></tr>
+    <tr><td class="k">Velocity Ratio</td><td>VR</td><td>Ratio of distance effort moves to distance load moves: <span class="m">VR = d<sub>E</sub> / d<sub>L</sub></span></td><td>None</td></tr>
+    <tr><td class="k">Efficiency</td><td>η</td><td>Ratio of output work to input work: <span class="m">η = (W<sub>out</sub> / W<sub>in</sub>) × 100%</span></td><td>%</td></tr>
+    <tr><td class="k">Work input</td><td>W<sub>in</sub></td><td><span class="m">E × d<sub>E</sub></span></td><td>J</td></tr>
+    <tr><td class="k">Work output</td><td>W<sub>out</sub></td><td><span class="m">L × d<sub>L</sub></span></td><td>J</td></tr>
+  </table>
+
+  <h3>1.3 The Master Relationship</h3>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;">Work output = work input × efficiency, therefore:</p>
+    <p style="margin:0;font-size:12pt;text-align:center;"><span class="m">MA = η × VR</span></p>
+    <p style="margin:6px 0 0;font-size:10pt;">Equivalently: <span class="m">η = MA / VR × 100%</span></p>
+  </div>
+
+  <p>This one relation governs every machine problem. When efficiency is ideal <span class="m">(η = 1)</span>, then <span class="m">MA = VR</span>. When efficiency is real <span class="m">(η &lt; 1)</span>, then <span class="m">MA &lt; VR</span>. In practice, <b>MA is always less than VR</b> because friction consumes part of the input.</p>
+
+  <h3>1.4 Efficiency and Losses</h3>
+  <p>Efficiency is always less than 100% in real machines because:</p>
+  <ul class="tight">
+    <li>Friction between moving parts converts work into heat.</li>
+    <li>Some energy is used to move parts of the machine itself (e.g. the weight of a pulley block).</li>
+    <li>Deformation or vibration absorbs work.</li>
+  </ul>
+  <p>A machine with efficiency above 100% does not exist — it would violate the conservation of energy.</p>
+
+  <h3>1.5 Levers</h3>
+  <p>A lever is a rigid bar that rotates about a fixed point called the <b>fulcrum</b> (pivot). The three orders differ by what lies between what.</p>
+
+  <table>
+    <tr><th style="width:20%">Order</th><th>Arrangement</th><th>Example</th><th>MA</th></tr>
+    <tr><td class="k">First order</td><td>Fulcrum between effort and load</td><td>Crowbar, seesaw, scissors</td><td>May be &gt;1 or &lt;1</td></tr>
+    <tr><td class="k">Second order</td><td>Load between fulcrum and effort</td><td>Wheelbarrow, nutcracker, bottle opener</td><td>Always &gt; 1</td></tr>
+    <tr><td class="k">Third order</td><td>Effort between fulcrum and load</td><td>Fishing rod, forearm, tweezers</td><td>Always &lt; 1</td></tr>
+  </table>
+
+  <p><b>Law of moments for a lever in equilibrium:</b></p>
+  <div class="box formula">
+    <p style="margin:0;text-align:center;"><span class="m">E × a = L × b</span></p>
+    <p style="margin:6px 0 0;font-size:10pt;text-align:center;">(a = effort arm, b = load arm)</p>
+  </div>
+  <p><b>Velocity ratio of a lever:</b> <span class="m">VR = a / b</span></p>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>A lever's own weight acts as a load at its centre of gravity, reducing effective MA.</li>
+      <li>The order of a lever depends on the arrangement of L, E, F — not on the shape. Scissors are first order despite looking like a cutter.</li>
+      <li>Second-order levers always have MA &gt; 1. Third-order levers always have MA &lt; 1. Structural, not stylistic.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — PULLEYS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Pulleys</h2>
+  <p class="meta"><b>Content:</b> Fixed pulley, movable pulley, block and tackle, velocity ratios, and efficiency.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Describe fixed and movable pulleys.</li>
+      <li>Determine the VR of a pulley system from the number of supporting strings.</li>
+      <li>Explain block-and-tackle systems.</li>
+      <li>Calculate MA, VR and η for pulley systems.</li>
+      <li>State the effect of the weight of the pulley block on efficiency.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> Three side-by-side pulley plates: <i>single fixed</i> (direction change only), <i>single movable</i> (VR = 2), and a <i>block and tackle</i> with four supporting strings (VR = 4). Each labelled with the tension T on each string and the load W suspended. Not embedded in the source.</p>
+
+  <h3>2.1 Fixed Pulley</h3>
+  <p>A pulley whose axle is fixed to a support. The rope passes over it, and the load hangs on one side while effort is applied on the other.</p>
+  <ul class="tight">
+    <li><b>Effect:</b> changes only the direction of the effort. No MA gained.</li>
+    <li><b>Ideal VR = 1</b> (effort and load move equal distances).</li>
+    <li><b>MA &lt; 1</b> in practice, because friction in the pulley groove consumes some effort.</li>
+  </ul>
+
+  <h3>2.2 Movable Pulley</h3>
+  <p>The pulley itself is free to move with the load. The rope is anchored at one end and pulled at the other.</p>
+  <ul class="tight">
+    <li><b>Effect:</b> the load is supported by <em>two</em> segments of rope, so the effort is half the load.</li>
+    <li><b>Ideal VR = 2</b>.</li>
+    <li>In practice MA &lt; 2 because the pulley's own weight adds to the load.</li>
+  </ul>
+
+  <h3>2.3 Block and Tackle</h3>
+  <p>A system of two or more pulleys (one fixed block, one movable block) connected by a single rope. This is where pulleys become powerful.</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Velocity Ratio of a block and tackle:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">VR = n</span></p>
+    <p style="margin:4px 0 0;font-size:10pt;text-align:center;">where <span class="m">n</span> = number of rope segments supporting the movable block</p>
+  </div>
+
+  <h4>Worked rule: how to count n</h4>
+  <ul class="tight">
+    <li>Count only the rope segments that <em>pull upwards</em> on the movable block.</li>
+    <li>Do <em>not</em> count the segment being pulled by the effort (the "tail"), because it pulls downwards.</li>
+    <li>If in doubt, count segments between the fixed and movable blocks.</li>
+  </ul>
+
+  <h3>2.4 Efficiency of Pulley Systems</h3>
+  <p>The main losses in a pulley system are:</p>
+  <ul class="tight">
+    <li><b>Weight of the movable block</b> — it must be lifted along with the load.</li>
+    <li><b>Friction in the pulley grooves and bearings.</b></li>
+    <li><b>Stiffness of the rope</b> — it resists bending around the pulley.</li>
+  </ul>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Efficiency with a block of weight w:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">η = <span class="frac"><span class="n">L</span><span class="d">L + w</span></span> × 100%</span> &nbsp; (ideal, frictionless)</p>
+  </div>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>A fixed pulley always has <span class="m">MA &lt; 1</span>. It is a direction changer, not a force multiplier.</li>
+      <li>VR is a geometric fact — it depends only on the rope arrangement, not on friction or load.</li>
+      <li>In a block and tackle, pulling the free end downward lifts the load upward. The effort distance is always <span class="m">n</span> times the load distance.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — INCLINED PLANE, WEDGE, SCREW
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Inclined Plane, Wedge and Screw</h2>
+  <p class="meta"><b>Content:</b> Inclined plane, wedge, screw jack — velocity ratios and applications.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Derive the VR of an inclined plane.</li>
+      <li>Explain the wedge as a moving inclined plane.</li>
+      <li>Determine the VR of a screw jack.</li>
+      <li>State the mechanical advantage of each.</li>
+      <li>Identify real-world applications of each.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A three-panel plate: <i>inclined plane</i> with slope length l, height h, and angle θ; <i>wedge</i> with length L and thickness t; <i>screw jack</i> with pitch p, handle radius r, and one full turn indicated. Each labelled with VR derivation. Not embedded in the source.</p>
+
+  <h3>3.1 Inclined Plane</h3>
+  <p>A flat surface set at an angle to the horizontal. A load is pushed up the slope rather than lifted vertically. The mechanical advantage comes from trading distance for force.</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Velocity Ratio:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">VR = <span class="frac"><span class="n">l</span><span class="d">h</span></span> = <span class="frac"><span class="n">1</span><span class="d">sin θ</span></span></span></p>
+    <p style="margin:4px 0 0;font-size:10pt;text-align:center;">l = slope length, h = vertical height, θ = angle to horizontal</p>
+  </div>
+
+  <ul class="tight">
+    <li><b>Ideal MA</b> = <span class="m">l / h</span> (when frictionless).</li>
+    <li><b>Real MA</b> is less because of friction between the load and the slope.</li>
+    <li>The shallower the slope, the greater the VR, and the greater the ideal MA.</li>
+  </ul>
+
+  <h3>3.2 The Wedge</h3>
+  <p>Two inclined planes placed back-to-back. A wedge converts a downward push into an outward splitting force.</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Velocity Ratio:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">VR = <span class="frac"><span class="n">L</span><span class="d">t</span></span></span></p>
+    <p style="margin:4px 0 0;font-size:10pt;text-align:center;">L = length of the wedge, t = thickness of the wide end</p>
+  </div>
+
+  <p><b>Applications:</b> axe, chisel, knife, nail, splitting maul, pin.</p>
+
+  <h3>3.3 The Screw and Screw Jack</h3>
+  <p>A screw is an inclined plane wrapped around a cylinder. A screw jack uses this principle to lift heavy loads (e.g. raising a car to change a tyre).</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Velocity Ratio of a screw jack:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">VR = <span class="frac"><span class="n">2πr</span><span class="d">p</span></span></span></p>
+    <p style="margin:4px 0 0;font-size:10pt;text-align:center;">r = length of the handle (radius of effort circle), p = pitch of the screw</p>
+  </div>
+
+  <p><b>Pitch (p):</b> the distance the screw advances in one complete turn. Also, <span class="m">p = 1 / (number of threads per metre)</span>.</p>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>Screw jacks have very high VR but very low efficiency (often under 30%) because of massive friction in the threads. The high friction is deliberately kept — it stops the jack from unwinding under load.</li>
+      <li>A wedge is often used as a "friction-locked" tool. It does not slip out easily because the friction between its faces and the material is high.</li>
+      <li>The formula <span class="m">VR = 2πr / p</span> assumes one thread. Multiple-start threads have VR divided by the number of starts.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — WHEEL AND AXLE, GEARS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Wheel and Axle, Gears</h2>
+  <p class="meta"><b>Content:</b> Wheel and axle, gear trains, velocity ratios, and the bicycle as a compound machine.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Determine the VR of a wheel and axle.</li>
+      <li>Determine the VR of a gear train.</li>
+      <li>Explain how gears transfer and change motion.</li>
+      <li>Analyse a bicycle as a compound machine.</li>
+      <li>State where gears are used in everyday technology.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A wheel-and-axle plate showing effort on the wheel rim and load on the axle rope, with radii R and r labelled. Beside it, a two-gear mesh diagram: driver gear with N₁ teeth meshing with driven gear with N₂ teeth, arrows showing opposite rotation. Not embedded in the source.</p>
+
+  <h3>4.1 Wheel and Axle</h3>
+  <p>A wheel of large radius rigidly attached to a smaller cylinder (the axle). Turning the wheel turns the axle. Effort is applied to the wheel; load is attached to the axle (or vice versa).</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Velocity Ratio:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">VR = <span class="frac"><span class="n">R</span><span class="d">r</span></span></span></p>
+    <p style="margin:4px 0 0;font-size:10pt;text-align:center;">R = radius of the wheel, r = radius of the axle</p>
+  </div>
+
+  <p><b>Applications:</b> winch, steering wheel, screwdriver, door knob, windlass, capstan.</p>
+
+  <h3>4.2 Gears</h3>
+  <p>Gears are toothed wheels that mesh to transmit motion and force. Adjacent gears rotate in opposite directions. The number of teeth determines the speed and torque change.</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Velocity Ratio of a gear pair:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">VR = <span class="frac"><span class="n">N<sub>driven</sub></span><span class="d">N<sub>driver</sub></span></span> = <span class="frac"><span class="n">teeth on driven gear</span><span class="d">teeth on driver gear</span></span></span></p>
+  </div>
+
+  <p><b>Rule:</b> If the driven gear has more teeth than the driver, speed decreases and torque increases. If the driven gear has fewer teeth, speed increases and torque decreases.</p>
+
+  <h4>Gear Trains (compound gears)</h4>
+  <p>When three or more gears mesh, the overall VR is the product of each pair:</p>
+  <div class="box formula">
+    <p style="margin:0;text-align:center;"><span class="m">VR<sub>total</sub> = VR<sub>1</sub> × VR<sub>2</sub> × VR<sub>3</sub> × …</span></p>
+  </div>
+  <p>Alternatively for a chain of gears: <span class="m">VR = N<sub>last</sub> / N<sub>first</sub></span> (intermediate gears cancel).</p>
+
+  <h3>4.3 Bicycle as a Compound Machine</h3>
+  <p>A bicycle combines several simple machines:</p>
+  <ul class="tight">
+    <li><b>Pedal crank and chainwheel</b> — a wheel and axle.</li>
+    <li><b>Chain and sprocket</b> — a gear pair (or chain drive, functionally equivalent).</li>
+    <li><b>Wheels</b> — reduce friction against the ground; increase distance per pedal turn.</li>
+    <li><b>Brake levers</b> — levers (second order).</li>
+    <li><b>Handlebars and frame</b> — steering through a fulcrum arrangement.</li>
+  </ul>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>Wheel and axle VR depends only on the radii, not on the direction of effort. Whether you drive the wheel or the axle determines whether you get force multiplication or speed multiplication.</li>
+      <li>Meshed gears always rotate in <em>opposite</em> directions. Idler gears reverse the direction again without changing total VR.</li>
+      <li>Bicycle gear ratios use chainwheel and rear-sprocket tooth counts, not physical radius, since the chain rides on teeth.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM BREAK / CONSOLIDATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Consolidation Week</h2>
+  <p class="meta"><b>Content:</b> Review of machines — lever, pulley, inclined plane, wheel and axle, gears. No new content.</p>
+
+  <div class="box obj">
+    <h4>Revision Checklist</h4>
+    <ol class="cols2 tight">
+      <li>The three functions of a machine.</li>
+      <li>MA, VR, η — definitions and units.</li>
+      <li>Master relation <span class="m">MA = η × VR</span>.</li>
+      <li>Levers — three orders, moment law, VR formula.</li>
+      <li>Pulleys — fixed, movable, block and tackle; count the strings.</li>
+      <li>Inclined plane, wedge, screw jack — VR formulas.</li>
+      <li>Wheel and axle VR; gear pair VR.</li>
+      <li>Why efficiency is always below 100%.</li>
+    </ol>
+  </div>
+
+  <h4>Cross-topic formula ledger</h4>
+  <table>
+    <tr><th style="width:38%">Machine</th><th>Velocity Ratio</th></tr>
+    <tr><td class="k">Lever</td><td><span class="m">VR = a / b</span></td></tr>
+    <tr><td class="k">Fixed pulley</td><td><span class="m">VR = 1</span></td></tr>
+    <tr><td class="k">Movable pulley</td><td><span class="m">VR = 2</span></td></tr>
+    <tr><td class="k">Block and tackle</td><td><span class="m">VR = n</span> (number of supporting strings)</td></tr>
+    <tr><td class="k">Inclined plane</td><td><span class="m">VR = l / h = 1 / sin θ</span></td></tr>
+    <tr><td class="k">Wedge</td><td><span class="m">VR = L / t</span></td></tr>
+    <tr><td class="k">Screw jack</td><td><span class="m">VR = 2πr / p</span></td></tr>
+    <tr><td class="k">Wheel and axle</td><td><span class="m">VR = R / r</span></td></tr>
+    <tr><td class="k">Gear pair</td><td><span class="m">VR = N<sub>driven</sub> / N<sub>driver</sub></span></td></tr>
+  </table>
+
+  <div class="note">
+    <b>Self-test:</b> For each machine above, state (a) its function, (b) whether it is a force multiplier or a speed multiplier, and (c) one everyday application.
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — EFFICIENCY IN REAL MACHINES
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Efficiency in Real Machines</h2>
+  <p class="meta"><b>Content:</b> Sources of energy loss, calculating efficiency, effort versus load graphs, and maximum mechanical advantage.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>List the main sources of energy loss in machines.</li>
+      <li>Calculate efficiency from MA and VR.</li>
+      <li>Interpret an effort-versus-load graph.</li>
+      <li>State the significance of the intercept on the effort axis.</li>
+      <li>Explain why no machine is 100% efficient.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> An <i>effort versus load</i> graph for a pulley system: a straight line with a positive intercept on the effort axis, showing the "dead load" or friction effort. Also a labelled bar chart comparing W<sub>in</sub>, W<sub>out</sub>, and W<sub>lost</sub>. Not embedded in the source.</p>
+
+  <h3>6.1 Where the Work Goes</h3>
+  <p>For any real machine:</p>
+  <div class="box formula">
+    <p style="margin:0;text-align:center;"><span class="m">W<sub>in</sub> = W<sub>out</sub> + W<sub>lost</sub></span></p>
+    <p style="margin:6px 0 0;font-size:10pt;text-align:center;">W<sub>lost</sub> = energy degraded to heat by friction and to lifting the machine's own parts</p>
+  </div>
+
+  <table>
+    <tr><th style="width:32%">Source of loss</th><th>How it appears</th></tr>
+    <tr><td class="k">Friction in bearings and grooves</td><td>Heat, wear, noise</td></tr>
+    <tr><td class="k">Weight of the movable block</td><td>Effort must lift the block along with the load</td></tr>
+    <tr><td class="k">Stiffness of rope or belt</td><td>Resists bending, so effort is wasted</td></tr>
+    <tr><td class="k">Deformation of machine parts</td><td>Energy stored briefly and lost as heat</td></tr>
+    <tr><td class="k">Air resistance</td><td>Significant at high speed</td></tr>
+  </table>
+
+  <h3>6.2 Effort versus Load Graph</h3>
+  <p>When you plot effort on the y-axis against load on the x-axis for a real machine, the graph is a straight line of the form:</p>
+  <div class="box formula">
+    <p style="margin:0;text-align:center;"><span class="m">E = a L + b</span></p>
+  </div>
+  <ul class="tight">
+    <li><b>Slope a</b> = <span class="m">1 / (ideal MA)</span>. This is the reciprocal of the ideal mechanical advantage.</li>
+    <li><b>Intercept b</b> = the effort required to overcome friction and move the machine's own parts, even when the load is zero. Sometimes called the "dead effort" or "friction effort".</li>
+    <li><b>Maximum MA</b> occurs at the largest load on the graph, because the intercept b becomes a smaller fraction of the total effort.</li>
+  </ul>
+
+  <h3>6.3 Why Efficiency Rises with Load</h3>
+  <p>Because the intercept b is fixed, adding more load spreads the fixed loss over a larger useful work output. Hence:</p>
+  <ul class="tight">
+    <li>Efficiency increases as load increases (up to the machine's safe limit).</li>
+    <li>A machine working near its maximum rated load is more efficient than one working lightly loaded.</li>
+  </ul>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>MA can be greater than VR only if the graph or the measurement is wrong; η would exceed 100%.</li>
+      <li>The intercept b is <em>not</em> the weight of the load, and <em>not</em> the weight of the machine. It is only the effort needed to overcome internal resistance.</li>
+      <li>An ideal (frictionless) machine would have b = 0, giving a straight line through the origin.</li>
+      <li>Efficiency can rise to a practical maximum but never reaches 100% because friction cannot be completely eliminated.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — HYDRAULIC MACHINES (PRESS AND BRAKES)
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Hydraulic Machines</h2>
+  <p class="meta"><b>Content:</b> Pascal's principle, hydraulic press, hydraulic brakes, and their force multiplication.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>State Pascal's principle.</li>
+      <li>Explain how a hydraulic press multiplies force.</li>
+      <li>Determine the MA of a hydraulic press.</li>
+      <li>Describe how hydraulic brakes work.</li>
+      <li>Identify where hydraulics are used in technology.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A hydraulic press diagram: two cylinders of different areas A₁ and A₂ connected by a fluid-filled tube, small piston pushed down with effort E, large piston lifting load L. Also a car brake system schematic showing master cylinder and slave cylinders at each wheel. Not embedded in the source.</p>
+
+  <h3>7.1 Pascal's Principle</h3>
+  <div class="box formula">
+    <p style="margin:0;text-align:center;"><b>Pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid and to the walls of the container.</b></p>
+  </div>
+
+  <h3>7.2 Hydraulic Press</h3>
+  <p>A small force applied to a small piston creates a pressure in the fluid, which acts on a large piston to lift a heavy load.</p>
+
+  <div class="box formula">
+    <p style="margin:0 0 4px;"><b>Pressure equality:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m"><span class="frac"><span class="n">E</span><span class="d">A<sub>1</sub></span></span> = <span class="frac"><span class="n">L</span><span class="d">A<sub>2</sub></span></span></span></p>
+    <p style="margin:6px 0 4px;"><b>Mechanical advantage:</b></p>
+    <p style="margin:0;text-align:center;"><span class="m">MA = <span class="frac"><span class="n">L</span><span class="d">E</span></span> = <span class="frac"><span class="n">A<sub>2</sub></span><span class="d">A<sub>1</sub></span></span> = <span class="frac"><span class="n">r<sub>2</sub><sup>2</sup></span><span class="d">r<sub>1</sub><sup>2</sup></span></span></span></p>
+  </div>
+
+  <p><b>Note on VR:</b> Because the fluid is incompressible, the volume pushed down equals the volume pushed up: <span class="m">A<sub>1</sub> d<sub>1</sub> = A<sub>2</sub> d<sub>2</sub></span>. Therefore <span class="m">VR = d<sub>1</sub> / d<sub>2</sub> = A<sub>2</sub> / A<sub>1</sub></span>.</p>
+
+  <p><b>Ideal case:</b> In a frictionless hydraulic press, <span class="m">MA = VR</span> and efficiency = 100%. Real presses lose a few percent to piston friction.</p>
+
+  <h3>7.3 Hydraulic Brakes</h3>
+  <p>A hydraulic brake system uses Pascal's principle to transmit force from the brake pedal to the wheels.</p>
+  <ol class="tight">
+    <li>Driver presses the brake pedal.</li>
+    <li>Pedal pushes a small piston in the <b>master cylinder</b>.</li>
+    <li>Pressure is transmitted through brake fluid (incompressible) to each wheel.</li>
+    <li>At each wheel, a larger <b>slave cylinder</b> pushes the brake shoes (or pads) against the drum (or disc).</li>
+    <li>Friction slows the wheel.</li>
+  </ol>
+
+  <h3>7.4 Applications of Hydraulics</h3>
+  <ul class="cols2 tight">
+    <li>Car braking systems</li>
+    <li>Garage lifts and jacks</li>
+    <li>Excavators and bulldozers</li>
+    <li>Aircraft control surfaces</li>
+    <li>Hydraulic presses in factories</li>
+    <li>Dams and sluice gates</li>
+  </ul>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>Pascal's principle requires an <em>enclosed</em>, <em>incompressible</em> fluid. If air is present, the system becomes "spongy" and braking is reduced.</li>
+      <li>A hydraulic press multiplies force but at the cost of distance: the small piston moves much further than the large one.</li>
+      <li>Because pressure in a fluid acts in all directions, a hydraulic system does not need a straight pipe to work — the fluid transmits pressure around bends without loss (ignoring friction).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — COMPOUND MACHINES AND EFFICIENCY RATINGS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Compound Machines</h2>
+  <p class="meta"><b>Content:</b> Combination of simple machines, overall MA and VR, and applications in real technology.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define a compound machine.</li>
+      <li>Determine overall MA, VR and η of a compound machine.</li>
+      <li>Analyse a bicycle, crane, or sewing machine.</li>
+      <li>State why machines are combined.</li>
+      <li>Recognise compound machines in daily life.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A crane schematic labelling the compound stages: motor → gearbox → cable drum (wheel and axle) → pulley block → hook. Each stage annotated with its own VR. Also a bicycle schematic with cranks, chain, sprockets, and wheels labelled. Not embedded in the source.</p>
+
+  <h3>8.1 What a Compound Machine Is</h3>
+  <p>A <b>compound machine</b> is a machine made of two or more simple machines working together. Almost every real-world machine is compound.</p>
+
+  <h3>8.2 Overall VR of a Compound Machine</h3>
+  <div class="box formula">
+    <p style="margin:0;text-align:center;"><span class="m">VR<sub>overall</sub> = VR<sub>1</sub> × VR<sub>2</sub> × VR<sub>3</sub> × …</span></p>
+  </div>
+
+  <p><b>Overall MA:</b> obtained from the overall load and overall effort: <span class="m">MA = L<sub>total</sub> / E<sub>total</sub></span>.</p>
+
+  <p><b>Overall efficiency:</b> <span class="m">η = (MA / VR) × 100%</span>.</p>
+
+  <h3>8.3 Worked Analysis — A Simple Crane</h3>
+  <p>A crane lifts a load by combining:</p>
+  <ul class="tight">
+    <li>A motor driving a gearbox (gear train).</li>
+    <li>A cable drum (wheel and axle).</li>
+    <li>A pulley block on the hook (block and tackle).</li>
+  </ul>
+
+  <table>
+    <tr><th style="width:32%">Stage</th><th>VR</th><th>Effect</th></tr>
+    <tr><td class="k">Gearbox</td><td>N<sub>driven</sub> / N<sub>driver</sub></td><td>Changes speed and torque</td></tr>
+    <tr><td class="k">Cable drum</td><td>R / r</td><td>Multiplies torque, reduces speed</td></tr>
+    <tr><td class="k">Pulley block</td><td>n (number of strings)</td><td>Multiplies force, changes direction</td></tr>
+  </table>
+
+  <p>Each stage reduces the speed further but increases the force further. The overall VR is the product.</p>
+
+  <h3>8.4 Why Machines Are Combined</h3>
+  <ul class="tight">
+    <li>Each simple machine provides only limited MA (or a trade of distance for force).</li>
+    <li>Combining them multiplies MA, allowing heavy loads to be moved with small efforts.</li>
+    <li>Different stages also serve different purposes: e.g. change direction, change speed, change location.</li>
+  </ul>
+
+  <div class="note">
+    <b>Exceptions and traps:</b>
+    <ul class="tight" style="margin-top:4px;">
+      <li>Overall efficiency is always less than or equal to the efficiency of the least efficient stage.</li>
+      <li>VR<sub>overall</sub> is a geometric quantity — it depends only on the ratios of the machine parts, not on the load.</li>
+      <li>Compound machines can multiply force enormously but never make work easier in the sense of reducing total energy needed; work is only reshaped.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — MACHINES IN TECHNOLOGY AND INDUSTRY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Machines in Technology and Industry</h2>
+  <p class="meta"><b>Content:</b> Applications of machines in agriculture, transport, manufacturing, and everyday tools.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Identify machines used in agriculture.</li>
+      <li>Identify machines used in transport.</li>
+      <li>Identify machines used in manufacturing.</li>
+      <li>Describe the compound nature of everyday tools.</li>
+      <li>State the social and economic importance of machines.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A four-panel plate showing: tractor with plough (inclined plane + wheel and axle), bicycle (compound), sewing machine (pedal-driven wheel and axle + lever), and crane (block and tackle + gear train). Each labelled with the simple machines involved. Not embedded in the source.</p>
+
+  <h3>9.1 Machines in Agriculture</h3>
+  <table>
+    <tr><th style="width:32%">Machine</th><th>Simple machines involved</th></tr>
+    <tr><td class="k">Plough</td><td>Wedge + inclined plane</td></tr>
+    <tr><td class="k">Hoe</td><td>Wedge + lever</td></tr>
+    <tr><td class="k">Wheelbarrow</td><td>Second-order lever + wheel and axle</td></tr>
+    <tr><td class="k">Tractor winch</td><td>Wheel and axle + gear train</td></tr>
+    <tr><td class="k">Combine harvester</td><td>Many compound systems — gears, pulleys, inclined conveyors</td></tr>
+  </table>
+
+  <h3>9.2 Machines in Transport</h3>
+  <ul class="tight">
+    <li><b>Bicycle</b> — wheel and axle (pedal crank), gear pair (chain drive), lever (brakes), inclined plane (ramp used to load).</li>
+    <li><b>Car</b> — engine with gears, wheel and axle (differential), hydraulic brakes (Pascal's principle), levers (pedals).</li>
+    <li><b>Aircraft</b> — hydraulic systems for control surfaces, gears in engines, levers in cockpit controls.</li>
+    <li><b>Crane</b> — block and tackle, gear train, wheel and axle.</li>
+  </ul>
+
+  <h3>9.3 Machines in Manufacturing</h3>
+  <ul class="tight">
+    <li><b>Lathe</b> — wheel and axle driving the workpiece, gear train for speed control.</li>
+    <li><b>Hydraulic press</b> — Pascal's principle; used for shaping metals.</li>
+    <li><b>Conveyor belt</b> — pulley system with friction drive.</li>
+    <li><b>Sewing machine</b> — wheel and axle (hand wheel), lever (needle arm), belt drive.</li>
+  </ul>
+
+  <h3>9.4 Everyday Tools</h3>
+  <table>
+    <tr><th style="width:32%">Tool</th><th>Machine type</th></tr>
+    <tr><td class="k">Scissors</td><td>First-order lever (×2)</td></tr>
+    <tr><td class="k">Nutcracker</td><td>Second-order lever</td></tr>
+    <tr><td class="k">Tweezers</td><td>Third-order lever (×2)</td></tr>
+    <tr><td class="k">Screwdriver</td><td>Wheel and axle + wedge (tip)</td></tr>
+    <tr><td class="k">Nail</td><td>Wedge (when driven), inclined plane (when screwed)</td></tr>
+    <tr><td class="k">Door handle</td><td>Wheel and axle</td></tr>
+    <tr><td class="k">Bottle opener</td><td>Second-order lever</td></tr>
+  </table>
+
+  <div class="note">
+    <b>Observation:</b> Almost every "simple" tool is actually compound. Its label as a lever or pulley describes its dominant mechanism, not its only one.
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — ADVANTAGES, LIMITATIONS AND SAFETY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Advantages, Limitations and Safety</h2>
+  <p class="meta"><b>Content:</b> Why machines matter, their limitations, and safe use.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>State the advantages of using machines.</li>
+      <li>State the limitations of machines.</li>
+      <li>Explain why no machine is perfectly efficient.</li>
+      <li>Identify safety hazards and precautions.</li>
+      <li>Relate machine design to human safety.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A "machine in use" plate showing safety features: guards on a pulley system, a warning sign on a hydraulic press, and a bicycle with correctly fitted brakes. Not embedded in the source.</p>
+
+  <h3>10.1 Advantages of Machines</h3>
+  <ul class="tight">
+    <li><b>Force multiplication</b> — heavy loads can be lifted by small efforts (crowbar, jack).</li>
+    <li><b>Speed multiplication</b> — fast motion with small input (bicycle, gears).</li>
+    <li><b>Change of direction</b> — makes work more convenient (fixed pulley, lever).</li>
+    <li><b>Precision and consistency</b> — machines do repetitive work without tiring.</li>
+    <li><b>Increased productivity</b> — work is done faster and on a larger scale.</li>
+    <li><b>Safety for humans</b> — hazardous tasks can be done by machines (cranes lifting loads, hydraulic presses).</li>
+  </ul>
+
+  <h3>10.2 Limitations of Machines</h3>
+  <ul class="tight">
+    <li><b>No machine creates energy.</b> Output work is always less than or equal to input work.</li>
+    <li><b>Friction is unavoidable</b> — efficiency is always below 100%.</li>
+    <li><b>Mechanical advantage comes with distance penalty.</b> A high-MA machine moves the load slowly.</li>
+    <li><b>Maintenance required</b> — lubrication, replacement of worn parts.</li>
+    <li><b>Cost</b> — initial purchase and upkeep.</li>
+    <li><b>Failure modes</b> — machines can break, jam, or cause injury if misused.</li>
+  </ul>
+
+  <h3>10.3 Why 100% Efficiency Is Impossible</h3>
+  <p>Efficiency requires all input work to become useful output work. But in any real machine:</p>
+  <ul class="tight">
+    <li>Friction between moving surfaces converts work to heat.</li>
+    <li>The machine's own parts need to be lifted or moved.</li>
+    <li>Energy escapes as sound and vibration.</li>
+  </ul>
+  <p>The Second Law of Thermodynamics formalises this: heat cannot be completely converted back to useful work. Every energy transfer degrades some of the energy to a less useful form.</p>
+
+  <h3>10.4 Safety in Machine Use</h3>
+  <table>
+    <tr><th style="width:34%">Hazard</th><th>Precaution</th></tr>
+    <tr><td class="k">Moving parts (gears, belts, pulleys)</td><td>Fit guards; keep loose clothing and hair away</td></tr>
+    <tr><td class="k">High-tension ropes and cables</td><td>Inspect regularly; stand clear of snap-back zone</td></tr>
+    <tr><td class="k">Hydraulic systems under pressure</td><td>Never open fittings under pressure; use correct-rated hoses</td></tr>
+    <tr><td class="k">Heavy loads suspended</td><td>Never stand under; use correct-rated slings and hooks</td></tr>
+    <tr><td class="k">Sharp wedges (axes, chisels)</td><td>Cut away from body; use proper grip and stance</td></tr>
+    <tr><td class="k">Electrical drive motors</td><td>Isolate before maintenance; use insulated tools</td></tr>
+  </table>
+
+  <div class="note">
+    <b>Safety principle:</b> a machine designed with high MA is <em>not</em> inherently safer — a jack that can lift 3 tonnes can also crush a foot. Guards, procedures and training matter more than the machine's power rating.
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — SUMMARY AND FORMULA LEDGER
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>Summary and Formula Ledger</h2>
+  <p class="meta"><b>Content:</b> Consolidated formulas, definitions and cross-topic links.</p>
+
+  <div class="box obj">
+    <h4>Learning Outcomes</h4>
+    <ol class="cols2 tight">
+      <li>Recall all VR formulas for the six simple machines.</li>
+      <li>Use the master relation MA = η × VR fluently.</li>
+      <li>Read an effort-versus-load graph.</li>
+      <li>Analyse compound machines by multiplying VRs.</li>
+      <li>State why efficiency is always below 100%.</li>
+    </ol>
+  </div>
+
+  <h3>11.1 Core Definitions</h3>
+  <table>
+    <tr><th style="width:32%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Machine</td><td>Device that changes the magnitude or direction of a force</td></tr>
+    <tr><td class="k">Load (L)</td><td>The force the machine overcomes (newtons)</td></tr>
+    <tr><td class="k">Effort (E)</td><td>The force applied to the machine (newtons)</td></tr>
+    <tr><td class="k">Mechanical Advantage (MA)</td><td><span class="m">MA = L / E</span> (no unit)</td></tr>
+    <tr><td class="k">Velocity Ratio (VR)</td><td><span class="m">VR = d<sub>E</sub> / d<sub>L</sub></span> (no unit)</td></tr>
+    <tr><td class="k">Efficiency (η)</td><td><span class="m">η = (MA / VR) × 100%</span></td></tr>
+    <tr><td class="k">Fulcrum</td><td>The pivot point of a lever</td></tr>
+    <tr><td class="k">Pitch (of a screw)</td><td>Distance the screw advances in one turn</td></tr>
+  </table>
+
+  <h3>11.2 Master Formula Ledger</h3>
+  <table>
+    <tr><th style="width:38%">Relation</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td class="k">Mechanical advantage</td><td><span class="m">MA = L / E</span></td><td>Load over effort</td></tr>
+    <tr><td class="k">Velocity ratio</td><td><span class="m">VR = d<sub>E</sub> / d<sub>L</sub></span></td><td>Distance effort over distance load</td></tr>
+    <tr><td class="k">Efficiency</td><td><span class="m">η = (MA / VR) × 100%</span></td><td>Always ≤ 100%</td></tr>
+    <tr><td class="k">Master relation</td><td><span class="m">MA = η × VR</span></td><td>Governs every machine problem</td></tr>
+    <tr><td class="k">Lever moment law</td><td><span class="m">E × a = L × b</span></td><td>a, b = arm lengths from fulcrum</td></tr>
+    <tr><td class="k">Lever VR</td><td><span class="m">VR = a / b</span></td><td>Effort arm / load arm</td></tr>
+    <tr><td class="k">Block and tackle VR</td><td><span class="m">VR = n</span></td><td>n = supporting strings</td></tr>
+    <tr><td class="k">Inclined plane VR</td><td><span class="m">VR = l / h</span></td><td>= 1/sin θ</td></tr>
+    <tr><td class="k">Wedge VR</td><td><span class="m">VR = L / t</span></td><td>Length / thickness</td></tr>
+    <tr><td class="k">Screw jack VR</td><td><span class="m">VR = 2πr / p</span></td><td>r = handle radius, p = pitch</td></tr>
+    <tr><td class="k">Wheel and axle VR</td><td><span class="m">VR = R / r</span></td><td>Wheel radius / axle radius</td></tr>
+    <tr><td class="k">Gear pair VR</td><td><span class="m">VR = N<sub>driven</sub> / N<sub>driver</sub></span></td><td>Tooth counts</td></tr>
+    <tr><td class="k">Compound VR</td><td><span class="m">VR<sub>total</sub> = VR<sub>1</sub> × VR<sub>2</sub> × …</span></td><td>Stages multiply</td></tr>
+    <tr><td class="k">Work</td><td><span class="m">W = F × d</span></td><td>Force × distance in the direction of force</td></tr>
+    <tr><td class="k">Energy conservation</td><td><span class="m">W<sub>in</sub> = W<sub>out</sub> + W<sub>lost</sub></span></td><td>Losses are heat, sound, deformation</td></tr>
+    <tr><td class="k">Hydraulic press MA</td><td><span class="m">MA = A<sub>2</sub> / A<sub>1</sub> = r<sub>2</sub><sup>2</sup> / r<sub>1</sub><sup>2</sup></span></td><td>Pascal's principle</td></tr>
+    <tr><td class="k">Effort–load line</td><td><span class="m">E = a L + b</span></td><td>b = friction effort (intercept)</td></tr>
+  </table>
+
+  <h3>11.3 Quick Classification Reference</h3>
+  <table>
+    <tr><th style="width:30%">Machine type</th><th>Force multiplier or speed multiplier?</th></tr>
+    <tr><td class="k">First-order lever</td><td>Either — depends on arm lengths</td></tr>
+    <tr><td class="k">Second-order lever</td><td>Force multiplier (MA &gt; 1)</td></tr>
+    <tr><td class="k">Third-order lever</td><td>Speed multiplier (MA &lt; 1)</td></tr>
+    <tr><td class="k">Fixed pulley</td><td>Direction changer only (VR = 1)</td></tr>
+    <tr><td class="k">Movable pulley / block and tackle</td><td>Force multiplier (VR &gt; 1)</td></tr>
+    <tr><td class="k">Inclined plane</td><td>Force multiplier (VR &gt; 1)</td></tr>
+    <tr><td class="k">Wedge</td><td>Force multiplier (VR &gt; 1)</td></tr>
+    <tr><td class="k">Screw jack</td><td>Force multiplier (very high VR)</td></tr>
+    <tr><td class="k">Wheel and axle</td><td>Either — depends on which is driven</td></tr>
+    <tr><td class="k">Gear pair</td><td>Either — depends on tooth counts</td></tr>
+    <tr><td class="k">Hydraulic press</td><td>Force multiplier (MA = A<sub>2</sub>/A<sub>1</sub>)</td></tr>
+  </table>
+
+  <div class="note">
+    <b>Closing statement:</b> Every machine problem reduces to three questions — What is the load? What is the effort? What is the arrangement of parts? From those, MA, VR and η follow.
+  </div>
+</section>
+
+</div>
+</body>
+</html>

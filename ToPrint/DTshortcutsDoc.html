@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shortcuts to Relevant Applications — Lesson Note</title>
+<style>
+  @page { size: A4; margin: 17mm 15mm 17mm 15mm; }
+
+  :root {
+    --ink:        #12181f;
+    --body:       #2a333d;
+    --muted:      #5c6874;
+    --accent:     #17233F;
+    --accent-dk:  #0E1729;
+    --accent-lt:  #e8ecf4;
+    --warm:       #C95545;
+    --warm-lt:    #faf1ef;
+    --rule:       #d3dbe3;
+    --rule-soft:  #e8edf2;
+    --paper:      #ffffff;
+    --tint:       #f7fafc;
+    --code-bg:    #eef1f6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #eef2f6;
+    color: var(--body);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body { display: flex; justify-content: center; padding: 34px 16px 70px; }
+
+  .sheet {
+    background: var(--paper);
+    width: 100%;
+    max-width: 860px;
+    padding: 46px 52px 56px;
+    border-radius: 3px;
+    box-shadow: 0 5px 26px rgba(12, 34, 48, 0.11);
+    position: relative;
+  }
+
+  /* ============ BRAND ============ */
+  .brand {
+    position: absolute;
+    top: 26px; right: 30px;
+    width: 54px; height: 54px;
+    opacity: 0.92;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+
+  /* ============ HEADER ============ */
+  .head {
+    text-align: center;
+    padding-bottom: 22px;
+    margin-bottom: 30px;
+    border-bottom: 2.5px solid var(--accent);
+    padding-right: 70px;
+  }
+  .head .kicker {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2.8px; text-transform: uppercase;
+    color: var(--warm); margin-bottom: 10px;
+  }
+  .head h1 {
+    font-size: 23px; font-weight: 700;
+    color: var(--accent-dk);
+    letter-spacing: -0.4px; margin-bottom: 6px;
+  }
+  .head .sub {
+    font-size: 11.5px; color: var(--muted); font-style: italic;
+  }
+
+  /* ============ INTRO ============ */
+  .intro {
+    background: var(--accent-lt);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    font-size: 10.3px;
+    line-height: 1.6;
+  }
+  .intro strong { color: var(--accent-dk); }
+
+  /* ============ SECTIONS ============ */
+  .sec { margin-bottom: 30px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 13px; padding-bottom: 6px;
+    border-bottom: 1.7px solid var(--accent);
+    break-after: avoid; page-break-after: avoid;
+  }
+  .sec-head .tag {
+    font-size: 9.5px; font-weight: 700;
+    letter-spacing: 1.6px; text-transform: uppercase;
+    color: #fff; background: var(--accent);
+    padding: 3px 11px; border-radius: 20px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .sec-head h2 {
+    font-size: 15.5px; font-weight: 700;
+    color: var(--accent-dk); letter-spacing: -0.2px;
+  }
+  .sec-head .range {
+    margin-left: auto; font-size: 9.5px;
+    color: var(--muted); font-weight: 600;
+  }
+
+  /* ============ SUBSECTION ============ */
+  h3.sub {
+    font-size: 12.5px; font-weight: 700;
+    color: var(--warm);
+    margin: 16px 0 8px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--rule-soft);
+    break-after: avoid; page-break-after: avoid;
+  }
+
+  /* ============ PROPERTY CARDS ============ */
+  .prop {
+    background: var(--tint);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 5px 5px 0;
+    padding: 14px 20px 15px;
+    margin-bottom: 12px;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .prop h3 {
+    font-size: 12.5px; font-weight: 700;
+    color: var(--warm); margin-bottom: 6px;
+  }
+  .prop p {
+    font-size: 10.2px; line-height: 1.58;
+    margin-bottom: 7px; text-align: justify;
+  }
+  .prop p:last-child { margin-bottom: 0; }
+  .prop .formal {
+    display: block; background: #fff;
+    border: 1px dashed #d9b8b0;
+    border-radius: 4px; padding: 7px 12px;
+    margin: 7px 0;
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    font-size: 10.5pt; color: var(--accent-dk);
+    text-align: center;
+  }
+  .prop .eg {
+    display: block; font-size: 9.9px; color: var(--muted);
+    margin-top: 5px; padding-left: 12px;
+    border-left: 2px solid var(--rule);
+  }
+
+  /* ============ KEY CAPS ============ */
+  kbd {
+    display: inline-block;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9.4px;
+    background: #fff;
+    border: 1px solid #c3ccd6;
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    padding: 1px 6px;
+    color: var(--accent-dk);
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  /* ============ SHORTCUT TABLE ============ */
+  table.sc {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 14px;
+    font-size: 9.7px;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  table.sc th, table.sc td {
+    border: 1px solid var(--rule);
+    padding: 5px 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.sc th {
+    background: var(--accent-lt);
+    color: var(--accent-dk);
+    font-weight: 700; font-size: 9.3px;
+    letter-spacing: 0.3px;
+  }
+  table.sc td.k {
+    font-family: "Consolas", "Courier New", monospace;
+    color: var(--accent-dk);
+    font-weight: 600;
+    white-space: nowrap;
+    width: 34%;
+  }
+  table.sc tr:nth-child(even) td { background: #fafcfd; }
+
+  /* ============ CALLOUTS ============ */
+  .callout {
+    background: var(--warm-lt);
+    border-left: 4px solid var(--warm);
+    border-radius: 0 4px 4px 0;
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-size: 9.9px;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  .callout strong { color: var(--warm); }
+
+  .warn {
+    background: #fdf6e8;
+    border-left: 4px solid #c99a2e;
+    border-radius: 0 4px 4px 0;
+    padding: 10px 16px;
+    margin: 10px 0;
+    font-size: 9.9px;
+    line-height: 1.55;
+    break-inside: avoid;
+  }
+  .warn strong { color: #9a7514; }
+
+  /* ============ CODE BLOCK ============ */
+  pre.code {
+    background: var(--code-bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9.3px;
+    line-height: 1.5;
+    color: var(--accent-dk);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    break-inside: avoid;
+  }
+  pre.code .c { color: var(--muted); font-style: italic; }
+
+  /* ============ MATH ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+  sup { font-size: 0.68em; vertical-align: 0.44em; line-height: 0; }
+
+  /* ============ LISTS ============ */
+  ul.bul { margin: 6px 0 10px 20px; font-size: 10.2px; line-height: 1.55; }
+  ul.bul li { margin-bottom: 4px; }
+  ol.num { margin: 6px 0 10px 22px; font-size: 10.2px; line-height: 1.55; }
+  ol.num li { margin-bottom: 4px; }
+
+  /* ============ FOOTER ============ */
+  .foot {
+    margin-top: 34px; padding-top: 13px;
+    border-top: 1px solid var(--rule);
+    text-align: center; font-size: 9.3px;
+    color: var(--muted); letter-spacing: 0.5px;
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body { background: #fff; padding: 0; font-size: 9.9pt; }
+    .sheet { box-shadow: none; border-radius: 0; max-width: 100%; padding: 0; }
+    .sec-head, .prop, .intro, table.sc, .callout, .warn, pre.code {
+      break-inside: avoid; page-break-inside: avoid;
+    }
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 14px 8px 40px; }
+    .sheet { padding: 28px 20px 38px; }
+    .brand { width: 42px; height: 42px; top: 18px; right: 18px; }
+    .head h1 { font-size: 18px; }
+    .head { padding-right: 54px; }
+    .sec-head { flex-wrap: wrap; }
+    .prop p, .intro { text-align: left; }
+    table.sc { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <!-- ===== BRAND ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="head">
+    <div class="kicker">Digital Technologies • Productivity &amp; Development</div>
+    <h1>Shortcuts to Relevant Applications</h1>
+    <div class="sub">Word • Excel • PowerPoint • Command Prompt • PowerShell • IDEs • SDKs</div>
+  </header>
+
+  <!-- ===== INTRO ===== -->
+  <div class="intro">
+    <strong>Why shortcuts matter.</strong> Every application you use — whether a word
+    processor, a spreadsheet, a terminal, or a code editor — exposes the same underlying
+    design: a <em>command</em> is bound to a <em>key combination</em>, a <em>menu item</em>,
+    and a <em>programmatic interface</em>. Learning shortcuts is not about memorising
+    keystrokes; it is about learning the <em>grammar</em> each application uses so you can
+    predict unfamiliar bindings. This lesson covers the universal modifier system, then
+    walks through seven application families: <strong>Word, Excel, PowerPoint, Command
+    Prompt, PowerShell, IDEs, and SDKs</strong> — with principles, exceptions, and the
+    reasoning behind each binding.
+  </div>
+
+  <!-- ================= SECTION A ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section A</span>
+      <h2>The Universal Modifier System</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      Before any application-specific detail, you must understand the four modifier keys
+      and what each <em>means</em>. Almost every shortcut is a modifier + a mnemonic
+      letter. Once you know the modifier's role, you can guess the letter.
+    </p>
+
+    <div class="prop">
+      <h3>1. Ctrl (Control) — "Execute a command"</h3>
+      <p>
+        <kbd>Ctrl</kbd> is the workhorse. It pairs with a letter that is the
+        <strong>first letter of the command</strong>. This is the single most reliable
+        rule in computing.
+      </p>
+      <span class="formal">
+        <kbd>Ctrl</kbd> + <em>C</em> = <strong>C</strong>opy &nbsp;•&nbsp;
+        <kbd>Ctrl</kbd> + <em>V</em> = Paste (adjacent to C on QWERTY) &nbsp;•&nbsp;
+        <kbd>Ctrl</kbd> + <em>X</em> = Cut (X = scissors) &nbsp;•&nbsp;
+        <kbd>Ctrl</kbd> + <em>Z</em> = Undo (Z = the last letter, "back") &nbsp;•&nbsp;
+        <kbd>Ctrl</kbd> + <em>S</em> = <strong>S</strong>ave &nbsp;•&nbsp;
+        <kbd>Ctrl</kbd> + <em>P</em> = <strong>P</strong>rint &nbsp;•&nbsp;
+        <kbd>Ctrl</kbd> + <em>F</em> = <strong>F</strong>ind
+      </span>
+      <span class="eg">
+        <strong>Exception:</strong> <kbd>Ctrl</kbd>+<kbd>V</kbd> is <em>paste</em>, not
+        "V for verbatim". It sits next to C and X to keep the clipboard trio together
+        under the left hand.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>2. Shift — "Reverse / extend / capitalise"</h3>
+      <p>
+        <kbd>Shift</kbd> does three things: it <strong>capitalises</strong> a letter, it
+        <strong>reverses</strong> a command (often), and it <strong>extends a
+        selection</strong>.
+      </p>
+      <span class="formal">
+        <kbd>Shift</kbd> + <em>letter</em> = capital &nbsp;•&nbsp;
+        <kbd>Shift</kbd> + <kbd>Tab</kbd> = move backwards through fields &nbsp;•&nbsp;
+        <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <em>N</em> = sometimes "new in new window"
+      </span>
+      <span class="eg">
+        <strong>Selection rule:</strong> hold <kbd>Shift</kbd> while pressing an arrow key
+        to select text character by character; add <kbd>Ctrl</kbd> to select by word.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>3. Alt — "Access menus / alternate action"</h3>
+      <p>
+        <kbd>Alt</kbd> historically opened the <strong>menu bar</strong> (Alt = "alternate
+        access to the menu"). In modern Office, pressing <kbd>Alt</kbd> alone reveals
+        <em>KeyTips</em> — single letters that jump to ribbon tabs.
+      </p>
+      <span class="formal">
+        <kbd>Alt</kbd> + <kbd>Tab</kbd> = switch between open windows &nbsp;•&nbsp;
+        <kbd>Alt</kbd> + <kbd>F4</kbd> = close active window &nbsp;•&nbsp;
+        <kbd>Alt</kbd> + <em>underlined letter</em> = activate that menu item
+      </span>
+      <span class="eg">
+        <strong>In Office:</strong> press <kbd>Alt</kbd>, then <kbd>H</kbd> for Home tab,
+        then a letter for the command. This is the keyboard-only path through the entire
+        ribbon.
+      </span>
+    </div>
+
+    <div class="prop">
+      <h3>4. Windows key (⊞) — "Operating system level"</h3>
+      <p>
+        The <kbd>⊞ Win</kbd> key controls the <strong>operating system</strong>, not the
+        application. It is the fastest route to launching applications, switching
+        desktops, and managing windows.
+      </p>
+      <span class="formal">
+        <kbd>⊞</kbd> + <em>type</em> = search &amp; launch any app &nbsp;•&nbsp;
+        <kbd>⊞</kbd> + <kbd>D</kbd> = show desktop &nbsp;•&nbsp;
+        <kbd>⊞</kbd> + <kbd>L</kbd> = lock screen &nbsp;•&nbsp;
+        <kbd>⊞</kbd> + <kbd>E</kbd> = open File Explorer &nbsp;•&nbsp;
+        <kbd>⊞</kbd> + <kbd>R</kbd> = Run dialog &nbsp;•&nbsp;
+        <kbd>⊞</kbd> + <kbd>←/→</kbd> = snap window to half screen
+      </span>
+      <span class="eg">
+        <strong>Principle:</strong> the Windows key is the OS-level "Ctrl". It never does
+        something <em>inside</em> an application — it always acts on the application itself
+        or on the system.
+      </span>
+    </div>
+
+    <div class="callout">
+      <strong>The mnemonic principle.</strong> When you meet a new shortcut, ask:
+      (1) which modifier — system, command, or menu? (2) what is the first letter of the
+      action? The answer is usually the shortcut. <kbd>Ctrl</kbd>+<kbd>B</kbd> =
+      <strong>B</strong>old, <kbd>Ctrl</kbd>+<kbd>I</kbd> = <strong>I</strong>talic,
+      <kbd>Ctrl</kbd>+<kbd>U</kbd> = <strong>U</strong>nderline — across <em>every</em>
+      application that supports text formatting.
+    </div>
+  </section>
+
+  <!-- ================= SECTION B ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section B</span>
+      <h2>Microsoft Word — Document Authoring</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      Word is the reference implementation of the Ctrl-letter grammar. Mastering Word's
+      shortcuts transfers almost directly to every other text editor and word processor.
+    </p>
+
+    <h3 class="sub">B.1 Essential Editing</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + N</td><td>New document</td></tr>
+        <tr><td class="k">Ctrl + O</td><td>Open</td></tr>
+        <tr><td class="k">Ctrl + S</td><td>Save (Ctrl+Shift+S = Save As)</td></tr>
+        <tr><td class="k">Ctrl + P</td><td>Print</td></tr>
+        <tr><td class="k">Ctrl + W</td><td>Close document (not the app)</td></tr>
+        <tr><td class="k">Ctrl + Z / Y</td><td>Undo / Redo</td></tr>
+        <tr><td class="k">Ctrl + C / X / V</td><td>Copy / Cut / Paste</td></tr>
+        <tr><td class="k">Ctrl + Shift + V</td><td>Paste as plain text (strips formatting)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">B.2 Navigation &amp; Selection</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + ← / →</td><td>Jump one word left/right</td></tr>
+        <tr><td class="k">Ctrl + ↑ / ↓</td><td>Jump one paragraph up/down</td></tr>
+        <tr><td class="k">Home / End</td><td>Start / end of line</td></tr>
+        <tr><td class="k">Ctrl + Home / End</td><td>Start / end of document</td></tr>
+        <tr><td class="k">Shift + arrow</td><td>Select character by character</td></tr>
+        <tr><td class="k">Ctrl + Shift + arrow</td><td>Select by word / paragraph</td></tr>
+        <tr><td class="k">Ctrl + A</td><td>Select all</td></tr>
+        <tr><td class="k">Ctrl + F</td><td>Find (Ctrl+H = Replace)</td></tr>
+        <tr><td class="k">Ctrl + G</td><td>Go to page / line / bookmark</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">B.3 Formatting</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + B / I / U</td><td>Bold / Italic / Underline</td></tr>
+        <tr><td class="k">Ctrl + Shift + &gt; / &lt;</td><td>Increase / decrease font size</td></tr>
+        <tr><td class="k">Ctrl + E</td><td>Centre align (E = cEntre)</td></tr>
+        <tr><td class="k">Ctrl + L / R / J</td><td>Left / Right / Justify align</td></tr>
+        <tr><td class="k">Ctrl + 1 / 2 / 5</td><td>Single / double / 1.5 line spacing</td></tr>
+        <tr><td class="k">Ctrl + M</td><td>Increase indent (Shift+Ctrl+M decreases)</td></tr>
+        <tr><td class="k">Ctrl + Shift + C / V</td><td>Copy formatting / paste formatting</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">B.4 Special Characters &amp; Insertion</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + Enter</td><td>Page break</td></tr>
+        <tr><td class="k">Shift + Enter</td><td>Line break (no new paragraph)</td></tr>
+        <tr><td class="k">Ctrl + Shift + Space</td><td>Non-breaking space</td></tr>
+        <tr><td class="k">Ctrl + Shift + Hyphen</td><td>Non-breaking hyphen</td></tr>
+        <tr><td class="k">Ctrl + Hyphen</td><td>Optional (soft) hyphen</td></tr>
+        <tr><td class="k">Alt + Ctrl + F</td><td>Insert footnote</td></tr>
+        <tr><td class="k">Ctrl + K</td><td>Insert hyperlink</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">B.5 Navigation Pane &amp; Styles</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + Shift + N</td><td>Apply Normal style</td></tr>
+        <tr><td class="k">Ctrl + Alt + 1 / 2 / 3</td><td>Apply Heading 1 / 2 / 3 style</td></tr>
+        <tr><td class="k">Alt + Ctrl + S</td><td>Open Styles pane</td></tr>
+        <tr><td class="k">Ctrl + Shift + F</td><td>Open Font dialog (all options)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Word's governing principle:</strong> <kbd>Ctrl</kbd> + <em>first letter of
+      the command</em>. The exceptions (V for paste, E for centre) are historical and
+      positional, not mnemonic. Learn the exceptions once; they appear across all Office
+      apps.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — F-keys in Word:</strong> <kbd>F7</kbd> = spell check,
+      <kbd>Shift</kbd>+<kbd>F7</kbd> = thesaurus, <kbd>F12</kbd> = Save As,
+      <kbd>Shift</kbd>+<kbd>F3</kbd> = cycle case (lower / UPPER / Title). These predate
+      the Ctrl-letter convention and are worth memorising separately.
+    </div>
+  </section>
+
+  <!-- ================= SECTION C ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section C</span>
+      <h2>Microsoft Excel — Spreadsheet Engineering</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      Excel has the <em>largest</em> shortcut vocabulary of any Office app, because it has
+      the most operations. It also has a special rule: <strong>Ctrl + letter</strong>
+      performs an <em>action</em>, while <strong>Alt + letter</strong> opens a
+      <em>menu</em>. Learn both layers.
+    </p>
+
+    <h3 class="sub">C.1 The Four Pillars of Excel Speed</h3>
+    <div class="prop">
+      <h3>Pillar 1: Navigation without the mouse</h3>
+      <table class="sc">
+        <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Ctrl + arrow</td><td>Jump to edge of data block</td></tr>
+          <tr><td class="k">Ctrl + Home</td><td>Jump to A1</td></tr>
+          <tr><td class="k">Ctrl + End</td><td>Jump to last used cell</td></tr>
+          <tr><td class="k">Ctrl + Page Up / Down</td><td>Move between sheet tabs</td></tr>
+          <tr><td class="k">Ctrl + G (or F5)</td><td>Go To dialog — type any cell reference</td></tr>
+          <tr><td class="k">Ctrl + Shift + arrow</td><td>Select to edge of data block</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prop">
+      <h3>Pillar 2: Selection &amp; Editing</h3>
+      <table class="sc">
+        <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Shift + Space</td><td>Select entire row</td></tr>
+          <tr><td class="k">Ctrl + Space</td><td>Select entire column</td></tr>
+          <tr><td class="k">Ctrl + A</td><td>Select data block (press twice for whole sheet)</td></tr>
+          <tr><td class="k">F2</td><td>Edit the active cell (without deleting)</td></tr>
+          <tr><td class="k">Ctrl + Enter</td><td>Fill all selected cells with the same entry</td></tr>
+          <tr><td class="k">Alt + Enter</td><td>New line inside a cell</td></tr>
+          <tr><td class="k">Ctrl + D / R</td><td>Fill Down / Fill Right</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prop">
+      <h3>Pillar 3: Formula &amp; Function Work</h3>
+      <table class="sc">
+        <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td class="k">= (equals)</td><td>Start any formula</td></tr>
+          <tr><td class="k">Alt + =</td><td>AutoSum (SUM of adjacent range)</td></tr>
+          <tr><td class="k">F4</td><td>Toggle absolute / relative references ($A$1)</td></tr>
+          <tr><td class="k">F9</td><td>Recalculate all workbooks (Shift+F9 = active sheet only)</td></tr>
+          <tr><td class="k">Ctrl + `</td><td>Show formulas instead of results</td></tr>
+          <tr><td class="k">Ctrl + Shift + Enter</td><td>Array formula (legacy, pre-dynamic arrays)</td></tr>
+          <tr><td class="k">Ctrl + Shift + U</td><td>Expand the formula bar</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prop">
+      <h3>Pillar 4: Formatting &amp; Structure</h3>
+      <table class="sc">
+        <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Ctrl + 1</td><td>Format Cells dialog (the master dialog)</td></tr>
+          <tr><td class="k">Ctrl + Shift + %</td><td>Percent format</td></tr>
+          <tr><td class="k">Ctrl + Shift + $</td><td>Currency format</td></tr>
+          <tr><td class="k">Ctrl + Shift + #</td><td>Date format</td></tr>
+          <tr><td class="k">Ctrl + B / I / U</td><td>Bold / Italic / Underline</td></tr>
+          <tr><td class="k">Ctrl + Shift + +</td><td>Insert row / column</td></tr>
+          <tr><td class="k">Ctrl + −</td><td>Delete row / column</td></tr>
+          <tr><td class="k">Alt + H + O + I</td><td>AutoFit column width (ribbon path)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <strong>Excel's governing principle:</strong> <kbd>Ctrl</kbd> + <em>letter</em> for
+      actions; <kbd>Alt</kbd> + <em>letter sequence</em> for ribbon commands. The
+      <kbd>Alt</kbd> path always follows the visible ribbon: <kbd>Alt</kbd> → <kbd>H</kbd>
+      (Home) → <kbd>B</kbd> (Borders) → etc.
+    </div>
+
+    <div class="warn">
+      <strong>Critical exception — F4 is overloaded.</strong> In normal cell editing,
+      <kbd>F4</kbd> toggles absolute references. But immediately after typing a formula
+      reference, it cycles through <span class="m">A1 → $A$1 → A$1 → $A1</span>. And if
+      you press <kbd>F4</kbd> outside a formula, it <em>repeats the last action</em>.
+      Context determines behaviour.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — Ctrl + arrow at data edges.</strong> If the next cell in the
+      direction is <em>non-empty</em>, Ctrl+arrow stops at the last contiguous cell. If
+      it is <em>empty</em>, it jumps to the next non-empty cell. This two-mode behaviour
+      catches beginners constantly.
+    </div>
+  </section>
+
+  <!-- ================= SECTION D ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section D</span>
+      <h2>Microsoft PowerPoint — Presentation Delivery</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      PowerPoint shortcuts split into two worlds: <strong>editing</strong> (designing the
+      deck) and <strong>presenting</strong> (delivering it). The presentation shortcuts
+      are the most valuable because you cannot use a mouse comfortably while speaking.
+    </p>
+
+    <h3 class="sub">D.1 Editing Shortcuts</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + M</td><td>New slide</td></tr>
+        <tr><td class="k">Ctrl + D</td><td>Duplicate selected slide or object</td></tr>
+        <tr><td class="k">Ctrl + Shift + D</td><td>Duplicate slide (no dialog)</td></tr>
+        <tr><td class="k">Ctrl + Shift + G</td><td>Group selected objects</td></tr>
+        <tr><td class="k">Ctrl + Shift + H</td><td>Ungroup</td></tr>
+        <tr><td class="k">Alt + Shift + ↑ / ↓</td><td>Move slide up / down in the deck</td></tr>
+        <tr><td class="k">Ctrl + Shift + ↑ / ↓</td><td>Send to front / back (z-order)</td></tr>
+        <tr><td class="k">Ctrl + G</td><td>Grid &amp; guides dialog</td></tr>
+        <tr><td class="k">Ctrl + K</td><td>Insert hyperlink</td></tr>
+        <tr><td class="k">F5</td><td>Start presentation from beginning</td></tr>
+        <tr><td class="k">Shift + F5</td><td>Start from current slide</td></tr>
+        <tr><td class="k">Alt + F5</td><td>Presenter View (dual screen)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">D.2 In-Presentation Shortcuts</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">N / Space / →</td><td>Next slide</td></tr>
+        <tr><td class="k">P / ←</td><td>Previous slide</td></tr>
+        <tr><td class="k">Number + Enter</td><td>Jump to slide N</td></tr>
+        <tr><td class="k">B</td><td>Black screen (toggle)</td></tr>
+        <tr><td class="k">W</td><td>White screen (toggle)</td></tr>
+        <tr><td class="k">Ctrl + L</td><td>Laser pointer</td></tr>
+        <tr><td class="k">Ctrl + P</td><td>Pen (annotate live)</td></tr>
+        <tr><td class="k">Ctrl + E</td><td>Eraser</td></tr>
+        <tr><td class="k">Ctrl + A</td><td>Arrow pointer</td></tr>
+        <tr><td class="k">Esc</td><td>End presentation</td></tr>
+        <tr><td class="k">Ctrl + H</td><td>Hide / show cursor</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Why B and W?</strong> <kbd>B</kbd> = <strong>B</strong>lack,
+      <kbd>W</kbd> = <strong>W</strong>hite. They blank the screen during Q&amp;A or
+      when you want attention on you, not the slide. These are the most-used
+      in-presentation shortcuts in professional settings.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — Ctrl+P during presentation.</strong> It does <em>not</em> print.
+      It switches to the pen tool. This is a deliberate override; the presentation mode
+      repurposes the standard print binding.
+    </div>
+  </section>
+
+  <!-- ================= SECTION E ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section E</span>
+      <h2>Command Prompt (cmd) — The Windows Shell</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      Command Prompt is a <em>shell</em>: a text interface to the operating system. Its
+      "shortcuts" are of two kinds: <strong>keyboard shortcuts within the console</strong>
+      and <strong>command-line syntax shortcuts</strong>. Both matter.
+    </p>
+
+    <h3 class="sub">E.1 Console Keyboard Shortcuts</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">F7</td><td>Command history menu (arrow keys to pick)</td></tr>
+        <tr><td class="k">↑ / ↓</td><td>Cycle through previous commands</td></tr>
+        <tr><td class="k">F3</td><td>Repeat last command</td></tr>
+        <tr><td class="k">F8</td><td>Search command history by prefix</td></tr>
+        <tr><td class="k">Tab</td><td>Auto-complete file / folder names</td></tr>
+        <tr><td class="k">Ctrl + C</td><td>Abort the running command</td></tr>
+        <tr><td class="k">Ctrl + V</td><td>Paste (modern Windows 10+)</td></tr>
+        <tr><td class="k">Ctrl + A</td><td>Select all text in the console</td></tr>
+        <tr><td class="k">Ctrl + M</td><td>Toggle Mark mode (mouse text selection)</td></tr>
+        <tr><td class="k">Alt + Enter</td><td>Toggle full-screen console</td></tr>
+        <tr><td class="k">Esc</td><td>Clear the current line</td></tr>
+        <tr><td class="k">F1</td><td>Repeat last command one character at a time</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">E.2 Essential Command Syntax</h3>
+    <pre class="code"><span class="c">:: Navigate and list</span>
+cd \Users\Student\Documents
+dir /a /s          <span class="c">:: list all files recursively</span>
+tree /f            <span class="c">:: directory tree with files</span>
+
+<span class="c">:: File operations</span>
+copy source.txt dest.txt
+xcopy /s /i src dst  <span class="c">:: copy folder tree</span>
+robocopy src dst /mir <span class="c">:: mirror (modern, robust)</span>
+del *.tmp          <span class="c">:: delete wildcard</span>
+
+<span class="c">:: System information</span>
+ipconfig /all
+systeminfo
+tasklist
+netstat -an</pre>
+
+    <h3 class="sub">E.3 Command-Line Operators (the real "shortcuts")</h3>
+    <table class="sc">
+      <thead><tr><th>Operator</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td class="k">&gt;</td><td>Redirect output to a file (overwrite)</td></tr>
+        <tr><td class="k">&gt;&gt;</td><td>Redirect output to a file (append)</td></tr>
+        <tr><td class="k">&lt;</td><td>Redirect input from a file</td></tr>
+        <tr><td class="k">|</td><td>Pipe output of one command into the next</td></tr>
+        <tr><td class="k">&amp;&amp;</td><td>Run second command only if first succeeds</td></tr>
+        <tr><td class="k">||</td><td>Run second command only if first fails</td></tr>
+        <tr><td class="k">&amp;</td><td>Run both commands regardless</td></tr>
+        <tr><td class="k">*</td><td>Wildcard: any characters</td></tr>
+        <tr><td class="k">?</td><td>Wildcard: exactly one character</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Principle:</strong> in a shell, the <em>pipe</em> (<kbd>|</kbd>) is the most
+      powerful shortcut. It turns every small command into a building block. Example:
+      <code>dir /b | findstr ".txt"</code> lists only .txt files.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — cmd is not case-sensitive for commands</strong> (<code>DIR</code>
+      = <code>dir</code> = <code>Dir</code>), but <em>is</em> case-sensitive for some
+      arguments and for filenames on case-sensitive file systems. Do not assume.
+    </div>
+  </section>
+
+  <!-- ================= SECTION F ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section F</span>
+      <h2>PowerShell — The Object Shell</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      PowerShell is <em>not</em> an improved Command Prompt — it is a different paradigm.
+      Where cmd passes <strong>text</strong> between commands, PowerShell passes
+      <strong>.NET objects</strong>. This changes everything about how you work.
+    </p>
+
+    <h3 class="sub">F.1 The Verb-Noun Principle</h3>
+    <div class="prop">
+      <h3>Every cmdlet is Verb-Noun</h3>
+      <p>
+        PowerShell commands are called <strong>cmdlets</strong> and always follow the form
+        <em>Verb-Noun</em>. This is the single most important concept. Once you know the
+        verbs and nouns, you can guess commands you have never seen.
+      </p>
+      <span class="formal">
+        <em>Get</em>-Process &nbsp;•&nbsp; <em>Set</em>-Item &nbsp;•&nbsp;
+        <em>New</em>-Item &nbsp;•&nbsp; <em>Remove</em>-Item &nbsp;•&nbsp;
+        <em>Start</em>-Service &nbsp;•&nbsp; <em>Stop</em>-Service &nbsp;•&nbsp;
+        <em>Copy</em>-Item &nbsp;•&nbsp; <em>Move</em>-Item
+      </span>
+      <span class="eg">
+        <strong>Common verbs:</strong> Get, Set, New, Remove, Start, Stop, Restart,
+        Copy, Move, Rename, Test, Select, Where, ForEach, Out, Write, Read, Import,
+        Export.
+      </span>
+    </div>
+
+    <h3 class="sub">F.2 Console Shortcuts (same as cmd, plus more)</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Tab</td><td>Auto-complete cmdlet names and parameters</td></tr>
+        <tr><td class="k">Ctrl + Space</td><td>Show all completions (IntelliSense-style)</td></tr>
+        <tr><td class="k">↑ / ↓</td><td>Command history</td></tr>
+        <tr><td class="k">F7</td><td>History menu</td></tr>
+        <tr><td class="k">Ctrl + R</td><td>Reverse-search history (like bash)</td></tr>
+        <tr><td class="k">Ctrl + L</td><td>Clear screen</td></tr>
+        <tr><td class="k">Ctrl + C</td><td>Abort running command</td></tr>
+        <tr><td class="k">Alt + Shift + Enter</td><td>Run as Administrator (new window)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">F.3 The Pipeline — Objects, Not Text</h3>
+    <pre class="code"><span class="c"># Get processes, filter, sort, select, export</span>
+Get-Process | Where-Object CPU -gt 100 | Sort-Object CPU -Descending |
+  Select-Object -First 5 | Export-Csv top5.csv
+
+<span class="c"># Because output is an OBJECT, you can access properties</span>
+(Get-Process powershell).Path
+
+<span class="c"># Cmdlets for discovery</span>
+Get-Command *service*        <span class="c"># find all service cmdlets</span>
+Get-Help Get-Process -Full   <span class="c"># full documentation</span>
+Get-Member                   <span class="c"># inspect what an object can do</span></pre>
+
+    <h3 class="sub">F.4 Filtering: Where vs. Where-Object</h3>
+    <table class="sc">
+      <thead><tr><th>Approach</th><th>When to use</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Where-Object { }</td><td>Full script-block filtering (slow but flexible)</td></tr>
+        <tr><td class="k">Where-Object Property -eq Value</td><td>Simplified syntax (PS 3.0+)</td></tr>
+        <tr><td class="k">.Where({ }, 'First')</td><td>Faster, method-based filtering (PS 4.0+)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>PowerShell's governing principle:</strong> <em>Verb-Noun</em> +
+      <em>object pipeline</em>. If you can name the verb and the noun, you can find the
+      command. If you can describe the object, you can filter, sort, and export it.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — execution policy.</strong> By default, PowerShell blocks
+      unsigned scripts (<code>Restricted</code> policy). You must set
+      <code>Set-ExecutionPolicy RemoteSigned</code> (as admin) to run local scripts.
+      This is a security feature, not a bug. It exists because PowerShell is powerful
+      enough to be dangerous.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — aliases vs. cmdlets.</strong> <code>dir</code>, <code>ls</code>,
+      and <code>gci</code> all map to <code>Get-ChildItem</code>. Aliases exist for
+      familiarity but should not be used in scripts (they may not exist on other systems).
+      Always use full cmdlet names in saved scripts.
+    </div>
+  </section>
+
+  <!-- ================= SECTION G ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section G</span>
+      <h2>IDEs — Integrated Development Environments</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      An IDE combines editor, compiler, debugger, and terminal. The dominant IDEs —
+      <strong>VS Code, Visual Studio, IntelliJ, PyCharm, Eclipse</strong> — share a
+      common shortcut DNA, but each has its own twist. We cover the universal set first,
+      then the platform-specific variations.
+    </p>
+
+    <h3 class="sub">G.1 Universal IDE Shortcuts (work almost everywhere)</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + S</td><td>Save file</td></tr>
+        <tr><td class="k">Ctrl + Shift + S</td><td>Save all</td></tr>
+        <tr><td class="k">Ctrl + P</td><td>Quick open file by name</td></tr>
+        <tr><td class="k">Ctrl + Shift + P</td><td>Command palette (VS Code's master key)</td></tr>
+        <tr><td class="k">Ctrl + F</td><td>Find in file</td></tr>
+        <tr><td class="k">Ctrl + Shift + F</td><td>Find across all files</td></tr>
+        <tr><td class="k">Ctrl + H</td><td>Find and replace</td></tr>
+        <tr><td class="k">Ctrl + /</td><td>Toggle line comment</td></tr>
+        <tr><td class="k">Ctrl + Shift + /</td><td>Toggle block comment</td></tr>
+        <tr><td class="k">Alt + ↑ / ↓</td><td>Move line up / down</td></tr>
+        <tr><td class="k">Shift + Alt + ↑ / ↓</td><td>Duplicate line</td></tr>
+        <tr><td class="k">Ctrl + D</td><td>Select next occurrence of word</td></tr>
+        <tr><td class="k">Ctrl + Shift + K</td><td>Delete line</td></tr>
+        <tr><td class="k">Ctrl + Enter</td><td>Insert line below (without breaking current)</td></tr>
+        <tr><td class="k">F12</td><td>Go to definition</td></tr>
+        <tr><td class="k">Shift + F12</td><td>Find all references</td></tr>
+        <tr><td class="k">F2</td><td>Rename symbol (refactor across project)</td></tr>
+        <tr><td class="k">Ctrl + `</td><td>Toggle integrated terminal</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">G.2 Debugging Shortcuts</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">F5</td><td>Start / continue debugging</td></tr>
+        <tr><td class="k">Shift + F5</td><td>Stop debugging</td></tr>
+        <tr><td class="k">F9</td><td>Toggle breakpoint</td></tr>
+        <tr><td class="k">F10</td><td>Step over (execute current line, don't enter function)</td></tr>
+        <tr><td class="k">F11</td><td>Step into (enter the function being called)</td></tr>
+        <tr><td class="k">Shift + F11</td><td>Step out (finish current function)</td></tr>
+        <tr><td class="k">Ctrl + Shift + F5</td><td>Restart debugging</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">G.3 VS Code — The Extensible Editor</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + Shift + P</td><td>Command Palette — run any command by name</td></tr>
+        <tr><td class="k">Ctrl + K Ctrl + S</td><td>Keyboard Shortcuts editor</td></tr>
+        <tr><td class="k">Ctrl + B</td><td>Toggle sidebar</td></tr>
+        <tr><td class="k">Ctrl + J</td><td>Toggle bottom panel</td></tr>
+        <tr><td class="k">Ctrl + \</td><td>Split editor</td></tr>
+        <tr><td class="k">Ctrl + 1/2/3</td><td>Focus editor group 1/2/3</td></tr>
+        <tr><td class="k">Alt + Click</td><td>Multi-cursor (add cursor at click)</td></tr>
+        <tr><td class="k">Ctrl + Alt + ↑ / ↓</td><td>Add cursor above / below</td></tr>
+        <tr><td class="k">Shift + Alt + I</td><td>Insert cursor at end of every selected line</td></tr>
+        <tr><td class="k">Ctrl + Shift + \</td><td>Jump to matching bracket</td></tr>
+        <tr><td class="k">Ctrl + G</td><td>Go to line</td></tr>
+        <tr><td class="k">Ctrl + Shift + O</td><td>Go to symbol in file</td></tr>
+        <tr><td class="k">Ctrl + T</td><td>Go to symbol across workspace</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">G.4 JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Shift + Shift</td><td>Search everywhere (master key)</td></tr>
+        <tr><td class="k">Ctrl + Shift + A</td><td>Find action by name</td></tr>
+        <tr><td class="k">Ctrl + N</td><td>Go to class (Java)</td></tr>
+        <tr><td class="k">Ctrl + Shift + N</td><td>Go to file</td></tr>
+        <tr><td class="k">Ctrl + B</td><td>Go to declaration</td></tr>
+        <tr><td class="k">Ctrl + Alt + L</td><td>Reformat code</td></tr>
+        <tr><td class="k">Ctrl + Alt + O</td><td>Optimise imports</td></tr>
+        <tr><td class="k">Alt + Enter</td><td>Show intention actions / quick-fix</td></tr>
+        <tr><td class="k">Ctrl + W</td><td>Extend selection (successive presses)</td></tr>
+        <tr><td class="k">Ctrl + Shift + W</td><td>Shrink selection</td></tr>
+        <tr><td class="k">Shift + F6</td><td>Rename (refactor)</td></tr>
+        <tr><td class="k">Ctrl + Alt + M</td><td>Extract method (refactor)</td></tr>
+        <tr><td class="k">Ctrl + Alt + V</td><td>Extract variable (refactor)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">G.5 Visual Studio (full IDE, not VS Code)</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + K Ctrl + D</td><td>Format document</td></tr>
+        <tr><td class="k">Ctrl + K Ctrl + C</td><td>Comment selection</td></tr>
+        <tr><td class="k">Ctrl + K Ctrl + U</td><td>Uncomment selection</td></tr>
+        <tr><td class="k">Ctrl + K Ctrl + K</td><td>Toggle bookmark</td></tr>
+        <tr><td class="k">Ctrl + K Ctrl + N</td><td>Next bookmark</td></tr>
+        <tr><td class="k">Ctrl + M Ctrl + O</td><td>Collapse to definitions</td></tr>
+        <tr><td class="k">Ctrl + M Ctrl + M</td><td>Toggle collapse of current block</td></tr>
+        <tr><td class="k">Ctrl + T</td><td>Go to all (search files, types, members)</td></tr>
+        <tr><td class="k">Ctrl + Q</td><td>Quick launch</td></tr>
+        <tr><td class="k">Ctrl + .</td><td>Quick actions / refactoring</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>IDE's governing principle:</strong> every IDE has a <em>master search
+      key</em> (Ctrl+Shift+P in VS Code, Shift+Shift in JetBrains, Ctrl+T in Visual
+      Studio) that lets you run any command by name. Learn that one key and you can
+      discover everything else.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — keybinding conflicts.</strong> IDEs allow custom keybindings,
+      and extensions can override defaults. <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>
+      opens Command Palette in VS Code, but in browsers it opens a private window. Always
+      check the IDE's own Keyboard Shortcuts reference for your install.
+    </div>
+  </section>
+
+  <!-- ================= SECTION H ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section H</span>
+      <h2>SDKs — Software Development Kits</h2>
+    </div>
+
+    <p style="font-size:10.3px; margin-bottom:12px;">
+      An SDK is <em>not</em> an application — it is a <strong>collection of tools</strong>
+      (compilers, libraries, documentation, CLI utilities) that let you build for a
+      platform. Its "shortcuts" are the CLI commands and environment variables that
+      accelerate development.
+    </p>
+
+    <h3 class="sub">H.1 What's Inside an SDK</h3>
+    <ul class="bul">
+      <li><strong>Compiler / interpreter</strong> — turns source into runnable code</li>
+      <li><strong>Libraries / APIs</strong> — pre-written code you call</li>
+      <li><strong>CLI tools</strong> — build, package, deploy, test commands</li>
+      <li><strong>Documentation</strong> — reference and tutorials</li>
+      <li><strong>Debuggers / profilers</strong> — often shared with the IDE</li>
+      <li><strong>Samples &amp; templates</strong> — starting points</li>
+    </ul>
+
+    <h3 class="sub">H.2 Common SDK CLI Shortcuts &amp; Patterns</h3>
+
+    <div class="prop">
+      <h3>Java Development Kit (JDK)</h3>
+      <table class="sc">
+        <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td class="k">javac File.java</td><td>Compile source to bytecode</td></tr>
+          <tr><td class="k">java File</td><td>Run compiled class</td></tr>
+          <tr><td class="k">jar cf out.jar *.class</td><td>Package into JAR</td></tr>
+          <tr><td class="k">javadoc -d docs *.java</td><td>Generate documentation</td></tr>
+          <tr><td class="k">jps</td><td>List running Java processes</td></tr>
+          <tr><td class="k">jstack &lt;pid&gt;</td><td>Thread dump (debug deadlock)</td></tr>
+          <tr><td class="k">jmap -heap &lt;pid&gt;</td><td>Heap memory analysis</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prop">
+      <h3>Node.js SDK</h3>
+      <table class="sc">
+        <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td class="k">npm init -y</td><td>Create package.json with defaults</td></tr>
+          <tr><td class="k">npm install &lt;pkg&gt;</td><td>Install a dependency</td></tr>
+          <tr><td class="k">npm install -D &lt;pkg&gt;</td><td>Install as dev dependency</td></tr>
+          <tr><td class="k">npm run &lt;script&gt;</td><td>Run a script from package.json</td></tr>
+          <tr><td class="k">npx &lt;tool&gt;</td><td>Run a package without installing</td></tr>
+          <tr><td class="k">node -e "code"</td><td>Evaluate inline JavaScript</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prop">
+      <h3>.NET SDK</h3>
+      <table class="sc">
+        <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td class="k">dotnet new console</td><td>Scaffold a new console project</td></tr>
+          <tr><td class="k">dotnet build</td><td>Compile the project</td></tr>
+          <tr><td class="k">dotnet run</td><td>Build and run</td></tr>
+          <tr><td class="k">dotnet test</td><td>Run test suite</td></tr>
+          <tr><td class="k">dotnet publish -c Release</td><td>Produce deployable output</td></tr>
+          <tr><td class="k">dotnet add package &lt;name&gt;</td><td>Add a NuGet dependency</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prop">
+      <h3>Android SDK</h3>
+      <table class="sc">
+        <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td class="k">sdkmanager --list</td><td>List available SDK packages</td></tr>
+          <tr><td class="k">sdkmanager "platform-tools"</td><td>Install a component</td></tr>
+          <tr><td class="k">adb devices</td><td>List connected devices</td></tr>
+          <tr><td class="k">adb install app.apk</td><td>Install to device</td></tr>
+          <tr><td class="k">adb logcat</td><td>Stream device logs</td></tr>
+          <tr><td class="k">avdmanager create avd</td><td>Create virtual device</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">H.3 Environment Variables — The Hidden Shortcuts</h3>
+    <p style="font-size:10.3px; margin-bottom:8px;">
+      SDKs rely on <strong>environment variables</strong> to locate tools. Setting them
+      once means you can run any SDK command from anywhere.
+    </p>
+    <table class="sc">
+      <thead><tr><th>Variable</th><th>Used by</th><th>Example value</th></tr></thead>
+      <tbody>
+        <tr><td class="k">JAVA_HOME</td><td>JDK, Maven, Gradle</td><td>C:\Program Files\Java\jdk-21</td></tr>
+        <tr><td class="k">ANDROID_HOME</td><td>Android SDK</td><td>C:\Users\me\AppData\Local\Android\Sdk</td></tr>
+        <tr><td class="k">PATH</td><td>All CLIs</td><td>prepend the SDK's bin folder</td></tr>
+        <tr><td class="k">NODE_PATH</td><td>Node.js</td><td>global module lookup</td></tr>
+        <tr><td class="k">DOTNET_ROOT</td><td>.NET SDK</td><td>C:\Program Files\dotnet</td></tr>
+        <tr><td class="k">PYTHONPATH</td><td>Python</td><td>extra module search folders</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>SDK's governing principle:</strong> an SDK turns a language into a
+      <em>workflow</em>. The CLI commands (<code>dotnet</code>, <code>npm</code>,
+      <code>adb</code>) are the shortcuts; the environment variables are the wiring that
+      makes them work from any directory.
+    </div>
+
+    <div class="warn">
+      <strong>Exception — version managers.</strong> Modern SDKs often expect you to use a
+      <em>version manager</em> (nvm for Node, pyenv for Python, sdkman for Java) instead
+      of setting environment variables manually. This lets you switch SDK versions
+      per-project without editing system settings.
+    </div>
+  </section>
+
+  <!-- ================= SECTION I ================= -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="tag">Section I</span>
+      <h2>Cross-Application Principles &amp; Exceptions</h2>
+    </div>
+
+    <h3 class="sub">I.1 The Five Universal Shortcuts</h3>
+    <p style="font-size:10.3px; margin-bottom:8px;">
+      These five work in <em>virtually every</em> application you will ever use. Learn
+      them first.
+    </p>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Action</th><th>Why universal</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + C</td><td>Copy</td><td>The clipboard is an OS primitive</td></tr>
+        <tr><td class="k">Ctrl + V</td><td>Paste</td><td>Same</td></tr>
+        <tr><td class="k">Ctrl + X</td><td>Cut</td><td>Same</td></tr>
+        <tr><td class="k">Ctrl + Z</td><td>Undo</td><td>Users expect reversibility</td></tr>
+        <tr><td class="k">Ctrl + S</td><td>Save</td><td>Loss prevention is universal</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">I.2 Modifier Conflicts to Watch For</h3>
+    <table class="sc">
+      <thead><tr><th>Shortcut</th><th>Behaviour varies by app</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Ctrl + D</td><td>Excel: Fill Down &nbsp;•&nbsp; PowerPoint: Duplicate slide &nbsp;•&nbsp; VS Code: Select next occurrence</td></tr>
+        <tr><td class="k">Ctrl + P</td><td>Word/Excel: Print &nbsp;•&nbsp; VS Code: Quick open &nbsp;•&nbsp; PowerPoint presenting: Pen</td></tr>
+        <tr><td class="k">Ctrl + G</td><td>Word: Go To &nbsp;•&nbsp; Excel: Go To &nbsp;•&nbsp; VS Code: Go to line</td></tr>
+        <tr><td class="k">F2</td><td>Excel: Edit cell &nbsp;•&nbsp; VS Code: Rename symbol &nbsp;•&nbsp; Windows: Rename file</td></tr>
+        <tr><td class="k">F5</td><td>Browsers: Refresh &nbsp;•&nbsp; PowerPoint: Start slideshow &nbsp;•&nbsp; IDEs: Start debugging</td></tr>
+        <tr><td class="k">Ctrl + Shift + P</td><td>VS Code: Command Palette &nbsp;•&nbsp; Firefox: Private window &nbsp;•&nbsp; Chrome: Private window</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub">I.3 Keyboard Layout Exceptions</h3>
+    <ul class="bul">
+      <li><strong>Mac vs Windows:</strong> <kbd>Cmd</kbd> on Mac replaces <kbd>Ctrl</kbd>
+          for most application commands; <kbd>Ctrl</kbd> on Mac is used for terminal-style
+          operations (e.g. Ctrl+C to abort).</li>
+      <li><strong>Non-QWERTY layouts:</strong> shortcuts are bound to <em>physical</em>
+          key positions, not letters. On AZERTY, Ctrl+Q may perform Ctrl+A's function.</li>
+      <li><strong>International keyboards:</strong> some shortcuts require different
+          modifier combinations (AltGr on European layouts).</li>
+      <li><strong>Laptop Fn key:</strong> on compact laptops, F1–F12 may require
+          <kbd>Fn</kbd> to be held. This breaks IDE debugging shortcuts unless you change
+          the Fn lock.</li>
+    </ul>
+
+    <h3 class="sub">I.4 When Shortcuts Fail — The Hierarchy of Fallbacks</h3>
+    <ol class="num">
+      <li><strong>Try the menu.</strong> If the shortcut doesn't work, the command still
+          exists somewhere in a menu or ribbon. Find it, and the shortcut is usually shown
+          beside it.</li>
+      <li><strong>Open the Command Palette / Action Search.</strong> VS Code
+          (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>), JetBrains
+          (<kbd>Shift</kbd>+<kbd>Shift</kbd>), Visual Studio (<kbd>Ctrl</kbd>+<kbd>T</kbd>).</li>
+      <li><strong>Check the app's Keyboard Shortcuts settings.</strong> Almost every app
+          has a searchable list. Search for the action name.</li>
+      <li><strong>Use the terminal.</strong> If the GUI blocks you, the CLI version of the
+          same tool almost always exists (e.g. <code>npm</code>, <code>dotnet</code>,
+          <code>git</code>).</li>
+      <li><strong>Rebind it.</strong> If a shortcut conflicts with a system binding, most
+          apps let you change it.</li>
+    </ol>
+
+    <div class="callout">
+      <strong>The master principle:</strong> shortcuts exist to reduce the <em>distance</em>
+      between intention and action. Every app exposes the same three layers —
+      <em>keyboard</em>, <em>menu</em>, <em>programmatic</em> — and the keyboard layer is
+      always the fastest. Learn the grammar (modifier + mnemonic), and you can operate any
+      application you meet.
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="foot">
+    Shortcuts to Relevant Applications • Lesson Note • Digital Technologies
+  </footer>
+
+</div>
+
+</body>
+</html>

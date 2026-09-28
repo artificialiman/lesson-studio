@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 3 Government — First Term</title>
+<style>
+/* ============================================================
+   SS 3 GOVERNMENT — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #6e1a1a;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #6e1a1a;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#6e1a1a;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#6e1a1a;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#6e1a1a;
+  border-bottom:1.4pt solid #e3d4d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #b9b9b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f8f2f2;
+  border-color:#c8a8a8;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9a9a9a;
+  border-radius:3px;
+  background:#fafafa;
+  color:#484848;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#6e1a1a;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#6e1a1a;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#f3eeee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #6e1a1a;
+  color:#6e1a1a;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 3 Government — First Term</h1>
+  <p class="term">Weeks 1–12 · Military Rule, Conflict & Peace, Interdependence, Foreign Policy, International Organisations · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — MILITARY INTERVENTION AND GOVERNMENT STRUCTURE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Military Intervention and Government Structure</h2>
+  <p class="meta"><b>Content:</b> Meaning and reasons for military intervention; structure of government under military rule; performance (achievements and failures).</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define military intervention and a coup d'etat.</li>
+      <li>Explain at least five reasons for military intervention in Nigeria.</li>
+      <li>Describe the structure of government under military rule.</li>
+      <li>Assess the achievements and failures of military administration.</li>
+      <li>Suggest ways to prevent future military coups.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A hierarchical organisation chart of a typical military government structure: Head of State at the top, followed by the Supreme Military Council (SMC) / Armed Forces Ruling Council (AFRC), the Federal Executive Council (FEC), the National Council of States, and State Military Governors at the base. Not embedded in the source.</p>
+
+  <h3>1.1 Introduction</h3>
+  <p><b>Military intervention</b> refers to the forceful and unconstitutional seizure of political power by a state's armed forces (the military), thereby overthrowing a legally constituted civilian government. This is also known as a <b>coup d'etat</b> (French for "stroke of state"). Military rule is an aberration, a departure from the democratic process. In Nigeria, this became a recurring event from 1966 until 1999.</p>
+
+  <h3>1.2 Reasons for Military Intervention in Nigeria</h3>
+  <p>The military often provided a list of justifications for their intervention, citing the failures of the civilian politicians.</p>
+
+  <table>
+    <tr><th style="width:24%">Reason</th><th>Explanation</th></tr>
+    <tr><td class="k">Widespread Corruption and Mismanagement</td><td>The First Republic (and later, the Second) was characterized by massive corruption, embezzlement of public funds, and gross economic mismanagement by political leaders. The military presented itself as a "corrective" force.</td></tr>
+    <tr><td class="k">Breakdown of Law and Order</td><td>The political system was unstable. The 1964/65 elections, particularly in the Western Region, led to widespread violence, arson, and murder ("Operation Wette"). The civilian government failed to restore order, providing a pretext for the military (which has a monopoly on violence) to step in.</td></tr>
+    <tr><td class="k">Rigging of Elections</td><td>Political parties engaged in blatant and widespread electoral malpractice, rigging censuses (1962/63) and elections (1964/65) to hold onto power. This destroyed public faith in the democratic process.</td></tr>
+    <tr><td class="k">Tribalism, Ethnicism, and Nepotism</td><td>Politicians were accused of favouring their own ethnic or regional groups in the distribution of resources, appointments, and projects. This created deep divisions and led to feelings of marginalization, which the military claimed to be above.</td></tr>
+    <tr><td class="k">Politicisation of the Military</td><td>Politicians began to interfere in military promotions, favouring officers from their own ethnic group. This broke the army's internal discipline and chain of command, leading to rival factions.</td></tr>
+    <tr><td class="k">Personal Ambition of Officers</td><td>Some officers were driven by a personal lust for power and the wealth that came with controlling the state, especially its oil revenues.</td></tr>
+    <tr><td class="k">The "Contagion" Effect</td><td>The first Nigerian coup in January 1966 was preceded by coups in other African countries (e.g., Togo, 1963). A successful coup in one country often gives soldiers in a neighbouring country the "idea" that it is possible.</td></tr>
+  </table>
+
+  <h3>1.3 Government Structure Under Military Rule</h3>
+  <p>When the military takes power, it dismantles the democratic structure and replaces it with a military chain of command. The structure is highly centralized, authoritarian, and hierarchical.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Suspension of the Constitution:</b> The first act of a coup is to suspend or (partially) abrogate the national constitution, especially the parts guaranteeing democratic processes and fundamental rights.</li>
+    <li><b>Rule by Decree:</b> The military governs by issuing <b>Decrees</b>. A decree is a law made by the military, which cannot be challenged in a court of law. State-level edicts are called <b>Edicts</b>.</li>
+    <li><b>Abolition of Democratic Institutions:</b>
+      <ul class="tight">
+        <li><b>Legislature:</b> Parliament (Senate and House of Reps) is dissolved. The military combines legislative and executive functions.</li>
+        <li><b>Political Parties:</b> All political parties are banned.</li>
+      </ul>
+    </li>
+    <li><b>The Hierarchical Ruling Councils:</b>
+      <ul class="tight">
+        <li><b>Head of State:</b> The leader (usually the most senior coup plotter) is the Head of State and Commander-in-Chief (e.g., Aguiyi-Ironsi, Gowon, Murtala, Obasanjo, Buhari, Babangida, Abacha).</li>
+        <li><b>Supreme Military Council (SMC):</b> This was the highest legislative and executive body, composed of the Head of State and the other senior military officers. It was later renamed the Armed Forces Ruling Council (AFRC) by Babangida.</li>
+        <li><b>Federal Executive Council (FEC):</b> This was the "cabinet," responsible for the day-to-day running of ministries. The military often appointed civilian professionals (technocrats) as Ministers (called "Commissioners") to this council, but they served at the pleasure of the military.</li>
+        <li><b>National Council of States:</b> An advisory body composed of the Head of State and all the State Military Governors.</li>
+      </ul>
+    </li>
+    <li><b>State Level Administration:</b> The 3- or 4-region structure was abolished (by Gowon, who created 12 states). Elected Premiers/Governors were replaced by <b>Military Governors</b> (or "Administrators"), who were active military officers appointed by, and loyal only to, the Head of State.</li>
+    <li><b>The Judiciary:</b> The judiciary was not abolished, but it was severely weakened. Decrees often included <b>"ouster clauses,"</b> which stated that "no court of law shall inquire into the validity of this decree." The military also created special military tribunals to try cases (including for civilians), which operated outside the normal court system.</li>
+  </ol>
+
+  <h3>1.4 Performance of Military Administration</h3>
+  <h4>A. Achievements (Positive Performance)</h4>
+  <ol class="tight">
+    <li><b>Creation of States:</b> The military successfully broke Nigeria's "unbalanced" 4-region structure. Gowon (1967) created 12 states, Murtala (1976) created 19, Babangida created 21 then 30, and Abacha created 36. This helped address "minority fears" and brought development closer to the people.</li>
+    <li><b>Infrastructure Projects:</b> Military regimes (especially during the 1970s oil boom) embarked on massive infrastructure projects (e.g., building national highways, ports, airports, and the new Federal Capital Territory, Abuja).</li>
+    <li><b>Dynamic Foreign Policy:</b> The military (especially the Murtala/Obasanjo regime) pursued a strong, decisive, and "Afrocentric" foreign policy, most notably in the fight against Apartheid in South Africa.</li>
+    <li><b>Social Discipline:</b> The Buhari/Idiagbon regime's War Against Indiscipline (WAI), though harsh, did (temporarily) instil a sense of public order, sanitation, and nationalism.</li>
+    <li><b>Economic Indigenization:</b> The Gowon regime's "Indigenization Decree" (1972) helped transfer ownership of foreign companies to Nigerians.</li>
+  </ol>
+
+  <h4>B. Failures (Negative Performance)</h4>
+  <ol class="tight">
+    <li><b>Systemic Corruption:</b> While they claimed to be "corrective," military regimes (especially the Babangida and Abacha regimes) became notorious for systemic corruption, looting, and mismanagement on an unprecedented scale.</li>
+    <li><b>Human Rights Abuses:</b> Military rule was a dictatorship. Freedom of speech, press, and assembly were abolished. Critics, journalists, and activists were jailed, exiled, or (in cases like Ken Saro-Wiwa's) executed.</li>
+    <li><b>Destruction of Federalism:</b> The military's unified chain of command is unitary, not federal. Military governors were not independent; they were "prefects" who took orders from Lagos/Abuja. This centralized all power and wealth (especially oil revenue) in the federal government, a problem that still exists.</li>
+    <li><b>Economic Collapse:</b> Poor economic planning, mismanagement of the oil boom, and corruption (compounded by the "Structural Adjustment Programme" - SAP) led to massive debt, high inflation, and the collapse of the industrial and educational sectors.</li>
+    <li><b>Loss of Military Professionalism:</b> The army became a "political" institution. Officers were promoted based on loyalty, not merit. This led to internal rivalries, instability, and a cycle of coups and counter-coups, destroying the army's professionalism.</li>
+  </ol>
+
+  <h3>1.5 Preventing Future Military Coups</h3>
+  <ol class="tight">
+    <li><b>Good Governance:</b> Civilian leaders must be transparent, accountable, and fight corruption. When the people see good governance, they will not welcome a coup.</li>
+    <li><b>Free, Fair, and Credible Elections:</b> An independent electoral body (INEC) must ensure that votes count. When leaders are chosen fairly, the government is legitimate.</li>
+    <li><b>Respect for the Rule of Law:</b> The government must obey the law, and the judiciary must be independent to check the executive.</li>
+    <li><b>Professionalism of the Military:</b> The military must be well-trained, well-paid, and kept out of politics. Their role is to defend the nation's borders, not run the government.</li>
+    <li><b>Strong Civil Society and Public Opinion:</b> An active, free press and a vigilant citizenry that will protest and resist any unconstitutional takeover.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define "Coup d'etat."</li>
+        <li>Explain three (3) major reasons for military intervention in Nigerian politics.</li>
+        <li>What is a "Decree," and how does it affect the power of the judiciary?</li>
+        <li>Describe the typical government structure under military rule, from the Head of State to the State Governors.</li>
+        <li>List three (3) achievements and three (3) failures of military rule in Nigeria.</li>
+        <li>Suggest four (4) ways military coups can be avoided in the future.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>"Military rule did more harm than good to Nigeria's political and economic development." Write a two-page essay, providing strong arguments and specific examples to support this statement.</li>
+        <li>Draw a simple organisational chart of the government structure under a typical military regime (e.g., the Supreme Military Council).</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — CONFLICT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Conflict: Meaning, Causes, Consequences and Resolution</h2>
+  <p class="meta"><b>Content:</b> Definition of conflict; causes; consequences; and methods of resolution.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define conflict and explain its nature.</li>
+      <li>Identify and explain the four main causes of conflict.</li>
+      <li>Discuss the consequences of violent conflict.</li>
+      <li>Explain traditional and modern methods of conflict resolution.</li>
+      <li>Differentiate between mediation and arbitration.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A flow diagram showing the four causes of conflict (Resource-Based, Value-Based, Power-Based, Psychological Needs) feeding into a central "Conflict" box, with arrows pointing to consequences (Loss of Life, Displacement, Economic Collapse). Also a diagram illustrating the difference between Negotiation (two parties), Mediation (third party facilitates), and Arbitration (third party judges). Not embedded in the source.</p>
+
+  <h3>2.1 Meaning of Conflict</h3>
+  <p><b>Conflict</b> is a disagreement, struggle, or clash of interests, opinions, or principles between two or more individuals, groups, or states. Conflict is a natural and inevitable part of all human interaction. It can range from a mild disagreement to a violent, armed confrontation.</p>
+
+  <h3>2.2 Causes of Conflict</h3>
+  <p>Conflicts arise when the interests or values of different parties are incompatible or are perceived to be incompatible.</p>
+
+  <table>
+    <tr><th style="width:24%">Cause</th><th>Explanation and Nigerian Examples</th></tr>
+    <tr>
+      <td class="k">1. Resource-Based Conflicts</td>
+      <td>Competition over scarce or valuable resources. <b>Examples:</b> Farmer-herder clashes (over land and water), Niger Delta militancy (over control of oil resources), land disputes between families or communities.</td>
+    </tr>
+    <tr>
+      <td class="k">2. Value-Based Conflicts</td>
+      <td>Clashes over fundamental beliefs, ideologies, or ways of life. <b>Examples:</b> Religious conflicts (e.g., intolerance between different faiths), ethnic conflicts (e.g., based on ethnic superiority or historical grievances).</td>
+    </tr>
+    <tr>
+      <td class="k">3. Power-Based Conflicts</td>
+      <td>Struggles to gain or maintain political power and influence. <b>Examples:</b> Election violence (between rival political parties), chieftaincy disputes (between rival ruling houses), coups d'etat (military vs. civilian).</td>
+    </tr>
+    <tr>
+      <td class="k">4. Psychological Needs Conflicts</td>
+      <td>When a group's fundamental psychological needs for identity, security, or recognition are threatened. <b>Example:</b> A minority ethnic group that feels marginalized, disrespected, and excluded from government may resort to conflict to demand recognition.</td>
+    </tr>
+  </table>
+
+  <h3>2.3 Consequences of Conflict</h3>
+  <p>While mild conflict can lead to positive change, violent and protracted (long-lasting) conflict is devastating.</p>
+  <ol class="tight">
+    <li><b>Loss of Life and Human Suffering:</b> This is the most tragic consequence. Innocent civilians, including women and children, are killed or injured.</li>
+    <li><b>Destruction of Property and Infrastructure:</b> Homes, schools, hospitals, bridges, and farms are destroyed, setting development back by decades.</li>
+    <li><b>Displacement of People:</b> Conflict creates Internally Displaced Persons (IDPs) and Refugees, leading to humanitarian crises and refugee camps.</li>
+    <li><b>Economic Collapse:</b> The economy stagnates. Farms are abandoned (leading to famine), factories close, foreign investors flee, and all government funds are diverted to security/war.</li>
+    <li><b>Social Disintegration:</b> Conflict destroys trust between communities. It breaks social bonds and creates a legacy of hatred, suspicion, and a "cycle of violence" that can last for generations.</li>
+    <li><b>Political Instability:</b> Leads to failed states, military coups, and a complete breakdown of law and order.</li>
+  </ol>
+
+  <h3>2.4 Ways of Resolving Conflict</h3>
+  <p><b>Conflict Management</b> refers to the processes used to limit the negative aspects of conflict, while <b>Conflict Resolution</b> refers to the processes used to end the dispute.</p>
+
+  <h4>Traditional Methods</h4>
+  <p>Involves village elders, religious leaders, or traditional rulers who meet with the disputing parties and use wisdom, proverbs, and community values to find a solution. It is often focused on reconciliation.</p>
+
+  <h4>Modern (Legal & Diplomatic) Methods</h4>
+  <table>
+    <tr><th style="width:22%">Method</th><th>Explanation</th></tr>
+    <tr><td class="k">Negotiation</td><td>The two conflicting parties communicate directly with each other to try and find a compromise. (No third party).</td></tr>
+    <tr><td class="k">Mediation</td><td>A neutral third party (the mediator) is invited to help the two parties talk. The mediator facilitates the discussion but does not have the power to impose a solution.</td></tr>
+    <tr><td class="k">Arbitration</td><td>A neutral third party (the arbitrator) is brought in to act as a judge. Both sides agree in advance to obey the arbitrator's final, binding decision.</td></tr>
+    <tr><td class="k">Adjudication (Litigation)</td><td>Taking the dispute to a formal court of law (like the High Court or the International Court of Justice - ICJ). The judge's decision is binding and enforced by the state. (e.g., The Nigeria-Cameroon Bakassi dispute).</td></tr>
+    <tr><td class="k">Peacekeeping</td><td>Using neutral military forces (like the UN or ECOMOG) to physically separate warring parties and enforce a ceasefire, creating a space for negotiation.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define "Conflict" and list its four (4) main causes.</li>
+        <li>Using a Nigerian example, explain a "resource-based conflict."</li>
+        <li>List five major consequences of violent conflict.</li>
+        <li>What is the main difference between "Mediation" and "Arbitration"?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Choose one specific conflict in Nigeria (e.g., Farmer-herder crisis OR Niger Delta militancy).</li>
+        <li>Write a one-page report on:
+          <ul class="tight">
+            <li>The primary causes of the conflict.</li>
+            <li>One consequence of the conflict.</li>
+            <li>One method you think could be used to resolve it.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — PEACE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Peace: Meaning, Need and Promotion</h2>
+  <p class="meta"><b>Content:</b> Meaning of peace (negative and positive); the need for peace; and ways to promote peace.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Differentiate between negative and positive peace.</li>
+      <li>Define peace education.</li>
+      <li>Explain the importance of peace for national development.</li>
+      <li>Identify ways to promote peace in society.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A two-panel illustration: Panel 1 "Negative Peace" shows a battlefield with weapons crossed out, captioned "Absence of War." Panel 2 "Positive Peace" shows a thriving community with a school, hospital, and market, captioned "Presence of Justice." Not embedded in the source.</p>
+
+  <h3>3.1 Meaning of Peace</h3>
+  <p>Peace is often misunderstood as just "the absence of war." This is only part of the definition.</p>
+  <table>
+    <tr><th style="width:22%">Type</th><th>Definition</th></tr>
+    <tr><td class="k">Negative Peace</td><td>The simple absence of direct, organized violence, war, or physical conflict. It is a state of "non-war," but it can still be filled with injustice, fear, and oppression.</td></tr>
+    <tr><td class="k">Positive Peace</td><td>A much deeper and more desirable state. It is the presence of social justice, equity, fairness, harmony, and the rule of law. It is a society where institutions are fair, resources are distributed equitably, and all citizens can flourish without fear of structural or physical violence.</td></tr>
+  </table>
+  <p><b>Peace Education</b> is the process of teaching people the knowledge, skills, and values needed to create and maintain positive peace.</p>
+
+  <h3>3.2 The Need for Peace (Importance)</h3>
+  <ol class="tight">
+    <li><b>Prerequisite for Development:</b> Peace is the foundation upon which all economic and social development is built. You cannot build schools, hospitals, or factories in a warzone.</li>
+    <li><b>Protection of Human Rights:</b> Peace is essential to guarantee the most fundamental right—the Right to Life. In peacetime, citizens are free to exercise their rights to free speech, movement, and assembly.</li>
+    <li><b>Economic Prosperity:</b> A peaceful environment encourages both local and foreign investment, which creates jobs and economic growth.</li>
+    <li><b>Social Cohesion:</b> Peace fosters trust, cooperation, and understanding among different ethnic and religious groups, strengthening the bonds of the nation.</li>
+    <li><b>Psychological Well-being:</b> Peace provides a stable, secure environment where citizens (especially children) can live free from fear, trauma, and anxiety.</li>
+  </ol>
+
+  <h3>3.3 Ways Peace Can Be Promoted</h3>
+  <ol class="tight">
+    <li><b>Upholding Justice and the Rule of Law:</b> This is the most important way. When citizens believe the justice system is fair, they will not resort to violence.</li>
+    <li><b>Good Governance:</b> An accountable, transparent government that fights corruption and is seen to be working for all people, not just one ethnic group, prevents conflict.</li>
+    <li><b>Equitable Resource Allocation:</b> Ensuring that the wealth of the nation (e.g., from oil, from taxes) is shared fairly to develop all parts of the country, reducing feelings of marginalization.</li>
+    <li><b>Promoting Tolerance and Dialogue:</b>
+      <ul class="tight">
+        <li><b>Education:</b> Teaching tolerance, mutual respect, and "Peace Education" in schools.</li>
+        <li><b>Inter-faith/Inter-ethnic Dialogue:</b> Creating forums where leaders from different groups can meet, talk, and build understanding.</li>
+      </ul>
+    </li>
+    <li><b>Disarmament and Control of Arms:</b> Reducing the number of small arms and light weapons (SALW) in circulation.</li>
+    <li><b>Providing for Basic Needs:</b> Tackling the root causes of conflict, such as poverty, unemployment, and lack of education.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Differentiate between "Negative Peace" and "Positive Peace."</li>
+        <li>What is "Peace Education"?</li>
+        <li>List four (4) reasons why peace is necessary for a nation's development.</li>
+        <li>What is the most important way to promote lasting (positive) peace in a society?</li>
+        <li>How can "equitable resource allocation" promote peace?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>"Peace is not just the absence of war." Write a one-page essay explaining this statement, using Nigeria as your case study.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — INTERDEPENDENCE OF NATIONS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Interdependence of Nations</h2>
+  <p class="meta"><b>Content:</b> Meaning of interdependence and globalization; Nigeria's international relations; advantages and disadvantages of interaction among nations.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define interdependence and globalization.</li>
+      <li>Explain Nigeria's economic, political, and cultural relations with other nations.</li>
+      <li>Discuss the advantages of globalization.</li>
+      <li>Discuss the disadvantages of globalization.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A world map with arrows showing the flow of goods (oil exports from Nigeria), capital (FDI into Nigeria), and people (migration and brain drain) between Nigeria and other regions. Not embedded in the source.</p>
+
+  <h3>4.1 Meaning of Interdependence and Globalization</h3>
+  <p><b>Interdependence</b> is the concept that nations, in the modern world, are mutually dependent on each other. No country is 100% self-sufficient. The decisions, economy, and security of one nation are deeply linked to the decisions and economy of other nations.</p>
+  <p><b>Globalization</b> is the process that has driven this interdependence. It is the rapid and increasing integration of national economies, cultures, and politics, driven by technology (internet, cheap travel) and free-trade policies.</p>
+
+  <h3>4.2 Nigeria's International Relations</h3>
+  <table>
+    <tr><th style="width:22%">Type of Relation</th><th>Examples</th></tr>
+    <tr>
+      <td class="k">Economic Relations</td>
+      <td>
+        <ul class="tight">
+          <li><b>Exports:</b> Nigeria's economy is almost entirely dependent on exporting crude oil to other countries (e.g., India, Netherlands, Spain). The price we get is set by the global market.</li>
+          <li><b>Imports:</b> We are dependent on importing refined petroleum, high-tech goods (phones, computers), machinery, and even food (wheat, rice) from other countries.</li>
+          <li><b>Investment:</b> Nigeria's economy depends on Foreign Direct Investment (FDI) from multinational corporations (e.g., Shell, MTN, Unilever).</li>
+          <li><b>Debt:</b> Nigeria's budget is often financed by loans from international bodies (World Bank, IMF) or other nations (China).</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="k">Political Relations</td>
+      <td>
+        <ul class="tight">
+          <li>Nigeria is a member of many international bodies (UN, AU, ECOWAS, Commonwealth) and must abide by their treaties.</li>
+          <li>We are dependent on other nations for cooperation on trans-national issues like terrorism (Boko Haram), piracy, and arms control.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td class="k">Cultural and Social Relations</td>
+      <td>
+        <ul class="tight">
+          <li><b>Cultural Exports:</b> Nollywood and Afrobeats have made Nigeria a dominant cultural exporter.</li>
+          <li><b>Cultural Imports:</b> We are heavily influenced by global (especially American and European) media, fashion, and technology.</li>
+          <li><b>Migration:</b> Nigeria is dependent on its Diaspora (Nigerians living abroad) who send back billions of dollars in remittances.</li>
+          <li><b>"Brain Drain":</b> We are negatively affected by the "brain drain" of our skilled doctors, nurses, and tech experts who migrate to Europe and America.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <h3>4.3 Advantages and Disadvantages of Interaction Among Nations</h3>
+
+  <table>
+    <tr><th style="width:48%">Advantages of Globalization/Interdependence</th><th>Disadvantages of Globalization/Interdependence</th></tr>
+    <tr>
+      <td>
+        <ol class="tight">
+          <li><b>Access to Global Markets:</b> Allows Nigeria to sell its products (oil, gas, music) to a global audience, earning foreign exchange.</li>
+          <li><b>Access to Goods and Services:</b> Gives citizens access to a wider variety of goods (e.g., phones, cars, medicines) that are not produced locally.</li>
+          <li><b>Technology Transfer:</b> Allows a developing country to "leapfrog" by adopting technology (e.g., mobile phones, internet) developed elsewhere, rather than inventing it from scratch.</li>
+          <li><b>Foreign Direct Investment (FDI):</b> Attracts foreign capital to build factories, oil rigs, and tech hubs, creating jobs.</li>
+          <li><b>Global Cooperation:</b> Allows nations to work together to solve problems that no single nation can fix (e.g., pandemics, climate change, terrorism).</li>
+          <li><b>Cultural Exchange:</b> Enriches society through exposure to new ideas, food, music, and art.</li>
+        </ol>
+      </td>
+      <td>
+        <ol class="tight">
+          <li><b>De-industrialization:</b> Local industries (e.g., Nigeria's textile industry) can be killed by competition from cheap, mass-produced imports (e.g., from China).</li>
+          <li><b>Economic Vulnerability:</b> The economy is vulnerable to "global shocks." If the world oil price crashes, the Nigerian economy goes into recession. A financial crisis in the USA (2008) can affect Nigerian banks.</li>
+          <li><b>"Brain Drain":</b> Skilled professionals leave for better opportunities abroad.</li>
+          <li><b>Cultural Imperialism:</b> The dominance of Western (American) culture via media (movies, music) can threaten to "drown out" local languages, traditions, and values.</li>
+          <li><b>Spread of Trans-national Problems:</b> Globalization allows for the rapid spread of negative things, such as diseases (pandemics), terrorism, and illicit drugs.</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define "Interdependence" and "Globalization."</li>
+        <li>What is the primary product Nigeria depends on exporting, and what is a primary product it depends on importing?</li>
+        <li>List three (3) advantages and three (3) disadvantages of globalization for Nigeria.</li>
+        <li>Explain how "Brain Drain" is a negative effect of interdependence.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>"Globalization has been a net negative for Nigeria's economy." Write a one-page essay arguing for or against this statement, using specific examples.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — FOREIGN POLICY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Foreign Policy: Meaning, Principles, Objectives and Factors</h2>
+  <p class="meta"><b>Content:</b> Definition of foreign policy and national interest; principles and objectives of Nigeria's foreign policy; factors influencing it.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define foreign policy and national interest.</li>
+      <li>Outline the objectives of Nigeria's foreign policy.</li>
+      <li>Explain the principles guiding Nigeria's foreign policy.</li>
+      <li>Discuss the internal and external factors that influence Nigeria's foreign policy.</li>
+      <li>Explain the "Concentric Circles" model.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A "Concentric Circles" diagram with Nigeria at the centre, surrounded by rings: Inner Circle (Nigeria's security), Second Circle (West Africa/ECOWAS), Third Circle (Africa), Outer Circle (The World/UN). Not embedded in the source.</p>
+
+  <h3>5.1 Meaning of Foreign Policy</h3>
+  <p><b>Foreign Policy</b> is a set of strategies, principles, and goals that a state (a country) pursues in its interactions with other states and international actors (like the UN or IMF). It is the "face" a nation shows to the world. A nation's foreign policy is designed to achieve its <b>National Interest</b>.</p>
+
+  <h3>5.2 Objectives of Nigeria's Foreign Policy</h3>
+  <p>The "National Interest" is the goal. For Nigeria, these are defined by the 1999 Constitution (Chapter 2, Section 19):</p>
+  <ol class="tight">
+    <li><b>Protection of Nigeria's Sovereignty, Territorial Integrity, and Independence:</b> This is the #1 goal (self-preservation).</li>
+    <li><b>Promotion of Nigeria's Economic Interest:</b> To enhance the economic well-being of Nigerians through trade, investment, and protecting its resources.</li>
+    <li><b>Promotion of Self-Reliance:</b> To reduce dependency on other nations.</li>
+    <li><b>Promotion of World Peace and Justice:</b> To be a responsible global citizen.</li>
+    <li><b>Promotion of African Interests:</b> To promote the total liberation and unity of Africa.</li>
+  </ol>
+
+  <h3>5.3 Principles of Nigeria's Foreign Policy</h3>
+  <p>These are the guiding principles Nigeria uses to achieve its objectives.</p>
+  <ol class="tight">
+    <li><b>Afrocentrism (Africa as the "Centrepiece"):</b> The core principle. Nigeria's foreign policy prioritizes Africa.</li>
+    <li><b>Non-alignment (Historical):</b> During the Cold War, this was the principle of not formally siding with the USA (capitalism) or the USSR (communism). Today, it means maintaining a "functional" neutrality and the freedom to be friends with all powers (e.g., USA, China, Russia).</li>
+    <li><b>Non-interference in Internal Affairs:</b> The principle (from the OAU) of respecting the sovereignty of other states and not trying to change their governments (this has been modified by the AU's "non-indifference").</li>
+    <li><b>Peaceful Settlement of Disputes:</b> The belief in using diplomacy, negotiation, and international law (like the ICJ) to solve problems, rather than war.</li>
+    <li><b>Legal Equality of all States:</b> The belief that all nations (big or small) are equal under international law.</li>
+  </ol>
+
+  <h3>5.4 Factors Influencing Nigeria's Foreign Policy</h3>
+  <p>A country's foreign policy is shaped by its internal realities and external pressures.</p>
+
+  <table>
+    <tr><th style="width:48%">A. Internal Factors</th><th>B. External Factors</th></tr>
+    <tr>
+      <td>
+        <ol class="tight">
+          <li><b>National Interest (Security & Economy):</b> This is the main driver. (e.g., our policy on Niger is driven by security in the North; our policy on OPEC is driven by our economic reliance on oil).</li>
+          <li><b>Size (Population & Geography):</b> As the most populous Black nation on earth, Nigeria sees itself (and is seen) as the "Giant of Africa," with a special responsibility to lead.</li>
+          <li><b>Economic Strength (or Weakness):</b>
+            <ul class="tight">
+              <li><b>Strength (1970s Oil Boom):</b> Our oil wealth allowed us to have a very assertive foreign policy (e.g., confronting Britain over Apartheid).</li>
+              <li><b>Weakness (1980s-90s Debt):</b> Our debt forced us to be less assertive and to follow the policies of the IMF/World Bank.</li>
+            </ul>
+          </li>
+          <li><b>Type of Government (Military vs. Civilian):</b>
+            <ul class="tight">
+              <li><b>Military Regimes:</b> Often had decisive, assertive foreign policies (e.g., Murtala, Obasanjo).</li>
+              <li><b>Civilian Regimes:</b> Can be slower, but are seen as more legitimate (e.g., Obasanjo's "shuttle diplomacy" as a civilian president).</li>
+            </ul>
+          </li>
+          <li><b>Public Opinion & Media:</b> A strong, free press and public opinion (e.g., on the South African or Israeli-Palestinian issue) can influence government policy.</li>
+        </ol>
+      </td>
+      <td>
+        <ol class="tight">
+          <li><b>Global Power Structure:</b> The "weather" of the world.
+            <ul class="tight">
+              <li><b>Cold War Era:</b> The USA vs. USSR dynamic forced Nigeria to adopt its "non-alignment" policy.</li>
+              <li><b>Post-Cold War:</b> The dominance of the USA.</li>
+              <li><b>Modern Era:</b> The new USA vs. China rivalry.</li>
+            </ul>
+          </li>
+          <li><b>International Organizations:</b> Nigeria's membership in ECOWAS, AU, UN, and the Commonwealth shapes its actions. (e.g., if ECOWAS votes for sanctions on Niger, Nigeria (as a member) must follow).</li>
+          <li><b>Actions of Neighbours:</b> Instability in a neighbouring country (e.g., Chad, Niger, Cameroon) will force a Nigerian foreign policy response due to border security and refugee flows.</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define "Foreign Policy" and "National Interest."</li>
+        <li>List the three (3) main principles and three (3) main objectives of Nigeria's foreign policy.</li>
+        <li>Explain how Nigeria's economic strength (or weakness) influences its foreign policy.</li>
+        <li>How does the type of government (military vs. civilian) affect foreign policy?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Explain the "Concentric Circles" theory of Nigeria's foreign policy.</li>
+        <li>Draw a simple diagram showing the "inner," "middle," and "outer" circles and what they represent.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — MIDTERM TEST
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Midterm Test / Open Day</h2>
+  <p class="meta"><b>Content:</b> Assessment covering Weeks 1–5.</p>
+
+  <div class="box obj">
+    <h4>Scope</h4>
+    <ol class="cols2 tight">
+      <li>Military Intervention and Government Structure.</li>
+      <li>Conflict: Meaning, Causes, Consequences and Resolution.</li>
+      <li>Peace: Meaning, Need and Promotion.</li>
+      <li>Interdependence of Nations.</li>
+      <li>Foreign Policy.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for this week. This is for assessment.</p>
+
+  <h3>Suggested Structure</h3>
+  <table>
+    <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+    <tr><td class="k">A — Objectives</td><td>20 marks</td><td>Twenty multiple-choice questions covering Weeks 1–5.</td></tr>
+    <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+    <tr><td class="k">C — Essay</td><td>20 marks</td><td>Two essay questions requiring detailed explanations.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Revision Focus</h4>
+    <ul class="cols2 tight">
+      <li>Reasons for military intervention.</li>
+      <li>Structure of military government (SMC, Decrees).</li>
+      <li>Achievements and failures of military rule.</li>
+      <li>Causes of conflict (Resource, Value, Power, Psychological).</li>
+      <li>Conflict resolution methods (Mediation, Arbitration, Adjudication).</li>
+      <li>Negative vs. Positive Peace.</li>
+      <li>Interdependence and globalization.</li>
+      <li>Advantages and disadvantages of globalization.</li>
+      <li>Foreign policy objectives and principles (Afrocentrism).</li>
+      <li>Concentric Circles model.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No new academic content. The source marks this as the midterm break.</p>
+
+  <div class="box obj">
+    <h4>Suggested Holiday Tasks</h4>
+    <ol class="cols2 tight">
+      <li>Read ahead: Africa as the Centrepiece of Nigeria's Foreign Policy.</li>
+      <li>Find out the names of the current Secretary-General of the UN and the Chairperson of the AU Commission.</li>
+      <li>List three Nigerian peacekeeping missions you have heard of.</li>
+      <li>Ask an elder about their experience during a period of military rule in Nigeria.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for the midterm break. This page is intentionally short so it can serve as a divider sheet.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — AFRICA AS THE CENTREPIECE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Africa as the Centre Piece of Nigeria's Foreign Policy & Non-Alignment</h2>
+  <p class="meta"><b>Content:</b> Origin and justification of Afrocentrism; ways Nigeria demonstrates it; the Non-Aligned Movement.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain the origin of Afrocentrism.</li>
+      <li>Justify the reasons for adopting Africa as the centrepiece.</li>
+      <li>Give examples of how Nigeria has demonstrated Afrocentrism.</li>
+      <li>Explain the Non-Aligned Movement (NAM).</li>
+      <li>Discuss the problems associated with non-alignment.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A poster showing Nigeria's role in Africa with icons for: ECOMOG peacekeeping, Anti-Apartheid support, and the founding of ECOWAS and the OAU. Not embedded in the source.</p>
+
+  <h3>8.1 Origin of Africa as the Centre Piece of Nigeria's Policy</h3>
+  <p><b>Origin:</b> This policy was first articulated by Nigeria's first Prime Minister, Sir Abubakar Tafawa Balewa, in his first major foreign policy speech at independence in 1960.</p>
+  <p><b>His Statement:</b> Balewa declared that Nigeria was a "big brother" to the continent and that "we shall not impose ourselves... but we shall not shrink from that responsibility which is our historic destiny."</p>
+  <p><b>Core Idea:</b> The policy is based on the <b>"Concentric Circles"</b> model.</p>
+  <ol class="tight">
+    <li><b>Innermost Circle:</b> Nigeria's own security and development.</li>
+    <li><b>Second Circle:</b> The West African (ECOWAS) sub-region.</li>
+    <li><b>Third Circle:</b> The entire African continent (OAU/AU).</li>
+    <li><b>Outer Circle:</b> The rest of the world (UN, Commonwealth).</li>
+  </ol>
+  <p><b>Afrocentrism</b> means that Nigeria's foreign policy prioritizes circles 2 and 3.</p>
+
+  <h3>8.2 Justification for Adopting Africa as the Centre Piece</h3>
+  <ol class="tight">
+    <li><b>National Security:</b> This is the most practical reason. Nigeria cannot be truly safe if it is surrounded by failed, unstable, or warring states. It is in our "enlightened self-interest" to promote peace in Liberia, Chad, and Niger.</li>
+    <li><b>Economic Interest:</b> Nigeria is the "giant" of West Africa. A peaceful, integrated ECOWAS region (with free trade) creates a massive market for Nigerian-made goods and services.</li>
+    <li><b>Identity and "Black Leadership":</b> As the most populous Black nation on Earth, Nigeria feels it has a moral duty and historical destiny to lead the Black race and fight for the dignity of all African peoples.</li>
+    <li><b>Anti-Colonial/Anti-Racist Stance:</b> The policy was born in the 1960s, when many African nations were still fighting for independence. Nigeria took on the role of "liberator" to end colonialism (in Angola, Mozambique) and racist white-minority rule (in South Africa, Zimbabwe).</li>
+  </ol>
+
+  <h3>8.3 Ways Nigeria Has Demonstrated Africa as the Centre Piece</h3>
+  <ol class="tight">
+    <li><b>The Fight Against Apartheid (South Africa):</b> This was Nigeria's finest hour.
+      <ul class="tight">
+        <li>Nigeria was a leading "Frontline State" (even without a border). It gave direct financial aid (millions of dollars) to the ANC and PAC (liberation movements).</li>
+        <li>It nationalized the assets of British Petroleum (BP) in 1979 because of its dealings with apartheid South Africa.</li>
+        <li>It led the boycott of the 1976 Montreal Olympics (and two Commonwealth Games) to protest racist sports policies.</li>
+      </ul>
+    </li>
+    <li><b>Peacekeeping (ECOMOG):</b> When civil war erupted in Liberia (1990) and Sierra Leone (1997), Nigeria created, funded, and led (with its soldiers) the ECOMOG force, spending billions of dollars and losing hundreds of lives to restore peace.</li>
+    <li><b>Liberation Movements:</b> Nigeria gave massive financial and military support to the MPLA in Angola (1975) and the ZANU/ZAPU movements in Zimbabwe to help them win independence.</li>
+    <li><b>Founding Regional Bodies:</b> Nigeria was a key founder of the OAU (1963) and ECOWAS (1975).</li>
+    <li><b>Diplomatic Action:</b> Nigeria often acts as the "mediator" in African disputes and has led the continent in condemning coups (e.g., in The Gambia, 2017).</li>
+  </ol>
+
+  <h3>8.4 Non-Alignment Policy</h3>
+  <p><b>Meaning:</b> The <b>Non-Aligned Movement (NAM)</b> was a formal group of states (founded in 1961) that declared their neutrality in the Cold War between the USA (the "West") and the USSR (the "East").</p>
+
+  <h4>Aims and Objectives</h4>
+  <ol class="tight">
+    <li><b>Independence:</b> To maintain their national independence and sovereignty without being "puppets" of a superpower.</li>
+    <li><b>Peace:</b> To act as a "third force" to reduce tensions between the USA and USSR.</li>
+    <li><b>Economic:</b> To get aid, trade, and technology from both sides.</li>
+  </ol>
+
+  <h4>Problems Associated with Non-Alignment</h4>
+  <ol class="tight">
+    <li><b>It Was Often Not "Real":</b> Many "non-aligned" countries were forced to "lean" one way or the other. (e.g., Cuba leaned East, while Nigeria often leaned West due to its oil trade).</li>
+    <li><b>Lack of Power:</b> The NAM had no military power and was often ignored by the superpowers.</li>
+    <li><b>Economic Pressure:</b> It was hard to get loans (e.g., from the IMF) if a country was seen as "too friendly" with the USSR.</li>
+    <li><b>Irrelevance:</b> After the Cold War ended (1991), the movement lost its primary purpose.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is "Afrocentrism"?</li>
+        <li>Explain the "Concentric Circles" model of Nigeria's foreign policy.</li>
+        <li>Give three (3) specific examples of how Nigeria has demonstrated that Africa is its centrepiece.</li>
+        <li>What was the "Non-Aligned Movement"? What was its main goal?</li>
+        <li>Why was it difficult for Nigeria to be truly "non-aligned" during the Cold War?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>"Nigeria's role as 'big brother' in Africa has cost us too much money and too many lives, with little benefit." Write a one-page essay arguing for or against this statement.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — THE UNITED NATIONS ORGANISATION (UNO)
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>The United Nations Organisation (UNO)</h2>
+  <p class="meta"><b>Content:</b> Origin, organs, aims and objectives, achievements, and problems of the UNO.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain the origin of the UNO.</li>
+      <li>List and describe the six main organs of the UNO.</li>
+      <li>State the aims and objectives of the UNO.</li>
+      <li>Discuss the achievements of the UNO.</li>
+      <li>Examine the problems confronting the UNO.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A diagram of the UN system showing the six main organs: General Assembly, Security Council, Economic and Social Council (ECOSOC), Secretariat, International Court of Justice (ICJ), and Trusteeship Council. Not embedded in the source.</p>
+
+  <h3>9.1 Origin and Organs of UNO</h3>
+  <p><b>Origin:</b> The United Nations Organisation (UNO) was founded in 1945 in San Francisco, USA, immediately after the end of World War II. Its primary purpose was to replace the failed "League of Nations" and to prevent another world war. <b>Founding:</b> 51 nations (including Nigeria, though still a colony) were original members. Today, it has 193 member states.</p>
+
+  <h4>Organs of the UNO (The 6 Main Organs)</h4>
+  <table>
+    <tr><th style="width:24%">Organ</th><th>Description and Function</th></tr>
+    <tr><td class="k">1. General Assembly (UNGA)</td><td>The "parliament" of the UN. All 193 members have one seat and one vote. It is a forum for global discussion, but its resolutions are not legally binding.</td></tr>
+    <tr><td class="k">2. Security Council (UNSC)</td><td>The most powerful organ, responsible for maintaining international peace and security. It has 15 members: 5 Permanent ("P5") Members (USA, UK, France, China, Russia) and 10 Non-Permanent Members elected for 2-year terms. Its resolutions are legally binding. Its great weakness is the <b>Veto Power</b> - any one of the P5 can block any resolution.</td></tr>
+    <tr><td class="k">3. Economic and Social Council (ECOSOC)</td><td>Manages the UN's work on economic development, social issues, and human rights. It coordinates the work of the specialized agencies.</td></tr>
+    <tr><td class="k">4. The Secretariat</td><td>The "civil service" of the UN. It is headed by the Secretary-General (the UN's chief administrator, currently Antonio Guterres).</td></tr>
+    <tr><td class="k">5. International Court of Justice (ICJ)</td><td>Based in The Hague, Netherlands. It is the "World Court." It settles legal disputes between states (e.g., the Nigeria-Cameroon Bakassi case).</td></tr>
+    <tr><td class="k">6. Trusteeship Council</td><td>(Now dormant). It was set up to manage the former "trust territories" (colonies) as they moved towards independence. Its work is complete.</td></tr>
+  </table>
+
+  <h3>9.2 Aims and Objectives of UNO</h3>
+  <ol class="tight">
+    <li>To maintain international peace and security.</li>
+    <li>To develop friendly relations among nations, based on respect for equal rights and self-determination.</li>
+    <li>To achieve international cooperation in solving economic, social, cultural, or humanitarian problems (e.g., poverty, disease).</li>
+    <li>To promote and encourage respect for human rights for all.</li>
+  </ol>
+
+  <h3>9.3 Achievements of UNO</h3>
+  <ol class="tight">
+    <li><b>Preventing World War III:</b> Its primary goal. Despite the Cold War, it has (so far) prevented a direct nuclear war between superpowers.</li>
+    <li><b>Peacekeeping:</b> The UN has deployed "Blue Helmet" peacekeeping forces to dozens of conflict zones (e.g., Congo, Liberia, Sudan, Lebanon) to monitor ceasefires.</li>
+    <li><b>Decolonization:</b> The UN Trusteeship Council and the UN's promotion of "self-determination" were major factors in the peaceful end of colonialism in the 1960s.</li>
+    <li><b>Humanitarian & Health:</b> Through its agencies, it has saved millions of lives:
+      <ul class="tight">
+        <li><b>WHO:</b> Eradicated smallpox, leads the fight against malaria, Ebola, and COVID-19.</li>
+        <li><b>UNICEF:</b> Saves millions of children through vaccination and nutrition programs.</li>
+        <li><b>WFP (World Food Programme):</b> Feeds millions in famine zones and refugee camps.</li>
+      </ul>
+    </li>
+    <li><b>International Law & Human Rights:</b> The 1948 Universal Declaration of Human Rights (UDHR), created by the UN, is the foundational document for all modern human rights law.</li>
+  </ol>
+
+  <h3>9.4 Problems Confronting UNO</h3>
+  <ol class="tight">
+    <li><b>The Veto Power:</b> This is the #1 problem. The Security Council (which has the power to act) is often paralyzed because one of the P5 (e.g., USA, Russia, China) will "veto" any resolution that goes against its own national interest. (e.g., Russia on Ukraine, USA on Israel/Palestine).</li>
+    <li><b>Lack of Funding:</b> The UN is constantly "broke." Many member states (including the USA) fail to pay their dues, which cripples its ability to run programs.</li>
+    <li><b>Lack of an Independent Army:</b> The UN has no army. It must ask member states to "donate" soldiers for peacekeeping. This makes it slow to respond to crises.</li>
+    <li><b>"Big Power" Dominance:</b> It is often accused of being a tool for the foreign policy of its most powerful (and richest) members, particularly the P5.</li>
+    <li><b>Ineffectiveness in Stopping Internal Conflicts:</b> The UN Charter was designed to stop wars between states, not within them (civil wars). It has often failed to stop genocides (e.g., Rwanda 1994, Srebrenica 1995).</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Why was the UNO founded in 1945?</li>
+        <li>List the six (6) main organs of the UN.</li>
+        <li>What is the Veto Power, and which organ uses it?</li>
+        <li>List three (3) major achievements of the UN.</li>
+        <li>What is the single biggest problem/criticism of the UN Security Council?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>The UN has many "Specialized Agencies." Research and write one sentence each on the specific function of:
+          <ul class="tight">
+            <li>WHO (World Health Organization)</li>
+            <li>UNICEF (UN Children's Fund)</li>
+            <li>UNESCO (UN Educational, Scientific and Cultural Organization)</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — OAU / AU
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Origins, Aims, Achievements and Problems of OAU/AU</h2>
+  <p class="meta"><b>Content:</b> Origin of the OAU and AU; aims and objectives; achievements; problems.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain the origin of the OAU and the AU.</li>
+      <li>Compare the aims of the OAU and the AU.</li>
+      <li>Discuss the achievements of both organisations.</li>
+      <li>Examine the problems confronting the OAU/AU.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A timeline showing the transition from the OAU (1963, Addis Ababa) to the AU (2002, Durban), with key differences highlighted: "Non-interference" vs. "Non-indifference." Not embedded in the source.</p>
+
+  <h3>10.1 Origin of OAU/AU</h3>
+  <h4>A. Origin of the OAU (Organisation of African Unity)</h4>
+  <p><b>Context:</b> In the early 1960s, a wave of African countries gained independence. They were divided on the best way to achieve unity.</p>
+  <ol class="tight">
+    <li><b>The Casablanca Bloc (The "Radicals"):</b> Led by Kwame Nkrumah (Ghana), Gamel Nasser (Egypt). They wanted immediate, total political federation—a "United States of Africa."</li>
+    <li><b>The Monrovia Bloc (The "Conservatives"):</b> Led by Nigeria (Tafawa Balewa), Liberia (Tubman). They were cautious. They wanted a gradual economic cooperation first, believing that political unity was unrealistic and threatened their new sovereignty.</li>
+  </ol>
+  <p><b>The Compromise:</b> The two blocs met in Addis Ababa, Ethiopia, and reached a compromise.</p>
+  <p><b>Founding:</b> The OAU was founded on May 25, 1963, based more on the gradualist Monrovia "charter of cooperation" than the radical "political union" of Casablanca.</p>
+
+  <h4>B. Origin of the AU (African Union)</h4>
+  <p><b>The Problem with the OAU:</b> By the 1990s, the OAU was seen as a failure. It had succeeded in ending colonialism, but its core principle of "non-interference" made it powerless. It was a "dictators' club" that watched silently during the genocides in Rwanda and civil wars in Liberia and Somalia.</p>
+  <p><b>The "Rebirth":</b> Led by leaders like Thabo Mbeki (South Africa), Olusegun Obasanjo (Nigeria), and Muammar Gaddafi (Libya), a new "Constitutive Act" was written.</p>
+  <p><b>Launch:</b> The African Union (AU) was officially launched in Durban, South Africa, in 2002, replacing the OAU.</p>
+  <p><b>Key Change:</b> The AU's philosophy is <b>"non-indifference."</b> It has the right to intervene in member states in cases of genocide, war crimes, and unconstitutional changes of government (coups).</p>
+
+  <h3>10.2 Aims and Objectives (OAU vs. AU)</h3>
+  <table>
+    <tr><th style="width:48%">Aims of OAU (Historical)</th><th>Aims of AU (Modern)</th></tr>
+    <tr>
+      <td>
+        <ol class="tight">
+          <li>To promote the unity and solidarity of African states.</li>
+          <li>To coordinate and intensify cooperation for a better life.</li>
+          <li>To defend the sovereignty, territorial integrity, and independence of members.</li>
+          <li>To <b>ERADICATE ALL FORMS OF COLONIALISM</b> (its most important goal).</li>
+          <li>To uphold strict non-interference in the internal affairs of members.</li>
+        </ol>
+      </td>
+      <td>
+        <ol class="tight">
+          <li>To achieve greater unity and solidarity.</li>
+          <li>To promote peace, security, and stability (the <b>non-indifference</b> principle).</li>
+          <li>To promote democratic principles, good governance, and human rights.</li>
+          <li>To accelerate the political and socio-economic integration of the continent (its main goal).</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+
+  <h3>10.3 Achievements of OAU/AU</h3>
+  <h4>Achievements of the OAU (The "Father")</h4>
+  <ol class="tight">
+    <li><b>Decolonization:</b> The OAU was highly successful in this. Its Liberation Committee provided the weapons, training, and diplomatic support that ended apartheid in South Africa and colonialism in Angola, Mozambique, etc.</li>
+    <li><b>Unity:</b> It provided a single "African voice" at the UN.</li>
+    <li><b>Boundary Disputes:</b> Its 1964 Cairo Declaration (respecting colonial borders) prevented hundreds of potential inter-state wars.</li>
+  </ol>
+
+  <h4>Achievements of the AU (The "Son")</h4>
+  <ol class="tight">
+    <li><b>Peace and Security:</b> The AU has been much more "hands-on" than the OAU. It has deployed its own peacekeeping forces (e.g., AMISOM in Somalia to fight Al-Shabaab, and in Sudan).</li>
+    <li><b>Norm-Setting:</b> The AU suspends countries that have military coups (e.g., Niger, Mali, Guinea). This creates real political pressure.</liFinancial>
+    <li><b>Economic Integration:</b> The AU's greatest achievement (on paper) is the launch of the AfCFTA (African Continental Free Trade Area Dependency), which aims to create the world's largest free-trade area.</li>
+  </ol>
+
+  <h3>10.4 Problems:</ Confronting OAU/AU</h3>
+  <ol class="tight">
+    <li><b>b> The AU is chronically underfunded. Most of its peace and security operations are paid for by foreign donors (e.g., the European Union, USA, China), which is a form of neo-colonialism.</li>
+    <li><b>Lack of Political Will:</b> The AU is still a "club of presidents." Leaders are often slow to criticize each other, especially over human rights abuses or flawed elections.</li>
+    <li><b>Implementation Gap:</b> The AU has "great ideas" (like the AfCFTA or the Pan-African Parliament) but lacks the power and resources to implement them fully.</li>
+    <li><b>Internal/External Conflicts:</b> The continent is still plagued by civil wars, terrorism (Al-Shabaab, Boko Haram), and a new wave of military coups (the "Sahel Coup Belt"), which the AU struggles to contain.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What was the main difference between the "Casablanca Bloc" and the "Monrovia Bloc"?</li>
+        <li>What is the single most important difference between the OAU's charter and the AU's Constitutive Act?</li>
+        <li>What was the main success of the OAU?</li>
+        <li>What is the main problem of the AU?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Research the AfCFTA (African Continental Free Trade Area). Write a one-page report explaining what it is and what one major challenge Nigeria faces in benefiting from it.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — THE COMMONWEALTH OF NATIONS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>The Commonwealth of Nations</h2>
+  <p class="meta"><b>Content:</b> Origin, aims, principles, organs, achievements, and criticisms of the Commonwealth.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain the origin of the Commonwealth.</li>
+      <li>List the aims and objectives.</li>
+      <li>Mention the principles of the organisation.</li>
+      <li>Explain the organs of the Commonwealth.</li>
+      <li>Identify its achievements and shortcomings.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A world map highlighting Commonwealth member states in different colours, with a note on the headquarters in London. Not embedded in the source.</p>
+
+  <h3>11.1 Origin of the Commonwealth</h3>
+  <p><b>Origin:</b> The Commonwealth of Nations is a voluntary association of 56 member states, almost all of which are former colonies or territories of the British Empire.</p>
+  <p><b>"From Empire to Commonwealth":</b> As Britain's empire dissolved (decolonization), it sought to maintain a "family" relationship based on shared history, language, and legal systems.</p>
+  <p><b>London Declaration (1949):</b> This was the key event that created the modern Commonwealth. It allowed India (a new republic) to remain a member, even without having the British Monarch as its Head of State. This set the precedent for all other republics (like Nigeria) to join.</p>
+  <p><b>Nature:</b> It is not a political union. Membership is voluntary. It has no constitution. Its Head is (symbolically) the British Monarch (currently King Charles III).</p>
+
+  <h3>11.2 Aims and Objectives</h3>
+  <ol class="tight">
+    <li>To promote democracy and good governance.</li>
+    <li>To protect human rights and the rule of law.</li>
+    <li>To promote international peace and security.</li>
+    <li>To promote economic and social development (e.g., in trade, health, education).</li>
+    <li>To support the needs of small and vulnerable states.</li>
+  </ol>
+
+  <h3>11.3 Principles of the Organisation</h3>
+  <p>The core principles were set out in the <b>Harare Declaration (1991)</b>. These are the values members are supposed to uphold:</p>
+  <ul class="tight">
+    <li>Democracy and democratic processes.</li>
+    <li>Fundamental human rights.</li>
+    <li>The rule of law and an independent judiciary.</li>
+    <li>Equality between men and women.</li>
+    <li>Sustainable economic and social development.</li>
+  </ul>
+
+  <h3>11.4 Organs of the Commonwealth</h3>
+  <p>The Commonwealth is a very loose organization.</p>
+  <ol class="tight">
+    <li><b>Head of the Commonwealth:</b> A symbolic, ceremonial position (King Charles III). Not a political one.</li>
+    <li><b>Commonwealth Heads of Government Meeting (CHOGM):</b> This is the main "organ." The leaders (Presidents, Prime Ministers) of all member states meet every two years (in a different member country) to discuss common issues, set policies, and issue joint statements (communiqués).</li>
+    <li><b>Commonwealth Secretariat:</b> The main administrative body, based in London. Headed by a Secretary-General (e.g., Patricia Scotland). It organizes CHOGM, provides policy advice, and runs the Commonwealth's technical assistance programs.</li>
+    <li><b>Commonwealth Foundation:</b> Focuses on supporting "civil society" (NGOs) and promoting cultural exchange.</li>
+  </ol>
+
+  <h3>11.5 Achievements</h3>
+  <ol class="tight">
+    <li><b>Anti-Apartheid Struggle:</b> The Commonwealth (especially the African members, led by Nigeria, Zambia, and Tanzania) was a major force in isolating South Africa, forcing its withdrawal in 1961 and imposing sanctions.</li>
+    <li><b>Promotion of Democracy:</b>
+      <ul class="tight">
+        <li>Its main tool is <b>suspension</b>. It suspends members who have military coups or violate democratic principles.</li>
+        <li><b>Examples:</b> Nigeria was suspended (1995-1999) after the execution of Ken Saro-Wiwa by the Abacha regime. Pakistan and Fiji have also been suspended.</li>
+        <li>It also sends Election Observer Groups to monitor elections in member states.</li>
+      </ul>
+    </li>
+    <li><b>Education:</b> The Commonwealth Scholarship and Fellowship Plan is a very successful program that has given thousands of students from developing member states the chance to study at universities in other member countries (e.g., UK, Canada, Australia).</li>
+    <li><b>The Commonwealth Games:</b> A "friendly" international sports-meet that promotes goodwill.</li>
+  </ol>
+
+  <h3>11.6 Criticisms Based on Shortcomings</h3>
+  <ol class="tight">
+    <li><b>Neo-colonialism ("Empire 2.0"):</b> It is often criticized as a "relic" of the British Empire, a neo-colonial tool for the UK to maintain influence over its former colonies.</li>
+    <li><b>"A Talk Shop" (No Real Power):</b> It has no army, no binding legal authority (unlike the UN Security Council), and its decisions are non-binding.</li>
+    <li><b>Limited Enforcement:</b> Its only real "tooth" is suspension, which is often seen as a weak punishment. It has been criticized for being soft on members with poor human rights records.</li>
+    <li><b>Irrelevance:</b> In a globalized world, some argue its "shared history" is less important than joining more powerful economic blocs (like the EU or ASEAN).</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is the "Commonwealth of Nations," and what is the main criterion for membership?</li>
+        <li>What was the importance of the "London Declaration (1949)?"</li>
+        <li>What are the "Harare Principles"?</li>
+        <li>What is CHOGM, and what is the "Secretariat"?</li>
+        <li>What is the main "power" or "tooth" the Commonwealth has to enforce its principles? Give a specific example of when it was used.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Differentiate between the AU, the UN, and the Commonwealth in a table.</li>
+        <li>Include columns for: (a) Who can join? (b) What is its main enforcement power? (c) What is one major achievement?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 12 — REVISION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 12</span>Revision — First Term</h2>
+  <p class="meta"><b>Content:</b> Comprehensive review of Weeks 1–11 and examination preparation.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Review all topics covered this term.</li>
+      <li>Identify areas of strength and weakness.</li>
+      <li>Practice past examination questions.</li>
+      <li>Prepare effectively for the end-of-term examination.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for revision week. This page is a checklist and study guide.</p>
+
+  <h3>12.1 Key Topics Checklist</h3>
+  <table>
+    <tr><th style="width:24%">Topic</th><th>Key Concepts to Remember</th></tr>
+    <tr>
+      <td class="k">Military Rule</td>
+      <td>Reasons for intervention (corruption, instability, ethnic rivalry). Structure (SMC, Decrees, ouster clauses). Achievements (state creation, infrastructure, NYSC). Failures (human rights abuses, corruption, economic mismanagement). Ways to prevent coups (good governance, free elections, military professionalism).</td>
+    </tr>
+    <tr>
+      <td class="k">Conflict</td>
+      <td>Meaning. Causes (Resource-Based, Value-Based, Power-Based, Psychological Needs). Consequences (loss of life, displacement, economic collapse). Resolution methods (Negotiation, Mediation, Arbitration, Adjudication, Peacekeeping).</td>
+    </tr>
+    <tr>
+      <td class="k">Peace</td>
+      <td>Negative Peace (absence of war) vs. Positive Peace (presence of justice). Peace Education. Need for peace (development, human rights, prosperity). Promotion (justice, good governance, equitable resource allocation, tolerance).</td>
+    </tr>
+    <tr>
+      <td class="k">Interdependence</td>
+      <td>Definition of interdependence and globalization. Nigeria's economic, political, and cultural relations. Advantages (market access, technology transfer, FDI). Disadvantages (de-industrialization, economic vulnerability, brain drain, cultural imperialism).</td>
+    </tr>
+    <tr>
+      <td class="k">Foreign Policy</td>
+      <td>Meaning. Objectives (sovereignty, economic interest, world peace, African interests). Principles (Afrocentrism, Non-alignment, Non-interference, Peaceful settlement). Factors (internal: national interest, size, economy, government type; external: global power structure, international organizations, neighbours).</td>
+    </tr>
+    <tr>
+      <td class="k">Africa as Centre Piece</td>
+      <td>Origin (Balewa's 1960 speech). Justification (security, economic interest, Black leadership, anti-colonialism). Demonstrations (Anti-Apartheid, ECOMOG, liberation movements, founding OAU/ECOWAS). Non-Aligned Movement (NAM): aims, problems.</td>
+    </tr>
+    <tr>
+      <td class="k">UNO</td>
+      <td>Origin (1945, San Francisco). Organs (General Assembly, Security Council, ECOSOC, Secretariat, ICJ, Trusteeship Council). P5 and Veto Power. Achievements (preventing WWIII, peacekeeping, decolonization, WHO/UNICEF). Problems (Veto, lack of funding, no army, big power dominance).</td>
+    </tr>
+    <tr>
+      <td class="k">OAU/AU</td>
+      <td>Origin (OAU: 1963, Addis Ababa; AU: 2002, Durban). Casablanca vs. Monrovia Blocs. Aims (OAU: decolonization, non-interference; AU: integration, non-indifference). Achievements (OAU: decolonization; AU: peacekeeping, AfCFTA). Problems (financial dependency, lack of political will, implementation gap).</td>
+    </tr>
+    <tr>
+      <td class="k">Commonwealth</td>
+      <td>Origin (British Empire, London Declaration 1949). Aims (democracy, human rights, development). Principles (Harare Declaration). Organs (CHOGM, Secretariat). Achievements (Anti-Apartheid, suspension of erring members, scholarships). Criticisms (neo-colonialism, "talk shop," limited enforcement).</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    <h4>Exam Strategy</h4>
+    <ul class="tight">
+      <li><b>Read the question carefully:</b> Identify the key verb — "Define," "Explain," "Discuss," "Compare," "List." Your answer must match the command word.</li>
+      <li><b>Plan your answer:</b> For essay questions, take a minute to jot down the main points you want to make before you start writing.</li>
+      <li><b>Use the "Define, Explain, Example" method:</b> For "explain" or "discuss" questions, start with a clear definition, provide a detailed explanation, and then give a specific example to support your point.</li>
+      <li><b>Be specific:</b> Use names, dates, and specific events (e.g., "ECOMOG in Liberia," "1973 Oil Crisis," "Veto Power") to show depth of knowledge.</li>
+      <li><b>Structure your essay:</b> Use an introduction, a body with clearly numbered points, and a brief conclusion.</li>
+    </ul>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <h4>Practice Essay Questions</h4>
+      <ol class="tight">
+        <li>Explain five reasons for military intervention in Nigerian politics.</li>
+        <li>Discuss five consequences of violent conflict on a nation's development.</li>
+        <li>Differentiate between "Negative Peace" and "Positive Peace."</li>
+        <li>Explain three advantages and three disadvantages of globalization for Nigeria.</li>
+        <li>Outline the objectives and principles of Nigeria's foreign policy.</li>
+        <li>Give three examples of how Nigeria has demonstrated that Africa is the centrepiece of its foreign policy.</li>
+        <li>Discuss the aims and problems of the United Nations Organisation (UNO).</li>
+        <li>Compare and contrast the aims and achievements of the OAU and the AU.</li>
+        <li>What is the Commonwealth of Nations? Discuss its achievements and criticisms.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Select one past WAEC/NECO essay question from any of the weeks in this term and write a full, detailed answer under timed conditions (45 minutes).</li>
+        <li>Create a set of 10 flashcards for the key terms and dates covered this term (e.g., "1963 OAU," "2002 AU," "Veto Power," "ECOMOG," "Afrocentrism").</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>

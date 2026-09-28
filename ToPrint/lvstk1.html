@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 1 Livestock Farming — First Term</title>
+<style>
+/* ============================================================
+   SS 1 LIVESTOCK FARMING — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #1a6e3d;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #1a6e3d;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a6e3d;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a6e3d;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a6e3d;
+  border-bottom:1.4pt solid #d4e3d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #b9c1b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f8f4;
+  border-color:#a8c8b2;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa79a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#48524a;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#1a6e3d;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a6e3d;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3ee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #1a6e3d;
+  color:#1a6e3d;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 1 Livestock Farming — First Term</h1>
+  <p class="term">Weeks 1–11 · Introduction, History, Classification, Housing, Nutrition & Breeding · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — INTRODUCTION TO LIVESTOCK FARMING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Introduction to Livestock Farming</h2>
+  <p class="meta"><b>Content:</b> Meaning, importance, scope, and types of livestock farming.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define livestock farming and differentiate it from pet keeping.</li>
+      <li>List and explain the nutritional, economic, agricultural, and social importance of livestock.</li>
+      <li>Identify the scope of livestock farming (types of animals and their products).</li>
+      <li>Distinguish between subsistence and commercial livestock farming.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A central hub diagram titled "Livestock Farming" with branches for "Importance" (Nutritional, Economic, Employment, Social/Cultural, Environmental), "Scope" (Ruminants, Poultry, Swine, Aquaculture/Other), and "Types" (Subsistence vs. Commercial). Not embedded in the source.</p>
+
+  <h3>1.1 Meaning of Livestock Farming</h3>
+  <p><b>Livestock farming</b>, a major branch of agriculture, is the scientific and purposeful practice of breeding, raising, and managing domestic animals (livestock). These animals are kept for the primary purpose of producing valuable resources, which include:</p>
+  <ul class="tight">
+    <li><b>Food:</b> Meat (beef, pork, chicken), milk, eggs.</li>
+    <li><b>Fiber:</b> Wool (from sheep), hides and skin (for leather).</li>
+    <li><b>Labor:</b> Draught animals (e.g., cattle, donkeys) used for plowing and transportation.</li>
+    <li><b>Other Products:</b> Manure (for fertilizer), bone meal, etc.</li>
+  </ul>
+  <p>It is distinct from simply keeping pets, as it is an economic activity aimed at production and profit.</p>
+
+  <h3>1.2 Importance of Livestock Farming</h3>
+  <h4>1. Nutritional Importance</h4>
+  <ul class="tight">
+    <li><b>High-Quality Protein:</b> Livestock products (meat, milk, eggs) are the best sources of high-biological-value protein, which contains all the essential amino acids required for human growth, tissue repair, and immune system function.</li>
+    <li><b>Vitamins and Minerals:</b> They provide vital nutrients that are difficult to find in plant-based diets, such as Vitamin B12 (for nerve function) and Haem-iron (easily absorbed iron to prevent anemia). Milk is a primary source of Calcium for bone health.</li>
+  </ul>
+
+  <h4>2. Economic Importance</h4>
+  <ul class="tight">
+    <li><b>Income and Livelihood:</b> It provides a direct source of income for millions of people, from rural nomadic pastoralists to commercial poultry farmers.</li>
+    <li><b>Employment:</b> It creates a vast number of jobs, not just on the farm (farmhands, veterinarians) but also in related industries (feed mills, abattoirs, transportation, marketing).</li>
+    <li><b>Foreign Exchange:</b> The export of hides and skin (especially "Morocco" leather from Nigerian goats) is a major source of foreign currency for the country.</li>
+    <li><b>Raw Materials:</b> It supplies raw materials to many industries, such as leather (for shoes, bags), textiles (wool), and animal feed (bone meal, blood meal).</li>
+  </ul>
+
+  <h4>3. Agricultural and Environmental Importance</h4>
+  <ul class="tight">
+    <li><b>Draught Power:</b> In many rural communities, cattle (especially bulls) are used as draught animals for plowing land for crop farming, which is cheaper than buying a tractor.</li>
+    <li><b>Manure (Fertilizer):</b> Animal waste (dung, poultry droppings) is an excellent, nutrient-rich organic fertilizer that improves soil structure and fertility, reducing the need for chemical fertilizers.</li>
+  </ul>
+
+  <h4>4. Social and Cultural Importance</h4>
+  <ul class="tight">
+    <li><b>Status Symbol:</b> In many traditional Nigerian societies, the number of animals a person owns (especially cattle) is a direct measure of their wealth and social standing.</li>
+    <li><b>Cultural Use:</b> Livestock (goats, chickens, rams) are essential for festivals, ceremonies, marriages (as part of the dowry), and religious sacrifices.</li>
+  </ul>
+
+  <h3>1.3 Scope of Livestock Farming</h3>
+  <p>The scope refers to the different types of animals that are commonly farmed.</p>
+  <table>
+    <tr><th>Livestock</th><th>Primary Products</th><th>By-Products</th></tr>
+    <tr><td class="k">Cattle</td><td>Meat (Beef), Milk</td><td>Hides (Leather), Manure, Draught Power</td></tr>
+    <tr><td class="k">Poultry</td><td>Meat (Chicken, Turkey), Eggs</td><td>Feathers, Manure (Droppings)</td></tr>
+    <tr><td class="k">Goats</td><td>Meat, Milk</td><td>Skin (Morocco Leather), Manure</td></tr>
+    <tr><td class="k">Sheep</td><td>Meat (Mutton, Lamb), Wool</td><td>Skin, Manure</td></tr>
+    <tr><td class="k">Pigs (Swine)</td><td>Meat (Pork, Bacon, Ham)</td><td>Skin (Leather), Lard (Fat)</td></tr>
+    <tr><td class="k">Rabbits</td><td>Meat (Lean), Fur</td><td>Skin, Manure</td></tr>
+    <tr><td class="k">Fish</td><td>Meat (Fish)</td><td>Fish oil, Fish meal</td></tr>
+  </table>
+
+  <h3>1.4 Difference Between Subsistence and Commercial Livestock Farming</h3>
+  <p>This is the primary way livestock farming is categorized by its scale and purpose.</p>
+  <table>
+    <tr><th>Feature</th><th>SUBSISTENCE FARMING</th><th>COMMERCIAL FARMING</th></tr>
+    <tr><td class="k">Goal</td><td>To feed the immediate family.</td><td>To make a profit by selling to the public.</td></tr>
+    <tr><td class="k">Scale</td><td>Small scale (e.g., 5 goats, 10 local chickens).</td><td>Large scale (e.g., 5,000 broilers, 200 cattle).</td></tr>
+    <tr><td class="k">Technology</td><td>Low-tech. Uses traditional methods, local breeds, free-range.</td><td>High-tech. Uses modern housing (battery cages), machines, veterinary medicine.</td></tr>
+    <tr><td class="k">Input</td><td>Low input, minimal cost.</td><td>High input, significant capital investment.</td></tr>
+    <tr><td class="k">Output</td><td>Low output, mainly for household consumption.</td><td>High output, market-oriented for profit.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define livestock farming in your own words.</li>
+        <li>List and explain three economic and two nutritional importances of livestock farming in Nigeria.</li>
+        <li>What is the primary product of (a) Cattle, (b) Poultry, and (c) Goats?</li>
+        <li>Explain the term "Draught Animal."</li>
+        <li>In a table, state five key differences between subsistence and commercial livestock farming.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 200-word essay on the topic: "How Livestock Farming Contributes to Nigeria's Food Security."</li>
+        <li>Interview a local farmer (e.g., a poultry keeper or goat herder) in your area. Find out (a) the number of animals they keep, (b) what they feed them, and (c) if they farm for subsistence or commercial purposes. Write a one-page report.</li>
+        <li>What are "Hides and Skin"? Research the "Morocco Leather" industry in Nigeria and its importance.</li>
+        <li>Define the terms: Pastoralism, Abattoir, Feed Mill, High-Biological-Value Protein.</li>
+        <li>Create a poster illustrating the "Scope of Livestock Farming," showing at least 6 different animals and their main products.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — HISTORY AND DEVELOPMENT OF LIVESTOCK FARMING IN NIGERIA
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>History and Development of Livestock Farming in Nigeria</h2>
+  <p class="meta"><b>Content:</b> Traditional systems, modern methods, and government roles in livestock development.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Describe traditional systems: nomadic pastoralism and village free-range.</li>
+      <li>Explain the shift to modern methods: exotic breeds, intensive housing, veterinary medicine, and feed formulation.</li>
+      <li>State the roles of government in livestock development (research institutes, programs, policies).</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A timeline showing the evolution from "Traditional Systems" (Nomadic Pastoralism, Village Free-Range) to "Modern Methods" (Exotic Breeds, Intensive Housing, Veterinary Medicine, Feed Formulation, AI). Not embedded in the source.</p>
+
+  <h3>2.1 Traditional Systems</h3>
+  <h4>1. Nomadic Pastoralism</h4>
+  <p>This is the most well-known traditional system, primarily associated with the Fulani people and their Zebu cattle. It is a mobile system where herders move their animals over large distances in search of pasture (grass) and water.</p>
+  <ul class="tight">
+    <li><b>Transhumance:</b> This is a specific type of pastoralism where the movement is seasonal. The herders move their cattle from the dry, savanna North during the rainy season to the greener South (Middle Belt) during the dry season.</li>
+  </ul>
+  <p><b>Characteristics:</b></p>
+  <ul class="tight">
+    <li>Animals (e.g., Zebu) are extremely hardy, disease-resistant, and can walk long distances.</li>
+    <li>Production (milk, meat) is low.</li>
+    <li>Animals are a sign of wealth and culture, not just profit.</li>
+    <li>This system is now under severe pressure due to population growth, climate change, and conflict with crop farmers.</li>
+  </ul>
+
+  <h4>2. Village/Backyard (Free-Range) System</h4>
+  <p>This is the most common system for poultry, goats, and sheep in rural and semi-urban areas.</p>
+  <p><b>Characteristics:</b></p>
+  <ul class="tight">
+    <li>Animals are not confined. They "free-range" during the day, scavenging for their own food (insects, household scraps, grass).</li>
+    <li>They are given minimal housing (e.g., a small shed) at night.</li>
+    <li>Input (cost) is almost zero.</li>
+    <li>Output is low, and animals are vulnerable to theft, predators, and diseases (like Newcastle disease in poultry).</li>
+  </ul>
+
+  <h3>2.2 Modern Methods and Development</h3>
+  <p>The development of modern livestock farming in Nigeria was a conscious effort to move from low-output traditional systems to high-output commercial systems.</p>
+
+  <h4>1. Introduction of Exotic (Foreign) Breeds</h4>
+  <p>This was a major turning point. Scientists and policymakers realized that local breeds were hardy but produced very little.</p>
+  <ul class="tight">
+    <li><b>Cattle:</b> Holstein-Friesian (for high milk yield), Hereford (for high beef yield).</li>
+    <li><b>Poultry:</b> Broilers (for meat, grow in 6-8 weeks) and Layers (e.g., Leghorn, for high egg production).</li>
+    <li><b>Pigs:</b> Large White, Landrace (for high-quality pork).</li>
+  </ul>
+  <p><b>Problem:</b> These breeds are not adapted to Nigeria's climate or diseases (e.g., Trypanosomiasis from tsetse flies). They require intensive management.</p>
+
+  <h4>2. Intensive Housing Systems</h4>
+  <ul class="tight">
+    <li><b>Battery Cages:</b> For laying hens. This confines birds in small cages, which protects them from disease, prevents egg-eating, and makes management easy.</li>
+    <li><b>Deep Litter System:</b> For broilers. Thousands of birds are raised on a sawdust-covered floor in a large, ventilated "broiler house."</li>
+    <li><b>Piggeries:</b> Concrete pens for raising pigs, separating them from mud and waste.</li>
+  </ul>
+
+  <h4>3. Advancements in Veterinary Medicine</h4>
+  <p>The establishment of veterinary colleges and research centers allowed for the mass production of vaccines (e.g., against Newcastle, Gumboro) and drugs (antibiotics, dewormers), making it possible to keep thousands of animals in one place without them all dying.</p>
+
+  <h4>4. Feed Formulation</h4>
+  <p>The shift from scavenging to scientific feed formulation (creating balanced rations from maize, soybean, etc.) allowed animals to reach their full genetic potential. This created the massive "animal feed" industry.</p>
+
+  <h4>5. Artificial Insemination (AI)</h4>
+  <p>The (limited) introduction of AI, especially in cattle, allowed farmers to get calves from a superior bull without owning the bull.</p>
+
+  <h3>2.3 Government Roles in Livestock Development</h3>
+  <p>The Nigerian government has historically played a major role in trying to boost livestock production.</p>
+
+  <h4>1. Research Institutes</h4>
+  <ul class="tight">
+    <li><b>NAPRI (National Animal Production Research Institute):</b> Located in Shika, Zaria. This is the primary institute for research into animal breeding, nutrition, and production systems in Nigeria.</li>
+    <li><b>NVRI (National Veterinary Research Institute):</b> Located in Vom, Plateau State. This is the primary institute for animal disease research and the production of most animal vaccines used in the country.</li>
+    <li><b>KLDB (Kainji Lake Research Institute):</b> Researches freshwater fisheries.</li>
+  </ul>
+
+  <h4>2. National Development Programs</h4>
+  <ul class="tight">
+    <li><b>Agricultural Development Projects (ADPs):</b> State-level programs (funded by the World Bank) that provided farmers with extension services, inputs, and technology.</li>
+    <li><b>Operation Feed the Nation (OFN):</b> A past military government initiative to boost all forms of agriculture, including backyard poultry.</li>
+  </ul>
+
+  <h4>3. Policy and Infrastructure</h4>
+  <ul class="tight">
+    <li><b>Grazing Reserves:</b> Establishing designated areas for pastoralists to graze, in an attempt to reduce farmer-herder conflict.</li>
+    <li><b>Import Bans:</b> Banning the import of frozen poultry (chicken, turkey) to protect and stimulate the local poultry industry.</li>
+    <li><b>Border Control:</b> Setting up quarantine stations at borders to check animals for diseases.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is "Nomadic Pastoralism"?</li>
+        <li>Describe the "Free-Range" system of poultry keeping. What are two of its disadvantages?</li>
+        <li>Name two exotic breeds of cattle and one exotic breed of pig introduced to Nigeria. What is their main disadvantage?</li>
+        <li>What is the main difference between the Battery Cage system and the Deep Litter system?</li>
+        <li>What are the full names and primary functions of NAPRI and NVRI?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on the challenges facing traditional "Nomadic Pastoralism" in Nigeria today (e.g., climate change, population, farmer-herder conflict).</li>
+        <li>In a table, compare "Traditional Livestock Keeping" with "Modern Methods" using the following criteria: Breeds, Housing, Feed, and Disease Control.</li>
+        <li>Research "Operation Feed the Nation (OFN)." When was it launched, and what was its main goal?</li>
+        <li>Define the following terms: Transhumance, Exotic Breed, Indigenous Breed, Vaccine, Extension Services.</li>
+        <li>What is your opinion on the "Battery Cage" system for laying hens? Write a 100-word paragraph discussing its "pros" (efficiency) and "cons" (animal welfare).</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — CLASSIFICATION OF LIVESTOCK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Classification of Livestock</h2>
+  <p class="meta"><b>Content:</b> Classification based on digestive system (Ruminants vs. Non-Ruminants).</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain the primary basis for classifying livestock.</li>
+      <li>Define ruminants and non-ruminants.</li>
+      <li>Identify the four compartments of the ruminant stomach and their functions.</li>
+      <li>State the key characteristics of ruminants and non-ruminants.</li>
+      <li>Describe special cases (pseudo-ruminants like rabbits).</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A classification flowchart: "Animal Stomach" branches into "Polygastric (4-chambered)" leading to "Ruminants" (digests cellulose) and "Monogastric (1-chambered)" leading to "Non-Ruminants" (cannot digest cellulose). Not embedded in the source.</p>
+
+  <h3>3.1 Introduction</h3>
+  <p>A more fundamental way to classify farm animals is by their digestive system (their stomach). This is the most important classification because it determines what you can feed them and how they must be managed. All livestock are divided into two main groups: Ruminants and Non-Ruminants.</p>
+
+  <h3>3.2 Ruminants</h3>
+  <p><b>Definition:</b> A ruminant is a mammal that has a complex, four-compartment stomach. They are "polygastric" (Poly = many; gastric = stomach).</p>
+  <p><b>Examples:</b> Cattle, Goats, Sheep.</p>
+
+  <h4>The Four Compartments</h4>
+  <table>
+    <tr><th style="width:20%">Compartment</th><th>Description and Function</th></tr>
+    <tr><td class="k">a. Rumen</td><td>This is the first and largest compartment. It is not a "true" stomach. It is a massive fermentation vat. It contains billions of microbes (bacteria, fungi, protozoa). These microbes do what the cow cannot: they break down cellulose (the tough fiber in grass) through fermentation.</td></tr>
+    <tr><td class="k">b. Reticulum</td><td>This is connected to the rumen (often called the "rumen-reticulum"). It has a honeycomb lining. Its job is to trap heavy, non-food items (like stones or nails) and to help with rumination.</td></tr>
+    <tr><td class="k">c. Omasum</td><td>This is a globe-shaped organ with many folds of tissue ("many-plies"). Its main job is to absorb water and filter the food.</td></tr>
+    <tr><td class="k">d. Abomasum</td><td>This is the "True Stomach." It functions exactly like a human stomach, secreting acid (HCl) and digestive enzymes (like pepsin) to digest protein.</td></tr>
+  </table>
+
+  <h4>Key Characteristics of Ruminants</h4>
+  <ul class="tight">
+    <li><b>They Chew the Cud (Rumination):</b> This is their defining feature. The animal eats grass, swallows it into the rumen, and then later regurgitates the partially digested food (the "cud") back into its mouth to be chewed again. This (1) adds saliva and (2) breaks the food into smaller pieces, giving the microbes more surface area to work on.</li>
+    <li><b>They Digest Cellulose:</b> They can survive and thrive on high-fiber, low-quality feeds (like grass, hay, silage, straw) that humans and other animals cannot. They do not compete with humans for food (grains).</li>
+    <li><b>Bloat:</b> They are prone to a dangerous condition called "bloat," where fermentation gas gets trapped in the rumen.</li>
+  </ul>
+
+  <h3>3.3 Non-Ruminants</h3>
+  <p><b>Definition:</b> A non-ruminant is an animal that has a simple, single-compartment stomach. They are "monogastric" (Mono = one).</p>
+  <p><b>Examples:</b> Pigs, Poultry (Chickens, Turkeys), Rabbits. (Humans are also monogastric).</p>
+
+  <h4>Key Characteristics of Non-Ruminants</h4>
+  <ul class="tight">
+    <li><b>Simple Stomach:</b> Their stomach produces acid and enzymes to digest food, just like the abomasum.</li>
+    <li><b>Cannot Digest Cellulose:</b> They have no rumen and cannot break down high-fiber grass. If you feed a chicken only grass, it will starve.</li>
+    <li><b>They Compete with Humans:</b> Because they cannot eat grass, their diet is based on high-energy, low-fiber foods like grains (maize, sorghum) and protein meals (soybean, groundnut cake). These are all foods that humans can also eat.</li>
+    <li><b>Efficient Feed Conversion:</b> Many (like pigs and broilers) are extremely efficient at converting high-quality feed into meat.</li>
+  </ul>
+
+  <h3>3.4 Special Cases (Pseudo-Ruminants)</h3>
+  <ul class="tight">
+    <li>Some animals (like Rabbits and Horses) are non-ruminant but can digest fiber.</li>
+    <li>Rabbits have a very large cecum (a pouch in the intestine) that acts like a small "rumen," fermenting fiber.</li>
+    <li>Rabbits also practice <b>coprophagy</b> (eating their own soft, night-time feces) to re-digest the food and absorb the nutrients.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is the primary basis for classifying livestock into ruminants and non-ruminants?</li>
+        <li>What does "Polygastric" mean?</li>
+        <li>List the four compartments of the ruminant stomach in order.</li>
+        <li>What is the function of the Rumen? What is the function of the Abomasum?</li>
+        <li>What is "Rumination"?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay explaining why a cow can survive by eating only grass, but a pig cannot. (Use the terms "Rumen," "Microbes," "Cellulose," and "Monogastric").</li>
+        <li>Draw a simple, labeled diagram of the four compartments of the ruminant stomach.</li>
+        <li>Create a two-column table. In Column 1, list the following animals: Cattle, Pig, Goat, Chicken, Rabbit, Sheep, Turkey. In Column 2, classify them as "Ruminant" or "Non-Ruminant."</li>
+        <li>Research the term "Coprophagy" as it relates to rabbits. Why do they do this?</li>
+        <li>Define the following terms: Cellulose, Fermentation, Regurgitate, Monogastric, Abomasum.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — LIVESTOCK HOUSING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Livestock Housing</h2>
+  <p class="meta"><b>Content:</b> Principles of good livestock housing; types of housing for poultry, cattle, pigs, goats and sheep.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>State the principles of good livestock housing.</li>
+      <li>Describe the different types of poultry housing (deep litter, battery cage).</li>
+      <li>Explain housing requirements for cattle (kraals, paddocks, barns).</li>
+      <li>Describe the features of a piggery (farrowing pen, wallow).</li>
+      <li>Explain the raised-floor, slatted-floor system for goats and sheep.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A cross-section of a poultry house showing the roof, east-west orientation, ventilation mesh, airflow, water lines, feeders, sloped concrete floor, and manure drain. Also a diagram of a farrowing crate and a raised slatted-floor goat house. Not embedded in the source.</p>
+
+  <h3>4.1 Introduction</h3>
+  <p>In modern livestock farming (especially commercial systems), animals are not just left to wander. Housing is a critical management tool. A livestock house is any structure built to confine, protect, and manage animals.</p>
+
+  <h3>4.2 Principles of Good Livestock Housing</h3>
+  <table>
+    <tr><th style="width:22%">Principle</th><th>Explanation</th></tr>
+    <tr><td class="k">1. Orientation (Siting)</td><td>The building should be sited on high, well-drained ground. <b>East-West Orientation:</b> The long axis of the building should face East-West. This minimizes the amount of hot, direct sun that hits the long walls, keeping the inside cooler.</td></tr>
+    <tr><td class="k">2. Ventilation</td><td>Critical. The building must have excellent cross-ventilation (e.g., open sides with wire mesh). Purpose: To remove hot air, harmful gases (ammonia), reduce humidity, and bring in fresh oxygen. Poor ventilation leads to respiratory diseases.</td></tr>
+    <tr><td class="k">3. Space (Stocking Density)</td><td>The house must be large enough for the number of animals. Overstocking leads to stress, competition, faster disease spread, and vices (like feather-pecking in chickens).</td></tr>
+    <tr><td class="k">4. Drainage</td><td>The floor must be sloped (e.g., 1:20 gradient) so that water (from cleaning or urine) flows out. This prevents "water-logging" and dampness, which breed disease.</td></tr>
+    <tr><td class="k">5. Security</td><td>The house must be strong enough to prevent predators (e.g., snakes, foxes) from entering and secure enough to prevent theft.</td></tr>
+    <tr><td class="k">6. Hygiene</td><td>The floor and walls (especially in a piggery) should be made of smooth, durable concrete. This makes them non-porous and easy to wash, clean, and disinfect.</td></tr>
+    <tr><td class="k">7. Accessibility</td><td>The house must be accessible to bring in feed and water, and to remove waste and animals.</td></tr>
+  </table>
+
+  <h3>4.3 Poultry Housing</h3>
+  <ul class="tight">
+    <li><b>Extensive (Free-Range):</b> Traditional. Birds scavenge by day and may have a simple shed for night.</li>
+    <li><b>Semi-Intensive:</b> A fixed house is provided, along with an outside, fenced-in "run" or "paddock."</li>
+    <li><b>Intensive (Fully Confined):</b>
+      <ul class="tight">
+        <li><b>Deep Litter System:</b> For Broilers and young layers ("pallets"). A large, well-ventilated house with a concrete floor covered with a thick (6-8 inch) layer of absorbent "litter" (e.g., wood shavings). Drinkers, feeders, and heaters are all inside.</li>
+        <li><b>Battery Cage System:</b> For adult Laying Hens. Birds are kept in small wire cages, stacked in long rows. Feed and water are provided in troughs outside the cage. The cage floor is sloped, so when an egg is laid, it rolls forward out of the cage. Waste drops through the wire floor, separating the bird from its manure. Pros: Very high production, clean eggs, easy to manage, high stocking density. Cons: Low animal welfare, high initial cost.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>4.4 Cattle Housing</h3>
+  <p>In Nigeria, cattle are often kept in simple fenced-in areas called <b>paddocks</b> (for grazing) or <b>kraals</b> (a traditional fenced enclosure). Modern systems include:</p>
+  <ul class="tight">
+    <li><b>Feedlot:</b> An intensive system for beef fattening. Cattle are kept in outdoor pens and are brought a high-energy diet.</li>
+    <li><b>Dairy Barns (Cubicle Housing):</b> A large, well-ventilated building for dairy cows. Each cow has its own "cubicle" or stall for resting. Designed for hygiene and comfort to maximize milk production.</li>
+  </ul>
+
+  <h3>4.5 Pig Housing (Piggery / Pigsty)</h3>
+  <p><b>Key Feature:</b> Pigs are very strong, destructive, and produce a lot of wet manure. The house must be made of strong concrete blocks and concrete floors.</p>
+  <p><b>Specialized Pens:</b></p>
+  <ul class="tight">
+    <li><b>Farrowing Pen:</b> For the pregnant/mother sow. It contains a "farrowing crate," which is a special cage that stops the mother from accidentally crushing her piglets.</li>
+    <li><b>Boar Pen:</b> A strong, individual pen for the adult male.</li>
+    <li><b>Finishing Pen:</b> A larger group pen for growing pigs.</li>
+  </ul>
+  <p><b>Features:</b> Must have a water wallow (a small pool) for cooling and a good drainage gutter.</p>
+
+  <h3>4.6 Goat and Sheep Housing</h3>
+  <p>These are simpler. A basic, well-ventilated shed is often sufficient. A common modern design is a <b>raised-floor house</b>. The house is built on stilts (e.g., 1-2 meters off the ground) with a slatted (gapped) wooden or plastic floor.</p>
+  <p><b>Advantage:</b> The feces and urine fall through the floor, keeping the animals clean, dry, and far away from parasites (like worms).</p>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is the "East-West Orientation," and why is it the most important principle for siting a livestock house in Nigeria?</li>
+        <li>List five other principles of good housing.</li>
+        <li>Describe the "Deep Litter" system. What animal is it used for, and what material is used for the "litter"?</li>
+        <li>Describe the "Battery Cage" system. What animal is it used for, and how does its design help with egg collection?</li>
+        <li>Why must a piggery be built with very strong materials like concrete?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay explaining the importance of Ventilation and Drainage in a livestock house. What happens if these two things are poor?</li>
+        <li>Draw a simple, labeled diagram of a Battery Cage system, showing the hen, the sloped floor, the egg, the feed trough, and the water nipple.</li>
+        <li>Draw a simple, labeled diagram of a Deep Litter house, showing the litter, drinkers, and feeders.</li>
+        <li>Research and describe a "Farrowing Crate." Why is it a necessary piece of equipment in a piggery?</li>
+        <li>What is a "slatted floor" in a goat house, and what is its main advantage?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Midterm Examination</h2>
+  <p class="meta"><b>Content:</b> Assessment covering Weeks 1–4.</p>
+
+  <div class="box obj">
+    <h4>Scope</h4>
+    <ol class="cols2 tight">
+      <li>Introduction to Livestock Farming.</li>
+      <li>History and Development in Nigeria.</li>
+      <li>Classification of Livestock.</li>
+      <li>Livestock Housing.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for this week. If a printed question paper exists, paste the cover or instructions here.</p>
+
+  <h3>Suggested Structure</h3>
+  <table>
+    <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+    <tr><td class="k">A — Objectives</td><td>20 marks</td><td>Twenty multiple-choice questions covering Weeks 1–4.</td></tr>
+    <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+    <tr><td class="k">C — Essay</td><td>20 marks</td><td>Two essay questions requiring detailed explanations.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Revision Focus</h4>
+    <ul class="cols2 tight">
+      <li>Meaning and importance of livestock farming.</li>
+      <li>Subsistence vs. Commercial farming.</li>
+      <li>Nomadic pastoralism and transhumance.</li>
+      <li>Exotic vs. indigenous breeds.</li>
+      <li>NAPRI and NVRI.</li>
+      <li>Ruminants vs. Non-ruminants.</li>
+      <li>Four compartments of the ruminant stomach.</li>
+      <li>Principles of livestock housing.</li>
+      <li>Deep litter and battery cage systems.</li>
+      <li>Farrowing crate and raised slatted floors.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — ANIMAL NUTRITION I
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Animal Nutrition I: Classes of Feed</h2>
+  <p class="meta"><b>Content:</b> The six classes of animal feed nutrients, their functions and sources.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>List the six classes of animal feed nutrients.</li>
+      <li>Explain the function of carbohydrates, proteins, fats, vitamins, minerals, and water.</li>
+      <li>Identify feed sources for each nutrient class.</li>
+      <li>Distinguish between macro-minerals and micro-minerals.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A pie chart showing the six classes of nutrients and their relative proportions in a typical animal ration. Also a diagram showing the sources of each nutrient (e.g., maize for carbohydrates, GNC for protein). Not embedded in the source.</p>
+
+  <h3>6.1 Introduction</h3>
+  <p>Nutrition is the foundation of livestock production. Feed accounts for 60-70% of the total cost of production in most livestock enterprises. A well-fed animal will grow faster, produce more milk or eggs, and resist disease better than a poorly-fed one.</p>
+
+  <h3>6.2 The Six Classes of Nutrients</h3>
+  <table>
+    <tr><th style="width:18%">Nutrient</th><th>Function</th><th>Source (Ingredients)</th></tr>
+    <tr>
+      <td class="k">1. Carbohydrates</td>
+      <td>The primary <b>energy source</b>. They are the "fuel" that the animal burns to walk, breathe, and stay warm.</td>
+      <td>Maize (corn), Sorghum, Millet, Wheat (in wheat offal), Cassava, Yams.</td>
+    </tr>
+    <tr>
+      <td class="k">2. Proteins</td>
+      <td>The "building blocks" of the body. Essential for <b>growth</b> (building muscle), repairing tissue, and production (making eggs, milk, and developing a fetus).</td>
+      <td><b>Plant-Based:</b> Groundnut Cake (GNC), Soybean Meal, Palm Kernel Cake (PKC).<br><b>Animal-Based:</b> Fish Meal, Blood Meal.</td>
+    </tr>
+    <tr>
+      <td class="k">3. Fats and Oils (Lipids)</td>
+      <td>A concentrated <b>energy source</b>. They provide 2.25 times more energy per gram than carbohydrates. They also help in the absorption of fat-soluble vitamins.</td>
+      <td>Palm Oil, Groundnut Oil, Tallow (animal fat).</td>
+    </tr>
+    <tr>
+      <td class="k">4. Vitamins</td>
+      <td>"Protective" nutrients needed in very small amounts. They <b>regulate body processes</b> and act as "spark plugs" for chemical reactions.</td>
+      <td><b>Fat-Soluble (A, D, E, K):</b> Green leafy plants, synthetic Vitamin Premixes.<br><b>Water-Soluble (B-complex, C):</b> Synthetic Vitamin Premixes.</td>
+    </tr>
+    <tr>
+      <td class="k">5. Minerals</td>
+      <td>Structural and regulatory. Needed for bones, blood, and metabolic processes.</td>
+      <td><b>Macro-minerals:</b> Calcium & Phosphorus (Bone Meal, Oyster Shell, Limestone Flour), Sodium (Salt Licks).<br><b>Micro-minerals:</b> Iron, Iodine, Zinc (Mineral Premixes).</td>
+    </tr>
+    <tr>
+      <td class="k">6. Water</td>
+      <td>The "forgotten nutrient," but the most essential. Regulates body temperature, transports nutrients, essential for digestion and milk/egg production.</td>
+      <td>Must be provided <b>ad libitum</b> (freely available at all times) and must be clean.</td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What are the 6 classes of animal feed (nutrients)?</li>
+        <li>What is the primary function of (a) Carbohydrates and (b) Proteins?</li>
+        <li>Name two plant-based protein sources and one animal-based protein source used in feed.</li>
+        <li>Why are Calcium and Phosphorus so important for a laying hen? Name one ingredient that provides them.</li>
+        <li>What does "ad libitum" mean in the context of providing water?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on why feed is the most important factor in a commercial livestock business.</li>
+        <li>Fats provide 2.25 times more energy than carbohydrates. Why don't we just feed animals a very high-fat diet? (Hint: Think about cost and balance).</li>
+        <li>Create a large, colorful chart of the 6 classes of nutrients. For each class, list its Main Function and 2 Feed Examples.</li>
+        <li>What is a "Vitamin Premix"? Why is it added to animal feed?</li>
+        <li>Define: GNC (Groundnut Cake), PKC (Palm Kernel Cake), Bone Meal, Fat-Soluble, Macro-mineral.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No new academic content. The source marks this as the midterm break.</p>
+
+  <div class="box obj">
+    <h4>Suggested Holiday Tasks</h4>
+    <ol class="cols2 tight">
+      <li>Read ahead: Animal Nutrition II (Balanced Ration, Feed Formulation, Storage).</li>
+      <li>Visit a local feed store. List five different types of animal feed you see and their prices.</li>
+      <li>Ask a farmer what they feed their animals and why.</li>
+      <li>Collect and press five different plants that could be used as forage for rabbits.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for the midterm break. This page is intentionally short so it can serve as a divider sheet.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — ANIMAL NUTRITION II
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Animal Nutrition II: Balanced Ration, Formulation, and Storage</h2>
+  <p class="meta"><b>Content:</b> Meaning of balanced ration; factors affecting feed formulation; principles of feed storage.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define a balanced ration and explain why it is "specific."</li>
+      <li>List and explain the factors affecting feed formulation.</li>
+      <li>State the rules of proper feed storage.</li>
+      <li>Explain the danger of Aflatoxin.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A diagram of a feed store showing bags stacked on wooden pallets (correct) vs. directly on the floor (incorrect), with a symbol for "FIFO" (First-In, First-Out) and icons for pest control (no rats, no moisture, no mold). Not embedded in the source.</p>
+
+  <h3>8.1 Balanced Ration</h3>
+  <p><b>Definition:</b> A <b>ration</b> is the total amount of feed an animal receives in a 24-hour period. A <b>balanced ration</b> is a ration that contains all 6 essential nutrients (carbohydrates, proteins, fats, vitamins, minerals, water) in the correct proportions and amounts to meet the animal's specific needs.</p>
+  <p><b>The Ration is "Specific":</b> There is no single "perfect feed." The "correct proportion" changes depending on the animal.</p>
+  <ul class="tight">
+    <li><b>Example (Poultry):</b>
+      <ul class="tight">
+        <li><b>Broiler Starter Mash:</b> For a 1-week-old broiler (growth). Needs very high protein (e.g., 23%).</li>
+        <li><b>Broiler Finisher Mash:</b> For a 6-week-old broiler (fattening). Needs lower protein (e.g., 19%) but high energy (carbs).</li>
+        <li><b>Layer's Mash:</b> For an egg-laying hen. Needs moderate protein but very high Calcium (for eggshells).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>8.2 Factors Affecting Feed Formulation</h3>
+  <p><b>Feed Formulation</b> is the science of mixing different ingredients (e.g., maize, GNC, bone meal) to create a balanced ration. A farmer or nutritionist must consider these factors:</p>
+  <table>
+    <tr><th style="width:24%">Factor</th><th>Explanation</th></tr>
+    <tr><td class="k">1. The Animal's Species</td><td>A cow (ruminant) needs a high-fiber ration (grass). A chicken (non-ruminant) needs a low-fiber, high-grain ration. You cannot feed cow feed to a chicken.</td></tr>
+    <tr><td class="k">2. The Animal's Age</td><td>Young animals (growth): Need more protein (e.g., Broiler Starter). Adult animals (maintenance): Need less protein and more energy.</td></tr>
+    <tr><td class="k">3. The Animal's Purpose (Physiological State)</td><td>Egg/Milk Production (Lactation): Needs high protein, high calcium, and high energy. Meat Production (Fattening): Needs very high energy. Pregnancy: Needs extra nutrients. Work: A draught animal needs a very high-energy ration.</td></tr>
+    <tr><td class="k">4. Cost and Availability of Ingredients</td><td>This is a business decision. Maize might be the best energy source, but if it's too expensive, the farmer must reformulate using a cheaper alternative (like cassava).</td></tr>
+    <tr><td class="k">5. Health Status</td><td>A sick or recovering animal may need a special, highly digestible ration or medicated feed.</td></tr>
+  </table>
+
+  <h3>8.3 Feed Storage</h3>
+  <p>This is a critical management task. You can buy the best feed in the world, but if you store it incorrectly, it will be wasted or become poisonous.</p>
+  <p><b>The Goal:</b> To protect the feed from Moisture, Pests, and Sunlight.</p>
+
+  <h4>The Ideal Feed Store</h4>
+  <ul class="tight">
+    <li><b>DRY:</b> Must be 100% waterproof.</li>
+    <li><b>COOL:</b> Heat (from sunlight) can degrade vitamins.</li>
+    <li><b>WELL-VENTILATED:</b> Good airflow prevents dampness and mold.</li>
+    <li><b>PEST-PROOF:</b> Must be sealed to keep out rats, mice, weevils, and cockroaches.</li>
+  </ul>
+
+  <h4>Rules of Storage</h4>
+  <ul class="tight">
+    <li><b>USE PALLETS:</b> Never stack feed bags directly on the bare floor (especially concrete). The floor is cold and wicks moisture, causing the bottom bags to mold. Bags must be stacked on wooden pallets (platforms) to allow air to circulate underneath.</li>
+    <li><b>FIFO:</b> "First-In, First-Out." Always use the oldest feed bags before opening the new ones.</li>
+    <li><b>PEST CONTROL:</b> Set traps and seal holes.</li>
+    <li><b>SEPARATE:</b> Keep feeds separate from chemicals like drugs, pesticides, or fuel.</li>
+  </ul>
+
+  <h4>The Danger of Poor Storage (Aflatoxins)</h4>
+  <ul class="tight">
+    <li>If feed (especially Groundnut Cake) gets damp, a toxic mold (<i>Aspergillus</i>) will grow on it.</li>
+    <li>This mold produces a poison called <b>Aflatoxin</b>.</li>
+    <li>Aflatoxin is a silent killer in livestock. It destroys the liver, stunts growth, and causes death. It is a major economic loss.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is a "Balanced Ration"?</li>
+        <li>Why does a "Broiler Starter" feed have a different formulation than a "Layer's Mash"?</li>
+        <li>List 5 factors that a farmer must consider when formulating a feed.</li>
+        <li>What is a "pallet," and why is it essential in a feed store?</li>
+        <li>What is "Aflatoxin," what causes it, and why is it so dangerous?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay explaining why the nutritional needs of a young, growing animal are different from those of an adult animal used for production (e.g., milk or eggs).</li>
+        <li>What does "FIFO" stand for, and how would you implement this system in a feed store?</li>
+        <li>Research "Creep Feed" for piglets. What is it, and why is it given?</li>
+        <li>Draw a simple "cut-away" diagram of a feed store, showing bags stacked correctly (on pallets, away from the wall) and incorrectly (on the floor).</li>
+        <li>Define: Ration, Feed Formulation, Pallet, Aflatoxin, Medicated Feed.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — ANIMAL BREEDING I
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Animal Breeding I: Natural Breeding, AI, Selection</h2>
+  <p class="meta"><b>Content:</b> Methods of selection; natural breeding vs. artificial insemination.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define selection and explain its importance in breeding.</li>
+      <li>Describe mass selection, pedigree selection, and progeny testing.</li>
+      <li>Explain natural breeding and its advantages and disadvantages.</li>
+      <li>Describe artificial insemination (AI) and its advantages and disadvantages.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A Venn diagram comparing Natural Mating and Artificial Insemination (AI), with "Common Goals" in the overlap (Reproduction, Genetic Improvement, Herd Growth) and separate advantages/disadvantages listed for each. Not embedded in the source.</p>
+
+  <h3>9.1 Introduction</h3>
+  <p><b>Animal Breeding</b> is the applied science of using the principles of genetics to improve livestock. Breeding is the process of mating a selected male and female to produce offspring. The goal of all breeding is to ensure that the next generation is better than the current generation.</p>
+
+  <h3>9.2 Selection</h3>
+  <p><b>Selection</b> is the process of choosing which animals will be allowed to become parents. This is the first and most important step in any breeding program. If you breed with poor-quality animals, you will get poor-quality offspring.</p>
+
+  <table>
+    <tr><th style="width:22%">Method</th><th>Description</th><th>Pros and Cons</th></tr>
+    <tr>
+      <td class="k">1. Mass Selection</td>
+      <td>The oldest and simplest method. The farmer simply looks at all their animals and selects the "best-looking" ones (the ones with the best phenotype) to be parents.</td>
+      <td><b>Pro:</b> Simple, easy, and effective for highly heritable traits.<br><b>Con:</b> You cannot select for traits you can't see (like disease resistance) or traits in the opposite sex (like milk production in a bull).</td>
+    </tr>
+    <tr>
+      <td class="k">2. Pedigree Selection</td>
+      <td>Selecting an animal based on the performance records of its ancestors (its "pedigree" or "family tree").</td>
+      <td><b>Pro:</b> Allows you to select for traits before the animal is old enough to show them.<br><b>Con:</b> The records might be inaccurate, and the animal may not have inherited the good genes.</td>
+    </tr>
+    <tr>
+      <td class="k">3. Progeny Testing</td>
+      <td>The most accurate and most complex method. An animal (especially a male) is selected based on the performance of his offspring (his "progeny").</td>
+      <td><b>Pro:</b> The most reliable method, as it tests the actual genes the male is passing on.<br><b>Con:</b> Very slow (takes years to get results) and very expensive. Used by large breeding companies.</td>
+    </tr>
+  </table>
+
+  <h3>9.3 Mating Systems</h3>
+  <h4>1. Natural Breeding (Natural Mating)</h4>
+  <p><b>Definition:</b> The traditional method of allowing a male animal (e.g., bull, boar, ram) to physically mount and copulate with a female in "heat" (estrus).</p>
+  <p><b>Advantages:</b></p>
+  <ul class="tight">
+    <li><b>Simple and Low-Tech:</b> Requires no special equipment or training.</li>
+    <li><b>High Conception Rate:</b> The male is an expert at detecting the exact time the female is fertile.</li>
+  </ul>
+  <p><b>Disadvantages:</b></p>
+  <ul class="tight">
+    <li><b>Disease Transmission:</b> A male can easily pass Sexually Transmitted Diseases (STDs) (e.g., Brucellosis) to all females.</li>
+    <li><b>Risk of Injury:</b> A large, heavy male (like a bull) can injure a small female (a heifer).</li>
+    <li><b>Cost and Risk of Keeping Males:</b> Large male animals are often aggressive, dangerous to the farmer, and expensive to feed and house all year.</li>
+    <li><b>Limited Genetics:</b> One bull can only service a few cows in his local area.</li>
+  </ul>
+
+  <h4>2. Artificial Insemination (AI)</h4>
+  <p><b>Definition:</b> This is a high-tech breeding method. It involves:</p>
+  <ol class="tight">
+    <li>Collecting semen (sperm) from a genetically superior male.</li>
+    <li>Processing, diluting, and freezing the semen in liquid nitrogen (in "semen straws").</li>
+    <li>A trained technician manually inserts the thawed semen into the female's reproductive tract (uterus) at the correct time of her heat cycle.</li>
+  </ol>
+  <p><b>Advantages:</b></p>
+  <ul class="tight">
+    <li><b>RAPID GENETIC IMPROVEMENT:</b> The semen from one prize-winning bull can be frozen and used to sire thousands of calves all over the world, rapidly improving the genetic quality of the entire population.</li>
+    <li><b>DISEASE CONTROL:</b> Semen is tested for STDs before being frozen. This prevents the spread of diseases.</li>
+    <li><b>SAFETY AND COST:</b> The farmer doesn't need to own a dangerous, expensive bull. They just buy a straw of semen.</li>
+    <li><b>BREEDING ACCESS:</b> A small farmer in Nigeria can use AI to get a calf from the best bull in Holland or America.</li>
+  </ul>
+  <p><b>Disadvantages:</b></p>
+  <ul class="tight">
+    <li><b>Requires a Skilled Technician:</b> You must hire a trained AI technician.</li>
+    <li><b>Heat Detection:</b> The farmer must be able to accurately detect when the cow is in "heat." If the timing is wrong, the AI will fail.</li>
+    <li><b>Lower Conception Rate:</b> Can be less successful than natural mating if not timed perfectly.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is "Selection" in animal breeding?</li>
+        <li>Describe "Mass Selection." What is its main disadvantage?</li>
+        <li>What is "Progeny Testing"? Why is it the most accurate method?</li>
+        <li>List three major disadvantages of Natural Breeding.</li>
+        <li>List three major advantages of Artificial Insemination (AI).</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay explaining why Artificial Insemination (AI) is a more powerful tool for genetic improvement than Natural Breeding.</li>
+        <li>Draw a simple diagram or flowchart illustrating the entire process of AI, from semen collection to insemination.</li>
+        <li>What does "Heat" (or "Estrus") mean? Research and list 3 behavioral signs that a cow is in heat.</li>
+        <li>Define the following terms: Phenotype, Pedigree, Progeny, Semen, Conception Rate.</li>
+        <li>A poultry farmer wants to improve her local chickens. What selection method would be the easiest and fastest for her to use? Explain your choice.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — ANIMAL BREEDING II
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Animal Breeding II: Breeding Systems</h2>
+  <p class="meta"><b>Content:</b> Inbreeding, line breeding, and crossbreeding (hybrid vigor).</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define a breeding system.</li>
+      <li>Explain inbreeding, its purpose, and its dangers (inbreeding depression).</li>
+      <li>Describe line breeding.</li>
+      <li>Explain crossbreeding and hybrid vigor (heterosis).</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A diagram showing three breeding strategies: (1) Inbreeding (Brother & Sister Mating), (2) Linebreeding (Grandsire & Granddaughter), and (3) Crossbreeding (Two Different Breeds). Not embedded in the source.</p>
+
+  <h3>10.1 Introduction</h3>
+  <p>A <b>Breeding System</b> is a planned strategy for mating animals to achieve a specific goal. The system is defined by how genetically related the two parents are.</p>
+
+  <h3>10.2 Inbreeding</h3>
+  <p><b>Definition:</b> Inbreeding is the mating of very closely related animals.</p>
+  <p><b>Relationship:</b> Father to daughter, son to mother, or full brother to sister.</p>
+  <p><b>Purpose (Advantage):</b></p>
+  <ul class="tight">
+    <li><b>To Create "Purebreds":</b> This is how all "pure" breeds (like Holstein, German Shepherd) were created. By intensely inbreeding, you "fix" the traits.</li>
+    <li><b>To Increase Homozygosity:</b> It makes the genes "pure" (e.g., AA or aa). This makes the animals very uniform and predictable.</li>
+  </ul>
+  <p><b>Disadvantages (Critical):</b></p>
+  <ul class="tight">
+    <li><b>INBREEDING DEPRESSION:</b> This is the biggest problem. Inbreeding exposes hidden, harmful recessive genes.</li>
+    <li><b>Effects of Inbreeding Depression:</b>
+      <ul class="tight">
+        <li>Low Fertility/Sterility: The animals cannot produce offspring.</li>
+        <li>Low Vigor: Offspring are weak and small.</li>
+        <li>High Offspring Mortality: Many are born dead or die young.</li>
+        <li>Physical Deformities: e.g., extra legs, missing eyes.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>In general, inbreeding is avoided by commercial farmers.</p>
+
+  <h3>10.3 Line Breeding</h3>
+  <p><b>Definition:</b> Line breeding is a milder, more controlled form of inbreeding. It is the mating of animals that are related, but not as closely.</p>
+  <p><b>Relationship:</b> Cousin to cousin, grandsire to granddaughter, half-brother to half-sister.</p>
+  <p><b>Purpose:</b> To maintain the influence of a single, outstanding ancestor.</p>
+  <p><b>Example:</b> A farmer has a champion, prize-winning bull. The bull dies. To keep his "good genes" in the herd, the farmer might mate the bull's son back to the bull's half-sisters.</p>
+  <p><b>Balance:</b> It is a way to get the benefits of inbreeding (uniformity) without the severe risks of inbreeding depression.</p>
+
+  <h3>10.4 Crossbreeding (Outcrossing)</h3>
+  <p><b>Definition:</b> Crossbreeding is the opposite of inbreeding. It is the mating of animals from two completely different breeds.</p>
+  <p><b>Purpose:</b> To combine the best traits from two breeds into one animal.</p>
+
+  <h4>The Key Advantage: Hybrid Vigor (Heterosis)</h4>
+  <p><b>Definition:</b> Hybrid Vigor is the phenomenon where the crossbred offspring (the "hybrid") is better than the average of its two parents. It is often bigger, stronger, more fertile, and healthier. It is the opposite of Inbreeding Depression.</p>
+
+  <p><b>Classic Nigerian Example:</b></p>
+  <ul class="tight">
+    <li><b>Parent 1: Muturu</b> (a local Nigerian cattle breed).
+      <ul class="tight">
+        <li>Pros: Extremely hardy, tolerant of heat, resistant to local diseases (like Trypanosomiasis).</li>
+        <li>Cons: Very small, grows slowly, produces almost no milk.</li>
+      </ul>
+    </li>
+    <li><b>Parent 2: Holstein-Friesian</b> (an exotic breed).
+      <ul class="tight">
+        <li>Pros: The world's best milk producer (e.g., 50L/day).</li>
+        <li>Cons: Very delicate, cannot handle heat, will die from local diseases.</li>
+      </ul>
+    </li>
+  </ul>
+  <p><b>THE HYBRID OFFSPRING:</b> The crossbred calf gets the disease resistance from the Muturu and the high milk potential from the Holstein. It is an animal that survives in Nigeria and also produces good milk.</p>
+
+  <p><b>Other Examples:</b></p>
+  <ul class="tight">
+    <li>Mating a "Broiler" (fast-growing) with a "Layer" (egg-laying) to create a good "dual-purpose" chicken.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>What is a "breeding system"?</li>
+        <li>Define Inbreeding. What is its main advantage and its biggest disadvantage?</li>
+        <li>What is "Inbreeding Depression"? List three of its negative effects.</li>
+        <li>What is the main difference between Inbreeding and Line breeding?</li>
+        <li>Define Crossbreeding. What is Hybrid Vigor (Heterosis)?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay comparing Inbreeding Depression to Hybrid Vigor.</li>
+        <li>Create a "family tree" diagram illustrating (a) an Inbreeding cross (brother-sister) and (b) a Line breeding cross (grandsire-granddaughter).</li>
+        <li>Research and name one official "crossbreed" of animal (e.g., the "Mule" is a cross between a horse and a donkey). What two breeds are crossed, and what is the advantage of the hybrid?</li>
+        <li>You are a farmer with a herd of local, hardy goats that have low meat production. You want to improve their meat production without the new animals dying. Which breeding system would you use, and why?</li>
+        <li>Define: Purebred, Recessive Gene, Homozygosity, Hybrid, Heterosis.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — REVISION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>Revision — First Term</h2>
+  <p class="meta"><b>Content:</b> Comprehensive review of Weeks 1–10 and examination preparation.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Review all topics covered this term.</li>
+      <li>Identify areas of strength and weakness.</li>
+      <li>Practice past examination questions.</li>
+      <li>Prepare effectively for the end-of-term examination.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for revision week. This page is a checklist and study guide.</p>
+
+  <h3>11.1 Key Topics Checklist</h3>
+  <table>
+    <tr><th style="width:24%">Topic</th><th>Key Concepts to Remember</th></tr>
+    <tr>
+      <td class="k">Introduction to Livestock</td>
+      <td>Meaning, Importance (Nutritional, Economic, Agricultural, Social). Scope (types of animals and products). Subsistence vs. Commercial farming.</td>
+    </tr>
+    <tr>
+      <td class="k">History and Development</td>
+      <td>Traditional Systems: Nomadic Pastoralism (Transhumance), Village Free-Range. Modern Methods: Exotic breeds, Intensive housing, Veterinary medicine, Feed formulation, AI. Government Roles: NAPRI (Zaria), NVRI (Vom), ADPs, OFN, Grazing Reserves.</td>
+    </tr>
+    <tr>
+      <td class="k">Classification of Livestock</td>
+      <td>Ruminants (Polygastric, 4-compartment stomach: Rumen, Reticulum, Omasum, Abomasum). They chew cud, digest cellulose. Non-Ruminants (Monogastric, simple stomach). They cannot digest cellulose, compete with humans for grain. Pseudo-ruminants (Rabbits) practice coprophagy.</td>
+    </tr>
+    <tr>
+      <td class="k">Livestock Housing</td>
+      <td>Principles: East-West orientation, Ventilation, Space, Drainage, Security, Hygiene. Poultry: Deep Litter (broilers), Battery Cage (layers). Pigs: Farrowing crate, wallow. Goats/Sheep: Raised slatted floor (prevents parasites).</td>
+    </tr>
+    <tr>
+      <td class="k">Animal Nutrition I</td>
+      <td>6 Classes of Nutrients: Carbohydrates (Energy), Proteins (Growth), Fats/Oils (Concentrated Energy), Vitamins (Regulation), Minerals (Structure/Regulation), Water (Most essential). Macro vs. Micro minerals.</td>
+    </tr>
+    <tr>
+      <td class="k">Animal Nutrition II</td>
+      <td>Balanced Ration (specific to animal's age and purpose). Factors affecting formulation (Species, Age, Purpose, Cost, Health). Feed Storage: Pallets, FIFO, Pest control. Aflatoxin (poison from mold on damp feed).</td>
+    </tr>
+    <tr>
+      <td class="k">Animal Breeding I</td>
+      <td>Selection Methods: Mass (phenotype), Pedigree (ancestors), Progeny Testing (offspring - most accurate). Natural Mating (simple, disease risk) vs. Artificial Insemination (AI) (genetic improvement, disease control, needs skill).</td>
+    </tr>
+    <tr>
+      <td class="k">Animal Breeding II</td>
+      <td>Inbreeding (mating close relatives) leads to Inbreeding Depression (low fertility, weak offspring). Line breeding (milder). Crossbreeding (mating different breeds) leads to Hybrid Vigor (Heterosis) - offspring better than parents.</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    <h4>Exam Strategy</h4>
+    <ul class="tight">
+      <li><b>Read the question carefully:</b> Identify the key verb — "Define," "Explain," "Discuss," "Compare," "List." Your answer must match the command word.</li>
+      <li><b>Plan your answer:</b> For essay questions, take a minute to jot down the main points you want to make before you start writing.</li>
+      <li><b>Use the "Define, Explain, Example" method:</b> For "explain" or "discuss" questions, start with a clear definition, provide a detailed explanation, and then give a specific example to support your point.</li>
+      <li><b>Be specific:</b> Use names, dates, and specific events (e.g., "NAPRI," "Transhumance," "Aflatoxin," "Farrowing Crate") to show depth of knowledge.</li>
+      <li><b>Structure your essay:</b> Use an introduction, a body with clearly numbered points, and a brief conclusion.</li>
+    </ul>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <h4>Practice Essay Questions</h4>
+      <ol class="tight">
+        <li>Define livestock farming and explain five of its importance to Nigeria.</li>
+        <li>Compare and contrast traditional livestock systems with modern methods in Nigeria.</li>
+        <li>Differentiate between Ruminants and Non-Ruminants. List the four compartments of the ruminant stomach and state the function of two.</li>
+        <li>Explain five principles of good livestock housing.</li>
+        <li>List the six classes of animal feed nutrients and state the main function of each.</li>
+        <li>Explain three factors that affect feed formulation.</li>
+        <li>Describe three methods of selection in animal breeding.</li>
+        <li>Compare Natural Breeding with Artificial Insemination.</li>
+        <li>Define Inbreeding Depression and Hybrid Vigor, giving an example of each.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Select one past WAEC/NECO essay question from any of the weeks in this term and write a full, detailed answer under timed conditions (45 minutes).</li>
+        <li>Create a set of 10 flashcards for the key terms covered this term (e.g., "Rumen," "Aflatoxin," "Progeny Testing," "Farrowing Crate," "Hybrid Vigor").</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>

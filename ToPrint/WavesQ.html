@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waves — Practice Worksheets</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+
+  :root {
+    --ink: #111111;
+    --muted: #5a6672;
+    --accent: #17233F;
+    --accent-soft: #e8ecf4;
+    --warm: #C95545;
+    --rule: #c9d3dd;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    background: #ffffff;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.6pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet { max-width: 180mm; margin: 0 auto; position: relative; }
+
+  /* ============ BRAND ============ */
+  .brand {
+    position: absolute;
+    top: 0; right: 0;
+    width: 44px; height: 44px;
+    opacity: 0.92;
+  }
+  .brand svg { display: block; width: 100%; height: 100%; }
+
+  /* ============ HEADINGS ============ */
+  h1 {
+    font-size: 17pt;
+    margin: 0 0 1.5mm;
+    color: var(--accent);
+    letter-spacing: .2px;
+    padding-right: 54px;
+  }
+  .subtitle {
+    font-size: 9.4pt;
+    color: var(--muted);
+    margin: 0 0 6mm;
+    padding-right: 54px;
+  }
+  h2 {
+    font-size: 12.5pt;
+    color: var(--accent);
+    margin: 7mm 0 3mm;
+    padding: 0 0 1.4mm;
+    border-bottom: 1.6pt solid var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-size: 11pt;
+    margin: 5mm 0 2mm;
+    color: var(--accent);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ============ MATH ============ */
+  .m {
+    font-family: Cambria, "Times New Roman", Georgia, serif;
+    white-space: nowrap;
+  }
+  sup { font-size: .70em; vertical-align: .45em; line-height: 0; }
+  sub { font-size: .70em; vertical-align: -.2em; line-height: 0; }
+
+  /* ============ QUESTION LISTS ============ */
+  ol.q { margin: 0; padding-left: 9mm; }
+  ol.q > li {
+    margin: 0 0 2.1mm;
+    padding-left: 1.2mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.q > li::marker {
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* ============ ANSWER KEY ============ */
+  .keybox {
+    background: var(--accent-soft);
+    border-left: 3pt solid var(--accent);
+    padding: 4mm 5mm 5mm;
+    border-radius: 1mm;
+    break-inside: avoid-page;
+  }
+  .answers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6mm 7mm;
+    margin-top: 2.5mm;
+  }
+  .answers.two { grid-template-columns: repeat(2, 1fr); }
+  .answers > div {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 1.2mm 0;
+    border-bottom: .5pt dotted var(--rule);
+    font-size: 10pt;
+  }
+  .answers .num {
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 1.4mm;
+  }
+
+  /* ============ UTILITIES ============ */
+  .newpage {
+    break-before: page;
+    page-break-before: always;
+  }
+  .note {
+    font-size: 9.2pt;
+    color: var(--muted);
+    margin: 0 0 5mm;
+    padding: 2.5mm 4mm;
+    border: .6pt solid var(--rule);
+    border-radius: 1mm;
+  }
+
+  /* ============ SCREEN PREVIEW ============ */
+  @media screen {
+    body { background: #eef2f6; padding: 10mm 0; }
+    .sheet {
+      background: #fff;
+      padding: 14mm 15mm;
+      box-shadow: 0 2px 14px rgba(0,0,0,.12);
+      border-radius: 1mm;
+    }
+  }
+  @media print {
+    .sheet { max-width: none; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ===== BRAND ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <!-- ============================ WORKSHEET 1: FUNDAMENTALS ============================ -->
+  <h1>Waves — Fundamentals</h1>
+  <p class="subtitle">Vocabulary, Wave Equation, Classification (Set A) — 25 Questions</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 25 questions. Show all working. Give units
+    with every numerical answer. Use <span class="m">g = 9.8 m s<sup>−2</sup></span>
+    where required.
+  </p>
+
+  <h2>Section A — Definitions &amp; Core Quantities (Questions 1–10)</h2>
+  <ol class="q">
+    <li>Define a <em>wave</em> and state what it transfers.</li>
+    <li>Define <em>amplitude</em>, <em>wavelength</em>, <em>period</em>, and
+        <em>frequency</em>, giving the symbol and SI unit for each.</li>
+    <li>State the relationship between frequency and period.</li>
+    <li>State the master wave equation and explain what each symbol means.</li>
+    <li>Define <em>angular frequency</em> and <em>wave number</em>, giving formulas.</li>
+    <li>A wave completes 30 oscillations in 5 seconds. Find its frequency and period.</li>
+    <li>A wave has period <span class="m">0.05 s</span>. Find its frequency.</li>
+    <li>A wave has frequency <span class="m">250 Hz</span>. Find its period.</li>
+    <li>Explain how energy is related to amplitude.</li>
+    <li>State what happens to energy if amplitude is tripled.</li>
+  </ol>
+
+  <h2>Section B — Wave Equation Calculations (Questions 11–18)</h2>
+  <ol class="q" start="11">
+    <li>A wave has <span class="m">f = 40 Hz</span> and <span class="m">λ = 2.5 m</span>.
+        Find <span class="m">v</span>.</li>
+    <li>A wave travels at <span class="m">1500 m s<sup>−1</sup></span> in water with
+        frequency <span class="m">500 Hz</span>. Find its wavelength.</li>
+    <li>A radio wave has wavelength <span class="m">300 m</span> and travels at
+        <span class="m">3 × 10<sup>8</sup> m s<sup>−1</sup></span>. Find its frequency.</li>
+    <li>A wave has <span class="m">T = 0.004 s</span> and <span class="m">λ = 0.68 m</span>.
+        Find its speed.</li>
+    <li>Light of wavelength <span class="m">400 nm</span> travels in vacuum. Find its
+        frequency. <span class="m">(c = 3 × 10<sup>8</sup> m s<sup>−1</sup>)</span></li>
+    <li>A wave on a string has speed <span class="m">120 m s<sup>−1</sup></span> and
+        frequency <span class="m">60 Hz</span>. Find its wavelength.</li>
+    <li>A wave has <span class="m">λ = 0.5 m</span> and <span class="m">v = 25 m s<sup>−1</sup></span>.
+        Find <span class="m">f</span> and <span class="m">T</span>.</li>
+    <li>A wave on a string has tension <span class="m">200 N</span> and mass per unit
+        length <span class="m">0.05 kg m<sup>−1</sup></span>. Find its speed.</li>
+  </ol>
+
+  <h2>Section C — Classification &amp; Behaviour (Questions 19–25)</h2>
+  <ol class="q" start="19">
+    <li>Distinguish between mechanical and electromagnetic waves, with examples.</li>
+    <li>State three differences between transverse and longitudinal waves.</li>
+    <li>Which type of wave can be polarised, and why?</li>
+    <li>Explain why sound cannot travel through a vacuum.</li>
+    <li>A wave passes from one medium into another. State what happens to frequency,
+        speed, and wavelength if the new medium is (a) faster, (b) slower.</li>
+    <li>Name and briefly describe four universal wave behaviours (reflection, refraction,
+        diffraction, interference, dispersion, polarisation — choose four).</li>
+    <li>Explain the difference between a progressive wave and a standing wave.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: FUNDAMENTALS ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Waves Fundamentals</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Definitions &amp; Core Quantities</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span>A disturbance transferring energy without transferring matter</div>
+      <div><span class="num">2.</span>A: max displacement (m); λ: crest-to-crest (m); T: time per cycle (s); f: cycles per second (Hz)</div>
+      <div><span class="num">3.</span><span class="m">f = 1/T</span></div>
+      <div><span class="num">4.</span><span class="m">v = fλ</span>; v = speed (m s⁻¹), f = frequency (Hz), λ = wavelength (m)</div>
+      <div><span class="num">5.</span><span class="m">ω = 2πf</span> (rad s⁻¹); <span class="m">k = 2π/λ</span> (rad m⁻¹)</div>
+      <div><span class="num">6.</span>f = 6 Hz, T = 0.167 s</div>
+      <div><span class="num">7.</span>f = 20 Hz</div>
+      <div><span class="num">8.</span>T = 0.004 s</div>
+      <div><span class="num">9.</span>E ∝ A²</div>
+      <div><span class="num">10.</span>Energy becomes 9× larger</div>
+    </div>
+
+    <h3>Section B — Wave Equation Calculations</h3>
+    <div class="answers two">
+      <div><span class="num">11.</span>v = 100 m s⁻¹</div>
+      <div><span class="num">12.</span>λ = 3 m</div>
+      <div><span class="num">13.</span>f = 1 × 10⁶ Hz</div>
+      <div><span class="num">14.</span>v = 170 m s⁻¹</div>
+      <div><span class="num">15.</span>f = 7.5 × 10¹⁴ Hz</div>
+      <div><span class="num">16.</span>λ = 2 m</div>
+      <div><span class="num">17.</span>f = 50 Hz, T = 0.02 s</div>
+      <div><span class="num">18.</span>v ≈ 63.2 m s⁻¹</div>
+    </div>
+
+    <h3>Section C — Classification &amp; Behaviour</h3>
+    <div class="answers two">
+      <div><span class="num">19.</span>Mechanical: needs medium (sound); EM: no medium (light)</div>
+      <div><span class="num">20.</span>Particle motion ⊥ vs ∥; crests vs compressions; polarisable vs not</div>
+      <div><span class="num">21.</span>Transverse; oscillation is perpendicular to travel, so can be filtered to a single plane</div>
+      <div><span class="num">22.</span>Sound is mechanical; vacuum has no particles to vibrate</div>
+      <div><span class="num">23.</span>(a) faster: v↑, λ↑, f same; (b) slower: v↓, λ↓, f same</div>
+      <div><span class="num">24.</span>Reflection (bounce); refraction (bend due to speed change); diffraction (spread at gap ≈ λ); interference (superposition); dispersion (separation by frequency); polarisation (restrict to one plane)</div>
+      <div><span class="num">25.</span>Progressive transfers energy; standing stores energy with fixed nodes and antinodes</div>
+    </div>
+  </div>
+
+  <!-- ============================ WORKSHEET 2: BEHAVIOUR & CALCULATION ============================ -->
+  <div class="newpage"></div>
+  <h1>Waves — Behaviour &amp; Calculation</h1>
+  <p class="subtitle">Reflection, Refraction, Interference, Standing Waves (Set B) — 25 Questions</p>
+
+  <p class="note">
+    <strong>Instructions:</strong> Answer all 25 questions. Show all working. Give units.
+    <span class="m">c = 3 × 10<sup>8</sup> m s<sup>−1</sup></span>.
+  </p>
+
+  <h2>Section A — Reflection, Refraction, Diffraction (Questions 1–8)</h2>
+  <ol class="q">
+    <li>State the law of reflection.</li>
+    <li>Explain why a wave changes direction when it refracts.</li>
+    <li>Light enters glass (<span class="m">n = 1.5</span>) from air. State what happens
+        to its speed, frequency, and wavelength.</li>
+    <li>Light travels at <span class="m">2 × 10<sup>8</sup> m s<sup>−1</sup></span> in a
+        medium. Find the refractive index.</li>
+    <li>Explain the condition for significant diffraction.</li>
+    <li>A water wave of wavelength <span class="m">3 cm</span> passes through a gap of
+        <span class="m">3 cm</span>. Describe the result.</li>
+    <li>A sound wave diffracts around a doorway; a light wave does not noticeably
+        diffract around the same doorway. Explain why.</li>
+    <li>Define refractive index and state its formula in terms of speeds.</li>
+  </ol>
+
+  <h2>Section B — Interference &amp; Superposition (Questions 9–16)</h2>
+  <ol class="q" start="9">
+    <li>State the principle of superposition.</li>
+    <li>State the conditions for constructive and destructive interference in terms of
+        path difference.</li>
+    <li>Two waves meet with path difference <span class="m">2λ</span>. What type of
+        interference occurs?</li>
+    <li>Two waves meet with path difference <span class="m">3.5λ</span>. What type of
+        interference occurs?</li>
+    <li>Explain why two loudspeakers playing the same tone produce loud and quiet regions
+        in a room.</li>
+    <li>A point receives two waves in phase. State the resultant amplitude if both have
+        amplitude <span class="m">A</span>.</li>
+    <li>A point receives two waves exactly out of phase, each of amplitude
+        <span class="m">A</span>. State the resultant amplitude.</li>
+    <li>Define <em>coherence</em> and explain why it is required for a stable
+        interference pattern.</li>
+  </ol>
+
+  <h2>Section C — Standing Waves &amp; Wave Function (Questions 17–25)</h2>
+  <ol class="q" start="17">
+    <li>Explain how a standing wave is formed.</li>
+    <li>Define <em>node</em> and <em>antinode</em>.</li>
+    <li>State the distance between adjacent nodes, and between a node and an adjacent
+        antinode, in terms of λ.</li>
+    <li>A string of length <span class="m">1.2 m</span> is fixed at both ends and vibrates
+        in its fundamental mode. Find the wavelength.</li>
+    <li>The same string vibrates in its second harmonic. Find the wavelength.</li>
+    <li>In a standing wave, the distance between two consecutive nodes is
+        <span class="m">0.4 m</span>. Find the wavelength.</li>
+    <li>A wave is described by <span class="m">y = 0.02 sin(6x − 300t)</span> (SI units).
+        State the amplitude, wave number, and angular frequency.</li>
+    <li>Using the wave in Q23, find its wavelength, frequency, and speed.</li>
+    <li>State the key difference between a progressive wave and a standing wave in terms
+        of energy transfer.</li>
+  </ol>
+
+  <!-- ---------- ANSWERS: BEHAVIOUR & CALCULATION ---------- -->
+  <div class="newpage"></div>
+  <h2>Answer Key — Behaviour &amp; Calculation</h2>
+
+  <div class="keybox">
+    <h3 style="margin-top:0;">Section A — Reflection, Refraction, Diffraction</h3>
+    <div class="answers two">
+      <div><span class="num">1.</span>θi = θr (both from the normal)</div>
+      <div><span class="num">2.</span>Speed changes with medium; f constant; v = fλ forces λ to change → direction changes</div>
+      <div><span class="num">3.</span>v decreases to 2×10⁸ m s⁻¹; f unchanged; λ decreases</div>
+      <div><span class="num">4.</span>n = 1.5</div>
+      <div><span class="num">5.</span>Gap size ≈ wavelength</div>
+      <div><span class="num">6.</span>Strong diffraction — waves spread out in semicircles</div>
+      <div><span class="num">7.</span>Sound λ is comparable to doorway width; light λ (~500 nm) is far smaller, so diffraction is negligible</div>
+      <div><span class="num">8.</span>n = c/v</div>
+    </div>
+
+    <h3>Section B — Interference &amp; Superposition</h3>
+    <div class="answers two">
+      <div><span class="num">9.</span>Resultant displacement = vector sum of individual displacements</div>
+      <div><span class="num">10.</span>Constructive: Δd = nλ; destructive: Δd = (n+½)λ</div>
+      <div><span class="num">11.</span>Constructive (Δd = 2λ = nλ, n = 2)</div>
+      <div><span class="num">12.</span>Destructive (Δd = 3.5λ = (3+½)λ)</div>
+      <div><span class="num">13.</span>Superposition: crests reinforce (loud), crest+trough cancel (quiet)</div>
+      <div><span class="num">14.</span>2A</div>
+      <div><span class="num">15.</span>0 (complete cancellation)</div>
+      <div><span class="num">16.</span>Constant phase difference; without it, pattern shifts and averages out</div>
+    </div>
+
+    <h3>Section C — Standing Waves &amp; Wave Function</h3>
+    <div class="answers two">
+      <div><span class="num">17.</span>Two identical waves travelling in opposite directions superpose</div>
+      <div><span class="num">18.</span>Node: zero displacement; antinode: maximum displacement</div>
+      <div><span class="num">19.</span>Node-to-node = λ/2; node-to-antinode = λ/4</div>
+      <div><span class="num">20.</span>λ = 2L = 2.4 m</div>
+      <div><span class="num">21.</span>λ = L = 1.2 m</div>
+      <div><span class="num">22.</span>λ = 0.8 m</div>
+      <div><span class="num">23.</span>A = 0.02 m, k = 6 rad m⁻¹, ω = 300 rad s⁻¹</div>
+      <div><span class="num">24.</span>λ = 2π/6 ≈ 1.05 m; f = 300/2π ≈ 47.7 Hz; v = fλ ≈ 50 m s⁻¹</div>
+      <div><span class="num">25.</span>Progressive transfers energy; standing stores it (net transfer = 0)</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

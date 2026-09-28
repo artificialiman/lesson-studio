@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 2 Government — First Term</title>
+<style>
+/* ============================================================
+   SS 2 GOVERNMENT — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #1a3d6e;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #1a3d6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a3d6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a3d6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a3d6e;
+  border-bottom:1.4pt solid #cfe3d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #b9c1b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f8f4;
+  border-color:#a8c8b2;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa79a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#48524a;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#1a3d6e;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a3d6e;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3ee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #1a3d6e;
+  color:#1a3d6e;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- Punnett square ---------- */
+.pun{
+  border-collapse:collapse;
+  width:auto;
+  margin:6px auto 10px;
+  font-size:10.4pt;
+  background:#fcfdfc;
+}
+.pun th,.pun td{
+  border:1.2pt solid #8a8578;
+  padding:5px 12px;
+  text-align:center;
+  min-width:56px;
+  font-weight:900;
+}
+.pun th{background:#e8f3ec;font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig,.pun{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 2 Government — First Term</h1>
+  <p class="term">Weeks 1–11 · Colonial Administration, Nationalism, Constitutional Development & Military Rule · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — COLONIAL ADMINISTRATION IN NIGERIA
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Colonial Administration in Nigeria</h2>
+  <p class="meta"><b>Content:</b> British and French colonial systems, the policy of Indirect Rule, its structure and effects.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define colonial administration and its motives.</li>
+      <li>Compare the British and French administrative styles.</li>
+      <li>Explain the policy of Indirect Rule and its key features.</li>
+      <li>Describe the structure of British colonial administration.</li>
+      <li>Assess the success and limitations of Indirect Rule.</li>
+      <li>Discuss the effects of colonial rule on Nigeria's political development.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A side-by-side comparison chart of British (Indirect Rule) and French (Assimilation) administrative styles, with a map of Nigeria showing the Northern, Southern, and Eastern regions circa 1914. Also a hierarchical diagram of the British colonial administrative structure from Governor to Native Authorities. Not embedded in the source.</p>
+
+  <h3>1.1 Introduction</h3>
+  <p><b>Colonial administration</b> refers to the system of governance established by European powers to control and manage their colonies. In Nigeria, colonial administration began formally with the annexation of Lagos in 1861 and evolved through various stages until independence in 1960.</p>
+  <p>Colonial rule was primarily motivated by economic exploitation, political dominance, and the spread of Western civilisation. Two major European colonial powers operated in West Africa: Britain and France, each implementing distinct administrative systems in their respective colonies.</p>
+
+  <h3>1.2 British Colonial Administration in Nigeria</h3>
+  <p>The British colonial administration in Nigeria was founded upon the policy of <b>Indirect Rule</b>, a governance strategy that allowed the colonial government to rule the vast territory of Nigeria with minimal direct involvement.</p>
+
+  <h4>The Indirect Rule System</h4>
+  <p>The British governed the people by appointing and using traditional rulers as intermediaries. These rulers—such as emirs in the North, obas in the West, and chiefs in other regions—retained their traditional roles but now functioned within a colonial framework. They were expected to implement colonial policies, collect taxes, maintain law and order, and settle minor disputes. Their powers were subject to the supervision and approval of British colonial officers.</p>
+
+  <h4>Preservation of Traditional Institutions</h4>
+  <p>To ensure the success of Indirect Rule, the British deliberately preserved and upheld traditional institutions and hierarchies. This strategy was particularly effective in Northern Nigeria, where Islamic and emirate systems were already centralised and well-structured. In the Western region, the Yoruba traditional systems with their councils of chiefs and oba structures also lent themselves to indirect governance. However, in the Eastern region, the British faced challenges due to the absence of centralised authority among the Igbo people, who traditionally practised a more decentralised and egalitarian political system. As a result, the British introduced the system of <b>"warrant chiefs,"</b> appointing individuals as rulers who often lacked legitimate traditional support, thereby causing long-term sociopolitical tension in the region.</p>
+
+  <h4>Use of Native Authorities</h4>
+  <p>A critical component of the British administrative system was the establishment and use of <b>Native Authorities</b>. These bodies consisted of traditional rulers and their councils, who were empowered to perform specific administrative and judicial roles under colonial oversight. They operated native courts, managed native treasuries, and created native police forces. While these authorities retained a traditional appearance, they were ultimately instruments of British colonial control.</p>
+
+  <h4>Decentralised Administration</h4>
+  <p>The British implemented a decentralised system of administration. Nigeria was divided into provinces, each administered by a British Resident. These provinces were further divided into divisions, overseen by District Officers, and again into districts managed by Assistant District Officers or local rulers under British supervision. This multilayered structure allowed for the efficient implementation of colonial policies while accommodating regional differences. However, it also led to regional disparities and uneven development.</p>
+
+  <h4>Dual Legal System</h4>
+  <p>Another distinctive feature was the existence of a <b>dual legal system</b>. This system allowed customary laws to operate alongside British statutory laws. Indigenous laws continued to govern personal matters such as marriage, inheritance, and land tenure. However, these customary laws were only recognised if they did not conflict with British legal principles. In instances where a customary practice was deemed "repugnant to natural justice, equity, and good conscience," it was struck down by colonial courts.</p>
+
+  <h3>1.3 Structure of British Colonial Administration</h3>
+  <p>The British colonial administration was a hierarchical system that reflected the centralised authority of the British Crown while incorporating elements of local governance through Indirect Rule.</p>
+  <table>
+    <tr><th style="width:26%">Level</th><th>Role and Responsibilities</th></tr>
+    <tr><td class="k">Governor</td><td>At the apex, served as the highest-ranking British official and direct representative of the British Crown. Held executive, legislative, and judicial powers. Appointed by the British monarch. After the 1914 amalgamation, Nigeria came under a single Governor-General.</td></tr>
+    <tr><td class="k">Lieutenant-Governors</td><td>Directly under the Governor, responsible for the major administrative regions (Northern and Southern Protectorates). Acted as regional heads and served as the link between the central government and provincial administrations.</td></tr>
+    <tr><td class="k">Residents and District Officers</td><td>Residents were assigned to a province and acted as the principal British official in that area. District Officers oversaw divisions or districts. They were responsible for maintaining law and order, collecting taxes, administering justice, and supervising the activities of Native Authorities.</td></tr>
+    <tr><td class="k">Native Authorities</td><td>At the grassroots level, composed of indigenous rulers such as emirs, obas, chiefs, and council members. They governed local communities under the framework of Indirect Rule, responsible for tax collection, local policing, dispute resolution, and executing colonial directives.</td></tr>
+  </table>
+
+  <h3>1.4 The French Colonial Administration in West Africa</h3>
+  <p>The French approach differed markedly from that of the British. While the British favoured decentralisation and indirect rule, the French adopted a more rigid and uniform system characterised by centralisation and a strong emphasis on <b>assimilation</b>. Their goal was to transform Africans into "Frenchmen in black skin."</p>
+
+  <table>
+    <tr><th style="width:20%">Feature</th><th>British (Indirect Rule)</th><th>French (Assimilation)</th></tr>
+    <tr><td class="k">System of Administration</td><td>Decentralised</td><td>Centralised</td></tr>
+    <tr><td class="k">Role of Traditional Rulers</td><td>Prominent</td><td>Marginalised</td></tr>
+    <tr><td class="k">Cultural Policy</td><td>Tolerant of customs</td><td>Imposed French culture</td></tr>
+    <tr><td class="k">Legal System</td><td>Dual (Customary & British)</td><td>Uniform French law</td></tr>
+    <tr><td class="k">Goal</td><td>Control through local rulers</td><td>Assimilation into French society</td></tr>
+  </table>
+
+  <h3>1.5 Success and Limitations of Indirect Rule</h3>
+  <h4>Success in the North</h4>
+  <p>The most celebrated success of Indirect Rule occurred in Northern Nigeria, where the British found a well-organised and centralised political system already in place. The emirate system, established under Islamic governance, provided a robust administrative framework. The British were able to delegate authority to the emirs, who carried out colonial directives while maintaining the appearance of traditional governance. As a result, the North remained relatively stable and orderly under British rule.</p>
+
+  <h4>Challenges in the East</h4>
+  <p>In sharp contrast, Indirect Rule encountered serious challenges in Eastern Nigeria due to the absence of a centralised traditional authority system. The Igbo people practised a form of government that was decentralised and communal. To address this, the British introduced the "warrant chief" system, appointing individuals as local rulers regardless of their traditional standing. These warrant chiefs were seen as colonial puppets and lacked the respect needed to govern effectively. This imposition led to widespread dissatisfaction and uprisings, the most notable being the <b>Aba Women's Riot of 1929</b>.</p>
+
+  <h4>Resistance in the West</h4>
+  <p>In the Western region, Indirect Rule also met with resistance. The Yoruba had a well-established system of governance with obas and councils of chiefs. While the British found these structures suitable, their attempt to subordinate traditional rulers to colonial officials was not well received. Many Yoruba rulers resented the erosion of their authority and the interference of colonial officers in their internal affairs.</p>
+
+  <h4>Advantages of Indirect Rule</h4>
+  <ul class="tight">
+    <li>Preserved indigenous cultures and institutions.</li>
+    <li>Cost-effective for the colonial government.</li>
+    <li>Reduced resistance by involving local leaders.</li>
+    <li>Encouraged local participation in governance.</li>
+  </ul>
+
+  <h4>Disadvantages of Indirect Rule</h4>
+  <ul class="tight">
+    <li>Empowered corrupt and unpopular rulers.</li>
+    <li>Created social inequality and ethnic division.</li>
+    <li>Failed to prepare Nigerians for modern democratic governance.</li>
+    <li>Inadequate in regions without centralised authority.</li>
+  </ul>
+
+  <h3>1.6 Effects of Colonial Administration on Nigeria's Political Development</h3>
+  <ol class="tight">
+    <li><b>Introduction of Western Education:</b> The colonial administration established missionary and government schools that introduced Western education, producing a class of educated elites who later spearheaded nationalist movements.</li>
+    <li><b>Creation of Political Institutions:</b> The British introduced political structures such as Legislative Councils and regional assemblies, laying the groundwork for parliamentary democracy.</li>
+    <li><b>Development of Nationalist Movements:</b> Colonial oppression, racial discrimination, and denial of civil rights led to growing political consciousness and demands for independence.</li>
+    <li><b>Formation of Political Parties:</b> Nationalist leaders used political parties as platforms to mobilise support and challenge colonial policies (e.g., NCNC, Action Group, NPC).</li>
+    <li><b>Ethnic Division and Regionalism:</b> Colonial policies such as Indirect Rule and regional autonomy reinforced ethnic loyalties and divisions, complicating post-independence national unity.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Compare the British and French colonial administrative policies in West Africa.</li>
+        <li>Explain five reasons why indirect rule was successful in Northern Nigeria but failed in the Eastern region.</li>
+        <li>Examine five features of the British colonial administration in Nigeria.</li>
+        <li>What is indirect rule? Outline its main features.</li>
+        <li>Discuss five effects of colonial rule on the political development of Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a diagram showing the structure of British colonial administration in Nigeria, from the Governor down to the Native Authorities.</li>
+        <li>Write a short paragraph explaining the "Warrant Chief" system and why it was introduced.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — NATIONALISM IN NIGERIA
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Nationalism in Nigeria</h2>
+  <p class="meta"><b>Content:</b> Stages of nationalism, causes, effects, and key nationalist personalities.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define nationalism and its stages in Nigeria.</li>
+      <li>Explain the causes of Nigerian nationalism.</li>
+      <li>Discuss the effects of nationalist movements.</li>
+      <li>Identify key nationalist personalities and their contributions.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A poster-style plate with portraits of Herbert Macaulay, Nnamdi Azikiwe, Obafemi Awolowo, and Ahmadu Bello, surrounded by text boxes listing "Causes" and "Effects" of nationalism, with a map of Nigeria and a flag. Not embedded in the source.</p>
+
+  <h3>2.1 Introduction</h3>
+  <p><b>Nationalism</b> is the strong feeling of love, loyalty, and commitment that citizens show towards their country. In the Nigerian context, it refers to the conscious efforts by Nigerians to challenge colonial domination and fight for self-rule and independence. It was driven by the desire to free Nigeria from British colonial rule and to assert national identity and sovereignty.</p>
+
+  <h3>2.2 Stages of Nigerian Nationalism</h3>
+  <table>
+    <tr><th style="width:24%">Stage</th><th>Key Features and Developments</th></tr>
+    <tr>
+      <td class="k">Early Nationalism (1900–1930s)</td>
+      <td>Largely moderate. Focus was on reforms within the colonial framework and demanding better representation, not outright independence. Key feature was the establishment of associations and newspapers. The most prominent development was the formation of the <b>Nigerian National Democratic Party (NNDP)</b> in 1923 by Herbert Macaulay, the first political party in Nigeria.</td>
+    </tr>
+    <tr>
+      <td class="k">Militant Nationalism (1940s–1950s)</td>
+      <td>A shift from moderate demands to more radical and assertive agitation for complete independence. Influenced by global events like WWII and the Atlantic Charter. Saw the rise of youth movements, trade unions, and political parties like the <b>NCNC</b> (1944) led by Dr. Nnamdi Azikiwe, and the <b>Zikist Movement</b>, a radical youth wing advocating for immediate independence.</td>
+    </tr>
+    <tr>
+      <td class="k">Post-WWII Nationalism (Late 1940s–1960)</td>
+      <td>The climax of nationalist agitation. Returning soldiers, Pan-Africanism, and global decolonisation emboldened leaders. Major political parties—NCNC, Action Group (AG) led by Obafemi Awolowo, and Northern People's Congress (NPC) led by Ahmadu Bello—emerged. The British introduced a series of constitutional reforms (Richards, Macpherson, Lyttleton) leading to independence on 1st October 1960.</td>
+    </tr>
+  </table>
+
+  <h3>2.3 Causes of Nationalism in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Colonial Oppression and Racial Discrimination:</b> Africans were treated as second-class citizens, denied senior administrative positions, and paid less than their European counterparts. This bred deep resentment.</li>
+    <li><b>Western Education:</b> Educated Nigerians were exposed to liberal democratic ideals such as liberty, equality, and self-determination, which resonated with their lived experiences under colonial subjugation. Elites like Azikiwe and Awolowo became vocal critics of colonial rule.</li>
+    <li><b>Economic Exploitation:</b> Colonial economic policies prioritised the interests of Britain. Resources were exported to Europe while Nigerians received minimal returns. Harsh taxes and trade monopolies created widespread dissatisfaction.</li>
+    <li><b>Influence of the Press:</b> Newspapers such as the <i>West African Pilot</i>, founded by Nnamdi Azikiwe, served as powerful platforms for spreading nationalist ideas, exposing injustices, and mobilising support for independence.</li>
+    <li><b>World Wars I and II:</b> Nigerian soldiers who fought alongside British troops expected political recognition and improved rights upon their return. Post-war conditions remained harsh, and the returning ex-servicemen became more politically conscious and active in demanding self-rule.</li>
+    <li><b>Labour Union Activities:</b> Labour unions emerged as a strong force against colonial exploitation. The 1945 General Strike led by Michael Imoudu brought together workers across regions, fostering unity and increasing pressure on the colonial government.</li>
+    <li><b>Influence of Pan-Africanism:</b> The Pan-African movement, advocated by thinkers like Marcus Garvey and W.E.B. Du Bois, inspired Nigerian leaders to fight for national independence and continental solidarity.</li>
+    <li><b>Growth of Political Parties:</b> The formation of political parties (NNDP, NCNC, AG, NPC) provided the organisational backbone for nationalist activities, serving as platforms to articulate grievances and mobilise popular support.</li>
+  </ol>
+
+  <h3>2.4 Effects of Nationalism in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Constitutional Developments:</b> Pressure from nationalists compelled the British to introduce progressive constitutional reforms, from the Clifford Constitution (1922) to the Lyttleton Constitution (1954), which laid the groundwork for a federal structure and self-rule.</li>
+    <li><b>Emergence of Political Parties:</b> As political consciousness grew, organised political parties (NNDP, NCNC, AG, NPC) became powerful tools for mobilisation and contesting elections.</li>
+    <li><b>Political Awareness and Mass Participation:</b> Nationalist campaigns significantly heightened political awareness. Public rallies, newspapers, and protests helped inform the masses and prepared Nigerians for leadership roles.</li>
+    <li><b>Formation of Trade Unions and Interest Groups:</b> Organisations like the Nigeria Union of Teachers (NUT) and Railway Workers Union became vocal advocates for both workers' welfare and political liberation.</li>
+    <li><b>Independence and Sovereignty:</b> The most profound effect was the eventual attainment of independence on 1st October 1960, marking the end of British colonial rule.</li>
+    <li><b>Ethnic and Regional Politics:</b> Despite unifying goals, the movement later gave rise to regional and ethnic divisions, as parties became based along ethnic lines (NCNC in the East, AG in the West, NPC in the North).</li>
+  </ol>
+
+  <h3>2.5 Key Nationalist Personalities in Nigeria</h3>
+  <table>
+    <tr><th style="width:26%">Name</th><th>Contributions</th></tr>
+    <tr><td class="k">Herbert Macaulay</td><td>Regarded as the "Father of Nigerian Nationalism"; founded the NNDP in 1923 and used the press to criticise colonial rule.</td></tr>
+    <tr><td class="k">Nnamdi Azikiwe</td><td>Founded the <i>West African Pilot</i> in 1937, led the NCNC, and was a key figure in post-war nationalism.</td></tr>
+    <tr><td class="k">Obafemi Awolowo</td><td>Founded the Action Group in 1951; promoted education and self-rule for the Western Region.</td></tr>
+    <tr><td class="k">Ahmadu Bello</td><td>Leader of the NPC; championed political development in Northern Nigeria and regional autonomy.</td></tr>
+    <tr><td class="k">Anthony Enahoro</td><td>Moved the motion for Nigeria's independence in 1953.</td></tr>
+    <tr><td class="k">Ernest Ikoli</td><td>A journalist and co-founder of the Nigerian Youth Movement.</td></tr>
+    <tr><td class="k">H.O. Davies</td><td>Member of the Nigerian Youth Movement; educated in London and played an active role in anti-colonial struggles.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain five factors that led to the rise of nationalism in Nigeria.</li>
+        <li>Highlight the contributions of four nationalist leaders to the independence struggle in Nigeria.</li>
+        <li>Discuss five effects of nationalist movements in Nigeria before independence.</li>
+        <li>Define nationalism and explain any four ways in which it contributed to Nigeria's independence.</li>
+        <li>Examine the role of the press in the development of nationalism in Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a short biography (one page) of any one key nationalist personality not covered in the table above (e.g., Michael Imoudu or Ernest Ikoli).</li>
+        <li>Explain the role of the Zikist Movement in the nationalist struggle.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — CONSTITUTIONAL DEVELOPMENT I
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Constitutional Development I: Clifford (1922), Richards (1946), Macpherson (1951)</h2>
+  <p class="meta"><b>Content:</b> Background, key features, significance, and limitations of the first three Nigerian constitutions.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Discuss the background and key features of the Clifford Constitution.</li>
+      <li>Outline the main features of the Richards Constitution.</li>
+      <li>Explain the key innovations of the Macpherson Constitution.</li>
+      <li>Compare the three constitutions.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A timeline chart showing the progression from the Clifford Constitution (1922) to the Richards Constitution (1946) to the Macpherson Constitution (1951), with key features listed under each. Not embedded in the source.</p>
+
+  <h3>3.1 The Clifford Constitution of 1922</h3>
+  <h4>Background</h4>
+  <p>Introduced by Sir Hugh Clifford, who became Governor of Nigeria in 1919. It replaced the amalgamation framework of 1914 and was the first to introduce an elective principle into Nigeria's legislative process.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Introduction of Elective Principle:</b> For the first time, Nigerians could elect four representatives into the Legislative Council (three from Lagos and one from Calabar).</li>
+    <li><b>Legislative Council Composition:</b> Included the Governor (President), official members (British administrators), and unofficial members (European and African representatives).</li>
+    <li><b>Executive Council:</b> Comprised entirely of Europeans and excluded Nigerians.</li>
+    <li><b>Regional Administration:</b> No provisions for regional autonomy; the constitution only applied to the Southern Protectorate. The North was governed separately through proclamations.</li>
+    <li><b>Rise of Political Participation:</b> Led to the formation of Nigeria's first political party, the Nigerian National Democratic Party (NNDP), by Herbert Macaulay in 1923.</li>
+  </ol>
+
+  <h4>Significance</h4>
+  <ul class="tight">
+    <li>Marked the beginning of elective representation in Nigeria.</li>
+    <li>Encouraged the formation of political parties.</li>
+    <li>Created awareness among Nigerians about governance and democracy.</li>
+  </ul>
+
+  <h4>Limitations</h4>
+  <ul class="tight">
+    <li>Limited franchise restricted to male adults earning £100 per annum in Lagos and Calabar.</li>
+    <li>Did not represent the interests of Northern Nigeria.</li>
+    <li>No Nigerian representation in the Executive Council.</li>
+  </ul>
+
+  <h3>3.2 The Richards Constitution of 1946</h3>
+  <h4>Background</h4>
+  <p>Named after Sir Arthur Richards, the 1946 constitution was an attempt to promote unity and regional development. It came after World War II, a period that saw increased political consciousness and agitation for greater African participation in governance. The drafting process lacked consultation with the people.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Introduction of Regionalism:</b> Nigeria was divided into three regions—North, West, and East—each with a Regional Council and a House of Assembly.</li>
+    <li><b>Legislative Council:</b> Reconstituted to include representatives from the regions and incorporated both elected and nominated Africans.</li>
+    <li><b>Central Legislature:</b> Made up of the Governor, official members, and unofficial members (elected and nominated Nigerians).</li>
+    <li><b>Regional Councils:</b> These bodies advised on local matters and created opportunities for regional self-administration.</li>
+    <li><b>Official Recognition of Nigeria's Diversity:</b> For the first time, constitutional provisions recognised the distinct regional identities and needs of different ethnic groups.</li>
+  </ol>
+
+  <h4>Significance</h4>
+  <ul class="tight">
+    <li>Promoted regional representation and awareness of federalism.</li>
+    <li>Encouraged the growth of regional political parties and leaders.</li>
+    <li>Increased Nigerian participation in legislative activities.</li>
+  </ul>
+
+  <h4>Limitations</h4>
+  <ul class="tight">
+    <li>Constitution was drafted without input from Nigerians.</li>
+    <li>Final authority still resided with the British Governor.</li>
+    <li>Limited powers granted to the regional legislatures.</li>
+  </ul>
+
+  <h3>3.3 The Macpherson Constitution of 1951</h3>
+  <h4>Background</h4>
+  <p>Named after Sir John Macpherson, who succeeded Arthur Richards. It was remarkable for its consultative and participatory process, involving Nigerians at village, district, provincial, and regional levels through conferences and consultations. The constitution was a significant step toward federalism and self-government.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Federal Structure:</b> Strengthened federalism by giving more powers to the three regions.</li>
+    <li><b>Creation of Regional Houses of Assembly and Regional Houses of Chiefs</b> (in the North and West).</li>
+    <li><b>Central Legislative Council (House of Representatives):</b> 136 members in total, including representatives from the three regions and appointed ministers. The Governor remained the head but shared power with a Council of Ministers composed of Nigerian politicians.</li>
+    <li><b>Introduction of Ministerial System:</b> Nigerians were appointed as ministers responsible for various government departments.</li>
+    <li><b>Larger Franchise and Representation:</b> More Nigerians were eligible to vote, and political parties became stronger.</li>
+    <li><b>Constitutional Conference:</b> Included participation of major Nigerian political leaders like Nnamdi Azikiwe, Obafemi Awolowo, and Ahmadu Bello.</li>
+  </ol>
+
+  <h4>Significance</h4>
+  <ul class="tight">
+    <li>Represented the first truly Nigerian-influenced constitution.</li>
+    <li>Encouraged national unity while respecting regional differences.</li>
+    <li>Laid the groundwork for future independence.</li>
+    <li>Allowed for responsible government at the regional level.</li>
+  </ul>
+
+  <h4>Limitations</h4>
+  <ul class="tight">
+    <li>Regionalism deepened ethnic divisions.</li>
+    <li>The central government was relatively weak compared to the regions.</li>
+    <li>Political conflicts led to the breakdown of the constitution in 1953.</li>
+  </ul>
+
+  <h3>3.4 Comparison of Clifford, Richards, and Macpherson Constitutions</h3>
+  <table>
+    <tr><th>Features</th><th>Clifford (1922)</th><th>Richards (1946)</th><th>Macpherson (1951)</th></tr>
+    <tr><td class="k">Participation</td><td>Very limited</td><td>Limited</td><td>Broad and consultative</td></tr>
+    <tr><td class="k">Franchise</td><td>Restricted to Lagos & Calabar</td><td>Slightly expanded</td><td>Widely expanded</td></tr>
+    <tr><td class="k">Federalism</td><td>Absent</td><td>Introduced regions</td><td>Strengthened federalism</td></tr>
+    <tr><td class="k">Ministerial System</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><td class="k">Regional Representation</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td class="k">Contribution of Nigerians</td><td>Minimal</td><td>Not consulted</td><td>Widely consulted</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Highlight the main features of the Clifford Constitution of 1922.</li>
+        <li>Examine the limitations of the Richards Constitution of 1946.</li>
+        <li>Discuss five features of the Macpherson Constitution of 1951.</li>
+        <li>Compare the Clifford Constitution of 1922 and the Richards Constitution of 1946.</li>
+        <li>Assess the impact of the Macpherson Constitution on Nigeria's political development.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Create a table comparing the Clifford, Richards, and Macpherson constitutions based on the following criteria: (a) Who could vote? (b) Was there a ministerial system? (c) What was the role of the Governor?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — CONSTITUTIONAL DEVELOPMENT II
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Constitutional Development II: Lyttleton (1954), Independence (1960), Republican (1963)</h2>
+  <p class="meta"><b>Content:</b> Background, key features, significance, and limitations of the final three pre- and post-independence constitutions.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Outline the major features of the Lyttleton Constitution of 1954.</li>
+      <li>Discuss the key features of the 1960 Independence Constitution.</li>
+      <li>Examine the features of the 1963 Republican Constitution.</li>
+      <li>Compare the three constitutions and their significance.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A timeline showing Nigeria's constitutional development from 1954 (Lyttleton Constitution) to 1960 (Independence) to 1963 (Republican Constitution), with key features like "Introduction of Federalism" and "Severing ties with British Monarchy" labelled. Not embedded in the source.</p>
+
+  <h3>4.1 The Lyttleton Constitution (1954)</h3>
+  <h4>Background</h4>
+  <p>Named after Oliver Lyttleton, the British Colonial Secretary. It was introduced following the constitutional crisis that followed the breakdown of the Macpherson Constitution due to regional tensions and the 1953 Enahoro motion for self-government. It was drafted at the London Constitutional Conference of 1953 and adopted in 1954.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Federal Structure:</b> Nigeria officially became a federation of three regions — North, West, and East. A fourth region (Mid-West) was later created in 1963.</li>
+    <li><b>Division of Powers:</b> Clearly defined powers between central and regional governments through exclusive, concurrent, and residual legislative lists.</li>
+    <li><b>Autonomy of Regions:</b> Regions had their own premiers, legislatures, and executive councils.</li>
+    <li><b>Governor-General and Regional Governors:</b> The Governor-General represented the British Crown, while each region had its own Governor.</li>
+    <li><b>Bicameral Legislature in the Centre:</b> A House of Representatives and a Senate were established.</li>
+    <li><b>Judiciary:</b> An independent judiciary was established for both federal and regional levels.</li>
+  </ol>
+
+  <h4>Significance</h4>
+  <ul class="tight">
+    <li>First constitution to recognise Nigeria as a federation.</li>
+    <li>Strengthened regional self-government.</li>
+    <li>Promoted political competition and party development.</li>
+    <li>Laid the groundwork for full independence.</li>
+  </ul>
+
+  <h4>Limitations</h4>
+  <ul class="tight">
+    <li>The British monarch remained the head of state.</li>
+    <li>Colonial officials still wielded significant influence.</li>
+    <li>Ethnic divisions deepened as parties became regionalised.</li>
+  </ul>
+
+  <h3>4.2 The Independence Constitution of 1960</h3>
+  <h4>Background</h4>
+  <p>Came into effect on 1st October 1960, when Nigeria gained independence. It was the product of a series of constitutional conferences held in London and Lagos between 1957 and 1959.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Constitutional Monarchy:</b> Nigeria became a sovereign state but retained the British monarch as the ceremonial Head of State, represented by a Governor-General (Dr. Nnamdi Azikiwe).</li>
+    <li><b>Federalism:</b> Maintained the federal structure established by the 1954 Constitution.</li>
+    <li><b>Parliamentary System of Government:</b> Adopted a Westminster parliamentary model, where the Prime Minister (Abubakar Tafawa Balewa) was the head of government.</li>
+    <li><b>Bicameral Legislature:</b> National Assembly consisted of the Senate and the House of Representatives.</li>
+    <li><b>Fundamental Human Rights:</b> Enshrined in the constitution (Chapter IV).</li>
+    <li><b>Judiciary:</b> Final appeals could be made to the Privy Council in London, not yet fully sovereign in judicial matters.</li>
+  </ol>
+
+  <h4>Significance</h4>
+  <ul class="tight">
+    <li>Marked Nigeria's formal political independence.</li>
+    <li>Showcased peaceful transition from colonial rule.</li>
+    <li>Recognised the roles of Nigerian leaders in governance.</li>
+  </ul>
+
+  <h4>Limitations</h4>
+  <ul class="tight">
+    <li>British monarch remained the ceremonial head of state.</li>
+    <li>Judicial sovereignty was incomplete.</li>
+    <li>Ethnic tensions and party rivalry were not fully addressed.</li>
+  </ul>
+
+  <h3>4.3 The Republican Constitution of 1963</h3>
+  <h4>Background</h4>
+  <p>Nigeria became a republic on 1st October 1963, exactly three years after independence. The Republican Constitution was enacted by the Nigerian parliament to fully sever constitutional ties with the British Crown.</p>
+
+  <h4>Key Features</h4>
+  <ol class="tight">
+    <li><b>Ceremonial President:</b> Replaced the British monarch with a Nigerian President (Dr. Nnamdi Azikiwe) as the ceremonial head of state.</li>
+    <li><b>Federal Parliamentary System:</b> Retained the Prime Minister as head of government.</li>
+    <li><b>Sovereign Judiciary:</b> The Supreme Court of Nigeria became the final court of appeal; appeals to the Privy Council were abolished.</li>
+    <li><b>Federalism Retained:</b> Regional autonomy and federal structure remained intact.</li>
+    <li><b>Secular State:</b> The constitution affirmed Nigeria as a secular nation.</li>
+    <li><b>Citizenship and Fundamental Rights:</b> Clearly defined citizenship rights and protected civil liberties.</li>
+  </ol>
+
+  <h4>Significance</h4>
+  <ul class="tight">
+    <li>Achieved full sovereignty — both politically and judicially.</li>
+    <li>Replaced colonial symbols with indigenous leadership.</li>
+    <li>Marked Nigeria's final constitutional break from Britain.</li>
+    <li>Signalled the maturity of Nigeria's political system.</li>
+  </ul>
+
+  <h4>Limitations</h4>
+  <ul class="tight">
+    <li>Still operated a parliamentary system that created friction between ceremonial and executive roles.</li>
+    <li>Ethnic and regional rivalries continued to deepen.</li>
+    <li>Unable to prevent the political crises and military coup that followed in 1966.</li>
+  </ul>
+
+  <h3>4.4 Comparison Table</h3>
+  <table>
+    <tr><th>Feature</th><th>Lyttleton (1954)</th><th>Independence (1960)</th><th>Republican (1963)</th></tr>
+    <tr><td class="k">Head of State</td><td>British Monarch via Governor-General</td><td>British Monarch via Nigerian Governor-General</td><td>Nigerian President</td></tr>
+    <tr><td class="k">Head of Government</td><td>Governor (Colonial)</td><td>Nigerian Prime Minister</td><td>Nigerian Prime Minister</td></tr>
+    <tr><td class="k">Judiciary</td><td>Not fully independent</td><td>Final appeal to Privy Council</td><td>Supreme Court as final authority</td></tr>
+    <tr><td class="k">Sovereignty</td><td>Partial</td><td>Political but not judicial</td><td>Full (Political & Judicial)</td></tr>
+    <tr><td class="k">Federalism</td><td>Introduced</td><td>Maintained</td><td>Maintained</td></tr>
+    <tr><td class="k">Role of Nigerians</td><td>Increased</td><td>Full governance</td><td>Full leadership and sovereignty</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Outline the major features of the 1960 Independence Constitution of Nigeria.</li>
+        <li>Examine five features of the Republican Constitution of 1963.</li>
+        <li>Compare the 1954 Lyttleton Constitution with the 1960 Independence Constitution.</li>
+        <li>Discuss the significance of the 1954 Constitution to Nigeria's political development.</li>
+        <li>Explain the differences between the roles of the Head of State under the 1960 and 1963 Constitutions.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a short essay explaining why the 1963 Republican Constitution is considered a milestone in Nigeria's constitutional development.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Midterm Examination</h2>
+  <p class="meta"><b>Content:</b> Assessment covering Weeks 1–4.</p>
+
+  <div class="box obj">
+    <h4>Scope</h4>
+    <ol class="cols2 tight">
+      <li>Colonial Administration in Nigeria.</li>
+      <li>Nationalism in Nigeria.</li>
+      <li>Constitutional Development (Clifford to Macpherson).</li>
+      <li>Constitutional Development (Lyttleton to Republican).</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for this week. If a printed question paper exists, paste the cover or instructions here.</p>
+
+  <h3>Suggested Structure</h3>
+  <table>
+    <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+    <tr><td class="k">A — Objectives</td><td>20 marks</td><td>Twenty multiple-choice questions covering Weeks 1–4.</td></tr>
+    <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+    <tr><td class="k">C — Essay</td><td>20 marks</td><td>Two essay questions requiring detailed explanations.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Revision Focus</h4>
+    <ul class="cols2 tight">
+      <li>Indirect Rule: success in the North, failure in the East.</li>
+      <li>British vs French colonial administration.</li>
+      <li>Causes and effects of nationalism.</li>
+      <li>Key nationalist personalities.</li>
+      <li>Clifford Constitution: elective principle.</li>
+      <li>Richards Constitution: regionalism.</li>
+      <li>Macpherson Constitution: ministerial system.</li>
+      <li>Lyttleton Constitution: federalism.</li>
+      <li>Independence & Republican Constitutions.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — MILITARY RULE IN NIGERIA
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Military Rule in Nigeria: Causes, Achievements, Failures</h2>
+  <p class="meta"><b>Content:</b> Causes of military intervention, achievements and failures of military regimes, and the impact on political development.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define military rule and a coup d'etat.</li>
+      <li>Explain the causes of military intervention in Nigeria.</li>
+      <li>Discuss the achievements of military rule.</li>
+      <li>Examine the failures of military rule.</li>
+      <li>Assess the general impact on Nigeria's political development.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> An infographic titled "Military Rule in Nigeria (1966–1999)" with three panels: "Causes for Coups" (Political Instability, Corruption, Weak Governance), "The Takeover & Era" (Announcement, Constitution Suspended), and "Achievements vs Failures" (Infrastructure, State Creation vs Economic Decline, Human Rights Violations). Not embedded in the source.</p>
+
+  <h3>6.1 Introduction</h3>
+  <p><b>Military rule</b> refers to a system of governance in which the military seizes political power and administers the affairs of a nation. This typically occurs through a <b>coup d'etat</b>, which is the illegal and forceful overthrow of a democratic government by the armed forces. In such regimes, military officers suspend the constitution, dissolve democratic institutions, and take over executive and legislative powers.</p>
+  <p>In Nigeria, military rule began with the first coup on 15th January 1966, led by Major Chukwuma Kaduna Nzeogwu, and continued through various regimes until 1999, when the country returned to democratic governance under President Olusegun Obasanjo.</p>
+
+  <h3>6.2 Causes of Military Intervention in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Political Instability and Crisis:</b> The First Republic (1960–1966) was riddled with electoral malpractices, disputed results, and violent political rivalries. The inability of political leaders to manage differences peacefully created a fertile ground for military intervention.</li>
+    <li><b>Corruption and Mismanagement:</b> Rampant corruption among politicians, embezzlement of public funds, and poor management of national resources eroded public confidence in civilian administrations. The military often claimed to intervene to "clean up" the system.</li>
+    <li><b>Ethnic and Regional Rivalries:</b> Nigeria's diverse ethnic composition led to mistrust and regionalism. The struggle for control of power among the major ethnic groups created tension, which the military exploited to justify their takeover.</li>
+    <li><b>Weak Democratic Institutions:</b> In the early years after independence, Nigeria's democratic institutions lacked the strength and independence needed to check executive excesses or resolve political conflicts.</li>
+    <li><b>Security Concerns and Lawlessness:</b> Increasing cases of political violence, lawlessness, and the inability of the civilian government to control the situation gave the military an excuse to claim they were needed to restore order.</li>
+    <li><b>Influence of Global Trends:</b> The Cold War era witnessed similar military regimes in other parts of Africa. The rise of military rulers in Ghana, Egypt, and Congo emboldened Nigerian officers to follow suit.</li>
+  </ol>
+
+  <h3>6.3 Achievements of Military Rule in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Creation of New States and Local Governments:</b> Military regimes created new states and local government areas to address issues of marginalisation and bring governance closer to the people. From the original 3 regions, Nigeria grew to 36 states under military rule.</li>
+    <li><b>Infrastructural Development:</b> Military governments invested in road construction, building of airports, seaports, and national monuments. Notable projects include the construction of the Third Mainland Bridge in Lagos and the development of Abuja as the Federal Capital Territory.</li>
+    <li><b>Introduction of National Youth Service Corps (NYSC):</b> The NYSC scheme, introduced in 1973 by General Yakubu Gowon, aimed to foster national unity among Nigerian youths.</li>
+    <li><b>Oil Sector Development:</b> The military invested in the oil sector, establishing the Nigerian National Petroleum Corporation (NNPC) and using oil revenue to fund national development.</li>
+    <li><b>Centralisation of Power:</b> Through decree and military authority, national policies were implemented uniformly, reducing some administrative bottlenecks of federalism.</li>
+  </ol>
+
+  <h3>6.4 Failures of Military Rule in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Suppression of Democratic Rights:</b> Military regimes suspended constitutions, dissolved elected bodies, and ruled by decrees. Citizens were denied freedom of speech, association, and the press.</li>
+    <li><b>Rampant Human Rights Abuses:</b> Opposition voices were silenced through arrests, torture, or assassinations. Activists such as Ken Saro-Wiwa were executed without fair trial, drawing global condemnation.</li>
+    <li><b>Entrenchment of Corruption:</b> Contrary to their stated objectives, many military rulers were deeply corrupt. Billions of dollars were looted, notably under General Sani Abacha.</li>
+    <li><b>Lack of Accountability:</b> Military regimes operated without checks and balances. There was no legislature or judiciary to question executive actions, leading to widespread impunity.</li>
+    <li><b>Economic Mismanagement:</b> Poor economic planning, reckless spending, and overdependence on oil revenue led to inflation, unemployment, and declining living standards.</li>
+    <li><b>Stunted Democratic Growth:</b> Repeated interruptions of democratic rule hindered the development of democratic culture, institutions, and political education among the citizenry.</li>
+  </ol>
+
+  <h3>6.5 General Impact on Nigeria's Political Development</h3>
+  <ul class="tight">
+    <li><b>Delayed Democratic Maturity:</b> The constant overthrow of civilian governments slowed Nigeria's democratic growth and civic participation.</li>
+    <li><b>Centralisation of Power:</b> The military's unitary command structure centralised power and resources in the federal government, a problem that persists today.</li>
+    <li><b>Legacy of Instability:</b> The cycle of coups and counter-coups created a legacy of political instability and a culture of violence in politics.</li>
+    <li><b>Destruction of Federalism:</b> The military's centralising tendencies undermined the true spirit of federalism, making states overly dependent on the centre.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Identify and explain five major reasons for military intervention in Nigerian politics.</li>
+        <li>Discuss five achievements of military rule in Nigeria.</li>
+        <li>Highlight five effects of military rule on Nigerian politics.</li>
+        <li>Examine five failures of military regimes in Nigeria.</li>
+        <li>With specific examples, explain five reasons why military rule hindered the growth of democracy in Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a simple organisational chart of the government structure under a typical military regime, showing the Head of State, the Supreme Military Council, and State Military Governors.</li>
+        <li>Write a short paragraph on the "War Against Indiscipline" (WAI) as an achievement of the Buhari/Idiagbon regime.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No new academic content. The source marks this as the midterm break.</p>
+
+  <div class="box obj">
+    <h4>Suggested Holiday Tasks</h4>
+    <ol class="cols2 tight">
+      <li>Read ahead: Civil Rule in Nigeria and Nigerian Federalism.</li>
+      <li>List three features of a democratic government that you can observe in your community.</li>
+      <li>Find out the names of the current local government chairman and state governor.</li>
+      <li>Ask an elder about their experience during a period of military rule in Nigeria.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for the midterm break. This page is intentionally short so it can serve as a divider sheet.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — CIVIL RULE IN NIGERIA
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Civil Rule in Nigeria: Features, Merits, Challenges</h2>
+  <p class="meta"><b>Content:</b> Definition, features, merits, and challenges of civil rule in Nigeria.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define civil rule and its features.</li>
+      <li>Explain the merits of civil rule over military rule.</li>
+      <li>Discuss the challenges facing civil rule in Nigeria.</li>
+      <li>Evaluate the state of civil rule in Nigeria since 1999.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> An infographic titled "Civil Rule in Nigeria" with a green arrow pointing up to "MERITS" (Popular Participation, Rule of Law, Accountability, Periodic Elections) and a red arrow pointing down to "CHALLENGES" (Electoral Malpractice, Corruption, Insecurity, Godfatherism). Not embedded in the source.</p>
+
+  <h3>8.1 Introduction</h3>
+  <p><b>Civil rule</b> can be defined as the governance of a country by elected civilians, as opposed to the military or any authoritarian group. It is a democratic system in which citizens participate actively in choosing their leaders and are governed under a constitutional and legal framework. It is also known as civilian or democratic rule.</p>
+  <p>In Nigeria, civil rule began in 1960 at independence and was interrupted multiple times by military coups until 1999, when democracy was restored with the inauguration of President Olusegun Obasanjo on 29th May 1999.</p>
+
+  <h3>8.2 Features of Civil Rule in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Democratic Governance:</b> Leadership is attained through periodic elections where citizens vote for their representatives. The system is based on democratic principles such as majority rule and minority rights.</li>
+    <li><b>Constitutional Supremacy:</b> Civil rule is guided by a constitution that spells out the functions of the organs of government, the rights of citizens, and limits of power.</li>
+    <li><b>Separation of Powers:</b> There is a clear demarcation among the three arms of government — the executive, legislature, and judiciary. Each arm operates independently and serves as a check on the others.</li>
+    <li><b>Rule of Law:</b> This refers to the supremacy of law over everyone in society, including the leaders.</li>
+    <li><b>Periodic Elections:</b> Civilian rule is characterised by regular elections (every four years in Nigeria) where eligible citizens vote for their leaders at federal, state, and local levels.</li>
+    <li><b>Protection of Fundamental Human Rights:</b> Citizens enjoy basic rights such as freedom of speech, association, religion, and movement as guaranteed by the constitution.</li>
+    <li><b>Political Participation:</b> Citizens are free to form and join political parties, contest elections, or take part in political activities without fear of intimidation.</li>
+    <li><b>Civil Institutions and Structures:</b> Civilian rule promotes the development of independent institutions such as the electoral commission (INEC), anti-corruption agencies (EFCC, ICPC), and civil society organisations.</li>
+  </ol>
+
+  <h3>8.3 Merits of Civil Rule in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Promotion of Fundamental Rights and Liberties:</b> Civil rule provides an environment where citizens enjoy civil liberties without fear of repression.</li>
+    <li><b>Accountability and Transparency:</b> Elected officials are accountable to the people. Mechanisms like legislative oversight and freedom of information encourage transparency.</li>
+    <li><b>Rule of Law:</b> Civil rule promotes the rule of law, where laws are supreme and applicable to all citizens.</li>
+    <li><b>Political Stability:</b> Civil rule ensures political continuity and reduces the chances of violent power transitions.</li>
+    <li><b>Public Participation:</b> Civil rule encourages active participation of the populace in governance through voting and civil societies.</li>
+    <li><b>Legitimacy of Government:</b> Governments under civil rule derive their authority from the people, thereby enjoying more legitimacy and public support.</li>
+    <li><b>Socio-Economic Development:</b> Democratic systems promote better economic policies, foreign investment, and development.</li>
+  </ol>
+
+  <h3>8.4 Challenges of Civil Rule in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Electoral Malpractices:</b> Issues such as vote-buying, rigging, thuggery, and violence mar Nigeria's elections, thereby undermining the democratic process.</li>
+    <li><b>Corruption:</b> Widespread corruption in public offices affects service delivery and public trust in government.</li>
+    <li><b>Weak Institutions:</b> Institutions like INEC, the judiciary, and anti-corruption bodies are often undermined by political interference, making them ineffective.</li>
+    <li><b>Godfatherism:</b> This refers to the influence of powerful individuals who sponsor candidates and manipulate the political process for personal or group interest.</li>
+    <li><b>Ethno-Religious Conflicts:</b> Civil rule in Nigeria is often destabilised by ethnic and religious tensions that lead to violence and polarisation of politics.</li>
+    <li><b>Poverty and Illiteracy:</b> These hinder political participation and make many citizens susceptible to manipulation and vote-buying.</li>
+    <li><b>Executive Lawlessness:</b> Elected officials sometimes act above the law, disregard court orders, or use state institutions to suppress opposition.</li>
+    <li><b>Poor Internal Democracy in Political Parties:</b> Most political parties in Nigeria lack democratic structures, leading to imposition of candidates and lack of internal cohesion.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Highlight five features of civilian rule.</li>
+        <li>Explain any five problems of civilian rule in Nigeria.</li>
+        <li>What are the merits of civil rule over military rule in Nigeria?</li>
+        <li>Discuss five factors militating against civil rule in Nigeria.</li>
+        <li>Examine the roles played by democratic institutions in sustaining civil rule in Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a short essay on the topic: "Civil rule is better than military rule." Provide at least three strong arguments with examples.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — NIGERIAN FEDERALISM: FEATURES & EVOLUTION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Nigerian Federalism: Features, Evolution</h2>
+  <p class="meta"><b>Content:</b> Meaning of federalism, features of Nigerian federalism, and its historical evolution.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define federalism.</li>
+      <li>Explain the key features of Nigerian federalism.</li>
+      <li>Trace the evolution of Nigerian federalism from 1914 to the present.</li>
+      <li>Discuss the reasons for the adoption of federalism in Nigeria.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A map of Nigeria showing the evolution from "1960: 3 Regions" to "1967-1996: Creation of States" to "TODAY: 36 States & FCT", with arrows indicating the timeline. Also a diagram showing "Power-Sharing" between the Federal and State governments through Exclusive, Concurrent, and Residual Lists. Not embedded in the source.</p>
+
+  <h3>9.1 Meaning of Federalism</h3>
+  <p><b>Federalism</b> is a system of government where sovereignty is constitutionally divided between a central authority and constituent political units (such as states or provinces), allowing each level of government to operate independently within its defined sphere of authority.</p>
+  <p>In Nigeria, federalism means that powers are shared between the federal government and the 36 states (including the Federal Capital Territory), each with its constitutionally assigned roles and responsibilities.</p>
+
+  <h3>9.2 Features of Nigerian Federalism</h3>
+  <ol class="tight">
+    <li><b>Constitutional Division of Powers:</b> Clear division of powers among the tiers of government, as enshrined in the 1999 Constitution. This is achieved through:
+      <ul class="tight">
+        <li><b>Exclusive Legislative List:</b> Matters only the Federal Government can legislate on (defence, foreign affairs, currency).</li>
+        <li><b>Concurrent Legislative List:</b> Areas where both Federal and State Governments can legislate (education, health). Where there is a conflict, federal law prevails.</li>
+        <li><b>Residual List:</b> Matters reserved for the states (chieftaincy affairs, local markets).</li>
+      </ul>
+    </li>
+    <li><b>Written and Rigid Constitution:</b> Federalism is based on a written, rigid constitution that clearly outlines the structure and powers of each tier. It cannot be amended by a simple parliamentary majority.</li>
+    <li><b>Supremacy of the Constitution:</b> The Constitution is the highest law of the land, and all organs of government are bound by it.</li>
+    <li><b>Existence of Three Levels of Government:</b> The Federal Government, 36 State Governments, and 774 Local Government Areas (LGAs), each with its own executive, legislature, and judiciary (for the first two tiers).</li>
+    <li><b>Bicameral Legislature:</b> The National Assembly is bicameral, consisting of the Senate (representing states equally) and the House of Representatives (representing the population).</li>
+    <li><b>Supreme Court as Final Arbiter:</b> The judiciary, particularly the Supreme Court, serves as the final arbiter in constitutional disputes between the federal and state governments.</li>
+    <li><b>Revenue Allocation Formula:</b> A system for distributing national resources among the federal, state, and local governments, based on principles such as derivation, equality, and population.</li>
+    <li><b>Multiechnic and Multilingual Society:</b> Federalism was adopted to accommodate Nigeria's over 250 ethnic groups and promote national integration.</li>
+    <li><b>Autonomy of States:</b> Each state enjoys a considerable degree of political and administrative autonomy, with its own governor, house of assembly, and judiciary.</li>
+  </ol>
+
+  <h3>9.3 Evolution of Nigerian Federalism</h3>
+  <table>
+    <tr><th style="width:24%">Period</th><th>Key Developments</th></tr>
+    <tr>
+      <td class="k">1. Colonial Period (1914–1953)</td>
+      <td>The 1914 Amalgamation created Nigeria as a single political entity under a unitary colonial government. The Clifford Constitution (1922) introduced a legislative council with elected African representatives (Lagos and Calabar only). Federal tendencies began with the Richards Constitution (1946), which divided Nigeria into three regions—Northern, Western, and Eastern—laying the groundwork for future federal structures.</td>
+    </tr>
+    <tr>
+      <td class="k">2. Introduction of Federalism (1954)</td>
+      <td>The Lyttleton Constitution of 1954 is widely recognised as the formal introduction of federalism in Nigeria. It provided for a federal structure with a central government and three autonomous regions, each with its own constitution, legislature, and executive.</td>
+    </tr>
+    <tr>
+      <td class="k">3. Post-Independence Era (1960–1966)</td>
+      <td>Nigeria achieved independence in 1960, maintaining the federal structure. The 1960 and 1963 Constitutions preserved regional autonomy. In 1963, the Mid-Western Region was created, becoming the fourth region. However, growing regional rivalry and ethnic tension culminated in the 1966 military coup.</td>
+    </tr>
+    <tr>
+      <td class="k">4. Military Rule and Centralisation (1966–1979)</td>
+      <td>Military regimes suspended parts of the federal constitution, concentrating power at the centre. A major legacy was the creation of states in place of regions: 12 states in 1967, 19 in 1976, 21 in 1987, 30 in 1991, and 36 in 1996. This aimed to promote equity but also reinforced centralisation.</td>
+    </tr>
+    <tr>
+      <td class="k">5. Second and Third Republics (1979–1993)</td>
+      <td>The 1979 Constitution introduced a presidential system and re-emphasised federal principles. The federal system remained intact, though the Third Republic was aborted by military intervention in 1993.</td>
+    </tr>
+    <tr>
+      <td class="k">6. Fourth Republic (1999–Present)</td>
+      <td>The 1999 Constitution guides Nigeria's federalism today. The principle of federal character was introduced to ensure equitable representation. Contemporary debates surround resource control, fiscal federalism, state police, and restructuring.</td>
+    </tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Outline five features of Nigerian federalism.</li>
+        <li>Discuss the historical development of federalism in Nigeria.</li>
+        <li>Explain five reasons why federalism was adopted in Nigeria.</li>
+        <li>Highlight five major challenges of federalism in Nigeria.</li>
+        <li>Examine the evolution of federalism in Nigeria from 1946 to 1999.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a simple diagram showing the three tiers of government in Nigeria (Federal, State, Local) and one key responsibility of each.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — NIGERIAN FEDERALISM II: PROBLEMS & SOLUTIONS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Nigerian Federalism II: Problems and Solutions</h2>
+  <p class="meta"><b>Content:</b> Major challenges facing Nigerian federalism and proposed solutions.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Identify the major problems of Nigerian federalism.</li>
+      <li>Explain how these problems affect governance and national unity.</li>
+      <li>Suggest practical solutions to these problems.</li>
+      <li>Discuss the concept of "true federalism" and restructuring.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> A balance scale illustration with "Revenue Sources (Nigeria's Map & Oil)" on one side and "Revenue Allocation Tiers & Derivation" on the other, surrounded by text boxes for "Controversies & Issues" (Fiscal Federalism, Resource Control, Population vs. Equality). Not embedded in the source.</p>
+
+  <h3>10.1 Problems of Nigerian Federalism</h3>
+  <ol class="tight">
+    <li><b>Over-centralisation of Power:</b> The federal government controls the bulk of political and economic powers, such as defence, policing, mineral resources, and revenue. This makes the states excessively dependent on the centre.</li>
+    <li><b>Resource Control and Revenue Allocation Disputes:</b> The current revenue-sharing formula is viewed by many states, especially oil-producing ones, as unfair. The principle of derivation is often under-emphasised, leading to agitation and restiveness.</li>
+    <li><b>Ethnic and Regional Rivalry:</b> Nigeria's federalism is deeply influenced by ethnic, regional, and religious sentiments. These divisions have led to mutual distrust, marginalisation complaints, and violence, undermining national unity.</li>
+    <li><b>Imbalanced Structure of the Federation:</b> Some claim that the creation of states was politically motivated rather than based on equity, resulting in uneven development, representation, and access to federal resources.</li>
+    <li><b>Weak Fiscal Federalism:</b> States rely heavily on monthly allocations from the federal government. Most states are unable to generate sufficient internal revenue and are not economically viable.</li>
+    <li><b>Lack of State Police:</b> Security remains centralised, with only the federal government controlling the police. This weakens local capacity to address security challenges, especially in rural areas.</li>
+    <li><b>Political Instability and Electoral Malpractices:</b> Frequent electoral fraud and political instability undermine the legitimacy of the federal structure and erode trust in democratic institutions.</li>
+    <li><b>Poor Implementation of Federal Character Principle:</b> The federal character principle, which aims to ensure equitable representation, is often abused. Appointments and recruitment are frequently politicised or ethnically skewed.</li>
+    <li><b>Judicial Inefficiency:</b> Federalism requires a strong and impartial judiciary to resolve disputes. However, the judiciary in Nigeria is often compromised, slow, or subject to political pressure.</li>
+    <li><b>Inadequate Autonomy of Local Governments:</b> Local governments are often under the firm control of state governments. This violates the principle of autonomy and reduces grassroots development.</li>
+  </ol>
+
+  <h3>10.2 Solutions to the Problems of Nigerian Federalism</h3>
+  <ol class="tight">
+    <li><b>True Federalism (Restructuring):</b> There is widespread advocacy for restructuring to ensure proper devolution of powers, granting states more control over their affairs, including policing, resource management, and taxation.</li>
+    <li><b>Review of the Revenue Allocation Formula:</b> The revenue-sharing formula should be reviewed to favour derivation and local resource control. This would incentivise states to develop their resources and reduce dependence on the federal government.</li>
+    <li><b>State Policing:</b> Introducing state police would allow individual states to effectively address internal security challenges and reduce the burden on the central police.</li>
+    <li><b>Strengthening Institutions:</b> Independent and accountable institutions such as INEC, EFCC, ICPC, and the judiciary should be strengthened to enhance the rule of law, transparency, and fair political competition.</li>
+    <li><b>Balanced State Creation and Boundary Adjustment:</b> New states and boundary adjustments should be based on genuine socio-economic needs and population data rather than political calculations.</li>
+    <li><b>Promotion of National Integration:</b> Programs such as citizenship education, exchange programmes, and the National Youth Service Corps (NYSC) should be reformed and strengthened to promote national unity and reduce ethnic bias.</li>
+    <li><b>Fiscal Autonomy of States:</b> States should be encouraged and empowered to generate internal revenue through taxation, agriculture, mining, tourism, and industrialisation.</li>
+    <li><b>Autonomy of Local Governments:</b> Local governments should be granted full autonomy to manage their finances and affairs, as enshrined in the constitution. This will promote grassroots development.</li>
+    <li><b>Effective Implementation of Federal Character Principle:</b> The federal character principle should be applied strictly to ensure fair representation of all ethnic and regional groups in national affairs, without compromising merit and competence.</li>
+    <li><b>Public Awareness and Civic Education:</b> Civic education should be prioritised to enlighten citizens about their rights and responsibilities in a federal system. This will promote political participation and accountability.</li>
+  </ol>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain five challenges facing Nigerian federalism.</li>
+        <li>Identify five factors hindering the practice of true federalism in Nigeria.</li>
+        <li>Highlight five possible solutions to the problems of Nigerian federalism.</li>
+        <li>Discuss five constitutional measures that can enhance the practice of federalism in Nigeria.</li>
+        <li>Suggest five ways to promote national integration in a federal state like Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a one-page essay on the topic: "Restructuring is the solution to Nigeria's federalism problems." Provide at least three arguments to support your position.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — REVISION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 11</span>Revision — First Term</h2>
+  <p class="meta"><b>Content:</b> Comprehensive review of Weeks 1–10 and examination preparation.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Review all topics covered this term.</li>
+      <li>Identify areas of strength and weakness.</li>
+      <li>Practice past examination questions.</li>
+      <li>Prepare effectively for the end-of-term examination.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for revision week. This page is a checklist and study guide.</p>
+
+  <h3>11.1 Key Topics Checklist</h3>
+  <table>
+    <tr><th style="width:24%">Topic</th><th>Key Concepts to Remember</th></tr>
+    <tr>
+      <td class="k">Colonial Administration</td>
+      <td>British Indirect Rule vs. French Assimilation. The role of traditional rulers. The structure of colonial administration (Governor to Native Authorities). Success in the North, failure in the East (Warrant Chiefs, Aba Women's Riot). Effects on political development (Western education, political institutions, ethnic division).</td>
+    </tr>
+    <tr>
+      <td class="k">Nationalism</td>
+      <td>Definition. Stages (Early, Militant, Post-WWII). Causes (oppression, education, economic exploitation, press, world wars, labour unions, Pan-Africanism, political parties). Effects (constitutional development, emergence of parties, independence). Key personalities (Macaulay, Azikiwe, Awolowo, Bello, Enahoro).</td>
+    </tr>
+    <tr>
+      <td class="k">Constitutional Development I</td>
+      <td>Clifford (1922): Elective principle, NNDP. Richards (1946): Regionalism, first regions. Macpherson (1951): Ministerial system, wider consultation.</td>
+    </tr>
+    <tr>
+      <td class="k">Constitutional Development II</td>
+      <td>Lyttleton (1954): Formal federalism, regional autonomy. Independence (1960): Constitutional monarchy, parliamentary system. Republican (1963): Nigerian President, sovereign judiciary, final break from Britain.</td>
+    </tr>
+    <tr>
+      <td class="k">Military Rule</td>
+      <td>Causes of intervention (corruption, instability, ethnic rivalry). Achievements (state creation, infrastructure, NYSC). Failures (human rights abuses, corruption, economic mismanagement). Impact on democracy.</td>
+    </tr>
+    <tr>
+      <td class="k">Civil Rule</td>
+      <td>Features (democratic governance, rule of law, separation of powers, periodic elections). Merits (accountability, stability, legitimacy). Challenges (electoral malpractice, corruption, godfatherism, weak institutions).</td>
+    </tr>
+    <tr>
+      <td class="k">Nigerian Federalism I</td>
+      <td>Meaning of federalism. Features (division of powers, written constitution, three tiers, bicameral legislature, revenue allocation). Evolution from 1914 to the present.</td>
+    </tr>
+    <tr>
+      <td class="k">Nigerian Federalism II</td>
+      <td>Problems (over-centralisation, resource control, ethnic rivalry, weak fiscal federalism, lack of state police). Solutions (restructuring, review of revenue formula, state policing, strengthening institutions).</td>
+    </tr>
+  </table>
+
+  <div class="box">
+    <h4>Exam Strategy</h4>
+    <ul class="tight">
+      <li><b>Read the question carefully:</b> Identify the key verb — "Define," "Explain," "Discuss," "Compare," "List." Your answer must match the command word.</li>
+      <li><b>Plan your answer:</b> For essay questions, take a minute to jot down the main points you want to make before you start writing.</li>
+      <li><b>Use the "Define, Explain, Example" method:</b> For "explain" or "discuss" questions, start with a clear definition, provide a detailed explanation, and then give a specific Nigerian example to support your point.</li>
+      <li><b>Be specific:</b> Use names, dates, and specific events (e.g., "Aba Women's Riot of 1929," "Lyttleton Constitution of 1954") to show depth of knowledge.</li>
+      <li><b>Structure your essay:</b> Use an introduction, a body with clearly numbered points, and a brief conclusion.</li>
+    </ul>
+  </div>
+
+  <div class="split">
+    <div class="box">
+      <h4>Practice Essay Questions</h4>
+      <ol class="tight">
+        <li>Compare and contrast the British and French colonial administrative policies in West Africa.</li>
+        <li>Explain five factors that led to the rise of nationalism in Nigeria.</li>
+        <li>Highlight the main features of the Macpherson Constitution of 1951.</li>
+        <li>Discuss five achievements and five failures of military rule in Nigeria.</li>
+        <li>Explain five challenges facing Nigerian federalism and suggest five solutions.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Select one past WAEC/NECO essay question from any of the weeks in this term and write a full, detailed answer under timed conditions (45 minutes).</li>
+        <li>Create a set of 10 flashcards for the key terms and dates covered this term (e.g., "1914," "NNDP," "Indirect Rule," "Zikist Movement").</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>
