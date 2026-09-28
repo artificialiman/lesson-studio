@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 1 Agricultural Science — First Term</title>
+<style>
+/* ============================================================
+   SS 1 AGRICULTURAL SCIENCE — FIRST TERM
+   Print-first. No JS. Weeks as units. Diagrams in SVG.
+   All text bold. Larger headings/subheadings. Thicker table rules.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #2a6e1a;
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- week headings (larger) ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #2a6e1a;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#2a6e1a;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#2a6e1a;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#2a6e1a;
+  border-bottom:1.4pt solid #d4e3d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes (full hairline, no accent) ---------- */
+.box{
+  border:1.4pt solid #b9c1b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f8f4;
+  border-color:#a8c8b2;
+}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa79a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#48524a;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#2a6e1a;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#2a6e1a;font-weight:900}
+
+/* ---------- tables (thicker rules) ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3ee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #2a6e1a;
+  color:#2a6e1a;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 1 Agricultural Science — First Term</h1>
+  <p class="term">Weeks 1–13 · Meaning, Problems, Systems, Government/NGO Roles, Laws, Land & Ecology · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     WEEK 1 — MEANING AND IMPORTANCE OF AGRICULTURE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Meaning and Importance of Agriculture</h2>
+  <p class="meta"><b>Content:</b> Meaning, branches, importance, and career opportunities in agriculture.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define agriculture and explain its origin.</li>
+      <li>List and explain the branches of agriculture.</li>
+      <li>State and explain the importance of agriculture to Nigeria.</li>
+      <li>Identify career opportunities in agriculture.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="260" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">BRANCHES OF AGRICULTURE</text>
+      <!-- Central hub -->
+      <ellipse cx="350" cy="140" rx="75" ry="35" fill="#2a6e1a" stroke="#1a4a0a" stroke-width="2"/>
+      <text x="350" y="136" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">AGRICULTURE</text>
+      <text x="350" y="152" text-anchor="middle" font-size="9" font-weight="700" fill="#fff">(Science, Art & Business)</text>
+      <!-- Branch 1 -->
+      <rect x="20" y="50" width="120" height="40" rx="5" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="80" y="68" text-anchor="middle" font-size="10" font-weight="900" fill="#333">CROP PRODUCTION</text>
+      <text x="80" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Cereals, Tubers, Legumes</text>
+      <line x1="140" y1="70" x2="275" y2="125" stroke="#2a6e1a" stroke-width="1.5"/>
+      <!-- Branch 2 -->
+      <rect x="20" y="120" width="120" height="40" rx="5" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="80" y="138" text-anchor="middle" font-size="10" font-weight="900" fill="#333">ANIMAL HUSBANDRY</text>
+      <text x="80" y="152" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Goats, Poultry, Cattle</text>
+      <line x1="140" y1="140" x2="275" y2="140" stroke="#2a6e1a" stroke-width="1.5"/>
+      <!-- Branch 3 -->
+      <rect x="20" y="190" width="120" height="40" rx="5" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="80" y="208" text-anchor="middle" font-size="10" font-weight="900" fill="#333">FORESTRY</text>
+      <text x="80" y="222" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Timber, Conservation</text>
+      <line x1="140" y1="210" x2="275" y2="155" stroke="#2a6e1a" stroke-width="1.5"/>
+      <!-- Branch 4 -->
+      <rect x="560" y="50" width="120" height="40" rx="5" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="620" y="68" text-anchor="middle" font-size="10" font-weight="900" fill="#333">FISHERY</text>
+      <text x="620" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Fish, Shrimp, Crayfish</text>
+      <line x1="560" y1="70" x2="425" y2="125" stroke="#2a6e1a" stroke-width="1.5"/>
+      <!-- Branch 5 -->
+      <rect x="560" y="130" width="120" height="40" rx="5" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="620" y="148" text-anchor="middle" font-size="10" font-weight="900" fill="#333">AGRI. ECONOMICS</text>
+      <text x="620" y="162" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Cost, Marketing, Extension</text>
+      <line x1="560" y1="150" x2="425" y2="140" stroke="#2a6e1a" stroke-width="1.5"/>
+    </svg>
+    <figcaption>Fig. 1.1 — The five branches of agriculture.</figcaption>
+  </figure>
+
+  <h3>1.1 Meaning of Agriculture</h3>
+  <p><b>Agriculture</b> is defined as the science, art, and business of cultivating the land, producing crops, and rearing animals for food, fiber, fuel, and other purposes. It involves all processes from soil preparation, planting, raising animals, harvesting, to processing, packaging, and marketing.</p>
+  <p>The word is derived from two Latin words: <b>"Ager"</b> (field) and <b>"Culture"</b> (cultivation). Literally, it means "field cultivation." Modern agriculture now includes livestock rearing, forestry, fishery, and agricultural economics.</p>
+  <p>Agriculture is a <b>science</b> (uses biological and chemical knowledge), an <b>art</b> (requires skills and experience), and a <b>business</b> (people earn a living from it).</p>
+
+  <h3>1.2 Branches of Agriculture</h3>
+  <table>
+    <tr><th style="width:22%">Branch</th><th>Description</th></tr>
+    <tr><td class="k">Crop Production</td><td>Cultivation of crops such as cereals (rice, maize), tubers (yam, cassava), legumes (beans, groundnut), vegetables, and fruits.</td></tr>
+    <tr><td class="k">Animal Husbandry</td><td>Rearing of domesticated animals (goats, sheep, poultry, pigs, cattle) for meat, milk, eggs, hides, and skins.</td></tr>
+    <tr><td class="k">Forestry</td><td>Management, planting, and conservation of forests and trees for timber, rubber, fruits, and medicinal plants.</td></tr>
+    <tr><td class="k">Fishery</td><td>Farming and harvesting of fish and other aquatic animals (shrimp, crayfish) in natural or man-made water bodies.</td></tr>
+    <tr><td class="k">Agricultural Economics & Extension</td><td>Economic aspects of agriculture (cost, marketing, farm management) and education of farmers by extension officers.</td></tr>
+  </table>
+
+  <h3>1.3 Importance of Agriculture</h3>
+  <ol class="tight">
+    <li><b>Provision of Food:</b> Main source of carbohydrates, proteins, fats, vitamins, and minerals.</li>
+    <li><b>Source of Raw Materials:</b> Cocoa for chocolate, cotton for textiles, oil palm for soap and cooking oil.</li>
+    <li><b>Employment Opportunities:</b> Direct jobs (farmers, herdsmen) and indirect jobs (marketers, processors, veterinarians).</li>
+    <li><b>Source of Income:</b> Farming, fishing, livestock rearing, and processing generate income for families.</li>
+    <li><b>Contribution to National Development:</b> Supports trade, transport, and education; reduces food importation.</li>
+    <li><b>Foreign Exchange Earnings:</b> Exports like cocoa, sesame seed, rubber, and palm oil bring foreign currency.</li>
+    <li><b>Rural Development:</b> Leads to provision of roads, electricity, schools, and health centers in rural areas.</li>
+    <li><b>Promotion of Industrial Growth:</b> Supplies raw materials to agro-industries (food processing, packaging, textiles).</li>
+  </ol>
+
+  <h3>1.4 Career Opportunities in Agriculture</h3>
+  <table>
+    <tr><th style="width:28%">Career</th><th>Role</th></tr>
+    <tr><td class="k">Crop Farmer</td><td>Grows food and cash crops (maize, rice, yam, cassava, vegetables).</td></tr>
+    <tr><td class="k">Livestock Farmer</td><td>Rears poultry, goats, sheep, cattle, pigs for meat, milk, eggs.</td></tr>
+    <tr><td class="k">Veterinary Doctor</td><td>Treats and prevents diseases in farm animals; advises on animal health.</td></tr>
+    <tr><td class="k">Soil Scientist</td><td>Studies soil types and properties; recommends fertilizers and farming methods.</td></tr>
+    <tr><td class="k">Agricultural Engineer</td><td>Designs and maintains farm machines, irrigation systems, storage facilities.</td></tr>
+    <tr><td class="k">Extension Agent</td><td>Educates and guides farmers on modern farming practices and technologies.</td></tr>
+    <tr><td class="k">Agribusiness Entrepreneur</td><td>Runs businesses related to agriculture (food processing, marketing, farm inputs).</td></tr>
+    <tr><td class="k">Fishery Officer</td><td>Manages fish farming and natural water bodies; teaches best practices.</td></tr>
+    <tr><td class="k">Forestry Officer</td><td>Manages forests and tree plantations; conserves forest resources.</td></tr>
+    <tr><td class="k">Agricultural Economist</td><td>Analyzes farm costs, pricing, and market trends; helps farmers make financial decisions.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define agriculture and explain why it is called a science, an art, and a business.</li>
+        <li>List and explain the five branches of agriculture.</li>
+        <li>State five importance of agriculture to Nigeria.</li>
+        <li>Mention four career opportunities in agriculture and their roles.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 200-word essay on "The Role of Agriculture in Nigeria's Economy."</li>
+        <li>Draw a chart showing the five branches of agriculture and give two examples of each.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — PROBLEMS OF AGRICULTURAL DEVELOPMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Problems of Agricultural Development and Possible Solutions</h2>
+  <p class="meta"><b>Content:</b> Challenges facing agriculture in Nigeria and their solutions.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Identify and explain ten problems of agricultural development in Nigeria.</li>
+      <li>Suggest possible solutions to each problem.</li>
+      <li>Explain the effects of these problems on food security.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">PROBLEMS OF AGRICULTURAL DEVELOPMENT</text>
+      <!-- Ten problem icons -->
+      <rect x="20" y="50" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="80" y="65" text-anchor="middle" font-size="8" font-weight="900" fill="#333">1. Inadequate Tools</text>
+      <text x="80" y="77" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Hoe, Cutlass</text>
+
+      <rect x="150" y="50" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="210" y="65" text-anchor="middle" font-size="8" font-weight="900" fill="#333">2. Poor Storage</text>
+      <text x="210" y="77" text-anchor="middle" font-size="7" font-weight="700" fill="#555">No Silos/Cold Rooms</text>
+
+      <rect x="280" y="50" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="340" y="65" text-anchor="middle" font-size="8" font-weight="900" fill="#333">3. Limited Credit</text>
+      <text x="340" y="77" text-anchor="middle" font-size="7" font-weight="700" fill="#555">High Interest</text>
+
+      <rect x="410" y="50" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="470" y="65" text-anchor="middle" font-size="8" font-weight="900" fill="#333">4. Pests & Diseases</text>
+      <text x="470" y="77" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Armyworm, Mosaic</text>
+
+      <rect x="540" y="50" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="600" y="65" text-anchor="middle" font-size="8" font-weight="900" fill="#333">5. Poor Extension</text>
+      <text x="600" y="77" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Few Agents</text>
+
+      <rect x="20" y="100" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="80" y="115" text-anchor="middle" font-size="8" font-weight="900" fill="#333">6. Poor Roads</text>
+      <text x="80" y="127" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Market Access</text>
+
+      <rect x="150" y="100" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="210" y="115" text-anchor="middle" font-size="8" font-weight="900" fill="#333">7. Land Tenure</text>
+      <text x="210" y="127" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Inheritance Issues</text>
+
+      <rect x="280" y="100" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="340" y="115" text-anchor="middle" font-size="8" font-weight="900" fill="#333">8. Poor Funding</text>
+      <text x="340" y="127" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Inconsistent</text>
+
+      <rect x="410" y="100" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="470" y="115" text-anchor="middle" font-size="8" font-weight="900" fill="#333">9. Climate Change</text>
+      <text x="470" y="127" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Drought, Flood</text>
+
+      <rect x="540" y="100" width="120" height="35" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="600" y="115" text-anchor="middle" font-size="8" font-weight="900" fill="#333">10. Illiteracy</text>
+      <text x="600" y="127" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Lack of Training</text>
+
+      <text x="350" y="175" text-anchor="middle" font-size="10" font-weight="700" fill="#555">All these lead to LOW PRODUCTIVITY and FOOD INSECURITY</text>
+      <text x="350" y="195" text-anchor="middle" font-size="9" font-weight="700" fill="#777">Solutions: Better tools, storage, credit, extension, roads, land reforms, funding, climate-smart agriculture, education</text>
+    </svg>
+    <figcaption>Fig. 2.1 — Ten major problems of agricultural development in Nigeria.</figcaption>
+  </figure>
+
+  <h3>2.1 Problems and Solutions</h3>
+  <table>
+    <tr><th style="width:30%">Problem</th><th>Effect</th><th>Solution</th></tr>
+    <tr><td class="k">1. Inadequate Farm Tools & Equipment</td><td>Use of simple tools (hoe, cutlass); limits land cultivated; low efficiency.</td><td>Provide mechanized tools (tractors, planters, harvesters); access to hire services.</td></tr>
+    <tr><td class="k">2. Poor Storage & Processing Facilities</td><td>Post-harvest losses; spoilage of tomatoes, yams, grains; no value addition.</td><td>Invest in silos, cold rooms, warehouses, drying machines; establish processing factories.</td></tr>
+    <tr><td class="k">3. Limited Access to Credit & Capital</td><td>Farmers cannot buy inputs; high interest rates; lack of collateral.</td><td>Microfinance banks, agricultural banks, cooperatives; low-interest loans; government guarantees.</td></tr>
+    <tr><td class="k">4. Pests & Diseases</td><td>Crop and livestock losses; reduced yields; increased production costs.</td><td>Pest-resistant varieties; vaccination; IPM; pesticides and herbicides; extension education.</td></tr>
+    <tr><td class="k">5. Poor Extension Services</td><td>Farmers lack modern techniques; low adoption of technology.</td><td>Recruit and train more extension workers; equip with motorcycles and kits; use radio, mobile apps.</td></tr>
+    <tr><td class="k">6. Inadequate Transportation & Market Access</td><td>Produce spoils on bad roads; low income for farmers; high food prices in cities.</td><td>Construct rural roads; provide transport services; market linkages through technology.</td></tr>
+    <tr><td class="k">7. Land Tenure System</td><td>Difficulty acquiring land; no collateral; no long-term investment.</td><td>Land reforms; certificates of occupancy; agricultural land banks.</td></tr>
+    <tr><td class="k">8. Poor Funding & Policy Support</td><td>Small and inconsistent budgets; programmes lack continuity.</td><td>Adequate and consistent budgetary allocation; transparent implementation; stakeholder involvement.</td></tr>
+    <tr><td class="k">9. Effects of Climate Change</td><td>Irregular rainfall; flooding; drought; desertification.</td><td>Climate-smart agriculture (irrigation, water harvesting, afforestation); drought-resistant crops; early warning systems.</td></tr>
+    <tr><td class="k">10. Illiteracy & Lack of Training</td><td>Difficulty understanding instructions; poor record keeping; low technology adoption.</td><td>Adult education; farm field schools; training workshops; radio/TV in local languages.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>List and explain five problems of agricultural development in Nigeria.</li>
+        <li>Suggest three solutions to the problem of poor storage facilities.</li>
+        <li>How does the land tenure system affect agricultural development?</li>
+        <li>Explain the effects of climate change on Nigerian agriculture.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a table with three columns: Problem | Effect | Solution. Fill in five rows using the points discussed.</li>
+        <li>Write a 250-word essay on "How to Improve Agricultural Productivity in Nigeria."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — SUBSISTENCE AND COMMERCIAL AGRICULTURE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Meaning and Differences Between Subsistence and Commercial Agriculture</h2>
+  <p class="meta"><b>Content:</b> Definition, characteristics, and differences between subsistence and commercial agriculture.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define subsistence agriculture and commercial agriculture.</li>
+      <li>State the characteristics of each system.</li>
+      <li>Differentiate between subsistence and commercial agriculture using at least ten points.</li>
+      <li>Give Nigerian examples of each system.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="200" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">SUBSISTENCE vs. COMMERCIAL AGRICULTURE</text>
+      <!-- Left -->
+      <rect x="30" y="50" width="300" height="130" rx="6" fill="#f0f5f0" stroke="#3a7a3a" stroke-width="2"/>
+      <text x="180" y="75" text-anchor="middle" font-size="12" font-weight="900" fill="#3a7a3a">SUBSISTENCE</text>
+      <text x="180" y="95" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Goal: Feed family</text>
+      <text x="180" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Scale: Small (backyard)</text>
+      <text x="180" y="125" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Tools: Hoe, Cutlass</text>
+      <text x="180" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Labour: Family</text>
+      <text x="180" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Output: Low (home use)</text>
+      <!-- Right -->
+      <rect x="370" y="50" width="300" height="130" rx="6" fill="#f0f0f5" stroke="#3a3a8a" stroke-width="2"/>
+      <text x="520" y="75" text-anchor="middle" font-size="12" font-weight="900" fill="#3a3a8a">COMMERCIAL</text>
+      <text x="520" y="95" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Goal: Profit</text>
+      <text x="520" y="110" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Scale: Large (hectares)</text>
+      <text x="520" y="125" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Tools: Tractors, Harvesters</text>
+      <text x="520" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Labour: Hired/Skilled</text>
+      <text x="520" y="155" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Output: High (market)</text>
+    </svg>
+    <figcaption>Fig. 3.1 — Comparison of subsistence and commercial agriculture.</figcaption>
+  </figure>
+
+  <h3>3.1 Subsistence Agriculture</h3>
+  <p><b>Definition:</b> Farming in which the farmer produces food mainly for the consumption of themselves and their family, not for sale in large markets. A little surplus may be sold locally.</p>
+  <p><b>Characteristics:</b> Small-scale; family labor; simple tools (hoe, cutlass); depends on rainfall; low output; not profit-oriented.</p>
+  <p><b>Example:</b> Mr. and Mrs. Ubong in Uruan grow yam, cassava, maize, okra, and vegetables on a small plot for family consumption.</p>
+
+  <h3>3.2 Commercial Agriculture</h3>
+  <p><b>Definition:</b> Farming done with the intention of producing crops or rearing animals for sale and profit. Practiced on a large scale with advanced technology.</p>
+  <p><b>Characteristics:</b> Large-scale; hired labor; modern machinery (tractors, harvesters); uses fertilizers, improved seeds, irrigation; market-oriented; profit-driven.</p>
+  <p><b>Example:</b> A company in Akwa Ibom State operates a large oil palm plantation covering hundreds of hectares, using modern machines and processing palm oil for national and international markets.</p>
+
+  <h3>3.3 Detailed Differences</h3>
+  <table>
+    <tr><th>Feature</th><th>Subsistence Agriculture</th><th>Commercial Agriculture</th></tr>
+    <tr><td class="k">1. Purpose</td><td>Feed the farmer and household.</td><td>Produce for sale and profit.</td></tr>
+    <tr><td class="k">2. Scale</td><td>Small plot near home.</td><td>Large area (hundreds of hectares).</td></tr>
+    <tr><td class="k">3. Tools</td><td>Simple traditional tools (hoe, cutlass, baskets).</td><td>Advanced machinery (tractors, harvesters, planters).</td></tr>
+    <tr><td class="k">4. Labour</td><td>Family labor.</td><td>Hired or paid labor; specialists.</td></tr>
+    <tr><td class="k">5. Output/Yield</td><td>Low due to traditional methods.</td><td>High due to modern inputs and management.</td></tr>
+    <tr><td class="k">6. Type of Produce</td><td>Mixture of food crops for family.</td><td>One or two crops/animals for large-scale distribution.</td></tr>
+    <tr><td class="k">7. Technology</td><td>Little or no technology; knowledge passed down.</td><td>Heavy use of technology (fertilizers, improved seeds, irrigation).</td></tr>
+    <tr><td class="k">8. Risk & Sustainability</td><td>Low financial risk; sustainable due to local knowledge.</td><td>High financial risk; depends on markets and weather.</td></tr>
+    <tr><td class="k">9. Storage & Marketing</td><td>Surplus stored locally or sold in village markets.</td><td>Well-organized storage, transportation, and marketing systems.</td></tr>
+    <tr><td class="k">10. Examples in Nigeria</td><td>Family growing yam and maize in Benue for home use.</td><td>Large oil palm plantation in Akwa Ibom supplying factories and international buyers.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define subsistence agriculture in your own words.</li>
+        <li>Mention three characteristics of commercial agriculture.</li>
+        <li>Compare and contrast subsistence and commercial farming using four points.</li>
+        <li>Give two reasons why commercial agriculture is important to a country's economy.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Visit a local farm. Determine whether it is subsistence or commercial. Write a one-page report on your findings.</li>
+        <li>Draw a table showing five differences between subsistence and commercial agriculture.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — ROLE OF GOVERNMENT IN AGRICULTURAL DEVELOPMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Role of Government in Agricultural Development</h2>
+  <p class="meta"><b>Content:</b> Government roles and interventions in agriculture.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Explain nine major roles of government in agricultural development.</li>
+      <li>Give examples of government programmes and agencies.</li>
+      <li>Discuss the impact of government interventions on farmers.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">GOVERNMENT ROLES IN AGRICULTURE</text>
+      <!-- Nine boxes -->
+      <rect x="20" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="90" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">1. Infrastructure</text>
+      <text x="90" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Roads, Irrigation</text>
+
+      <rect x="170" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="240" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">2. Farm Inputs</text>
+      <text x="240" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Fertilizers, Seeds</text>
+
+      <rect x="320" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="390" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">3. Extension Services</text>
+      <text x="390" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Training, Advice</text>
+
+      <rect x="470" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="540" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">4. Credit Facilities</text>
+      <text x="540" y="82" text-anchor="middle" font-size="8" font-weight="700" fill="#555">BoA, NIRSAL</text>
+
+      <rect x="20" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="90" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">5. Research & Dev.</text>
+      <text x="90" y="132" text-anchor="middle" font-size="8" font-weight="700" fill="#555">IITA, NCRI</text>
+
+      <rect x="170" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="240" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">6. Policy & Regulation</text>
+      <text x="240" y="132" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Land Use Act</text>
+
+      <rect x="320" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="390" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">7. Agencies</text>
+      <text x="390" y="132" text-anchor="middle" font-size="8" font-weight="700" fill="#555">NASC, NAQS</text>
+
+      <rect x="470" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="540" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">8. Youth & Women</text>
+      <text x="540" y="132" text-anchor="middle" font-size="8" font-weight="700" fill="#555">N-Power Agro</text>
+
+      <rect x="170" y="150" width="360" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="350" y="168" text-anchor="middle" font-size="9" font-weight="900" fill="#333">9. Marketing & Price Stabilization</text>
+      <text x="350" y="182" text-anchor="middle" font-size="8" font-weight="700" fill="#555">Minimum prices, Marketing boards</text>
+    </svg>
+    <figcaption>Fig. 4.1 — Nine major roles of government in agricultural development.</figcaption>
+  </figure>
+
+  <h3>4.1 Major Roles of Government</h3>
+  <table>
+    <tr><th style="width:28%">Role</th><th>Description and Examples</th></tr>
+    <tr><td class="k">1. Provision of Infrastructure</td><td>Builds roads, irrigation systems, storage facilities, and electricity. Good roads reduce post-harvest losses; irrigation enables year-round farming.</td></tr>
+    <tr><td class="k">2. Supply of Agricultural Inputs</td><td>Makes fertilizers, pesticides, improved seeds, and machinery available and affordable. Example: Growth Enhancement Support Scheme (GES).</td></tr>
+    <tr><td class="k">3. Agricultural Extension Services</td><td>Trains and sends extension agents to educate farmers on improved practices, pest control, and modern technology.</td></tr>
+    <tr><td class="k">4. Agricultural Credit Facilities</td><td>Provides low-interest loans and grants through Bank of Agriculture (BoA) and NIRSAL Microfinance Bank.</td></tr>
+    <tr><td class="k">5. Agricultural Research and Development</td><td>Funds research institutes like IITA (Ibadan) and NCRI (Badeggi) to develop high-yielding, disease-resistant crop varieties.</td></tr>
+    <tr><td class="k">6. Policy Formulation and Regulation</td><td>Develops laws and policies (e.g., Land Use Act of 1978) to guide agricultural activities, ensure food safety, and protect farmers.</td></tr>
+    <tr><td class="k">7. Establishment of Agricultural Agencies</td><td>Sets up bodies like Federal Ministry of Agriculture and Food Security, NASC, NAQS to regulate and promote agriculture.</td></tr>
+    <tr><td class="k">8. Youth and Women Empowerment</td><td>Creates programs (N-Power Agro, Youth Empowerment in Agriculture) to train and support youth and women in agriculture.</td></tr>
+    <tr><td class="k">9. Marketing and Price Stabilization</td><td>Fixes minimum prices for key commodities, buys surplus produce, and facilitates access to local and international markets.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain five major roles of government in agricultural development with examples.</li>
+        <li>How do agricultural extension services impact farmers' productivity?</li>
+        <li>Discuss how government credit facilities help improve agricultural practices in Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Research and write a short report on N-Power Agro. What is its goal, and how does it help young farmers?</li>
+        <li>List five government agencies involved in agriculture and state one function of each.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Midterm Examination</h2>
+  <p class="meta"><b>Content:</b> Assessment covering Weeks 1–4.</p>
+
+  <div class="box obj">
+    <h4>Scope</h4>
+    <ol class="cols2 tight">
+      <li>Meaning and Importance of Agriculture.</li>
+      <li>Problems of Agricultural Development.</li>
+      <li>Subsistence vs. Commercial Agriculture.</li>
+      <li>Role of Government in Agricultural Development.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for this week. This is for assessment.</p>
+
+  <h3>Suggested Structure</h3>
+  <table>
+    <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+    <tr><td class="k">A — Objectives</td><td>20 marks</td><td>Twenty multiple-choice questions covering Weeks 1–4.</td></tr>
+    <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions.</td></tr>
+    <tr><td class="k">C — Essay</td><td>20 marks</td><td>Two essay questions requiring detailed explanations.</td></tr>
+  </table>
+
+  <div class="box">
+    <h4>Revision Focus</h4>
+    <ul class="cols2 tight">
+      <li>Definition and branches of agriculture.</li>
+      <li>Importance of agriculture.</li>
+      <li>Problems of agricultural development.</li>
+      <li>Subsistence vs. commercial agriculture.</li>
+      <li>Role of government in agriculture.</li>
+      <li>Key agencies (BoA, NIRSAL, IITA).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — ROLE OF NGOs IN AGRICULTURAL DEVELOPMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Role of Non-Governmental Organisations (NGOs) in Agricultural Development</h2>
+  <p class="meta"><b>Content:</b> Meaning, roles, and impact of NGOs in agriculture.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define NGOs and give examples.</li>
+      <li>Explain ten roles of NGOs in agricultural development.</li>
+      <li>Discuss the impact of NGOs on rural farmers.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="200" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">ROLES OF NGOs IN AGRICULTURE</text>
+      <!-- Ten boxes -->
+      <rect x="20" y="50" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="80" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">1. Financial Aid</text>
+      <text x="80" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Grants, Soft Loans</text>
+
+      <rect x="150" y="50" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="210" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">2. Capacity Building</text>
+      <text x="210" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Workshops, Training</text>
+
+      <rect x="280" y="50" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="340" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">3. Research</text>
+      <text x="340" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Field Trials</text>
+
+      <rect x="410" y="50" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="470" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">4. Advocacy</text>
+      <text x="470" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Policy Influence</text>
+
+      <rect x="540" y="50" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="600" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">5. Gender Equality</text>
+      <text x="600" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Women Empowerment</text>
+
+      <rect x="20" y="100" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="80" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">6. Cooperatives</text>
+      <text x="80" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Farmer Groups</text>
+
+      <rect x="150" y="100" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="210" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">7. Disaster Relief</text>
+      <text x="210" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Seeds, Food Aid</text>
+
+      <rect x="280" y="100" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="340" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">8. Environment</text>
+      <text x="340" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Sustainable Farming</text>
+
+      <rect x="410" y="100" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="470" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">9. Market Access</text>
+      <text x="470" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Value Chain</text>
+
+      <rect x="540" y="100" width="120" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="600" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">10. Monitoring</text>
+      <text x="600" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Evaluation</text>
+    </svg>
+    <figcaption>Fig. 6.1 — Ten roles of NGOs in agricultural development.</figcaption>
+  </figure>
+
+  <h3>6.1 Meaning of NGOs</h3>
+  <p><b>Non-Governmental Organisations (NGOs)</b> are non-profit, independent organisations that operate at local, national, or international levels. They work closely with rural farmers, communities, cooperatives, and agricultural groups to provide support, funding, and education. Their interventions are particularly valuable in areas neglected by government programmes.</p>
+
+  <h3>6.2 Roles of NGOs</h3>
+  <table>
+    <tr><th style="width:28%">Role</th><th>Description</th></tr>
+    <tr><td class="k">1. Financial Assistance and Grants</td><td>Provide grants or soft loans to smallholder farmers, especially women and youth, who cannot access formal banking services.</td></tr>
+    <tr><td class="k">2. Capacity Building and Training</td><td>Train farmers through workshops, seminars, and demonstrations on improved practices (crop rotation, compost making, pest control, irrigation, post-harvest handling).</td></tr>
+    <tr><td class="k">3. Research and Development</td><td>Partner with research institutions to conduct field-based research, test new seed varieties, and investigate organic farming methods.</td></tr>
+    <tr><td class="k">4. Advocacy and Policy Influence</td><td>Campaign for fair land laws, better market access, affordable inputs, and environmental protection; represent farmers at national and international platforms.</td></tr>
+    <tr><td class="k">5. Promoting Gender Equality and Inclusion</td><td>Empower women and disadvantaged groups by providing tools, training, credit, and sensitizing communities on inclusion and equity.</td></tr>
+    <tr><td class="k">6. Support for Agro-Cooperative Societies</td><td>Mobilize farmers into cooperatives, provide technical and managerial support, and help them access finance and markets.</td></tr>
+    <tr><td class="k">7. Disaster Relief and Emergency Support</td><td>Provide emergency supplies (seeds, food, livestock, shelter) during floods, droughts, pest infestations, or pandemics; support recovery.</td></tr>
+    <tr><td class="k">8. Environmental Protection and Sustainable Farming</td><td>Teach farmers to protect soil fertility, conserve water, manage waste, and reduce harmful chemicals; encourage agroforestry, organic farming, mulching.</td></tr>
+    <tr><td class="k">9. Market Access and Value Chain Development</td><td>Help farmers connect to local and international markets; offer training on packaging, pricing, negotiation, and value addition.</td></tr>
+    <tr><td class="k">10. Monitoring, Evaluation, and Feedback</td><td>Help communities track progress of development projects; assess impact and suggest improvements; ensure transparency and accountability.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Mention and explain five roles of NGOs in agricultural development.</li>
+        <li>How do NGOs contribute to capacity building and environmental sustainability?</li>
+        <li>In what ways do NGOs promote gender equality in agriculture?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Research and write a short report on one international NGO working in Nigerian agriculture (e.g., FADAMA, Sasakawa Global 2000). What do they do?</li>
+        <li>List five ways NGOs have helped farmers in your community or state.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No new academic content. The source marks this as the midterm break.</p>
+
+  <div class="box obj">
+    <h4>Suggested Holiday Tasks</h4>
+    <ol class="cols2 tight">
+      <li>Read ahead: Agricultural Laws and Reforms.</li>
+      <li>Visit a local farm and observe the type of tools used.</li>
+      <li>Ask an elder about the land tenure system in your community.</li>
+      <li>List five crops grown in your area and the pests that attack them.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for the midterm break. This page is intentionally short so it can serve as a divider sheet.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — AGRICULTURAL LAWS AND REFORMS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Agricultural Laws and Reforms</h2>
+  <p class="meta"><b>Content:</b> Meaning, objectives, key laws, effects, and agencies.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define agricultural laws and reforms.</li>
+      <li>State the objectives of agricultural laws.</li>
+      <li>Discuss key agricultural laws in Nigeria.</li>
+      <li>Explain the effects of these laws on agricultural production.</li>
+      <li>Identify agencies responsible for implementing agricultural laws.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="240" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">AGRICULTURAL LAWS & REFORMS IN NIGERIA</text>
+      <!-- Laws -->
+      <rect x="30" y="50" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="130" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Land Use Act (1978)</text>
+      <text x="130" y="80" text-anchor="middle" font-size="7" font-weight="700" fill="#555">State control of land</text>
+
+      <rect x="250" y="50" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="350" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Agricultural Credit Guarantee Scheme Act (1977)</text>
+      <text x="350" y="80" text-anchor="middle" font-size="7" font-weight="700" fill="#555">CBN guarantees 75% of loans</text>
+
+      <rect x="470" y="50" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="570" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">River Basin Development Authorities Act (1976)</text>
+      <text x="570" y="80" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Irrigation & flood control</text>
+
+      <rect x="30" y="100" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="130" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Agricultural (Control of Importation) Act</text>
+      <text x="130" y="130" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Protects local farmers</text>
+
+      <rect x="250" y="100" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="350" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Operation Feed the Nation (1976)</text>
+      <text x="350" y="130" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Increase food production</text>
+
+      <rect x="470" y="100" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="570" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Green Revolution (1980)</text>
+      <text x="570" y="130" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Self-sufficiency in food</text>
+
+      <rect x="250" y="150" width="200" height="35" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1.5"/>
+      <text x="350" y="168" text-anchor="middle" font-size="9" font-weight="900" fill="#333">Agricultural Promotion Policy (2016–2020)</text>
+      <text x="350" y="180" text-anchor="middle" font-size="7" font-weight="700" fill="#555">"The Green Alternative"</text>
+    </svg>
+    <figcaption>Fig. 8.1 — Key agricultural laws and reforms in Nigeria.</figcaption>
+  </figure>
+
+  <h3>8.1 Meaning of Agricultural Laws and Reforms</h3>
+  <p><b>Agricultural laws</b> are legal instruments enacted by the government to guide, regulate, and promote agricultural activities. <b>Agricultural reforms</b> are programmes or policies introduced to improve the agricultural sector.</p>
+
+  <h3>8.2 Objectives of Agricultural Laws</h3>
+  <ol class="tight">
+    <li>Ensure efficient use of agricultural land.</li>
+    <li>Promote agricultural investment.</li>
+    <li>Resolve land disputes.</li>
+    <li>Protect the environment.</li>
+    <li>Boost agricultural productivity.</li>
+  </ol>
+
+  <h3>8.3 Key Agricultural Laws and Reforms in Nigeria</h3>
+  <table>
+    <tr><th style="width:28%">Law/Reform</th><th>Description and Implication</th></tr>
+    <tr><td class="k">1. Land Use Act of 1978</td><td>All land vested in state governors; individuals acquire land through certificates of occupancy. Abolished traditional land ownership. Made land accessible for commercial farming. Limitation: Bureaucracy in obtaining land certificates.</td></tr>
+    <tr><td class="k">2. Agricultural Credit Guarantee Scheme Act of 1977</td><td>CBN guarantees up to 75% of loans granted to farmers by commercial banks. Increased access to credit. Limitation: Collateral requirements still a barrier.</td></tr>
+    <tr><td class="k">3. River Basin Development Authorities Act (1976)</td><td>Established RBDAs to provide irrigation, flood control, and water supply. Aimed at year-round farming. Limitation: Poor maintenance, corruption, mismanagement.</td></tr>
+    <tr><td class="k">4. Agricultural (Control of Importation) Act</td><td>Regulates importation of agricultural products to protect local farmers. Bans or tariffs on certain imports. Limitation: Smuggling and porous borders.</td></tr>
+    <tr><td class="k">5. Operation Feed the Nation (OFN) – 1976</td><td>Programme by General Olusegun Obasanjo to increase food production and encourage youth participation. Involved training, inputs, school farms. Limited success due to poor planning and lack of continuity.</td></tr>
+    <tr><td class="k">6. Green Revolution Programme (1980)</td><td>Initiated by President Shehu Shagari to boost food production and reduce importation. Distributed seeds, fertilizers, machinery. Limited success due to poor implementation.</td></tr>
+    <tr><td class="k">7. Agricultural Promotion Policy (APP) – 2016 to 2020</td><td>Also known as "The Green Alternative." Focused on food security, job creation, and value addition. Contributed to increased rice and cassava production. Challenges: Insecurity and infrastructure deficit.</td></tr>
+  </table>
+
+  <h3>8.4 Effects of Agricultural Laws and Reforms</h3>
+  <ol class="tight">
+    <li><b>Improved Land Accessibility:</b> Land Use Act made it easier for large-scale farmers to access land.</li>
+    <li><b>Increased Credit Availability:</b> ACGS improved farmers' access to loans.</li>
+    <li><b>Boost in Food Production:</b> Green Revolution and APP encouraged food production.</li>
+    <li><b>Modernisation of Agriculture:</b> Reforms facilitated mechanisation and value addition.</li>
+    <li><b>Youth Engagement:</b> OFN targeted youth and educated citizens.</li>
+    <li><b>Policy Continuity Challenges:</b> Frequent changes in government lead to abrupt termination of programmes.</li>
+  </ol>
+
+  <h3>8.5 Agencies Responsible for Agricultural Laws and Reforms</h3>
+  <table>
+    <tr><th style="width:28%">Agency</th><th>Role</th></tr>
+    <tr><td class="k">Federal Ministry of Agriculture and Food Security</td><td>Oversees policy formulation, implementation, and supervision of national agricultural projects.</td></tr>
+    <tr><td class="k">Central Bank of Nigeria (CBN)</td><td>Manages agricultural credit schemes and provides financial support for agribusiness.</td></tr>
+    <tr><td class="k">Nigerian Agricultural Insurance Corporation (NAIC)</td><td>Provides insurance cover to farmers against natural disasters and risks.</td></tr>
+    <tr><td class="k">National Agricultural Land Development Authority (NALDA)</td><td>Facilitates land development and management for agricultural use.</td></tr>
+    <tr><td class="k">River Basin Development Authorities (RBDAs)</td><td>Responsible for irrigation and water supply for agriculture.</td></tr>
+    <tr><td class="k">Nigerian Export Promotion Council (NEPC)</td><td>Promotes export of Nigerian agricultural products and value chain development.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define agricultural laws and reforms.</li>
+        <li>State four objectives of agricultural laws in Nigeria.</li>
+        <li>Discuss three agricultural laws enacted in Nigeria and their implications.</li>
+        <li>Mention four effects of agricultural reforms on Nigerian agriculture.</li>
+        <li>Identify three government agencies involved in implementing agricultural laws.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Research and write a short report on the Land Use Act of 1978. What are its advantages and disadvantages?</li>
+        <li>List five agricultural reform programmes in Nigeria and state the year each was launched.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — LAND AND ITS USES
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Land and Its Uses</h2>
+  <p class="meta"><b>Content:</b> Meaning of land, characteristics, uses of land, and importance of land use planning.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define land and state its characteristics.</li>
+      <li>Explain nine major uses of land.</li>
+      <li>Discuss the importance of proper land use planning.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">USES OF LAND</text>
+      <!-- Nine boxes -->
+      <rect x="20" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="90" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">1. Agriculture</text>
+      <text x="90" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Crops, Livestock</text>
+
+      <rect x="170" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="240" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">2. Forestry</text>
+      <text x="240" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Timber, Fuelwood</text>
+
+      <rect x="320" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="390" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">3. Wildlife Conservation</text>
+      <text x="390" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Game Reserves</text>
+
+      <rect x="470" y="50" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="540" y="68" text-anchor="middle" font-size="9" font-weight="900" fill="#333">4. Residential</text>
+      <text x="540" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Housing, Towns</text>
+
+      <rect x="20" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="90" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">5. Industrial</text>
+      <text x="90" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Factories, Warehouses</text>
+
+      <rect x="170" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="240" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">6. Recreational</text>
+      <text x="240" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Parks, Sports Fields</text>
+
+      <rect x="320" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="390" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">7. Transportation</text>
+      <text x="390" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Roads, Railways</text>
+
+      <rect x="470" y="100" width="140" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="540" y="118" text-anchor="middle" font-size="9" font-weight="900" fill="#333">8. Religious/Cultural</text>
+      <text x="540" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Churches, Shrines</text>
+
+      <rect x="170" y="150" width="340" height="40" rx="4" fill="#e8f0e8" stroke="#2a6e1a" stroke-width="1"/>
+      <text x="340" y="168" text-anchor="middle" font-size="9" font-weight="900" fill="#333">9. Mining & Extraction</text>
+      <text x="340" y="182" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Minerals, Crude Oil</text>
+    </svg>
+    <figcaption>Fig. 9.1 — Nine major uses of land.</figcaption>
+  </figure>
+
+  <h3>9.1 Meaning of Land</h3>
+  <p><b>Land</b> refers to the solid surface of the earth not covered by water, including the soil, minerals, water tables, and rocks beneath it. In agriculture, land is the portion of the earth's surface used for cultivating crops, rearing animals, and other farming activities. It is a <b>fixed resource</b> — cannot be increased or manufactured.</p>
+
+  <h3>9.2 Characteristics of Land</h3>
+  <ul class="tight">
+    <li><b>Immobile:</b> Cannot be moved from one place to another.</li>
+    <li><b>Inelastic in supply:</b> Fixed in quantity.</li>
+    <li><b>Varies in fertility:</b> Texture, slope, drainage, chemical composition differ.</li>
+    <li><b>Subject to degradation:</b> Can be degraded by erosion, pollution, overuse.</li>
+  </ul>
+
+  <h3>9.3 Uses of Land</h3>
+  <table>
+    <tr><th style="width:28%">Use</th><th>Description</th></tr>
+    <tr><td class="k">1. Agricultural Use</td><td>Crop farming, livestock rearing, fish farming, horticulture. Cropland, pastureland, fish ponds.</td></tr>
+    <tr><td class="k">2. Forestry</td><td>Growing trees in forests (natural or plantations) for timber, fuelwood, fruits, herbs, resins. Also protects watersheds, biodiversity.</td></tr>
+    <tr><td class="k">3. Wildlife Conservation</td><td>Land set aside for game reserves and national parks (e.g., Yankari Game Reserve, Cross River National Park).</td></tr>
+    <tr><td class="k">4. Residential Use</td><td>Building homes, villages, towns, cities. Urban expansion competes with agricultural land.</td></tr>
+    <tr><td class="k">5. Industrial Use</td><td>Factories, warehouses, business complexes. Processing plants for agricultural products.</td></tr>
+    <tr><td class="k">6. Recreational Use</td><td>Parks, playgrounds, sports fields, tourism centres.</td></tr>
+    <tr><td class="k">7. Transportation Infrastructure</td><td>Roads, railways, airports, harbours. Roads connect rural farms to urban markets.</td></tr>
+    <tr><td class="k">8. Religious and Cultural Purposes</td><td>Churches, mosques, shrines, cemeteries. Traditional festivals require open land spaces.</td></tr>
+    <tr><td class="k">9. Mining and Extraction</td><td>Minerals, crude oil, clay. Mining requires land for exploration, extraction, processing.</td></tr>
+  </table>
+
+  <h3>9.4 Importance of Proper Land Use Planning</h3>
+  <ul class="tight">
+    <li>Ensures efficient and sustainable use of limited land.</li>
+    <li>Prevents land disputes.</li>
+    <li>Reduces environmental degradation.</li>
+    <li>Promotes equitablemiddle development.</li>
+    <li>Protects agricultural lands from unnecessary conversion to urban or industrial areas.</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define land and state three of its characteristics.</li>
+        <li>Explain five uses of land in agriculture and the environment.</li>
+        <li>Why is land use planning important?</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a map of your community showing the different uses of land (agriculture, residential, roads, etc.).</li>
+        <li>Write a 200-word essay on "The Importance of Land to Agriculture."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — AGRICULTURAL ECOLOGY
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Agricultural Ecology</h2>
+  <p class="meta"><b>Content:</b> Definition, components, importance, and relationship between living and non-living components.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Define agricultural ecology (agroecology).</li>
+      <li>Explain the biotic and abiotic components of an agroecosystem.</li>
+      <li>State the importance of agricultural ecology.</li>
+      <li>Describe the relationship between living and non-living components.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x"="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">COMPONENTS OF AN AGRO fontECOSYSTEM</text>
+      <!-- Left: Biotic -->
+      <-sizerect x="30" y="50" width="300" height="150" rx="6" fill="#f0f5f0" stroke="#3="a7a3a" stroke-width="2"/>
+      <text x="180" y="75" text-anchor="middle"9 font-size="12" font-weight="900" fill="#3a7a3a">BIOTIC (Living)</text>
+      <text x="180" y="100" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Crops (maize, cassava, yam)</text>
+      <text x="180" y="120" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Livestock (poultry, cattle, goats)</text>
+      <text x="180" y="140" text-anchor="" font-weight="700" fill="#555">Beneficial organisms (bees, earthworms)</text>
+      <text x="180" y="160" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Decomposers (fungi, bacteria)</text>
+      <text x="180" y="180" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Pests & Parasites (harmful)</text>
+      <!-- Right: Abiotic -->
+      <rect x="370" y="50" width="300" height="150" rx="6" fill="#f0f0f5" stroke="#3a3a8a" stroke-width="2"/>
+      <text x="520" y="75" text-anchor="middle" font-size="12" font-weight="900" fill="#3a3a8a">ABIOTIC (Non-Living)</text>
+      <text x="520" y="100" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Soil (supports, nourishes roots)</text>
+      <text x="520" y="120" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Water (essential for growth)</text>
+      <text x="520" y="140" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Air (oxygen, carbon dioxide)</text>
+      <text x="520" y="160" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Sunlight (energy for photosynthesis)</text>
+      <text x="520" y="180" text-anchor="middle" font-size="9" font-weight="700" fill="#555">Temperature, Rainfall, Wind</text>
+    </svg>
+    <figcaption>Fig. 10.1 — Biotic and abiotic components of an agroecosystem.</figcaption>
+  </figure>
+
+  <h3>10.1 Definition of Agricultural Ecology</h3>
+  <p><b>Agricultural ecology (agroecology)</b> is the branch of science that deals with the relationship between crops, livestock, and the surrounding environment. It explores how living organisms (plants, animals, microorganisms) interact with non-living elements (soil, water, air, climate) within farming systems. The aim is to produce food in a way that is economically viable and environmentally sustainable.</p>
+
+  <h3>10.2 Components of an Agroecosystem</h3>
+  <table>
+    <tr><th style="width:20%">Component</th><th>Description</th></tr>
+    <tr><td class="k">Biotic (Living)</td><td>Crops, livestock, beneficial organisms (earthworms, bees), decomposers (fungi, bacteria), pests and parasites.</td></tr>
+    <tr><td class="k">Abiotic (Non-Living)</td><td>Soil, water, air, sunlight, temperature, rainfall, wind.</td></tr>
+  </table>
+
+  <h3>10.3 Importance of Agricultural Ecology</h3>
+  <ol class="tight">
+    <li><b>Promotes Sustainable Agriculture:</b> Encourages farming methods friendly to the environment; reduces reliance on artificial chemicals.</li>
+    <li><b>Enhances Soil Fertility and Productivity:</b> Teaches natural soil maintenance (crop rotation, cover cropping, organic manure).</li>
+    <li><b>Supports Natural Pest and Disease Control:</b> Embraces biodiversity (birds, frogs, predatory insects) and intercropping.</li>
+    <li><b>Facilitates Efficient Use of Resources:</b> Encourages rainwater harvesting, mulching, drip irrigation, agroforestry.</li>
+    <li><b>Improves Climate Resilience:</b> Mixed farming and organic soil management help farms withstand droughts, floods, and pest outbreaks.</li>
+    <li><b>Encourages Integrated Farming Systems:</b> Combines crops, livestock, aquaculture, and forestry; waste from one part becomes a resource for another.</li>
+    <li><b>Reduces Environmental Pollution:</b> Advocates organic inputs, recycling, composting, and green manure.</li>
+    <li><b>Strengthens Food Security and Nutrition:</b> Promotes cultivation of a wide variety of crops, including traditional and indigenous foods.</li>
+  </ol>
+
+  <h3>10.4 Relationship Between Living and Non-Living Components</h3>
+  <p>In an agroecosystem, the interaction between living (biotic) and non-living (abiotic) elements is continuous and essential:</p>
+  <ul class="tight">
+    <li>Plants (living) depend on sunlight (non-living) for photosynthesis.</li>
+    <li>Soil (non-living) provides physical support and essential nutrients to plants.</li>
+    <li>Microorganisms in the soil (living) break down organic matter into forms plants can use.</li>
+    <li>Animals feed on crops (living), and their waste returns nutrients to the soil (non-living).</li>
+  </ul>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Define agricultural ecology.</li>
+        <li>List and explain the biotic and abiotic components of an agroecosystem.</li>
+        <li>State five importance of agricultural ecology.</li>
+        <li>Describe the relationship between living and non-living components.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Draw a diagram of an agroecosystem showing the biotic and abiotic components and their interactions.</li>
+        <li>Write a 250-word essay on "How Agroecology Promotes Sustainable Agriculture."</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 11 — FACTORS AFFECTING LAND AVAILABILITY
+     ================================= for=========================== -->
+<section class=" Agriculturalweek">
+  <h2><span class=" Purwk">WEEK 11</span>Factors Affecting Land Availabilityposes</h2>
+  <p class="meta"><b>Content:</b> Ten factors that reduce land availability for agriculture in Nigeria.</p>
+
+  <div class="box obj">
+    <h4>Performance Objectives</h4>
+    <ol class="cols2 tight">
+      <li>Identify and explain ten factors affecting land availability for agriculture.</li>
+      <li>Discuss the effects of each factor on food production.</li>
+      <li>Suggest solutions to land availability problems.</li>
+    </ol>
+  </div>
+
+  <figure class="fig">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="220" fill="#fdfcf8"/>
+      <text x="350" y="25" text-anchor="middle" font-size="15" font-weight="900" fill="#2a6e1a">FACTORS AFFECTING LAND AVAILABILITY</text>
+      <!-- Ten boxes -->
+      <rect x="20" y="50" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="90" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">1. Population Growth</text>
+      <text x="90" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Housing, Roads</text>
+
+      <rect x="170" y="50" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="240" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">2. Urbanisation</text>
+      <text x="240" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">City Expansion</text>
+
+      <rect x="320" y="50" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="390" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">3. Land Tenure</text>
+      <text x="390" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Communal Ownership</text>
+
+      <rect x="470" y="50" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="540" y="68" text-anchor="middle" font-size="8" font-weight="900" fill="#333">4. Soil Degradation</text>
+      <text x="540" y="82" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Erosion, Desertification</text>
+
+      <rect x="20" y="100" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="90" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">5. Land Conflicts</text>
+      <text x="90" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Farmer-Herder</text>
+
+      <rect x="170" y="100" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="240" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">6. Government Policies</text>
+      <text x="240" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Land Acquisition</text>
+
+      <rect x="320" y="100" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="390" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">7. Natural Disasters</text>
+      <text x="390" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Floods, Drought</text>
+
+      <rect x="470" y="100" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="540" y="118" text-anchor="middle" font-size="8" font-weight="900" fill="#333">8. Infrastructure</text>
+      <text x="540" y="132" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Roads, Dams</text>
+
+      <rect x="20" y="150" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="90" y="168" text-anchor="middle" font-size="8" font-weight="900" fill="#333">9. Cultural Practices</text>
+      <text x="90" y="182" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Inheritance, Women</text>
+
+      <rect x="170" y="150" width="140" height="40" rx="4" fill="#f5e8e8" stroke="#a83a3a" stroke-width="1"/>
+      <text x="240" y="168" text-anchor="middle" font-size="8" font-weight="900" fill="#333">10. Speculation</text>
+      <text x="240" y="182" text-anchor="middle" font-size="7" font-weight="700" fill="#555">Land Hoarding</text>
+    </svg>
+    <figcaption>Fig. 11.1 — Ten factors affecting land availability for agriculture.</figcaption>
+  </figure>
+
+  <h3>11.1 Factors Affecting Land Availability</h3>
+  <table>
+    <tr><th style="width:28%">Factor</th><th>Explanation</th></tr>
+    <tr><td class="k">1. Population Growth</td><td>As population increases, demand for land for housing, roads, schools rises; farmland converted to residential and commercial estates.</td></tr>
+    <tr><td class="k">2. Urbanisation and Industrialisation</td><td>Movement from rural to urban areas leads to city expansion; factories, warehouses, shopping malls replace farmland.</td></tr>
+    <tr><td class="k">3. Land Tenure System</td><td>Traditional customs, family ownership; farmers lack legal ownership; difficult to invest in long-term improvements; communal ownership leads to conflicts.</td></tr>
+    <tr><td class="k">4. Soil Degradation and Environmental Factors</td><td>Erosion, desertification, deforestation, flooding; unsustainable practices (overgrazing, bush burning, continuous cropping) strip land of nutrients.</td></tr>
+    <tr><td class="k">5. Land Use Conflicts</td><td>Farmer-herder clashes, community disputes, individual conflicts; result in violence, loss of lives, abandonment of farmland.</td></tr>
+    <tr><td class="k">6. Government Policies and Land Acquisition</td><td>Government acquires land for roads, airports, universities, industrial estates; displaces farming communities; inadequate support for land registration.</td></tr>
+    <tr><td class="k">7. Natural Disasters</td><td>Floods, landslides, earthquakes, droughts render land unsuitable; thousands of hectares submerged during rainy season.</td></tr>
+    <tr><td class="k">8. Infrastructure Development</td><td>Roads, bridges, markets, hydroelectric dams involve clearing large areas of farmland.</td></tr>
+    <tr><td class="k">9. Cultural Practices and Land Inheritance</td><td>Land fragmented into small, scattered plots; women restricted from land ownership; limits access for new generations.</td></tr>
+    <tr><td class="k">10. Speculation and Land Hoarding</td><td>Individuals and organisations acquire large parcels for future investment; land left idle; farmers cannot access it; drives up cost.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Evaluation</h4>
+      <ol class="tight">
+        <li>Explain five factors affecting land availability for agriculture.</li>
+        <li>How does population growth affect land availability?</li>
+        <li>What is land hoarding, and how does it affect farmers?</li>
+        <li>Suggest three solutions to land availability problems in Nigeria.</li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Assignment</h4>
+      <ol class="tight">
+        <li>Write a 250-word essay on "The Effects of Urbanisation on Agricultural Land in Nigeria."</li>
+        <li>Research and list three land conflicts in Nigeria and their causes.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 12 — EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 12</span>Examination</h2>
+  <p class="meta"><b>Content:</b> End-of-term examination covering all topics from Weeks 1–11.</p>
+
+  <div class="box obj">
+    <h4>Examination Structure</h4>
+    <table>
+      <tr><th style="width:22%">Section</th><th style="width:18%">Marks</th><th>Content</th></tr>
+      <tr><td class="k">A — Objectives</td><td>40 marks</td><td>Forty multiple-choice questions covering Weeks 1–11.</td></tr>
+      <tr><td class="k">B — Short Answers</td><td>20 marks</td><td>Five short-answer questions (definitions, lists, distinctions).</td></tr>
+      <tr><td class="k">C — Essay</td><td>40 marks</td><td>Four essay questions requiring detailed explanations and diagrams.</td></tr>
+    </table>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for examination week. This page is a divider sheet.</p>
+
+  <div class="box">
+    <h4>Final Tips</h4>
+    <ul class="tight">
+      <li>Review all diagrams and be prepared to draw and label them.</li>
+      <li>Practice defining key terms in your own words.</li>
+      <li>Use specific Nigerian examples wherever possible.</li>
+      <li>Manage your time: don't spend too long on one question.</li>
+      <li>Read all questions carefully before answering.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 13 — CLOSING
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 13</span>Closing</h2>
+  <p class="meta"><b>Content:</b> End of term activities and vacation.</p>
+
+  <div class="box obj">
+    <h4>End of Term Activities</h4>
+    <ol class="cols2 tight">
+      <li>Review of examination performance.</li>
+      <li>Distribution of results.</li>
+      <li>Collection of holiday assignments.</li>
+      <li>Preparation for next term.</li>
+    </ol>
+  </div>
+
+  <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> No illustration for closing week. This page is a divider sheet.</p>
+
+  <div class="box">
+    <h4>Holiday Reading</h4>
+    <ul class="tight">
+      <li>Preview SS1 Second Term topics: Agro-allied Industries, Environmental Factors, Rock Formation, Soil Formation, Soil Types, Farm Tools, Farm Machinery, Mechanization.</li>
+      <li>Visit a local farm and observe the tools and machinery used.</li>
+      <li>Collect and press different soil samples from your community.</li>
+    </ul>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>
