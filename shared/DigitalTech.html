@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Technologies — First Term</title>
+<style>
+/* ============================================================
+   DIGITAL TECHNOLOGIES — FIRST TERM
+   Print-first. No JS. Weeks as units.
+   ALL text bold (700 body, 900 headings). Thick rules everywhere.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:4.5pt solid #1a3d6e;
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#444;
+  font-weight:700;
+}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:3.6pt solid #1a3d6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a3d6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a3d6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a3d6e;
+  border-bottom:2.4pt solid #8fae99;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols2 > li{break-inside:avoid}
+ul.cols2, ol.cols2{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:2.4pt solid #7d897d;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a3d6e;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+table.long{break-inside:auto}
+tr{break-inside:avoid}
+th,td{
+  border:2pt solid #5f5a4e;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#e6eee8;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:2.4pt solid #5f5a4e;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.kw{font-weight:900}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+b{font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1.6pt solid #7d897d;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split{break-inside:avoid}
+  table.long{break-inside:auto}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+pre{margin:0 0 8px;font-family:Consolas,"Courier New",monospace;font-size:10.4pt;font-weight:700;line-height:1.35;break-inside:avoid}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>Digital Technologies — First Term</h1>
+  <p class="term">Introduction · History &amp; Industry · Number Systems · Hardware · Software · Operating Systems · Data Representation · Print Edition</p>
+</header>
+
+<section class="week">
+  <h2><span class="wk">TERM</span>Definitions for the Term</h2>
+  <p class="meta"><b>Content:</b> Every key definition from every topic, grouped in one place. Learn these first; the weekly notes then explain them.</p>
+<h3>A. Introduction to Digital Technologies</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Digital technology</td><td>Tools, devices, systems and resources that create, store, process or send information as binary digits (0s and 1s).</td></tr>
+<tr><td class="k">Digital</td><td>Represented by separate, countable values; in computers, the two states 0 and 1.</td></tr>
+<tr><td class="k">Analogue</td><td>Represented by a continuously varying quantity, such as a sound wave or the height of a mercury thread.</td></tr>
+<tr><td class="k">Data</td><td>Raw facts, figures and symbols that have not yet been processed or given meaning.</td></tr>
+<tr><td class="k">Information</td><td>Data that has been processed and organised so that it has meaning and is useful.</td></tr>
+<tr><td class="k">Computer</td><td>An electronic device that accepts data, processes it under the control of a stored program, gives out results and can store them.</td></tr>
+<tr><td class="k">ICT</td><td>The use of computers, networks and related devices to collect, process, store, share and present information.</td></tr>
+<tr><td class="k">Input</td><td>Data or instructions entered into a computer.</td></tr>
+<tr><td class="k">Processing</td><td>The action a computer takes on data to turn it into information.</td></tr>
+<tr><td class="k">Output</td><td>The result a computer gives out after processing.</td></tr>
+<tr><td class="k">Storage</td><td>Keeping data and programs so that they can be used later.</td></tr>
+<tr><td class="k">Digitisation</td><td>Converting analogue information (text, pictures, sound) into digital form.</td></tr>
+<tr><td class="k">Automation</td><td>Using technology to do tasks with little or no human effort.</td></tr>
+<tr><td class="k">Netiquette</td><td>The accepted rules of polite and responsible behaviour online.</td></tr>
+<tr><td class="k">Digital citizenship</td><td>Using technology safely, legally, ethically and respectfully.</td></tr>
+<tr><td class="k">Cybercrime</td><td>A crime carried out with computers or networks, such as fraud, hacking and identity theft.</td></tr>
+<tr><td class="k">Phishing</td><td>A trick that uses fake messages or websites to steal passwords or personal data.</td></tr>
+</table>
+<h3>B. History and Industry</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Signal</td><td>A sign, sound or pulse used to carry a message from one place to another.</td></tr>
+<tr><td class="k">Code</td><td>A set of signs or symbols agreed on to stand for letters, words or numbers.</td></tr>
+<tr><td class="k">Abacus</td><td>An early counting frame with beads on rods, used to add, subtract, multiply and divide.</td></tr>
+<tr><td class="k">Algorithm</td><td>A finite, step-by-step set of instructions for solving a problem.</td></tr>
+<tr><td class="k">Punched card</td><td>A stiff card with holes in set positions that store data or instructions.</td></tr>
+<tr><td class="k">Vacuum tube</td><td>A glass tube that controls electric current; the electronic switch of first-generation computers.</td></tr>
+<tr><td class="k">Transistor</td><td>A small semiconductor device that works as an electronic switch or amplifier; it replaced the vacuum tube.</td></tr>
+<tr><td class="k">Integrated circuit (IC)</td><td>A tiny chip that holds many transistors and other parts on one piece of semiconductor.</td></tr>
+<tr><td class="k">Microprocessor</td><td>A complete CPU built on a single integrated circuit.</td></tr>
+<tr><td class="k">Computer generation</td><td>A stage of computer development marked by a major change in the main electronic technology used.</td></tr>
+<tr><td class="k">Moore's law</td><td>The observation that the number of transistors on a chip doubles about every two years.</td></tr>
+<tr><td class="k">Stored-program computer</td><td>A computer that keeps its instructions in memory alongside its data, so they can be changed without rewiring.</td></tr>
+<tr><td class="k">ARPANET</td><td>The 1969 United States research network that grew into the Internet.</td></tr>
+<tr><td class="k">Internet</td><td>A worldwide network of networks that link computers using common rules (protocols).</td></tr>
+<tr><td class="k">World Wide Web</td><td>A system of linked pages and resources on the Internet, reached with a browser.</td></tr>
+<tr><td class="k">Artificial intelligence (AI)</td><td>The ability of a computer system to do tasks that normally need human intelligence, such as learning, reasoning, understanding language and recognising images.</td></tr>
+<tr><td class="k">Machine learning</td><td>A branch of AI in which systems learn patterns from data instead of being given every rule.</td></tr>
+<tr><td class="k">Internet of Things (IoT)</td><td>A network of everyday objects fitted with sensors and software that collect and exchange data over the Internet.</td></tr>
+<tr><td class="k">Smart system</td><td>A system that senses its surroundings, processes data and acts or adjusts on its own (smart home, smart grid).</td></tr>
+<tr><td class="k">Cloud computing</td><td>Using storage, software and processing power on remote servers over the Internet instead of on a local machine.</td></tr>
+</table>
+<h3>C. Number Systems</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Number system</td><td>A way of writing numbers using a fixed set of digits and place values.</td></tr>
+<tr><td class="k">Base (radix)</td><td>The number of different digits a number system uses.</td></tr>
+<tr><td class="k">Decimal</td><td>The base-10 system, using digits 0 to 9.</td></tr>
+<tr><td class="k">Binary</td><td>The base-2 system, using digits 0 and 1.</td></tr>
+<tr><td class="k">Octal</td><td>The base-8 system, using digits 0 to 7.</td></tr>
+<tr><td class="k">Hexadecimal</td><td>The base-16 system, using digits 0 to 9 and letters A to F.</td></tr>
+<tr><td class="k">Bit</td><td>Binary digit: the smallest unit of data, either 0 or 1.</td></tr>
+<tr><td class="k">Place value</td><td>The value of a digit because of its position in a number.</td></tr>
+<tr><td class="k">Most significant bit (MSB)</td><td>The leftmost bit, with the highest place value.</td></tr>
+<tr><td class="k">Least significant bit (LSB)</td><td>The rightmost bit, with the lowest place value.</td></tr>
+<tr><td class="k">Radix point</td><td>The dot that separates the whole part of a number from its fractional part.</td></tr>
+<tr><td class="k">Two's complement</td><td>A method of writing negative binary numbers: invert all the bits of the positive number, then add 1.</td></tr>
+</table>
+<h3>D. Hardware</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Hardware</td><td>The physical, touchable parts of a computer system.</td></tr>
+<tr><td class="k">System unit</td><td>The case that holds the motherboard, CPU, memory, storage and power supply.</td></tr>
+<tr><td class="k">Central Processing Unit (CPU)</td><td>The part of the computer that carries out instructions and controls all other parts; the "brain" of the computer.</td></tr>
+<tr><td class="k">Arithmetic Logic Unit (ALU)</td><td>The part of the CPU that does calculations and logical comparisons.</td></tr>
+<tr><td class="k">Control Unit (CU)</td><td>The part of the CPU that fetches, decodes and directs the execution of instructions.</td></tr>
+<tr><td class="k">Register</td><td>A very small, very fast storage location inside the CPU.</td></tr>
+<tr><td class="k">Cache memory</td><td>A small, very fast memory between the CPU and RAM that holds data used often.</td></tr>
+<tr><td class="k">Clock speed</td><td>The number of cycles the CPU completes each second, measured in hertz (GHz).</td></tr>
+<tr><td class="k">Core</td><td>An independent processing unit inside a CPU.</td></tr>
+<tr><td class="k">Motherboard</td><td>The main circuit board that connects the CPU, memory, storage and other parts.</td></tr>
+<tr><td class="k">Random Access Memory (RAM)</td><td>Volatile main memory that holds the programs and data currently in use.</td></tr>
+<tr><td class="k">Read-Only Memory (ROM)</td><td>Non-volatile memory that holds start-up instructions and keeps them when power is off.</td></tr>
+<tr><td class="k">Volatile memory</td><td>Memory that loses its contents when power is switched off.</td></tr>
+<tr><td class="k">Non-volatile memory</td><td>Memory that keeps its contents without power.</td></tr>
+<tr><td class="k">Primary storage</td><td>Memory the CPU can reach directly (RAM, ROM, cache).</td></tr>
+<tr><td class="k">Secondary storage</td><td>Permanent storage for programs and data (hard disk, SSD, flash drive, optical disc).</td></tr>
+<tr><td class="k">Input device</td><td>A device used to send data or commands into a computer.</td></tr>
+<tr><td class="k">Output device</td><td>A device that presents processed results to the user.</td></tr>
+<tr><td class="k">Peripheral</td><td>Any device connected to a computer that is not part of its core (printer, scanner, mouse).</td></tr>
+<tr><td class="k">Port</td><td>A socket on a computer where a cable or device is connected.</td></tr>
+<tr><td class="k">Bus</td><td>A set of wires that carries data, addresses and control signals between computer parts.</td></tr>
+<tr><td class="k">Byte</td><td>A group of eight bits.</td></tr>
+<tr><td class="k">Fetch–decode–execute cycle</td><td>The repeating process by which the CPU gets an instruction from memory, works out what it means and carries it out.</td></tr>
+<tr><td class="k">Embedded system</td><td>A small computer built into a device to do one job (washing machine, car, ATM).</td></tr>
+</table>
+<h3>E. Software</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Software</td><td>Programs and data that tell the hardware what to do.</td></tr>
+<tr><td class="k">Program</td><td>A set of instructions written in a programming language for a computer to carry out.</td></tr>
+<tr><td class="k">System software</td><td>Software that runs and manages the computer and its hardware.</td></tr>
+<tr><td class="k">Application software</td><td>Software that helps users do specific tasks.</td></tr>
+<tr><td class="k">Utility software</td><td>System software that maintains, protects or tunes the computer (antivirus, backup, disk cleaner).</td></tr>
+<tr><td class="k">Device driver</td><td>Software that lets the operating system communicate with a hardware device.</td></tr>
+<tr><td class="k">Firmware</td><td>Permanent software stored in a chip on a hardware device.</td></tr>
+<tr><td class="k">Language translator</td><td>Software that converts a program written in a programming language into machine code.</td></tr>
+<tr><td class="k">Compiler</td><td>A translator that converts a whole program into machine code before it runs.</td></tr>
+<tr><td class="k">Interpreter</td><td>A translator that converts and runs a program one line at a time.</td></tr>
+<tr><td class="k">Assembler</td><td>A translator that converts assembly language into machine code.</td></tr>
+<tr><td class="k">Programming language</td><td>A formal language used to write instructions for a computer.</td></tr>
+<tr><td class="k">Machine language</td><td>The lowest-level language, written in binary, that the CPU understands directly.</td></tr>
+<tr><td class="k">Assembly language</td><td>A low-level language that uses short codes (mnemonics) in place of binary.</td></tr>
+<tr><td class="k">High-level language</td><td>A language close to human language that does not depend on the machine (Python, Java, C).</td></tr>
+<tr><td class="k">Proprietary software</td><td>Software owned by a company that controls its use, copying and source code.</td></tr>
+<tr><td class="k">Open-source software</td><td>Software whose source code is freely available to view, change and share.</td></tr>
+<tr><td class="k">Freeware</td><td>Software that can be used at no cost but is still copyrighted.</td></tr>
+<tr><td class="k">Shareware</td><td>Software offered free for a trial period, after which payment is expected.</td></tr>
+<tr><td class="k">Software licence</td><td>A legal agreement that states how software may be used.</td></tr>
+<tr><td class="k">Software as a Service (SaaS)</td><td>Software used over the Internet on subscription instead of being installed.</td></tr>
+<tr><td class="k">Malware</td><td>Software made to harm a computer or steal data (virus, worm, ransomware).</td></tr>
+<tr><td class="k">Bug</td><td>An error in a program that makes it behave wrongly.</td></tr>
+</table>
+<h3>F. Operating Systems</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Operating system (OS)</td><td>System software that manages the computer's hardware and software and provides a platform for other programs.</td></tr>
+<tr><td class="k">Kernel</td><td>The core of the operating system that controls memory, processes and devices.</td></tr>
+<tr><td class="k">Shell</td><td>The part of the operating system that lets the user give commands to the kernel.</td></tr>
+<tr><td class="k">User interface</td><td>The way a user interacts with a computer.</td></tr>
+<tr><td class="k">Graphical User Interface (GUI)</td><td>An interface that uses windows, icons, menus and a pointer.</td></tr>
+<tr><td class="k">Command-Line Interface (CLI)</td><td>An interface in which the user types text commands.</td></tr>
+<tr><td class="k">Process</td><td>A program that is currently being run by the computer.</td></tr>
+<tr><td class="k">Multitasking</td><td>Running more than one program at the same time by sharing the CPU's time.</td></tr>
+<tr><td class="k">Time-sharing</td><td>Giving many users a small slice of CPU time in turn so each seems to have the machine alone.</td></tr>
+<tr><td class="k">Real-time operating system</td><td>An OS that must respond to events within a fixed, very short time (aircraft control, medical monitors).</td></tr>
+<tr><td class="k">Booting</td><td>The process of starting a computer and loading the operating system into memory.</td></tr>
+<tr><td class="k">Bootstrap loader</td><td>A small program that starts the boot process.</td></tr>
+<tr><td class="k">File</td><td>A named collection of data or a program stored on a storage device.</td></tr>
+<tr><td class="k">Folder (directory)</td><td>A container used to organise files and other folders.</td></tr>
+<tr><td class="k">File system</td><td>The method an operating system uses to name, store and find files.</td></tr>
+<tr><td class="k">File extension</td><td>The letters after the dot in a file name that show its type (.docx, .jpg).</td></tr>
+<tr><td class="k">Virtual memory</td><td>Disk space that the OS uses as extra memory when RAM is full.</td></tr>
+</table>
+<h3>G. Data Representation</h3>
+<table class="long"><tr><th style="width:24%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Data representation</td><td>The way data of every kind is turned into binary form for a computer to store and process.</td></tr>
+<tr><td class="k">Analogue signal</td><td>A signal that varies continuously, like a sound wave.</td></tr>
+<tr><td class="k">Digital signal</td><td>A signal that has only separate values, usually two: on and off.</td></tr>
+<tr><td class="k">Encoding</td><td>Converting data into a form that can be stored or sent.</td></tr>
+<tr><td class="k">Character set</td><td>A table that gives each character a unique binary code.</td></tr>
+<tr><td class="k">ASCII</td><td>A 7-bit character code that represents 128 characters, including English letters, digits and symbols.</td></tr>
+<tr><td class="k">Unicode</td><td>A universal character set that gives a code to the characters of almost every writing system, and to emoji.</td></tr>
+<tr><td class="k">Pixel</td><td>The smallest single point of colour in a digital image.</td></tr>
+<tr><td class="k">Resolution</td><td>The number of pixels in an image (width × height), which decides its detail.</td></tr>
+<tr><td class="k">Colour depth</td><td>The number of bits used to store the colour of each pixel.</td></tr>
+<tr><td class="k">Bitmap image</td><td>An image stored as a grid of pixels.</td></tr>
+<tr><td class="k">Vector graphic</td><td>An image stored as shapes described by mathematical formulas, which can be enlarged without loss of quality.</td></tr>
+<tr><td class="k">Sampling</td><td>Measuring an analogue sound wave at regular intervals to convert it to digital.</td></tr>
+<tr><td class="k">Sampling rate</td><td>The number of samples taken each second, in hertz (Hz).</td></tr>
+<tr><td class="k">Bit depth</td><td>The number of bits used to store each sample.</td></tr>
+<tr><td class="k">Compression</td><td>Reducing the size of a file.</td></tr>
+<tr><td class="k">Lossy compression</td><td>Compression that permanently removes some data (JPEG, MP3).</td></tr>
+<tr><td class="k">Lossless compression</td><td>Compression that lets the original data be restored exactly (ZIP, PNG).</td></tr>
+<tr><td class="k">Parity bit</td><td>An extra bit added to data so that the number of 1s is always even or always odd, used to detect errors.</td></tr>
+<tr><td class="k">Frame rate</td><td>The number of still images shown each second in a video.</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">TERM</span>Acronyms in Digital Technologies</h2>
+  <p class="meta"><b>Content:</b> Acronyms used across the subject, grouped by area.</p>
+<h3>General and ICT</h3>
+<table class="long"><tr><th style="width:11%">Acronym</th><th style="width:39%">Stands for</th><th style="width:11%">Acronym</th><th>Stands for</th></tr>
+<tr><td class="k">ICT</td><td>Information and Communication Technology</td><td class="k">PC</td><td>Personal Computer</td></tr>
+<tr><td class="k">IT</td><td>Information Technology</td><td class="k">GPS</td><td>Global Positioning System</td></tr>
+<tr><td class="k">AI</td><td>Artificial Intelligence</td><td class="k">ATM</td><td>Automated Teller Machine</td></tr>
+<tr><td class="k">ML</td><td>Machine Learning</td><td class="k">POS</td><td>Point of Sale</td></tr>
+<tr><td class="k">LLM</td><td>Large Language Model</td><td class="k">PIN</td><td>Personal Identification Number</td></tr>
+<tr><td class="k">IoT</td><td>Internet of Things</td><td class="k">SIM</td><td>Subscriber Identity Module</td></tr>
+<tr><td class="k">VR</td><td>Virtual Reality</td><td class="k">NFC</td><td>Near Field Communication</td></tr>
+<tr><td class="k">AR</td><td>Augmented Reality</td><td class="k">RFID</td><td>Radio Frequency Identification</td></tr>
+<tr><td class="k">CAD</td><td>Computer-Aided Design</td><td class="k">QR</td><td>Quick Response</td></tr>
+<tr><td class="k">CAM</td><td>Computer-Aided Manufacturing</td><td class="k">OTP</td><td>One-Time Password</td></tr>
+<tr><td class="k">CBT</td><td>Computer-Based Test</td><td class="k">GSM</td><td>Global System for Mobile Communications</td></tr>
+</table>
+<h3>Hardware and Storage</h3>
+<table class="long"><tr><th style="width:11%">Acronym</th><th style="width:39%">Stands for</th><th style="width:11%">Acronym</th><th>Stands for</th></tr>
+<tr><td class="k">CPU</td><td>Central Processing Unit</td><td class="k">PCIe</td><td>Peripheral Component Interconnect Express</td></tr>
+<tr><td class="k">GPU</td><td>Graphics Processing Unit</td><td class="k">CD-ROM</td><td>Compact Disc Read-Only Memory</td></tr>
+<tr><td class="k">ALU</td><td>Arithmetic Logic Unit</td><td class="k">DVD</td><td>Digital Versatile Disc</td></tr>
+<tr><td class="k">CU</td><td>Control Unit</td><td class="k">CRT</td><td>Cathode Ray Tube</td></tr>
+<tr><td class="k">RAM</td><td>Random Access Memory</td><td class="k">LCD</td><td>Liquid Crystal Display</td></tr>
+<tr><td class="k">ROM</td><td>Read-Only Memory</td><td class="k">LED</td><td>Light-Emitting Diode</td></tr>
+<tr><td class="k">PROM</td><td>Programmable Read-Only Memory</td><td class="k">OLED</td><td>Organic Light-Emitting Diode</td></tr>
+<tr><td class="k">EPROM</td><td>Erasable Programmable Read-Only Memory</td><td class="k">OCR</td><td>Optical Character Recognition</td></tr>
+<tr><td class="k">EEPROM</td><td>Electrically Erasable Programmable Read-Only Memory</td><td class="k">OMR</td><td>Optical Mark Recognition</td></tr>
+<tr><td class="k">DRAM</td><td>Dynamic Random Access Memory</td><td class="k">MICR</td><td>Magnetic Ink Character Recognition</td></tr>
+<tr><td class="k">SRAM</td><td>Static Random Access Memory</td><td class="k">BIOS</td><td>Basic Input/Output System</td></tr>
+<tr><td class="k">DDR</td><td>Double Data Rate</td><td class="k">UEFI</td><td>Unified Extensible Firmware Interface</td></tr>
+<tr><td class="k">HDD</td><td>Hard Disk Drive</td><td class="k">CMOS</td><td>Complementary Metal-Oxide-Semiconductor</td></tr>
+<tr><td class="k">SSD</td><td>Solid State Drive</td><td class="k">POST</td><td>Power-On Self-Test</td></tr>
+<tr><td class="k">USB</td><td>Universal Serial Bus</td><td class="k">IC</td><td>Integrated Circuit</td></tr>
+<tr><td class="k">HDMI</td><td>High-Definition Multimedia Interface</td><td class="k">LSI</td><td>Large-Scale Integration</td></tr>
+<tr><td class="k">VGA</td><td>Video Graphics Array</td><td class="k">VLSI</td><td>Very-Large-Scale Integration</td></tr>
+<tr><td class="k">DVI</td><td>Digital Visual Interface</td><td class="k">ULSI</td><td>Ultra-Large-Scale Integration</td></tr>
+<tr><td class="k">SATA</td><td>Serial Advanced Technology Attachment</td><td class="k"></td><td></td></tr>
+</table>
+<h3>Software and Programming</h3>
+<table class="long"><tr><th style="width:11%">Acronym</th><th style="width:39%">Stands for</th><th style="width:11%">Acronym</th><th>Stands for</th></tr>
+<tr><td class="k">OS</td><td>Operating System</td><td class="k">FAT</td><td>File Allocation Table</td></tr>
+<tr><td class="k">GUI</td><td>Graphical User Interface</td><td class="k">NTFS</td><td>New Technology File System</td></tr>
+<tr><td class="k">CLI</td><td>Command-Line Interface</td><td class="k">SQL</td><td>Structured Query Language</td></tr>
+<tr><td class="k">DOS</td><td>Disk Operating System</td><td class="k">DBMS</td><td>Database Management System</td></tr>
+<tr><td class="k">RTOS</td><td>Real-Time Operating System</td><td class="k">FORTRAN</td><td>Formula Translation</td></tr>
+<tr><td class="k">API</td><td>Application Programming Interface</td><td class="k">COBOL</td><td>Common Business-Oriented Language</td></tr>
+<tr><td class="k">SaaS</td><td>Software as a Service</td><td class="k">BASIC</td><td>Beginner's All-purpose Symbolic Instruction Code</td></tr>
+<tr><td class="k">IDE</td><td>Integrated Development Environment</td><td class="k">HTML</td><td>HyperText Markup Language</td></tr>
+<tr><td class="k">FOSS</td><td>Free and Open-Source Software</td><td class="k">CSS</td><td>Cascading Style Sheets</td></tr>
+<tr><td class="k">GNU</td><td>GNU's Not Unix</td><td class="k"></td><td></td></tr>
+</table>
+<h3>Number Systems and Data Representation</h3>
+<table class="long"><tr><th style="width:11%">Acronym</th><th style="width:39%">Stands for</th><th style="width:11%">Acronym</th><th>Stands for</th></tr>
+<tr><td class="k">bit</td><td>Binary Digit</td><td class="k">fps</td><td>Frames Per Second</td></tr>
+<tr><td class="k">KB, MB, GB, TB, PB</td><td>Kilobyte, Megabyte, Gigabyte, Terabyte, Petabyte</td><td class="k">JPEG</td><td>Joint Photographic Experts Group</td></tr>
+<tr><td class="k">BCD</td><td>Binary-Coded Decimal</td><td class="k">PNG</td><td>Portable Network Graphics</td></tr>
+<tr><td class="k">ASCII</td><td>American Standard Code for Information Interchange</td><td class="k">GIF</td><td>Graphics Interchange Format</td></tr>
+<tr><td class="k">EBCDIC</td><td>Extended Binary Coded Decimal Interchange Code</td><td class="k">SVG</td><td>Scalable Vector Graphics</td></tr>
+<tr><td class="k">UTF</td><td>Unicode Transformation Format</td><td class="k">MPEG</td><td>Moving Picture Experts Group</td></tr>
+<tr><td class="k">MSB</td><td>Most Significant Bit</td><td class="k">MP3</td><td>MPEG-1 Audio Layer 3</td></tr>
+<tr><td class="k">LSB</td><td>Least Significant Bit</td><td class="k">PDF</td><td>Portable Document Format</td></tr>
+<tr><td class="k">RGB</td><td>Red, Green, Blue</td><td class="k">WAV</td><td>Waveform Audio File Format</td></tr>
+<tr><td class="k">CMYK</td><td>Cyan, Magenta, Yellow, Key (black)</td><td class="k">ADC</td><td>Analogue-to-Digital Converter</td></tr>
+<tr><td class="k">DPI</td><td>Dots Per Inch</td><td class="k">DAC</td><td>Digital-to-Analogue Converter</td></tr>
+<tr><td class="k">PPI</td><td>Pixels Per Inch</td><td class="k"></td><td></td></tr>
+</table>
+<h3>Networks and the Internet</h3>
+<table class="long"><tr><th style="width:11%">Acronym</th><th style="width:39%">Stands for</th><th style="width:11%">Acronym</th><th>Stands for</th></tr>
+<tr><td class="k">LAN</td><td>Local Area Network</td><td class="k">HTTPS</td><td>HyperText Transfer Protocol Secure</td></tr>
+<tr><td class="k">WAN</td><td>Wide Area Network</td><td class="k">IP</td><td>Internet Protocol</td></tr>
+<tr><td class="k">MAN</td><td>Metropolitan Area Network</td><td class="k">TCP</td><td>Transmission Control Protocol</td></tr>
+<tr><td class="k">PAN</td><td>Personal Area Network</td><td class="k">DNS</td><td>Domain Name System</td></tr>
+<tr><td class="k">WLAN</td><td>Wireless Local Area Network</td><td class="k">FTP</td><td>File Transfer Protocol</td></tr>
+<tr><td class="k">Wi-Fi</td><td>Trade name for wireless networking (often read as "Wireless Fidelity")</td><td class="k">SMTP</td><td>Simple Mail Transfer Protocol</td></tr>
+<tr><td class="k">ISP</td><td>Internet Service Provider</td><td class="k">VPN</td><td>Virtual Private Network</td></tr>
+<tr><td class="k">WWW</td><td>World Wide Web</td><td class="k">NIC</td><td>Network Interface Card</td></tr>
+<tr><td class="k">URL</td><td>Uniform Resource Locator</td><td class="k">MAC</td><td>Media Access Control</td></tr>
+<tr><td class="k">HTTP</td><td>HyperText Transfer Protocol</td><td class="k">4G / 5G</td><td>Fourth / Fifth Generation mobile network</td></tr>
+</table>
+<h3>History, Industry and Nigeria</h3>
+<table class="long"><tr><th style="width:11%">Acronym</th><th style="width:39%">Stands for</th><th style="width:11%">Acronym</th><th>Stands for</th></tr>
+<tr><td class="k">ENIAC</td><td>Electronic Numerical Integrator and Computer</td><td class="k">NITDA</td><td>National Information Technology Development Agency</td></tr>
+<tr><td class="k">EDVAC</td><td>Electronic Discrete Variable Automatic Computer</td><td class="k">NCC</td><td>Nigerian Communications Commission</td></tr>
+<tr><td class="k">EDSAC</td><td>Electronic Delay Storage Automatic Calculator</td><td class="k">NITEL</td><td>Nigerian Telecommunications Limited</td></tr>
+<tr><td class="k">UNIVAC</td><td>Universal Automatic Computer</td><td class="k">NASRDA</td><td>National Space Research and Development Agency</td></tr>
+<tr><td class="k">IBM</td><td>International Business Machines</td><td class="k">NigComSat</td><td>Nigerian Communications Satellite Limited</td></tr>
+<tr><td class="k">ARPANET</td><td>Advanced Research Projects Agency Network</td><td class="k">NIMC</td><td>National Identity Management Commission</td></tr>
+<tr><td class="k">DARPA</td><td>Defense Advanced Research Projects Agency</td><td class="k">NIN</td><td>National Identification Number</td></tr>
+<tr><td class="k">CERN</td><td>European Organization for Nuclear Research</td><td class="k">NDPA</td><td>Nigeria Data Protection Act</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Introduction to Digital Technologies</h2>
+  <p class="meta"><b>Content:</b> Meaning of digital technology, digital versus analogue, the information cycle, characteristics, uses, benefits, risks and safe use.</p>
+
+  <h3>1.1 Meaning of Digital Technology</h3>
+  <p><b>Digital technology</b> is any tool, device, system or resource that creates, stores, processes or sends information as binary digits (0s and 1s). Computers, phones, the Internet, ATMs, digital cameras, smart TVs and AI assistants are all digital technologies. <b>ICT</b> (Information and Communication Technology) is the wider name for using these tools to handle information and to communicate.</p>
+
+  <h3>1.2 Digital and Analogue</h3>
+  <table>
+    <tr><th style="width:22%">Feature</th><th>Analogue</th><th>Digital</th></tr>
+    <tr><td class="k">Signal</td><td>Varies continuously</td><td>Separate steps, usually two states (0 and 1)</td></tr>
+    <tr><td class="k">Accuracy over copies</td><td>Loses quality when copied</td><td>Copies are exact</td></tr>
+    <tr><td class="k">Noise</td><td>Picks up noise easily</td><td>Resists noise; errors can be detected and fixed</td></tr>
+    <tr><td class="k">Storage</td><td>Bulky media (vinyl, tape, film)</td><td>Compact chips and discs</td></tr>
+    <tr><td class="k">Examples</td><td>Wall clock with hands, vinyl record, mercury thermometer</td><td>Digital watch, MP3 file, digital thermometer</td></tr>
+  </table>
+
+  <h3>1.3 The Information Cycle</h3>
+  <p>Every digital system follows four steps: <b>Input</b> (data enters) → <b>Processing</b> (data becomes information) → <b>Output</b> (results appear) → <b>Storage</b> (data and results are kept). Communication then carries the results to other people or machines.</p>
+
+  <h3>1.4 Characteristics of Digital Technology</h3>
+  <ul class="tight">
+    <li><b>Speed:</b> Billions of operations each second.</li>
+    <li><b>Accuracy:</b> Correct results if the data and program are correct.</li>
+    <li><b>Storage:</b> A small chip holds millions of pages.</li>
+    <li><b>Diligence:</b> No tiredness or loss of focus on repeated work.</li>
+    <li><b>Versatility:</b> One machine does many kinds of task.</li>
+    <li><b>Automation:</b> Tasks run without a person at each step.</li>
+    <li><b>Connectivity:</b> Devices share data over networks.</li>
+    <li><b>Limits:</b> No judgement of its own; "garbage in, garbage out".</li>
+  </ul>
+
+  <h3>1.5 Uses of Digital Technology</h3>
+  <table>
+    <tr><th style="width:22%">Area</th><th>Uses</th><th style="width:32%">Nigerian examples</th></tr>
+    <tr><td class="k">Education</td><td>E-learning, online research, computer-based tests, school records</td><td>JAMB and WAEC computer-based tests; school portals</td></tr>
+    <tr><td class="k">Banking and commerce</td><td>Electronic payments, online shopping, stock records</td><td>Mobile banking, USSD transfers, POS machines, ATMs, Jumia</td></tr>
+    <tr><td class="k">Health</td><td>Patient records, imaging, remote consultation</td><td>Telemedicine apps, electronic health records</td></tr>
+    <tr><td class="k">Agriculture</td><td>Weather data, market prices, drones, sensors</td><td>Farm advisory apps, satellite mapping</td></tr>
+    <tr><td class="k">Government</td><td>Identity records, tax, elections, licensing</td><td>NIN registration, e-passport, INEC voter records</td></tr>
+    <tr><td class="k">Communication</td><td>Calls, messaging, email, video meetings</td><td>Mobile phones, WhatsApp, video calls</td></tr>
+    <tr><td class="k">Entertainment and media</td><td>Streaming, games, digital film and music</td><td>Nollywood on streaming platforms, online music</td></tr>
+    <tr><td class="k">Transport</td><td>Navigation, ticketing, tracking</td><td>GPS maps, ride-hailing apps, online bus tickets</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Benefits</h4>
+      <ul class="tight">
+        <li>Faster work and communication.</li>
+        <li>Easy access to information and learning.</li>
+        <li>Lower cost of storing and copying records.</li>
+        <li>New jobs and businesses.</li>
+        <li>Services reach remote places.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4>Risks</h4>
+      <ul class="tight">
+        <li>Cybercrime, fraud and identity theft.</li>
+        <li>Loss of privacy and data leaks.</li>
+        <li>Job loss from automation.</li>
+        <li>Addiction, eye strain, poor posture.</li>
+        <li>Unequal access (digital divide).</li>
+        <li>Electronic waste.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>1.6 Safe and Responsible Use</h3>
+  <ul class="tight">
+    <li>Use long, different passwords and switch on two-step verification.</li>
+    <li>Do not click unknown links or share OTPs, PINs or passwords; this is how phishing works.</li>
+    <li>Keep software and antivirus updated; back up important files.</li>
+    <li>Respect copyright; do not copy or share other people's work as your own.</li>
+    <li>Follow netiquette: be polite, do not bully or spread false information.</li>
+    <li>Know the law: the Cybercrimes Act (2015) and the Nigeria Data Protection Act (2023).</li>
+  </ul>
+
+  <h3>1.7 Careers in Digital Technology</h3>
+  <p>Software developer, web designer, network engineer, cybersecurity analyst, data analyst, database administrator, AI and machine-learning engineer, computer technician, UI/UX designer, digital marketer, IT support officer.</p>
+</section>
+
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>History and Industry of Digital Technologies I: From Drums to Mechanical Calculators</h2>
+  <p class="meta"><b>Content:</b> Signalling, counting, writing, printing, mechanical calculation, and the telegraph, the ideas that made the computer possible.</p>
+
+  <p>Every digital technology rests on one idea: <b>a message can be turned into a pattern of simple signs, sent or stored, and turned back into the message.</b> The story below follows that idea from the drum to AI. Each era handed a tool to the next.</p>
+
+  <h3>2.1 Era 1: Signals and Tallies (Prehistory onward)</h3>
+  <p>People first counted on bones and sent messages beyond the reach of a voice. The Ishango bone from Central Africa, about 20,000 years old, carries grouped notches, one of the oldest known counting records. Drums, horns, flutes, whistles, smoke and beacon fires carried alarms and news across valleys. In West Africa the <b>talking drum</b> (the Yoruba dùndún) copies the rising and falling tones of a tonal language, so a drummer can "speak" and villages can relay the message onward. This is telecommunication in its first form: <b>encode, send, relay, decode.</b> Other cultures stored meaning in marks and knots: Ifá divination builds 256 signs (odù) from marks of two kinds, a binary-like code, and the Inca used knotted cords (quipu) as a number memory.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">Prehistory</td><td>Ishango bone: grouped notches used for counting</td><td>Numbers can be kept outside the head</td></tr>
+<tr><td class="k">Prehistory</td><td>Cave paintings and tally marks</td><td>Marks can stand for things</td></tr>
+<tr><td class="k">Ancient times</td><td>Drums, horns, flutes, whistles, smoke and fire beacons</td><td>Messages travel farther than a voice</td></tr>
+<tr><td class="k">Centuries old</td><td>Yoruba dùndún talking drum copies speech tones; relayed village to village</td><td>Encode, send, relay, decode: the pattern of all telecommunications</td></tr>
+<tr><td class="k">Centuries old</td><td>Ifá's 256 odù from two-kind marks; Inca quipu</td><td>Two-state marks as a code; knots as memory</td></tr>
+</table>
+
+  <h3>2.2 Era 2: Writing, Numbers and Logic (3400 BCE to 1500 CE)</h3>
+  <p>Writing turned speech into something that could wait. Sumerian clay tablets (cuneiform) and Egyptian hieroglyphs on papyrus made records permanent and carriable. The Phoenician alphabet showed that a few symbols could code every word, which is the same trick a computer uses with bits. Number systems grew alongside: the Sumerians counted in sixty (the source of our 60-minute hour), the abacus sped up sums, and in India the zero and place-value notation came together. When scholars in Baghdad such as Al-Khwarizmi spread this decimal notation and wrote procedures for solving problems, the word <b>algorithm</b> was born from his name. Greek thinkers added logic and the first famous algorithm, while paper from China made records cheap.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">c. 3400 BCE</td><td>Sumerian cuneiform; Egyptian hieroglyphs soon after</td><td>Information stored permanently and carried by messenger</td></tr>
+<tr><td class="k">c. 2500 BCE</td><td>Abacus in Mesopotamia; Chinese suanpan later</td><td>First calculating tool</td></tr>
+<tr><td class="k">c. 1050 BCE</td><td>Phoenician alphabet, later Greek and Latin</td><td>A few symbols can code any word</td></tr>
+<tr><td class="k">4th c. BCE</td><td>Aristotle's formal logic</td><td>True and false reasoning, later Boolean logic</td></tr>
+<tr><td class="k">c. 300 BCE</td><td>Euclid's algorithm</td><td>An early, still-used algorithm</td></tr>
+<tr><td class="k">2nd–1st c. BCE</td><td>Antikythera mechanism (Greece): gears predicting the sky</td><td>Earliest known analogue computer</td></tr>
+<tr><td class="k">105 CE</td><td>Paper, credited to Cai Lun (China)</td><td>Cheap, light record medium</td></tr>
+<tr><td class="k">628 CE</td><td>Brahmagupta writes rules for zero (India)</td><td>Zero makes place-value notation, and later binary, workable</td></tr>
+<tr><td class="k">c. 820 CE</td><td>Al-Khwarizmi in Baghdad: decimal calculation and algebra</td><td>Mathematics as method; the word "algorithm"</td></tr>
+<tr><td class="k">1202</td><td>Fibonacci's Liber Abaci brings Hindu–Arabic numerals to Europe</td><td>Faster calculation than Roman numerals</td></tr>
+<tr><td class="k">14th–16th c.</td><td>Scholars of Timbuktu (Sankore) copy and write on mathematics, astronomy and law</td><td>Knowledge preserved and traded across the Sahel</td></tr>
+</table>
+
+  <h3>2.3 Era 3: Print and Mechanical Calculation (1040 to 1800)</h3>
+  <p>Movable type appeared in China about 1040, and Gutenberg's press (c. 1450) made books cheap in Europe. Cheap text spread literacy, science and mathematics, and produced the scholars who then built calculators. Napier's logarithms (1614) turned multiplication into addition and led to the slide rule. Pascal's gear-driven adding machine (1642) and Leibniz's stepped reckoner (1673) proved that <b>arithmetic can be done by a mechanism.</b> Leibniz also published the binary number system (1703), which is exactly what computers use, though it had no machine to use it yet.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">c. 1040</td><td>Bi Sheng invents movable type (China)</td><td>Text printed from reusable pieces</td></tr>
+<tr><td class="k">c. 1450</td><td>Gutenberg's printing press (Germany)</td><td>Cheap books; wider literacy and science</td></tr>
+<tr><td class="k">1614</td><td>Napier's logarithms and "bones"</td><td>Multiplication turned into addition</td></tr>
+<tr><td class="k">1622</td><td>Oughtred's slide rule</td><td>The engineer's calculator for 350 years</td></tr>
+<tr><td class="k">1642</td><td>Pascal's Pascaline</td><td>First mechanical adding machine</td></tr>
+<tr><td class="k">1673</td><td>Leibniz's stepped reckoner</td><td>Machine that also multiplies and divides</td></tr>
+<tr><td class="k">1703</td><td>Leibniz publishes binary arithmetic</td><td>The number system of digital electronics</td></tr>
+</table>
+
+  <h3>2.4 Era 4: Programs, Logic and the Wire (1804 to 1936)</h3>
+  <p>The Jacquard loom (1804) read patterns from punched cards, the first instructions stored outside a person's head. Charles Babbage designed the Analytical Engine (1837) with a store (memory), a mill (processor) and card input, and Ada Lovelace published the first algorithm meant for a machine (1843), noting that such machines could work on symbols as well as numbers. George Boole turned logic into algebra with 1 and 0 (1854). At the same time the telegraph (Morse, 1837–44) sent dots and dashes, a two-state code, along wires, and the telephone (1876) and radio (1895–1901) followed. Hollerith's punched-card tabulator (1890) ran the US census and grew into the company that became IBM. Turing's 1936 paper described a machine able to compute anything computable, the theory of the computer.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1804</td><td>Jacquard loom controlled by punched cards</td><td>Instructions stored on cards</td></tr>
+<tr><td class="k">1822–37</td><td>Babbage: Difference Engine, then Analytical Engine (store, mill, cards)</td><td>First design of a general-purpose computer</td></tr>
+<tr><td class="k">1837–44</td><td>Electric telegraph and Morse code</td><td>Two-state signals sent by wire</td></tr>
+<tr><td class="k">1843</td><td>Ada Lovelace's algorithm for the Analytical Engine</td><td>First program; computers could handle more than numbers</td></tr>
+<tr><td class="k">1854</td><td>Boole's The Laws of Thought</td><td>Logic as algebra with 1 and 0</td></tr>
+<tr><td class="k">1868</td><td>Sholes typewriter with QWERTY layout</td><td>The keyboard layout still in use</td></tr>
+<tr><td class="k">1876</td><td>Bell's telephone</td><td>Voice over wire</td></tr>
+<tr><td class="k">1890</td><td>Hollerith tabulator processes the US census</td><td>Data processing becomes an industry (later IBM)</td></tr>
+<tr><td class="k">1895–1901</td><td>Marconi's wireless telegraphy</td><td>Signals without wires</td></tr>
+<tr><td class="k">1936</td><td>Turing describes the Turing machine</td><td>Theory of what any computer can compute</td></tr>
+</table>
+</section>
+
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>History and Industry of Digital Technologies II: From Vacuum Tubes to AI</h2>
+  <p class="meta"><b>Content:</b> Electronic computers, transistors, the personal computer, the Internet and Web, mobile, and the rise of AI and smart systems, with the industry and Nigerian milestones.</p>
+
+  <h3>3.1 Era 5: Electronic Computers (1937 to 1956)</h3>
+  <p>Claude Shannon showed in 1937 that Boolean logic could be built from electric switches, which joined Boole's algebra to electronics. War then paid for speed: Zuse's Z3 (1941), the Atanasoff–Berry computer (1942), Colossus for codebreaking at Bletchley Park (1943–44) and ENIAC (1945). ENIAC used about 18,000 vacuum tubes and weighed some 30 tonnes. Von Neumann's 1945 design put program and data in the same memory. The Manchester "Baby" ran the first stored program in 1948 and Shannon published information theory the same year, defining the bit. UNIVAC I (1951) was the first computer sold to business and government, and Grace Hopper's compiler, FORTRAN and COBOL let people program in words instead of binary.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1937</td><td>Shannon links Boolean logic to switching circuits</td><td>Logic plus electronics: digital circuit design</td></tr>
+<tr><td class="k">1941</td><td>Zuse's Z3, first working programmable computer</td><td>Program-controlled calculation</td></tr>
+<tr><td class="k">1942</td><td>Atanasoff–Berry Computer uses binary electronics</td><td>First electronic digital computer design</td></tr>
+<tr><td class="k">1943–44</td><td>Colossus breaks German codes at Bletchley Park</td><td>Computers prove their worth in war</td></tr>
+<tr><td class="k">1945</td><td>ENIAC completed; von Neumann describes stored-program design</td><td>The architecture used today</td></tr>
+<tr><td class="k">1948</td><td>Manchester "Baby" runs first stored program; Shannon's information theory</td><td>Software can be changed; the bit as unit of information</td></tr>
+<tr><td class="k">1949</td><td>EDSAC (Cambridge) enters regular service</td><td>First practical stored-program computer</td></tr>
+<tr><td class="k">1951</td><td>UNIVAC I, first commercial computer in the USA</td><td>Computers sold to firms and governments</td></tr>
+<tr><td class="k">1952–59</td><td>Hopper's compiler; FORTRAN (1957); COBOL (1959)</td><td>Programming in words</td></tr>
+</table>
+
+  <h3>3.2 Era 6: Transistors and Integrated Circuits (1947 to 1970)</h3>
+  <p>The transistor (Bell Labs, 1947) replaced the hot, fragile vacuum tube with a small, cool, cheap switch. The integrated circuit (Kilby and Noyce, 1958–59) put many transistors on one chip, and Moore's 1965 observation that chip density doubles about every two years set the pace of the whole industry. Computers moved into banks, universities and governments: the first electronic computer in Nigeria arrived in 1963 to process the 1962/63 census. IBM's System/360 (1964) gave customers a compatible family of machines and BASIC made programming easy to learn. In 1969 ARPANET made its first link, Unix began, and computers helped guide Apollo to the Moon.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1947</td><td>Transistor invented at Bell Labs (Bardeen, Brattain, Shockley)</td><td>Smaller, cooler, cheaper than vacuum tubes</td></tr>
+<tr><td class="k">1958–59</td><td>Integrated circuit (Kilby, Noyce)</td><td>Many parts on one chip</td></tr>
+<tr><td class="k">1963</td><td>First electronic computer in Nigeria, for the 1962/63 census</td><td>Nigeria enters the computer age</td></tr>
+<tr><td class="k">1964</td><td>IBM System/360; BASIC language</td><td>Compatible computer family; easy language for learners</td></tr>
+<tr><td class="k">1965</td><td>Moore states his law</td><td>Prediction that drives chip makers</td></tr>
+<tr><td class="k">1968</td><td>Engelbart demonstrates the mouse, windows and hypertext</td><td>Ideas of the modern interface</td></tr>
+<tr><td class="k">1969</td><td>ARPANET's first link; Unix begins; Apollo guidance computer</td><td>Networking, OS design and reliability</td></tr>
+</table>
+  <p>Generations of computers, in short:</p>
+  <table>
+    <tr><th style="width:11%">Generation</th><th style="width:16%">Period</th><th style="width:20%">Main technology</th><th>Features</th><th style="width:22%">Examples</th></tr>
+    <tr><td class="k">First</td><td>1940–1956</td><td>Vacuum tubes</td><td>Huge, hot, costly; machine language; punched cards</td><td>ENIAC, UNIVAC I</td></tr>
+    <tr><td class="k">Second</td><td>1956–1963</td><td>Transistors</td><td>Smaller, faster, more reliable; assembly and early high-level languages</td><td>IBM 1401</td></tr>
+    <tr><td class="k">Third</td><td>1964–1971</td><td>Integrated circuits</td><td>Keyboards and monitors; operating systems; multiprogramming</td><td>IBM System/360</td></tr>
+    <tr><td class="k">Fourth</td><td>1971–present</td><td>Microprocessors (VLSI)</td><td>Personal computers, GUI, networks, Internet</td><td>IBM PC, Macintosh, laptops, smartphones</td></tr>
+    <tr><td class="k">Fifth</td><td>Present, developing</td><td>Parallel processing, AI (quantum in research)</td><td>Learning, speech, vision, natural language</td><td>AI assistants, robots, smart systems</td></tr>
+  </table>
+
+  <h3>3.3 Era 7: The Microprocessor and the Personal Computer (1971 to 1990)</h3>
+  <p>Intel's 4004 (1971) put a whole CPU on one chip, and the same year the first email was sent. Xerox's Alto (1973) showed windows and icons, Ethernet linked machines in a building, and TCP/IP (1974) gave networks a common language. Hobbyists built the Altair (1975), met at the Homebrew Computer Club, and started Microsoft and Apple; the Apple II (1977), VisiCalc (1979) and the IBM PC (1981) gave ordinary offices a reason to buy a computer. On 1 January 1983 ARPANET switched to TCP/IP, and the Internet as we know it began. Macintosh and Windows brought the graphical interface to everyone. In Nigeria, the 1977 Indigenisation Decree led IBM to leave the market and opened it to local computer vendors.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1971</td><td>Intel 4004 microprocessor; first email (Ray Tomlinson)</td><td>A CPU on a chip; messages between machines</td></tr>
+<tr><td class="k">1973</td><td>Xerox Alto (GUI); Ethernet</td><td>Windows and icons; local networks</td></tr>
+<tr><td class="k">1974</td><td>Cerf and Kahn design TCP/IP</td><td>A common language for networks</td></tr>
+<tr><td class="k">1975</td><td>Altair 8800; Microsoft founded; Homebrew Computer Club</td><td>Hobbyists start personal computing</td></tr>
+<tr><td class="k">1976–77</td><td>Apple I and Apple II</td><td>Ready-made home computer</td></tr>
+<tr><td class="k">1977</td><td>IBM leaves Nigeria after the Indigenisation Decree; local vendors grow</td><td>Start of Nigeria's own computer trade</td></tr>
+<tr><td class="k">1979</td><td>VisiCalc, the first spreadsheet</td><td>A business reason to own a PC</td></tr>
+<tr><td class="k">1981</td><td>IBM PC with MS-DOS</td><td>A standard design others copy</td></tr>
+<tr><td class="k">1983</td><td>ARPANET adopts TCP/IP (1 Jan); DNS; GNU project</td><td>The Internet begins; domain names; free software</td></tr>
+<tr><td class="k">1984–85</td><td>Apple Macintosh; Windows 1.0</td><td>GUI reaches ordinary users</td></tr>
+<tr><td class="k">1989</td><td>Tim Berners-Lee proposes the Web at CERN</td><td>Linked information</td></tr>
+</table>
+
+  <h3>3.4 Era 8: The Web and Mobile (1991 to 2010)</h3>
+  <p>The Web opened to the public in 1991, Linus Torvalds released the Linux kernel the same year, and the Mosaic and Netscape browsers (1993–94) made the Web popular. Amazon (1994) and Google (1998) turned it into commerce and search, and Wikipedia (2001) turned it into a shared library. In Nigeria the NCC was set up in 1992, and the Nigerian-assembled Obodex PC appeared the same year. The launch of GSM mobile service in 2001 was the big change: phones reached millions who had never had a landline. Facebook (2004) and YouTube (2005) brought social media and video, Amazon Web Services (2006) sold computing as a utility, and the iPhone (2007) and Android (2008) put the Internet in every pocket.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1991</td><td>Web opens to the public; Linux kernel released</td><td>Global publishing; open-source OS</td></tr>
+<tr><td class="k">1992</td><td>NCC established; Obodex PC (assembled in Nigeria)</td><td>Telecom regulation; local hardware</td></tr>
+<tr><td class="k">1993–94</td><td>Mosaic and Netscape browsers; Amazon founded</td><td>Web goes mainstream; online shopping</td></tr>
+<tr><td class="k">1998</td><td>Google founded</td><td>Search organises the Web</td></tr>
+<tr><td class="k">2001</td><td>Wikipedia; GSM service starts in Nigeria; NITDA set up</td><td>Free knowledge; mobile phones reach millions; national IT agency</td></tr>
+<tr><td class="k">2002</td><td>Interswitch founded (Nigeria)</td><td>Electronic payment backbone</td></tr>
+<tr><td class="k">2003</td><td>NigeriaSat-1 launched</td><td>Satellite remote sensing for Nigeria</td></tr>
+<tr><td class="k">2004–05</td><td>Facebook; YouTube</td><td>Social media and video sharing</td></tr>
+<tr><td class="k">2006</td><td>Amazon Web Services launches</td><td>Computing rented like a utility</td></tr>
+<tr><td class="k">2007</td><td>iPhone; NigComSat-1 launched</td><td>Smartphone era; Nigeria's communications satellite</td></tr>
+<tr><td class="k">2008</td><td>Android; Bitcoin paper published</td><td>Open mobile OS; cryptocurrency</td></tr>
+</table>
+
+  <h3>3.5 Era 9: Data, Smart Systems and AI (2010 to present)</h3>
+  <p>Cheap sensors, fast mobile networks and cloud storage produced the <b>Internet of Things</b> (the term dates from 1999) and huge amounts of data. That data, plus powerful graphics chips, fed the AI revolution below. In Nigeria, e-commerce and fintech grew quickly: Jumia (2012), Paystack (2015) and Flutterwave (2016). AI now sits inside phones, search engines, classrooms and offices, and smart systems such as smart homes, smart grids, wearables, autonomous vehicles and robots sense, decide and act on their own.</p>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1999</td><td>The term "Internet of Things" coined (Kevin Ashton)</td><td>Objects join the network</td></tr>
+<tr><td class="k">2010–15</td><td>Cloud, big data, 4G and wearables spread; Jumia (2012), Paystack (2015)</td><td>Data everywhere; Nigerian e-commerce and fintech grow</td></tr>
+<tr><td class="k">2016</td><td>Flutterwave founded</td><td>African payment infrastructure grows</td></tr>
+<tr><td class="k">2019</td><td>5G networks begin to roll out; Jumia lists on the New York Stock Exchange</td><td>Faster networks; Nigerian tech on a global exchange</td></tr>
+<tr><td class="k">2023</td><td>Nigeria Data Protection Act</td><td>Legal protection for personal data</td></tr>
+<tr><td class="k">2023–now</td><td>AI assistants and agents, smart homes and cities, autonomous machines</td><td>Systems that sense, decide and act</td></tr>
+</table>
+
+  <h4>The AI Thread</h4>
+<table class="long"><tr><th style="width:13%">Year</th><th style="width:50%">Milestone</th><th>What it led to</th></tr>
+<tr><td class="k">1943</td><td>McCulloch and Pitts model an artificial neuron</td><td>Idea that brain-like networks can compute</td></tr>
+<tr><td class="k">1950</td><td>Turing proposes the imitation game (Turing test)</td><td>A test for machine intelligence</td></tr>
+<tr><td class="k">1956</td><td>Dartmouth workshop; John McCarthy names "artificial intelligence"</td><td>AI becomes a field</td></tr>
+<tr><td class="k">1966</td><td>ELIZA chatbot at MIT</td><td>First conversation programs</td></tr>
+<tr><td class="k">1970s, late 1980s</td><td>"AI winters": funding falls when promises are not met</td><td>Lesson: hype needs data and computing power</td></tr>
+<tr><td class="k">1997</td><td>Deep Blue beats world chess champion Kasparov</td><td>Machines master a game of strategy</td></tr>
+<tr><td class="k">2011</td><td>IBM Watson wins Jeopardy!; Siri launched</td><td>Language understanding reaches the public</td></tr>
+<tr><td class="k">2012</td><td>AlexNet wins ImageNet: deep learning on GPUs</td><td>Neural networks beat older methods</td></tr>
+<tr><td class="k">2016</td><td>AlphaGo beats Lee Sedol at Go</td><td>AI masters a far larger game</td></tr>
+<tr><td class="k">2017</td><td>The transformer architecture is published</td><td>Basis of modern language models</td></tr>
+<tr><td class="k">2022</td><td>ChatGPT released (30 November)</td><td>Generative AI reaches the general public</td></tr>
+</table>
+
+  <h3>3.6 The Industry Today</h3>
+  <table>
+    <tr><th style="width:24%">Segment</th><th>What it does</th><th style="width:32%">Examples</th></tr>
+    <tr><td class="k">Chips and hardware</td><td>Designs and makes processors, memory and devices</td><td>Intel, ARM, Samsung, Apple</td></tr>
+    <tr><td class="k">Operating systems and software</td><td>Builds the software that runs the machines</td><td>Microsoft, Apple, Google, open-source community</td></tr>
+    <tr><td class="k">Telecoms</td><td>Carries voice and data</td><td>MTN, Airtel, Glo, 9mobile</td></tr>
+    <tr><td class="k">Internet platforms</td><td>Search, social media, video, online shops</td><td>Google, Meta, Amazon, Jumia</td></tr>
+    <tr><td class="k">Cloud and data centres</td><td>Rents storage and computing power</td><td>Amazon Web Services, Microsoft Azure, Google Cloud</td></tr>
+    <tr><td class="k">Fintech</td><td>Digital payments, lending and banking</td><td>Interswitch, Paystack, Flutterwave</td></tr>
+    <tr><td class="k">AI and robotics</td><td>Builds models, assistants and machines that learn</td><td>Large AI labs and start-ups worldwide</td></tr>
+    <tr><td class="k">Nigerian ecosystem</td><td>Device markets, tech hubs and regulators</td><td>Computer Village (Ikeja), Yaba tech cluster, NITDA, NCC</td></tr>
+  </table>
+</section>
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Number Systems</h2>
+  <p class="meta"><b>Content:</b> Decimal, binary, octal and hexadecimal; place values; conversions; binary arithmetic.</p>
+
+  <h3>4.1 Why Number Systems Matter</h3>
+  <p>A computer's circuits have two states, on and off, so it stores and works with <b>binary</b>. Binary strings are long and hard to read, so people use <b>octal</b> and <b>hexadecimal</b> as short forms of binary, and <b>decimal</b> for everyday counting.</p>
+
+  <h3>4.2 The Four Systems</h3>
+  <table>
+    <tr><th style="width:16%">System</th><th style="width:10%">Base</th><th style="width:26%">Digits</th><th>Use</th></tr>
+    <tr><td class="k">Decimal</td><td>10</td><td>0 1 2 3 4 5 6 7 8 9</td><td>Everyday counting and money</td></tr>
+    <tr><td class="k">Binary</td><td>2</td><td>0 1</td><td>How the computer stores and processes data</td></tr>
+    <tr><td class="k">Octal</td><td>8</td><td>0 1 2 3 4 5 6 7</td><td>Short form of binary (3 bits per digit); file permissions</td></tr>
+    <tr><td class="k">Hexadecimal</td><td>16</td><td>0–9 and A B C D E F</td><td>Short form of binary (4 bits per digit); colour codes, memory and MAC addresses</td></tr>
+  </table>
+
+  <h3>4.3 Place Values</h3>
+  <p>The value of a digit depends on its position. In base <i>b</i>, the places from the right are <i>b</i><sup>0</sup>, <i>b</i><sup>1</sup>, <i>b</i><sup>2</sup> and so on.</p>
+  <table>
+    <tr><th style="width:16%">System</th><th>Place values, right to left</th></tr>
+    <tr><td class="k">Binary</td><td>1, 2, 4, 8, 16, 32, 64, 128, 256 …</td></tr>
+    <tr><td class="k">Octal</td><td>1, 8, 64, 512, 4096 …</td></tr>
+    <tr><td class="k">Decimal</td><td>1, 10, 100, 1000 …</td></tr>
+    <tr><td class="k">Hexadecimal</td><td>1, 16, 256, 4096 …</td></tr>
+  </table>
+
+  <h3>4.4 Equivalents from 0 to 15</h3>
+  <table>
+    <tr><th>Decimal</th><th>Binary</th><th>Octal</th><th>Hex</th><th>Decimal</th><th>Binary</th><th>Octal</th><th>Hex</th></tr>
+    <tr><td>0</td><td>0000</td><td>0</td><td>0</td><td>8</td><td>1000</td><td>10</td><td>8</td></tr>
+    <tr><td>1</td><td>0001</td><td>1</td><td>1</td><td>9</td><td>1001</td><td>11</td><td>9</td></tr>
+    <tr><td>2</td><td>0010</td><td>2</td><td>2</td><td>10</td><td>1010</td><td>12</td><td>A</td></tr>
+    <tr><td>3</td><td>0011</td><td>3</td><td>3</td><td>11</td><td>1011</td><td>13</td><td>B</td></tr>
+    <tr><td>4</td><td>0100</td><td>4</td><td>4</td><td>12</td><td>1100</td><td>14</td><td>C</td></tr>
+    <tr><td>5</td><td>0101</td><td>5</td><td>5</td><td>13</td><td>1101</td><td>15</td><td>D</td></tr>
+    <tr><td>6</td><td>0110</td><td>6</td><td>6</td><td>14</td><td>1110</td><td>16</td><td>E</td></tr>
+    <tr><td>7</td><td>0111</td><td>7</td><td>7</td><td>15</td><td>1111</td><td>17</td><td>F</td></tr>
+  </table>
+
+  <h3>4.5 Conversions</h3>
+  <div class="box">
+    <h4>Any base to decimal: multiply each digit by its place value and add</h4>
+<pre>11010₂ = 1×16 + 1×8 + 0×4 + 1×2 + 0×1 = 26₁₀
+725₈   = 7×64 + 2×8 + 5×1            = 469₁₀
+2F₁₆   = 2×16 + 15×1                 = 47₁₀</pre>
+  </div>
+  <div class="box">
+    <h4>Decimal to any base: divide repeatedly by the base; read the remainders from bottom to top</h4>
+<pre>45 → binary        156 → octal       254 → hexadecimal
+45 ÷ 2 = 22 r 1    156 ÷ 8 = 19 r 4  254 ÷ 16 = 15 r 14 (E)
+22 ÷ 2 = 11 r 0     19 ÷ 8 =  2 r 3   15 ÷ 16 =  0 r 15 (F)
+11 ÷ 2 =  5 r 1      2 ÷ 8 =  0 r 2
+ 5 ÷ 2 =  2 r 1     read up: 234₈     read up: FE₁₆
+ 2 ÷ 2 =  1 r 0
+ 1 ÷ 2 =  0 r 1
+read up: 101101₂</pre>
+  </div>
+  <div class="box">
+    <h4>Binary to octal or hexadecimal: group the bits from the right (3 for octal, 4 for hex)</h4>
+<pre>101101₂ → 101 | 101      = 55₈
+101101₂ → 0010 | 1101    = 2D₁₆
+A7₁₆    → 1010 | 0111    = 10100111₂   (reverse: write 4 bits per hex digit)</pre>
+  </div>
+  <div class="box">
+    <h4>Fractions: multiply the fraction by 2 and keep the whole-number digit each time</h4>
+<pre>0.625 → 0.625×2 = 1.25 (1)   0.25×2 = 0.5 (0)   0.5×2 = 1.0 (1)   → 0.101₂
+0.101₂ = 1×½ + 0×¼ + 1×⅛ = 0.625</pre>
+  </div>
+
+  <h3>4.6 Binary Arithmetic</h3>
+  <table>
+    <tr><th>Addition rule</th><th>Result</th></tr>
+    <tr><td class="k">0 + 0</td><td>0</td></tr>
+    <tr><td class="k">0 + 1 or 1 + 0</td><td>1</td></tr>
+    <tr><td class="k">1 + 1</td><td>10 (write 0, carry 1)</td></tr>
+    <tr><td class="k">1 + 1 + 1</td><td>11 (write 1, carry 1)</td></tr>
+  </table>
+  <div class="box">
+    <h4>Addition and subtraction</h4>
+<pre>  1011  (11)          1101  (13)
++ 0110  ( 6)        − 0110  ( 6)
+------              ------
+ 10001  (17)          0111  ( 7)   borrow 1 from the next column when 0 − 1</pre>
+    <h4>Subtraction by two's complement (8 bits): 13 − 6 = 13 + (−6)</h4>
+<pre>6      = 00000110
+invert = 11111001
+add 1  = 11111010   → this is −6
+  00001101  (13)
++ 11111010  (−6)
+= 1 00000111   discard the carry → 00000111 = 7</pre>
+    <h4>Multiplication and shifts: 101 × 11 (5 × 3)</h4>
+<pre>  101
+× 011
+-----
+  101
+ 1010
+-----
+ 1111  = 15      shift left ×2, shift right ÷2</pre>
+  </div>
+  <p><b>Range with 8 bits:</b> unsigned 0 to 255; two's complement −128 to +127. With <i>n</i> bits you can make 2<sup><i>n</i></sup> different values.</p>
+</section>
+
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Hardware</h2>
+  <p class="meta"><b>Content:</b> Types of computer, input and output devices, the CPU, memory, storage, the motherboard and ports.</p>
+
+  <h3>6.1 Meaning and Types of Computer</h3>
+  <p><b>Hardware</b> is the physical part of a computer system that can be seen and touched. Computers are grouped by size and power.</p>
+  <table>
+    <tr><th style="width:22%">Type</th><th>Description</th><th style="width:30%">Examples</th></tr>
+    <tr><td class="k">Supercomputer</td><td>Fastest and most powerful; used for weather and science</td><td>Weather forecasting centres</td></tr>
+    <tr><td class="k">Mainframe</td><td>Large, serves thousands of users at once</td><td>Banks, government records</td></tr>
+    <tr><td class="k">Minicomputer</td><td>Mid-size, serves a department</td><td>Small company servers</td></tr>
+    <tr><td class="k">Microcomputer (personal computer)</td><td>Small, for one user at a time</td><td>Desktop, laptop, tablet, smartphone</td></tr>
+    <tr><td class="k">Embedded computer</td><td>Built into a device for one job</td><td>Washing machine, car, ATM, POS</td></tr>
+  </table>
+
+  <h3>6.2 Input Devices</h3>
+  <table>
+    <tr><th style="width:26%">Device</th><th>What it takes in</th></tr>
+    <tr><td class="k">Keyboard</td><td>Text, numbers and commands</td></tr>
+    <tr><td class="k">Mouse, touchpad, trackball</td><td>Pointer movement and clicks</td></tr>
+    <tr><td class="k">Touchscreen, stylus, graphics tablet</td><td>Touch and hand-drawn input</td></tr>
+    <tr><td class="k">Scanner</td><td>Paper documents and pictures as images</td></tr>
+    <tr><td class="k">Barcode reader</td><td>Product codes at shop tills</td></tr>
+    <tr><td class="k">OCR, OMR, MICR readers</td><td>Printed text; marks on exam sheets; magnetic ink on cheques</td></tr>
+    <tr><td class="k">Microphone</td><td>Sound and voice</td></tr>
+    <tr><td class="k">Webcam, digital camera</td><td>Pictures and video</td></tr>
+    <tr><td class="k">Biometric sensor</td><td>Fingerprint, face or iris for identity</td></tr>
+    <tr><td class="k">Sensors, joystick, game controller</td><td>Temperature, motion, game commands</td></tr>
+  </table>
+
+  <h3>6.3 Output Devices</h3>
+  <table>
+    <tr><th style="width:26%">Device</th><th>Output</th></tr>
+    <tr><td class="k">Monitor (LCD, LED, OLED)</td><td>Soft copy: text, images, video</td></tr>
+    <tr><td class="k">Printer (inkjet, laser, dot-matrix)</td><td>Hard copy on paper</td></tr>
+    <tr><td class="k">Plotter</td><td>Large drawings and plans</td></tr>
+    <tr><td class="k">Projector</td><td>Large display on a wall or screen</td></tr>
+    <tr><td class="k">Speaker, headphones</td><td>Sound</td></tr>
+    <tr><td class="k">3D printer</td><td>Solid objects built layer by layer</td></tr>
+  </table>
+  <p>The <b>touchscreen</b> is both an input and an output device.</p>
+
+  <h3>6.4 The CPU</h3>
+  <ul class="tight">
+    <li><b>Control Unit (CU):</b> fetches instructions, decodes them and directs the other parts.</li>
+    <li><b>Arithmetic Logic Unit (ALU):</b> does calculations and comparisons.</li>
+    <li><b>Registers:</b> tiny, fastest storage inside the CPU.</li>
+    <li><b>Cache:</b> small, fast memory that holds data used often.</li>
+    <li><b>Clock speed:</b> cycles per second, in GHz; more cores means more instructions done at once.</li>
+  </ul>
+  <p><b>Fetch–decode–execute cycle:</b> (1) Fetch the next instruction from memory. (2) Decode it. (3) Execute it. (4) Repeat.</p>
+
+  <h3>6.5 Memory and Storage</h3>
+  <table>
+    <tr><th style="width:16%">Type</th><th style="width:16%">Volatile?</th><th>Purpose</th></tr>
+    <tr><td class="k">RAM</td><td>Yes</td><td>Holds programs and data in use; the more RAM, the more can run at once</td></tr>
+    <tr><td class="k">ROM</td><td>No</td><td>Holds start-up instructions (firmware)</td></tr>
+    <tr><td class="k">Cache</td><td>Yes</td><td>Speeds up the CPU by keeping frequent data close</td></tr>
+  </table>
+  <table>
+    <tr><th style="width:22%">Storage type</th><th>Examples</th><th style="width:38%">Notes</th></tr>
+    <tr><td class="k">Magnetic</td><td>Hard disk drive (HDD), magnetic tape</td><td>Large and cheap; moving parts</td></tr>
+    <tr><td class="k">Solid-state</td><td>SSD, flash drive, memory card</td><td>Fast, silent, no moving parts</td></tr>
+    <tr><td class="k">Optical</td><td>CD, DVD, Blu-ray</td><td>Read by laser; used for media</td></tr>
+    <tr><td class="k">Cloud</td><td>Online storage services</td><td>Reached over the Internet; needs connectivity</td></tr>
+  </table>
+
+  <h4>Units of Storage</h4>
+  <table>
+    <tr><th>Unit</th><th>Size</th></tr>
+    <tr><td class="k">Bit</td><td>A single 0 or 1</td></tr>
+    <tr><td class="k">Nibble</td><td>4 bits</td></tr>
+    <tr><td class="k">Byte</td><td>8 bits (one character)</td></tr>
+    <tr><td class="k">Kilobyte (KB)</td><td>1,024 bytes</td></tr>
+    <tr><td class="k">Megabyte (MB)</td><td>1,024 KB</td></tr>
+    <tr><td class="k">Gigabyte (GB)</td><td>1,024 MB</td></tr>
+    <tr><td class="k">Terabyte (TB)</td><td>1,024 GB</td></tr>
+    <tr><td class="k">Petabyte (PB)</td><td>1,024 TB</td></tr>
+  </table>
+
+  <h3>6.6 Motherboard, Buses and Ports</h3>
+  <p>The <b>motherboard</b> carries the CPU, RAM, storage connectors and expansion slots, linked by <b>buses</b> (data, address and control). Ports connect devices to it.</p>
+  <table>
+    <tr><th style="width:22%">Port</th><th>Use</th></tr>
+    <tr><td class="k">USB</td><td>Keyboards, mice, flash drives, phones, printers</td></tr>
+    <tr><td class="k">HDMI, VGA, DVI</td><td>Video to monitors and projectors</td></tr>
+    <tr><td class="k">Ethernet (RJ-45)</td><td>Wired network cable</td></tr>
+    <tr><td class="k">Audio jack</td><td>Headphones and microphones</td></tr>
+    <tr><td class="k">Power connector</td><td>Electricity from the power supply</td></tr>
+  </table>
+</section>
+
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Software</h2>
+  <p class="meta"><b>Content:</b> Meaning and classes of software, programming languages and translators, licences.</p>
+
+  <h3>8.1 Meaning</h3>
+  <p><b>Software</b> is the set of programs and data that tell the hardware what to do. Hardware cannot work without software, and software cannot run without hardware.</p>
+
+  <h3>8.2 Classes of Software</h3>
+  <table>
+    <tr><th style="width:24%">Class</th><th>Purpose</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">System software</td><td>Runs and manages the computer</td><td>Operating system, drivers, utilities, translators, firmware</td></tr>
+    <tr><td class="k">Application software</td><td>Helps users do tasks</td><td>Word processor, spreadsheet, browser, games</td></tr>
+  </table>
+
+  <h3>8.3 System Software</h3>
+  <table>
+    <tr><th style="width:24%">Type</th><th>What it does</th></tr>
+    <tr><td class="k">Operating system</td><td>Manages hardware, files, memory and programs (Week 9)</td></tr>
+    <tr><td class="k">Device drivers</td><td>Let the OS talk to printers, graphics cards and other devices</td></tr>
+    <tr><td class="k">Utility software</td><td>Antivirus, backup, disk cleanup, file compression</td></tr>
+    <tr><td class="k">Language translators</td><td>Compilers, interpreters and assemblers</td></tr>
+    <tr><td class="k">Firmware</td><td>Permanent software in chips (BIOS/UEFI, router, TV)</td></tr>
+  </table>
+
+  <h3>8.4 Application Software</h3>
+  <table>
+    <tr><th style="width:24%">Kind</th><th>Description</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">General-purpose (off-the-shelf)</td><td>Bought ready-made for many users and tasks</td><td>Word processor, spreadsheet, presentation, database, browser</td></tr>
+    <tr><td class="k">Special-purpose</td><td>Made for one particular task</td><td>Payroll, accounting, school management, hospital records</td></tr>
+    <tr><td class="k">Custom (bespoke)</td><td>Written for one organisation's needs</td><td>A bank's own transaction system</td></tr>
+  </table>
+
+  <h3>8.5 Programming Languages</h3>
+  <table>
+    <tr><th style="width:24%">Level</th><th>Description</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">Machine language (1GL)</td><td>Binary; the only language the CPU runs directly</td><td>Binary code</td></tr>
+    <tr><td class="k">Assembly language (2GL)</td><td>Short codes such as ADD and MOV; tied to one CPU type</td><td>x86 assembly</td></tr>
+    <tr><td class="k">High-level language (3GL)</td><td>Close to English; works on many machines</td><td>Python, Java, C, JavaScript</td></tr>
+    <tr><td class="k">4GL</td><td>Very high level; states what is wanted, not how</td><td>SQL</td></tr>
+  </table>
+
+  <h4>Language Translators</h4>
+  <table>
+    <tr><th style="width:18%">Translator</th><th>Works</th><th style="width:30%">Result</th></tr>
+    <tr><td class="k">Assembler</td><td>Converts assembly language to machine code</td><td>Machine code</td></tr>
+    <tr><td class="k">Compiler</td><td>Translates the whole program first, then it runs; reports all errors together</td><td>Faster program; translation happens once</td></tr>
+    <tr><td class="k">Interpreter</td><td>Translates and runs one line at a time; stops at the first error</td><td>Easier to test; slower to run</td></tr>
+  </table>
+
+  <h3>8.6 Software Licences and Distribution</h3>
+  <table>
+    <tr><th style="width:22%">Type</th><th>Meaning</th></tr>
+    <tr><td class="k">Proprietary</td><td>Owned by a company; users buy a licence; source code is closed</td></tr>
+    <tr><td class="k">Open source</td><td>Source code can be seen, changed and shared (Linux, LibreOffice)</td></tr>
+    <tr><td class="k">Freeware</td><td>Free to use but still copyrighted</td></tr>
+    <tr><td class="k">Shareware</td><td>Free trial, then payment</td></tr>
+    <tr><td class="k">SaaS / subscription</td><td>Used online for a regular fee; not installed</td></tr>
+  </table>
+  <p><b>Software piracy</b> is the illegal copying or use of software without a licence. It exposes users to malware and is against the law.</p>
+</section>
+
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Operating Systems</h2>
+  <p class="meta"><b>Content:</b> Meaning, functions, types, interfaces, booting, examples and file management.</p>
+
+  <h3>9.1 Meaning</h3>
+  <p>An <b>operating system (OS)</b> is system software that manages the computer's hardware and software and provides a platform on which other programs run. It sits between the user, the applications and the hardware.</p>
+
+  <h3>9.2 Functions of an Operating System</h3>
+  <ol class="tight">
+    <li><b>Process management:</b> decides which program uses the CPU and when.</li>
+    <li><b>Memory management:</b> gives each program RAM and frees it afterwards.</li>
+    <li><b>File management:</b> creates, names, stores, finds and protects files and folders.</li>
+    <li><b>Device management:</b> controls input, output and storage devices through drivers.</li>
+    <li><b>User interface:</b> lets the user communicate with the computer.</li>
+    <li><b>Security:</b> logins, passwords and permissions.</li>
+    <li><b>Networking:</b> connects the machine to other machines and the Internet.</li>
+  </ol>
+
+  <h3>9.3 Types of Operating System</h3>
+  <table>
+    <tr><th style="width:24%">Type</th><th>Description</th><th style="width:30%">Example use</th></tr>
+    <tr><td class="k">Batch</td><td>Jobs collected and run together without user contact</td><td>Payroll, bank statements</td></tr>
+    <tr><td class="k">Single-user, single-task</td><td>One user, one program at a time</td><td>Early MS-DOS</td></tr>
+    <tr><td class="k">Single-user, multitasking</td><td>One user, many programs at once</td><td>Windows, macOS on a laptop</td></tr>
+    <tr><td class="k">Multi-user</td><td>Many users share one machine or server</td><td>Unix and Linux servers</td></tr>
+    <tr><td class="k">Time-sharing</td><td>CPU time split among users in slices</td><td>University mainframes</td></tr>
+    <tr><td class="k">Real-time (RTOS)</td><td>Must respond within a fixed short time</td><td>Aircraft control, medical monitors</td></tr>
+    <tr><td class="k">Distributed</td><td>Many computers act as one system</td><td>Large web services</td></tr>
+    <tr><td class="k">Embedded</td><td>Built into a device for one job</td><td>ATMs, routers, smart TVs</td></tr>
+    <tr><td class="k">Mobile</td><td>Designed for touchscreens and batteries</td><td>Android, iOS</td></tr>
+  </table>
+
+  <h3>9.4 User Interfaces</h3>
+  <table>
+    <tr><th style="width:20%">Interface</th><th>How it works</th><th style="width:30%">Notes</th></tr>
+    <tr><td class="k">CLI</td><td>User types commands</td><td>Fast for experts, hard for beginners</td></tr>
+    <tr><td class="k">GUI</td><td>Windows, icons, menus, pointer</td><td>Easy to learn; uses more memory</td></tr>
+    <tr><td class="k">Touch and voice</td><td>Taps, swipes, spoken commands</td><td>Phones, tablets, assistants</td></tr>
+  </table>
+
+  <h3>9.5 The Boot Process</h3>
+  <ol class="tight">
+    <li>Power is switched on; the CPU starts running firmware (BIOS or UEFI) stored in ROM.</li>
+    <li><b>POST</b> (Power-On Self-Test) checks the CPU, RAM and devices.</li>
+    <li>The firmware finds the bootstrap loader on the storage device.</li>
+    <li>The loader loads the kernel of the OS into RAM.</li>
+    <li>The OS starts its services and drivers and shows the login or desktop screen.</li>
+  </ol>
+  <p><b>Cold boot:</b> starting from power off. <b>Warm boot:</b> restarting without cutting power.</p>
+
+  <h3>9.6 Common Operating Systems</h3>
+  <table>
+    <tr><th style="width:18%">OS</th><th style="width:22%">Maker</th><th>Notes</th></tr>
+    <tr><td class="k">Windows</td><td>Microsoft</td><td>Proprietary; most common on PCs; GUI</td></tr>
+    <tr><td class="k">macOS</td><td>Apple</td><td>Proprietary; runs on Mac computers</td></tr>
+    <tr><td class="k">Linux</td><td>Open-source community</td><td>Open source; servers, supercomputers, and the kernel behind Android</td></tr>
+    <tr><td class="k">Android</td><td>Google</td><td>Mobile; the most used phone OS</td></tr>
+    <tr><td class="k">iOS</td><td>Apple</td><td>Mobile; iPhone and iPad</td></tr>
+    <tr><td class="k">ChromeOS</td><td>Google</td><td>Light, browser-based laptops</td></tr>
+  </table>
+
+  <h3>9.7 File Management</h3>
+  <ul class="tight">
+    <li>A <b>file</b> holds data; a <b>folder</b> holds files and other folders; a <b>path</b> is the route to a file, such as C:\Documents\Notes\week1.docx.</li>
+    <li>Common actions: create, open, rename, copy, move, delete, search, back up.</li>
+    <li>Use clear names and avoid symbols such as / \ : * ? " &lt; &gt; | in file names.</li>
+  </ul>
+  <table>
+    <tr><th>Extension</th><th>Type</th><th>Extension</th><th>Type</th></tr>
+    <tr><td class="k">.docx</td><td>Word document</td><td class="k">.jpg / .png</td><td>Picture</td></tr>
+    <tr><td class="k">.xlsx</td><td>Spreadsheet</td><td class="k">.mp3</td><td>Audio</td></tr>
+    <tr><td class="k">.pptx</td><td>Presentation</td><td class="k">.mp4</td><td>Video</td></tr>
+    <tr><td class="k">.txt</td><td>Plain text</td><td class="k">.exe</td><td>Program</td></tr>
+    <tr><td class="k">.pdf</td><td>Portable document</td><td class="k">.zip</td><td>Compressed folder</td></tr>
+    <tr><td class="k">.html</td><td>Web page</td><td class="k">.csv</td><td>Comma-separated data</td></tr>
+  </table>
+</section>
+
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Data Representation</h2>
+  <p class="meta"><b>Content:</b> How numbers, text, images, sound and video are stored as bits; file-size formulas; compression; error checking.</p>
+
+  <h3>10.1 Why Everything Becomes Bits</h3>
+  <p>Computer circuits have two states, so all data (numbers, letters, pictures, sound, video) must be turned into patterns of 0s and 1s. <b>Digitisation</b> is the conversion of analogue data to digital; the reverse is done when a speaker plays sound or a screen shows a picture.</p>
+
+  <h3>10.2 Numbers</h3>
+  <ul class="tight">
+    <li><b>Unsigned integers:</b> plain binary; 8 bits hold 0 to 255.</li>
+    <li><b>Signed integers:</b> two's complement; the leftmost bit shows the sign (0 positive, 1 negative); 8 bits hold −128 to +127.</li>
+    <li><b>Real numbers:</b> stored in floating-point form (a sign, a fraction part and an exponent).</li>
+  </ul>
+
+  <h3>10.3 Text</h3>
+  <p>Each character has a numeric code from a <b>character set</b>. <b>ASCII</b> uses 7 bits (128 characters); extended ASCII uses 8 bits (256). <b>Unicode</b> covers almost all writing systems and emoji; its UTF-8 form uses 1 to 4 bytes per character.</p>
+  <table>
+    <tr><th>Character</th><th>Decimal code</th><th>Binary (8 bits)</th></tr>
+    <tr><td class="k">Space</td><td>32</td><td>00100000</td></tr>
+    <tr><td class="k">0</td><td>48</td><td>00110000</td></tr>
+    <tr><td class="k">A</td><td>65</td><td>01000001</td></tr>
+    <tr><td class="k">Z</td><td>90</td><td>01011010</td></tr>
+    <tr><td class="k">a</td><td>97</td><td>01100001</td></tr>
+  </table>
+  <p>Capital and small letters differ by 32, so 'a' = 'A' + 32. A text file of <i>n</i> characters in ASCII takes about <i>n</i> bytes.</p>
+
+  <h3>10.4 Images</h3>
+  <p>A <b>bitmap</b> image is a grid of pixels; each pixel's colour is stored in a set number of bits (<b>colour depth</b>). More pixels and greater depth mean more detail and a bigger file.</p>
+  <table>
+    <tr><th style="width:24%">Colour depth</th><th>Colours possible</th></tr>
+    <tr><td class="k">1 bit</td><td>2 (black and white)</td></tr>
+    <tr><td class="k">8 bits</td><td>256</td></tr>
+    <tr><td class="k">24 bits (RGB, 8 each)</td><td>16,777,216</td></tr>
+  </table>
+  <div class="box">
+    <h4>Image file size</h4>
+<pre>size (bytes) = width × height × colour depth (bits) ÷ 8
+Example: 800 × 600 pixels, 24-bit colour
+= 800 × 600 × 24 ÷ 8 = 1,440,000 bytes ≈ 1.4 MB (before compression)</pre>
+  </div>
+  <p>A <b>vector graphic</b> stores shapes as formulas, so it stays sharp when enlarged and is best for logos and diagrams (SVG).</p>
+
+  <h3>10.5 Sound</h3>
+  <p>Sound is an analogue wave. The computer measures it many times a second (<b>sampling</b>) and stores each measure in a set number of bits (<b>bit depth</b>). A higher sampling rate and bit depth give better quality and bigger files.</p>
+  <div class="box">
+    <h4>Sound file size</h4>
+<pre>size (bytes) = sampling rate (Hz) × bit depth × channels × seconds ÷ 8
+Example: CD quality 44,100 Hz, 16-bit, stereo (2 channels), 60 seconds
+= 44,100 × 16 × 2 × 60 ÷ 8 = 10,584,000 bytes ≈ 10.6 MB</pre>
+  </div>
+
+  <h3>10.6 Video</h3>
+  <p>Video is a sequence of still images (<b>frames</b>) shown at a <b>frame rate</b> (for example 25 or 30 frames per second) together with a sound track. Uncompressed video is huge, so it is always compressed.</p>
+
+  <h3>10.7 Compression</h3>
+  <table>
+    <tr><th style="width:18%">Type</th><th>How it works</th><th style="width:30%">Examples</th></tr>
+    <tr><td class="k">Lossless</td><td>Rewrites data more compactly; original restored exactly</td><td>ZIP, PNG, FLAC</td></tr>
+    <tr><td class="k">Lossy</td><td>Removes detail people are unlikely to notice; cannot be undone</td><td>JPEG, MP3, MP4</td></tr>
+  </table>
+  <p><b>Uses:</b> save storage space and send files faster.</p>
+
+  <h3>10.8 Detecting Errors: Parity</h3>
+  <p>A <b>parity bit</b> is added to each group of bits so the total number of 1s is always even (even parity) or always odd (odd parity). If the count is wrong on arrival, an error occurred.</p>
+<pre>Data 1011001 has four 1s.
+Even parity: add 0 → 10110010     Odd parity: add 1 → 10110011</pre>
+  <p>Parity detects a single-bit error but cannot say which bit is wrong.</p>
+
+  <h3>10.9 Analogue to Digital and Back</h3>
+  <ol class="tight">
+    <li>A sensor or microphone produces an analogue signal.</li>
+    <li>An <b>analogue-to-digital converter (ADC)</b> samples it and turns the samples into binary.</li>
+    <li>The computer stores and processes the binary data.</li>
+    <li>A <b>digital-to-analogue converter (DAC)</b> turns it back into a signal for a speaker or screen.</li>
+  </ol>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>

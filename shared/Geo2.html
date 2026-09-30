@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 2 Geography — First Term</title>
+<style>
+/* ============================================================
+   SS 2 GEOGRAPHY — FIRST TERM
+   Print-first. No JS. Weeks as units.
+   ALL text bold (700 body, 900 headings). Thick rules everywhere.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:4.5pt solid #1a3d6e;
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#444;
+  font-weight:700;
+}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:3.6pt solid #1a3d6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a3d6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a3d6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a3d6e;
+  border-bottom:2.4pt solid #8fae99;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols2 > li{break-inside:avoid}
+ul.cols2, ol.cols2{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:2.4pt solid #7d897d;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a3d6e;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+table.long{break-inside:auto}
+tr{break-inside:avoid}
+th,td{
+  border:2pt solid #5f5a4e;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#e6eee8;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:2.4pt solid #5f5a4e;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.kw{font-weight:900}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+b{font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1.6pt solid #7d897d;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split{break-inside:avoid}
+  table.long{break-inside:auto}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS 2 Geography — First Term</h1>
+  <p class="term">Industry & Geography, GIS, Earth Processes & Landforms, Climate, Environmental Resources · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     DEFINITIONS FOR THE TERM
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">TERM</span>Definitions for the Term</h2>
+  <p class="meta"><b>Content:</b> Every key definition from every week, grouped by topic in one place. Learn these first; the weekly notes then explain them.</p>
+
+  <h3>A. Industry and Geography</h3>
+  <table class="long">
+    <tr><th style="width:24%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Industry</td><td>Any economic activity that extracts raw materials, processes them into finished goods, or provides a service, for sale or profit.</td></tr>
+    <tr><td class="k">Raw material</td><td>The natural or semi-processed substance from which a product is made.</td></tr>
+    <tr><td class="k">Manufacturing</td><td>The conversion of raw materials into finished or semi-finished goods by hand or by machine.</td></tr>
+    <tr><td class="k">Industrial location</td><td>The place where a factory or industry is sited, chosen because of the advantages it offers.</td></tr>
+    <tr><td class="k">Primary industry</td><td>Industry that takes raw materials directly from nature (farming, fishing, mining, lumbering).</td></tr>
+    <tr><td class="k">Secondary industry</td><td>Industry that processes raw materials into finished goods (manufacturing, construction).</td></tr>
+    <tr><td class="k">Tertiary industry</td><td>Industry that provides services (trade, transport, banking, teaching, tourism).</td></tr>
+    <tr><td class="k">Quaternary industry</td><td>Knowledge-based industry (information technology, research, consultancy).</td></tr>
+    <tr><td class="k">Cottage industry</td><td>Small industry run at home with family labour, simple tools and small capital.</td></tr>
+    <tr><td class="k">Heavy industry</td><td>Industry that uses bulky raw materials and makes heavy products (steel, cement, shipbuilding).</td></tr>
+    <tr><td class="k">Light industry</td><td>Industry that makes small, light products (textiles, electronics, food and drinks).</td></tr>
+    <tr><td class="k">Footloose industry</td><td>Industry not tied to any raw material or power source, so it can be sited almost anywhere.</td></tr>
+    <tr><td class="k">Agglomeration</td><td>The clustering of many industries in one place so that they share services and facilities.</td></tr>
+    <tr><td class="k">Industrial estate</td><td>A planned area set aside and equipped with roads, power and water for factories.</td></tr>
+    <tr><td class="k">Infrastructure</td><td>Basic facilities that support economic activity (roads, electricity, water, communication).</td></tr>
+  </table>
+
+  <h3>B. Geographic Information System (GIS)</h3>
+  <table class="long">
+    <tr><th style="width:24%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">GIS</td><td>A computer-based system for capturing, storing, managing, analysing and displaying geographic (location-based) data.</td></tr>
+    <tr><td class="k">Spatial data</td><td>Data that describes where a feature is located on the earth's surface.</td></tr>
+    <tr><td class="k">Attribute data</td><td>Descriptive information about a spatial feature (name, size, population, type).</td></tr>
+    <tr><td class="k">Raster data</td><td>Data stored as a grid of equal cells (pixels), each holding one value.</td></tr>
+    <tr><td class="k">Vector data</td><td>Data stored as points, lines and polygons using coordinates.</td></tr>
+    <tr><td class="k">Layer</td><td>One theme of data in a GIS (for example roads, rivers or settlements) that can be stacked on others.</td></tr>
+    <tr><td class="k">Overlay</td><td>The combining of two or more layers to find relationships between them.</td></tr>
+    <tr><td class="k">Digitising</td><td>Converting features on a paper map into digital vector form.</td></tr>
+    <tr><td class="k">Georeferencing</td><td>Fixing a map or image to real-world coordinates.</td></tr>
+    <tr><td class="k">Remote sensing</td><td>Collecting information about the earth's surface from a distance, using sensors on satellites, aircraft or drones, without touching it.</td></tr>
+    <tr><td class="k">GPS</td><td>Global Positioning System: a satellite navigation system that gives the position (latitude, longitude, height) of a receiver anywhere on earth.</td></tr>
+    <tr><td class="k">Aerial photograph</td><td>A photograph of the ground taken from an aircraft.</td></tr>
+    <tr><td class="k">Satellite image</td><td>A picture of the earth's surface captured by a sensor on an orbiting satellite.</td></tr>
+  </table>
+
+  <h3>C. Earth's Processes and Landforms</h3>
+  <table class="long">
+    <tr><th style="width:24%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Landform</td><td>A natural feature of the earth's surface (mountain, plateau, plain, valley, delta).</td></tr>
+    <tr><td class="k">Lithosphere</td><td>The rigid outer shell of the earth: the crust plus the uppermost mantle.</td></tr>
+    <tr><td class="k">Crust</td><td>The thin, solid, outermost layer of the earth.</td></tr>
+    <tr><td class="k">Mantle</td><td>The thick layer of hot, dense rock between the crust and the core.</td></tr>
+    <tr><td class="k">Core</td><td>The innermost part of the earth, made mainly of iron and nickel.</td></tr>
+    <tr><td class="k">Rock</td><td>A solid mass of one or more minerals that makes up the earth's crust.</td></tr>
+    <tr><td class="k">Igneous rock</td><td>Rock formed when molten magma or lava cools and hardens.</td></tr>
+    <tr><td class="k">Sedimentary rock</td><td>Rock formed from sediments that are laid down in layers and compacted.</td></tr>
+    <tr><td class="k">Metamorphic rock</td><td>Rock changed from an older rock by heat and pressure without melting.</td></tr>
+    <tr><td class="k">Endogenic (internal) processes</td><td>Forces that act from inside the earth and build up the land (folding, faulting, volcanism, earthquakes).</td></tr>
+    <tr><td class="k">Exogenic (external) processes</td><td>Forces that act at the surface and wear down or reshape the land (weathering, erosion, deposition).</td></tr>
+    <tr><td class="k">Plate tectonics</td><td>The theory that the lithosphere is broken into large plates that move slowly over the mantle.</td></tr>
+    <tr><td class="k">Folding</td><td>The bending of rock layers by compression.</td></tr>
+    <tr><td class="k">Faulting</td><td>The cracking of rocks and the displacement of blocks along a line of weakness.</td></tr>
+    <tr><td class="k">Volcanism</td><td>The movement of molten rock from inside the earth into or onto the crust.</td></tr>
+    <tr><td class="k">Magma</td><td>Molten rock beneath the earth's surface.</td></tr>
+    <tr><td class="k">Lava</td><td>Molten rock that has reached the earth's surface.</td></tr>
+    <tr><td class="k">Earthquake</td><td>A sudden shaking of the ground caused by a release of energy in the crust.</td></tr>
+    <tr><td class="k">Focus</td><td>The point inside the earth where an earthquake starts.</td></tr>
+    <tr><td class="k">Epicentre</td><td>The point on the surface directly above the focus.</td></tr>
+    <tr><td class="k">Weathering</td><td>The breaking down of rocks in place by weather, plants and animals, with no transport.</td></tr>
+    <tr><td class="k">Erosion</td><td>The wearing away and carrying off of rock and soil by water, wind, ice or waves.</td></tr>
+    <tr><td class="k">Deposition</td><td>The laying down of material that an agent of erosion has carried.</td></tr>
+    <tr><td class="k">Mass movement</td><td>The downslope movement of rock, soil and debris under gravity.</td></tr>
+    <tr><td class="k">Denudation</td><td>The overall lowering of the land surface by weathering, erosion and mass movement.</td></tr>
+  </table>
+
+  <h3>D. Climate</h3>
+  <table class="long">
+    <tr><th style="width:24%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Weather</td><td>The condition of the atmosphere of a place over a short time (hours or days).</td></tr>
+    <tr><td class="k">Climate</td><td>The average weather condition of a place over a long period, usually 30 years or more.</td></tr>
+    <tr><td class="k">Atmosphere</td><td>The layer of gases that surrounds the earth.</td></tr>
+    <tr><td class="k">Temperature</td><td>The degree of hotness or coldness of the air.</td></tr>
+    <tr><td class="k">Precipitation</td><td>All water that falls from the atmosphere to the ground (rain, snow, hail, sleet).</td></tr>
+    <tr><td class="k">Humidity</td><td>The amount of water vapour in the air.</td></tr>
+    <tr><td class="k">Relative humidity</td><td>The amount of water vapour in the air compared with the most it can hold at that temperature, in percent.</td></tr>
+    <tr><td class="k">Atmospheric pressure</td><td>The weight of the air pressing on the earth's surface.</td></tr>
+    <tr><td class="k">Wind</td><td>Air moving horizontally from an area of high pressure to an area of low pressure.</td></tr>
+    <tr><td class="k">Insolation</td><td>The solar energy that reaches the earth's surface.</td></tr>
+    <tr><td class="k">Air mass</td><td>A very large body of air with about the same temperature and humidity throughout.</td></tr>
+    <tr><td class="k">Inter-Tropical Discontinuity (ITD)</td><td>The zone in West Africa where the moist south-west winds meet the dry north-east winds.</td></tr>
+    <tr><td class="k">Harmattan</td><td>A dry, dusty, cool wind blowing from the Sahara over West Africa in the dry season.</td></tr>
+    <tr><td class="k">Convectional rainfall</td><td>Rain from warm, moist air that rises after strong surface heating, cools and condenses.</td></tr>
+    <tr><td class="k">Relief (orographic) rainfall</td><td>Rain from moist air forced to rise over high land, cooling as it climbs.</td></tr>
+    <tr><td class="k">Frontal (cyclonic) rainfall</td><td>Rain formed where a warm air mass meets and rises over a cold air mass.</td></tr>
+    <tr><td class="k">Climatic region</td><td>A large area with broadly similar climate.</td></tr>
+    <tr><td class="k">Greenhouse effect</td><td>The trapping of heat near the earth by gases such as carbon dioxide and methane.</td></tr>
+    <tr><td class="k">Climate change</td><td>A long-term shift in the average temperature and rainfall patterns of the earth.</td></tr>
+  </table>
+
+  <h3>E. Environmental Resources</h3>
+  <table class="long">
+    <tr><th style="width:24%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Environment</td><td>Everything that surrounds and affects living things: land, water, air, plants, animals and people.</td></tr>
+    <tr><td class="k">Resource</td><td>Anything in the environment that people can use to meet their needs.</td></tr>
+    <tr><td class="k">Natural resource</td><td>A resource provided by nature and not made by people (soil, water, forests, minerals).</td></tr>
+    <tr><td class="k">Renewable resource</td><td>A resource that can replace itself naturally within a human lifetime (forests, water, solar energy).</td></tr>
+    <tr><td class="k">Non-renewable resource</td><td>A resource that cannot be replaced once used up, or takes millions of years to form (crude oil, coal, minerals).</td></tr>
+    <tr><td class="k">Mineral</td><td>A natural, non-living substance with a definite chemical make-up, found in rocks.</td></tr>
+    <tr><td class="k">Fossil fuel</td><td>A fuel formed over millions of years from the remains of plants and animals (coal, crude oil, natural gas).</td></tr>
+    <tr><td class="k">Ecosystem</td><td>A community of living things together with the non-living environment they interact with.</td></tr>
+    <tr><td class="k">Biodiversity</td><td>The variety of plant and animal life in an area.</td></tr>
+    <tr><td class="k">Conservation</td><td>The careful use and protection of resources so that they last.</td></tr>
+    <tr><td class="k">Sustainable development</td><td>Development that meets the needs of the present without harming the ability of future generations to meet theirs.</td></tr>
+    <tr><td class="k">Deforestation</td><td>The clearing or cutting down of forests, usually without replanting.</td></tr>
+    <tr><td class="k">Afforestation</td><td>Planting trees where there were none before.</td></tr>
+    <tr><td class="k">Reforestation</td><td>Replanting trees in an area that was cleared or burnt.</td></tr>
+    <tr><td class="k">Desertification</td><td>The spread of desert-like conditions into land that was once productive.</td></tr>
+    <tr><td class="k">Soil erosion</td><td>The removal of topsoil by running water or wind.</td></tr>
+    <tr><td class="k">Pollution</td><td>The addition of harmful substances to air, water or land.</td></tr>
+    <tr><td class="k">Environmental hazard</td><td>A natural or human-made event or condition that threatens people and their surroundings (flood, drought, oil spill).</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================
+     WEEK 1 — INDUSTRY AND GEOGRAPHY I
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Industry and Geography I: Meaning, Importance, Location Factors</h2>
+  <p class="meta"><b>Content:</b> Meaning and importance of industry, and how geography decides where industries are sited.</p>
+
+  <h3>1.1 Meaning of Industry</h3>
+  <p><b>Industry</b> is any economic activity that extracts raw materials, processes them into finished goods, or provides a service, for sale or profit. Where an industry stands depends on geography: relief, climate, water, minerals, soil, and the people and roads around it.</p>
+
+  <h3>1.2 Importance of Industries</h3>
+  <ol class="tight">
+    <li><b>Employment:</b> Industries give jobs to skilled and unskilled workers.</li>
+    <li><b>Foreign exchange:</b> Exported products (crude oil, cocoa, processed goods) earn foreign currency.</li>
+    <li><b>Import reduction:</b> Local factories make goods that would otherwise be bought abroad.</li>
+    <li><b>Raw material use:</b> Industries add value to farm and mineral products.</li>
+    <li><b>Government revenue:</b> Factories pay taxes and royalties.</li>
+    <li><b>Growth of towns and infrastructure:</b> Roads, power and housing develop around industrial centres.</li>
+    <li><b>Technology and skills:</b> Workers learn new methods that spread to other sectors.</li>
+  </ol>
+
+  <h3>1.3 Factors that Decide Industrial Location</h3>
+  <table>
+    <tr><th style="width:22%">Factor</th><th>How it influences location</th><th style="width:30%">Nigerian example</th></tr>
+    <tr><td class="k">Raw materials</td><td>Bulky or perishable raw materials are processed near their source to cut transport cost.</td><td>Cement at limestone sites: Ewekoro, Nkalagu, Obajana, Gboko. Sugar at cane fields: Bacita, Numan.</td></tr>
+    <tr><td class="k">Power and energy</td><td>Factories need steady electricity, gas or coal near or connected to them.</td><td>Hydro-power from Kainji, Jebba and Shiroro; gas in the Niger Delta.</td></tr>
+    <tr><td class="k">Water</td><td>Needed for cooling, washing, and as an input (drinks, textiles, paper).</td><td>Breweries and bottling plants near rivers or boreholes.</td></tr>
+    <tr><td class="k">Land (site)</td><td>Flat, firm, well-drained and cheap land with room to expand.</td><td>Planned estates at Ikeja, Ilupeju, Agbara.</td></tr>
+    <tr><td class="k">Climate</td><td>Affects the crop supply and some processes (drying, storage, humidity).</td><td>Cocoa mills in the humid south; groundnut and cotton mills in the drier north (Kano, Kaduna).</td></tr>
+    <tr><td class="k">Labour</td><td>Skilled and cheap workers are drawn to dense populations.</td><td>Lagos, Kano, Aba, Onitsha.</td></tr>
+    <tr><td class="k">Market</td><td>Products that are heavy, fragile or perishable are made near buyers.</td><td>Bread, soft drinks, and printing in Lagos, Abuja, Ibadan.</td></tr>
+    <tr><td class="k">Transport</td><td>Roads, rail, ports and airports move inputs in and goods out.</td><td>Apapa and Port Harcourt ports; Lagos–Ibadan corridor.</td></tr>
+    <tr><td class="k">Capital</td><td>Large plants need money for land, machines and running costs.</td><td>Banks in Lagos and Abuja attract investment.</td></tr>
+    <tr><td class="k">Government policy</td><td>Tax breaks, industrial estates and bans on imports shape choices.</td><td>Free trade zones at Calabar and Onne.</td></tr>
+  </table>
+
+  <h3>1.4 Types of Location Pull</h3>
+  <ul class="tight">
+    <li><b>Raw-material-oriented:</b> The raw material loses weight in processing, so the factory sits at the source (cement, sugar, tin smelting, palm-oil milling).</li>
+    <li><b>Market-oriented:</b> The product is bulky, fragile or perishable, so it is made near buyers (bread, soft drinks).</li>
+    <li><b>Power-oriented:</b> Energy is the biggest cost, so the plant sits by cheap power (aluminium smelting).</li>
+    <li><b>Transport-oriented:</b> Heavy imported inputs make ports the best sites (oil refining, flour milling).</li>
+    <li><b>Footloose:</b> Light, high-value items depend little on any one factor (electronics assembly, printing).</li>
+  </ul>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 2 — INDUSTRY AND GEOGRAPHY II
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Industry and Geography II: Classification of Industries</h2>
+  <p class="meta"><b>Content:</b> How industries are grouped, major Nigerian industries and their locations, problems and solutions.</p>
+
+  <h3>2.1 Classification by Type of Activity</h3>
+  <table>
+    <tr><th style="width:22%">Class</th><th>Meaning</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">Primary</td><td>Takes raw materials directly from nature.</td><td>Farming, fishing, mining, lumbering, quarrying.</td></tr>
+    <tr><td class="k">Secondary</td><td>Turns raw materials into finished goods.</td><td>Cement, textiles, refining, brewing, building.</td></tr>
+    <tr><td class="k">Tertiary</td><td>Provides services.</td><td>Trade, transport, banking, teaching, health, tourism.</td></tr>
+    <tr><td class="k">Quaternary</td><td>Works with knowledge and information.</td><td>ICT, research, software, consultancy.</td></tr>
+  </table>
+
+  <h3>2.2 Other Classifications</h3>
+  <table>
+    <tr><th style="width:22%">Basis</th><th>Classes</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">Size</td><td>Cottage (household), small-scale, medium-scale, large-scale.</td><td>Local weaving and blacksmithing; a bakery; a bottling plant; a cement works.</td></tr>
+    <tr><td class="k">Ownership</td><td>Private, public (government), joint (government and private), cooperative.</td><td>Dangote Cement; Ajaokuta Steel; NNPC joint ventures; farmers' cooperatives.</td></tr>
+    <tr><td class="k">Source of raw material</td><td>Agro-based, mineral-based, forest-based, animal-based, marine-based.</td><td>Cocoa and sugar mills; cement and steel; sawmills and furniture; tanneries and leather; fish canning.</td></tr>
+    <tr><td class="k">Type of product</td><td>Heavy or light; consumer goods, producer (capital) goods, intermediate goods.</td><td>Steel (heavy); shoes (light, consumer); machines (producer); flour (intermediate).</td></tr>
+    <tr><td class="k">Freedom of location</td><td>Tied (fixed to a resource) or footloose.</td><td>Cement is tied; electronics assembly is footloose.</td></tr>
+  </table>
+
+  <h3>2.3 Major Industries in Nigeria and Their Locations</h3>
+  <table>
+    <tr><th style="width:22%">Industry</th><th>Main centres</th><th style="width:34%">Chief raw material</th></tr>
+    <tr><td class="k">Cement</td><td>Ewekoro, Sagamu, Nkalagu, Gboko, Obajana, Ashaka, Sokoto</td><td>Limestone, clay</td></tr>
+    <tr><td class="k">Textiles</td><td>Kaduna, Kano, Lagos</td><td>Cotton, synthetic fibre</td></tr>
+    <tr><td class="k">Petroleum refining</td><td>Port Harcourt, Warri, Kaduna, Lekki (Dangote Refinery)</td><td>Crude oil</td></tr>
+    <tr><td class="k">Iron and steel</td><td>Ajaokuta, Aladja, Katsina</td><td>Iron ore, coal, scrap</td></tr>
+    <tr><td class="k">Sugar</td><td>Bacita, Numan, Lafiagi</td><td>Sugar cane</td></tr>
+    <tr><td class="k">Vehicle assembly</td><td>Nnewi, Kaduna, Lagos</td><td>Imported and local parts</td></tr>
+    <tr><td class="k">Food, drinks and packaging</td><td>Lagos, Ibadan, Kano, Aba, Onitsha</td><td>Farm produce, water, packaging material</td></tr>
+  </table>
+
+  <h3>2.4 Problems of Industrialisation in Nigeria</h3>
+  <ol class="tight">
+    <li><b>Unstable power supply:</b> Frequent outages raise costs and force firms to run generators.</li>
+    <li><b>Poor transport:</b> Bad roads and weak rail links slow delivery and raise prices.</li>
+    <li><b>Shortage of capital:</b> Loans are costly and hard to get, especially for small firms.</li>
+    <li><b>Shortage of skilled labour and technology:</b> Many machines and experts are imported.</li>
+    <li><b>Dependence on imported inputs:</b> Falling naira value raises production costs.</li>
+    <li><b>Cheap imports and smuggling:</b> Foreign goods undercut local products.</li>
+    <li><b>Inconsistent policies:</b> Changing rules discourage long-term investment.</li>
+    <li><b>Insecurity:</b> Attacks and theft raise costs and drive investors away.</li>
+  </ol>
+
+  <h4>Possible Solutions</h4>
+  <ul class="tight">
+    <li>Improve power generation and distribution, including local and renewable power.</li>
+    <li>Build and repair roads, rail lines and ports.</li>
+    <li>Give low-interest loans and tax relief to manufacturers.</li>
+    <li>Train workers in technical schools and support research.</li>
+    <li>Add value to local raw materials and enforce border controls.</li>
+    <li>Keep industrial policies stable and strengthen security.</li>
+  </ul>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 3 — GIS I
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Geographic Information System (GIS) I: Meaning, Components, Data</h2>
+  <p class="meta"><b>Content:</b> What a GIS is, what it is made of, and the kinds of data it handles.</p>
+
+  <h3>3.1 Meaning of GIS</h3>
+  <p>A <b>Geographic Information System (GIS)</b> is a computer-based system for capturing, storing, managing, analysing and displaying geographic data. It links a place on the map to facts about that place, so a map can answer questions.</p>
+
+  <h3>3.2 Functions of a GIS</h3>
+  <ol class="tight">
+    <li><b>Capture:</b> Collect data from surveys, maps, GPS and images.</li>
+    <li><b>Store:</b> Keep data in an organised database.</li>
+    <li><b>Manage:</b> Edit, update and combine data sets.</li>
+    <li><b>Analyse:</b> Measure distance and area, overlay layers, find the best site or route.</li>
+    <li><b>Display:</b> Produce maps, charts and reports.</li>
+  </ol>
+
+  <h3>3.3 Components of a GIS</h3>
+  <table>
+    <tr><th style="width:22%">Component</th><th>Meaning</th></tr>
+    <tr><td class="k">Hardware</td><td>Computers, servers, printers, plotters, scanners, GPS receivers.</td></tr>
+    <tr><td class="k">Software</td><td>Programs that store and process the data (for example QGIS, ArcGIS).</td></tr>
+    <tr><td class="k">Data</td><td>The spatial and attribute information: the most important and costly part.</td></tr>
+    <tr><td class="k">People</td><td>Trained users who design, run and read the system.</td></tr>
+    <tr><td class="k">Methods</td><td>The rules and procedures used to collect and analyse data.</td></tr>
+  </table>
+
+  <h3>3.4 Types of GIS Data</h3>
+  <table>
+    <tr><th style="width:22%">Type</th><th>Meaning</th><th style="width:34%">Example</th></tr>
+    <tr><td class="k">Spatial data</td><td>Tells where a feature is.</td><td>Coordinates of a school.</td></tr>
+    <tr><td class="k">Attribute data</td><td>Tells what the feature is like.</td><td>Name, number of students, year built.</td></tr>
+  </table>
+
+  <h4>Ways Spatial Data Is Stored</h4>
+  <table>
+    <tr><th style="width:22%">Feature</th><th>Raster</th><th>Vector</th></tr>
+    <tr><td class="k">Made of</td><td>A grid of cells (pixels)</td><td>Points, lines and polygons</td></tr>
+    <tr><td class="k">Best for</td><td>Continuous surfaces: satellite images, elevation, rainfall</td><td>Separate features: roads, rivers, borders, buildings</td></tr>
+    <tr><td class="k">Detail depends on</td><td>Cell size (smaller cells, more detail)</td><td>Number and position of coordinates</td></tr>
+    <tr><td class="k">File size</td><td>Usually large</td><td>Usually smaller</td></tr>
+  </table>
+
+  <h4>Layers</h4>
+  <p>A GIS keeps each theme (roads, rivers, settlements, vegetation) in its own <b>layer</b>. Layers stack on top of each other, and <b>overlay</b> shows how they relate, for example where a proposed road crosses a flood zone.</p>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 4 — GIS II
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Geographic Information System (GIS) II: Sources, Remote Sensing, GPS, Uses</h2>
+  <p class="meta"><b>Content:</b> Where GIS data comes from, remote sensing and GPS, uses, advantages and limitations.</p>
+
+  <h3>4.1 Sources of GIS Data</h3>
+  <table>
+    <tr><th style="width:26%">Source</th><th>Description</th></tr>
+    <tr><td class="k">Field survey</td><td>Direct measurement and observation on the ground.</td></tr>
+    <tr><td class="k">Existing maps</td><td>Paper maps that are scanned or digitised.</td></tr>
+    <tr><td class="k">Aerial photographs</td><td>Photographs taken from aircraft or drones.</td></tr>
+    <tr><td class="k">Satellite images</td><td>Images from orbiting sensors (for example Landsat, NigeriaSat).</td></tr>
+    <tr><td class="k">GPS</td><td>Positions collected with a receiver.</td></tr>
+    <tr><td class="k">Records and censuses</td><td>Tables of population, health, land and other statistics linked to places.</td></tr>
+  </table>
+
+  <h3>4.2 Remote Sensing</h3>
+  <p><b>Remote sensing</b> is collecting information about the earth's surface from a distance, using sensors on satellites, aircraft or drones. Sensors record light or heat reflected or given off by the ground, and computers turn it into images.</p>
+  <ul class="tight">
+    <li><b>Platforms:</b> satellites, aircraft, drones.</li>
+    <li><b>Uses:</b> mapping land use, tracking floods and desert spread, watching crop health, finding oil-spill areas.</li>
+    <li><b>Nigerian link:</b> NigeriaSat satellites are run by the National Space Research and Development Agency (NASRDA), Abuja.</li>
+  </ul>
+
+  <h3>4.3 Global Positioning System (GPS)</h3>
+  <p><b>GPS</b> is a satellite navigation system. A receiver picks signals from several satellites and works out its latitude, longitude and height. It is used in phones, vehicles, ships, aircraft and survey work, and it feeds location data straight into a GIS.</p>
+
+  <h3>4.4 Applications of GIS</h3>
+  <table>
+    <tr><th style="width:26%">Area</th><th>How GIS is used</th></tr>
+    <tr><td class="k">Town planning</td><td>Choosing sites for roads, schools, markets and housing; mapping land use.</td></tr>
+    <tr><td class="k">Agriculture</td><td>Mapping soils and crop areas; planning irrigation; forecasting yields.</td></tr>
+    <tr><td class="k">Disaster management</td><td>Mapping flood zones, tracking storms, guiding rescue and relief.</td></tr>
+    <tr><td class="k">Environment</td><td>Watching deforestation, erosion, desert spread and pollution.</td></tr>
+    <tr><td class="k">Transport and navigation</td><td>Finding the shortest route; managing traffic; tracking vehicles.</td></tr>
+    <tr><td class="k">Health</td><td>Mapping disease outbreaks and clinics; planning vaccination.</td></tr>
+    <tr><td class="k">Resource management</td><td>Locating minerals, water and forests.</td></tr>
+    <tr><td class="k">Security and boundaries</td><td>Mapping borders, land ownership and crime areas.</td></tr>
+  </table>
+
+  <div class="split">
+    <div class="box">
+      <h4>Advantages of GIS</h4>
+      <ul class="tight">
+        <li>Stores huge data in a small space.</li>
+        <li>Updates maps quickly and cheaply.</li>
+        <li>Combines many kinds of data in one view.</li>
+        <li>Supports faster, better-informed decisions.</li>
+        <li>Makes clear maps and charts.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4>Limitations of GIS</h4>
+      <ul class="tight">
+        <li>Equipment and software can be costly.</li>
+        <li>Needs trained personnel.</li>
+        <li>Depends on steady electricity and internet.</li>
+        <li>Poor or out-of-date data gives wrong results.</li>
+        <li>Data security and privacy risks.</li>
+      </ul>
+    </div>
+  </div>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 6 — EARTH'S PROCESSES AND LANDFORMS I
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Earth's Processes and Landforms I: Structure, Rocks, Internal Processes</h2>
+  <p class="meta"><b>Content:</b> Layers of the earth, rock types, plate tectonics, folding, faulting, volcanism and earthquakes.</p>
+
+  <h3>6.1 Structure of the Earth</h3>
+  <table>
+    <tr><th style="width:18%">Layer</th><th>Description</th></tr>
+    <tr><td class="k">Crust</td><td>Thin, solid outer layer. Continental crust is thicker and lighter; oceanic crust is thinner and denser.</td></tr>
+    <tr><td class="k">Mantle</td><td>About 2,900 km thick. Hot, dense rock that flows very slowly. Magma forms here.</td></tr>
+    <tr><td class="k">Outer core</td><td>Liquid iron and nickel.</td></tr>
+    <tr><td class="k">Inner core</td><td>Solid iron and nickel under great pressure; the hottest part of the earth.</td></tr>
+  </table>
+
+  <h3>6.2 Types of Rock</h3>
+  <table>
+    <tr><th style="width:18%">Type</th><th>How it forms</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">Igneous</td><td>Molten rock cools. Intrusive (inside the crust, coarse grains) or extrusive (on the surface, fine grains).</td><td>Granite (intrusive); basalt (extrusive).</td></tr>
+    <tr><td class="k">Sedimentary</td><td>Sediments are laid down in layers and compacted. May hold fossils.</td><td>Sandstone, limestone, shale, coal.</td></tr>
+    <tr><td class="k">Metamorphic</td><td>Older rocks are changed by heat and pressure.</td><td>Marble (from limestone), slate (from shale), gneiss (from granite).</td></tr>
+  </table>
+
+  <h3>6.3 Plate Tectonics</h3>
+  <p>The lithosphere is split into large plates that move a few centimetres a year. Movement is driven by heat currents in the mantle. Most folding, faulting, volcanoes and earthquakes happen at plate edges.</p>
+  <table>
+    <tr><th style="width:22%">Boundary</th><th>Movement</th><th style="width:34%">Result</th></tr>
+    <tr><td class="k">Divergent</td><td>Plates move apart.</td><td>Rift valleys, mid-ocean ridges, volcanoes.</td></tr>
+    <tr><td class="k">Convergent</td><td>Plates move together.</td><td>Fold mountains, ocean trenches, volcanoes, earthquakes.</td></tr>
+    <tr><td class="k">Transform</td><td>Plates slide past each other.</td><td>Earthquakes.</td></tr>
+  </table>
+
+  <h3>6.4 Internal (Endogenic) Processes and Landforms</h3>
+  <table>
+    <tr><th style="width:18%">Process</th><th>What happens</th><th style="width:36%">Landforms and examples</th></tr>
+    <tr><td class="k">Folding</td><td>Compression bends rock layers into upfolds (anticlines) and downfolds (synclines).</td><td>Fold mountains: Himalayas, Alps, Rockies, Andes, Atlas.</td></tr>
+    <tr><td class="k">Faulting</td><td>Tension or compression cracks rock and blocks move along the crack.</td><td>Rift valley (East African Rift, Red Sea); block mountain or horst (Black Forest, Vosges); fault scarp.</td></tr>
+    <tr><td class="k">Volcanism</td><td>Magma reaches or nears the surface.</td><td>Extrusive: volcanic cone, crater, caldera, lava plateau. Intrusive: batholith, sill, dyke.</td></tr>
+    <tr><td class="k">Earthquake</td><td>Sudden release of stress in the crust sends out shock waves.</td><td>Ground cracks, scarps, tsunamis at sea.</td></tr>
+  </table>
+
+  <h4>Volcanoes</h4>
+  <ul class="tight">
+    <li><b>Active:</b> erupts now or has erupted recently (Mount Etna, Mount Cameroon).</li>
+    <li><b>Dormant:</b> quiet for a long time but may erupt again.</li>
+    <li><b>Extinct:</b> not expected to erupt again.</li>
+  </ul>
+
+  <h4>Earthquakes</h4>
+  <ul class="tight">
+    <li><b>Measured by:</b> seismograph. The Richter scale gives magnitude; the Mercalli scale gives intensity.</li>
+    <li><b>Causes:</b> plate movement, faulting, volcanic eruption, human activity such as mining and dam filling.</li>
+    <li><b>Effects:</b> collapsed buildings, fires, landslides, tsunamis, loss of life, breakdown of services.</li>
+    <li><b>Reducing damage:</b> earthquake-resistant buildings, early warning, land-use control, drills.</li>
+  </ul>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 8 — EARTH'S PROCESSES AND LANDFORMS II
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Earth's Processes and Landforms II: Weathering, Erosion, Deposition</h2>
+  <p class="meta"><b>Content:</b> External processes and the landforms made by rivers, wind, waves, underground water and ice.</p>
+
+  <h3>8.1 Weathering</h3>
+  <table>
+    <tr><th style="width:20%">Type</th><th>How it works</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">Physical (mechanical)</td><td>Rock breaks into pieces with no change in chemistry.</td><td>Exfoliation (heating by day, cooling by night, outer layers peel); frost action; granular disintegration.</td></tr>
+    <tr><td class="k">Chemical</td><td>Rock minerals change or dissolve.</td><td>Carbonation (limestone dissolved by weak acid rain); oxidation (rusting of iron); hydration; solution.</td></tr>
+    <tr><td class="k">Biological</td><td>Plants, animals and people break or loosen rock.</td><td>Roots splitting cracks; burrowing animals; quarrying.</td></tr>
+  </table>
+  <p><b>Factors:</b> climate (temperature and rainfall), rock type, slope, vegetation, time.</p>
+
+  <h3>8.2 Mass Movement</h3>
+  <ul class="tight">
+    <li><b>Soil creep:</b> very slow downhill shift of soil.</li>
+    <li><b>Mudflow:</b> wet soil and clay flowing down a slope.</li>
+    <li><b>Landslide:</b> fast sliding of a block of rock and soil.</li>
+    <li><b>Rock fall:</b> rocks falling from a steep cliff.</li>
+  </ul>
+
+  <h3>8.3 Agents of Erosion and Deposition</h3>
+  <table>
+    <tr><th style="width:18%">Agent</th><th>Erosional landforms</th><th>Depositional landforms</th></tr>
+    <tr><td class="k">Running water (river)</td><td>V-shaped valley, waterfall, rapids, gorge, interlocking spurs.</td><td>Meander, floodplain, levee, ox-bow lake, delta (Niger Delta), alluvial fan.</td></tr>
+    <tr><td class="k">Wind</td><td>Deflation hollow, mushroom rock, yardang.</td><td>Sand dunes (barchan, seif), loess.</td></tr>
+    <tr><td class="k">Waves</td><td>Cliff, wave-cut platform, cave, arch, stack.</td><td>Beach, spit, bar, lagoon (Lagos Lagoon).</td></tr>
+    <tr><td class="k">Underground water</td><td>Caves, sinkholes, swallow holes in limestone.</td><td>Stalactite, stalagmite, pillar.</td></tr>
+    <tr><td class="k">Ice (glacier)</td><td>Cirque, arête, pyramidal peak, U-shaped valley, fjord.</td><td>Moraine, drumlin, esker.</td></tr>
+  </table>
+
+  <h4>River Stages</h4>
+  <table>
+    <tr><th style="width:18%">Stage</th><th>Main work</th><th>Landforms</th></tr>
+    <tr><td class="k">Upper (youth)</td><td>Erosion and down-cutting</td><td>V-valley, waterfalls, rapids, gorges</td></tr>
+    <tr><td class="k">Middle (maturity)</td><td>Erosion sideways and some deposition</td><td>Meanders, floodplain, levees</td></tr>
+    <tr><td class="k">Lower (old age)</td><td>Deposition</td><td>Ox-bow lakes, delta, estuary</td></tr>
+  </table>
+
+  <h4>Nigerian Examples</h4>
+  <ul class="tight">
+    <li><b>Inselbergs</b> (residual hills left when the surrounding land wore away): Olumo Rock (Abeokuta), Kufena Rock (Zaria), Idanre Hills.</li>
+    <li><b>River landforms:</b> Niger–Benue confluence at Lokoja; Niger Delta; floodplain of the Niger and Benue.</li>
+    <li><b>Coast:</b> Bar beaches, lagoons and creeks of the Nigerian coast.</li>
+  </ul>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 9 — CLIMATE
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Climate: Elements, Factors, Rainfall, Climatic Regions</h2>
+  <p class="meta"><b>Content:</b> Weather and climate, their elements and instruments, factors of climate, rainfall types, Nigeria's climate, world climates and climate change.</p>
+
+  <h3>9.1 Weather and Climate</h3>
+  <table>
+    <tr><th style="width:22%">Feature</th><th>Weather</th><th>Climate</th></tr>
+    <tr><td class="k">Time span</td><td>Short: hours or days</td><td>Long: 30 years or more</td></tr>
+    <tr><td class="k">Nature</td><td>Changes often</td><td>Average pattern; changes slowly</td></tr>
+    <tr><td class="k">Study by</td><td>Direct daily observation</td><td>Averages of weather records</td></tr>
+  </table>
+
+  <h3>9.2 Elements of Weather and Instruments</h3>
+  <table>
+    <tr><th style="width:26%">Element</th><th>Instrument</th><th>Unit</th></tr>
+    <tr><td class="k">Temperature</td><td>Thermometer (maximum and minimum)</td><td>°C</td></tr>
+    <tr><td class="k">Rainfall</td><td>Rain gauge</td><td>mm</td></tr>
+    <tr><td class="k">Atmospheric pressure</td><td>Barometer</td><td>millibars (mb)</td></tr>
+    <tr><td class="k">Humidity</td><td>Hygrometer (wet and dry bulb)</td><td>%</td></tr>
+    <tr><td class="k">Wind speed</td><td>Anemometer</td><td>km/h or knots</td></tr>
+    <tr><td class="k">Wind direction</td><td>Wind vane</td><td>compass points</td></tr>
+    <tr><td class="k">Sunshine</td><td>Sunshine recorder</td><td>hours</td></tr>
+    <tr><td class="k">Cloud cover</td><td>Observation</td><td>oktas</td></tr>
+  </table>
+  <p>Instruments are housed in a <b>Stevenson screen</b>, a white, louvred wooden box on legs that shields them from sun and rain while letting air move through.</p>
+
+  <h3>9.3 Factors that Influence Climate</h3>
+  <ol class="tight">
+    <li><b>Latitude:</b> Places near the equator receive more direct sunlight and are hotter than places near the poles.</li>
+    <li><b>Altitude:</b> Temperature falls about 6.5°C for every 1,000 m of height.</li>
+    <li><b>Distance from the sea:</b> Coasts have milder temperatures and more rain; interiors are drier with larger temperature ranges.</li>
+    <li><b>Ocean currents:</b> Warm currents warm the coast they pass; cold currents cool it and make it dry.</li>
+    <li><b>Prevailing winds:</b> Winds from the sea bring moisture; winds from the land are dry.</li>
+    <li><b>Relief and aspect:</b> Mountains cause rain on windward slopes and dry rain-shadow on leeward slopes.</li>
+    <li><b>Vegetation cover:</b> Forests raise humidity and moderate temperature.</li>
+  </ol>
+
+  <h3>9.4 Types of Rainfall</h3>
+  <table>
+    <tr><th style="width:22%">Type</th><th>How it forms</th><th style="width:30%">Where common</th></tr>
+    <tr><td class="k">Convectional</td><td>Strong heating makes moist air rise, cool and condense, usually with thunder in the afternoon.</td><td>Equatorial and tropical lands.</td></tr>
+    <tr><td class="k">Relief (orographic)</td><td>Moist air is forced up a mountain, cools and drops rain on the windward side.</td><td>Mountain regions such as the Jos Plateau and Cameroon Mountain.</td></tr>
+    <tr><td class="k">Frontal (cyclonic)</td><td>Warm air rises over colder air at a front.</td><td>Temperate regions.</td></tr>
+  </table>
+
+  <h3>9.5 Climate of Nigeria</h3>
+  <p>Nigeria lies in the tropics and its weather is controlled by two air masses that meet along the <b>Inter-Tropical Discontinuity (ITD)</b>.</p>
+  <table>
+    <tr><th style="width:26%">Air mass</th><th>Source</th><th>Character</th></tr>
+    <tr><td class="k">Tropical Maritime (south-west winds)</td><td>Atlantic Ocean</td><td>Warm, moist; brings the rainy season.</td></tr>
+    <tr><td class="k">Tropical Continental (north-east winds)</td><td>Sahara Desert</td><td>Hot, dry, dusty; brings the dry season and the Harmattan.</td></tr>
+  </table>
+  <ul class="tight">
+    <li><b>Rainy season:</b> Long in the south, short in the north.</li>
+    <li><b>Dry season and Harmattan:</b> Longer in the north; the Harmattan is strongest from December to February.</li>
+    <li><b>Rainfall pattern:</b> Highest on the coast (over 2,000 mm in the Niger Delta) and falls steadily northward to under 600 mm in the far north.</li>
+    <li><b>Temperature:</b> High all year; annual range is small in the south and larger in the north.</li>
+  </ul>
+
+  <h3>9.6 Main World Climates</h3>
+  <table>
+    <tr><th style="width:22%">Climate</th><th style="width:20%">Location</th><th>Key features</th><th style="width:20%">Natural vegetation</th></tr>
+    <tr><td class="k">Equatorial</td><td>About 0°–10° N and S</td><td>Hot all year; heavy rain all year; small temperature range.</td><td>Tropical rainforest</td></tr>
+    <tr><td class="k">Tropical savanna</td><td>About 5°–15° N and S</td><td>Hot; distinct wet and dry seasons.</td><td>Savanna grassland</td></tr>
+    <tr><td class="k">Hot desert</td><td>About 15°–30° N and S, western sides</td><td>Very little rain; hot days, cool nights.</td><td>Scanty scrub, cacti</td></tr>
+    <tr><td class="k">Mediterranean</td><td>About 30°–40° on western sides</td><td>Hot dry summer; mild wet winter.</td><td>Evergreen shrubs, citrus</td></tr>
+    <tr><td class="k">Temperate maritime</td><td>About 40°–60° on western sides</td><td>Mild; rain in all seasons.</td><td>Deciduous forest</td></tr>
+    <tr><td class="k">Polar (tundra)</td><td>Above about 66° N and S</td><td>Very cold; low precipitation.</td><td>Mosses, lichens</td></tr>
+  </table>
+
+  <h3>9.7 Climate Change</h3>
+  <ul class="tight">
+    <li><b>Causes:</b> burning fossil fuels, deforestation, gas flaring, farming and waste that release greenhouse gases (carbon dioxide, methane).</li>
+    <li><b>Effects:</b> rising temperatures, changing rainfall, droughts, floods, melting ice, rising sea level, loss of crops.</li>
+    <li><b>Reducing it:</b> use clean energy, plant trees, end gas flaring, save energy, adapt farming.</li>
+  </ul>
+
+  </section>
+
+<!-- ============================================================
+     WEEK 10 — ENVIRONMENTAL RESOURCES
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Environmental Resources: Types, Nigerian Resources, Problems, Conservation</h2>
+  <p class="meta"><b>Content:</b> Classes of resources, where Nigeria's resources lie, environmental problems and conservation.</p>
+
+  <h3>10.1 Classification of Resources</h3>
+  <table>
+    <tr><th style="width:22%">Class</th><th>Meaning</th><th style="width:34%">Examples</th></tr>
+    <tr><td class="k">Renewable</td><td>Replace themselves if well managed.</td><td>Forests, water, soil, fish, sunlight, wind.</td></tr>
+    <tr><td class="k">Non-renewable</td><td>Cannot be replaced once used.</td><td>Crude oil, coal, natural gas, metallic minerals.</td></tr>
+  </table>
+
+  <h3>10.2 Major Mineral and Energy Resources of Nigeria</h3>
+  <table>
+    <tr><th style="width:22%">Resource</th><th>Where found</th><th style="width:34%">Main uses</th></tr>
+    <tr><td class="k">Crude oil and natural gas</td><td>Niger Delta and offshore</td><td>Fuel, petrochemicals, electricity, export earnings.</td></tr>
+    <tr><td class="k">Coal</td><td>Enugu, Okaba, Lafia-Obi</td><td>Fuel, steel making.</td></tr>
+    <tr><td class="k">Tin and columbite</td><td>Jos Plateau</td><td>Tin plating, alloys, electronics.</td></tr>
+    <tr><td class="k">Limestone</td><td>Ewekoro, Nkalagu, Sokoto, Ashaka</td><td>Cement, lime, glass.</td></tr>
+    <tr><td class="k">Iron ore</td><td>Itakpe, Ajaokuta area</td><td>Iron and steel.</td></tr>
+    <tr><td class="k">Gold</td><td>Zamfara, Osun (Ilesha)</td><td>Jewellery, reserves.</td></tr>
+    <tr><td class="k">Bitumen</td><td>Ondo and Ogun</td><td>Road making.</td></tr>
+    <tr><td class="k">Marble</td><td>Jakura (Kogi)</td><td>Building and decoration.</td></tr>
+  </table>
+  <p><b>Other resources:</b> forests (timber, fuelwood), rivers (fishing, hydro-power, irrigation), soils (farming), sunshine (solar power), wind (north).</p>
+
+  <h3>10.3 Environmental Problems</h3>
+  <table>
+    <tr><th style="width:20%">Problem</th><th>Causes</th><th>Effects</th></tr>
+    <tr><td class="k">Deforestation</td><td>Logging, farming, fuelwood, building.</td><td>Soil erosion, loss of habitat, less rain, climate change.</td></tr>
+    <tr><td class="k">Desertification</td><td>Overgrazing, bush burning, drought, tree felling.</td><td>Lost farmland, food shortage, migration.</td></tr>
+    <tr><td class="k">Soil erosion</td><td>Heavy rain, bare land, poor farming, sand mining.</td><td>Loss of topsoil, gullies, silted rivers.</td></tr>
+    <tr><td class="k">Flooding</td><td>Heavy rain, blocked drains, building on floodplains, dam release.</td><td>Loss of life, homes and crops, disease.</td></tr>
+    <tr><td class="k">Pollution</td><td>Oil spills, gas flaring, industrial waste, plastics, vehicle smoke.</td><td>Damaged water, soil and air; health problems; death of fish and crops.</td></tr>
+  </table>
+
+  <h3>10.4 Conservation of Resources</h3>
+  <ol class="tight">
+    <li><b>Afforestation and reforestation:</b> plant trees; control logging.</li>
+    <li><b>Soil conservation:</b> terracing, contour ploughing, crop rotation, cover crops.</li>
+    <li><b>Control of pollution:</b> end gas flaring, treat waste, clean oil spills, fine polluters.</li>
+    <li><b>Use of renewable energy:</b> solar, wind and hydro-power.</li>
+    <li><b>Recycling and reuse:</b> cut waste and save raw materials.</li>
+    <li><b>Protected areas:</b> game reserves and national parks (for example Yankari, Cross River).</li>
+    <li><b>Laws and education:</b> enforce environmental law through agencies such as NESREA; teach the public.</li>
+    <li><b>Sustainable development:</b> use resources so that future generations still have them.</li>
+  </ol>
+
+  </section>
+
+</div><!-- /sheet -->
+</body>
+</html>
