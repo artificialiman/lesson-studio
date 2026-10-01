@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Equilibrium & Thermodynamics — Field Manual</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+  --bg:#080B0E;--bg2:#0C1014;--bg3:#111519;--bg4:#161C21;
+  --copper:#5B8FA8;--copper-bright:#7AAFCC;--copper-dim:#3A6478;
+  --copper-glow:rgba(91,143,168,0.12);--copper-rule:rgba(91,143,168,0.2);
+  --wire:#C0D8E8;--wire2:rgba(192,216,232,0.65);--wire3:rgba(192,216,232,0.35);
+  --wire4:rgba(192,216,232,0.15);--rule:rgba(192,216,232,0.08);--rule2:rgba(192,216,232,0.04);
+  --gold:#C8A84B;--red:#C0392B;--green:#2D7A4F;
+  --display:'Cormorant Garamond',serif;--body:'Libre Baskerville',serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--wire);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;}
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--copper-dim),var(--copper-bright));z-index:999;width:0%;transition:width .1s linear;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,11,14,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
+.nav-mark{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;flex-wrap:wrap;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--wire3);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--copper)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 10vw 80px;border-bottom:1px solid var(--copper-rule);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--rule2) 1px,transparent 1px),linear-gradient(90deg,var(--rule2) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-100px;left:10vw;width:600px;height:400px;background:radial-gradient(ellipse,var(--copper-glow) 0%,transparent 70%);pointer-events:none;}
+.hero-series{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--copper);text-transform:uppercase;margin-bottom:32px;position:relative;z-index:1;display:flex;align-items:center;gap:16px;}
+.hero-series::before{content:'';width:40px;height:1px;background:var(--copper);}
+.hero-title{font-family:var(--display);font-size:clamp(44px,8vw,100px);font-weight:300;line-height:1.0;color:var(--wire);margin-bottom:12px;position:relative;z-index:1;letter-spacing:-1px;}
+.hero-title em{font-style:italic;color:var(--copper-bright);font-weight:300;}
+.hero-sub{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(16px,2.2vw,22px);color:var(--wire2);margin-bottom:56px;position:relative;z-index:1;max-width:52ch;line-height:1.5;}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:0;border:1px solid var(--copper-rule);width:fit-content;position:relative;z-index:1;}
+.hero-meta-item{padding:16px 24px;border-right:1px solid var(--copper-rule);}
+.hero-meta-item:last-child{border-right:none}
+.hero-meta-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--copper);text-transform:uppercase;margin-bottom:6px;}
+.hero-meta-val{font-family:var(--display);font-size:18px;color:var(--wire2);font-style:italic;}
+
+.container{max-width:800px;margin:0 auto;padding:0 32px}
+.chapter{padding:80px 0 0}
+.ch-marker{font-family:var(--mono);font-size:9px;letter-spacing:4px;color:var(--copper);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+.ch-marker::after{content:'';flex:1;height:1px;background:var(--copper-rule)}
+.ch-title{font-family:var(--display);font-size:clamp(28px,4.5vw,48px);font-weight:600;line-height:1.1;color:var(--wire);margin-bottom:8px;}
+.ch-title em{font-style:italic;color:var(--copper-bright)}
+.ch-deck{font-family:var(--display);font-style:italic;font-weight:300;font-size:19px;color:var(--wire2);margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid var(--rule);line-height:1.5;}
+
+.prose{padding:16px 0}
+.prose p{font-size:16px;line-height:1.85;color:var(--wire2);margin-bottom:20px;}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--wire);font-weight:700}
+.prose em{color:var(--copper-bright);font-style:italic}
+
+.insight{margin:36px 0;padding:28px 32px;background:var(--bg2);border-left:3px solid var(--copper);}
+.insight-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;margin-bottom:12px;}
+.insight-text{font-family:var(--display);font-size:clamp(18px,2.5vw,24px);font-style:italic;color:var(--wire);line-height:1.4;}
+
+.insight.gold{border-left-color:var(--gold);}
+.insight.gold .insight-label{color:var(--gold);}
+
+.tbl-wrap{margin:36px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+thead tr{background:var(--bg3);}
+th{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--copper);text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--copper-rule);}
+td{padding:11px 16px;border-bottom:1px solid var(--rule);color:var(--wire2);vertical-align:top;}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg3);color:var(--wire);}
+td.mono{font-family:var(--mono);font-size:12px;color:var(--copper-bright);}
+td.note{font-size:12px;color:var(--wire3);}
+td.trap{font-size:12px;color:var(--red);}
+td.always{font-size:13px;color:var(--green);font-weight:700;}
+td.never{font-size:13px;color:var(--red);font-weight:700;}
+td.temp{font-size:13px;color:var(--gold);font-weight:700;}
+
+.arrow-list{margin:24px 0;list-style:none;}
+.arrow-list li{display:flex;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule);color:var(--wire2);font-size:15px;}
+.arrow-list li:last-child{border-bottom:none}
+.arrow-list li::before{content:'→';color:var(--copper);font-family:var(--mono);flex-shrink:0;}
+.arrow-list li strong{color:var(--wire);}
+
+.chain{margin:40px 0;background:var(--bg2);border:1px solid var(--copper-rule);overflow:hidden;}
+.chain-head{padding:12px 20px;background:var(--bg3);border-bottom:1px solid var(--copper-rule);font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;}
+.chain-body{padding:32px 24px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.chain-row{display:flex;align-items:center;flex-wrap:nowrap;gap:0;margin-bottom:20px;}
+.chain-row:last-child{margin-bottom:0}
+.chain-node{background:var(--bg4);border:1px solid var(--copper-rule);padding:10px 16px;text-align:center;min-width:100px;flex-shrink:0;}
+.chain-node-val{font-family:var(--mono);font-size:13px;color:var(--copper-bright);font-weight:500;}
+.chain-node-lbl{font-family:var(--mono);font-size:9px;color:var(--wire3);letter-spacing:1px;margin-top:4px;}
+.chain-node.highlight{background:rgba(91,143,168,0.15);border-color:var(--copper);}
+.chain-node.highlight .chain-node-val{color:var(--wire);}
+.chain-node.gold-node{background:rgba(200,168,75,0.1);border-color:var(--gold);}
+.chain-node.gold-node .chain-node-val{color:var(--gold);}
+.chain-arrow{display:flex;flex-direction:column;align-items:center;padding:0 8px;flex-shrink:0;}
+.chain-arrow-sym{color:var(--copper);font-size:18px;line-height:1;}
+.chain-arrow-op{font-family:var(--mono);font-size:9px;color:var(--wire3);letter-spacing:1px;margin-top:3px;white-space:nowrap;}
+
+.formula-block{margin:36px 0;padding:32px;background:var(--bg2);border:1px solid var(--copper-rule);text-align:center;}
+.formula-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;margin-bottom:20px;}
+.formula-main{font-family:var(--display);font-size:clamp(28px,5vw,52px);font-weight:300;color:var(--wire);letter-spacing:2px;margin-bottom:16px;}
+.formula-main em{color:var(--copper-bright);}
+.formula-parts{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:16px;}
+.formula-part{text-align:center;}
+.formula-part-sym{font-family:var(--mono);font-size:18px;color:var(--copper-bright);font-weight:500;}
+.formula-part-desc{font-family:var(--mono);font-size:10px;color:var(--wire3);letter-spacing:1px;margin-top:4px;}
+
+.types-grid{margin:36px 0;display:grid;grid-template-columns:1fr;gap:1px;background:var(--copper-rule);}
+.type-row{display:grid;grid-template-columns:1fr 1fr 1fr 2fr;gap:0;background:var(--bg2);}
+.type-row.header{background:var(--bg3);}
+.type-cell{padding:12px 16px;border-right:1px solid var(--rule);font-size:13px;color:var(--wire2);}
+.type-cell:last-child{border-right:none}
+.type-row.header .type-cell{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--copper);text-transform:uppercase;}
+
+.exception-block{margin:36px 0;}
+.exception-item{display:flex;gap:0;margin-bottom:2px;background:var(--bg2);border:1px solid var(--rule);}
+.exception-num{font-family:var(--mono);font-size:22px;color:var(--copper-dim);padding:16px 20px;border-right:1px solid var(--rule);display:flex;align-items:center;min-width:56px;justify-content:center;}
+.exception-content{padding:16px 20px;flex:1;}
+.exception-title{font-family:var(--display);font-size:17px;font-weight:600;color:var(--wire);margin-bottom:4px;}
+.exception-title em{color:var(--copper-bright);font-style:italic;}
+.exception-detail{font-size:13px;color:var(--wire3);line-height:1.6;}
+.exception-trap{font-family:var(--mono);font-size:11px;color:var(--red);margin-top:6px;}
+
+.section-end{height:1px;background:var(--rule);margin:80px 0 0;}
+.footnote{margin:60px 0 0;padding:32px;border:1px solid var(--rule);background:var(--bg2);}
+.footnote-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;margin-bottom:16px;}
+.footnote p{font-size:14px;color:var(--wire3);line-height:1.8;}
+.closing{padding:80px 0;text-align:center;}
+.closing-text{font-family:var(--display);font-size:clamp(18px,2.5vw,26px);font-style:italic;color:var(--wire2);margin-bottom:16px;line-height:1.4;}
+.closing-sub{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;}
+
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero{padding:100px 6vw 60px}
+  .container{padding:0 20px}
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta-item:nth-child(3){border-right:none;border-top:1px solid var(--copper-rule);}
+  .type-row{grid-template-columns:1fr 1fr}
+  .type-cell:nth-child(3),.type-cell:nth-child(4){grid-column:1/-1;border-right:none;border-top:1px solid var(--rule);}
+  .formula-parts{gap:16px;}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="nav">
+  <div class="nav-mark">MEPC · Series IV</div>
+  <div class="nav-links">
+    <a href="#equilibrium">Equilibrium</a>
+    <a href="#thermodynamics">ΔH / ΔS / ΔG</a>
+    <a href="#lechatelier">Le Chatelier</a>
+    <a href="#hess">Hess's Law</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-series">Series IV — Physical Chemistry</div>
+  <h1 class="hero-title">Equilibrium &amp;<br><em>Thermodynamics</em></h1>
+  <p class="hero-sub">Nature is lazy and chaotic. Every reaction is just nature deciding whether the energy cost is worth the disorder gained. This file is that decision, fully unpacked.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Topics</div>
+      <div class="hero-meta-val">4 connected</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Level</div>
+      <div class="hero-meta-val">JAMB / WAEC</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Series</div>
+      <div class="hero-meta-val">Field Manual</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 1 — EQUILIBRIUM
+════════════════════════════════════════ -->
+<div id="equilibrium" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter One</div>
+    <h2 class="ch-title">Equilibrium — <em>The Stalemate</em></h2>
+    <p class="ch-deck">Not a finish line. Not completion. A stalemate where both reactions are still running — at the same rate — so nothing appears to change.</p>
+
+    <div class="insight">
+      <div class="insight-label">The compression</div>
+      <div class="insight-text">Equilibrium is a tug-of-war where both teams pull with equal force. The rope isn't moving — but nobody has stopped pulling.</div>
+    </div>
+
+    <div class="prose">
+      <p>The most common misconception: <strong>"equilibrium means the reaction is complete."</strong> It means the opposite. Complete reactions are one-way streets — no reverse, no equilibrium possible. Equilibrium only exists because the reaction is <em>reversible</em> (shown by ⇌). At equilibrium, the forward rate equals the reverse rate. Concentrations are constant — not zero.</p>
+      <p>This is why <strong>ΔG = 0 at equilibrium.</strong> Nature is exactly undecided. Neither side has enough advantage to push further. The system is locked in its stalemate until something disturbs it.</p>
+    </div>
+
+    <div class="chain">
+      <div class="chain-head">The equilibrium identity — all four expressions of the same idea</div>
+      <div class="chain-body">
+        <div class="chain-row">
+          <div class="chain-node highlight"><div class="chain-node-val">Rate fwd = Rate rev</div><div class="chain-node-lbl">kinetic definition</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">=</div><div class="chain-arrow-op">same thing</div></div>
+          <div class="chain-node highlight"><div class="chain-node-val">ΔG = 0</div><div class="chain-node-lbl">thermodynamic definition</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">=</div><div class="chain-arrow-op">same thing</div></div>
+          <div class="chain-node highlight"><div class="chain-node-val">[products] stable</div><div class="chain-node-lbl">observable definition</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Symbol</th><th>Name</th><th>What it measures</th><th>Changes with?</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">Kc</td><td>Equilibrium constant (concentration)</td><td>Ratio of [products] to [reactants] at equilibrium</td><td class="trap">Temperature only. Never concentration or pressure.</td></tr>
+          <tr><td class="mono">Kp</td><td>Equilibrium constant (pressure)</td><td>Ratio of partial pressures of gases at equilibrium</td><td class="trap">Temperature only. For gas-phase reactions.</td></tr>
+          <tr><td class="mono">K &gt;&gt; 1</td><td>Products favoured</td><td>Reaction went far toward products</td><td class="note">Large K = right-leaning equilibrium.</td></tr>
+          <tr><td class="mono">K &lt;&lt; 1</td><td>Reactants favoured</td><td>Reaction barely moved</td><td class="note">Small K = left-leaning equilibrium.</td></tr>
+          <tr><td class="mono">K = 1</td><td>Balanced</td><td>Equal concentrations of products and reactants</td><td class="note">Rare in practice.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="formula-block">
+      <div class="formula-label">The Kc Expression — for aA + bB ⇌ cC + dD</div>
+      <div class="formula-main">Kc = <em>[C]ᶜ[D]ᵈ</em> / [A]ᵃ[B]ᵇ</div>
+      <div class="formula-parts">
+        <div class="formula-part"><div class="formula-part-sym">Products</div><div class="formula-part-desc">Numerator — always</div></div>
+        <div class="formula-part"><div class="formula-part-sym">Reactants</div><div class="formula-part-desc">Denominator — always</div></div>
+        <div class="formula-part"><div class="formula-part-sym">Powers</div><div class="formula-part-desc">= stoichiometric coefficients</div></div>
+      </div>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Pure solids and liquids</strong> are never included in Kc or Kp expressions — their concentration is constant</li>
+      <li><strong>Kp = Kc</strong> when moles of gas on both sides are equal (Δn = 0)</li>
+      <li><strong>Kp = Kc(RT)^Δn</strong> when gas moles differ — Δn = moles gas products − moles gas reactants</li>
+      <li><strong>Adding a catalyst</strong> does not change K — equilibrium position unchanged, reached faster only</li>
+    </ul>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 2 — ΔH / ΔS / ΔG
+════════════════════════════════════════ -->
+<div id="thermodynamics" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Two</div>
+    <h2 class="ch-title">ΔH, ΔS, ΔG — <em>Nature's Verdict</em></h2>
+    <p class="ch-deck">Nature is lazy (prefers low energy) and chaotic (prefers high disorder). ΔG is the final vote — it combines both tendencies and decides whether a reaction happens freely.</p>
+
+    <div class="insight">
+      <div class="insight-label">The one compression</div>
+      <div class="insight-text">ΔH is the energy bill. ΔS is the chaos score. ΔG is nature's final verdict. When ΔG is negative, nature pays willingly. When positive, you have to force it.</div>
+    </div>
+
+    <div class="formula-block">
+      <div class="formula-label">Gibbs Free Energy — the master equation</div>
+      <div class="formula-main"><em>ΔG</em> = ΔH − TΔS</div>
+      <div class="formula-parts">
+        <div class="formula-part"><div class="formula-part-sym">ΔG −ve</div><div class="formula-part-desc">Spontaneous. Free.</div></div>
+        <div class="formula-part"><div class="formula-part-sym">ΔG = 0</div><div class="formula-part-desc">Equilibrium. Undecided.</div></div>
+        <div class="formula-part"><div class="formula-part-sym">ΔG +ve</div><div class="formula-part-desc">Non-spontaneous. Forced.</div></div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p><strong>Units trap:</strong> ΔH is almost always given in <em>kJ/mol</em>. ΔS is always in <em>J/mol/K</em>. Before substituting into ΔG = ΔH − TΔS, convert ΔH to J (multiply by 1000) or ΔS to kJ (divide by 1000). Mixing units is the most common calculation error on this topic.</p>
+      <p>To find the <strong>temperature at which a reaction becomes spontaneous</strong> (when ΔG changes sign), set ΔG = 0 and solve: <em>T = ΔH / ΔS.</em> This is the crossover temperature.</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>ΔH</th><th>ΔS</th><th>Spontaneous?</th><th>Why</th><th>Temperature role</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">− (exo)</td><td class="mono">+ (more disorder)</td>
+            <td class="always">Always ✅</td>
+            <td class="note">Both drives favour spontaneity. Nature loves cheap AND chaotic.</td>
+            <td class="note">Irrelevant.</td>
+          </tr>
+          <tr>
+            <td class="mono">+ (endo)</td><td class="mono">− (more order)</td>
+            <td class="never">Never ❌</td>
+            <td class="note">Both drives oppose spontaneity. Expensive AND more ordered.</td>
+            <td class="note">Irrelevant.</td>
+          </tr>
+          <tr>
+            <td class="mono">− (exo)</td><td class="mono">− (more order)</td>
+            <td class="temp">Low T only 🌡</td>
+            <td class="note">Energy favours it, disorder fights it. Energy wins at low T.</td>
+            <td class="trap">⚠ High T makes TΔS term dominate → non-spontaneous.</td>
+          </tr>
+          <tr>
+            <td class="mono">+ (endo)</td><td class="mono">+ (more disorder)</td>
+            <td class="temp">High T only 🌡</td>
+            <td class="note">Disorder favours it, energy fights it. Disorder wins at high T.</td>
+            <td class="trap">⚠ Low T makes energy cost dominate → non-spontaneous.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight gold">
+      <div class="insight-label">The JAMB trap — rows 3 and 4</div>
+      <div class="insight-text">When ΔH and ΔS have the same sign, temperature is irrelevant — outcome fixed forever. When they have opposite signs, temperature is the tiebreaker. T = ΔH/ΔS is the crossover point.</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Term</th><th>Full name</th><th>Positive means</th><th>Negative means</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">ΔH</td><td>Enthalpy change</td><td>Endothermic — heat absorbed</td><td>Exothermic — heat released</td></tr>
+          <tr><td class="mono">ΔS</td><td>Entropy change</td><td>More disorder in products</td><td>More order in products</td></tr>
+          <tr><td class="mono">ΔG</td><td>Gibbs free energy change</td><td>Non-spontaneous — must force it</td><td>Spontaneous — happens freely</td></tr>
+          <tr><td class="mono">T</td><td>Temperature (Kelvin)</td><td colspan="2" class="note">Always in Kelvin in ΔG = ΔH − TΔS. Never Celsius.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Entropy increases</strong> when: solid → liquid → gas, dissolving, mixing, increasing moles of gas, heating</li>
+      <li><strong>Entropy decreases</strong> when: gas → liquid → solid, precipitation, fewer moles of gas in products</li>
+      <li><strong>Standard conditions</strong> for ΔH°: 298 K (25°C), 1 atm, all substances in standard state</li>
+      <li><strong>ΔH of formation</strong> — enthalpy change when 1 mole of compound forms from its elements in standard state</li>
+      <li><strong>ΔH of combustion</strong> — always negative (exothermic). Heat released when 1 mole burns completely in O₂</li>
+    </ul>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 3 — LE CHATELIER
+════════════════════════════════════════ -->
+<div id="lechatelier" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Three</div>
+    <h2 class="ch-title">Le Chatelier's <em>Principle</em></h2>
+    <p class="ch-deck">A principle, not a law — it predicts direction, not magnitude, and has four known exceptions. It is the most tested equilibrium concept at JAMB level.</p>
+
+    <div class="insight">
+      <div class="insight-label">The compression</div>
+      <div class="insight-text">Disturb the stalemate — the reaction shifts to undo the disturbance. It is nature restoring its ΔG = 0 balance.</div>
+    </div>
+
+    <div class="types-grid">
+      <div class="type-row header">
+        <div class="type-cell">Disturbance</div>
+        <div class="type-cell">Shift direction</div>
+        <div class="type-cell">Effect on K</div>
+        <div class="type-cell">Exam note</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Add reactant</strong></div>
+        <div class="type-cell">→ Forward</div>
+        <div class="type-cell" style="color:var(--green)">No change</div>
+        <div class="type-cell" style="font-size:13px;color:var(--wire3)">More product forms. K unchanged.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Remove reactant</strong></div>
+        <div class="type-cell">← Backward</div>
+        <div class="type-cell" style="color:var(--green)">No change</div>
+        <div class="type-cell" style="font-size:13px;color:var(--wire3)">Less product. K unchanged.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Add product</strong></div>
+        <div class="type-cell">← Backward</div>
+        <div class="type-cell" style="color:var(--green)">No change</div>
+        <div class="type-cell" style="font-size:13px;color:var(--wire3)">Reaction reverses to rebalance.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Increase pressure</strong></div>
+        <div class="type-cell">→ Fewer gas moles</div>
+        <div class="type-cell" style="color:var(--green)">No change</div>
+        <div class="type-cell" style="font-size:13px;color:var(--wire3)">Count moles of gas on each side.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Decrease pressure</strong></div>
+        <div class="type-cell">→ More gas moles</div>
+        <div class="type-cell" style="color:var(--green)">No change</div>
+        <div class="type-cell" style="font-size:13px;color:var(--wire3)">Expands toward more gas moles.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Increase temperature</strong></div>
+        <div class="type-cell">→ Endothermic side</div>
+        <div class="type-cell" style="color:var(--red)">K changes</div>
+        <div class="type-cell" style="font-size:13px;color:var(--red)">⚠ Only disturbance that changes K.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Decrease temperature</strong></div>
+        <div class="type-cell">→ Exothermic side</div>
+        <div class="type-cell" style="color:var(--red)">K changes</div>
+        <div class="type-cell" style="font-size:13px;color:var(--red)">⚠ Only disturbance that changes K.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-cell"><strong>Add catalyst</strong></div>
+        <div class="type-cell" style="color:var(--red)">No shift</div>
+        <div class="type-cell" style="color:var(--green)">No change</div>
+        <div class="type-cell" style="font-size:13px;color:var(--red)">⚠ Fastest JAMB trap. Reaches equilibrium sooner — position unchanged.</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The difference between Le Chatelier's <strong>Principle</strong> and Hess's <strong>Law</strong> is examinable. A <em>law</em> is mathematically provable with no exceptions — Hess's Law holds always because energy is conserved. A <em>principle</em> is a powerful predictive rule with known edge cases. Le Chatelier predicts direction reliably but cannot predict magnitude, and breaks down in the four exception cases below.</p>
+    </div>
+
+    <div class="exception-block">
+      <div class="exception-item">
+        <div class="exception-num">1</div>
+        <div class="exception-content">
+          <div class="exception-title">Catalyst — <em>no shift at all</em></div>
+          <div class="exception-detail">Adding a catalyst speeds up both forward and reverse reactions equally. The equilibrium position does not change. The system reaches the same stalemate, just faster.</div>
+          <div class="exception-trap">JAMB trap: "A catalyst increases the yield of product." FALSE. It increases the rate only.</div>
+        </div>
+      </div>
+      <div class="exception-item">
+        <div class="exception-num">2</div>
+        <div class="exception-content">
+          <div class="exception-title">Inert gas at <em>constant volume</em></div>
+          <div class="exception-detail">Adding an inert gas (e.g. argon) to a fixed-volume container increases total pressure but does not change the partial pressures of the reacting gases. No shift occurs.</div>
+          <div class="exception-trap">Contrast with: inert gas at constant pressure — this dilutes partial pressures and does cause a shift.</div>
+        </div>
+      </div>
+      <div class="exception-item">
+        <div class="exception-num">3</div>
+        <div class="exception-content">
+          <div class="exception-title">Inert gas at <em>constant pressure</em></div>
+          <div class="exception-detail">Here the volume must expand to maintain pressure, which dilutes all partial pressures. The system shifts toward the side with more moles of gas to compensate.</div>
+          <div class="exception-trap">Opposite result to constant-volume case. Both use inert gas — context determines outcome.</div>
+        </div>
+      </div>
+      <div class="exception-item">
+        <div class="exception-num">4</div>
+        <div class="exception-content">
+          <div class="exception-title">Temperature — <em>changes K itself</em></div>
+          <div class="exception-detail">All other disturbances shift position without changing K. Temperature alone changes the value of K. Le Chatelier predicts the direction of shift, but the equilibrium constant is now fundamentally different.</div>
+          <div class="exception-trap">This is why temperature is uniquely powerful — it does not just disturb the stalemate, it redefine it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 4 — HESS'S LAW
+════════════════════════════════════════ -->
+<div id="hess" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Four</div>
+    <h2 class="ch-title">Hess's <em>Law</em></h2>
+    <p class="ch-deck">A law — no exceptions, no conditions. The total enthalpy change of a reaction depends only on the start and end states, never on the route taken.</p>
+
+    <div class="insight">
+      <div class="insight-label">The compression</div>
+      <div class="insight-text">The height difference between Lagos and Abuja is fixed — whether you drive through Ibadan or Lokoja. ΔH is that height difference. The route is irrelevant.</div>
+    </div>
+
+    <div class="prose">
+      <p>Hess's Law is a direct consequence of conservation of energy. Because energy cannot be created or destroyed, the total enthalpy change must be the same regardless of pathway. This means you can calculate ΔH for reactions that cannot be measured directly — by combining reactions whose ΔH values are known.</p>
+    </div>
+
+    <div class="chain">
+      <div class="chain-head">The three moves — in order, every time</div>
+      <div class="chain-body">
+        <div class="chain-row">
+          <div class="chain-node highlight"><div class="chain-node-val">Step 1: Flip</div><div class="chain-node-lbl">if compound on wrong side</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">→</div><div class="chain-arrow-op">flip sign of ΔH</div></div>
+          <div class="chain-node highlight"><div class="chain-node-val">Step 2: Multiply</div><div class="chain-node-lbl">if coefficient doesn't match</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">→</div><div class="chain-arrow-op">multiply ΔH by same factor</div></div>
+          <div class="chain-node highlight"><div class="chain-node-val">Step 3: Add</div><div class="chain-node-lbl">cancel what appears on both sides</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Move</th><th>What triggers it</th><th>Effect on ΔH</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Flip</strong></td>
+            <td>Target compound appears on opposite side to where it is in the given reaction</td>
+            <td class="trap">Sign reverses: −394 becomes +394</td>
+            <td class="note">Target has CO₂ as reactant, given has CO₂ as product → flip.</td>
+          </tr>
+          <tr>
+            <td><strong>Multiply</strong></td>
+            <td>Target needs 2 moles of a compound, given reaction has 1 mole</td>
+            <td class="trap">ΔH × same factor: −286 × 2 = −572</td>
+            <td class="note">Need 2H₂O but equation gives 1H₂O → multiply everything by 2.</td>
+          </tr>
+          <tr>
+            <td><strong>Add</strong></td>
+            <td>Always — final step</td>
+            <td class="note">Sum all ΔH values after flipping and multiplying</td>
+            <td class="note">Compounds appearing on both sides cancel out automatically.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight gold">
+      <div class="insight-label">Worked example — C + 2H₂ → CH₄</div>
+      <div class="insight-text">Given three reactions. CH₄ is a product in target but reactant in reaction 3 → flip reaction 3, sign becomes +890. Keep reaction 1 (C on left ✅). Multiply reaction 2 by 2 (need 2H₂). Add: −394 + (−572) + 890 = −76 kJ/mol. CO₂, 2H₂O, and 2O₂ cancel.</div>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>ΔH of formation</strong> — always has elements in standard state as reactants, 1 mole of compound as product</li>
+      <li><strong>ΔH of combustion</strong> — compound + O₂ → CO₂ + H₂O. Always exothermic. Never flip the sign instinctively.</li>
+      <li><strong>ΔH reaction = Σ ΔHf° products − Σ ΔHf° reactants</strong> — alternative method when formation enthalpies are given</li>
+      <li><strong>ΔH reaction = Σ ΔHc° reactants − Σ ΔHc° products</strong> — when combustion enthalpies are given (note: reversed order)</li>
+      <li><strong>Bond energy method</strong> — ΔH = Σ bonds broken − Σ bonds formed. Breaking bonds costs energy (+). Forming bonds releases energy (−).</li>
+    </ul>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Formula given</th><th>Hess expression</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>ΔHf° values</td><td class="mono">ΔHrxn = ΣΔHf°(products) − ΣΔHf°(reactants)</td><td class="note">Products minus reactants.</td></tr>
+          <tr><td>ΔHc° values</td><td class="mono">ΔHrxn = ΣΔHc°(reactants) − ΣΔHc°(products)</td><td class="trap">⚠ Reactants minus products — reversed. Most common Hess error.</td></tr>
+          <tr><td>Bond energies</td><td class="mono">ΔH = Σ(bonds broken) − Σ(bonds formed)</td><td class="note">Always approximate — uses average bond energies.</td></tr>
+          <tr><td>Given equations</td><td class="mono">Flip / Multiply / Add</td><td class="note">The three-move method. Most common JAMB format.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footnote">
+    <div class="footnote-label">Why these four topics are one idea</div>
+    <p>Equilibrium, enthalpy, entropy, and Hess's Law are not four separate topics. They are four views of the same question: what does nature do with energy? Hess's Law measures the energy cost (ΔH) of any pathway. Entropy measures disorder (ΔS). Gibbs combines them into a final verdict (ΔG). And equilibrium is the physical state where that verdict reaches exactly zero — nature perfectly undecided, both reactions running, nothing changing. Every JAMB question on this block is asking one of these four things.</p>
+  </div>
+
+  <div class="section-end"></div>
+
+  <div class="closing">
+    <p class="closing-text">ΔG = 0 is where everything meets — equilibrium, thermodynamics, and nature's final answer all converge at that single point.</p>
+    <p class="closing-sub">MEPC · Series IV · Equilibrium & Thermodynamics · Field Manual</p>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progress').style.width=p+'%';
+});
+</script>
+</body>
+</html>

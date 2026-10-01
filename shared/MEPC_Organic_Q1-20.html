@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Organic Chemistry — Questions 1–20</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+  --bg:#09080C;--bg2:#0F0D14;--bg3:#151220;--bg4:#1C182A;
+  --accent:#9B6DFF;--accent-bright:#BFA0FF;--accent-dim:#5A3DB8;
+  --accent-glow:rgba(155,109,255,0.10);--accent-rule:rgba(155,109,255,0.18);
+  --wire:#D8D0F0;--wire2:rgba(216,208,240,0.65);--wire3:rgba(216,208,240,0.35);
+  --wire4:rgba(216,208,240,0.12);--rule:rgba(216,208,240,0.07);--rule2:rgba(216,208,240,0.03);
+  --green:#3DBF7A;--red:#E05555;--gold:#C8A84B;
+  --display:'Cormorant Garamond',serif;--body:'Libre Baskerville',serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--wire);font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;}
+
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright));z-index:999;width:0%;transition:width .1s linear;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(9,8,12,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);}
+.nav-mark{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;}
+.nav-score{font-family:var(--mono);font-size:11px;color:var(--wire3);letter-spacing:1px;}
+#score-display{color:var(--accent-bright);}
+
+.hero{padding:110px 10vw 60px;border-bottom:1px solid var(--accent-rule);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--rule2) 1px,transparent 1px),linear-gradient(90deg,var(--rule2) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.hero::after{content:'';position:absolute;top:-80px;right:8vw;width:500px;height:500px;background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 68%);pointer-events:none;}
+.hero-series{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:24px;position:relative;z-index:1;display:flex;align-items:center;gap:14px;}
+.hero-series::before{content:'';width:32px;height:1px;background:var(--accent);}
+.hero-title{font-family:var(--display);font-size:clamp(40px,7vw,88px);font-weight:300;line-height:1.0;color:var(--wire);margin-bottom:10px;position:relative;z-index:1;}
+.hero-title em{font-style:italic;color:var(--accent-bright);}
+.hero-sub{font-family:var(--display);font-style:italic;font-size:clamp(15px,2vw,20px);color:var(--wire2);margin-bottom:40px;position:relative;z-index:1;max-width:48ch;line-height:1.5;}
+.hero-meta{display:flex;gap:0;border:1px solid var(--accent-rule);width:fit-content;position:relative;z-index:1;}
+.hero-meta-item{padding:12px 20px;border-right:1px solid var(--accent-rule);}
+.hero-meta-item:last-child{border-right:none}
+.hero-meta-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px;}
+.hero-meta-val{font-family:var(--display);font-size:17px;color:var(--wire2);font-style:italic;}
+
+.container{max-width:760px;margin:0 auto;padding:0 28px;}
+
+/* QUESTION CARD */
+.q-card{margin:48px 0;background:var(--bg2);border:1px solid var(--accent-rule);overflow:hidden;position:relative;}
+.q-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright),transparent);}
+.q-header{padding:16px 24px;background:var(--bg3);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:16px;}
+.q-num{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;}
+.q-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;color:var(--wire4);background:var(--bg4);padding:3px 10px;border:1px solid var(--rule);}
+.q-body{padding:24px 28px;}
+.q-text{font-size:15px;line-height:1.85;color:var(--wire2);margin-bottom:20px;}
+.q-text strong{color:var(--wire);}
+
+/* SVG STRUCTURE AREA */
+.q-structure{margin:20px 0;padding:20px;background:var(--bg3);border:1px solid var(--rule);display:flex;justify-content:center;align-items:center;min-height:120px;flex-wrap:wrap;gap:32px;}
+.q-structure svg{max-width:100%;height:auto;}
+.struct-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--wire4);text-transform:uppercase;text-align:center;margin-top:8px;}
+.struct-group{display:flex;flex-direction:column;align-items:center;}
+
+/* OPTIONS */
+.q-options{margin-top:20px;display:grid;gap:8px;}
+.q-opt{display:flex;align-items:flex-start;gap:14px;padding:13px 16px;border:1px solid var(--rule);background:var(--bg3);cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
+.q-opt:hover{border-color:var(--accent-rule);background:var(--bg4);}
+.q-opt.selected{border-color:var(--accent);background:rgba(155,109,255,0.08);}
+.q-opt.correct{border-color:var(--green) !important;background:rgba(61,191,122,0.08) !important;}
+.q-opt.wrong{border-color:var(--red) !important;background:rgba(224,85,85,0.08) !important;}
+.q-opt-letter{font-family:var(--mono);font-size:11px;color:var(--accent);min-width:18px;padding-top:1px;letter-spacing:1px;}
+.q-opt.correct .q-opt-letter{color:var(--green);}
+.q-opt.wrong .q-opt-letter{color:var(--red);}
+.q-opt-text{font-size:14px;color:var(--wire2);line-height:1.6;}
+.q-opt.correct .q-opt-text{color:var(--wire);}
+
+/* REVEAL */
+.q-reveal{margin-top:16px;padding:20px 24px;background:var(--bg3);border-left:3px solid var(--accent);display:none;}
+.q-reveal.show{display:block;}
+.q-reveal-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
+.q-reveal-answer{font-family:var(--display);font-size:18px;font-weight:600;color:var(--green);margin-bottom:8px;}
+.q-reveal-exp{font-size:13px;color:var(--wire3);line-height:1.75;}
+.q-reveal-exp strong{color:var(--wire2);}
+
+.q-btn{margin-top:16px;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:10px 20px;border:1px solid var(--accent-rule);background:transparent;color:var(--accent);cursor:pointer;transition:all .15s;}
+.q-btn:hover{background:var(--accent-rule);}
+
+/* SECTION BREAK */
+.section-break{margin:56px 0 0;padding-top:24px;border-top:1px solid var(--rule);display:flex;align-items:center;gap:16px;}
+.section-break-label{font-family:var(--mono);font-size:9px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;white-space:nowrap;}
+.section-break-line{flex:1;height:1px;background:var(--rule);}
+
+.closing{padding:80px 0;text-align:center;}
+.closing-text{font-family:var(--display);font-size:clamp(17px,2.5vw,24px);font-style:italic;color:var(--wire2);margin-bottom:12px;line-height:1.4;}
+.closing-sub{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;}
+
+@media(max-width:560px){
+  .nav{padding:12px 16px;}
+  .hero{padding:90px 5vw 48px;}
+  .container{padding:0 16px;}
+  .q-body{padding:18px 16px;}
+  .q-structure{padding:14px;}
+  .hero-meta{flex-wrap:wrap;}
+  .hero-meta-item{border-right:none;border-bottom:1px solid var(--accent-rule);}
+  .hero-meta-item:last-child{border-bottom:none;}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav class="nav">
+  <div class="nav-mark">MEPC · Organic · Q1–20</div>
+  <div class="nav-score">Score: <span id="score-display">0</span> / <span id="answered-display">0</span></div>
+</nav>
+
+<div class="hero">
+  <div class="hero-series">Prep File — Not Mock Test</div>
+  <h1 class="hero-title">Organic<br><em>Questions 1–20</em></h1>
+  <p class="hero-sub">Isomers, transformations, tests, identification. Skeletal structures throughout. Reveal answers when ready.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="hero-meta-label">Questions</div><div class="hero-meta-val">20</div></div>
+    <div class="hero-meta-item"><div class="hero-meta-label">Focus</div><div class="hero-meta-val">Isomers + Reactions</div></div>
+    <div class="hero-meta-item"><div class="hero-meta-label">Structures</div><div class="hero-meta-val">Skeletal SVG</div></div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ═══ SECTION: ISOMERS ═══ -->
+<div class="section-break"><div class="section-break-label">Isomers</div><div class="section-break-line"></div></div>
+
+<!-- Q1 -->
+<div class="q-card" id="q1">
+  <div class="q-header"><span class="q-num">Question 01</span><span class="q-tag">Structural Isomers</span></div>
+  <div class="q-body">
+    <p class="q-text">Which pair of compounds are <strong>structural isomers</strong>?</p>
+    <div class="q-structure">
+      <div class="struct-group">
+        <!-- Ethanol skeletal -->
+        <svg width="120" height="70" viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="35" x2="60" y2="35" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="60" y1="35" x2="90" y2="20" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="8" y="39" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃</text>
+          <text x="90" y="16" font-family="DM Mono,monospace" font-size="11" fill="#BFA0FF">OH</text>
+          <text x="53" y="28" font-family="DM Mono,monospace" font-size="9" fill="#5A3DB8">CH₂</text>
+        </svg>
+        <div class="struct-label">Compound X</div>
+      </div>
+      <div class="struct-group">
+        <!-- Dimethyl ether skeletal -->
+        <svg width="140" height="70" viewBox="0 0 140 70" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="35" x2="50" y2="35" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="50" y1="35" x2="90" y2="35" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="90" y1="35" x2="130" y2="35" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="0" y="29" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃</text>
+          <text x="58" y="29" font-family="DM Mono,monospace" font-size="11" fill="#BFA0FF">O</text>
+          <text x="115" y="29" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃</text>
+        </svg>
+        <div class="struct-label">Compound Y</div>
+      </div>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q1','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">X and Y are the same compound drawn differently</span></div>
+      <div class="q-opt" onclick="choose(this,'q1','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">X and Y are structural isomers — same molecular formula C₂H₆O, different functional groups</span></div>
+      <div class="q-opt" onclick="choose(this,'q1','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">X and Y are geometric isomers</span></div>
+      <div class="q-opt" onclick="choose(this,'q1','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">X and Y cannot be isomers because they have different boiling points</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q1')">Reveal Answer</button>
+    <div class="q-reveal" id="q1-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">Both have molecular formula <strong>C₂H₆O</strong> but X is ethanol (−OH group, alcohol) and Y is methoxymethane (−O− group, ether). Different functional groups = functional group isomers, a type of structural isomer. Different boiling points (78°C vs −24°C) confirm different properties — isomers are not the same compound.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="q-card" id="q2">
+  <div class="q-header"><span class="q-num">Question 02</span><span class="q-tag">Positional Isomers</span></div>
+  <div class="q-body">
+    <p class="q-text">The two structures below are examples of which type of isomerism?</p>
+    <div class="q-structure">
+      <div class="struct-group">
+        <!-- propan-1-ol skeletal -->
+        <svg width="150" height="80" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="40" x2="55" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="55" y1="40" x2="100" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="100" y1="40" x2="130" y2="22" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="0" y="34" font-family="DM Mono,monospace" font-size="10" fill="#3DBF7A">OH</text>
+          <text x="45" y="34" font-family="DM Mono,monospace" font-size="9" fill="#5A3DB8">CH₂</text>
+          <text x="88" y="34" font-family="DM Mono,monospace" font-size="9" fill="#5A3DB8">CH₂</text>
+          <text x="131" y="18" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+        </svg>
+        <div class="struct-label">Propan-1-ol</div>
+      </div>
+      <div class="struct-group">
+        <!-- propan-2-ol skeletal -->
+        <svg width="150" height="80" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg">
+          <line x1="10" y1="50" x2="55" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="55" y1="30" x2="100" y2="50" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="55" y1="30" x2="55" y2="10" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="0" y="58" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="102" y="58" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="43" y="8" font-family="DM Mono,monospace" font-size="10" fill="#3DBF7A">OH</text>
+        </svg>
+        <div class="struct-label">Propan-2-ol</div>
+      </div>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q2','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Chain isomerism — different carbon skeleton arrangements</span></div>
+      <div class="q-opt" onclick="choose(this,'q2','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Functional group isomerism — different functional groups</span></div>
+      <div class="q-opt" onclick="choose(this,'q2','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Positional isomerism — same functional group, different position on chain</span></div>
+      <div class="q-opt" onclick="choose(this,'q2','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Geometric isomerism — different spatial arrangement around a double bond</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q2')">Reveal Answer</button>
+    <div class="q-reveal" id="q2-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">C</div>
+      <div class="q-reveal-exp">Both are propanols with formula <strong>C₃H₈O</strong> and both carry an −OH group. The only difference is position: C1 vs C2. This is positional isomerism. Chain isomerism would require a different carbon skeleton. FG isomerism requires a different type of functional group entirely.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="q-card" id="q3">
+  <div class="q-header"><span class="q-num">Question 03</span><span class="q-tag">Geometric Isomers</span></div>
+  <div class="q-body">
+    <p class="q-text">Which condition is <strong>necessary</strong> for geometric (cis/trans) isomerism to exist?</p>
+    <div class="q-structure">
+      <!-- cis vs trans but-2-ene -->
+      <div class="struct-group">
+        <svg width="160" height="90" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="30" x2="70" y2="45" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="70" y1="43" x2="110" y2="43" stroke="#BFA0FF" stroke-width="2.5"/>
+          <line x1="70" y1="49" x2="110" y2="49" stroke="#BFA0FF" stroke-width="2.5"/>
+          <line x1="110" y1="45" x2="150" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="30" y1="60" x2="70" y2="45" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="110" y1="45" x2="150" y2="60" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="10" y="26" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="132" y="26" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="12" y="68" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="138" y="68" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="62" y="84" font-family="DM Mono,monospace" font-size="9" fill="#3DBF7A">cis</text>
+        </svg>
+        <div class="struct-label">cis-but-2-ene</div>
+      </div>
+      <div class="struct-group">
+        <svg width="160" height="90" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="60" x2="70" y2="45" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="70" y1="43" x2="110" y2="43" stroke="#BFA0FF" stroke-width="2.5"/>
+          <line x1="70" y1="49" x2="110" y2="49" stroke="#BFA0FF" stroke-width="2.5"/>
+          <line x1="110" y1="45" x2="150" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="30" y1="30" x2="70" y2="45" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="110" y1="45" x2="150" y2="60" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="10" y="68" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="132" y="26" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="12" y="26" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="138" y="68" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="60" y="84" font-family="DM Mono,monospace" font-size="9" fill="#C8A84B">trans</text>
+        </svg>
+        <div class="struct-label">trans-but-2-ene</div>
+      </div>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q3','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">The molecule must contain a carbon–carbon single bond</span></div>
+      <div class="q-opt" onclick="choose(this,'q3','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Each double-bond carbon must carry two identical groups</span></div>
+      <div class="q-opt" onclick="choose(this,'q3','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Each double-bond carbon must carry two different groups, and rotation around C=C is restricted</span></div>
+      <div class="q-opt" onclick="choose(this,'q3','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">The molecule must have at least six carbons</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q3')">Reveal Answer</button>
+    <div class="q-reveal" id="q3-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">C</div>
+      <div class="q-reveal-exp">Geometric isomerism requires: (1) a C=C double bond (rotation is locked), and (2) each carbon of the double bond must carry <strong>two different groups</strong>. If either carbon has two identical groups, cis and trans become the same compound. But-1-ene has no geometric isomers because one carbon of the double bond carries two H atoms.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="q-card" id="q4">
+  <div class="q-header"><span class="q-num">Question 04</span><span class="q-tag">Chain Isomers</span></div>
+  <div class="q-body">
+    <p class="q-text">How many <strong>chain isomers</strong> does butane (C₄H₁₀) have, including itself?</p>
+    <div class="q-structure">
+      <!-- n-butane skeletal -->
+      <div class="struct-group">
+        <svg width="170" height="60" viewBox="0 0 170 60" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="30" x2="60" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="60" y1="30" x2="110" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="110" y1="30" x2="155" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="0" y="34" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="155" y="34" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+        </svg>
+        <div class="struct-label">n-butane</div>
+      </div>
+      <div class="struct-group">
+        <!-- isobutane skeletal -->
+        <svg width="120" height="90" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+          <line x1="60" y1="60" x2="20" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="60" y1="60" x2="100" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="60" y1="60" x2="60" y2="85" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="60" y1="60" x2="60" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="0" y="38" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="101" y="38" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="45" y="82" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+          <text x="48" y="24" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">CH</text>
+        </svg>
+        <div class="struct-label">isobutane</div>
+      </div>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q4','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">1</span></div>
+      <div class="q-opt" onclick="choose(this,'q4','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">2</span></div>
+      <div class="q-opt" onclick="choose(this,'q4','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">3</span></div>
+      <div class="q-opt" onclick="choose(this,'q4','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">4</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q4')">Reveal Answer</button>
+    <div class="q-reveal" id="q4-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">C₄H₁₀ has exactly <strong>two</strong> chain isomers: n-butane (straight chain) and 2-methylpropane/isobutane (branched). Both have formula C₄H₁₀. The carbon skeleton differs — one is linear, one is branched at the centre. There is no third arrangement possible for four carbons.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="q-card" id="q5">
+  <div class="q-header"><span class="q-num">Question 05</span><span class="q-tag">FG Isomers</span></div>
+  <div class="q-body">
+    <p class="q-text">A compound has molecular formula <strong>C₃H₆O</strong>. Which pair of functional group isomers is possible?</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q5','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Propanal and propan-1-ol</span></div>
+      <div class="q-opt" onclick="choose(this,'q5','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Propanal and propanone</span></div>
+      <div class="q-opt" onclick="choose(this,'q5','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Propanone and propan-2-ol</span></div>
+      <div class="q-opt" onclick="choose(this,'q5','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Propanal and propanoic acid</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q5')">Reveal Answer</button>
+    <div class="q-reveal" id="q5-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp"><strong>Propanal (CH₃CH₂CHO)</strong> and <strong>propanone (CH₃COCH₃)</strong> both have formula C₃H₆O. Propanal has an aldehyde group (−CHO); propanone has a ketone group (C=O in the middle). Different functional groups, same formula = functional group isomers. Propan-1-ol is C₃H₈O (one extra H₂ — not an isomer). Propanoic acid is C₃H₆O₂ (extra oxygen).</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="q-card" id="q6">
+  <div class="q-header"><span class="q-num">Question 06</span><span class="q-tag">Isomer Count</span></div>
+  <div class="q-body">
+    <p class="q-text">Which of the following is <strong>NOT</strong> a structural isomer of C₂H₆O?</p>
+    <div class="q-options">div
+      <div class="q-opt" onclick="choose(this,'q6','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Ethanol (CH₃CH₂OH)</span></div>
+      <div class="q-opt" onclick="choose(this,'q6','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Methoxymethane (CH₃OCH₃)</span></div>
+      <div class="q-opt" onclick="choose(this,'q6','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Ethanal (CH₃CHO)</span></div>
+      <div class="q-opt" onclick="choose(this,'q6','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Both A and B only</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q6')">Reveal Answer</button>
+    <div class="q-reveal" id="q6-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">C</div>
+      <div class="q-reveal-exp"><strong>Ethanal (CH₃CHO)</strong> has formula C₂H₄O — only 4 hydrogens, not 6. It cannot be an isomer of C₂H₆O. Ethanol and methoxymethane are both C₂H₆O and are genuine structural isomers of each other. Count atoms carefully before assuming isomerism.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q7 -->
+<div class="q-card" id="q7">
+  <div class="q-header"><span class="q-num">Question 07</span><span class="q-tag">Isomer Properties</span></div>
+  <div class="q-body">
+    <p class="q-text">Ethanol (bp 78°C) and methoxymethane (bp −24°C) are structural isomers. The large boiling point difference is best explained by:</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q7','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Ethanol has a higher molecular mass</span></div>
+      <div class="q-opt" onclick="choose(this,'q7','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Ethanol forms hydrogen bonds via its −OH group; methoxymethane cannot form H-bonds with itself</span></div>
+      <div class="q-opt" onclick="choose(this,'q7','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Methoxymethane has a longer carbon chain</span></div>
+      <div class="q-opt" onclick="choose(this,'q7','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Ethanol is more volatile than methoxymethane</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q7')">Reveal Answer</button>
+    <div class="q-reveal" id="q7-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">Both have identical molecular mass (46 g/mol). The difference is intermolecular forces. <strong>Ethanol's −OH group</strong> allows hydrogen bonding between molecules — strong, requiring more energy to overcome. Methoxymethane has no −OH: only weak van der Waals forces. This is why functional group isomers have completely different physical properties despite identical formulas.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION: REACTION TRANSFORMATIONS ═══ -->
+<div class="section-break"><div class="section-break-label">Reaction Transformations</div><div class="section-break-line"></div></div>
+
+<!-- Q8 -->
+<div class="q-card" id="q8">
+  <div class="q-header"><span class="q-num">Question 08</span><span class="q-tag">Oxidation Chain</span></div>
+  <div class="q-body">
+    <p class="q-text">Ethanol is oxidised in two successive steps. What are the products, in order?</p>
+    <div class="q-structure">
+      <svg width="380" height="70" viewBox="0 0 380 70" xmlns="http://www.w3.org/2000/svg">
+        <!-- ethanol -->
+        <text x="0" y="38" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃CH₂OH</text>
+        <!-- arrow 1 -->
+        <line x1="100" y1="35" x2="140" y2="35" stroke="#3DBF7A" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="106" y="26" font-family="DM Mono,monospace" font-size="9" fill="#3DBF7A">[O]</text>
+        <!-- product 1 -->
+        <text x="144" y="38" font-family="DM Mono,monospace" font-size="11" fill="#C8A84B">?</text>
+        <!-- arrow 2 -->
+        <line x1="165" y1="35" x2="210" y2="35" stroke="#3DBF7A" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="172" y="26" font-family="DM Mono,monospace" font-size="9" fill="#3DBF7A">[O]</text>
+        <!-- product 2 -->
+        <text x="215" y="38" font-family="DM Mono,monospace" font-size="11" fill="#E05555">?</text>
+        <defs>
+          <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#3DBF7A"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q8','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Ethanoic acid → Ethanal</span></div>
+      <div class="q-opt" onclick="choose(this,'q8','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Ethanal → Ethanoic acid</span></div>
+      <div class="q-opt" onclick="choose(this,'q8','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Ethene → Ethanal</span></div>
+      <div class="q-opt" onclick="choose(this,'q8','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Ethanal → Ethanol</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q8')">Reveal Answer</button>
+    <div class="q-reveal" id="q8-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">Oxidation of primary alcohols follows: <strong>Alcohol → Aldehyde → Carboxylic acid.</strong> Ethanol (−OH) → Ethanal (−CHO) → Ethanoic acid (−COOH). Each step adds one oxygen. The oxidising agent is acidified K₂Cr₂O₇ (turns green) or KMnO₄. Controlled oxidation stops at aldehyde; excess oxidant goes to acid.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q9 -->
+<div class="q-card" id="q9">
+  <div class="q-header"><span class="q-num">Question 09</span><span class="q-tag">Addition Reaction</span></div>
+  <div class="q-body">
+    <p class="q-text">Ethene reacts with bromine water. What is the structural change and what does this reaction confirm?</p>
+    <div class="q-structure">
+      <div class="struct-group">
+        <svg width="160" height="80" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="40" x2="70" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <!-- double bond -->
+          <line x1="70" y1="36" x2="110" y2="36" stroke="#BFA0FF" stroke-width="2.5"/>
+          <line x1="70" y1="44" x2="110" y2="44" stroke="#BFA0FF" stroke-width="2.5"/>
+          <line x1="110" y1="40" x2="150" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="14" y="44" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="142" y="44" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <!-- H above/below the double bond carbons -->
+          <line x1="80" y1="36" x2="80" y2="18" stroke="#BFA0FF" stroke-width="1.5"/>
+          <line x1="100" y1="36" x2="100" y2="18" stroke="#BFA0FF" stroke-width="1.5"/>
+          <text x="73" y="14" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="93" y="14" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <line x1="80" y1="44" x2="80" y2="62" stroke="#BFA0FF" stroke-width="1.5"/>
+          <line x1="100" y1="44" x2="100" y2="62" stroke="#BFA0FF" stroke-width="1.5"/>
+          <text x="73" y="72" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="93" y="72" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+        </svg>
+        <div class="struct-label">Ethene + Br₂</div>
+      </div>
+      <div style="display:flex;align-items:center;color:#3DBF7A;font-size:22px;padding-bottom:20px;">→</div>
+      <div class="struct-group">
+        <svg width="160" height="80" viewBox="0 0 160 80" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="40" x2="70" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <!-- single bond now -->
+          <line x1="70" y1="40" x2="110" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <line x1="110" y1="40" x2="145" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+          <text x="0" y="44" font-family="DM Mono,monospace" font-size="10" fill="#E05555">Br</text>
+          <text x="144" y="44" font-family="DM Mono,monospace" font-size="10" fill="#E05555">Br</text>
+          <line x1="80" y1="40" x2="80" y2="18" stroke="#BFA0FF" stroke-width="1.5"/>
+          <line x1="100" y1="40" x2="100" y2="18" stroke="#BFA0FF" stroke-width="1.5"/>
+          <text x="73" y="14" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="93" y="14" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <line x1="80" y1="40" x2="80" y2="62" stroke="#BFA0FF" stroke-width="1.5"/>
+          <line x1="100" y1="40" x2="100" y2="62" stroke="#BFA0FF" stroke-width="1.5"/>
+          <text x="73" y="72" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+          <text x="93" y="72" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF">H</text>
+        </svg>
+        <div class="struct-label">1,2-dibromoethane</div>
+      </div>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q9','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Substitution occurs; confirms the compound is saturated</span></div>
+      <div class="q-opt" onclick="choose(this,'q9','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Addition occurs across C=C; bromine water decolourises, confirming unsaturation</span></div>
+      <div class="q-opt" onclick="choose(this,'q9','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Addition occurs; the product is ethanol</span></div>
+      <div class="q-opt" onclick="choose(this,'q9','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Elimination occurs; confirms the compound is saturated</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q9')">Reveal Answer</button>
+    <div class="q-reveal" id="q9-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp"><strong>Addition reaction</strong>: Br₂ adds across the C=C double bond, converting it to a single bond and producing 1,2-dibromoethane. The orange-brown bromine water is <strong>decolourised</strong> — this is the standard test for unsaturation (C=C present). Alkanes do NOT decolourise bromine water in the dark — they require UV light for substitution.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q10 -->
+<div class="q-card" id="q10">
+  <div class="q-header"><span class="q-num">Question 10</span><span class="q-tag">Esterification</span></div>
+  <div class="q-body">
+    <p class="q-text">Ethanol reacts with ethanoic acid in the presence of concentrated H₂SO₄. What type of reaction is this and what are the products?</p>
+    <div class="q-structure">
+      <svg width="380" height="65" viewBox="0 0 380 65" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="32" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃CH₂OH</text>
+        <text x="98" y="32" font-family="DM Mono,monospace" font-size="13" fill="#BFA0FF">+</text>
+        <text x="115" y="32" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃COOH</text>
+        <line x1="218" y1="30" x2="268" y2="30" stroke="#C8A84B" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <text x="226" y="22" font-family="DM Mono,monospace" font-size="8" fill="#C8A84B">H₂SO₄, heat</text>
+        <text x="272" y="32" font-family="DM Mono,monospace" font-size="11" fill="#3DBF7A">? + ?</text>
+        <defs>
+          <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#C8A84B"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q10','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Hydrolysis — produces ethane and water</span></div>
+      <div class="q-opt" onclick="choose(this,'q10','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Condensation — produces ethyl ethanoate and water</span></div>
+      <div class="q-opt" onclick="choose(this,'q10','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Addition — produces ethyl ethanoate only</span></div>
+      <div class="q-opt" onclick="choose(this,'q10','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Substitution — produces methyl ethanoate and water</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q10')">Reveal Answer</button>
+    <div class="q-reveal" id="q10-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp"><strong>Condensation (esterification)</strong>: two molecules join and water is eliminated. Ethanol + Ethanoic acid → <strong>Ethyl ethanoate</strong> + H₂O. The −OH from the acid and −H from the alcohol combine to form water. H₂SO₄ is a catalyst (not consumed). The ester name: alcohol part first (ethyl) + acid part (ethanoate). The reaction is reversible — hydrolysis is the reverse.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q11 -->
+<div class="q-card" id="q11">
+  <div class="q-header"><span class="q-num">Question 11</span><span class="q-tag">Elimination / Dehydration</span></div>
+  <div class="q-body">
+    <p class="q-text">When ethanol is heated with excess concentrated H₂SO₄ at 170°C, the major product is:</p>
+    <div class="q-structure">
+      <svg width="300" height="65" viewBox="0 0 300 65" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="32" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₃CH₂OH</text>
+        <line x1="105" y1="30" x2="160" y2="30" stroke="#E05555" stroke-width="1.5" marker-end="url(#arr3)"/>
+        <text x="108" y="22" font-family="DM Mono,monospace" font-size="8" fill="#E05555">conc H₂SO₄, 170°C</text>
+        <text x="165" y="32" font-family="DM Mono,monospace" font-size="11" fill="#C8A84B">?</text>
+        <defs>
+          <marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#E05555"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q11','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Ethane</span></div>
+      <div class="q-opt" onclick="choose(this,'q11','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Diethyl ether</span></div>
+      <div class="q-opt" onclick="choose(this,'q11','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Ethene</span></div>
+      <div class="q-opt" onclick="choose(this,'q11','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Ethanal</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q11')">Reveal Answer</button>
+    <div class="q-reveal" id="q11-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">C</div>
+      <div class="q-reveal-exp"><strong>Elimination (dehydration)</strong>: H₂O is removed from ethanol, forming <strong>ethene</strong> (C=C double bond). At 170°C with excess acid — alkene is the product. At 140°C with less acid — ether is the product instead. Temperature is the control. This is the industrial route to ethene. Ethanal is an oxidation product, not a dehydration product.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q12 -->
+<div class="q-card" id="q12">
+  <div class="q-header"><span class="q-num">Question 12</span><span class="q-tag">Saponification</span></div>
+  <div class="q-body">
+    <p class="q-text">A triglyceride (fat) is heated with concentrated NaOH solution. What type of reaction occurs and what are the products?</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q12','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Condensation — produces fatty acids and glycerol</span></div>
+      <div class="q-opt" onclick="choose(this,'q12','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Hydrolysis — produces soap (sodium salt of fatty acid) and glycerol</span></div>
+      <div class="q-opt" onclick="choose(this,'q12','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Oxidation — produces fatty acids and water</span></div>
+      <div class="q-opt" onclick="choose(this,'q12','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Hydrolysis — produces ethanol and glycerol</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q12')">Reveal Answer</button>
+    <div class="q-reveal" id="q12-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp"><strong>Saponification</strong> is alkaline hydrolysis of an ester. The ester bonds in the triglyceride are broken by NaOH. Products: <strong>soap</strong> (sodium salt of the long-chain fatty acid — RCOONa) + <strong>glycerol</strong> (propan-1,2,3-triol). NaOH → hard (solid) soap. KOH → soft (liquid) soap. This is the reverse of condensation — hydrolysis always breaks ester bonds.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q13 -->
+<div class="q-card" id="q13">
+  <div class="q-header"><span class="q-num">Question 13</span><span class="q-tag">Substitution — Alkanes</span></div>
+  <div class="q-body">
+    <p class="q-text">Methane reacts with chlorine gas. Which conditions are required and what type of reaction occurs?</p>
+    <div class="q-structure">
+      <svg width="340" height="55" viewBox="0 0 340 55" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="30" font-family="DM Mono,monospace" font-size="11" fill="#9B6DFF">CH₄ + Cl₂</text>
+        <line x1="100" y1="28" x2="155" y2="28" stroke="#C8A84B" stroke-width="1.5" marker-end="url(#arr4)"/>
+        <text x="106" y="20" font-family="DM Mono,monospace" font-size="8" fill="#C8A84B">UV light</text>
+        <text x="160" y="30" font-family="DM Mono,monospace" font-size="11" fill="#3DBF7A">CH₃Cl + HCl</text>
+        <defs>
+          <marker id="arr4" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#C8A84B"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q13','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Addition reaction; requires heat only</span></div>
+      <div class="q-opt" onclick="choose(this,'q13','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Substitution reaction; requires UV light (free radical mechanism)</span></div>
+      <div class="q-opt" onclick="choose(this,'q13','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Elimination reaction; requires a catalyst</span></div>
+      <div class="q-opt" onclick="choose(this,'q13','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Substitution reaction; requires concentrated H₂SO₄</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q13')">Reveal Answer</button>
+    <div class="q-reveal" id="q13-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp"><strong>Free radical substitution</strong>: one H atom is replaced by Cl. Requires <strong>UV light</strong> to initiate — UV breaks Cl₂ into Cl• radicals (homolytic fission). Alkanes cannot undergo addition (no double bond). This reaction is progressive — CH₃Cl can react further to give CH₂Cl₂, CHCl₃, CCl₄. The HCl produced is the other product.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION: TESTS & DISTINGUISHING ═══ -->
+<div class="section-break"><div class="section-break-label">Tests &amp; Distinguishing Reactions</div><div class="section-break-line"></div></div>
+
+<!-- Q14 -->
+<div class="q-card" id="q14">
+  <div class="q-header"><span class="q-num">Question 14</span><span class="q-tag">Fehling's Test</span></div>
+  <div class="q-body">
+    <p class="q-text">A student adds Fehling's solution to two unknown compounds and heats gently. Compound A gives a brick-red precipitate. Compound B gives no change. Which conclusion is correct?</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q14','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">A is a ketone; B is an aldehyde</span></div>
+      <div class="q-opt" onclick="choose(this,'q14','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">A is an aldehyde (reducing sugar or aldehyde); B is a ketone or non-reducing compound</span></div>
+      <div class="q-opt" onclick="choose(this,'q14','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">A is an alcohol; B is a carboxylic acid</span></div>
+      <div class="q-opt" onclick="choose(this,'q14','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Both A and B are aldehydes — Compound B just needs more time</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q14')">Reveal Answer</button>
+    <div class="q-reveal" id="q14-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">Fehling's solution contains Cu²⁺ (blue). <strong>Aldehydes reduce Cu²⁺ to Cu⁺</strong>, forming a brick-red Cu₂O precipitate. <strong>Ketones cannot reduce</strong> Fehling's — no reaction, no colour change. Compound A = aldehyde (or reducing sugar like glucose). Compound B = ketone (or any non-reducing compound). This is the primary chemical distinction between aldehydes and ketones.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q15 -->
+<div class="q-card" id="q15">
+  <div class="q-header"><span class="q-num">Question 15</span><span class="q-tag">Tollens' / Silver Mirror</span></div>
+  <div class="q-body">
+    <p class="q-text">Tollens' reagent (ammoniacal silver nitrate) is used to distinguish aldehydes from ketones. What is the positive result and what does it confirm?</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q15','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Blue precipitate forms — confirms a ketone</span></div>
+      <div class="q-opt" onclick="choose(this,'q15','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Silver mirror forms on inside of tube — confirms an aldehyde</span></div>
+      <div class="q-opt" onclick="choose(this,'q15','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Yellow precipitate forms — confirms an alkene</span></div>
+      <div class="q-opt" onclick="choose(this,'q15','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Silver mirror forms — confirms a ketone</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q15')">Reveal Answer</button>
+    <div class="q-reveal" id="q15-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">Tollens' reagent contains Ag⁺ ions. <strong>Aldehydes reduce Ag⁺ to Ag⁰</strong> (metallic silver), which deposits as a <strong>silver mirror</strong> on the glass. Ketones cannot do this. The aldehyde itself is oxidised to a carboxylic acid in the process. Both Fehling's and Tollens' test for reducing power — Fehling's gives brick-red precipitate, Tollens' gives silver mirror.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q16 -->
+<div class="q-card" id="q16">
+  <div class="q-header"><span class="q-num">Question 16</span><span class="q-tag">Bromine Water Test</span></div>
+  <div class="q-body">
+    <p class="q-text">Which of the following will <strong>NOT</strong> decolourise bromine water in the absence of UV light?</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q16','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Ethene</span></div>
+      <div class="q-opt" onclick="choose(this,'q16','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Ethyne</span></div>
+      <div class="q-opt" onclick="choose(this,'q16','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Propene</span></div>
+      <div class="q-opt" onclick="choose(this,'q16','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Propane</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q16')">Reveal Answer</button>
+    <div class="q-reveal" id="q16-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">D</div>
+      <div class="q-reveal-exp"><strong>Propane is a saturated alkane</strong> — no double or triple bonds. It cannot undergo addition with bromine. UV light is needed for free radical substitution with alkanes, but that still doesn't count as "decolourising bromine water" in the exam context. Ethene, ethyne, and propene are all unsaturated — they add Br₂ across their multiple bonds instantly, decolourising the orange-brown bromine water.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q17 -->
+<div class="q-card" id="q17">
+  <div class="q-header"><span class="q-num">Question 17</span><span class="q-tag">Distinguishing Tests</span></div>
+  <div class="q-body">
+    <p class="q-text">A chemist has four unlabelled bottles containing: ethanol, ethanoic acid, ethanal, and propanone. Which single test would distinguish ethanal from propanone?</p>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q17','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Add bromine water — ethanal decolourises it, propanone does not</span></div>
+      <div class="q-opt" onclick="choose(this,'q17','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Add Fehling's solution and heat — ethanal gives brick-red precipitate, propanone gives no change</span></div>
+      <div class="q-opt" onclick="choose(this,'q17','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Add sodium carbonate — ethanal fizzes, propanone does not</span></div>
+      <div class="q-opt" onclick="choose(this,'q17','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Add universal indicator — ethanal turns red, propanone turns blue</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q17')">Reveal Answer</button>
+    <div class="q-reveal" id="q17-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">B</div>
+      <div class="q-reveal-exp">Fehling's test is the cleanest single test here. <strong>Ethanal (aldehyde) reduces Cu²⁺ → brick-red Cu₂O.</strong> Propanone (ketone) gives no reaction. Bromine water would not work cleanly here — neither ethanal nor propanone reliably decolourises it under standard conditions. Sodium carbonate tests for acids. Universal indicator doesn't distinguish these two carbonyl compounds.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION: FG IDENTIFICATION ═══ -->
+<div class="section-break"><div class="section-break-label">Functional Group Identification</div><div class="section-break-line"></div></div>
+
+<!-- Q18 -->
+<div class="q-card" id="q18">
+  <div class="q-header"><span class="q-num">Question 18</span><span class="q-tag">FG from Structure</span></div>
+  <div class="q-body">
+    <p class="q-text">Identify the functional group present in the structure below and name the compound.</p>
+    <div class="q-structure">
+      <svg width="220" height="100" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Propanoic acid skeletal -->
+        <line x1="10" y1="50" x2="60" y2="50" stroke="#BFA0FF" stroke-width="2"/>
+        <line x1="60" y1="50" x2="110" y2="50" stroke="#BFA0FF" stroke-width="2"/>
+        <!-- COOH group -->
+        <line x1="110" y1="50" x2="150" y2="30" stroke="#BFA0FF" stroke-width="2"/>
+        <line x1="148" y1="28" x2="185" y2="28" stroke="#3DBF7A" stroke-width="2"/>
+        <line x1="148" y1="32" x2="185" y2="32" stroke="#3DBF7A" stroke-width="2"/>
+        <line x1="110" y1="50" x2="150" y2="70" stroke="#BFA0FF" stroke-width="2"/>
+        <text x="0" y="54" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">CH₃</text>
+        <text x="55" y="44" font-family="DM Mono,monospace" font-size="9" fill="#5A3DB8">CH₂</text>
+        <text x="183" y="24" font-family="DM Mono,monospace" font-size="10" fill="#3DBF7A">O</text>
+        <text x="140" y="82" font-family="DM Mono,monospace" font-size="10" fill="#3DBF7A">OH</text>
+        <text x="105" y="44" font-family="DM Mono,monospace" font-size="9" fill="#BFA0FF">C</text>
+      </svg>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q18','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">Ketone group (C=O); propanone</span></div>
+      <div class="q-opt" onclick="choose(this,'q18','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Aldehyde group (−CHO); propanal</span></div>
+      <div class="q-opt" onclick="choose(this,'q18','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Carboxyl group (−COOH); propanoic acid</span></div>
+      <div class="q-opt" onclick="choose(this,'q18','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">Ester group (−COO−); propyl methanoate</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q18')">Reveal Answer</button>
+    <div class="q-reveal" id="q18-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">C</div>
+      <div class="q-reveal-exp">The structure shows a <strong>carboxyl group (−COOH)</strong>: a C=O (carbonyl) and −OH on the same carbon, at the end of the chain. This is a carboxylic acid. Three-carbon chain (prop−) + acid suffix (−anoic acid) = <strong>propanoic acid</strong>. Common name: propionic acid. Distinguish from ester: ester has −COO− with an alkyl group on the oxygen, not H.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q19 -->
+<div class="q-card" id="q19">
+  <div class="q-header"><span class="q-num">Question 19</span><span class="q-tag">FG Priority Application</span></div>
+  <div class="q-body">
+    <p class="q-text">A molecule contains both an <strong>−NH₂ group</strong> and a <strong>−COOH group</strong> on a two-carbon chain. What is its correct IUPAC name?</p>
+    <div class="q-structure">
+      <svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="40" x2="80" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+        <line x1="80" y1="40" x2="140" y2="40" stroke="#BFA0FF" stroke-width="2"/>
+        <!-- NH2 on left carbon -->
+        <line x1="40" y1="40" x2="40" y2="16" stroke="#BFA0FF" stroke-width="1.5"/>
+        <text x="26" y="14" font-family="DM Mono,monospace" font-size="10" fill="#9B6DFF">NH₂</text>
+        <!-- COOH on right -->
+        <line x1="140" y1="40" x2="175" y2="20" stroke="#BFA0FF" stroke-width="2"/>
+        <line x1="173" y1="18" x2="195" y2="18" stroke="#3DBF7A" stroke-width="2"/>
+        <line x1="173" y1="22" x2="195" y2="22" stroke="#3DBF7A" stroke-width="2"/>
+        <line x1="140" y1="40" x2="175" y2="58" stroke="#BFA0FF" stroke-width="2"/>
+        <text x="193" y="15" font-family="DM Mono,monospace" font-size="9" fill="#3DBF7A">O</text>
+        <text x="165" y="68" font-family="DM Mono,monospace" font-size="9" fill="#3DBF7A">OH</text>
+      </svg>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q19','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">2-aminoethanoic acid (glycine)</span></div>
+      <div class="q-opt" onclick="choose(this,'q19','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">Ethanoic amine</span></div>
+      <div class="q-opt" onclick="choose(this,'q19','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">Carboxyaminoethane</span></div>
+      <div class="q-opt" onclick="choose(this,'q19','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">2-carboxylamine</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q19')">Reveal Answer</button>
+    <div class="q-reveal" id="q19-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">A</div>
+      <div class="q-reveal-exp"><strong>Priority rule in action</strong>: −COOH outranks −NH₂. The acid group wins the suffix (−anoic acid). The amine becomes a prefix (amino−). Two-carbon chain = eth−. Position of NH₂ on C2 = 2-amino. Full name: <strong>2-aminoethanoic acid</strong>. Common name: glycine — the simplest amino acid. This is the direct application of functional group priority in naming.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Q20 — NAMING -->
+<div class="section-break"><div class="section-break-label">Naming</div><div class="section-break-line"></div></div>
+
+<div class="q-card" id="q20">
+  <div class="q-header"><span class="q-num">Question 20</span><span class="q-tag">IUPAC ↔ Common Name</span></div>
+  <div class="q-body">
+    <p class="q-text">Match each common name to its correct IUPAC name and functional group class.</p>
+    <div class="q-structure" style="flex-direction:column;gap:10px;align-items:flex-start;padding:16px 20px;">
+      <div style="font-family:'DM Mono',monospace;font-size:12px;color:#BFA0FF;">
+        <span style="color:#9B6DFF;">I.</span> Acetone &nbsp;&nbsp;
+        <span style="color:#9B6DFF;">II.</span> Formic acid &nbsp;&nbsp;
+        <span style="color:#9B6DFF;">III.</span> Acetylene &nbsp;&nbsp;
+        <span style="color:#9B6DFF;">IV.</span> Acetic acid
+      </div>
+    </div>
+    <div class="q-options">
+      <div class="q-opt" onclick="choose(this,'q20','A')"><span class="q-opt-letter">A</span><span class="q-opt-text">I=Propanone (ketone), II=Methanoic acid (carboxylic acid), III=Ethyne (alkyne), IV=Ethanoic acid (carboxylic acid)</span></div>
+      <div class="q-opt" onclick="choose(this,'q20','B')"><span class="q-opt-letter">B</span><span class="q-opt-text">I=Propanal (aldehyde), II=Ethanoic acid, III=Ethene (alkene), IV=Methanoic acid</span></div>
+      <div class="q-opt" onclick="choose(this,'q20','C')"><span class="q-opt-letter">C</span><span class="q-opt-text">I=Propanone (ketone), II=Ethanoic acid, III=Ethene, IV=Methanoic acid</span></div>
+      <div class="q-opt" onclick="choose(this,'q20','D')"><span class="q-opt-letter">D</span><span class="q-opt-text">I=Ethanal (aldehyde), II=Methanoic acid, III=Ethyne, IV=Ethanoic acid</span></div>
+    </div>
+    <button class="q-btn" onclick="reveal('q20')">Reveal Answer</button>
+    <div class="q-reveal" id="q20-reveal">
+      <div class="q-reveal-label">Correct Answer</div>
+      <div class="q-reveal-answer">A</div>
+      <div class="q-reveal-exp"><strong>I. Acetone = Propanone</strong> (3C ketone — C=O in the middle). <strong>II. Formic acid = Methanoic acid</strong> (1C, from Latin formica = ant). <strong>III. Acetylene = Ethyne</strong> (2C, triple bond, welding gas). <strong>IV. Acetic acid = Ethanoic acid</strong> (2C, from Latin acetum = vinegar). All four are in the acet−/form− family — trace them to their carbon count and you'll never confuse them.</div>
+    </div>
+  </div>
+</div>
+
+<div class="closing">
+  <p class="closing-text">Questions 1–20 complete. Vet, mark, flag weak spots — then call for Q21–40.</p>
+  <p class="closing-sub">MEPC · Organic · Batch 1 of 4</p>
+</div>
+
+</div><!-- /container -->
+
+<script>
+var scores = {};
+var correct = 0;
+var answered = 0;
+
+var answers = {
+  q1:'B',q2:'C',q3:'C',q4:'B',q5:'B',
+  q6:'C',q7:'B',q8:'B',q9:'B',q10:'B',
+  q11:'C',q12:'B',q13:'B',q14:'B',q15:'B',
+  q16:'D',q17:'B',q18:'C',q19:'A',q20:'A'
+};
+
+function choose(el, qid, letter) {
+  if (scores[qid]) return;
+  var opts = el.parentElement.querySelectorAll('.q-opt');
+  opts.forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  scores[qid] = letter;
+}
+
+function reveal(qid) {
+  if (!answers[qid]) return;
+  var card = document.getElementById(qid);
+  var opts = card.querySelectorAll('.q-opt');
+  var rev = document.getElementById(qid+'-reveal');
+  var correct_letter = answers[qid];
+  var was_answered = !!scores[qid];
+
+  opts.forEach(function(o){
+    var letter = o.querySelector('.q-opt-letter').textContent.trim();
+    if (letter === correct_letter) {
+      o.classList.add('correct');
+    } else if (scores[qid] === letter) {
+      o.classList.add('wrong');
+    }
+  });
+
+  if (!card.dataset.revealed) {
+    card.dataset.revealed = '1';
+    answered++;
+    if (scores[qid] === correct_letter) correct++;
+    document.getElementById('score-display').textContent = correct;
+    document.getElementById('answered-display').textContent = answered;
+  }
+
+  rev.classList.add('show');
+}
+
+window.addEventListener('scroll', function(){
+  var p = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('progress').style.width = p + '%';
+});
+</script>
+</body>
+</html>

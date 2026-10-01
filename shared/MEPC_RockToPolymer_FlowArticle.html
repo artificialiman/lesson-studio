@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>From Rock to Polymer — The Complete Chemistry of Everything</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+  --bg:#08090C;--bg2:#0D0F14;--bg3:#121519;--bg4:#181C22;
+  --accent:#4A9E8A;--accent-bright:#6DBFAA;--accent-dim:#2A6E5E;
+  --accent-glow:rgba(74,158,138,0.11);--accent-rule:rgba(74,158,138,0.2);
+  --wire:#C8DDD8;--wire2:rgba(200,221,216,0.65);--wire3:rgba(200,221,216,0.35);
+  --wire4:rgba(200,221,216,0.12);--rule:rgba(200,221,216,0.07);--rule2:rgba(200,221,216,0.03);
+  --gold:#C8A84B;--red:#C05050;--violet:#8B6DCC;--orange:#C8784A;
+  --display:'Cormorant Garamond',serif;--body:'Libre Baskerville',serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--wire);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;}
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright));z-index:999;width:0%;transition:width .1s linear;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,9,12,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);}
+.nav-mark{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--wire3);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 10vw 80px;border-bottom:1px solid var(--accent-rule);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--rule2) 1px,transparent 1px),linear-gradient(90deg,var(--rule2) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.hero-glow{position:absolute;bottom:-120px;right:6vw;width:700px;height:500px;background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 65%);pointer-events:none;}
+.hero-glow2{position:absolute;top:-80px;left:4vw;width:400px;height:400px;background:radial-gradient(ellipse,rgba(139,109,204,0.06) 0%,transparent 65%);pointer-events:none;}
+.hero-series{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1;display:flex;align-items:center;gap:14px;}
+.hero-series::before{content:'';width:36px;height:1px;background:var(--accent);}
+.hero-title{font-family:var(--display);font-size:clamp(44px,8.5vw,108px);font-weight:300;line-height:0.95;color:var(--wire);margin-bottom:16px;position:relative;z-index:1;letter-spacing:-1px;}
+.hero-title em{font-style:italic;color:var(--accent-bright);}
+.hero-sub{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(16px,2.2vw,22px);color:var(--wire2);margin-bottom:52px;position:relative;z-index:1;max-width:54ch;line-height:1.5;}
+.hero-meta{display:flex;gap:0;border:1px solid var(--accent-rule);width:fit-content;position:relative;z-index:1;}
+.hero-meta-item{padding:14px 22px;border-right:1px solid var(--accent-rule);}
+.hero-meta-item:last-child{border-right:none}
+.hero-meta-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:4px;}
+.hero-meta-val{font-family:var(--display);font-size:17px;color:var(--wire2);font-style:italic;}
+
+/* LAYOUT */
+.container{max-width:820px;margin:0 auto;padding:0 32px;}
+.act{padding:88px 0 0;}
+.act-marker{font-family:var(--mono);font-size:9px;letter-spacing:4px;color:var(--accent);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:14px;}
+.act-marker::after{content:'';flex:1;height:1px;background:var(--accent-rule);}
+.act-title{font-family:var(--display);font-size:clamp(30px,5vw,56px);font-weight:600;line-height:1.05;color:var(--wire);margin-bottom:8px;}
+.act-title em{font-style:italic;color:var(--accent-bright);}
+.act-deck{font-family:var(--display);font-style:italic;font-weight:300;font-size:19px;color:var(--wire2);margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid var(--rule);line-height:1.5;}
+
+/* PROSE */
+.prose{padding:12px 0;}
+.prose p{font-size:16px;line-height:1.9;color:var(--wire2);margin-bottom:22px;}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--wire);}
+.prose em{color:var(--accent-bright);font-style:italic;}
+
+/* COMPRESSION LINE */
+.compress{margin:40px 0;padding:28px 32px;background:var(--bg2);border-left:3px solid var(--accent);position:relative;}
+.compress-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:12px;}
+.compress-text{font-family:var(--display);font-size:clamp(19px,2.6vw,26px);font-style:italic;color:var(--wire);line-height:1.4;}
+
+.compress.gold{border-left-color:var(--gold);}
+.compress.gold .compress-label{color:var(--gold);}
+.compress.violet{border-left-color:var(--violet);}
+.compress.violet .compress-label{color:var(--violet);}
+.compress.orange{border-left-color:var(--orange);}
+.compress.orange .compress-label{color:var(--orange);}
+
+/* SVG PANELS */
+.svg-panel{margin:40px 0;background:var(--bg2);border:1px solid var(--accent-rule);overflow:hidden;}
+.svg-panel-head{padding:11px 20px;background:var(--bg3);border-bottom:1px solid var(--accent-rule);font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;}
+.svg-panel-body{padding:28px 20px;overflow-x:auto;-webkit-overflow-scrolling:touch;display:flex;justify-content:center;}
+.svg-panel-body svg{max-width:100%;height:auto;}
+
+/* TABLES */
+.tbl-wrap{margin:36px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+thead tr{background:var(--bg3);}
+th{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--accent-rule);}
+td{padding:11px 16px;border-bottom:1px solid var(--rule);color:var(--wire2);vertical-align:top;line-height:1.6;}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg3);color:var(--wire);}
+td.mono{font-family:var(--mono);font-size:12px;color:var(--accent-bright);}
+td.note{font-size:12px;color:var(--wire3);}
+td.trap{font-size:12px;color:var(--red);}
+td.gold{font-size:13px;color:var(--gold);}
+
+/* ARROW LIST */
+.arrow-list{margin:24px 0;list-style:none;}
+.arrow-list li{display:flex;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule);color:var(--wire2);font-size:15px;line-height:1.7;}
+.arrow-list li:last-child{border-bottom:none}
+.arrow-list li::before{content:'→';color:var(--accent);font-family:var(--mono);flex-shrink:0;}
+.arrow-list li strong{color:var(--wire);}
+.arrow-list li em{color:var(--accent-bright);font-style:italic;}
+
+.arrow-list.gold li::before{color:var(--gold);}
+.arrow-list.violet li::before{color:var(--violet);}
+.arrow-list.orange li::before{color:var(--orange);}
+
+/* COMMA LIST */
+.comma-list{margin:20px 0;padding:20px 24px;background:var(--bg2);border:1px solid var(--rule);}
+.comma-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:10px;}
+.comma-text{font-size:15px;color:var(--wire2);line-height:1.8;}
+.comma-text strong{color:var(--wire);}
+.comma-text em{color:var(--accent-bright);font-style:italic;}
+
+/* SECTION DIVIDER */
+.section-end{height:1px;background:var(--rule);margin:80px 0 0;}
+
+/* FOOTNOTE */
+.footnote{margin:60px 0 0;padding:32px;border:1px solid var(--rule);background:var(--bg2);}
+.footnote-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:14px;}
+.footnote p{font-size:14px;color:var(--wire3);line-height:1.85;}
+
+/* CLOSING */
+.closing{padding:88px 0;text-align:center;}
+.closing-text{font-family:var(--display);font-size:clamp(18px,2.8vw,28px);font-style:italic;color:var(--wire2);margin-bottom:14px;line-height:1.4;}
+.closing-sub{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;}
+
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hero{padding:100px 6vw 60px;}
+  .container{padding:0 18px;}
+  .hero-meta{flex-wrap:wrap;}
+  .hero-meta-item{border-right:none;border-bottom:1px solid var(--accent-rule);}
+  .hero-meta-item:last-child{border-bottom:none;}
+  .compress{padding:20px 20px;}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav class="nav">
+  <div class="nav-mark">MEPC · Flow Article</div>
+  <div class="nav-links">
+    <a href="#act0">The Beach</a>
+    <a href="#act1">The Cast</a>
+    <a href="#act2">Compounds</a>
+    <a href="#act3">Transformations</a>
+    <a href="#bridge">The Bridge</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-series">Flow Article — Chemistry of Everything</div>
+  <h1 class="hero-title">From Rock<br>to <em>Polymer</em></h1>
+  <p class="hero-sub">Every element, every compound, every reaction — told as one unbroken story. It begins at a beach. It ends where all things end: returning slowly to the earth that made them.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="hero-meta-label">Acts</div><div class="hero-meta-val">Five</div></div>
+    <div class="hero-meta-item"><div class="hero-meta-label">Tone</div><div class="hero-meta-val">Editorial + Exam</div></div>
+    <div class="hero-meta-item"><div class="hero-meta-label">Series</div><div class="hero-meta-val">Flow Article</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ACT 0 — THE BEACH
+════════════════════════════════════════ -->
+<div id="act0" class="container">
+  <div class="act">
+    <div class="act-marker">Act Zero</div>
+    <h2 class="act-title">The Beach — <em>Before the Lesson Begins</em></h2>
+    <p class="act-deck">You do not need a laboratory to see chemistry. You need a shoreline, bare feet, and the willingness to look at ordinary things as if you have never seen them before.</p>
+
+    <!-- SHORELINE SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">A natural beach — every element of the periodic table is already here</div>
+      <div class="svg-panel-body">
+        <svg width="720" height="200" viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- sky gradient -->
+          <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#0D1A22;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#1A2E38;stop-opacity:1"/>
+            </linearGradient>
+            <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#1A3A4A;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#0D2030;stop-opacity:1"/>
+            </linearGradient>
+            <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#2A2218;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#1A1610;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <!-- sky -->
+          <rect x="0" y="0" width="720" height="100" fill="url(#skyGrad)"/>
+          <!-- stars -->
+          <circle cx="80" cy="20" r="1" fill="rgba(200,221,216,0.4)"/>
+          <circle cx="200" cy="14" r="1.2" fill="rgba(200,221,216,0.35)"/>
+          <circle cx="340" cy="8" r="0.8" fill="rgba(200,221,216,0.5)"/>
+          <circle cx="490" cy="18" r="1" fill="rgba(200,221,216,0.3)"/>
+          <circle cx="620" cy="10" r="1.2" fill="rgba(200,221,216,0.4)"/>
+          <circle cx="150" cy="35" r="0.7" fill="rgba(200,221,216,0.3)"/>
+          <circle cx="560" cy="30" r="0.8" fill="rgba(200,221,216,0.35)"/>
+          <!-- moon -->
+          <circle cx="640" cy="30" r="14" fill="#1A2E38"/>
+          <circle cx="633" cy="26" r="12" fill="#2A3E4A" opacity="0.6"/>
+          <path d="M640,18 Q656,30 640,42 Q630,36 630,30 Q630,22 640,18Z" fill="rgba(200,221,216,0.08)"/>
+          <!-- sea -->
+          <rect x="0" y="95" width="720" height="55" fill="url(#seaGrad)"/>
+          <!-- waves -->
+          <path d="M0,100 Q60,92 120,100 Q180,108 240,100 Q300,92 360,100 Q420,108 480,100 Q540,92 600,100 Q660,108 720,100" stroke="rgba(74,158,138,0.3)" stroke-width="1.5" fill="none"/>
+          <path d="M0,110 Q80,103 160,110 Q240,117 320,110 Q400,103 480,110 Q560,117 640,110 Q680,106 720,110" stroke="rgba(74,158,138,0.15)" stroke-width="1" fill="none"/>
+          <!-- foam at shoreline -->
+          <path d="M0,148 Q90,143 180,148 Q270,153 360,148 Q450,143 540,148 Q630,153 720,148" stroke="rgba(200,221,216,0.15)" stroke-width="2" fill="none"/>
+          <!-- sand -->
+          <rect x="0" y="150" width="720" height="50" fill="url(#sandGrad)"/>
+          <!-- sand texture dots -->
+          <circle cx="100" cy="165" r="1" fill="rgba(200,168,75,0.2)"/>
+          <circle cx="220" cy="172" r="0.8" fill="rgba(200,168,75,0.15)"/>
+          <circle cx="350" cy="168" r="1.2" fill="rgba(200,168,75,0.2)"/>
+          <circle cx="480" cy="175" r="0.8" fill="rgba(200,168,75,0.15)"/>
+          <circle cx="600" cy="163" r="1" fill="rgba(200,168,75,0.2)"/>
+
+          <!-- labelled objects with annotation lines -->
+          <!-- shell -->
+          <ellipse cx="160" cy="162" rx="14" ry="8" fill="rgba(200,168,75,0.15)" stroke="rgba(200,168,75,0.4)" stroke-width="1"/>
+          <path d="M160,154 Q168,158 160,162 Q152,158 160,154Z" fill="rgba(200,168,75,0.2)"/>
+          <line x1="160" y1="154" x2="160" y2="130" stroke="rgba(200,168,75,0.35)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="110" y="126" font-family="DM Mono,monospace" font-size="8" fill="#C8A84B">CaCO₃</text>
+          <text x="104" y="136" font-family="DM Mono,monospace" font-size="7" fill="rgba(200,168,75,0.5)">shell / limestone</text>
+
+          <!-- seaweed -->
+          <path d="M320,170 Q310,160 315,150 Q320,140 325,148 Q330,155 320,170Z" fill="rgba(74,158,138,0.25)" stroke="rgba(74,158,138,0.4)" stroke-width="0.8"/>
+          <path d="M326,168 Q318,158 322,148 Q327,140 332,148 Q336,158 326,168Z" fill="rgba(74,158,138,0.2)" stroke="rgba(74,158,138,0.3)" stroke-width="0.8"/>
+          <line x1="323" y1="148" x2="323" y2="118" stroke="rgba(74,158,138,0.35)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="280" y="114" font-family="DM Mono,monospace" font-size="8" fill="#4A9E8A">organic polymer</text>
+          <text x="274" y="124" font-family="DM Mono,monospace" font-size="7" fill="rgba(74,158,138,0.5)">cellulose / carrageenan</text>
+
+          <!-- rock with rust -->
+          <ellipse cx="500" cy="162" rx="22" ry="12" fill="rgba(192,80,80,0.12)" stroke="rgba(192,80,80,0.3)" stroke-width="1"/>
+          <ellipse cx="496" cy="160" rx="8" ry="5" fill="rgba(192,80,80,0.2)"/>
+          <line x1="500" y1="150" x2="500" y2="122" stroke="rgba(192,80,80,0.35)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="462" y="118" font-family="DM Mono,monospace" font-size="8" fill="#C05050">Fe₂O₃</text>
+          <text x="454" y="128" font-family="DM Mono,monospace" font-size="7" fill="rgba(192,80,80,0.5)">rust / spontaneous ΔG−</text>
+
+          <!-- sand label -->
+          <line x1="640" y1="168" x2="660" y2="140" stroke="rgba(200,221,216,0.2)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="632" y="136" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.5)">SiO₂</text>
+          <text x="622" y="146" font-family="DM Mono,monospace" font-size="7" fill="rgba(200,221,216,0.3)">sand / acidic oxide</text>
+
+          <!-- sea water label -->
+          <line x1="60" y1="115" x2="40" y2="90" stroke="rgba(74,158,138,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="8" y="86" font-family="DM Mono,monospace" font-size="8" fill="#4A9E8A">NaCl (aq)</text>
+          <text x="6" y="96" font-family="DM Mono,monospace" font-size="7" fill="rgba(74,158,138,0.5)">ionic compound</text>
+
+          <!-- dead jellyfish on sand -->
+          <ellipse cx="400" cy="170" rx="18" ry="7" fill="rgba(139,109,204,0.1)" stroke="rgba(139,109,204,0.25)" stroke-width="0.8"/>
+          <path d="M392,170 Q394,178 396,172" stroke="rgba(139,109,204,0.3)" stroke-width="0.7" fill="none"/>
+          <path d="M400,170 Q402,180 404,172" stroke="rgba(139,109,204,0.3)" stroke-width="0.7" fill="none"/>
+          <path d="M408,170 Q410,178 412,172" stroke="rgba(139,109,204,0.3)" stroke-width="0.7" fill="none"/>
+          <line x1="400" y1="163" x2="400" y2="118" stroke="rgba(139,109,204,0.3)" stroke-width="0.8" stroke-dasharray="3,2"/>
+          <text x="358" y="114" font-family="DM Mono,monospace" font-size="8" fill="#8B6DCC">protein + lipid</text>
+          <text x="350" y="124" font-family="DM Mono,monospace" font-size="7" fill="rgba(139,109,204,0.5)">decaying → crude (millions of yrs)</text>
+
+          <!-- N2 label in sky -->
+          <text x="290" y="48" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.25)">78% N₂ — inert, inaccessible, everywhere</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>Stand at the shoreline at night. The sand under your feet is <strong>silicon dioxide</strong> — SiO₂, an acidic oxide, the same compound that makes glass and computer chips. The water around your ankles is sodium chloride dissolved in water — <strong>NaCl(aq)</strong>, an ionic compound that formed when hydrochloric acid reacted with sodium hydroxide in geological time, the salt of a neutralisation nobody witnessed. The shells scattered along the tideline are <strong>calcium carbonate</strong> — CaCO₃, a base, slowly dissolving in the slightly acidic seawater. The rock face is streaked orange — <strong>iron(III) oxide</strong>, Fe₂O₃, rust, the spontaneous oxidation of iron that begins the moment the metal meets oxygen and water. The seaweed is a tangle of <strong>organic polymers</strong> — cellulose, carrageenan, proteins — condensation products built from simple monomers by the same reaction that makes nylon in a factory.</p>
+      <p>Above all of this, invisible and indifferent, the atmosphere is <strong>78% nitrogen gas</strong> — more nitrogen than anything else, and almost entirely unavailable. The bacteria in the wet sand are among the few things on earth that can break that N≡N triple bond and fix it into a usable form. The Haber process is humanity's industrial attempt to do what those bacteria do chemically — at scale, by force, using a catalyst and 200 atmospheres of pressure.</p>
+      <p>Now look at the dead jellyfish at the waterline. It is beginning to decay. Bacteria are breaking its proteins back into amino acids, its lipids back into fatty acids and glycerol, its carbohydrates back into sugars. Carbon dioxide returns to the air. Mineral ions leach back into the sand. The organic matter that remains will be buried. Over millions of years, heat and pressure will compress it. The hydrogen and carbon will reorganise into long hydrocarbon chains. What was a jellyfish will, eventually, become <strong>crude oil</strong>.</p>
+    </div>
+
+    <div class="compress">
+      <div class="compress-label">The Act 0 compression</div>
+      <div class="compress-text">The beach is not a place outside of chemistry. It is chemistry paused — every element, every compound class, every reaction type present simultaneously, waiting for the conditions to change.</div>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Sand (SiO₂)</strong> — acidic oxide. Reacts with strong alkalis. The source of silicon for semiconductors after purification.</li>
+      <li><strong>Seawater (NaCl aq)</strong> — ionic compound in solution. Electrolysis of brine → Cl₂ + NaOH + H₂. The chlor-alkali process starts here.</li>
+      <li><strong>Shells (CaCO₃)</strong> — basic salt. Dissolves in acid: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. The same reaction happens in acid rain.</li>
+      <li><strong>Rust (Fe₂O₃)</strong> — spontaneous oxidation. ΔG negative. The reverse of the blast furnace — iron returning to its ore form.</li>
+      <li><strong>Seaweed (organic polymer)</strong> — condensation product. Cellulose is a natural polyester of glucose. Every synthetic polymer mimics what biology already does.</li>
+      <li><strong>Dead organism</strong> — decay → organic matter → burial → compression → crude oil. The origin of every fossil fuel is a living thing that died and was not fully decomposed.</li>
+      <li><strong>Atmosphere (N₂, O₂, CO₂)</strong> — the inorganic reservoir. N₂ feeds the Haber process. O₂ enables combustion. CO₂ is the carbon source for all photosynthesis — and all organic chemistry began here.</li>
+    </ul>
+
+    <div class="compress violet">
+      <div class="compress-label">The loop that closes everything</div>
+      <div class="compress-text">Living things are made from atmospheric CO₂ and water. They die. They decay. Over millions of years they become crude oil. We extract and burn it. It returns to CO₂ and water. The carbon cycle is the chemistry cycle — and it runs whether we understand it or not.</div>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ACT 1 — THE CAST
+════════════════════════════════════════ -->
+<div id="act1" class="container">
+  <div class="act">
+    <div class="act-marker">Act One</div>
+    <h2 class="act-title">The Cast — <em>Elements as Personalities</em></h2>
+    <p class="act-deck">The periodic table is not a filing cabinet. It is a personality spectrum — from elements desperate to lose electrons to elements so satisfied they have never reacted with anything in recorded history.</p>
+
+    <div class="compress">
+      <div class="compress-label">The opening compression</div>
+      <div class="compress-text">Every element is either trying to give electrons away, trying to take them, or has decided the whole business is beneath it. That single instinct — give, take, or ignore — determines everything that follows.</div>
+    </div>
+
+    <div class="prose">
+      <p>The first great divide is <strong>metals vs nonmetals</strong>. Metals sit left and centre of the periodic table — they give electrons. Nonmetals sit right — they take them. The line between them is blurry by design: a diagonal strip of <em>metalloids</em> runs from boron to astatine, neither fully committed to either side, which is precisely why silicon runs every computer on earth.</p>
+      <p>But within each kingdom, personality varies enormously. Not all metals react the same way. Not all nonmetals want the same thing. The story gets interesting in the details.</p>
+    </div>
+
+    <!-- METALS SPECTRUM SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">The Metal Personality Spectrum — reactivity as a left-to-right gradient</div>
+      <div class="svg-panel-body">
+        <svg width="720" height="110" viewBox="0 0 720 110" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#C05050;stop-opacity:1"/>
+              <stop offset="28%" style="stop-color:#C8A84B;stop-opacity:1"/>
+              <stop offset="55%" style="stop-color:#4A9E8A;stop-opacity:1"/>
+              <stop offset="78%" style="stop-color:#8B6DCC;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#3A6478;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <!-- gradient bar -->
+          <rect x="20" y="40" width="680" height="10" rx="5" fill="url(#metalGrad)" opacity="0.7"/>
+          <!-- tick marks and labels -->
+          <!-- Alkali -->
+          <line x1="60" y1="38" x2="60" y2="55" stroke="#C05050" stroke-width="1.5"/>
+          <text x="60" y="32" font-family="DM Mono,monospace" font-size="10" fill="#C05050" text-anchor="middle">Group 1</text>
+          <text x="60" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Alkali</text>
+          <text x="60" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">Na, K, Li</text>
+          <!-- Alkaline earth -->
+          <line x1="180" y1="38" x2="180" y2="55" stroke="#C8A84B" stroke-width="1.5"/>
+          <text x="180" y="32" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Group 2</text>
+          <text x="180" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Alkaline Earth</text>
+          <text x="180" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">Mg, Ca, Ba</text>
+          <!-- Transition -->
+          <line x1="340" y1="38" x2="340" y2="55" stroke="#4A9E8A" stroke-width="1.5"/>
+          <text x="340" y="32" font-family="DM Mono,monospace" font-size="10" fill="#4A9E8A" text-anchor="middle">Period 3–4</text>
+          <text x="340" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Transition Metals</text>
+          <text x="340" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">Fe, Cu, Zn, Cr</text>
+          <!-- Metalloids -->
+          <line x1="500" y1="38" x2="500" y2="55" stroke="#8B6DCC" stroke-width="1.5"/>
+          <text x="500" y="32" font-family="DM Mono,monospace" font-size="10" fill="#8B6DCC" text-anchor="middle">Diagonal</text>
+          <text x="500" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Metalloids</text>
+          <text x="500" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">Si, Ge, As, B</text>
+          <!-- Noble/pure metals -->
+          <line x1="650" y1="38" x2="650" y2="55" stroke="#3A6478" stroke-width="1.5"/>
+          <text x="650" y="32" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Base → Noble</text>
+          <text x="650" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Pure Metals</text>
+          <text x="650" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">Au, Pt, Ag</text>
+          <!-- axis labels -->
+          <text x="20" y="105" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)">MOST REACTIVE</text>
+          <text x="600" y="105" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)">LEAST REACTIVE</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- METALS TABLE -->
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Group</th><th>Examples</th><th>Personality</th><th>Key exam fact</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Alkali metals</strong><br><span style="font-family:var(--mono);font-size:11px;color:var(--accent);">Group 1</span></td>
+            <td class="mono">Li, Na, K, Rb, Cs</td>
+            <td>Most reactive metals. One outer electron — desperate to give it away. React violently with water.</td>
+            <td class="trap">Reactivity increases DOWN the group. K reacts more violently than Na. Stored in oil.</td>
+          </tr>
+          <tr>
+            <td><strong>Alkaline earth</strong><br><span style="font-family:var(--mono);font-size:11px;color:var(--accent);">Group 2</span></td>
+            <td class="mono">Mg, Ca, Sr, Ba</td>
+            <td>Two outer electrons. Reactive but more controlled than Group 1. Form 2+ ions.</td>
+            <td class="note">Ca reacts with cold water; Mg reacts only with steam or dilute acid. Reactivity increases down.</td>
+          </tr>
+          <tr>
+            <td><strong>Transition metals</strong><br><span style="font-family:var(--mono);font-size:11px;color:var(--accent);">Period 4 / d-block</span></td>
+            <td class="mono">Fe, Cu, Zn, Cr, Mn, Ni</td>
+            <td>Variable oxidation states. Form coloured compounds. Act as catalysts. The industrial metals.</td>
+            <td class="gold">Fe²⁺ = pale green. Fe³⁺ = yellow/brown. Cu²⁺ = blue. These colours are direct JAMB questions.</td>
+          </tr>
+          <tr>
+            <td><strong>Metalloids</strong><br><span style="font-family:var(--mono);font-size:11px;color:var(--accent);">Diagonal strip</span></td>
+            <td class="mono">B, Si, Ge, As, Sb, Te</td>
+            <td>Semiconductors. Neither fully metal nor nonmetal. Conduct electricity under some conditions only.</td>
+            <td class="note">Silicon is the backbone of electronics. Arsenic and antimony are classic JAMB examples of metalloids.</td>
+          </tr>
+          <tr>
+            <td><strong>Noble/pure metals</strong><br><span style="font-family:var(--mono);font-size:11px;color:var(--accent);">Low reactivity</span></td>
+            <td class="mono">Au, Pt, Ag, Cu (partly)</td>
+            <td>Already at the bottom of the activity series. Resist corrosion. Occur native (uncombined) in nature.</td>
+            <td class="note">Gold occurs as the metal in ores — no reduction needed. This is why it was the first metal humanity used.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>Now for the other kingdom. Nonmetals are electron <em>takers</em> — but how badly they want electrons varies dramatically across three distinct tribes.</p>
+    </div>
+
+    <!-- NONMETALS SPECTRUM SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">The Nonmetal Spectrum — electronegativity as the axis</div>
+      <div class="svg-panel-body">
+        <svg width="680" height="130" viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="nonmetalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#3A6478;stop-opacity:1"/>
+              <stop offset="40%" style="stop-color:#4A9E8A;stop-opacity:1"/>
+              <stop offset="72%" style="stop-color:#C8A84B;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#C05050;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="40" width="640" height="10" rx="5" fill="url(#nonmetalGrad)" opacity="0.7"/>
+          <!-- Noble gases -->
+          <line x1="60" y1="38" x2="60" y2="55" stroke="#3A6478" stroke-width="1.5"/>
+          <text x="60" y="32" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Group 0/18</text>
+          <text x="60" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Noble Gases</text>
+          <text x="60" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">He, Ne, Ar, Kr</text>
+          <text x="60" y="98" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)" text-anchor="middle">Full shells. Never react.</text>
+          <!-- Pure nonmetals -->
+          <line x1="260" y1="38" x2="260" y2="55" stroke="#4A9E8A" stroke-width="1.5"/>
+          <text x="260" y="32" font-family="DM Mono,monospace" font-size="10" fill="#4A9E8A" text-anchor="middle">Groups 14–16</text>
+          <text x="260" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Pure Nonmetals</text>
+          <text x="260" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">C, N, O, S, P, H</text>
+          <text x="260" y="98" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)" text-anchor="middle">Atmosphere + organic world</text>
+          <!-- Halogens -->
+          <line x1="530" y1="38" x2="530" y2="55" stroke="#C05050" stroke-width="1.5"/>
+          <text x="530" y="32" font-family="DM Mono,monospace" font-size="10" fill="#C05050" text-anchor="middle">Group 17/VII</text>
+          <text x="530" y="72" font-family="DM Mono,monospace" font-size="9" fill="#C8DDD8" text-anchor="middle">Halogens</text>
+          <text x="530" y="84" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">F, Cl, Br, I, At</text>
+          <text x="530" y="98" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)" text-anchor="middle">One e⁻ short. Most reactive.</text>
+          <!-- axis -->
+          <text x="20" y="118" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)">LOW ELECTRONEGATIVITY / INERT</text>
+          <text x="490" y="118" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)">HIGH / REACTIVE</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="comma-list">
+      <div class="comma-label">The three nonmetal tribes — in one breath</div>
+      <div class="comma-text">
+        <strong>Noble gases</strong> (He, Ne, Ar, Kr, Xe) — full outer shells, zero valency, never react under normal conditions, used precisely because they don't interfere.
+        <strong>Pure nonmetals</strong> (C, N, O, S, P, H) — the building blocks of life, the atmosphere, and all organic chemistry — covalent bonds, shared electrons, molecular compounds.
+        <strong>Halogens</strong> (F, Cl, Br, I) — one electron short of a noble gas configuration, the most electronegative elements, displace each other in order: <em>F displaces Cl, Cl displaces Br, Br displaces I.</em>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Tribe</th><th>Members</th><th>Personality</th><th>Exam principle</th><th>Exception</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Noble gases</strong></td>
+            <td class="mono">He, Ne, Ar, Kr, Xe, Rn</td>
+            <td>Full outer shells. Zero valency. Monatomic. Used as inert atmospheres.</td>
+            <td class="note">Reactivity increases DOWN the group (Xe forms some compounds). Helium is lightest — used in balloons.</td>
+            <td class="trap">Xenon does form compounds (XeF₂, XeF₄) under extreme conditions. "Never react" is a simplification.</td>
+          </tr>
+          <tr>
+            <td><strong>Pure nonmetals</strong></td>
+            <td class="mono">C, N, O, S, P, H</td>
+            <td>Form covalent bonds. Multiple allotropes (carbon: diamond/graphite/fullerene). Basis of organic chemistry.</td>
+            <td class="note">Carbon's 4 bonding sites explain all organic chemistry. Nitrogen is 78% of air but nearly inert at room temp.</td>
+            <td class="trap">Carbon conducts electricity as graphite (delocalised electrons) but not as diamond. Same element, opposite properties.</td>
+          </tr>
+          <tr>
+            <td><strong>Halogens</strong></td>
+            <td class="mono">F, Cl, Br, I, At</td>
+            <td>Most reactive nonmetals. Diatomic molecules. Form −1 ions (halides). Reactivity decreases DOWN group.</td>
+            <td class="gold">Halogen displacement: Cl₂ + 2KBr → 2KCl + Br₂. More reactive halogen displaces less reactive one.</td>
+            <td class="trap">Reactivity decreases down (F most reactive) — opposite to metals, where reactivity increases down.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compress gold">
+      <div class="compress-label">The Act 1 principle</div>
+      <div class="compress-text">Metals want to lose electrons. Nonmetals want to gain them. Noble gases want neither. Everything in chemistry is just variations on this one exchange — who gives, who takes, and at what cost.</div>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ACT 2 — THE COMPOUNDS
+════════════════════════════════════════ -->
+<div id="act2" class="container">
+  <div class="act">
+    <div class="act-marker">Act Two</div>
+    <h2 class="act-title">The Compounds — <em>What Happens When Elements Meet</em></h2>
+    <p class="act-deck">Elements don't stay alone for long. The moment a metal meets a nonmetal, electrons transfer. The moment two nonmetals meet, electrons are shared. The resulting compounds divide neatly into two kingdoms — those trying to make salts, and those trying to avoid the whole conversation.</p>
+
+    <div class="compress violet">
+      <div class="compress-label">The Act 2 compression</div>
+      <div class="compress-text">Every compound is either a salt producer, a salt itself, or something that has found a way to remain neutral in a world that wants to force a reaction.</div>
+    </div>
+
+    <div class="prose">
+      <p>The <strong>salt-producer kingdom</strong> contains three characters: acids, bases, and their offspring — salts. Acids donate protons. Bases accept them. When they meet, they neutralise each other and produce a salt plus water. It's the most fundamental transaction in chemistry, and it happens in your stomach every time you eat.</p>
+      <p>But some compounds refuse to pick a side. <strong>Amphoteric</strong> substances react with both acids and bases — they're the diplomats of chemistry. And then there are compounds like CO₂ that don't form salts under ordinary conditions but lean acidic in water. The organic world — esters, alcohols, hydrocarbons — largely stays neutral, reacting through its own mechanisms that have nothing to do with proton transfer.</p>
+    </div>
+
+    <!-- AMPHOTERIC SVG — ZnO reacting both ways -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">Amphoteric behaviour — ZnO playing both sides</div>
+      <div class="svg-panel-body">
+        <svg width="640" height="140" viewBox="0 0 640 140" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrowG" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 Z" fill="#4A9E8A"/>
+            </marker>
+            <marker id="arrowR" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,0 L7,3.5 L0,7 Z" fill="#C05050"/>
+            </marker>
+          </defs>
+          <!-- centre: ZnO -->
+          <rect x="265" y="50" width="110" height="40" rx="4" fill="rgba(74,158,138,0.12)" stroke="#4A9E8A" stroke-width="1.5"/>
+          <text x="320" y="75" font-family="DM Mono,monospace" font-size="14" fill="#6DBFAA" text-anchor="middle" font-weight="500">ZnO</text>
+          <!-- left: acid side -->
+          <text x="80" y="60" font-family="DM Mono,monospace" font-size="11" fill="#C8DDD8" text-anchor="middle">+ HCl</text>
+          <text x="80" y="76" font-family="DM Mono,monospace" font-size="10" fill="rgba(200,221,216,0.45)" text-anchor="middle">(acid)</text>
+          <line x1="160" y1="70" x2="260" y2="70" stroke="#C05050" stroke-width="1.5" marker-end="url(#arrowG)"/>
+          <text x="205" y="62" font-family="DM Mono,monospace" font-size="9" fill="#C05050" text-anchor="middle">reacts as base</text>
+          <!-- left product -->
+          <text x="80" y="110" font-family="DM Mono,monospace" font-size="10" fill="#3DBF7A" text-anchor="middle">ZnCl₂ + H₂O</text>
+          <text x="80" y="124" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.3)" text-anchor="middle">zinc chloride (salt)</text>
+          <!-- right: base side -->
+          <text x="555" y="60" font-family="DM Mono,monospace" font-size="11" fill="#C8DDD8" text-anchor="middle">+ NaOH</text>
+          <text x="555" y="76" font-family="DM Mono,monospace" font-size="10" fill="rgba(200,221,216,0.45)" text-anchor="middle">(base)</text>
+          <line x1="380" y1="70" x2="500" y2="70" stroke="#C8A84B" stroke-width="1.5" marker-end="url(#arrowR)"/>
+          <text x="438" y="62" font-family="DM Mono,monospace" font-size="9" fill="#C8A84B" text-anchor="middle">reacts as acid</text>
+          <!-- right product -->
+          <text x="555" y="110" font-family="DM Mono,monospace" font-size="10" fill="#3DBF7A" text-anchor="middle">Na₂ZnO₂ + H₂O</text>
+          <text x="555" y="124" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.3)" text-anchor="middle">sodium zincate (salt)</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- SALT PRODUCERS ARROW LIST -->
+    <div class="arrow-list">
+      <li><strong>Acid</strong> — proton donor (H⁺ source). Strong acids fully dissociate: HCl, H₂SO₄, HNO₃. Weak acids partially dissociate: CH₃COOH, H₂CO₃.</li>
+      <li><strong>Base</strong> — proton acceptor. Soluble bases are alkalis: NaOH, KOH, Ca(OH)₂. All alkalis are bases; not all bases are alkalis.</li>
+      <li><strong>Neutralisation</strong> — Acid + Base → Salt + Water. The salt name = metal from base + anion from acid.</li>
+      <li><strong>Salt</strong> — ionic compound, product of neutralisation. NaCl, CuSO₄, Ca(NO₃)₂. Properties determined by constituent ions.</li>
+      <li><strong>Complex / Coordination compound</strong> — transition metal centre + ligands (electron donors). [Cu(NH₃)₄]²⁺ is deep blue. Formation is a ligand substitution, not a simple acid-base reaction.</li>
+    </div>
+
+    <!-- OXIDES CLASSIFICATION TABLE -->
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Oxide type</th><th>Examples</th><th>Behaviour</th><th>Reacts with</th><th>JAMB trap</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Basic oxides</strong></td>
+            <td class="mono">Na₂O, CaO, MgO, CuO, FeO</td>
+            <td>Metal oxides. React with acids to form salt + water. Bases in oxide form.</td>
+            <td class="note">Acids only. Na₂O + H₂SO₄ → Na₂SO₄ + H₂O</td>
+            <td class="note">CuO turns acid blue-green (Cu²⁺). Colour change confirms salt formation.</td>
+          </tr>
+          <tr>
+            <td><strong>Acidic oxides</strong></td>
+            <td class="mono">CO₂, SO₂, SO₃, NO₂, P₂O₅</td>
+            <td>Nonmetal oxides. React with bases/alkalis to form salt + water. Form acids in water.</td>
+            <td class="note">Bases only. CO₂ + 2NaOH → Na₂CO₃ + H₂O</td>
+            <td class="trap">CO₂ + H₂O → H₂CO₃ (carbonic acid). CO₂ is acidic, not neutral — common misconception.</td>
+          </tr>
+          <tr>
+            <td><strong>Amphoteric oxides</strong></td>
+            <td class="mono">Al₂O₃, ZnO, SnO, PbO</td>
+            <td>React with BOTH acids and bases. Metal oxides that behave like acids toward strong bases.</td>
+            <td class="gold">Both acids and bases. ZnO + HCl → ZnCl₂ + H₂O AND ZnO + NaOH → Na₂ZnO₂ + H₂O</td>
+            <td class="trap">Al₂O₃ is amphoteric — tested every year. Al(OH)₃ is also amphoteric. Both Al and Zn compounds are the canonical examples.</td>
+          </tr>
+          <tr>
+            <td><strong>Neutral oxides</strong></td>
+            <td class="mono">CO, H₂O, NO</td>
+            <td>React with neither acids nor bases under standard conditions. No salt formation.</td>
+            <td class="note">Neither. CO is a reducing agent — reacts with metal oxides but not acids/bases directly.</td>
+            <td class="trap">NO is neutral (not acidic) despite being a nonmetal oxide. NO₂ is acidic. Don't confuse them.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>The <strong>neutral kingdom</strong> is larger than it seems. Organic compounds — hydrocarbons, alcohols, esters, sugars — constitute the majority of all known compounds, and most of them sit outside the acid-base framework entirely. They react through their functional groups — addition, substitution, elimination, condensation, hydrolysis — not through proton transfer. This is why organic chemistry feels like a separate subject. It isn't. It's just the part of chemistry where carbon decided to do things its own way.</p>
+    </div>
+
+    <div class="comma-list">
+      <div class="comma-label">The neutral kingdom — compounds that refused to pick a side</div>
+      <div class="comma-text">
+        <strong>Amphoteric oxides</strong> (Al₂O₃, ZnO) — react with both acid and base, produce a salt either way, sit at the border of both kingdoms.
+        <strong>Acidic-leaning oxides in water</strong> (CO₂, SO₂) — not salts themselves, but dissolve in water to form weak acids; technically acidic oxides, not neutral.
+        <strong>True neutral oxides</strong> (CO, H₂O, NO) — react with neither acid nor base under standard conditions.
+        <strong>Organic compounds</strong> — the largest neutral class; react through functional groups, not proton exchange; the entire carbon world lives here.
+      </div>
+    </div>
+
+    <div class="compress">
+      <div class="compress-label">The Act 2 principle</div>
+      <div class="compress-text">Acids and bases are not opposites — they are partners. One cannot exist without the other to react with. And amphoteric compounds are not confused — they are simply more versatile than the binary framework allows.</div>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     ACT 3 — THE TRANSFORMATIONS
+════════════════════════════════════════ -->
+<div id="act3" class="container">
+  <div class="act">
+    <div class="act-marker">Act Three</div>
+    <h2 class="act-title">The Transformations — <em>From Rock to Everything</em></h2>
+    <p class="act-deck">Chemistry is not a collection of facts. It is a series of transformations — each compound the raw material for the next reaction, each reaction a step in a longer journey that began in the ground and ends in a fuel tank, a fertiliser bag, a hospital ward, or a plastic bottle.</p>
+
+    <div class="compress orange">
+      <div class="compress-label">The Act 3 compression</div>
+      <div class="compress-text">Every useful material humanity has ever made started as a mineral, an ore, or a gas. Chemistry is the art of transformation — from what the earth provides to what civilisation requires.</div>
+    </div>
+
+    <!-- THE BIG FLOW SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">The Grand Flow — mineral ore to polymer, one unbroken chain</div>
+      <div class="svg-panel-body">
+        <svg width="700" height="200" viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="flowArr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <path d="M0,1 L7,4 L0,7 Z" fill="#4A9E8A"/>
+            </marker>
+            <marker id="flowArrG" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <path d="M0,1 L7,4 L0,7 Z" fill="#C8A84B"/>
+            </marker>
+            <marker id="flowArrO" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <path d="M0,1 L7,4 L0,7 Z" fill="#C8784A"/>
+            </marker>
+          </defs>
+
+          <!-- Row 1: inorganic chain -->
+          <!-- node 1 -->
+          <rect x="10" y="20" width="90" height="44" rx="3" fill="rgba(74,158,138,0.1)" stroke="#4A9E8A" stroke-width="1.2"/>
+          <text x="55" y="40" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Mineral</text>
+          <text x="55" y="54" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">ore / rock</text>
+          <!-- arrow -->
+          <line x1="102" y1="42" x2="128" y2="42" stroke="#4A9E8A" stroke-width="1.5" marker-end="url(#flowArr)"/>
+          <text x="115" y="36" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.7)" text-anchor="middle">extract</text>
+          <!-- node 2 -->
+          <rect x="130" y="20" width="90" height="44" rx="3" fill="rgba(74,158,138,0.1)" stroke="#4A9E8A" stroke-width="1.2"/>
+          <text x="175" y="40" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Pure</text>
+          <text x="175" y="54" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">metal / element</text>
+          <!-- arrow -->
+          <line x1="222" y1="42" x2="248" y2="42" stroke="#4A9E8A" stroke-width="1.5" marker-end="url(#flowArr)"/>
+          <text x="235" y="36" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.7)" text-anchor="middle">react</text>
+          <!-- node 3 -->
+          <rect x="250" y="20" width="90" height="44" rx="3" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.2"/>
+          <text x="295" y="40" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Salt / Acid</text>
+          <text x="295" y="54" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">base / oxide</text>
+          <!-- arrow -->
+          <line x1="342" y1="42" x2="368" y2="42" stroke="#C8A84B" stroke-width="1.5" marker-end="url(#flowArrG)"/>
+          <text x="355" y="36" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,168,75,0.7)" text-anchor="middle">use</text>
+          <!-- node 4 -->
+          <rect x="370" y="20" width="90" height="44" rx="3" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.2"/>
+          <text x="415" y="40" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Industrial</text>
+          <text x="415" y="54" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">chemical</text>
+          <!-- arrow -->
+          <line x1="462" y1="42" x2="488" y2="42" stroke="#C8A84B" stroke-width="1.5" marker-end="url(#flowArrG)"/>
+          <!-- node 5 -->
+          <rect x="490" y="20" width="90" height="44" rx="3" fill="rgba(200,120,74,0.1)" stroke="#C8784A" stroke-width="1.2"/>
+          <text x="535" y="40" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Alloy /</text>
+          <text x="535" y="54" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">material</text>
+          <!-- arrow -->
+          <line x1="582" y1="42" x2="608" y2="42" stroke="#C8784A" stroke-width="1.5" marker-end="url(#flowArrO)"/>
+          <!-- node 6 -->
+          <rect x="610" y="20" width="80" height="44" rx="3" fill="rgba(200,120,74,0.1)" stroke="#C8784A" stroke-width="1.2"/>
+          <text x="650" y="40" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Product</text>
+          <text x="650" y="54" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.45)" text-anchor="middle">use / recycle</text>
+
+          <!-- divider -->
+          <line x1="10" y1="90" x2="690" y2="90" stroke="rgba(200,221,216,0.06)" stroke-width="1"/>
+
+          <!-- Row 2: organic / petroleum chain -->
+          <rect x="10" y="110" width="90" height="44" rx="3" fill="rgba(74,158,138,0.08)" stroke="#2A6E5E" stroke-width="1.2"/>
+          <text x="55" y="130" font-family="DM Mono,monospace" font-size="10" fill="#4A9E8A" text-anchor="middle">Crude oil</text>
+          <text x="55" y="144" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">natural gas</text>
+          <!-- arrow -->
+          <line x1="102" y1="132" x2="128" y2="132" stroke="#4A9E8A" stroke-width="1.5" marker-end="url(#flowArr)"/>
+          <text x="115" y="126" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.7)" text-anchor="middle">distil</text>
+          <rect x="130" y="110" width="90" height="44" rx="3" fill="rgba(74,158,138,0.08)" stroke="#2A6E5E" stroke-width="1.2"/>
+          <text x="175" y="130" font-family="DM Mono,monospace" font-size="10" fill="#4A9E8A" text-anchor="middle">Fraction</text>
+          <text x="175" y="144" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">alkane / naphtha</text>
+          <line x1="222" y1="132" x2="248" y2="132" stroke="#4A9E8A" stroke-width="1.5" marker-end="url(#flowArr)"/>
+          <text x="235" y="126" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.7)" text-anchor="middle">crack</text>
+          <rect x="250" y="110" width="90" height="44" rx="3" fill="rgba(200,168,75,0.08)" stroke="#9A7830" stroke-width="1.2"/>
+          <text x="295" y="130" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Alkene</text>
+          <text x="295" y="144" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">ethene, propene</text>
+          <line x1="342" y1="132" x2="368" y2="132" stroke="#C8A84B" stroke-width="1.5" marker-end="url(#flowArrG)"/>
+          <text x="355" y="126" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,168,75,0.7)" text-anchor="middle">polymerise</text>
+          <rect x="370" y="110" width="90" height="44" rx="3" fill="rgba(200,168,75,0.08)" stroke="#9A7830" stroke-width="1.2"/>
+          <text x="415" y="130" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Polymer</text>
+          <text x="415" y="144" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">PE, PP, PVC</text>
+          <line x1="462" y1="132" x2="488" y2="132" stroke="#C8784A" stroke-width="1.5" marker-end="url(#flowArrO)"/>
+          <text x="475" y="126" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,120,74,0.7)" text-anchor="middle">process</text>
+          <rect x="490" y="110" width="90" height="44" rx="3" fill="rgba(200,120,74,0.08)" stroke="#8A5030" stroke-width="1.2"/>
+          <text x="535" y="130" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Derivative</text>
+          <text x="535" y="144" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">ester / alcohol</text>
+          <line x1="582" y1="132" x2="608" y2="132" stroke="#C8784A" stroke-width="1.5" marker-end="url(#flowArrO)"/>
+          <rect x="610" y="110" width="80" height="44" rx="3" fill="rgba(200,120,74,0.08)" stroke="#8A5030" stroke-width="1.2"/>
+          <text x="650" y="130" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Medicine /</text>
+          <text x="650" y="144" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">fuel / fibre</text>
+
+          <!-- labels left -->
+          <text x="5" y="106" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.5)">INORGANIC CHAIN →</text>
+          <text x="5" y="198" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.5)">ORGANIC CHAIN →</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- CHAIN 1: MINERAL TO METAL -->
+    <div class="prose">
+      <p>The first chain begins underground. <strong>Mineral ores</strong> are compounds — oxides, sulphides, carbonates — in which metals are locked by ionic bonds. To extract the metal, those bonds must be broken. How you break them depends entirely on where the metal sits in the reactivity series.</p>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Very reactive metals</strong> (K, Na, Ca, Mg, Al) — cannot be reduced by carbon or hydrogen. Require <em>electrolysis</em> of the molten ore. Al is extracted from molten Al₂O₃ (bauxite) in the Hall-Héroult process. Enormous energy cost — hence aluminium's historical expense.</li>
+      <li><strong>Moderately reactive metals</strong> (Zn, Fe, Ni, Pb, Sn) — reduced by carbon (coke) or carbon monoxide in a blast furnace. Fe₂O₃ + 3CO → 2Fe + 3CO₂. Carbon is the reducing agent — it takes oxygen away from the metal oxide.</li>
+      <li><strong>Low reactivity metals</strong> (Cu) — partially by reduction, partially by electrolytic refining. Raw copper is cast as anode; pure copper deposits on cathode.</li>
+      <li><strong>Noble metals</strong> (Au, Ag, Pt) — occur native. No extraction chemistry needed. Physical separation (panning, smelting) suffices.</li>
+    </ul>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Metal</th><th>Ore</th><th>Extraction method</th><th>Key reaction</th><th>Industrial name</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Iron</strong></td><td class="mono">Haematite (Fe₂O₃)</td><td>Blast furnace — carbon reduction</td><td class="mono">Fe₂O₃ + 3CO → 2Fe + 3CO₂</td><td class="note">Blast furnace. CO is the reducing agent, formed from coke + hot air.</td></tr>
+          <tr><td><strong>Aluminium</strong></td><td class="mono">Bauxite (Al₂O₃)</td><td>Electrolysis of molten Al₂O₃</td><td class="mono">Al³⁺ + 3e⁻ → Al (cathode)</td><td class="note">Hall-Héroult process. Cryolite lowers melting point.</td></tr>
+          <tr><td><strong>Copper</strong></td><td class="mono">Chalcopyrite (CuFeS₂)</td><td>Roasting + reduction + electrolytic refining</td><td class="mono">Cu²⁺ + 2e⁻ → Cu (cathode)</td><td class="note">Electrolytic refining gives 99.99% pure Cu.</td></tr>
+          <tr><td><strong>Zinc</strong></td><td class="mono">Sphalerite (ZnS)</td><td>Roasting then carbon reduction</td><td class="mono">2ZnS + 3O₂ → 2ZnO + 2SO₂</td><td class="trap">SO₂ is a by-product — acid rain precursor. Industrial pollution link.</td></tr>
+          <tr><td><strong>Sodium</strong></td><td class="mono">Brine / Rock salt (NaCl)</td><td>Electrolysis of molten NaCl or brine</td><td class="mono">Na⁺ + e⁻ → Na (cathode)</td><td class="gold">Downs cell (molten NaCl). Chlor-alkali process (brine). Both produce Cl₂ as by-product.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHAIN 2: AIR TO FERTILISER -->
+    <div class="prose">
+      <p>The second transformation is perhaps the most consequential in human history. <strong>Nitrogen gas</strong> makes up 78% of the atmosphere — and yet for most of history, it was completely inaccessible to plants and therefore to agriculture. The Haber process, developed in 1909, changed this. It is not an exaggeration to say it feeds half the world's population today.</p>
+    </div>
+
+    <div class="compress gold">
+      <div class="compress-label">The Haber compression</div>
+      <div class="compress-text">Nitrogen is everywhere and unavailable. Haber made it available. The atoms in half of all human beings alive today passed through a Haber plant.</div>
+    </div>
+
+    <ul class="arrow-list gold">
+      <li><strong>Haber Process</strong> — N₂ + 3H₂ ⇌ 2NH₃. Conditions: 450°C, 200 atm, iron catalyst. Reversible — equilibrium position is the challenge.</li>
+      <li><strong>Le Chatelier applied</strong> — high pressure favours the forward reaction (4 moles gas → 2 moles gas). High temperature favours reverse (exothermic forward). 450°C is the industrial compromise: fast enough rate, acceptable yield.</li>
+      <li><strong>Ostwald Process</strong> — converts ammonia to nitric acid. NH₃ → NO → NO₂ → HNO₃. Platinum-rhodium catalyst. Produces the acid used in fertilisers and explosives.</li>
+      <li><strong>Fertiliser chain</strong> — NH₃ + HNO₃ → NH₄NO₃ (ammonium nitrate, high-nitrogen fertiliser). Or NH₃ + H₂SO₄ → (NH₄)₂SO₄ (ammonium sulphate).</li>
+      <li><strong>Hydrogen source</strong> — H₂ for Haber comes from the steam reforming of natural gas: CH₄ + H₂O → CO + 3H₂. So the fertiliser chain begins with fossil fuels — a carbon footprint buried in every crop.</li>
+    </ul>
+
+    <!-- CHAIN 3: CRUDE TO POLYMER -->
+    <div class="prose">
+      <p>The third transformation begins with <strong>crude oil</strong> — a mixture of thousands of hydrocarbons formed over millions of years from compressed organic matter. Crude oil is useless as it comes out of the ground. The refinery is where chemistry begins.</p>
+      <p><strong>Fractional distillation</strong> separates crude oil by boiling point, which is a proxy for carbon chain length. Short chains (C₁–C₄) vaporise first and exit at the top of the column. Long chains (C₃₀+) never fully vaporise and are collected as bitumen from the bottom. Each fraction has a specific industrial destiny.</p>
+    </div>
+
+    <ul class="arrow-list orange">
+      <li><strong>Fractional distillation</strong> — crude oil heated to ~350°C; vapours condense at different heights in the column. Shorter chain = lower boiling point = higher exit point.</li>
+      <li><strong>Cracking</strong> — long-chain alkanes (low demand) are broken into short-chain alkenes (high demand). C₁₀H₂₂ → C₄H₈ + C₃H₆ + CH₄. Thermal cracking (high temp/pressure) or catalytic cracking (zeolite catalyst, lower temp).</li>
+      <li><strong>Why cracking matters</strong> — alkenes are the feedstock for almost all organic synthesis. Without cracking, there is no ethene, no polyethylene, no PVC, no polypropylene. The plastic world depends on it.</li>
+      <li><strong>Addition polymerisation</strong> — alkene monomers open their C=C double bonds and link end-to-end. nCH₂=CH₂ → (−CH₂−CH₂−)ₙ. No by-product. Polyethylene (PE), polypropylene (PP), PVC, polystyrene all made this way.</li>
+      <li><strong>Condensation polymerisation</strong> — monomers with two functional groups join and eliminate small molecules (H₂O or HCl). Nylon: diamine + diacid → polyamide + H₂O. Polyester (Terylene): diol + diacid → polyester + H₂O.</li>
+      <li><strong>End of the chain</strong> — polymer → plastic goods → (disposal problem: non-biodegradable) OR pharmaceutical synthesis → drug → patient → metabolism → excretion.</li>
+    </ul>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Polymer</th><th>Monomer</th><th>Type</th><th>Use</th><th>Exam link</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Polyethylene (PE)</strong></td><td class="mono">Ethene CH₂=CH₂</td><td>Addition</td><td>Plastic bags, bottles</td><td class="note">High density (HDPE) and low density (LDPE) versions — different conditions, different properties.</td></tr>
+          <tr><td><strong>Polypropylene (PP)</strong></td><td class="mono">Propene CH₂=CHCH₃</td><td>Addition</td><td>Ropes, containers, carpet</td><td class="note">Stronger than PE. Ziegler-Natta catalyst at lower temperatures.</td></tr>
+          <tr><td><strong>PVC</strong></td><td class="mono">Chloroethene CH₂=CHCl</td><td>Addition</td><td>Pipes, flooring, cables</td><td class="trap">Chlorine from electrolysis of brine (Cl₂) + ethene → chloroethene. Inorganic meets organic.</td></tr>
+          <tr><td><strong>Nylon-6,6</strong></td><td class="mono">Hexanedioic acid + hexane-1,6-diamine</td><td>Condensation</td><td>Textiles, ropes, toothbrush bristles</td><td class="gold">Water eliminated per linkage. Amide bond (−CONH−) formed. Proteins are natural polyamides.</td></tr>
+          <tr><td><strong>Polyester (Terylene)</strong></td><td class="mono">Ethane-1,2-diol + benzene-1,4-dicarboxylic acid</td><td>Condensation</td><td>Clothing, bottles (PET)</td><td class="note">Ester bond (−COO−) formed. Water eliminated. Hydrolysis reverses it — biodegradation pathway.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- THE CONNECTED STORY SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">Three chains — one connected chemistry</div>
+      <div class="svg-panel-body">
+        <svg width="680" height="180" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="bigArr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <path d="M0,1 L7,4 L0,7 Z" fill="#6DBFAA"/>
+            </marker>
+          </defs>
+          <!-- three starting nodes -->
+          <rect x="10" y="20" width="110" height="38" rx="3" fill="rgba(74,158,138,0.12)" stroke="#4A9E8A" stroke-width="1.2"/>
+          <text x="65" y="36" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Mineral Ore</text>
+          <text x="65" y="50" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">Fe₂O₃, Al₂O₃, NaCl</text>
+
+          <rect x="10" y="80" width="110" height="38" rx="3" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.2"/>
+          <text x="65" y="96" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Atmosphere</text>
+          <text x="65" y="110" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">N₂ (78%), O₂, CO₂</text>
+
+          <rect x="10" y="140" width="110" height="38" rx="3" fill="rgba(200,120,74,0.1)" stroke="#C8784A" stroke-width="1.2"/>
+          <text x="65" y="156" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Crude Oil</text>
+          <text x="65" y="170" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">fossil hydrocarbon mix</text>
+
+          <!-- converge arrows -->
+          <line x1="122" y1="39" x2="190" y2="89" stroke="#4A9E8A" stroke-width="1.3" marker-end="url(#bigArr)"/>
+          <line x1="122" y1="99" x2="190" y2="96" stroke="#C8A84B" stroke-width="1.3" marker-end="url(#bigArr)"/>
+          <line x1="122" y1="159" x2="190" y2="104" stroke="#C8784A" stroke-width="1.3" marker-end="url(#bigArr)"/>
+
+          <!-- central node -->
+          <rect x="192" y="72" width="120" height="44" rx="4" fill="rgba(74,158,138,0.15)" stroke="#6DBFAA" stroke-width="1.8"/>
+          <text x="252" y="91" font-family="DM Mono,monospace" font-size="11" fill="#C8DDD8" text-anchor="middle" font-weight="500">Chemistry</text>
+          <text x="252" y="106" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.5)" text-anchor="middle">extraction · synthesis · reaction</text>
+
+          <!-- diverge arrows to products -->
+          <line x1="314" y1="89" x2="380" y2="48" stroke="#6DBFAA" stroke-width="1.3" marker-end="url(#bigArr)"/>
+          <line x1="314" y1="94" x2="380" y2="94" stroke="#6DBFAA" stroke-width="1.3" marker-end="url(#bigArr)"/>
+          <line x1="314" y1="99" x2="380" y2="144" stroke="#6DBFAA" stroke-width="1.3" marker-end="url(#bigArr)"/>
+
+          <!-- output nodes -->
+          <rect x="382" y="25" width="120" height="38" rx="3" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.2"/>
+          <text x="442" y="41" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Metals + Alloys</text>
+          <text x="442" y="55" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">steel, aluminium, bronze</text>
+
+          <rect x="382" y="75" width="120" height="38" rx="3" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.2"/>
+          <text x="442" y="91" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Fertilisers + Acids</text>
+          <text x="442" y="105" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">NH₄NO₃, HNO₃, H₂SO₄</text>
+
+          <rect x="382" y="126" width="120" height="38" rx="3" fill="rgba(200,120,74,0.1)" stroke="#C8784A" stroke-width="1.2"/>
+          <text x="442" y="142" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Polymers + Fuels</text>
+          <text x="442" y="156" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">PE, PVC, petrol, nylon</text>
+
+          <!-- final arrows -->
+          <line x1="504" y1="44" x2="555" y2="64" stroke="#C8A84B" stroke-width="1.2" marker-end="url(#bigArr)"/>
+          <line x1="504" y1="94" x2="555" y2="84" stroke="#C8A84B" stroke-width="1.2" marker-end="url(#bigArr)"/>
+          <line x1="504" y1="145" x2="555" y2="104" stroke="#C8784A" stroke-width="1.2" marker-end="url(#bigArr)"/>
+
+          <rect x="557" y="60" width="118" height="48" rx="4" fill="rgba(74,158,138,0.08)" stroke="#2A6E5E" stroke-width="1.5"/>
+          <text x="616" y="79" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Civilisation</text>
+          <text x="616" y="93" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">food · medicine</text>
+          <text x="616" y="104" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.4)" text-anchor="middle">infrastructure · energy</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>These three chains do not operate independently. <strong>The chlor-alkali process</strong> electrolyses brine to produce Cl₂ and NaOH simultaneously — and that Cl₂ becomes the chlorine in PVC, connecting the inorganic extraction chain directly to the polymer chain. <strong>Sulphuric acid</strong>, produced industrially by the Contact process (SO₂ → SO₃ → H₂SO₄), is used in fertiliser production, metal refining, and petroleum refining — it touches all three chains at once. It is the single most produced industrial chemical in the world for this reason.</p>
+      <p>And at the very end of the organic chain, where polymers meet biology, lies the most elegant transformation of all: <strong>proteins are natural polyamides</strong>, DNA is a natural polymer, and the enzymes that drive every metabolic reaction are themselves the products of condensation polymerisation — the same fundamental bond-forming mechanism that makes nylon. The chemistry does not change. Only the monomer does.</p>
+    </div>
+
+    <div class="compress">
+      <div class="compress-label">The closing compression</div>
+      <div class="compress-text">There is no boundary between inorganic and organic chemistry. There is no wall between the laboratory and the living cell. There is only the same small set of reactions — transfer, share, oxidise, reduce, condense, hydrolyse — applied across an infinite range of materials, at every scale from atom to atmosphere.</div>
+    </div>
+
+    <div class="footnote">
+      <div class="footnote-label">Why this matters for UTME</div>
+      <p>Every topic in this article maps to at least one recurring JAMB question. Reactivity series → extraction method. Oxide type → acid/base reaction. Amphoteric compounds → Al and Zn. Haber process → Le Chatelier (temperature/pressure). Cracking → why alkenes and not alkanes are the feedstock. Addition vs condensation polymerisation → by-products. The connections in this article are not incidental — they are exactly the connections JAMB expects you to make across topics in a single question.</p>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     THE BRIDGE — THE BIG 3 REACTIONS
+════════════════════════════════════════ -->
+<div id="bridge" class="container">
+  <div class="act">
+    <div class="act-marker">The Bridge</div>
+    <h2 class="act-title">The Big Three — <em>Every Reaction is One of These</em></h2>
+    <p class="act-deck">Strip away every reaction in every chapter of this article and you find the same three types underneath. Not five, not twenty — three. The entire machinery of chemistry runs on spontaneous reactions, thermodynamic reactions, and electrolytic reactions. They are defined by a single number: ΔG.</p>
+
+    <div class="compress">
+      <div class="compress-label">The bridge compression</div>
+      <div class="compress-text">ΔG negative: nature pays. ΔG positive: you must pay. ΔG forced by electricity: you override nature entirely. Every reaction ever written fits one of these three sentences.</div>
+    </div>
+
+    <!-- BIG 3 SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">The Big 3 — positioned by ΔG and energy source</div>
+      <div class="svg-panel-body">
+        <svg width="680" height="210" viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="b3arr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,1 L6,3.5 L0,6 Z" fill="#4A9E8A"/>
+            </marker>
+            <marker id="b3arrG" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,1 L6,3.5 L0,6 Z" fill="#C8A84B"/>
+            </marker>
+            <marker id="b3arrV" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,1 L6,3.5 L0,6 Z" fill="#8B6DCC"/>
+            </marker>
+          </defs>
+
+          <!-- ΔG axis -->
+          <line x1="30" y1="105" x2="650" y2="105" stroke="rgba(200,221,216,0.15)" stroke-width="1"/>
+          <text x="30" y="100" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)">ΔG −ve</text>
+          <text x="560" y="100" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.3)">ΔG +ve</text>
+          <text x="295" y="100" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.2)">ΔG = 0 (equilibrium)</text>
+
+          <!-- BOX 1: Spontaneous -->
+          <rect x="20" y="18" width="180" height="74" rx="4" fill="rgba(74,158,138,0.1)" stroke="#4A9E8A" stroke-width="1.5"/>
+          <text x="110" y="38" font-family="DM Mono,monospace" font-size="11" fill="#6DBFAA" text-anchor="middle" font-weight="500">SPONTANEOUS</text>
+          <text x="110" y="52" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.5)" text-anchor="middle">ΔG negative</text>
+          <text x="110" y="64" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.6)" text-anchor="middle">nature pays freely</text>
+          <text x="110" y="76" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.35)" text-anchor="middle">rusting · burning · neutralisation</text>
+          <text x="110" y="86" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.35)" text-anchor="middle">galvanic cell · decay · combustion</text>
+          <!-- arrow down to axis -->
+          <line x1="110" y1="93" x2="110" y2="103" stroke="#4A9E8A" stroke-width="1" marker-end="url(#b3arr)"/>
+
+          <!-- BOX 2: Thermodynamic -->
+          <rect x="250" y="18" width="180" height="74" rx="4" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.5"/>
+          <text x="340" y="38" font-family="DM Mono,monospace" font-size="11" fill="#C8A84B" text-anchor="middle" font-weight="500">THERMODYNAMIC</text>
+          <text x="340" y="52" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.5)" text-anchor="middle">ΔG managed by heat/pressure</text>
+          <text x="340" y="64" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,168,75,0.6)" text-anchor="middle">equilibrium-driven — reversible</text>
+          <text x="340" y="76" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.35)" text-anchor="middle">Haber · blast furnace · cracking</text>
+          <text x="340" y="86" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.35)" text-anchor="middle">esterification · photosynthesis</text>
+          <line x1="340" y1="93" x2="340" y2="103" stroke="#C8A84B" stroke-width="1" marker-end="url(#b3arrG)"/>
+
+          <!-- BOX 3: Electrolytic -->
+          <rect x="480" y="18" width="180" height="74" rx="4" fill="rgba(139,109,204,0.1)" stroke="#8B6DCC" stroke-width="1.5"/>
+          <text x="570" y="38" font-family="DM Mono,monospace" font-size="11" fill="#BFA0FF" text-anchor="middle" font-weight="500">ELECTROLYTIC</text>
+          <text x="570" y="52" font-family="DM Mono,monospace" font-size="9" fill="rgba(200,221,216,0.5)" text-anchor="middle">ΔG forced positive → negative</text>
+          <text x="570" y="64" font-family="DM Mono,monospace" font-size="8" fill="rgba(139,109,204,0.6)" text-anchor="middle">electricity overrides nature</text>
+          <text x="570" y="76" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.35)" text-anchor="middle">Al extraction · Cu refining</text>
+          <text x="570" y="86" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.35)" text-anchor="middle">chlor-alkali · Na extraction</text>
+          <line x1="570" y1="93" x2="570" y2="103" stroke="#8B6DCC" stroke-width="1" marker-end="url(#b3arrV)"/>
+
+          <!-- connection arrows between boxes -->
+          <!-- spontaneous generates electricity -->
+          <path d="M200,55 Q225,55 225,150 Q225,170 250,170 Q320,170 320,150 Q320,130 250,130" stroke="rgba(74,158,138,0.3)" stroke-width="1" fill="none" stroke-dasharray="4,3" marker-end="url(#b3arr)"/>
+          <text x="195" y="175" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.5)">spontaneous rxn → generates electricity (battery/galvanic cell)</text>
+
+          <!-- electrolytic reverses spontaneous -->
+          <path d="M480,55 Q460,55 460,190 Q460,200 340,200 Q220,200 220,190 Q220,180 200,175" stroke="rgba(139,109,204,0.25)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+          <text x="280" y="196" font-family="DM Mono,monospace" font-size="8" fill="rgba(139,109,204,0.4)">electrolysis reverses spontaneous reactions (Al₂O₃ → Al)</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The relationship between the three is precise. <strong>Spontaneous reactions</strong> release free energy — ΔG is negative, the reaction proceeds without external input. Combustion, neutralisation, rusting, the discharge of a battery: all spontaneous. The free energy released can be captured as heat (a furnace) or as electricity (a galvanic cell). This is what a battery is — a spontaneous redox reaction arranged so that electrons travel through a wire rather than jumping directly between reactants.</p>
+      <p><strong>Thermodynamic reactions</strong> are the managed middle ground. They are often reversible — sitting at or near equilibrium — and their direction is controlled by adjusting temperature, pressure, and concentration. The Haber process is endothermic in reverse and exothermic in the forward direction. By setting the temperature to 450°C and the pressure to 200 atm, engineers shift the equilibrium toward products while maintaining a rate fast enough to be industrial. ΔG is being managed, not eliminated. Le Chatelier's principle is the rule that describes how equilibrium responds to every adjustment.</p>
+      <p><strong>Electrolytic reactions</strong> are forced reactions — non-spontaneous processes made to run by applying external electrical energy. To extract aluminium from Al₂O₃, you are forcing the reverse of the spontaneous oxidation of aluminium — you are using electricity to undo what nature did. The minimum voltage required is set by the ΔG of the spontaneous reaction you are reversing. The higher the ΔG of the natural process, the more energy electrolysis demands. This is why sodium and aluminium are so energy-expensive to produce, and why gold costs almost nothing to refine — gold's oxidation is barely spontaneous to begin with.</p>
+    </div>
+
+    <!-- BRIDGE TABLE -->
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>ΔG sign</th><th>Energy direction</th><th>Industrial examples</th><th>Everyday examples</th><th>JAMB link</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Spontaneous</strong></td>
+            <td class="mono">− (negative)</td>
+            <td>Energy released to surroundings</td>
+            <td class="note">Combustion engines, galvanic cells, blast furnace (CO oxidation step)</td>
+            <td class="note">Rusting, burning, acid on metal, battery discharging, decay</td>
+            <td class="gold">ΔG = ΔH − TΔS. Spontaneous when ΔG &lt; 0. Connected to enthalpy and entropy topic.</td>
+          </tr>
+          <tr>
+            <td><strong>Thermodynamic</strong></td>
+            <td class="mono">≈ 0 (managed)</td>
+            <td>Energy input maintains equilibrium position</td>
+            <td class="note">Haber (N₂+H₂→NH₃), Contact process (SO₂→SO₃), cracking, esterification</td>
+            <td class="note">Photosynthesis (endothermic), cooking, dissolving, evaporation</td>
+            <td class="gold">Le Chatelier's principle governs all thermodynamic industrial reactions. K changes only with T.</td>
+          </tr>
+          <tr>
+            <td><strong>Electrolytic</strong></td>
+            <td class="mono">+ (forced)</td>
+            <td>Electrical energy drives non-spontaneous reaction</td>
+            <td class="note">Hall-Héroult (Al), Downs cell (Na), chlor-alkali (brine), Cu refining</td>
+            <td class="note">Electroplating, charging a battery, electrolysis of water</td>
+            <td class="gold">Faraday's laws. Q = It, n(e⁻) = Q/F. More reactive metal = higher energy cost to extract.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compress gold">
+      <div class="compress-label">The connection that closes the loop</div>
+      <div class="compress-text">Iron rusts spontaneously — ΔG negative, returning to Fe₂O₃. The blast furnace reverses this thermodynamically — heat-driven, equilibrium-managed, requiring constant fuel. Aluminium also oxidises spontaneously — but its oxide layer is protective, not destructive. To extract Al from Al₂O₃, electrolysis must force the reversal electrically. Three metals, three different relationships with ΔG, three different extraction methods. The periodic table is a map of how much energy nature spent making compounds — and how much energy we must spend to undo them.</div>
+    </div>
+
+    <!-- DECAY LOOP SVG -->
+    <div class="svg-panel">
+      <div class="svg-panel-head">The decay loop — from living thing to crude oil and back</div>
+      <div class="svg-panel-body">
+        <svg width="640" height="220" viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="loopArr" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,1 L6,3.5 L0,6 Z" fill="#4A9E8A"/>
+            </marker>
+            <marker id="loopArrG" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,1 L6,3.5 L0,6 Z" fill="#C8A84B"/>
+            </marker>
+            <marker id="loopArrO" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+              <path d="M0,1 L6,3.5 L0,6 Z" fill="#C8784A"/>
+            </marker>
+          </defs>
+
+          <!-- circular layout: 6 nodes -->
+          <!-- node 1: CO2 + H2O (top centre) -->
+          <rect x="250" y="10" width="140" height="36" rx="3" fill="rgba(74,158,138,0.1)" stroke="#4A9E8A" stroke-width="1.2"/>
+          <text x="320" y="26" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">CO₂ + H₂O</text>
+          <text x="320" y="38" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.4)" text-anchor="middle">atmosphere</text>
+
+          <!-- node 2: living organism (top right) -->
+          <rect x="480" y="55" width="140" height="36" rx="3" fill="rgba(74,158,138,0.1)" stroke="#4A9E8A" stroke-width="1.2"/>
+          <text x="550" y="71" font-family="DM Mono,monospace" font-size="10" fill="#6DBFAA" text-anchor="middle">Living organism</text>
+          <text x="550" y="83" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.4)" text-anchor="middle">protein · lipid · polymer</text>
+
+          <!-- node 3: dead/decay (bottom right) -->
+          <rect x="480" y="148" width="140" height="36" rx="3" fill="rgba(139,109,204,0.1)" stroke="#8B6DCC" stroke-width="1.2"/>
+          <text x="550" y="164" font-family="DM Mono,monospace" font-size="10" fill="#BFA0FF" text-anchor="middle">Death + decay</text>
+          <text x="550" y="176" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.4)" text-anchor="middle">spontaneous · bacterial</text>
+
+          <!-- node 4: organic sediment (bottom centre) -->
+          <rect x="250" y="180" width="140" height="36" rx="3" fill="rgba(200,168,75,0.1)" stroke="#C8A84B" stroke-width="1.2"/>
+          <text x="320" y="196" font-family="DM Mono,monospace" font-size="10" fill="#C8A84B" text-anchor="middle">Organic sediment</text>
+          <text x="320" y="208" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.4)" text-anchor="middle">buried · compressed</text>
+
+          <!-- node 5: crude oil (bottom left) -->
+          <rect x="20" y="148" width="140" height="36" rx="3" fill="rgba(200,120,74,0.1)" stroke="#C8784A" stroke-width="1.2"/>
+          <text x="90" y="164" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Crude oil</text>
+          <text x="90" y="176" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.4)" text-anchor="middle">millions of years · heat</text>
+
+          <!-- node 6: combustion/polymer (top left) -->
+          <rect x="20" y="55" width="140" height="36" rx="3" fill="rgba(200,120,74,0.1)" stroke="#C8784A" stroke-width="1.2"/>
+          <text x="90" y="71" font-family="DM Mono,monospace" font-size="10" fill="#C8784A" text-anchor="middle">Fuel + polymer</text>
+          <text x="90" y="83" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,221,216,0.4)" text-anchor="middle">combustion · synthesis</text>
+
+          <!-- arrows clockwise -->
+          <!-- CO2 → organism (photosynthesis) -->
+          <line x1="390" y1="28" x2="478" y2="60" stroke="#4A9E8A" stroke-width="1.3" marker-end="url(#loopArr)"/>
+          <text x="438" y="38" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.6)" text-anchor="middle">photosynthesis</text>
+          <text x="438" y="48" font-family="DM Mono,monospace" font-size="7" fill="rgba(74,158,138,0.4)" text-anchor="middle">thermodynamic</text>
+
+          <!-- organism → death -->
+          <line x1="550" y1="91" x2="550" y2="146" stroke="#8B6DCC" stroke-width="1.3" marker-end="url(#loopArrO)"/>
+          <text x="570" y="122" font-family="DM Mono,monospace" font-size="8" fill="rgba(139,109,204,0.6)">death</text>
+
+          <!-- decay → sediment -->
+          <line x1="480" y1="170" x2="392" y2="190" stroke="#C8A84B" stroke-width="1.3" marker-end="url(#loopArrG)"/>
+          <text x="435" y="188" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,168,75,0.6)" text-anchor="middle">burial</text>
+
+          <!-- sediment → crude -->
+          <line x1="248" y1="195" x2="162" y2="178" stroke="#C8784A" stroke-width="1.3" marker-end="url(#loopArrO)"/>
+          <text x="200" y="197" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,120,74,0.6)" text-anchor="middle">heat + pressure</text>
+          <text x="200" y="207" font-family="DM Mono,monospace" font-size="7" fill="rgba(200,120,74,0.4)" text-anchor="middle">millions of years</text>
+
+          <!-- crude → fuel/polymer -->
+          <line x1="90" y1="148" x2="90" y2="93" stroke="#C8784A" stroke-width="1.3" marker-end="url(#loopArrO)"/>
+          <text x="50" y="124" font-family="DM Mono,monospace" font-size="8" fill="rgba(200,120,74,0.6)" text-anchor="middle">distil + crack</text>
+
+          <!-- fuel/polymer → CO2 (combustion) -->
+          <line x1="162" y1="65" x2="248" y2="25" stroke="#4A9E8A" stroke-width="1.3" marker-end="url(#loopArr)"/>
+          <text x="198" y="38" font-family="DM Mono,monospace" font-size="8" fill="rgba(74,158,138,0.6)" text-anchor="middle">combustion</text>
+          <text x="198" y="48" font-family="DM Mono,monospace" font-size="7" fill="rgba(74,158,138,0.4)" text-anchor="middle">spontaneous</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>The decay loop is the oldest chemistry on earth. It predates the periodic table, predates the laboratory, predates the human species. Every carbon atom in your body has been through this cycle — in a star, in a rock, in an ocean, in a plant, in an animal, in the ground, in the air — before arriving in you. It will continue after you. The Haber process and the blast furnace and the cracking tower are all small interruptions in loops that have been running for four billion years.</p>
+      <p>This is why chemistry is not just a school subject. It is the description of how matter moves through time.</p>
+    </div>
+
+    <div class="compress orange">
+      <div class="compress-label">The final compression</div>
+      <div class="compress-text">Every reaction in this article — from the sand on a beach to the polymer in a plastic bottle — is nature managing electron flow. Give electrons, take electrons, store electrons, force electrons. The whole story, in four words.</div>
+    </div>
+
+    <div class="footnote">
+      <div class="footnote-label">The Big 3 mapped to UTME topics</div>
+      <p><strong>Spontaneous reactions</strong> map to: electrochemical cells (EMF, standard electrode potentials), thermodynamics (ΔG, ΔH, ΔS, the 4-case table), corrosion, combustion, and any reaction described as "exothermic and feasible." <strong>Thermodynamic reactions</strong> map to: equilibrium (Kc, Kp), Le Chatelier's principle, Haber process, Contact process, and any question about industrial conditions. <strong>Electrolytic reactions</strong> map to: electrolysis calculations (Faraday's laws, Q = It), extraction of reactive metals, electroplating, the chlor-alkali process, and the Downs cell. JAMB frequently crosses these categories in a single question — a question about the Haber process that then asks about the electrode reactions in the electrolytic production of the hydrogen feedstock is asking about all three types in one breath.</p>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<div class="container">
+  <div class="closing">
+    <p class="closing-text">From the first electron transfer in a mineral ore to the last peptide bond in a protein — it was always the same chemistry, asking the same question: who gives, and who takes?</p>
+    <p class="closing-sub">MEPC · Flow Article · Rock to Polymer — Complete Edition</p>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progress').style.width=p+'%';
+});
+</script>
+</body>
+</html>

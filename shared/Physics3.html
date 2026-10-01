@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS 3 Physics — First Term</title>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;padding:14px 16px 40px;background:#fff;color:#000;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:10.6pt;line-height:1.4;font-weight:700;orphans:3;widows:3}
+.sheet{max-width:1080px;margin:0 auto}
+.doc-head{border-bottom:4pt solid #000;padding-bottom:6px;margin-bottom:8px}
+h1{font-family:"Arial Black","Segoe UI Black",Impact,sans-serif;font-size:19pt;margin:0;line-height:1.2;font-weight:900}
+.term{margin:3px 0 0;font-size:10.2pt;font-family:"Trebuchet MS","Segoe UI",sans-serif;font-weight:700}
+h2{font-family:"Arial Black","Segoe UI Black",Impact,sans-serif;font-size:15pt;margin:0 0 8px;padding:0 0 5px;
+  border-bottom:3.2pt solid #000;line-height:1.25;font-weight:900;break-after:avoid;page-break-after:avoid}
+h2 .wk{display:inline-block;font-size:10.4pt;border:2.2pt solid #000;padding:1px 8px 2px;margin-right:10px;vertical-align:2px;white-space:nowrap}
+h3{font-family:"Trebuchet MS","Segoe UI",sans-serif;font-size:12.6pt;margin:11px 0 5px;padding-bottom:1px;
+  border-bottom:1.8pt solid #000;font-weight:900;break-after:avoid;page-break-after:avoid}
+h4{font-family:Georgia,"Times New Roman",serif;font-size:11pt;margin:7px 0 3px;font-weight:900;font-style:italic;
+  text-decoration:underline;text-decoration-thickness:1.6pt;break-after:avoid;page-break-after:avoid}
+p{margin:0 0 5px}
+ul,ol{margin:0 0 6px;padding-left:19px}
+li{margin:0 0 2px}
+li>ul,li>ol{margin:2px 0}
+td ul,td ol{margin:0;padding-left:15px}
+.cols2{column-count:2;column-gap:18px}
+.cols2>li{break-inside:avoid}
+b,strong{font-weight:900}
+sub,sup{line-height:0;font-size:75%}
+
+/* equations: serif bold, thick box */
+.eq{font-family:Cambria,Georgia,"Times New Roman",serif;font-size:11.6pt;font-weight:900;
+  border:2.2pt solid #000;padding:4px 10px;margin:4px 0 7px;text-align:center;break-inside:avoid}
+.chain{font-family:Cambria,Georgia,"Times New Roman",serif;font-size:10.8pt;font-weight:900;
+  border-left:5pt solid #000;padding:2px 10px;margin:3px 0 5px;break-inside:avoid}
+.eqs{font-family:Cambria,Georgia,"Times New Roman",serif;font-weight:900}
+
+table{border-collapse:collapse;width:100%;margin:4px 0 9px;font-size:10pt;break-inside:avoid}
+th,td{border:1.8pt solid #000;padding:3px 7px;vertical-align:top;text-align:left;font-weight:700}
+th{font-family:"Trebuchet MS","Segoe UI",sans-serif;font-size:9.6pt;border-bottom:3pt solid #000;font-weight:900}
+td.k{font-weight:900}
+td.f{font-family:Cambria,Georgia,serif;font-weight:900}
+td.ctr,th.ctr{text-align:center}
+
+.box{border:2pt solid #000;padding:6px 10px 4px;margin:0 0 9px;break-inside:avoid}
+.box h4{margin-top:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 8px}
+.split>.box{margin-bottom:0}
+
+figure.fig{margin:6px 0 9px;padding:4px 6px;border:2pt solid #000;break-inside:avoid;text-align:center}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{font-size:9pt;margin-top:2px;font-weight:900}
+
+.week{margin:0 0 6px;break-before:page;page-break-before:always}
+.week:first-of-type{break-before:auto;page-break-before:auto}
+
+/* workbook */
+.set{margin:0 0 10px}
+.q{border:2pt solid #000;padding:5px 9px 4px;margin:0 0 7px;break-inside:avoid}
+.q .tag{font-family:"Arial Black","Segoe UI Black",sans-serif;font-size:9.4pt;font-weight:900}
+.q p{margin:2px 0 3px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:1px 14px;margin:2px 0}
+.opts div{font-weight:700}
+.key{border-top:2pt solid #000;padding:3px 0;break-inside:avoid}
+.key p{margin:0 0 2px}
+.ans{font-family:"Arial Black","Segoe UI Black",sans-serif;font-weight:900}
+
+.toolbar{max-width:1080px;margin:0 auto 10px;font-size:10pt}
+.toolbar kbd{font:inherit;font-size:9.4pt;border:1.4pt solid #000;padding:0 5px}
+
+@media print{
+  @page{size:A4;margin:10mm 11mm}
+  body{padding:0;font-size:10.4pt;line-height:1.38}
+  .no-print{display:none!important}
+  h1{font-size:17pt}h2{font-size:14pt}h3{font-size:12pt}
+  table,.box,.eq,.chain,.q,figure.fig,.key{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+  thead{display:table-header-group}
+}
+</style>
+</head>
+<body>
+<div class="toolbar no-print">Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>). Margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.</div>
+<div class="sheet">
+<header class="doc-head"><h1>SS 3 Physics — First Term</h1><p class="term">Weeks 1–10 · Energy Conversion, Transmission, Machines, Maintenance, Dams, Rockets and Satellites · Print Edition</p></header>
+<section class="week">
+<h2><span class="wk">WEEK 1</span>Conversion of Energy</h2>
+
+<h3>1.1 Definitions and the Law</h3>
+<table>
+<tr><th style="width:23%">Term</th><th>Definition / statement</th></tr>
+<tr><td class="k">Energy</td><td>The capacity to do work. Scalar quantity. Unit: joule (J).</td></tr>
+<tr><td class="k">Work</td><td>Force × distance moved in the direction of the force. 1 J = 1 N × 1 m.</td></tr>
+<tr><td class="k">Power</td><td>Rate of doing work or converting energy. Unit: watt (W) = 1 J s⁻¹.</td></tr>
+<tr><td class="k">Energy conversion</td><td>The change of energy from one form to another by a device (converter / transducer).</td></tr>
+<tr><td class="k">Conservation of energy</td><td>Energy can neither be created nor destroyed; it can only be changed from one form to another. The total energy of an isolated system is constant.</td></tr>
+<tr><td class="k">Efficiency</td><td>The fraction of the energy input that appears as useful output. Never 100%, because part of the input is dissipated as heat (friction, resistance) and sound.</td></tr>
+</table>
+<div class="eq">Energy input = Useful energy output + Wasted energy (heat + sound)</div>
+
+<h3>1.2 Formulae</h3>
+<table>
+<tr><th style="width:30%">Quantity</th><th style="width:34%">Formula</th><th>Note</th></tr>
+<tr><td class="k">Kinetic energy</td><td class="f">KE = ½mv²</td><td>m in kg, v in m s⁻¹</td></tr>
+<tr><td class="k">Potential energy</td><td class="f">PE = mgh</td><td>g = 10 m s⁻² (UTME value)</td></tr>
+<tr><td class="k">Work</td><td class="f">W = Fd</td><td>d along the line of F</td></tr>
+<tr><td class="k">Power</td><td class="f">P = W/t = Fv</td><td>watt</td></tr>
+<tr><td class="k">Electrical energy</td><td class="f">E = Pt = VIt = I²Rt = V²t/R</td><td>t in seconds gives joules</td></tr>
+<tr><td class="k">Heat energy</td><td class="f">Q = mcΔθ</td><td>c = specific heat capacity; water 4 200 J kg⁻¹ K⁻¹</td></tr>
+<tr><td class="k">Efficiency</td><td class="f">η = (useful out ÷ total in) × 100%</td><td>energy ratio = power ratio</td></tr>
+<tr><td class="k">Overall efficiency of a chain</td><td class="f">η = η₁ × η₂ × η₃ …</td><td>multiply as fractions, not percentages</td></tr>
+<tr><td class="k">Commercial unit</td><td class="f">1 kWh = 3.6 × 10⁶ J</td><td>1 000 W × 3 600 s</td></tr>
+</table>
+
+<h3>1.3 Derivations</h3>
+<ul>
+<li><b>Work–energy theorem:</b> F = ma and v² = u² + 2as, so as = (v² − u²)/2. Then Fs = mas = ½mv² − ½mu². <span class="eqs">Work done = change in KE.</span></li>
+<li><b>Conservation in free fall:</b> at height h and at rest, E = mgh. After falling h, v² = 2gh, so KE = ½m(2gh) = mgh. PE lost = KE gained. <span class="eqs">v = √(2gh)</span>, independent of mass.</li>
+<li><b>Power = force × velocity:</b> P = W/t = Fd/t = Fv.</li>
+<li><b>Overall efficiency of two stages:</b> E₁ = η₁E₀ leaves the first stage; E₂ = η₂E₁ = η₁η₂E₀ leaves the second.</li>
+</ul>
+
+<h3>1.4 Energy Converters</h3>
+<table>
+<tr><th style="width:27%">Device</th><th style="width:48%">Conversion</th><th>Working principle</th></tr>
+<tr><td class="k">Electric iron / heater</td><td class="f">Electrical → Heat</td><td>Current through a high-resistance nichrome element (Joule heating, H = I²Rt). Thermostat = bimetallic strip.</td></tr>
+<tr><td class="k">Generator (alternator)</td><td class="f">Mechanical → Electrical</td><td>Coil rotated in a magnetic field; changing flux induces e.m.f. (Faraday's law). Output a.c.</td></tr>
+<tr><td class="k">Dynamo</td><td class="f">Mechanical → Electrical</td><td>Small generator with a split-ring commutator (d.c.) or slip rings. Bicycle dynamo is driven by the wheel.</td></tr>
+<tr><td class="k">Electric motor</td><td class="f">Electrical → Mechanical</td><td>Current-carrying coil in a magnetic field experiences a turning force.</td></tr>
+<tr><td class="k">Dry cell / battery</td><td class="f">Chemical → Electrical</td><td>Redox reaction at the electrodes drives electrons round the circuit.</td></tr>
+<tr><td class="k">Solar panel (photovoltaic)</td><td class="f">Light → Electrical</td><td>Photons free electrons across a silicon p–n junction. Output d.c.</td></tr>
+<tr><td class="k">Filament bulb</td><td class="f">Electrical → Light + Heat</td><td>Hot tungsten filament; most of the input is heat.</td></tr>
+<tr><td class="k">Loudspeaker / microphone</td><td class="f">Electrical → Sound / Sound → Electrical</td><td>Coil and magnet moving a diaphragm, and the reverse.</td></tr>
+<tr><td class="k">Steam turbine / engine</td><td class="f">Heat → Mechanical</td><td>Expanding steam or gas does work on blades or pistons.</td></tr>
+<tr><td class="k">Solar water heater</td><td class="f">Light → Heat</td><td>Black absorber plate heats water in pipes.</td></tr>
+<tr><td class="k">Photosynthesis</td><td class="f">Light → Chemical</td><td>Chlorophyll stores light energy in glucose.</td></tr>
+</table>
+
+<h3>1.5 Energy Chains</h3>
+<div class="chain">Hydro: Gravitational PE (stored water) → KE (falling water) → Mechanical (turbine) → Electrical (generator)</div>
+<div class="chain">Thermal station: Chemical (fuel) → Heat (boiler) → KE (steam) → Mechanical (turbine) → Electrical (generator)</div>
+<div class="chain">Petrol generator: Chemical (petrol) → Heat → Mechanical (engine) → Electrical (alternator)</div>
+<div class="chain">Solar home: Light → Electrical (panel) → Chemical (battery) → Electrical → Light (lamp)</div>
+<div class="chain">Electric kettle: Electrical → Heat (element) → Heat (water); loss to the surroundings = wasted</div>
+
+<h3>1.6 Figures and Trends</h3>
+<table>
+<tr><th style="width:36%">Converter</th><th style="width:22%">Typical efficiency</th><th>Context</th></tr>
+<tr><td class="k">Petrol engine</td><td>≈ 25 – 30%</td><td>Rest leaves as exhaust heat and radiator heat. Petrol holds ≈ 34 MJ per litre.</td></tr>
+<tr><td class="k">Diesel engine</td><td>≈ 35 – 40%</td><td>Higher compression ratio, so more of the fuel energy becomes work.</td></tr>
+<tr><td class="k">Coal / gas thermal power station</td><td>≈ 33 – 45%</td><td>Combined-cycle gas plants reach roughly 60%.</td></tr>
+<tr><td class="k">Hydro turbine</td><td>up to ≈ 90%+</td><td>No fuel burning; the best of the large converters.</td></tr>
+<tr><td class="k">Large generator / transformer</td><td>≈ 95 – 99%</td><td>Almost no moving friction loss in a transformer.</td></tr>
+<tr><td class="k">Electric motor</td><td>≈ 75 – 95%</td><td>Larger motors are more efficient.</td></tr>
+<tr><td class="k">Silicon solar panel</td><td>≈ 15 – 22%</td><td>Rated under Standard Test Conditions: 1 000 W m⁻², 25 °C cell temperature.</td></tr>
+<tr><td class="k">Filament bulb</td><td>≈ 5% as light</td><td>LED lamps use at least 75% less energy for the same light (US Dept of Energy).</td></tr>
+<tr><td class="k">Human muscle</td><td>≈ 20 – 25%</td><td>The remainder warms the body.</td></tr>
+</table>
+</section>
+
+<section class="week">
+<h2><span class="wk">WEEK 2</span>Transmission Systems</h2>
+
+<h3>2.1 Concept and Definitions</h3>
+<table>
+<tr><th style="width:24%">Term</th><th>Meaning</th></tr>
+<tr><td class="k">Transmission</td><td>The transfer of power, motion or energy from the source (prime mover) to the point where it is used.</td></tr>
+<tr><td class="k">Driver / driven</td><td>The driver is the part connected to the source (effort side). The driven part delivers the output (load side).</td></tr>
+<tr><td class="k">Velocity ratio of a drive</td><td>VR = speed of driver ÷ speed of driven = N<sub>driver</sub> / N<sub>driven</sub>. VR &lt; 1: speed increased, torque reduced. VR &gt; 1: speed reduced, torque increased.</td></tr>
+<tr><td class="k">Transmission efficiency</td><td>Power delivered by the driven part ÷ power supplied to the driver.</td></tr>
+<tr><td class="k">Torque</td><td>Turning effect of a force: τ = F × r (N m).</td></tr>
+</table>
+<div class="chain">Prime mover (engine / motor) → Transmission (shaft, gears, belt, chain) → Working part (wheels, blades, machine)</div>
+
+<h3>2.2 Mechanical Transmission</h3>
+<table>
+<tr><th style="width:15%">Element</th><th style="width:34%">How it transmits</th><th style="width:20%">Direction</th><th>Key points</th></tr>
+<tr><td class="k">Gears</td><td>Meshing teeth push each other; no slip. Spur, helical, bevel (shafts at an angle), worm (large reduction, self-locking), rack and pinion (rotation ↔ straight line).</td><td>Meshing gears turn in opposite directions; an idler gear reverses the direction without changing the ratio.</td><td>Most efficient, fixed ratio, needs lubrication, noisy if worn.</td></tr>
+<tr><td class="k">Belt drive</td><td>Friction between belt and pulley. Open belt: same direction. Crossed belt: opposite direction.</td><td>As described.</td><td>Can slip, so ratio is not exact. Quiet, cheap, protects machine by slipping on overload. V-belt grips better.</td></tr>
+<tr><td class="k">Chain drive</td><td>Chain links engage sprocket teeth; no slip.</td><td>Same direction.</td><td>Keeps timing (bicycle, motorcycle, engine cam chain). Needs oiling and correct tension.</td></tr>
+<tr><td class="k">Shaft / coupling</td><td>Rotating rod carries torque between machines in line (gearbox → propeller shaft → differential).</td><td>Same.</td><td>Misalignment gives vibration.</td></tr>
+<tr><td class="k">Lever linkage</td><td>Rigid bar transfers force and motion about a pivot (brake pedal, gear stick).</td><td>Depends on pivot position.</td><td>See Week 3.</td></tr>
+</table>
+
+<h3>2.3 Formulae and Derivations</h3>
+<table>
+<tr><th style="width:28%">Drive</th><th style="width:33%">Relation</th><th>Derivation / note</th></tr>
+<tr><td class="k">Belt / pulleys</td><td class="f">N₁D₁ = N₂D₂<br>VR = D₂ / D₁</td><td>No slip: belt speed is the same on both pulleys, so πD₁N₁ = πD₂N₂. Belt speed v = πDN.</td></tr>
+<tr><td class="k">Gears / sprockets</td><td class="f">N₁T₁ = N₂T₂<br>VR = T₂ / T₁</td><td>Teeth passing the contact point per minute must be equal on both gears: T₁N₁ = T₂N₂.</td></tr>
+<tr><td class="k">Compound train</td><td class="f">VR = (T₂/T₁) × (T₄/T₃)</td><td>Gears 2 and 3 share one shaft, so they turn at one speed. Multiply the stage ratios.</td></tr>
+<tr><td class="k">Power and torque</td><td class="f">P = τω = 2πNτ/60</td><td>N in rev min⁻¹, ω in rad s⁻¹. ω = 2πN/60.</td></tr>
+<tr><td class="k">Ideal torque ratio</td><td class="f">τ₂/τ₁ = N₁/N₂ = T₂/T₁</td><td>Ideal: P same on both shafts, τ₁ω₁ = τ₂ω₂. Speed down means torque up.</td></tr>
+<tr><td class="k">Real torque ratio</td><td class="f">τ₂ = η × τ₁ × (N₁/N₂)</td><td>η = transmission efficiency (fraction).</td></tr>
+</table>
+
+<h3>2.4 Electrical Transmission and Transformers</h3>
+<table>
+<tr><th style="width:26%">Item</th><th style="width:30%">Relation</th><th>Statement / derivation</th></tr>
+<tr><td class="k">Transformer principle</td><td class="f">Vₛ/Vₚ = Nₛ/Nₚ</td><td>Alternating current in the primary gives a changing flux in the soft-iron core. The same flux links the secondary, inducing e.m.f. ∝ turns (Faraday). Works on a.c. only.</td></tr>
+<tr><td class="k">Step-up / step-down</td><td class="f">Nₛ &gt; Nₚ / Nₛ &lt; Nₚ</td><td>Step-up raises voltage and lowers current. Step-down does the reverse.</td></tr>
+<tr><td class="k">Ideal transformer</td><td class="f">IₚVₚ = IₛVₛ</td><td>Power in = power out, so Iₛ/Iₚ = Nₚ/Nₛ.</td></tr>
+<tr><td class="k">Efficiency</td><td class="f">η = (IₛVₛ)/(IₚVₚ) × 100%</td><td>Real transformers are 95 – 99% efficient.</td></tr>
+<tr><td class="k">Line power loss</td><td class="f">P<sub>loss</sub> = I²R = P²R/V²</td><td>P = IV gives I = P/V. Loss depends on the square of the current: doubling V cuts loss to a quarter; ×10 voltage gives 1/100 the loss.</td></tr>
+</table>
+<table>
+<tr><th style="width:26%">Transformer loss</th><th style="width:34%">Cause</th><th>Remedy</th></tr>
+<tr><td class="k">Copper loss</td><td>I²R heating in the windings</td><td>Thick low-resistance copper wire</td></tr>
+<tr><td class="k">Eddy-current loss</td><td>Currents induced in the core itself</td><td>Laminated core (thin insulated sheets)</td></tr>
+<tr><td class="k">Hysteresis loss</td><td>Core repeatedly magnetised and demagnetised</td><td>Soft iron core</td></tr>
+<tr><td class="k">Flux leakage</td><td>Not all flux links the secondary</td><td>Wind coils on top of one another on a closed core</td></tr>
+</table>
+<div class="chain">Power station (≈ 11 – 16 kV) → step-up → 330 kV → 132 kV → 33 kV → 11 kV → 415 V (3-phase) / 240 V (single phase) at the consumer</div>
+
+<h3>2.5 Figures and Trends</h3>
+<table>
+<tr><th style="width:36%">Item</th><th>Fact</th></tr>
+<tr><td class="k">Nigeria grid voltages</td><td>Transmission 330 kV and 132 kV (Transmission Company of Nigeria, TCN); sub-transmission 33 kV; distribution 11 kV; consumer 415 V / 240 V; frequency 50 Hz.</td></tr>
+<tr><td class="k">TCN network size</td><td>≈ 5 650 km of 330 kV lines and ≈ 6 687 km of 132 kV lines (TCN overview); 43 substations at 330 kV and 153 at 132 kV.</td></tr>
+<tr><td class="k">Grid hierarchy in practice</td><td>The 330 kV substations feed the 132 kV substations, which feed the distribution companies. After a reported total grid collapse at 11:01 am, bulk power was back on all 330 kV stations by 5:54 pm; TCN named voltage collapse as the cause.</td></tr>
+<tr><td class="k">Voltage control logistics</td><td>On long, lightly loaded 330 kV lines (Ikot Ekpene – Makurdi – Jos axis) voltage was reported rising to 360 kV; TCN bought reactors for Ikot Ekpene, Jos and Apir substations to hold it down.</td></tr>
+<tr><td class="k">Why transmission is high voltage</td><td>For 100 kW over 5 Ω: at 1 kV the current is 100 A and the loss 50 kW (50%); at 10 kV the current is 10 A and the loss 500 W (0.5%).</td></tr>
+<tr><td class="k">Typical drive efficiency</td><td>Gear ≈ 95 – 99%; chain ≈ 95 – 98%; V-belt ≈ 90 – 96%; worm gear far lower (≈ 40 – 90% depending on ratio).</td></tr>
+</table>
+</section>
+<section class="week">
+<h2><span class="wk">WEEK 3</span>Uses of Machines</h2>
+
+<h3>3.1 Definition and Functions</h3>
+<p><b>A machine is a device that makes work easier by changing the size, direction or speed of an applied force. A machine does not create energy; it only transfers it.</b></p>
+<table>
+<tr><th style="width:30%">Function</th><th style="width:36%">Example</th><th>Effect</th></tr>
+<tr><td class="k">Multiplies force</td><td>Crowbar, hydraulic jack, screw jack</td><td>Small effort moves a large load (effort moves farther)</td></tr>
+<tr><td class="k">Multiplies speed / distance</td><td>Tongs, fishing rod, bicycle gears</td><td>Large effort, small load, but load moves farther or faster</td></tr>
+<tr><td class="k">Changes direction</td><td>Fixed pulley (flagpole)</td><td>Pull down to lift up</td></tr>
+<tr><td class="k">Convenience</td><td>Wheelbarrow, can opener</td><td>Safer or easier position of effort</td></tr>
+</table>
+
+<h3>3.2 Quantities and Formulae</h3>
+<table>
+<tr><th style="width:22%">Quantity</th><th style="width:34%">Definition</th><th>Formula</th></tr>
+<tr><td class="k">Load, L</td><td>Force the machine overcomes (N)</td><td class="f">weight = mg</td></tr>
+<tr><td class="k">Effort, E</td><td>Force applied to the machine (N)</td><td class="f">—</td></tr>
+<tr><td class="k">Mechanical advantage (MA)</td><td>How many times the load exceeds the effort. No unit.</td><td class="f">MA = L / E</td></tr>
+<tr><td class="k">Velocity ratio (VR)</td><td>Distance moved by effort ÷ distance moved by load, in the same time. Depends on geometry only. No unit.</td><td class="f">VR = d<sub>E</sub> / d<sub>L</sub></td></tr>
+<tr><td class="k">Efficiency (η)</td><td>Work output ÷ work input</td><td class="f">η = (L·d<sub>L</sub>)/(E·d<sub>E</sub>) × 100% = (MA/VR) × 100%</td></tr>
+<tr><td class="k">Energy wasted</td><td>Work against friction and in moving the machine's own parts</td><td class="f">E·d<sub>E</sub> − L·d<sub>L</sub></td></tr>
+</table>
+<div class="eq">MA = η × VR &nbsp;&nbsp;|&nbsp;&nbsp; E = L / MA &nbsp;&nbsp;|&nbsp;&nbsp; Ideal machine: η = 100%, MA = VR</div>
+<ul>
+<li><b>Derivation of η = MA/VR:</b> η = (L·d<sub>L</sub>)/(E·d<sub>E</sub>) = (L/E) ÷ (d<sub>E</sub>/d<sub>L</sub>) = MA ÷ VR.</li>
+<li><b>Limits:</b> MA &lt; VR in every real machine (friction), so η &lt; 100%. MA &gt; 1 means force gain; MA &lt; 1 means speed gain.</li>
+<li><b>Law of the machine:</b> a graph of E against L is a straight line, <span class="eqs">E = mL + C</span>. Slope m = increase in effort per unit load; intercept C = effort that only overcomes friction at no load. Limiting MA = 1/m. Limiting efficiency = 1/(m × VR).</li>
+<li><b>Efficiency rises with load</b> (fixed friction becomes a smaller share), so MA and η increase as L increases, up to the limit above.</li>
+</ul>
+
+<h3>3.3 Simple Machines: VR Formulae and Derivations</h3>
+<figure class="fig">
+<svg viewBox="0 0 740 135" width="740" height="135" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-weight="900" font-size="12" fill="#000" stroke="#000" stroke-width="2.4">
+<g><line x1="15" y1="62" x2="225" y2="62" stroke-width="5"/><polygon points="108,98 128,98 118,64" fill="none"/>
+<line x1="40" y1="20" x2="40" y2="56"/><polygon points="34,50 46,50 40,60" /><line x1="205" y1="66" x2="205" y2="104"/><polygon points="199,98 211,98 205,108"/>
+<text x="46" y="30" stroke="none">E</text><text x="212" y="104" stroke="none">L</text><text x="112" y="114" stroke="none">F</text><text x="30" y="128" stroke="none">CLASS 1: F in the middle</text></g>
+<g><line x1="262" y1="62" x2="472" y2="62" stroke-width="5"/><polygon points="252,98 272,98 262,64" fill="none"/>
+<line x1="330" y1="66" x2="330" y2="104"/><polygon points="324,98 336,98 330,108"/><line x1="455" y1="104" x2="455" y2="70"/><polygon points="449,76 461,76 455,66"/>
+<text x="338" y="104" stroke="none">L</text><text x="462" y="104" stroke="none">E</text><text x="256" y="114" stroke="none">F</text><text x="268" y="128" stroke="none">CLASS 2: L in the middle</text></g>
+<g><line x1="510" y1="62" x2="720" y2="62" stroke-width="5"/><polygon points="500,98 520,98 510,64" fill="none"/>
+<line x1="600" y1="104" x2="600" y2="70"/><polygon points="594,76 606,76 600,66"/><line x1="705" y1="66" x2="705" y2="104"/><polygon points="699,98 711,98 705,108"/>
+<text x="608" y="104" stroke="none">E</text><text x="712" y="104" stroke="none">L</text><text x="504" y="114" stroke="none">F</text><text x="516" y="128" stroke="none">CLASS 3: E in the middle</text></g>
+</svg>
+<figcaption>Three classes of lever (F = fulcrum, L = load, E = effort)</figcaption>
+</figure>
+<table>
+<tr><th style="width:15%">Machine</th><th style="width:28%">VR / MA relation</th><th style="width:34%">Derivation</th><th>Notes and examples</th></tr>
+<tr><td class="k">Lever</td><td class="f">E × effort arm = L × load arm<br>VR = effort arm / load arm</td><td>Principle of moments: at balance, clockwise moment = anticlockwise moment about the fulcrum. Effort end sweeps an arc longer than the load end in the ratio of the arms.</td><td><b>Class 1</b> (F between): crowbar, seesaw, scissors, pliers. <b>Class 2</b> (L between): wheelbarrow, nutcracker, bottle opener; MA always &gt; 1. <b>Class 3</b> (E between): forceps, tongs, forearm, fishing rod; MA always &lt; 1.</td></tr>
+<tr><td class="k">Fixed pulley</td><td class="f">VR = 1</td><td>Rope length pulled down = load rise.</td><td>Changes direction only (flagpole, well).</td></tr>
+<tr><td class="k">Movable pulley / block and tackle</td><td class="f">VR = number of rope strands supporting the movable block</td><td>To raise the load by 1 m, each supporting strand shortens by 1 m, so the free end moves n metres.</td><td>Weight of the movable block and rope friction lower η. Ideal MA = n; real MA &lt; n.</td></tr>
+<tr><td class="k">Inclined plane</td><td class="f">VR = l / h = 1/sinθ<br>ideal E = L sinθ</td><td>Effort moves the full slope length l; load rises the height h. Ideal: E·l = L·h.</td><td>Ramp, stairs, mountain road. Friction adds to E: E = L sinθ + f.</td></tr>
+<tr><td class="k">Wedge</td><td class="f">VR = slant length / thickness</td><td>Inclined plane pushed under the load.</td><td>Axe, knife, nail, chisel.</td></tr>
+<tr><td class="k">Screw</td><td class="f">VR = 2πr / p</td><td>One turn: effort at radius r moves 2πr; the screw advances one pitch p (distance between threads).</td><td>Screw jack, vice, bolt. Large VR; η is low (often under 50%), which makes it self-locking.</td></tr>
+<tr><td class="k">Wheel and axle</td><td class="f">VR = R / r</td><td>One turn: effort at the wheel rim moves 2πR; rope on the axle moves 2πr.</td><td>Steering wheel, windlass, door knob, screwdriver. R = wheel (or crank) radius; r = axle radius.</td></tr>
+<tr><td class="k">Gear train</td><td class="f">VR = T<sub>driven</sub> / T<sub>driver</sub></td><td>See Week 2.</td><td>Car gearbox, winch, crane hoist.</td></tr>
+<tr><td class="k">Hydraulic press</td><td class="f">VR = A / a = (R/r)²<br>L/E = A/a (ideal)</td><td>Pascal's law: pressure on an enclosed liquid is transmitted equally. E/a = L/A. Liquid is incompressible: volume out of small cylinder = volume into large one, d<sub>E</sub>·a = d<sub>L</sub>·A, so VR = d<sub>E</sub>/d<sub>L</sub> = A/a.</td><td>a, r = small piston; A, R = large piston. Garage lift, car brakes, excavator arm, baling press.</td></tr>
+</table>
+<figure class="fig">
+<svg viewBox="0 0 560 150" width="560" height="150" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-weight="900" font-size="12" fill="#000" stroke="#000" stroke-width="2.4">
+<polyline points="80,40 80,105 400,105 400,40" fill="none" stroke-width="3.5"/>
+<polyline points="140,40 140,80 340,80 340,40" fill="none" stroke-width="3.5"/>
+<line x1="80" y1="56" x2="140" y2="56" stroke-width="6"/><line x1="340" y1="56" x2="400" y2="56" stroke-width="6"/>
+<line x1="110" y1="8" x2="110" y2="48"/><polygon points="104,42 116,42 110,52"/>
+<line x1="370" y1="48" x2="370" y2="10"/><polygon points="364,16 376,16 370,6"/>
+<text x="120" y="20" stroke="none">E, area a</text><text x="378" y="22" stroke="none">L, area A</text>
+<text x="190" y="98" stroke="none">liquid</text><text x="120" y="135" stroke="none">Same pressure everywhere: E/a = L/A</text>
+</svg>
+<figcaption>Hydraulic press: small piston (effort) and large piston (load)</figcaption>
+</figure>
+
+<h3>3.4 Applications in Everyday Life</h3>
+<table>
+<tr><th style="width:20%">Application</th><th style="width:34%">Machines combined</th><th>How it works</th></tr>
+<tr><td class="k">Crane</td><td>Pulley (block and tackle) + gear / winch drum + lever (jib)</td><td>Motor turns the winch through gears (torque up). Rope threads through a pulley block, VR = strands. Counterweight balances the jib moment.</td></tr>
+<tr><td class="k">Pulley systems</td><td>Fixed and movable pulleys</td><td>Building hoists, wells, lift cables, sailing rigging.</td></tr>
+<tr><td class="k">Levers</td><td>Class 1, 2, 3</td><td>Crowbar, wheelbarrow, tongs, scissors, bottle opener.</td></tr>
+<tr><td class="k">Wheel and axle</td><td>Large wheel on small axle</td><td>Steering wheel, bicycle crank, windlass.</td></tr>
+<tr><td class="k">Hydraulic press</td><td>Two pistons + liquid</td><td>Vehicle lifts, brakes, excavators, forklift mast, metal pressing.</td></tr>
+<tr><td class="k">Screw jack</td><td>Screw + lever handle</td><td>Handle of radius r turns a thread of pitch p; very large VR lifts a car corner.</td></tr>
+</table>
+
+<h3>3.5 Figures and Facts</h3>
+<table>
+<tr><th style="width:34%">Item</th><th>Fact</th></tr>
+<tr><td class="k">Self-locking rule</td><td>A machine that holds its load when the effort is removed has η &lt; 50%. A screw jack and a worm gear are examples.</td></tr>
+<tr><td class="k">Hydraulic working pressure</td><td>Excavator hydraulics run at roughly 300 bar (≈ 3 × 10⁷ Pa). Car brake lines run at tens of bar. 1 bar ≈ 10⁵ Pa.</td></tr>
+<tr><td class="k">Bottle jack</td><td>A "2-tonne" jack is rated for ≈ 2 000 kg ≈ 20 kN. The hand lever adds a second stage of leverage to the hydraulic ratio.</td></tr>
+<tr><td class="k">Efficiency ranges (approx.)</td><td>Pulley block 50 – 80%; inclined plane (rough) 60 – 90%; screw jack 20 – 40%; hydraulic jack 70 – 90%; gear train 90 – 98%.</td></tr>
+<tr><td class="k">UTME trap list</td><td>(1) VR and MA have no units. (2) VR is geometric, MA depends on the load. (3) η = MA/VR, and VR is effort distance over load distance. (4) Convert cm to m and minutes to seconds first. (5) Hydraulic VR uses areas (or radius squared), not radii. (6) Class 3 levers have MA &lt; 1.</td></tr>
+</table>
+</section>
+
+<section class="week">
+<h2><span class="wk">WEEK 4</span>Repair and Maintenance of Machines</h2>
+
+<h3>4.1 Definitions</h3>
+<table>
+<tr><th style="width:24%">Term</th><th>Meaning</th></tr>
+<tr><td class="k">Maintenance</td><td>All actions taken to keep a machine in good working condition so that it works safely, efficiently and for its full design life.</td></tr>
+<tr><td class="k">Repair</td><td>Restoring a machine that has failed or worn out to working order by fixing or replacing parts.</td></tr>
+<tr><td class="k">Fault</td><td>Any condition that stops a machine working properly (wear, breakage, leakage, blockage, electrical failure).</td></tr>
+<tr><td class="k">Downtime</td><td>Time a machine is out of service. Availability = uptime ÷ (uptime + downtime).</td></tr>
+</table>
+<div class="eq">Friction force f = μR &nbsp;|&nbsp; Wasted work = f × d &nbsp;|&nbsp; Lubrication lowers μ, so η rises</div>
+
+<h3>4.2 Common Faults and Remedies</h3>
+<table>
+<tr><th style="width:22%">Fault</th><th style="width:34%">Cause</th><th>Remedy</th></tr>
+<tr><td class="k">Wear</td><td>Friction between moving metal parts</td><td>Lubricate; replace worn bearings, gears, brake pads</td></tr>
+<tr><td class="k">Overheating</td><td>No or poor lubrication, blocked cooling, overload</td><td>Check oil and coolant, clean fins and radiator, reduce load</td></tr>
+<tr><td class="k">Corrosion (rust)</td><td>Moisture and oxygen on iron or steel</td><td>Paint, grease coating, galvanising; keep dry</td></tr>
+<tr><td class="k">Loose fastenings</td><td>Vibration</td><td>Tighten bolts, use lock washers</td></tr>
+<tr><td class="k">Leakage</td><td>Worn seals and gaskets (oil, coolant, hydraulic fluid)</td><td>Replace seals and gaskets; top up fluid</td></tr>
+<tr><td class="k">Belt slip / chain slack</td><td>Wrong tension, worn belt or sprocket</td><td>Adjust tension or replace</td></tr>
+<tr><td class="k">Blockage</td><td>Dirty air, fuel or oil filters</td><td>Clean or replace filters</td></tr>
+<tr><td class="k">Electrical fault</td><td>Loose terminals, short circuit, worn insulation, flat battery</td><td>Tighten and clean terminals, replace wire or fuse, recharge battery</td></tr>
+</table>
+
+<h3>4.3 Lubrication, Cleaning and Routine Checks</h3>
+<table>
+<tr><th style="width:24%">Practice</th><th>Purpose and detail</th></tr>
+<tr><td class="k">Lubrication</td><td>Reduces friction and wear; carries away heat; seals gaps; prevents rust; flushes out dirt. Types: oil (engines, gearboxes), grease (bearings, chains), graphite (dry, locks and hinges), air or water films (special bearings). Viscosity is graded (e.g. SAE 40).</td></tr>
+<tr><td class="k">Cleaning</td><td>Removes dust, mud, metal particles and old grease that act as abrasives; lets leaks and cracks be seen.</td></tr>
+<tr><td class="k">Routine checks</td><td>Oil and coolant level, belt and chain tension, tyre pressure, battery terminals, air and fuel filters, loose bolts, unusual noise, vibration or smell.</td></tr>
+</table>
+
+<h3>4.4 Preventive and Corrective Maintenance</h3>
+<table>
+<tr><th style="width:22%">Basis</th><th style="width:39%">Preventive maintenance</th><th>Corrective maintenance</th></tr>
+<tr><td class="k">When done</td><td>On a schedule, before failure</td><td>After a fault or breakdown</td></tr>
+<tr><td class="k">Activities</td><td>Lubrication, cleaning, inspection, adjustment, planned part replacement</td><td>Diagnosis, repair or replacement of the failed part</td></tr>
+<tr><td class="k">Downtime</td><td>Short and planned</td><td>Long and unplanned</td></tr>
+<tr><td class="k">Cost</td><td>Small, regular</td><td>Often large; a failed part can damage others</td></tr>
+<tr><td class="k">Example</td><td>Changing engine oil every service interval</td><td>Replacing a burnt-out motor winding</td></tr>
+</table>
+
+<h3>4.5 Figures and Practice</h3>
+<table>
+<tr><th style="width:34%">Item</th><th>Fact</th></tr>
+<tr><td class="k">Predictive (condition-based) maintenance</td><td>A third type: parts are replaced when a measurement (vibration, temperature, oil analysis) shows wear, not on a calendar.</td></tr>
+<tr><td class="k">Petrol generator servicing</td><td>Manufacturers commonly ask for the first oil change after about 20 running hours (run-in metal particles), then roughly every 100 hours or 6 months. The manual sets the interval.</td></tr>
+<tr><td class="k">Vehicle oil change</td><td>Commonly about 5 000 km on mineral oil and about 10 000 km on synthetic oil; always follow the service manual.</td></tr>
+<tr><td class="k">Cost pattern</td><td>A breakdown carries repair cost plus lost working time; planned servicing costs less per hour of machine life.</td></tr>
+</table>
+</section>
+<section class="week">
+<h2><span class="wk">WEEK 6</span>Dams and Energy Production</h2>
+
+<h3>6.1 Definitions and Types</h3>
+<p><b>A dam is a barrier built across a river to hold back water. The stored water forms a reservoir (lake). Head (h) = vertical height between the reservoir surface and the turbine.</b></p>
+<table>
+<tr><th style="width:20%">Type (by purpose)</th><th style="width:40%">Main purpose</th><th>Features</th></tr>
+<tr><td class="k">Hydroelectric</td><td>Generate electricity</td><td>Intake, penstock, turbine hall, generator, spillway</td></tr>
+<tr><td class="k">Irrigation</td><td>Store and release water to farmland</td><td>Canals and gates; reservoir sized for the dry season</td></tr>
+<tr><td class="k">Multipurpose</td><td>Power + irrigation + flood control + water supply + fisheries + navigation</td><td>Most large dams; purposes compete for the same water</td></tr>
+</table>
+<table>
+<tr><th style="width:20%">Type (by structure)</th><th>Description</th></tr>
+<tr><td class="k">Gravity</td><td>Its own weight resists the water pressure (concrete or masonry). Kainji is a gravity dam.</td></tr>
+<tr><td class="k">Arch</td><td>Curved wall transfers the load into the valley sides; narrow rocky gorges.</td></tr>
+<tr><td class="k">Embankment</td><td>Earth or rockfill with a watertight core; wide valleys with soft ground.</td></tr>
+</table>
+
+<h3>6.2 Hydroelectric Power Generation</h3>
+<div class="chain">Reservoir (Gravitational PE) → Intake gate → Penstock (water gains KE) → Turbine (Mechanical) → Generator (Electrical) → Step-up transformer → Transmission line</div>
+<table>
+<tr><th style="width:22%">Component</th><th>Function</th></tr>
+<tr><td class="k">Penstock</td><td>Large pipe taking water from the intake down to the turbine; the fall converts PE to KE and pressure.</td></tr>
+<tr><td class="k">Turbine</td><td>Water strikes the blades and spins the shaft. Pelton (high head, low flow), Francis (medium head), Kaplan (low head, high flow).</td></tr>
+<tr><td class="k">Generator</td><td>The shaft turns magnets inside coils; induced e.m.f. gives a.c. (Faraday's law).</td></tr>
+<tr><td class="k">Spillway</td><td>Releases surplus water safely in flood.</td></tr>
+<tr><td class="k">Step-up transformer</td><td>Raises generator voltage to transmission voltage (e.g. 330 kV) to cut line loss.</td></tr>
+</table>
+
+<h3>6.3 Formulae and Derivation</h3>
+<table>
+<tr><th style="width:32%">Quantity</th><th style="width:34%">Formula</th><th>Note</th></tr>
+<tr><td class="k">Mass flow rate</td><td class="f">ṁ = ρQ</td><td>ρ = 1 000 kg m⁻³ (water), Q in m³ s⁻¹</td></tr>
+<tr><td class="k">Volume flow rate</td><td class="f">Q = Av</td><td>A = pipe cross-section, v = water speed</td></tr>
+<tr><td class="k">Power available</td><td class="f">P = ρQgh</td><td>watts; g = 10 m s⁻²</td></tr>
+<tr><td class="k">Electrical output</td><td class="f">P<sub>out</sub> = η ρQgh</td><td>η = η<sub>turbine</sub> × η<sub>generator</sub></td></tr>
+<tr><td class="k">Energy generated</td><td class="f">E = P<sub>out</sub> × t</td><td>kWh if P in kW and t in hours</td></tr>
+</table>
+<ul>
+<li><b>Derivation:</b> each second, mass ρQ falls through h and loses PE = (ρQ)gh. PE lost per second = power, so <span class="eqs">P = ρQgh</span>. Power is proportional to both Q and h.</li>
+<li><b>Dry season effect:</b> low lake level lowers h and low river flow lowers Q, so P falls on both counts.</li>
+</ul>
+
+<h3>6.4 Nigerian Dams: Fact Sheet</h3>
+<table>
+<tr><th style="width:11%">Dam</th><th style="width:11%">River</th><th style="width:8%">Year</th><th style="width:15%">Installed</th><th>Quiz facts</th></tr>
+<tr><td class="k">Kainji</td><td>Niger</td><td>1968</td><td>760 MW (8 units)</td><td>Nigeria's first hydropower plant; Kainji Lake (≈ 1 300 km²) is the largest man-made lake in Nigeria. Designed for 960 MW with 12 turbines; only 8 were installed. Gravity dam. Reservoir drowned the old town of Bussa and Foge Island. Supplies some power to Niger Republic.</td></tr>
+<tr><td class="k">Jebba</td><td>Niger</td><td>1985</td><td>578.4 MW (6 × 96.4 MW)</td><td>About 100 km downstream of Kainji, so the two form a cascade: Kainji water feeds Jebba.</td></tr>
+<tr><td class="k">Shiroro</td><td>Kaduna</td><td>1990</td><td>600 MW (4 × 150 MW, Francis)</td><td>Gross head ≈ 97 m; four penstocks ≈ 300 m long, 6.3 m diameter; reservoir ≈ 7 000 million m³.</td></tr>
+<tr><td class="k">Zungeru</td><td>Kaduna</td><td>2020s</td><td>700 MW (4 × 175 MW)</td><td>Sits between Shiroro (upstream) and Jebba (downstream) on the Kaduna / Niger system.</td></tr>
+</table>
+<table>
+<tr><th style="width:34%">Logistics and trends</th><th>Fact</th></tr>
+<tr><td class="k">Share and ownership</td><td>Kainji and Jebba together (1 338.4 MW installed) have been reported to produce about 20% of Nigeria's power. Both passed to a private concession in November 2013.</td></tr>
+<tr><td class="k">Installed vs available</td><td>At the 2013 hand-over Kainji was not generating and Jebba was below full power: only 482 MW of the 1 338.4 MW was available. A PHCN-era study listed availability factors of 0.58 (Kainji), 0.92 (Jebba) and 0.81 (Shiroro).</td></tr>
+<tr><td class="k">Why availability falls</td><td>Units out for maintenance (Kainji had 6 of 8 units available, Jebba 4 of 6), and seasonal river flow and lake level.</td></tr>
+<tr><td class="k">Trade-offs, with cases</td><td>Gains: stored energy, flood control, irrigation, fisheries, navigation. Costs: settlements drowned (Bussa), river flow changed downstream, silt collecting in the reservoir, heavy capital cost, output depends on rainfall.</td></tr>
+</table>
+</section>
+
+<section class="week">
+<h2><span class="wk">WEEK 8</span>Rockets and Satellites</h2>
+
+<h3>8.1 Rocket Propulsion: Principles and Formulae</h3>
+<p><b>Newton's third law: to every action there is an equal and opposite reaction. The rocket pushes hot gas backward; the gas pushes the rocket forward with equal force (thrust). No air is needed, so rockets work in a vacuum.</b></p>
+<table>
+<tr><th style="width:30%">Quantity</th><th style="width:30%">Formula</th><th>Derivation / note</th></tr>
+<tr><td class="k">Conservation of momentum</td><td class="f">M·Δv = m·v<sub>e</sub></td><td>Momentum of gas expelled backward = momentum gained by rocket forward (starting from rest).</td></tr>
+<tr><td class="k">Thrust</td><td class="f">F = (dm/dt) × v<sub>e</sub></td><td>Newton's 2nd law: force = rate of change of momentum of the exhaust. v<sub>e</sub> = exhaust speed relative to rocket.</td></tr>
+<tr><td class="k">Net acceleration</td><td class="f">a = (F − Mg)/M = F/M − g</td><td>Lift-off needs F &gt; Mg. As fuel burns, M falls, so a rises.</td></tr>
+<tr><td class="k">Rocket equation</td><td class="f">Δv = v<sub>e</sub> ln(M₀/M<sub>f</sub>)</td><td>M₀ = full mass, M<sub>f</sub> = empty mass. Basis of staging.</td></tr>
+<tr><td class="k">Orbital speed</td><td class="f">v = √(GM/r) = √(gR²/r)</td><td>Gravity supplies the centripetal force: GMm/r² = mv²/r.</td></tr>
+<tr><td class="k">Escape speed</td><td class="f">v = √(2gR) ≈ 11.2 km s⁻¹</td><td>KE at launch = PE needed to reach infinity.</td></tr>
+</table>
+
+<h3>8.2 Types of Rockets</h3>
+<table>
+<tr><th style="width:20%">Feature</th><th style="width:40%">Solid-fuel rocket</th><th>Liquid-fuel rocket</th></tr>
+<tr><td class="k">Propellant</td><td>Fuel and oxidiser cast together as a solid block (grain)</td><td>Fuel and oxidiser in separate tanks, pumped into the chamber (e.g. kerosene + liquid oxygen; liquid hydrogen + liquid oxygen)</td></tr>
+<tr><td class="k">Control</td><td>Cannot be throttled or shut down once lit</td><td>Throttle, shut down and restart possible</td></tr>
+<tr><td class="k">Complexity</td><td>Simple, few moving parts, can sit ready for long periods</td><td>Pumps, valves, pipes; fuelled shortly before launch</td></tr>
+<tr><td class="k">Specific impulse (approx.)</td><td>≈ 250 – 270 s</td><td>≈ 300 – 350 s (kerosene), ≈ 450 s (hydrogen, vacuum)</td></tr>
+<tr><td class="k">Used for</td><td>Strap-on boosters, missiles, fireworks, model rockets</td><td>Main stages and upper stages (Saturn V, Long March 3B, Falcon 9)</td></tr>
+</table>
+<ul>
+<li><b>Staging:</b> empty tanks and engines are dropped to cut M<sub>f</sub> and raise Δv. Reaching low Earth orbit needs Δv ≈ 9.3 – 9.5 km s⁻¹ once gravity and air drag losses are included, well above the 7.8 km s⁻¹ orbital speed.</li>
+</ul>
+
+<h3>8.3 Satellites: Types and Orbits</h3>
+<table>
+<tr><th style="width:18%">Type</th><th style="width:25%">Typical orbit</th><th style="width:21%">Example</th><th>Job</th></tr>
+<tr><td class="k">Communication</td><td>Geostationary, 35 786 km</td><td>NigComSat-1R, Intelsat</td><td>Relay TV, phone, internet (transponders)</td></tr>
+<tr><td class="k">Navigation</td><td>Medium Earth orbit, ≈ 20 200 km (GPS), period ≈ 12 h</td><td>GPS, Galileo, GLONASS, BeiDou</td><td>Timing signals; a receiver needs at least 4 satellites for position and clock error</td></tr>
+<tr><td class="k">Weather</td><td>Geostationary or polar</td><td>GOES (geostationary), NOAA (polar)</td><td>Cloud images, storm tracking</td></tr>
+<tr><td class="k">Earth observation</td><td>Sun-synchronous low orbit, ≈ 600 – 800 km, inclination ≈ 98°</td><td>NigeriaSat-1, NigeriaSat-2</td><td>Imaging land use, floods, desertification</td></tr>
+<tr><td class="k">Military</td><td>Low or high, classified</td><td>Reconnaissance, early-warning</td><td>Surveillance, secure communication, missile warning</td></tr>
+<tr><td class="k">Scientific / station</td><td>Low Earth orbit, ≈ 400 – 550 km</td><td>ISS (≈ 92 min), Hubble</td><td>Research</td></tr>
+</table>
+<table>
+<tr><th style="width:26%">Orbit</th><th style="width:26%">Height</th><th style="width:24%">Period</th><th>Speed</th></tr>
+<tr><td class="k">Low Earth orbit</td><td>160 – 2 000 km</td><td>≈ 90 – 127 min</td><td>≈ 7.8 km s⁻¹ (low end)</td></tr>
+<tr><td class="k">Medium Earth orbit (GPS)</td><td>≈ 20 200 km</td><td>≈ 12 h</td><td>≈ 3.9 km s⁻¹</td></tr>
+<tr><td class="k">Geostationary</td><td>35 786 km above the equator</td><td>23 h 56 min (one sidereal day)</td><td>≈ 3.07 km s⁻¹</td></tr>
+</table>
+<ul>
+<li><b>Geostationary conditions:</b> over the equator, west-to-east, period = Earth's rotation period, so the satellite stays above the same point. One dish pointed once is enough.</li>
+<li><b>Radio delay:</b> up and down through 35 786 km each way ≈ 2 × 35 786 km ÷ 300 000 km s⁻¹ ≈ 0.24 s per hop; a two-way conversation carries ≈ 0.5 s of delay.</li>
+</ul>
+
+<h3>8.4 Quiz Facts and Launch Logistics</h3>
+<table>
+<tr><th style="width:34%">Item</th><th>Fact</th></tr>
+<tr><td class="k">First satellite</td><td>Sputnik 1 (USSR), 4 October 1957, 83.6 kg, orbit ≈ 96 min. First human in space: Yuri Gagarin, 12 April 1961.</td></tr>
+<tr><td class="k">Geostationary milestones</td><td>Idea published by Arthur C. Clarke, 1945. Syncom 3 (1964) was the first geostationary satellite. Early Bird (1965) was the first commercial communications satellite in that orbit.</td></tr>
+<tr><td class="k">Why launch near the equator</td><td>The ground moves at ≈ 465 m s⁻¹ at the equator, which a rocket launched east gets for free. Kourou (French Guiana) is at 5°N; Xichang (China) at 28°N; Plesetsk (Russia) at 63°N, which suits polar and sun-synchronous orbits.</td></tr>
+<tr><td class="k">Getting to GEO</td><td>Rocket places the satellite in a geostationary transfer orbit (GTO); at the far point an on-board apogee motor fires to make the orbit circular over the equator. Long March 3B puts ≈ 5.5 tonnes into GTO.</td></tr>
+<tr><td class="k">End of life</td><td>Station-keeping fuel limits a GEO satellite to ≈ 15 years. A dead one is boosted to a graveyard orbit a few hundred km above GEO. Low-orbit satellites are allowed to decay and burn up.</td></tr>
+<tr><td class="k">Large rockets</td><td>Saturn V: ≈ 34 MN thrust, lift-off mass ≈ 2 900 t. Falcon 9's first stage lands back and is reused.</td></tr>
+</table>
+</section>
+
+<section class="week">
+<h2><span class="wk">WEEK 9</span>Niger-SAT 1 (NigeriaSat-1)</h2>
+
+<h3>9.1 Fact Sheet</h3>
+<table>
+<tr><th style="width:28%">Item</th><th>Fact</th></tr>
+<tr><td class="k">What it is</td><td>Nigeria's first satellite; an Earth-observation microsatellite for disaster monitoring.</td></tr>
+<tr><td class="k">Launched</td><td>27 September 2003, Plesetsk Cosmodrome, northern Russia, on a Kosmos-3M rocket.</td></tr>
+<tr><td class="k">Builder</td><td>Surrey Satellite Technology Ltd (SSTL), UK, on its Microsat-100 platform. Contract work began November 2001. Nigerian engineers were trained at SSTL.</td></tr>
+<tr><td class="k">Mass / cost</td><td>≈ 100 kg; reported cost ≈ US$13 million; design life 5 years.</td></tr>
+<tr><td class="k">Orbit</td><td>Low Earth, sun-synchronous, ≈ 675 × 694 km, inclination ≈ 98.2°, period ≈ 98.5 min.</td></tr>
+<tr><td class="k">Imager</td><td>32 m resolution, three bands (green, red, near-infrared), 600 km swath. Revisit 3 – 5 days alone, daily within the full constellation.</td></tr>
+<tr><td class="k">Programme</td><td>Disaster Monitoring Constellation (DMC): seven nations (Algeria, China, Nigeria, Thailand, Turkey, UK, Vietnam). Algeria's AlSat-1 (November 2002) was the first of the constellation.</td></tr>
+<tr><td class="k">Operator</td><td>National Space Research and Development Agency (NASRDA), Abuja.</td></tr>
+<tr><td class="k">Stated objectives</td><td>Early warning of disasters; detecting and controlling desertification in the north; demographic planning; mapping of state and international borders; links between environment and disease spread (malaria, meningitis); support for distance learning.</td></tr>
+<tr><td class="k">Successors</td><td>NigeriaSat-2 and NigeriaSat-X, built by SSTL, launched together on a Dnepr rocket from Yasny, Russia, 17 August 2011. NigeriaSat-2 images at 2.5 m (panchromatic), 5 m (multispectral) and 32 m (wide swath).</td></tr>
+<tr><td class="k">Status</td><td>No longer operational.</td></tr>
+</table>
+
+<h3>9.2 Launch Logistics and Operating Facts</h3>
+<table>
+<tr><th style="width:28%">Item</th><th>Fact</th></tr>
+<tr><td class="k">Shared rocket</td><td>The Kosmos-3M carried seven satellites in one launch: NigeriaSat-1, UK-DMC, BILSAT-1 (Turkey), STSAT-1 (South Korea), Rubin-4-DSI (Germany), Mozhayets-4 and Larets (Russia). Sharing split the launch cost.</td></tr>
+<tr><td class="k">Launch slip</td><td>The launch was planned for July 2003 and moved to September because the Russian launch agency had to fly a military satellite first.</td></tr>
+<tr><td class="k">Why sun-synchronous</td><td>The orbit crosses each latitude at the same local solar time every pass, so images from different dates have the same lighting and can be compared for change (floods, farmland, desert edge).</td></tr>
+<tr><td class="k">Ground contact</td><td>A low-orbit satellite is above a given ground station for only about ten minutes per pass, so images are stored on board and sent down during passes over the station.</td></tr>
+<tr><td class="k">Resolution meaning</td><td>32 m resolution: each pixel covers 32 m × 32 m of ground. Good for land cover and large floods; too coarse to count buildings.</td></tr>
+</table>
+</section>
+
+<section class="week">
+<h2><span class="wk">WEEK 10</span>NICOM-SAT 1 (NigComSat-1)</h2>
+
+<h3>10.1 Fact Sheet</h3>
+<table>
+<tr><th style="width:28%">Item</th><th>Fact</th></tr>
+<tr><td class="k">What it is</td><td>Nigeria's first communications satellite and second satellite overall (after NigeriaSat-1). Nigerian sources call it "Africa's first communication satellite"; strictly, Egypt's Nilesat series (from 1998) flew earlier.</td></tr>
+<tr><td class="k">Contract</td><td>Signed December 2004 with China Great Wall Industry Corporation (CGWIC): design, manufacture, launch and in-orbit delivery.</td></tr>
+<tr><td class="k">Launched</td><td>13 May 2007, 16:01 UTC, Xichang Satellite Launch Centre, Sichuan, China, on a Long March 3B.</td></tr>
+<tr><td class="k">Platform / mass</td><td>Chinese DFH-4 bus; ≈ 5 150 kg at launch; 9 kW power.</td></tr>
+<tr><td class="k">Orbit</td><td>Geostationary, 42.5° East, over the equator, ≈ 35 786 km.</td></tr>
+<tr><td class="k">Payload</td><td>28 transponders: 4 C-band, 14 Ku-band, 8 Ka-band, 2 L-band.</td></tr>
+<tr><td class="k">Uses</td><td>Telephone and data links, broadband internet, TV and radio broadcasting, bandwidth leasing, navigation support (L-band).</td></tr>
+<tr><td class="k">Operator</td><td>NIGCOMSAT Ltd, under NASRDA and the Federal Ministry of Science and Technology; controlled from Abuja.</td></tr>
+</table>
+
+<h3>10.2 Failure and Replacement Timeline</h3>
+<table>
+<tr><th style="width:28%">Date</th><th>Event</th></tr>
+<tr><td class="k">April 2008</td><td>Power lost from one solar array (southern).</td></tr>
+<tr><td class="k">10 – 11 November 2008</td><td>Switched off for analysis and to avoid collision risk; then lost all power after a solar-array anomaly. Sent to a graveyard orbit. Life in service ≈ 18 months against a 15-year design life.</td></tr>
+<tr><td class="k">24 March 2009</td><td>Replacement contract signed with CGWIC as an "in-orbit delivery": the supplier hands over a working satellite already in orbit.</td></tr>
+<tr><td class="k">December 2011</td><td>NigComSat-1R (same DFH-4 platform, same 42.5° E slot, same transponder mix) launched from Xichang on a Long March 3B.</td></tr>
+<tr><td class="k">2021</td><td>NIGCOMSAT reported plans for two new satellites to replace NigComSat-1R.</td></tr>
+</table>
+
+<h3>10.3 Industry Logistics, Control and Comparison</h3>
+<table>
+<tr><th style="width:28%">Item</th><th>Fact</th></tr>
+<tr><td class="k">Why C-band for Nigeria</td><td>Heavy tropical rain absorbs Ku and Ka signals (rain fade). C-band is the most rain-tolerant of the three, at the cost of larger dishes. Ku and Ka give small dishes and more capacity.</td></tr>
+<tr><td class="k">Satellite control</td><td>Ground engineers command orbit corrections (station-keeping) and watch power, temperature and attitude telemetry. A solar-array fault cannot be repaired in orbit, so the satellite is lost; this is the main control risk.</td></tr>
+<tr><td class="k">Signal delay</td><td>Up and down ≈ 0.24 s per hop; two-way ≈ 0.5 s.</td></tr>
+</table>
+<table>
+<tr><th style="width:24%">Feature</th><th style="width:38%">NigeriaSat-1</th><th>NigComSat-1</th></tr>
+<tr><td class="k">Year</td><td>2003</td><td>2007</td></tr>
+<tr><td class="k">Job</td><td>Earth observation</td><td>Communication</td></tr>
+<tr><td class="k">Orbit</td><td>Low, sun-synchronous, ≈ 700 km</td><td>Geostationary, 35 786 km</td></tr>
+<tr><td class="k">Mass</td><td>≈ 100 kg</td><td>≈ 5 150 kg</td></tr>
+<tr><td class="k">Builder</td><td>SSTL, UK</td><td>CGWIC, China</td></tr>
+<tr><td class="k">Rocket / site</td><td>Kosmos-3M, Plesetsk (Russia)</td><td>Long March 3B, Xichang (China)</td></tr>
+<tr><td class="k">Fate</td><td>Retired from service</td><td>Failed Nov 2008; replaced by 1R in Dec 2011</td></tr>
+</table>
+</section>
+</div>
+</body>
+</html>

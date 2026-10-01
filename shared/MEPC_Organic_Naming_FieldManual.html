@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Organic Naming — Field Manual</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+:root{
+  --bg:#060A0E;--bg2:#090D12;--bg3:#0D1318;--bg4:#111A21;
+  --copper:#33A8B8;--copper-bright:#4AC4D4;--copper-dim:#227A88;
+  --copper-glow:rgba(51,168,184,0.12);--copper-rule:rgba(51,168,184,0.2);
+  --wire:#B0D5E8;--wire2:rgba(176,213,232,0.65);--wire3:rgba(176,213,232,0.35);
+  --wire4:rgba(176,213,232,0.15);--rule:rgba(176,213,232,0.08);--rule2:rgba(176,213,232,0.04);
+  --red:#C0392B;--blue:#2E86AB;--green:#2D7A4F;
+  --display:'Cormorant Garamond',serif;--body:'Libre Baskerville',serif;--mono:'DM Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--wire);font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased;}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;}
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--copper-dim),var(--copper-bright));z-index:999;width:0%;transition:width .1s linear;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,10,14,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);}
+.nav-mark{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;flex-wrap:wrap;}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;color:var(--wire3);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--copper)}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 10vw 80px;border-bottom:1px solid var(--copper-rule);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--rule2) 1px,transparent 1px),linear-gradient(90deg,var(--rule2) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-100px;left:10vw;width:600px;height:400px;background:radial-gradient(ellipse,var(--copper-glow) 0%,transparent 70%);pointer-events:none;}
+.hero-series{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--copper);text-transform:uppercase;margin-bottom:32px;position:relative;z-index:1;display:flex;align-items:center;gap:16px;}
+.hero-series::before{content:'';width:40px;height:1px;background:var(--copper);}
+.hero-title{font-family:var(--display);font-size:clamp(48px,9vw,110px);font-weight:300;line-height:1.0;color:var(--wire);margin-bottom:12px;position:relative;z-index:1;letter-spacing:-1px;}
+.hero-title em{font-style:italic;color:var(--copper-bright);font-weight:300;}
+.hero-sub{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(16px,2.2vw,22px);color:var(--wire2);margin-bottom:56px;position:relative;z-index:1;max-width:52ch;line-height:1.5;}
+.hero-meta{display:grid;grid-template-columns:repeat(3,auto);gap:0;border:1px solid var(--copper-rule);width:fit-content;position:relative;z-index:1;}
+.hero-meta-item{padding:16px 24px;border-right:1px solid var(--copper-rule);}
+.hero-meta-item:last-child{border-right:none}
+.hero-meta-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--copper);text-transform:uppercase;margin-bottom:6px;}
+.hero-meta-val{font-family:var(--display);font-size:18px;color:var(--wire2);font-style:italic;}
+
+.container{max-width:800px;margin:0 auto;padding:0 32px}
+.chapter{padding:80px 0 0}
+.ch-marker{font-family:var(--mono);font-size:9px;letter-spacing:4px;color:var(--copper);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:16px;}
+.ch-marker::after{content:'';flex:1;height:1px;background:var(--copper-rule)}
+.ch-title{font-family:var(--display);font-size:clamp(28px,4.5vw,48px);font-weight:600;line-height:1.1;color:var(--wire);margin-bottom:8px;}
+.ch-title em{font-style:italic;color:var(--copper-bright)}
+.ch-deck{font-family:var(--display);font-style:italic;font-weight:300;font-size:19px;color:var(--wire2);margin-bottom:40px;padding-bottom:36px;border-bottom:1px solid var(--rule);line-height:1.5;}
+
+.prose{padding:16px 0}
+.prose p{font-size:16px;line-height:1.85;color:var(--wire2);margin-bottom:20px;}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--wire);font-weight:700}
+.prose em{color:var(--copper-bright);font-style:italic}
+
+.insight{margin:36px 0;padding:28px 32px;background:var(--bg2);border-left:3px solid var(--copper);position:relative;}
+.insight-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;margin-bottom:12px;}
+.insight-text{font-family:var(--display);font-size:clamp(18px,2.5vw,24px);font-style:italic;color:var(--wire);line-height:1.4;}
+
+.tbl-wrap{margin:36px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+table{width:100%;border-collapse:collapse;font-size:14px;}
+thead tr{background:var(--bg3);}
+th{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--copper);text-transform:uppercase;padding:12px 16px;text-align:left;border-bottom:1px solid var(--copper-rule);}
+td{padding:11px 16px;border-bottom:1px solid var(--rule);color:var(--wire2);vertical-align:top;}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg3);color:var(--wire);}
+td.mono{font-family:var(--mono);font-size:12px;color:var(--copper-bright);}
+td.note{font-size:12px;color:var(--wire3);}
+td.trap{font-size:12px;color:#C0392B;}
+
+.arrow-list{margin:24px 0;list-style:none;}
+.arrow-list li{display:flex;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule);color:var(--wire2);font-size:15px;}
+.arrow-list li:last-child{border-bottom:none}
+.arrow-list li::before{content:'→';color:var(--copper);font-family:var(--mono);flex-shrink:0;}
+.arrow-list li strong{color:var(--wire);}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:1px;padding:5px 12px;border:1px solid var(--copper-rule);color:var(--wire3);background:var(--bg2);}
+.tag.active{border-color:var(--copper);color:var(--copper-bright);background:rgba(51,168,184,0.08);}
+
+.types-grid{margin:36px 0;display:grid;grid-template-columns:1fr;gap:1px;background:var(--copper-rule);}
+.type-row{display:grid;grid-template-columns:1.5fr 1.5fr 3fr;gap:0;background:var(--bg2);}
+.type-row.header{background:var(--bg3);}
+.type-cell{padding:12px 16px;border-right:1px solid var(--rule);font-size:13px;color:var(--wire2);}
+.type-cell:last-child{border-right:none}
+.type-row.header .type-cell{font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--copper);text-transform:uppercase;}
+.type-cell .mono{font-family:var(--mono);font-size:11px;color:var(--copper-bright);}
+
+.section-divider{height:1px;background:var(--rule);margin:80px 0 0;}
+.section-end{height:1px;background:var(--rule);margin:80px 0 0;}
+.footnote{margin:60px 0 0;padding:32px;border:1px solid var(--rule);background:var(--bg2);}
+.footnote-label{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;margin-bottom:16px;}
+.footnote p{font-size:14px;color:var(--wire3);line-height:1.8;}
+.closing{padding:80px 0;text-align:center;}
+.closing-text{font-family:var(--display);font-size:clamp(18px,2.5vw,26px);font-style:italic;color:var(--wire2);margin-bottom:16px;line-height:1.4;}
+.closing-sub{font-family:var(--mono);font-size:10px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;}
+
+.chain{margin:40px 0;background:var(--bg2);border:1px solid var(--copper-rule);overflow:hidden;}
+.chain-head{padding:12px 20px;background:var(--bg3);border-bottom:1px solid var(--copper-rule);font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--copper);text-transform:uppercase;}
+.chain-body{padding:32px 24px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.chain-row{display:flex;align-items:center;flex-wrap:nowrap;gap:0;margin-bottom:20px;}
+.chain-row:last-child{margin-bottom:0}
+.chain-node{background:var(--bg4);border:1px solid var(--copper-rule);padding:10px 16px;text-align:center;min-width:90px;flex-shrink:0;}
+.chain-node-val{font-family:var(--mono);font-size:13px;color:var(--copper-bright);font-weight:500;}
+.chain-node-lbl{font-family:var(--mono);font-size:9px;color:var(--wire3);letter-spacing:1px;margin-top:4px;}
+.chain-node.highlight{background:rgba(51,168,184,0.15);border-color:var(--copper);}
+.chain-node.highlight .chain-node-val{color:var(--wire);}
+.chain-arrow{display:flex;flex-direction:column;align-items:center;padding:0 8px;flex-shrink:0;}
+.chain-arrow-sym{color:var(--copper);font-size:18px;line-height:1;}
+.chain-arrow-op{font-family:var(--mono);font-size:9px;color:var(--wire3);letter-spacing:1px;margin-top:3px;white-space:nowrap;}
+
+.priority-block{margin:36px 0;background:var(--bg2);border:1px solid var(--copper-rule);}
+.priority-row{display:flex;align-items:stretch;border-bottom:1px solid var(--rule);}
+.priority-row:last-child{border-bottom:none}
+.priority-num{font-family:var(--mono);font-size:28px;color:var(--copper-dim);padding:20px 24px;border-right:1px solid var(--rule);display:flex;align-items:center;min-width:72px;justify-content:center;}
+.priority-content{padding:20px 24px;flex:1;}
+.priority-name{font-family:var(--display);font-size:20px;font-weight:600;color:var(--wire);margin-bottom:4px;}
+.priority-name em{color:var(--copper-bright);font-style:italic;}
+.priority-detail{font-size:13px;color:var(--wire3);font-family:var(--mono);}
+.priority-example{font-family:var(--mono);font-size:12px;color:var(--copper-bright);margin-top:8px;}
+
+@media(max-width:600px){
+  .nav-links{display:none}
+  .hero{padding:100px 6vw 60px}
+  .container{padding:0 20px}
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .hero-meta-item:nth-child(3){border-right:none;border-top:1px solid var(--copper-rule);}
+  .type-row{grid-template-columns:1fr 1fr}
+  .type-cell:nth-child(3){grid-column:1/-1;border-right:none;border-top:1px solid var(--rule);}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav class="nav">
+  <div class="nav-mark">MEPC · Series III</div>
+  <div class="nav-links">
+    <a href="#why-glucose">Why Glucose</a>
+    <a href="#prefixes">Prefixes</a>
+    <a href="#suffixes">Suffixes</a>
+    <a href="#isomers">Isomers</a>
+    <a href="#priority">FG Priority</a>
+    <a href="#aliases">Aliases</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-series">Series III — Organic Chemistry</div>
+  <h1 class="hero-title">Naming &amp;<br><em>Priority</em></h1>
+  <p class="hero-sub">Every alias, every suffix, every isomer trap. Why glucose is glucose and not hexose. Why the same molecule can have four different names depending on who's looking at it.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Focus</div>
+      <div class="hero-meta-val">Nomenclature</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Level</div>
+      <div class="hero-meta-val">JAMB / WAEC</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Series</div>
+      <div class="hero-meta-val">Field Manual</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 1 — WHY GLUCOSE NOT HEXOSE
+════════════════════════════════════════ -->
+<div id="why-glucose" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter One</div>
+    <h2 class="ch-title">Why Glucose, Not <em>Hexose</em></h2>
+    <p class="ch-deck">There are two completely different naming systems running in parallel. One describes structure. The other describes identity. Hexose is a category. Glucose is a name.</p>
+
+    <div class="prose">
+      <p>This confusion costs marks every year. <strong>Hexose means "6-carbon sugar."</strong> It is a structural category, like saying "6-door vehicle." Glucose, fructose, and galactose are all hexoses — but they are completely different compounds with different properties, different reactions, and different roles in the body.</p>
+      <p>The names glucose, fructose, and sucrose come from <em>Greek and Latin roots describing taste, source, or discovery</em> — not structure. They predate IUPAC. They stuck because biochemistry adopted them before systematic naming existed.</p>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">The core distinction</div>
+      <div class="insight-text">-ose tells you the class. The prefix (gluc-, fruc-, galact-) tells you the specific molecule. One is a category. The other is an identity.</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Name</th><th>Meaning of root</th><th>Class</th><th>Formula</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Glucose</strong></td><td class="mono">glukus (Greek: sweet)</td><td>Hexose / Aldose</td><td class="mono">C₆H₁₂O₆</td><td class="note">Blood sugar. Aldehyde group at C1.</td></tr>
+          <tr><td><strong>Fructose</strong></td><td class="mono">fructus (Latin: fruit)</td><td>Hexose / Ketose</td><td class="mono">C₆H₁₂O₆</td><td class="trap">⚠ Same formula as glucose — structural isomer.</td></tr>
+          <tr><td><strong>Galactose</strong></td><td class="mono">galaktos (Greek: milk)</td><td>Hexose / Aldose</td><td class="mono">C₆H₁₂O₆</td><td class="trap">⚠ Same formula again — stereoisomer of glucose.</td></tr>
+          <tr><td><strong>Ribose</strong></td><td class="mono">arabinose (plant gum)</td><td>Pentose / Aldose</td><td class="mono">C₅H₁₀O₅</td><td class="note">RNA backbone sugar.</td></tr>
+          <tr><td><strong>Sucrose</strong></td><td class="mono">sucre (French: sugar)</td><td>Disaccharide</td><td class="mono">C₁₂H₂₂O₁₁</td><td class="note">Glucose + Fructose. Table sugar.</td></tr>
+          <tr><td><strong>Lactose</strong></td><td class="mono">lac (Latin: milk)</td><td>Disaccharide</td><td class="mono">C₁₂H₂₂O₁₁</td><td class="note">Glucose + Galactose. Milk sugar.</td></tr>
+          <tr><td><strong>Maltose</strong></td><td class="mono">malt (fermented grain)</td><td>Disaccharide</td><td class="mono">C₁₂H₂₂O₁₁</td><td class="note">Glucose + Glucose. Malt sugar.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>The structural classification system runs separately: <strong>triose (3C), tetrose (4C), pentose (5C), hexose (6C), heptose (7C)</strong>. And within each: <strong>aldose</strong> (aldehyde group) vs <strong>ketose</strong> (ketone group). Glucose = aldohexose. Fructose = ketohexose. JAMB occasionally tests this distinction directly.</p>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Monosaccharide</strong> — single sugar unit, cannot be hydrolysed further</li>
+      <li><strong>Disaccharide</strong> — two monosaccharides joined by condensation (−H₂O)</li>
+      <li><strong>Polysaccharide</strong> — many units: starch, glycogen, cellulose (all glucose, different bonds)</li>
+      <li><strong>Starch vs Cellulose</strong> — same monomer (glucose), different glycosidic bond. One digestible, one not.</li>
+    </ul>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 2 — PREFIX MASTER TABLE
+════════════════════════════════════════ -->
+<div id="prefixes" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Two</div>
+    <h2 class="ch-title">Prefix Master Table — <em>Size Tells You Everything</em></h2>
+    <p class="ch-deck">The prefix is the carbon count. Always. Once you know the prefix, you know the skeleton. The suffix tells you what it does.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Prefix</th><th>Carbons</th><th>Common aliases / sources</th><th>Memory hook</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">Meth−</td><td class="mono">1</td><td>Methane, Methanol, Methanal, Methanoic acid</td><td class="note">Greek methy = wine. First and simplest.</td></tr>
+          <tr><td class="mono">Eth−</td><td class="mono">2</td><td>Ethane, Ethanol, Ethanal, Ethanoic acid (acetic), Ethyne (acetylene)</td><td class="note">Greek aithos = blaze. Ethanol burns.</td></tr>
+          <tr><td class="mono">Prop−</td><td class="mono">3</td><td>Propane (LPG), Propanol, Propanone (acetone), Propanal</td><td class="note">Greek protos = first fatty acid. Propionic.</td></tr>
+          <tr><td class="mono">But−</td><td class="mono">4</td><td>Butane (lighter), Butanol, Butyric acid (rancid butter)</td><td class="note">Latin butyrum = butter. Rancid smell.</td></tr>
+          <tr><td class="mono">Pent−</td><td class="mono">5</td><td>Pentane, Pentanol, Pentyl acetate (banana)</td><td class="note">Greek pente = five. Pentagon.</td></tr>
+          <tr><td class="mono">Hex−</td><td class="mono">6</td><td>Hexane (solvent), Hexanol, Glucose class</td><td class="note">Greek hex = six. Hexagon.</td></tr>
+          <tr><td class="mono">Hept−</td><td class="mono">7</td><td>Heptane</td><td class="note">Greek hepta = seven.</td></tr>
+          <tr><td class="mono">Oct−</td><td class="mono">8</td><td>Octane (petrol rating), Octyl acetate (orange)</td><td class="note">Latin octo = eight. Octopus.</td></tr>
+          <tr><td class="mono">Non−</td><td class="mono">9</td><td>Nonane</td><td class="note">Latin novem = nine.</td></tr>
+          <tr><td class="mono">Dec−</td><td class="mono">10</td><td>Decane, Decanoic acid (coconut)</td><td class="note">Latin decem = ten. Decade.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">The Acet− family — special case</div>
+      <div class="insight-text">Acet− always means the 2-carbon (ethyl) chain, tracing back to acetic acid (vinegar). Acetone, acetaldehyde, acetylene, acetate — all eth− compounds wearing their common name instead of IUPAC.</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Common name</th><th>IUPAC name</th><th>Chain</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Acetic acid</strong></td><td class="mono">Ethanoic acid</td><td class="mono">2C</td><td class="note">Vinegar. Most tested carboxylic acid.</td></tr>
+          <tr><td><strong>Acetone</strong></td><td class="mono">Propanone</td><td class="mono">3C</td><td class="note">Simplest ketone. Nail polish remover.</td></tr>
+          <tr><td><strong>Acetaldehyde</strong></td><td class="mono">Ethanal</td><td class="mono">2C</td><td class="note">Oxidation product of ethanol.</td></tr>
+          <tr><td><strong>Acetylene</strong></td><td class="mono">Ethyne</td><td class="mono">2C</td><td class="note">Welding gas. Triple bond.</td></tr>
+          <tr><td><strong>Acetate</strong></td><td class="mono">Ethanoate</td><td class="mono">2C</td><td class="note">Salt or ester of acetic acid.</td></tr>
+          <tr><td><strong>Formic acid</strong></td><td class="mono">Methanoic acid</td><td class="mono">1C</td><td class="note">Ant sting. Formica = ant (Latin).</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 3 — SUFFIX AND FUNCTIONAL GROUP
+════════════════════════════════════════ -->
+<div id="suffixes" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Three</div>
+    <h2 class="ch-title">Suffixes — <em>The Personality Tag</em></h2>
+    <p class="ch-deck">The suffix names the functional group. The functional group is the only part of the molecule that reacts. Master the suffix, master the reaction.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Suffix</th><th>Group</th><th>Structure</th><th>Personality / Exam fact</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">−ane</td><td>Alkane</td><td class="mono">C−C single bonds only</td><td class="note">Saturated. Substitution only (UV light). Combustion.</td></tr>
+          <tr><td class="mono">−ene</td><td>Alkene</td><td class="mono">C=C double bond</td><td class="note">Unsaturated. Addition reactions. Decolourises bromine water.</td></tr>
+          <tr><td class="mono">−yne</td><td>Alkyne</td><td class="mono">C≡C triple bond</td><td class="note">Highly unsaturated. Addition × 2. Ethyne = acetylene.</td></tr>
+          <tr><td class="mono">−ol</td><td>Alcohol</td><td class="mono">−OH</td><td class="note">Polar. Oxidised → aldehyde → carboxylic acid. Dehydrated → alkene.</td></tr>
+          <tr><td class="mono">−al</td><td>Aldehyde</td><td class="mono">−CHO (end carbon)</td><td class="note">Reducing agent. Positive Fehling's/Tollens'. Oxidised → acid.</td></tr>
+          <tr><td class="mono">−one</td><td>Ketone</td><td class="mono">−C=O (middle carbon)</td><td class="note">Not a reducing agent. Negative Fehling's. This is the JAMB trap.</td></tr>
+          <tr><td class="mono">−anoic acid</td><td>Carboxylic acid</td><td class="mono">−COOH</td><td class="note">Acidic. Forms esters with alcohols. Neutralises bases → salt + water.</td></tr>
+          <tr><td class="mono">−anoate</td><td>Ester</td><td class="mono">−COO−</td><td class="note">Oil / fragrant. Condensation product. Hydrolysed back to acid + alcohol.</td></tr>
+          <tr><td class="mono">−amine / −amine</td><td>Amine</td><td class="mono">−NH₂</td><td class="note">Basic. Fishy smell. Reacts with acids to form ammonium salts.</td></tr>
+          <tr><td class="mono">−oate (as ester name)</td><td>Ester</td><td class="mono">alkyl + anoate</td><td class="note">Named: alcohol part first (alkyl), then acid part (−anoate).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Aldehyde vs Ketone — the single most tested distinction</div>
+      <div class="insight-text">Both have C=O. Aldehyde: the carbonyl is at the END of the chain (−CHO). Ketone: the carbonyl is in the MIDDLE. Only aldehyde reduces Fehling's solution to brick-red Cu₂O. Ketone does nothing.</div>
+    </div>
+
+    <div class="prose">
+      <p>The <strong>ether</strong> suffix is an exception — it has no standard IUPAC suffix. Ethers are named as <em>alkoxy + alkane</em>: CH₃OCH₃ = methoxymethane, CH₃OC₂H₅ = methoxyethane. Common name is just "ether" (meaning diethyl ether specifically). Ethers are isomers of alcohols with the same molecular formula — JAMB exploits this.</p>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 4 — ISOMERS
+════════════════════════════════════════ -->
+<div id="isomers" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Four</div>
+    <h2 class="ch-title">Isomers — <em>Same Formula, Different Molecule</em></h2>
+    <p class="ch-deck">Isomers share molecular formula but differ in structure or arrangement. JAMB uses this to trap students who name by formula alone.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>What differs</th><th>Classic JAMB pair</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Structural (chain)</strong></td><td>Carbon skeleton arrangement</td><td class="mono">n-butane vs isobutane (C₄H₁₀)</td><td class="note">Same formula, different branching.</td></tr>
+          <tr><td><strong>Structural (position)</strong></td><td>Position of functional group</td><td class="mono">propan-1-ol vs propan-2-ol</td><td class="note">OH on C1 vs C2. Different boiling points.</td></tr>
+          <tr><td><strong>Structural (functional group)</strong></td><td>Type of functional group</td><td class="mono">ethanol (C₂H₆O) vs dimethyl ether (C₂H₆O)</td><td class="trap">⚠ Biggest JAMB trap. Same formula, one is alcohol, one is ether.</td></tr>
+          <tr><td><strong>Geometric (cis/trans)</strong></td><td>Spatial arrangement around C=C</td><td class="mono">cis-but-2-ene vs trans-but-2-ene</td><td class="note">Only possible with double bonds and different groups on each carbon.</td></tr>
+          <tr><td><strong>Optical</strong></td><td>Mirror image arrangement</td><td class="mono">Glucose vs Galactose</td><td class="note">Same bonds, different 3D orientation. Rarely tested at JAMB level.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chain">
+      <div class="chain-head">C₂H₆O — two completely different molecules</div>
+      <div class="chain-body">
+        <div class="chain-row">
+          <div class="chain-node highlight"><div class="chain-node-val">CH₃CH₂OH</div><div class="chain-node-lbl">Ethanol</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">≠</div><div class="chain-arrow-op">same formula</div></div>
+          <div class="chain-node highlight"><div class="chain-node-val">CH₃OCH₃</div><div class="chain-node-lbl">Dimethyl ether</div></div>
+        </div>
+        <div class="chain-row">
+          <div class="chain-node"><div class="chain-node-val">−OH group</div><div class="chain-node-lbl">alcohol behaviour</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">vs</div></div>
+          <div class="chain-node"><div class="chain-node-val">−O− group</div><div class="chain-node-lbl">ether behaviour</div></div>
+        </div>
+        <div class="chain-row">
+          <div class="chain-node"><div class="chain-node-val">bp 78°C</div><div class="chain-node-lbl">H-bonding</div></div>
+          <div class="chain-arrow"><div class="chain-arrow-sym">vs</div></div>
+          <div class="chain-node"><div class="chain-node-val">bp −24°C</div><div class="chain-node-lbl">no H-bonding</div></div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Glucose vs Fructose</strong> — both C₆H₁₂O₆, but glucose is an aldose (aldehyde) and fructose is a ketose (ketone)</li>
+      <li><strong>Propan-1-ol vs Propan-2-ol</strong> — same formula C₃H₈O, different oxidation products</li>
+      <li><strong>Ethanoic acid vs methyl methanoate</strong> — both C₂H₄O₂, one is acid, one is ester</li>
+      <li><strong>Rule:</strong> never name by formula alone — always identify the functional group first</li>
+    </ul>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 5 — FUNCTIONAL GROUP PRIORITY
+════════════════════════════════════════ -->
+<div id="priority" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Five</div>
+    <h2 class="ch-title">Functional Group <em>Priority</em></h2>
+    <p class="ch-deck">When a molecule has more than one functional group, priority determines the suffix (main name) and what gets a prefix. The highest priority group wins the suffix. Everything else becomes a prefix.</p>
+
+    <div class="prose">
+      <p>This is why amino acids are called <strong>amino acids</strong> and not <strong>carboxylic amines</strong> — the acid group has higher priority than the amine, so it wins the suffix (−oic acid). The amine becomes a prefix (amino−).</p>
+    </div>
+
+    <div class="priority-block">
+      <div class="priority-row">
+        <div class="priority-num">1</div>
+        <div class="priority-content">
+          <div class="priority-name">Carboxylic Acid <em>−COOH</em></div>
+          <div class="priority-detail">Suffix: −anoic acid &nbsp;|&nbsp; Highest priority always</div>
+          <div class="priority-example">Example: CH₃COOH = ethanoic acid (not hydroxyethanal)</div>
+        </div>
+      </div>
+      <div class="priority-row">
+        <div class="priority-num">2</div>
+        <div class="priority-content">
+          <div class="priority-name">Ester <em>−COO−</em></div>
+          <div class="priority-detail">Suffix: −anoate &nbsp;|&nbsp; Named before naming the alkyl group</div>
+          <div class="priority-example">Example: CH₃COOC₂H₅ = ethyl ethanoate</div>
+        </div>
+      </div>
+      <div class="priority-row">
+        <div class="priority-num">3</div>
+        <div class="priority-content">
+          <div class="priority-name">Aldehyde <em>−CHO</em></div>
+          <div class="priority-detail">Suffix: −al &nbsp;|&nbsp; Always at carbon-1 (end of chain)</div>
+          <div class="priority-example">Example: HCHO = methanal (formaldehyde)</div>
+        </div>
+      </div>
+      <div class="priority-row">
+        <div class="priority-num">4</div>
+        <div class="priority-content">
+          <div class="priority-name">Ketone <em>C=O</em></div>
+          <div class="priority-detail">Suffix: −one &nbsp;|&nbsp; Position number required (propan-2-one)</div>
+          <div class="priority-example">Example: CH₃COCH₃ = propanone (no number needed — only one possible position)</div>
+        </div>
+      </div>
+      <div class="priority-row">
+        <div class="priority-num">5</div>
+        <div class="priority-content">
+          <div class="priority-name">Alcohol <em>−OH</em></div>
+          <div class="priority-detail">Suffix: −ol &nbsp;|&nbsp; Position number required for 3+ carbon chains</div>
+          <div class="priority-example">Example: CH₃CH(OH)CH₃ = propan-2-ol</div>
+        </div>
+      </div>
+      <div class="priority-row">
+        <div class="priority-num">6</div>
+        <div class="priority-content">
+          <div class="priority-name">Amine <em>−NH₂</em></div>
+          <div class="priority-detail">Suffix: −amine &nbsp;|&nbsp; Prefix: amino− when outranked</div>
+          <div class="priority-example">Example: NH₂CH₂COOH = aminoethanoic acid (glycine) — acid wins</div>
+        </div>
+      </div>
+      <div class="priority-row">
+        <div class="priority-num">7</div>
+        <div class="priority-content">
+          <div class="priority-name">Alkene / Alkyne <em>C=C / C≡C</em></div>
+          <div class="priority-detail">Suffix: −ene / −yne &nbsp;|&nbsp; Lowest among common groups</div>
+          <div class="priority-example">Example: CH₂=CHOH = ethenol (not vinyl alcohol — though both used)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">The one rule</div>
+      <div class="insight-text">Higher priority group = suffix. Lower priority groups = prefixes. The carbon carrying the highest priority group gets the lowest possible number.</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Group as prefix</th><th>Meaning</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">amino−</td><td>−NH₂ present, outranked by acid</td><td class="mono">aminoethanoic acid (glycine)</td></tr>
+          <tr><td class="mono">hydroxy−</td><td>−OH present, outranked by acid/aldehyde</td><td class="mono">2-hydroxypropanoic acid (lactic acid)</td></tr>
+          <tr><td class="mono">oxo−</td><td>C=O present, outranked</td><td class="mono">3-oxobutanoic acid</td></tr>
+          <tr><td class="mono">chloro−, bromo−</td><td>halogen substituent</td><td class="mono">chloroethane, bromoethane</td></tr>
+          <tr><td class="mono">methyl−, ethyl−</td><td>alkyl branch</td><td class="mono">2-methylpropane (isobutane)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="section-end"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CHAPTER 6 — ALIASES MASTER TABLE
+════════════════════════════════════════ -->
+<div id="aliases" class="container">
+  <div class="chapter">
+    <div class="ch-marker">Chapter Six</div>
+    <h2 class="ch-title">Aliases — <em>Every Name the Same Compound Answers To</em></h2>
+    <p class="ch-deck">JAMB uses common names, IUPAC names, industrial names, and biological names interchangeably. Know all four for the key compounds.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>IUPAC</th><th>Common</th><th>Industrial / Bio</th><th>Formula</th><th>Exam hook</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">Ethanol</td><td>Grain alcohol, drinking alcohol</td><td>Fuel, spirit</td><td class="mono">C₂H₅OH</td><td class="note">Oxidised → ethanal → ethanoic acid</td></tr>
+          <tr><td class="mono">Methanol</td><td>Wood alcohol</td><td>Industrial solvent</td><td class="mono">CH₃OH</td><td class="trap">⚠ Toxic. Not ethanol. JAMB tests this distinction.</td></tr>
+          <tr><td class="mono">Propan-1,2,3-triol</td><td>Glycerol / Glycerine</td><td>Soap byproduct, moisturiser</td><td class="mono">C₃H₈O₃</td><td class="note">Released in saponification.</td></tr>
+          <tr><td class="mono">Ethanoic acid</td><td>Acetic acid</td><td>Vinegar</td><td class="mono">CH₃COOH</td><td class="note">Most tested carboxylic acid.</td></tr>
+          <tr><td class="mono">Methanoic acid</td><td>Formic acid</td><td>Ant sting, leather</td><td class="mono">HCOOH</td><td class="note">Simplest carboxylic acid. Also an aldehyde — reduces Fehling's.</td></tr>
+          <tr><td class="mono">Ethyne</td><td>Acetylene</td><td>Welding gas</td><td class="mono">C₂H₂</td><td class="note">Triple bond. Produced from CaC₂ + H₂O.</td></tr>
+          <tr><td class="mono">Ethene</td><td>Ethylene</td><td>Fruit ripening, plastics</td><td class="mono">C₂H₄</td><td class="note">Polymerises → polyethylene.</td></tr>
+          <tr><td class="mono">Propanone</td><td>Acetone</td><td>Nail polish remover, solvent</td><td class="mono">CH₃COCH₃</td><td class="note">Simplest ketone. Does NOT reduce Fehling's.</td></tr>
+          <tr><td class="mono">Methanal</td><td>Formaldehyde</td><td>Formalin (preservative)</td><td class="mono">HCHO</td><td class="note">Simplest aldehyde. Reduces Fehling's.</td></tr>
+          <tr><td class="mono">Ethyl ethanoate</td><td>Ethyl acetate</td><td>Nail polish remover, solvent</td><td class="mono">CH₃COOC₂H₅</td><td class="note">Most common ester in exams.</td></tr>
+          <tr><td class="mono">Pentyl ethanoate</td><td>Amyl acetate</td><td>Banana flavour</td><td class="mono">CH₃COOC₅H₁₁</td><td class="note">Flavour industry. JAMB uses "banana smell."</td></tr>
+          <tr><td class="mono">Sodium octadecanoate</td><td>Soap</td><td>Organic salt of fatty acid</td><td class="mono">C₁₇H₃₅COONa</td><td class="note">NaOH → hard soap. KOH → soft soap.</td></tr>
+          <tr><td class="mono">Ethoxyethane</td><td>Diethyl ether / Ether</td><td>Anaesthetic, solvent</td><td class="mono">C₂H₅OC₂H₅</td><td class="trap">⚠ Isomer of butanol (C₄H₁₀O). Common trap.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight">
+      <div class="insight-label">Petroleum fractions — the chain-length ladder</div>
+      <div class="insight-text">All from the same crude oil. Length of carbon chain alone determines whether it is a gas, petrol, kerosene, diesel, wax, or bitumen. Longer chain = higher boiling point = comes out lower in the distillation column.</div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Fraction</th><th>Carbon range</th><th>State</th><th>Use</th><th>Column position</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Refinery gas</strong></td><td class="mono">C₁−C₄</td><td>Gas</td><td>Fuel (LPG, methane)</td><td class="note">Top (lowest bp)</td></tr>
+          <tr><td><strong>Petrol / Gasoline</strong></td><td class="mono">C₅−C₁₀</td><td>Liquid</td><td>Car fuel</td><td class="note">Upper</td></tr>
+          <tr><td><strong>Naphtha</strong></td><td class="mono">C₆−C₁₀</td><td>Liquid</td><td>Chemicals feedstock</td><td class="note">Upper-mid</td></tr>
+          <tr><td><strong>Kerosene / Paraffin</strong></td><td class="mono">C₁₁−C₁₅</td><td>Liquid</td><td>Jet fuel, lamps</td><td class="note">Mid</td></tr>
+          <tr><td><strong>Diesel</strong></td><td class="mono">C₁₅−C₁₉</td><td>Liquid</td><td>Trucks, generators</td><td class="note">Lower-mid</td></tr>
+          <tr><td><strong>Lubricating oil</strong></td><td class="mono">C₂₀−C₃₀</td><td>Thick liquid</td><td>Engine oil</td><td class="note">Lower</td></tr>
+          <tr><td><strong>Wax</strong></td><td class="mono">C₃₀−C₄₀</td><td>Solid</td><td>Candles, polish</td><td class="note">Near bottom</td></tr>
+          <tr><td><strong>Bitumen / Asphalt</strong></td><td class="mono">C₄₀+</td><td>Semi-solid</td><td>Roads, roofing</td><td class="trap">Bottom (highest bp). Last to come out.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="arrow-list">
+      <li><strong>Wax = long-chain ester</strong> (not petroleum wax — beeswax, carnauba) vs petroleum wax = long alkane</li>
+      <li><strong>Fats = solid esters</strong> (saturated, animal). Oils = liquid esters (unsaturated, plant). Same functional group.</li>
+      <li><strong>Soaps = organic salts</strong> of long-chain fatty acids. NaOH → solid (hard). KOH → liquid (soft).</li>
+      <li><strong>Detergents</strong> = synthetic soaps. Work in hard water. Soaps do not.</li>
+    </ul>
+  </div>
+
+  <div class="footnote">
+    <div class="footnote-label">Why common names survived IUPAC</div>
+    <p>IUPAC systematised organic naming in the 1900s, long after biochemistry, industry, and commerce had already named everything. Glucose, acetic acid, acetone, glycerol — these were named centuries earlier by observation (taste, smell, source). Industry kept them because they're shorter and already embedded in labels, regulations, and supply chains. JAMB tests both systems because both appear in real Nigerian lab and industrial contexts. Know the IUPAC name to understand structure. Know the common name to recognise it in context.</p>
+  </div>
+
+  <div class="section-end"></div>
+
+  <div class="closing">
+    <p class="closing-text">The prefix tells you the size. The suffix tells you the personality. The priority tells you what wins when both compete.</p>
+    <p class="closing-sub">MEPC · Series III · Organic Naming · Field Manual</p>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var p=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  document.getElementById('progress').style.width=p+'%';
+});
+</script>
+</body>
+</html>

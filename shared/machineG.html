@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machines — Week 1 · Introduction to Machines</title>
+<style>
+/* ============================================================
+   MACHINES — WEEK 1 · INTRODUCTION TO MACHINES
+   Print-first. No JS. Single-week lesson note.
+   Merged style: hor2 template (printer economics) + consilient
+   schema pedagogy (fact layer plain, tables earn their place).
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+  position:relative;
+}
+
+/* ---------- brand mark ---------- */
+.brand{
+  position:absolute;
+  top:18px;
+  right:22px;
+  width:52px;
+  height:52px;
+  opacity:.94;
+}
+.brand svg{display:block;width:100%;height:100%}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:3pt solid #1c7a3a;
+  padding-bottom:10px;
+  margin-bottom:8px;
+  padding-right:70px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#555;
+  font-weight:700;
+}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:2.4pt solid #1c7a3a;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1c7a3a;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1c7a3a;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1c7a3a;
+  border-bottom:1.4pt solid #cfe3d4;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols3{column-count:3;column-gap:18px}
+.cols2 > li, .cols3 > li{break-inside:avoid}
+ul.cols2, ol.cols2, ul.cols3, ol.cols3{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:1.4pt solid #b9c1b9;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.box.formula{
+  background:#f2f8f4;
+  border-color:#a8c8b2;
+}
+.box.formula .eq{
+  font-family:Cambria,"Times New Roman",Georgia,serif;
+  font-size:12.4pt;
+  font-weight:900;
+  text-align:center;
+  color:#0d3a1d;
+  margin:6px 0 4px;
+  letter-spacing:.3px;
+}
+.box.formula .eq + .eq{margin-top:2px}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- omitted-illustration flag ---------- */
+.imgflag{
+  border:1.4pt dashed #9aa79a;
+  border-radius:3px;
+  background:#fafbfa;
+  color:#48524a;
+  font-size:9.6pt;
+  font-style:italic;
+  line-height:1.4;
+  padding:8px 10px 8px;
+  margin:0 0 12px;
+  break-inside:avoid;
+  font-weight:700;
+}
+.imgflag b{
+  font-style:normal;
+  letter-spacing:.4px;
+  color:#1c7a3a;
+  font-weight:900;
+}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1c7a3a;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+th,td{
+  border:1.2pt solid #8a8578;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#eef3ee;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:1.4pt solid #8a8578;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.ctr{text-align:center;white-space:nowrap}
+
+/* ---------- misc ---------- */
+.hint{font-size:9.8pt;color:#555;font-style:italic;margin:0 0 6px;font-weight:700}
+.tag{
+  font-size:8.8pt;
+  border:1pt solid #1c7a3a;
+  color:#1c7a3a;
+  padding:0 6px 1px;
+  border-radius:9px;
+  white-space:nowrap;
+  font-style:normal;
+  font-weight:900;
+}
+.note{
+  font-size:9.8pt;
+  color:#4a3a10;
+  background:#fdf6e0;
+  border:1pt solid #dcc98a;
+  border-radius:3px;
+  padding:7px 10px;
+  margin:0 0 10px;
+  break-inside:avoid;
+  font-weight:700;
+}
+
+/* ---------- SVG figure ---------- */
+figure.fig{
+  margin:10px 0 12px;
+  padding:8px 10px;
+  border:1.2pt solid #c9cfc9;
+  border-radius:3px;
+  background:#fdfcf8;
+  break-inside:avoid;
+  text-align:center;
+}
+figure.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.fig figcaption{
+  font-size:9.2pt;color:#555;font-style:italic;margin-top:6px;text-align:center;font-weight:700;
+}
+
+/* ---------- math ---------- */
+.m{
+  font-family:Cambria,"Times New Roman",Georgia,serif;
+  white-space:nowrap;
+}
+sup{font-size:.70em;vertical-align:.45em;line-height:0}
+sub{font-size:.70em;vertical-align:-.2em;line-height:0}
+.frac{
+  display:inline-block;
+  vertical-align:middle;
+  text-align:center;
+  font-size:.94em;
+  line-height:1.06;
+  margin:0 .12em;
+  position:relative;
+  top:-.06em;
+}
+.frac .n{display:block;padding:0 .32em .4mm;border-bottom:1pt solid currentColor}
+.frac .d{display:block;padding:.4mm .32em 0}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1pt solid #a9b1a9;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split,.imgflag,.note,figure.fig{break-inside:avoid}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>.
+</div>
+
+<div class="sheet">
+
+  <!-- ===== BRAND ===== -->
+  <div class="brand" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img">
+      <title>Grant App CGPA</title>
+      <rect width="1024" height="1024" rx="224" fill="#17233F"/>
+      <path fill="#F5EEDF" d="M216 690 C286 650 350 590 408 526 C463 465 516 399 578 334 C598 313 624 313 643 329 L785 440 C803 454 800 482 779 493 L706 530 C681 543 653 541 631 526 L579 491 C546 525 516 561 482 597 C421 662 351 722 275 766 C249 781 220 762 216 734 C214 718 214 703 216 690 Z"/>
+      <path d="M341 681 C396 645 447 596 491 543 C531 496 568 448 602 404 C616 386 643 383 660 399 C674 413 674 436 661 452 C621 501 582 550 541 598 C489 659 431 713 366 751" fill="none" stroke="#17233F" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M704 520 C737 557 746 600 728 638 C715 665 690 685 662 695" fill="none" stroke="#C95545" stroke-width="25" stroke-linecap="round"/>
+      <circle cx="602" cy="404" r="13" fill="#C95545"/>
+    </svg>
+  </div>
+
+  <header class="doc-head">
+    <h1>Machines — Week 1: Introduction to Machines</h1>
+    <p class="term">Physics · Simple Machines · Force and Speed Multipliers · The Lever</p>
+  </header>
+
+  <!-- ============================================================
+       WEEK 1
+       ============================================================ -->
+  <section class="week">
+    <h2><span class="wk">WEEK 1</span>Introduction to Machines</h2>
+    <p class="meta"><b>Content:</b> Meaning of a machine; force multipliers and speed multipliers; mechanical advantage; velocity ratio; efficiency; the lever.</p>
+
+    <div class="box obj">
+      <h4>Performance Objectives</h4>
+      <ol class="cols2 tight">
+        <li>Define a machine and state its three functions.</li>
+        <li>Distinguish force multiplier from speed multiplier.</li>
+        <li>Define mechanical advantage (MA), velocity ratio (VR) and efficiency (η).</li>
+        <li>State and use the master relation MA = η × VR.</li>
+        <li>Classify levers into the three orders with examples.</li>
+      </ol>
+    </div>
+
+    <p class="imgflag"><b>◻ DIAGRAM OMITTED —</b> Three plates: (a) a crowbar lifting a rock, with <i>fulcrum</i>, <i>effort</i>, <i>load</i> labelled; (b) a wheelbarrow (second-order) and a fishing rod (third-order) side-by-side, each with the L–F–E arrangement marked; (c) a block-and-tackle diagram showing effort distance &gt; load distance. Not embedded in the source.</p>
+
+    <h3>1.1 What a Machine Is</h3>
+    <p>A <b>machine</b> is any device that makes work easier by changing the magnitude or direction of a force. A machine does not create energy — it only redirects or reshapes it. This is the single governing fact of the entire topic.</p>
+
+    <table>
+      <tr><th style="width:26%">Function</th><th>Meaning</th><th>Example</th></tr>
+      <tr><td class="k">Force multiplier</td><td>Increases the applied effort so a smaller force moves a larger load.</td><td>Crowbar, lever, hydraulic jack.</td></tr>
+      <tr><td class="k">Speed multiplier</td><td>Increases the distance or speed of the output.</td><td>Bicycle gears, fishing rod.</td></tr>
+      <tr><td class="k">Direction changer</td><td>Redirects force to a more convenient direction.</td><td>Single fixed pulley.</td></tr>
+    </table>
+
+    <p><b>Force multiplier vs speed multiplier — the one rule that separates them:</b> a machine that multiplies force must move the effort a <i>greater</i> distance than the load. A machine that multiplies speed moves the load a <i>greater</i> distance than the effort. No machine multiplies both at the same time; that would break conservation of energy.</p>
+
+    <h3>1.2 Core Quantities</h3>
+
+    <table>
+      <tr><th style="width:24%">Quantity</th><th style="width:12%">Symbol</th><th>Definition</th><th style="width:14%">Unit</th></tr>
+      <tr><td class="k">Load</td><td class="ctr">L</td><td>The force the machine overcomes.</td><td>N</td></tr>
+      <tr><td class="k">Effort</td><td class="ctr">E</td><td>The force applied to the machine.</td><td>N</td></tr>
+      <tr><td class="k">Mechanical Advantage</td><td class="ctr">MA</td><td>Ratio of load to effort: <span class="m">MA = L / E</span></td><td>none</td></tr>
+      <tr><td class="k">Velocity Ratio</td><td class="ctr">VR</td><td>Ratio of effort distance to load distance: <span class="m">VR = d<sub>E</sub> / d<sub>L</sub></span></td><td>none</td></tr>
+      <tr><td class="k">Efficiency</td><td class="ctr">η</td><td>Ratio of work out to work in, as a percentage: <span class="m">η = (W<sub>out</sub> / W<sub>in</sub>) × 100%</span></td><td>%</td></tr>
+      <tr><td class="k">Work input</td><td class="ctr">W<sub>in</sub></td><td>Effort × effort distance: <span class="m">W<sub>in</sub> = E × d<sub>E</sub></span></td><td>J</td></tr>
+      <tr><td class="k">Work output</td><td class="ctr">W<sub>out</sub></td><td>Load × load distance: <span class="m">W<sub>out</sub> = L × d<sub>L</sub></span></td><td>J</td></tr>
+    </table>
+
+    <h3>1.3 The Master Relationship</h3>
+
+    <p>Work output is always a fraction of work input in any real machine. Dividing each side by the effort and distance that produced it gives the relation that governs every machine problem:</p>
+
+    <div class="box formula">
+      <div class="eq">MA = η × VR</div>
+      <div class="eq">η = (MA / VR) × 100%</div>
+      <div class="eq">VR = MA / η</div>
+    </div>
+
+    <p>When the machine is ideal (η = 1), MA = VR. When the machine is real (η &lt; 1), MA &lt; VR. In practice, <b>MA is always less than VR</b>, because friction and the weight of the machine's own parts consume part of the input.</p>
+
+    <h3>1.4 Efficiency and Its Losses</h3>
+    <p>Efficiency is always below 100% in real machines, for three reasons:</p>
+    <ol class="tight">
+      <li><b>Friction</b> between moving parts converts some input work into heat.</li>
+      <li><b>The machine's own weight</b> — pulleys, levers and blocks must themselves be lifted, consuming work.</li>
+      <li><b>Deformation or vibration</b> absorbs energy that never reaches the load.</li>
+    </ol>
+
+    <div class="note">
+      <b>Boundary fact:</b> no machine can have efficiency above 100%. A claimed figure above 100% indicates a measurement error or a violation of the conservation of energy. Efficiency = 100% is only achievable in the ideal case where friction and internal weight are zero.
+    </div>
+
+    <h3>1.5 The Lever</h3>
+    <p>A <b>lever</b> is a rigid bar that rotates about a fixed point called the <b>fulcrum</b> (or pivot). The three orders differ by what lies between what.</p>
+
+    <table>
+      <tr><th style="width:20%">Order</th><th style="width:38%">Arrangement</th><th>Examples</th></tr>
+      <tr><td class="k">First order</td><td>Fulcrum between effort and load.</td><td>Crowbar, seesaw, scissors, pliers.</td></tr>
+      <tr><td class="k">Second order</td><td>Load between fulcrum and effort.</td><td>Wheelbarrow, nutcracker, bottle opener.</td></tr>
+      <tr><td class="k">Third order</td><td>Effort between fulcrum and load.</td><td>Fishing rod, forearm, tweezers, broom.</td></tr>
+    </table>
+
+    <div class="box formula">
+      <div class="eq">Law of moments: E × a = L × b</div>
+      <div class="eq">Velocity Ratio: VR = a / b</div>
+    </div>
+
+    <p>Where <span class="m">a</span> is the distance from fulcrum to effort (effort arm) and <span class="m">b</span> is the distance from fulcrum to load (load arm).</p>
+
+    <h3>1.6 Exceptions and Traps</h3>
+
+    <div class="note">
+      <b>Exception 1 — the lever's own weight.</b> A lever is not a pure MA = VR device when its own weight matters. The lever's weight acts as an extra load at its centre of gravity. In long crowbars or beams, this can substantially reduce the effective mechanical advantage and must be accounted for in accurate work.
+    </div>
+
+    <div class="note">
+      <b>Exception 2 — classification is structural, not visual.</b> The order of a lever is determined by the arrangement of L, E and F — not by the shape of the object. A pair of scissors is a first-order lever (fulcrum between effort and load) even though it looks like a cutting tool. A broom is a third-order lever (effort between fulcrum and load) even though it looks like a rigid bar.
+    </div>
+
+    <div class="note">
+      <b>Structural fact:</b> a second-order lever always has MA &gt; 1. A third-order lever always has MA &lt; 1. These are not design choices — they follow necessarily from the geometry.
+    </div>
+
+    <div class="note">
+      <b>Common trap:</b> confusing MA with efficiency. MA can be greater than, equal to, or less than 1. Efficiency is always ≤ 100%. A machine can have MA = 0.5 (third-order lever) and still be efficient — these measure different things.
+    </div>
+
+    <h3>1.7 Formula Summary</h3>
+
+    <table>
+      <tr><th style="width:34%">Quantity</th><th style="width:36%">Formula</th><th>Notes</th></tr>
+      <tr><td class="k">Mechanical Advantage</td><td class="m">MA = L / E</td><td>Ratio of forces; unitless.</td></tr>
+      <tr><td class="k">Velocity Ratio</td><td class="m">VR = d<sub>E</sub> / d<sub>L</sub></td><td>Ratio of distances; unitless.</td></tr>
+      <tr><td class="k">Efficiency</td><td class="m">η = (W<sub>out</sub> / W<sub>in</sub>) × 100%</td><td>Percentage; always ≤ 100%.</td></tr>
+      <tr><td class="k">Master relation</td><td class="m">MA = η × VR</td><td>Links the three core quantities.</td></tr>
+      <tr><td class="k">Work input</td><td class="m">W<sub>in</sub> = E × d<sub>E</sub></td><td>In joules.</td></tr>
+      <tr><td class="k">Work output</td><td class="m">W<sub>out</sub> = L × d<sub>L</sub></td><td>In joules.</td></tr>
+      <tr><td class="k">Lever moments</td><td class="m">E × a = L × b</td><td>Equilibrium condition.</td></tr>
+      <tr><td class="k">Lever VR</td><td class="m">VR = a / b</td><td>Effort arm over load arm.</td></tr>
+    </table>
+
+    <div class="split">
+      <div class="box">
+        <h4>Evaluation</h4>
+        <ol class="tight">
+          <li>Define a machine and state its three functions.</li>
+          <li>Distinguish between a force multiplier and a speed multiplier, giving one example of each.</li>
+          <li>Define mechanical advantage, velocity ratio, and efficiency, stating the formula for each.</li>
+          <li>State the relationship between MA, VR and efficiency.</li>
+          <li>Classify the following into first, second or third order levers: crowbar, wheelbarrow, fishing rod, scissors, nutcracker, tweezers.</li>
+          <li>A lever has effort arm 1.2 m and load arm 0.3 m. Find its velocity ratio.</li>
+          <li>A machine has MA = 4 and VR = 5. Find its efficiency.</li>
+          <li>Explain why MA is always less than VR in a real machine.</li>
+        </ol>
+      </div>
+      <div class="box">
+        <h4>Key Vocabulary</h4>
+        <ul class="tight">
+          <li><b>Machine</b> — device that changes the magnitude or direction of a force.</li>
+          <li><b>Load (L)</b> — the force the machine overcomes.</li>
+          <li><b>Effort (E)</b> — the force applied to the machine.</li>
+          <li><b>Fulcrum</b> — the fixed pivot of a lever.</li>
+          <li><b>Mechanical Advantage (MA)</b> — load divided by effort.</li>
+          <li><b>Velocity Ratio (VR)</b> — effort distance divided by load distance.</li>
+          <li><b>Efficiency (η)</b> — work output as a percentage of work input.</li>
+          <li><b>Force multiplier</b> — machine that increases the applied force.</li>
+          <li><b>Speed multiplier</b> — machine that increases the output speed.</li>
+          <li><b>Ideal machine</b> — a machine with no friction or internal weight (η = 100%).</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>

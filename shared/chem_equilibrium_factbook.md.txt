@@ -1,0 +1,1427 @@
+# CHEMISTRY FACTBOOK
+*WAEC/JAMB 25-Year High-Frequency Topics*
+
+---
+
+# 1. STOICHIOMETRY & THE MOLE
+**Exam Frequency: 15-20% of all questions**
+
+## CORE FORMULAS
+
+**n = m/M** (moles = mass ÷ molar mass)  
+**n = V/22.4** (gases at STP only)  
+**n = C × V** (solutions, V in liters)  
+**n = N/NA** (NA = 6.02 × 10²³)
+
+---
+
+## MOLAR MASS
+
+Element: Use periodic table value  
+Compound: Sum of (atoms × atomic mass)
+
+H₂SO₄ = 2(1) + 32 + 4(16) = 98 g/mol
+
+---
+
+## EMPIRICAL → MOLECULAR FORMULA
+
+1. Mass % → divide by atomic mass → moles
+2. Divide all by smallest mole value
+3. Multiply to get whole numbers → empirical formula
+4. Molecular mass ÷ empirical mass = n
+5. Molecular formula = n × empirical formula
+
+---
+
+## STOICHIOMETRIC CALCULATIONS
+
+For: aA + bB → cC + dD
+
+**Mole ratio = a : b : c : d**
+
+Steps:
+1. Balance equation
+2. Convert given to moles
+3. Use mole ratio
+4. Convert to required unit
+
+---
+
+## LIMITING REAGENT
+
+1. Calculate moles of each reactant
+2. Divide each by its coefficient
+3. Smallest = limiting reagent
+
+**% Yield = (actual/theoretical) × 100**
+
+---
+
+## GAS LAWS (STP)
+
+**STP:** 273K, 1 atm  
+**1 mole gas = 22.4 L at STP**
+
+**PV = nRT**  
+R = 0.0821 L·atm/(mol·K)  
+T must be in Kelvin
+
+---
+
+## CONCENTRATION
+
+**M = n/V** (molarity)  
+**C₁V₁ = C₂V₂** (dilution)  
+**ppm = (mass solute/mass solution) × 10⁶**
+
+---
+
+## COMMON EXAM TRAPS
+
+❌ Not balancing first  
+❌ Using 24 L instead of 22.4 L at STP  
+❌ Forgetting °C → K conversion  
+❌ Atomic mass ≠ molar mass confusion
+
+---
+
+# 2. ATOMIC STRUCTURE & PERIODICITY
+**Exam Frequency: 10-15%**
+
+## ATOMIC BASICS
+
+**Z = protons = electrons** (neutral atom)  
+**A = protons + neutrons**
+
+Notation: ᴬXᶻ or X-A
+
+---
+
+## ISOTOPES
+
+Same Z, different A (different neutrons)
+
+**RAM = Σ(isotope mass × % abundance)/100**
+
+---
+
+## ELECTRON CONFIGURATION
+
+**Order:** 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p...
+
+**Rules:**
+- Aufbau: Fill lowest first
+- Pauli: Max 2 per orbital
+- Hund: Fill singly before pairing
+
+**Exceptions:**
+- Cr: [Ar] 4s¹ 3d⁵
+- Cu: [Ar] 4s¹ 3d¹⁰
+
+---
+
+## PERIODIC TRENDS
+
+**Atomic Radius:**  
+Across → decreases | Down → increases
+
+**Ionization Energy:**  
+Across → increases | Down → decreases
+
+**Electronegativity:**  
+Across → increases | Down → decreases  
+Most EN: Fluorine (4.0)
+
+---
+
+## IONS
+
+**Cations:** Lose electrons (metals)  
+Remove from highest n first
+
+**Anions:** Gain electrons (nonmetals)
+
+**Isoelectronic:** O²⁻, F⁻, Na⁺, Mg²⁺ all = [Ne]
+
+---
+
+# 3. CHEMICAL BONDING
+**Exam Frequency: 10-12%**
+
+## BOND TYPES
+
+**ΔEN Scale:**
+- <0.4: Nonpolar covalent
+- 0.4-1.7: Polar covalent
+- >1.7: Ionic
+
+---
+
+## IONIC BONDING
+
+Metal → nonmetal (electron transfer)
+
+**Properties:**
+- High melting point
+- Conduct when molten/dissolved
+- Brittle crystals
+- Soluble in water
+
+---
+
+## COVALENT BONDING
+
+Nonmetal + nonmetal (electron sharing)
+
+**Strength:** Triple > Double > Single
+
+**Properties:**
+- Lower melting points
+- Don't conduct electricity
+- Soluble in nonpolar solvents
+
+---
+
+## LEWIS STRUCTURES
+
+1. Count valence electrons
+2. Connect with single bonds
+3. Complete octets on outer atoms
+4. Remaining on central atom
+5. Form multiple bonds if needed
+
+**Exceptions:**
+- H: 2 electrons only
+- B, Be: Can be <8
+- P, S, Cl: Can be >8 (period 3+)
+
+---
+
+## MOLECULAR SHAPES (VSEPR)
+
+| Pairs (B/L) | Shape | Angle | Example |
+|-------------|-------|-------|---------|
+| 2/0 | Linear | 180° | CO₂ |
+| 3/0 | Trigonal planar | 120° | BF₃ |
+| 4/0 | Tetrahedral | 109.5° | CH₄ |
+| 3/1 | Pyramidal | <109.5° | NH₃ |
+| 2/2 | Bent | <109.5° | H₂O |
+
+---
+
+## MOLECULAR POLARITY
+
+Polar bonds + asymmetric = Polar  
+Polar bonds + symmetric = Nonpolar
+
+CO₂: Linear (symmetric) → Nonpolar  
+H₂O: Bent (asymmetric) → Polar
+
+---
+
+## INTERMOLECULAR FORCES
+
+**Weakest → Strongest:**
+
+1. London dispersion (all molecules)
+2. Dipole-dipole (polar molecules)
+3. Hydrogen bonding (H-N, H-O, H-F)
+
+H-bonding explains water's high BP
+
+---
+
+# 4. ACIDS, BASES & SALTS
+**Exam Frequency: 12-15%**
+
+## DEFINITIONS
+
+**Arrhenius:**
+- Acid: H⁺ in water
+- Base: OH⁻ in water
+
+**Brønsted-Lowry:**
+- Acid: H⁺ donor
+- Base: H⁺ acceptor
+
+---
+
+## STRONG VS WEAK
+
+**Strong Acids (memorize):**  
+HCl, HBr, HI, HNO₃, H₂SO₄, HClO₄
+
+**Strong Bases:**  
+Group 1 hydroxides (NaOH, KOH)  
+Group 2 hydroxides (Ca(OH)₂, Ba(OH)₂)
+
+**Weak:** Everything else
+
+---
+
+## pH SCALE
+
+**pH = -log[H⁺]**  
+**pOH = -log[OH⁻]**
+
+**pH + pOH = 14** (at 25°C)
+
+pH < 7: Acidic  
+pH = 7: Neutral  
+pH > 7: Basic
+
+---
+
+## NEUTRALIZATION
+
+**Acid + Base → Salt + Water**
+
+HCl + NaOH → NaCl + H₂O
+
+**Titration formula:**  
+**nₐVₐ/nᵦVᵦ = Mₐ/Mᵦ**
+
+---
+
+## SALT PREPARATION
+
+**Soluble salts:**
+- Acid + metal
+- Acid + base
+- Acid + carbonate
+
+**Insoluble salts:**
+- Precipitation (double decomposition)
+
+---
+
+## INDICATORS
+
+**Litmus:**  
+Red in acid, Blue in base
+
+**Methyl Orange:**  
+Red in acid, Yellow in base
+
+**Phenolphthalein:**  
+Colorless in acid, Pink in base
+
+---
+
+## COMMON EXAM QUESTIONS
+
+- pH calculations
+- Neutralization equations
+- Titration calculations
+- Salt solubility rules
+- Indicator color changes
+
+---
+
+# 5. REDOX & ELECTROCHEMISTRY
+**Exam Frequency: 12-15%**
+
+## OXIDATION STATES
+
+**Rules (priority order):**
+1. Free element = 0
+2. Ion = its charge
+3. F = -1 always
+4. H = +1 (except -1 with metals)
+5. O = -2 (except -1 in peroxides)
+6. Group 1 = +1, Group 2 = +2
+7. Sum = overall charge
+
+---
+
+## OIL RIG
+
+**Oxidation Is Loss** (of electrons)  
+**Reduction Is Gain** (of electrons)
+
+**Oxidized** = reducing agent  
+**Reduced** = oxidizing agent
+
+---
+
+## BALANCING REDOX (ACIDIC)
+
+1. Split into half-reactions
+2. Balance atoms (not O, H)
+3. Balance O with H₂O
+4. Balance H with H⁺
+5. Balance charge with e⁻
+6. Equalize electrons
+7. Add, cancel common
+
+**Basic:** Add OH⁻ to neutralize H⁺
+
+---
+
+## ELECTROCHEMICAL CELLS
+
+**Galvanic:** Spontaneous, makes electricity  
+**Electrolytic:** Non-spontaneous, needs electricity
+
+**Anode:** Oxidation, negative (galvanic)  
+**Cathode:** Reduction, positive (galvanic)
+
+**E°cell = E°cathode - E°anode**
+
+E° > 0 → Spontaneous  
+E° < 0 → Non-spontaneous
+
+---
+
+## FARADAY'S LAWS
+
+**Q = It**
+
+**Moles = It/nF**
+
+Where:
+- I = current (A)
+- t = time (s)
+- n = electrons transferred
+- F = 96,500 C/mol
+
+---
+
+## COMMON APPLICATIONS
+
+- Batteries
+- Electroplating
+- Purification of metals
+- Water electrolysis
+- Rusting (corrosion)
+
+---
+
+# 6. ORGANIC CHEMISTRY
+**Exam Frequency: 15-18%**
+
+## HYDROCARBONS
+
+**Alkanes:** CₙH₂ₙ₊₂ (single bonds)  
+**Alkenes:** CₙH₂ₙ (double bond)  
+**Alkynes:** CₙH₂ₙ₋₂ (triple bond)
+
+---
+
+## IUPAC NOMENCLATURE
+
+**Alkane endings:** -ane  
+**Alkene endings:** -ene  
+**Alkyne endings:** -yne
+
+Prefixes: meth-(1), eth-(2), prop-(3), but-(4), pent-(5), hex-(6)
+
+---
+
+## FUNCTIONAL GROUPS
+
+| Group | Formula | Name | Example |
+|-------|---------|------|---------|
+| -OH | Alcohol | -ol | Ethanol |
+| -CHO | Aldehyde | -al | Ethanal |
+| -CO- | Ketone | -one | Propanone |
+| -COOH | Carboxylic acid | -oic acid | Ethanoic acid |
+| -COO- | Ester | -oate | Ethyl ethanoate |
+
+---
+
+## ISOMERISM
+
+**Structural:** Same formula, different structure  
+**Geometric:** Same structure, different spatial arrangement
+
+**Chain isomerism:** Different carbon skeleton  
+**Position isomerism:** Functional group at different position  
+**Functional group isomerism:** Different functional groups
+
+---
+
+## KEY REACTIONS
+
+**Combustion:**  
+CₙH₂ₙ₊₂ + O₂ → CO₂ + H₂O
+
+**Substitution (alkanes):**  
+CH₄ + Cl₂ → CH₃Cl + HCl (UV light)
+
+**Addition (alkenes):**  
+C₂H₄ + Br₂ → C₂H₄Br₂
+
+**Esterification:**  
+RCOOH + R'OH → RCOOR' + H₂O
+
+**Saponification:**  
+Fat/Oil + NaOH → Soap + Glycerol
+
+---
+
+## TEST FOR UNSATURATION
+
+**Bromine water:** Brown → Colorless (alkene present)
+
+**Acidified KMnO₄:** Purple → Colorless (alkene present)
+
+---
+
+# 7. CHEMICAL EQUILIBRIUM
+**Exam Frequency: 8-10%**
+
+## EQUILIBRIUM CONSTANT
+
+For: aA + bB ⇌ cC + dD
+
+**Kc = [C]^c[D]^d / [A]^a[B]^b**
+
+Exclude pure solids/liquids
+
+**Kp = Kc(RT)^Δn** (gases)
+
+---
+
+## K INTERPRETATION
+
+K >> 1: Products favored  
+K ≈ 1: Equal amounts  
+K << 1: Reactants favored
+
+**Only temperature changes K**
+
+---
+
+## LE CHATELIER'S PRINCIPLE
+
+System shifts to oppose stress
+
+**Add reactant:** Shift right →  
+**Remove product:** Shift right →  
+**Increase pressure:** Shift to fewer moles  
+**Increase temperature:**
+- Endo: Shift right
+- Exo: Shift left
+
+**Catalyst:** No shift, faster equilibrium
+
+---
+
+## Q vs K
+
+**Q = current [products]/[reactants]**
+
+Q < K → Forward shift  
+Q = K → At equilibrium  
+Q > K → Reverse shift
+
+---
+
+## ICE TABLE
+
+```
+     A  +  B  ⇌  C
+I:   a₀    b₀    c₀
+C:   -x    -x    +x
+E:  a₀-x  b₀-x  c₀+x
+```
+
+---
+
+# 8. REACTION RATES (KINETICS)
+**Exam Frequency: 5-8%**
+
+## FACTORS AFFECTING RATE
+
+1. **Concentration:** Higher → faster
+2. **Temperature:** Higher → faster (rate doubles per 10°C)
+3. **Surface area:** Larger → faster
+4. **Catalyst:** Lowers activation energy
+5. **Pressure (gases):** Higher → faster
+
+---
+
+## COLLISION THEORY
+
+Molecules must collide with:
+- Sufficient energy (≥ Ea)
+- Proper orientation
+
+---
+
+## RATE LAW
+
+**Rate = k[A]^m[B]^n**
+
+m, n = reaction orders (experimental only)  
+k = rate constant (temperature-dependent)
+
+---
+
+## ACTIVATION ENERGY
+
+**Arrhenius:**  
+k = Ae^(-Ea/RT)
+
+Or: ln(k₂/k₁) = -Ea/R(1/T₂ - 1/T₁)
+
+Higher Ea → slower reaction  
+Catalyst lowers Ea
+
+---
+
+# 9. SEPARATION TECHNIQUES
+**Exam Frequency: 8-10%**
+
+## METHODS
+
+**Filtration:** Separate insoluble solid from liquid
+
+**Evaporation:** Remove solvent, get solid
+
+**Distillation:** Separate by boiling points
+- Simple: Large BP difference
+- Fractional: Small BP difference
+
+**Crystallization:** Purify solid by controlled cooling
+
+**Chromatography:** Separate based on movement through medium
+
+**Sublimation:** Solid → Gas → Solid (no liquid)
+
+---
+
+## MIXTURES VS COMPOUNDS
+
+**Mixture:**
+- Variable composition
+- Separated physically
+- Properties of components retained
+
+**Compound:**
+- Fixed composition
+- Separated chemically only
+- New properties
+
+---
+
+# 10. THERMOCHEMISTRY
+**Exam Frequency: 5-8%**
+
+## ENTHALPY CHANGE (ΔH)
+
+**Exothermic:** ΔH < 0 (heat released)  
+**Endothermic:** ΔH > 0 (heat absorbed)
+
+---
+
+## HESS'S LAW
+
+**ΔH(overall) = ΣΔH(steps)**
+
+Total enthalpy change independent of pathway
+
+---
+
+## CALCULATIONS
+
+**q = mcΔT**
+
+- q = heat (J)
+- m = mass (g)
+- c = specific heat capacity
+- ΔT = temperature change (K or °C)
+
+---
+
+## STANDARD ENTHALPY
+
+**ΔH°f:** Formation (from elements)  
+**ΔH°c:** Combustion  
+**ΔH°neut:** Neutralization
+
+---
+
+# EXAM STRATEGY
+
+## HIGH-PRIORITY TOPICS (40%+)
+
+1. Stoichiometry & Mole Concept
+2. Organic Chemistry
+3. Acids/Bases/Salts
+4. Redox & Electrochemistry
+
+## MEDIUM-PRIORITY (20-40%)
+
+5. Atomic Structure & Periodicity
+6. Chemical Bonding
+7. Equilibrium
+8. Separation Techniques
+
+## PRACTICE FOCUS
+
+- Balance equations (every topic needs this)
+- Stoichiometry calculations (most frequent)
+- Organic nomenclature (memorize)
+- Redox balancing (half-reactions)
+- pH calculations (acids/bases)
+
+## COMMON MULTI-TOPIC QUESTIONS
+
+- Stoichiometry + Gas laws
+- Redox + Electrolysis calculations
+- Equilibrium + Le Chatelier
+- Organic + Functional groups
+- Acids + Titration
+
+---
+
+# PART 2: SUPPLEMENTARY TOPICS
+
+---
+
+# 11. WATER & HARDNESS
+**Exam Frequency: 3-5%**
+
+## TYPES OF HARDNESS
+
+**Temporary Hardness:**
+- Caused by: Ca(HCO₃)₂, Mg(HCO₃)₂
+- Removed by: Boiling
+- Reaction: Ca(HCO₃)₂ → CaCO₃↓ + H₂O + CO₂
+
+**Permanent Hardness:**
+- Caused by: CaSO₄, MgSO₄, CaCl₂, MgCl₂
+- NOT removed by boiling
+- Removed by: Adding washing soda (Na₂CO₃) or ion exchange
+
+---
+
+## REMOVAL METHODS
+
+**Boiling:** Temporary only
+
+**Washing Soda (Na₂CO₃):**
+CaSO₄ + Na₂CO₃ → CaCO₃↓ + Na₂SO₄
+
+**Ion Exchange (Permutit):**
+Exchanges Ca²⁺/Mg²⁺ for Na⁺
+
+**Distillation:** Removes all impurities (both types)
+
+---
+
+## DISADVANTAGES OF HARD WATER
+
+- Wastes soap (forms scum)
+- Scale in pipes/boilers
+- Higher fuel costs (scale reduces heat transfer)
+
+---
+
+# 12. SOLUBILITY & Ksp
+**Exam Frequency: 3-5%**
+
+## SOLUBILITY PRODUCT (Ksp)
+
+For: AB(s) ⇌ A⁺(aq) + B⁻(aq)
+
+**Ksp = [A⁺][B⁻]**
+
+Higher Ksp = more soluble
+
+---
+
+## COMMON ION EFFECT
+
+Adding common ion decreases solubility
+
+Example: Adding NaCl to AgCl solution
+- Increases [Cl⁻]
+- Shifts left (Le Chatelier)
+- AgCl precipitates
+
+---
+
+## PRECIPITATION
+
+**If Q > Ksp:** Precipitate forms
+**If Q < Ksp:** No precipitate
+**If Q = Ksp:** Saturated solution
+
+---
+
+## SELECTIVE PRECIPITATION
+
+Add reagent that forms precipitate with only one ion
+
+Example: Separate Ag⁺ from Cu²⁺ using HCl
+- AgCl precipitates (Ksp very low)
+- Cu²⁺ remains in solution
+
+---
+
+# 13. COLLOIDS & SUSPENSIONS
+**Exam Frequency: 2-3%**
+
+## CLASSIFICATION
+
+**Solution:** Particle size <1 nm (molecular)
+**Colloid:** 1-1000 nm (doesn't settle, scatters light)
+**Suspension:** >1000 nm (settles, filterable)
+
+---
+
+## TYPES OF COLLOIDS
+
+| Dispersed | Medium | Name | Example |
+|-----------|--------|------|---------|
+| Solid | Liquid | Sol | Paint, ink |
+| Liquid | Liquid | Emulsion | Milk, mayonnaise |
+| Gas | Liquid | Foam | Whipped cream |
+| Solid | Gas | Aerosol | Smoke |
+| Liquid | Gas | Aerosol | Fog, mist |
+
+---
+
+## PROPERTIES
+
+**Tyndall Effect:** Scatters light beam (visible path)
+
+**Brownian Motion:** Random zigzag movement
+
+**Electrophoresis:** Movement under electric field
+
+**Coagulation:** Clumping (add electrolyte)
+
+---
+
+# 14. RADIOACTIVITY
+**Exam Frequency: 4-6%**
+
+## TYPES OF DECAY
+
+**Alpha (α):** ⁴He nucleus, +2 charge
+- Stopped by paper
+- A decreases by 4, Z decreases by 2
+
+**Beta (β):** Electron, -1 charge
+- Stopped by aluminum
+- A same, Z increases by 1
+
+**Gamma (γ):** EM radiation, no charge
+- Stopped by lead
+- A and Z unchanged
+
+---
+
+## NUCLEAR EQUATIONS
+
+**Alpha decay:**
+²³⁸U₉₂ → ²³⁴Th₉₀ + ⁴He₂
+
+**Beta decay:**
+¹⁴C₆ → ¹⁴N₇ + ⁰e₋₁
+
+**Balance:** Mass numbers and atomic numbers must balance
+
+---
+
+## HALF-LIFE (t₁/₂)
+
+Time for half of sample to decay
+
+**N = N₀(½)ⁿ**
+
+Where: n = t/t₁/₂
+
+Or: **N = N₀e^(-λt)**
+
+---
+
+## APPLICATIONS
+
+- Carbon dating (¹⁴C)
+- Medical tracers
+- Cancer treatment
+- Smoke detectors
+- Food preservation
+
+---
+
+# 15. METALS & EXTRACTION
+**Exam Frequency: 6-8%**
+
+## REACTIVITY SERIES (High → Low)
+
+K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au
+
+**More reactive:**
+- Extracted by electrolysis
+- React with water/acids
+- Displace less reactive metals
+
+---
+
+## EXTRACTION METHODS
+
+**Electrolysis:** K, Na, Ca, Mg, Al
+- Most reactive metals
+- From molten compounds
+
+**Reduction with Carbon:** Zn, Fe, Pb
+- Moderately reactive
+- From oxides in blast furnace
+
+**No reduction needed:** Cu, Ag, Au
+- Least reactive
+- Found native or easily reduced
+
+---
+
+## BLAST FURNACE (Iron)
+
+**Raw materials:**
+- Iron ore (Fe₂O₃)
+- Coke (C)
+- Limestone (CaCO₃)
+
+**Reactions:**
+1. C + O₂ → CO₂
+2. CO₂ + C → 2CO
+3. Fe₂O₃ + 3CO → 2Fe + 3CO₂
+4. CaCO₃ → CaO + CO₂
+5. CaO + SiO₂ → CaSiO₃ (slag)
+
+**Product:** Pig iron (impure)
+
+---
+
+## ALUMINUM EXTRACTION
+
+**Hall-Héroult Process:**
+- Ore: Bauxite (Al₂O₃)
+- Dissolved in molten cryolite
+- Electrolysis at 900°C
+
+**Cathode:** Al³⁺ + 3e⁻ → Al
+**Anode:** 2O²⁻ → O₂ + 4e⁻ (carbon anode burns)
+
+---
+
+## CORROSION
+
+**Rusting (iron):**
+- Needs O₂ + H₂O
+- Forms Fe₂O₃·xH₂O
+
+**Prevention:**
+- Painting, oiling (barrier)
+- Galvanizing (zinc coating)
+- Sacrificial anode (more reactive metal)
+- Cathodic protection
+
+---
+
+# 16. INDUSTRIAL PROCESSES
+**Exam Frequency: 5-7%**
+
+## HABER PROCESS (Ammonia)
+
+**N₂ + 3H₂ ⇌ 2NH₃** (ΔH = -92 kJ/mol)
+
+**Conditions:**
+- Temperature: 450-500°C (compromise)
+- Pressure: 200-300 atm (high)
+- Catalyst: Iron
+
+**Le Chatelier:**
+- High pressure favors products (4 moles → 2 moles)
+- Low temp favors products (exothermic)
+- But low temp = slow rate → use 450°C
+
+---
+
+## CONTACT PROCESS (Sulfuric Acid)
+
+**Step 1:** S + O₂ → SO₂
+
+**Step 2:** 2SO₂ + O₂ ⇌ 2SO₃
+- Catalyst: V₂O₅
+- Temperature: 450°C
+- Pressure: 2 atm
+
+**Step 3:** SO₃ + H₂SO₄ → H₂S₂O₇ (oleum)
+
+**Step 4:** H₂S₂O₇ + H₂O → 2H₂SO₄
+
+---
+
+## FRACTIONAL DISTILLATION (Petroleum)
+
+**Fractions (top to bottom):**
+
+| Fraction | Boiling Range | Carbon Atoms | Use |
+|----------|---------------|--------------|-----|
+| Gas | <40°C | C₁-C₄ | Fuel |
+| Petrol | 40-100°C | C₅-C₁₀ | Cars |
+| Naphtha | 100-150°C | C₇-C₁₄ | Chemicals |
+| Kerosene | 150-250°C | C₁₀-C₁₆ | Aviation fuel |
+| Diesel | 250-350°C | C₁₅-C₂₅ | Engines |
+| Lubricating oil | >350°C | C₂₀-C₅₀ | Lubrication |
+| Bitumen | Residue | >C₅₀ | Roads |
+
+**Cracking:** Breaking large hydrocarbons into smaller ones
+- Thermal or catalytic
+- Produces alkenes
+
+---
+
+# 17. QUALITATIVE ANALYSIS
+**Exam Frequency: 6-8%**
+
+## CATION TESTS
+
+**Flame Tests:**
+- Na⁺: Yellow
+- K⁺: Lilac/violet
+- Ca²⁺: Brick red
+- Cu²⁺: Blue-green
+- Ba²⁺: Apple green
+
+**Precipitation:**
+- Add NaOH to solution
+
+| Cation | NaOH (few drops) | NaOH (excess) |
+|--------|------------------|---------------|
+| Fe²⁺ | Green ppt | Insoluble |
+| Fe³⁺ | Brown ppt | Insoluble |
+| Al³⁺ | White ppt | Soluble |
+| Zn²⁺ | White ppt | Soluble |
+| Cu²⁺ | Blue ppt | Insoluble |
+| Pb²⁺ | White ppt | Soluble |
+
+**Add NH₃:**
+- Cu²⁺: Deep blue complex
+- Ag⁺: White ppt (soluble in excess NH₃)
+
+---
+
+## ANION TESTS
+
+**Carbonate (CO₃²⁻):**
+Add acid → CO₂ gas (turns limewater milky)
+
+**Sulfate (SO₄²⁻):**
+Add BaCl₂ → white ppt (BaSO₄)
+
+**Chloride (Cl⁻):**
+Add AgNO₃ → white ppt (AgCl, soluble in NH₃)
+
+**Bromide (Br⁻):**
+Add AgNO₃ → cream ppt (AgBr, slightly soluble in NH₃)
+
+**Iodide (I⁻):**
+Add AgNO₃ → yellow ppt (AgI, insoluble in NH₃)
+
+**Nitrate (NO₃⁻):**
+Brown ring test (Fe²⁺ + conc. H₂SO₄)
+
+---
+
+# 18. ORGANIC CHEMISTRY - ADVANCED
+**Exam Frequency: 8-10%**
+
+## ALCOHOLS (Alkanols)
+
+**Primary (1°):** OH on end carbon
+**Secondary (2°):** OH on middle carbon
+**Tertiary (3°):** OH on carbon with 3 bonds
+
+**Oxidation:**
+- 1° → Aldehyde → Carboxylic acid
+- 2° → Ketone (stops here)
+- 3° → No reaction
+
+**Esterification:**
+Alcohol + Acid → Ester + Water
+
+CH₃OH + CH₃COOH → CH₃COOCH₃ + H₂O
+
+---
+
+## CARBOXYLIC ACIDS
+
+**General formula:** CₙH₂ₙ₊₁COOH or RCOOH
+
+**Properties:**
+- Weak acids (partially ionize)
+- React with metals: 2CH₃COOH + Mg → (CH₃COO)₂Mg + H₂
+- React with bases: CH₃COOH + NaOH → CH₃COONa + H₂O
+- React with carbonates: 2CH₃COOH + Na₂CO₃ → 2CH₃COONa + H₂O + CO₂
+
+---
+
+## ESTERS
+
+**Formation:** Acid + Alcohol → Ester + Water (conc. H₂SO₄ catalyst)
+
+**Properties:**
+- Sweet/fruity smell
+- Used in perfumes, flavoring
+
+**Hydrolysis:**
+- Acid hydrolysis: Ester + H₂O → Acid + Alcohol
+- Alkaline hydrolysis (Saponification): Ester + NaOH → Salt + Alcohol
+
+---
+
+## FATS & OILS
+
+**Triglycerides:** Glycerol + 3 fatty acids
+
+**Saturated fats:** No C=C bonds (solid at room temp, animal fats)
+**Unsaturated fats:** C=C bonds (liquid at room temp, vegetable oils)
+
+**Saponification:**
+Fat/Oil + 3NaOH → Glycerol + 3 Soap molecules
+
+**Soap structure:** Long hydrocarbon chain (hydrophobic) + COO⁻Na⁺ (hydrophilic)
+
+---
+
+## POLYMERS
+
+**Addition Polymerization:**
+- Monomers with C=C
+- Double bond opens, monomers link
+- Example: nC₂H₄ → (C₂H₄)ₙ (polythene)
+
+**Condensation Polymerization:**
+- Two different monomers
+- Small molecule (H₂O, HCl) eliminated
+- Example: Nylon, polyester, proteins
+
+---
+
+## PROTEINS
+
+**Amino acids:** H₂N-CHR-COOH
+
+**Peptide bond:** -CO-NH- (condensation of -COOH and -NH₂)
+
+**Structure:**
+- Primary: Amino acid sequence
+- Secondary: Helix/sheet (H-bonds)
+- Tertiary: 3D folding
+- Quaternary: Multiple chains
+
+**Denaturation:** Loss of structure (heat, pH, chemicals)
+
+---
+
+# 19. ENVIRONMENTAL CHEMISTRY
+**Exam Frequency: 3-5%**
+
+## AIR POLLUTION
+
+**Major pollutants:**
+- CO: Incomplete combustion (toxic, binds hemoglobin)
+- CO₂: Complete combustion (greenhouse gas)
+- SO₂: Burning sulfur-containing fuels (acid rain)
+- NOₓ: High-temperature combustion (acid rain, smog)
+- Particulates: Soot, dust (respiratory problems)
+
+---
+
+## ACID RAIN
+
+**Formation:**
+- SO₂ + H₂O → H₂SO₃ (sulfurous acid)
+- SO₃ + H₂O → H₂SO₄ (sulfuric acid)
+- NO₂ + H₂O → HNO₃ (nitric acid)
+
+**Effects:**
+- Corrodes buildings, statues
+- Kills fish (lakes become acidic)
+- Damages plants
+- Leaches nutrients from soil
+
+**Control:**
+- Use low-sulfur fuels
+- Flue gas desulfurization
+- Catalytic converters (cars)
+
+---
+
+## GREENHOUSE EFFECT
+
+**Greenhouse gases:** CO₂, CH₄, N₂O, CFCs
+
+**Mechanism:**
+1. Solar radiation reaches Earth
+2. Earth emits infrared (heat)
+3. Greenhouse gases trap heat
+4. Temperature increases
+
+**Effects:**
+- Global warming
+- Ice caps melting
+- Sea level rise
+- Climate change
+
+**Control:**
+- Reduce fossil fuel use
+- Renewable energy
+- Reforestation
+
+---
+
+## OZONE LAYER
+
+**Stratospheric O₃:** Protects from UV radiation
+
+**Depletion:**
+- CFCs break down O₃
+- CFCl₃ + UV → CFCl₂ + Cl
+- Cl + O₃ → ClO + O₂
+- ClO + O → Cl + O₂ (Cl regenerated = catalyst)
+
+**Effects:**
+- Increased UV → skin cancer
+- Eye cataracts
+- Immune suppression
+
+**Solution:** Montreal Protocol (banned CFCs)
+
+---
+
+# 20. GAS LAWS - ADVANCED
+**Exam Frequency: 4-6%**
+
+## GRAHAM'S LAW (Diffusion/Effusion)
+
+**Rate₁/Rate₂ = √(M₂/M₁)**
+
+Where M = molar mass
+
+Lighter gases diffuse faster
+
+---
+
+## DALTON'S LAW (Partial Pressures)
+
+**Ptotal = P₁ + P₂ + P₃ + ...**
+
+For mixture of non-reacting gases
+
+**Partial pressure:** Pᵢ = Xᵢ × Ptotal
+
+Where Xᵢ = mole fraction
+
+---
+
+## IDEAL VS REAL GASES
+
+**Ideal gas assumptions:**
+- No intermolecular forces
+- Negligible particle volume
+- Perfectly elastic collisions
+
+**Real gases deviate at:**
+- High pressure (volume matters)
+- Low temperature (IMF matters)
+
+**Van der Waals equation:** (P + a/V²)(V - b) = RT
+- a = IMF correction
+- b = volume correction
+
+---
+
+# 21. LAWS OF CHEMICAL COMBINATION
+**Exam Frequency: 2-3%**
+
+## LAW OF DEFINITE PROPORTIONS
+
+Compound always has same elements in same mass ratio
+
+H₂O always has H:O = 1:8 by mass
+
+---
+
+## LAW OF MULTIPLE PROPORTIONS
+
+If two elements form multiple compounds, mass ratios are simple whole numbers
+
+CO: C:O = 12:16 = 3:4
+CO₂: C:O = 12:32 = 3:8
+Ratio of O masses = 4:8 = 1:2 ✓
+
+---
+
+## LAW OF RECIPROCAL PROPORTIONS
+
+Masses of elements combining with fixed mass of third element are in ratio they combine with each other
+
+---
+
+## GAY-LUSSAC'S LAW
+
+Volumes of reacting gases (same T, P) are in simple whole number ratios
+
+N₂ + 3H₂ → 2NH₃
+1 vol : 3 vol : 2 vol
+
+---
+
+# PRIORITY MATRIX
+
+## 🔴 MUST KNOW (Core 70% - Skip at Your Peril)
+
+**Foundation Tier:**
+1. ⭐⭐⭐ Stoichiometry & Mole Concept
+2. ⭐⭐⭐ Atomic Structure & Periodicity
+3. ⭐⭐⭐ Chemical Bonding
+
+**Reaction Tier:**
+4. ⭐⭐⭐ Acids, Bases & Salts (including titrations)
+5. ⭐⭐⭐ Redox & Electrochemistry
+6. ⭐⭐⭐ Organic Chemistry (nomenclature, functional groups, reactions)
+
+**Calculation Heavy:**
+7. ⭐⭐⭐ Gas Laws (PV=nRT, STP)
+8. ⭐⭐⭐ Thermochemistry (ΔH calculations, Hess's Law)
+
+---
+
+## 🟡 SHOULD KNOW (20% - Frequent Enough)
+
+**Application Tier:**
+9. ⭐⭐ Chemical Equilibrium (K, Le Chatelier)
+10. ⭐⭐ Chemical Kinetics (factors, rate laws basics)
+11. ⭐⭐ Separation Techniques
+12. ⭐⭐ Qualitative Analysis (ion tests)
+13. ⭐⭐ Metals & Extraction (reactivity series, basic extraction)
+
+**Organic Advanced:**
+14. ⭐⭐ Alcohols, Acids, Esters (reactions, properties)
+15. ⭐⭐ Fats, Oils, Soap (saponification)
+
+---
+
+## 🟢 NICE TO KNOW (10% - Lower Frequency)
+
+**Specialized Topics:**
+16. ⭐ Industrial Processes (Haber, Contact, Blast Furnace)
+17. ⭐ Water Hardness (types, removal)
+18. ⭐ Solubility & Ksp (precipitation)
+19. ⭐ Radioactivity (decay, half-life)
+20. ⭐ Environmental Chemistry (pollution, greenhouse)
+21. ⭐ Colloids (properties, types)
+22. ⭐ Polymers (addition vs condensation)
+23. ⭐ Graham's Law, Dalton's Law
+24. ⭐ Laws of Chemical Combination
+
+---
+
+## STUDY TIME ALLOCATION
+
+**If you have 30 days:**
+- Days 1-21: MUST KNOW (70% time)
+- Days 22-27: SHOULD KNOW (20% time)
+- Days 28-30: NICE TO KNOW + revision (10% time)
+
+**If you have 14 days:**
+- Days 1-10: MUST KNOW only
+- Days 11-13: Top 5 SHOULD KNOW
+- Day 14: Revision + practice tests
+
+**If you have 7 days:**
+- Focus ONLY on MUST KNOW
+- Do past questions to identify weak spots
+- Skip NICE TO KNOW entirely
+
+---
+
+## TOPIC DEPENDENCIES (What Needs What)
+
+**Nothing Depends On:**
+- Environmental Chemistry
+- Colloids
+- Laws of Chemical Combination
+- Radioactivity
+*(Can skip if time-pressed)*
+
+**Everything Depends On:**
+- Stoichiometry & Mole
+- Atomic Structure
+- Chemical Bonding
+*(Cannot skip these)*
+
+**Dependency Chains:**
+```
+Stoichiometry → Gas Laws → Kinetics
+              → Equilibrium → Acids/Bases
+              → Redox → Electrochemistry
+
+Atomic Structure → Bonding → Organic Chemistry
+                 → Periodicity → Metals/Extraction
+
+Acids/Bases → Salts → Qualitative Analysis
+            → Titrations
+```
+
+---
+
+## CALCULATION-HEAVY vs CONCEPT-HEAVY
+
+**Calculation (practice more):**
+- Stoichiometry (60% calculations)
+- Gas Laws (80% calculations)
+- Electrochemistry (40% calculations)
+- Thermochemistry (70% calculations)
+- Titrations (90% calculations)
+
+**Concept (understand + memorize):**
+- Organic nomenclature (memorization)
+- Qualitative analysis (memorize tests)
+- Separation techniques (understand methods)
+- Environmental (understand mechanisms)
+
+**Mixed:**
+- Equilibrium (50/50)
+- Kinetics (50/50)
+- Redox (40% concept, 60% calculation)
+
+---
+
+## CROSS-TOPIC QUESTIONS (High Frequency)
+
+These combinations appear most in exams:
+
+1. **Stoichiometry + Gas Laws**
+   - Given mass → find volume at STP
+   
+2. **Redox + Electrochemistry**
+   - Balance redox → calculate E° → predict spontaneity
+
+3. **Organic + Isomerism**
+   - Draw structural formulas → identify isomers
+
+4. **Acids/Bases + Titration**
+   - Neutralization calculations → find unknown concentration
+
+5. **Equilibrium + Le Chatelier**
+   - Given conditions → predict shift direction
+
+6. **Kinetics + Factors**
+   - Explain rate change → collision theory
+
+7. **Bonding + Properties**
+   - Predict physical properties from bond type
+
+---
+
+**END OF COMPLETE FACTBOOK**

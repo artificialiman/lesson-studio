@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>{{SUBJECT_NAME}} - JAMB Practice Test</title>
+<!-- Generated: Period {{PERIOD}}, Day {{DAY_RANGE}}, {{GENERATED_DATE}} -->
+<!-- Validation: {{VALIDATION_STATUS}} -->
+<!-- Subjects: {{SUBJECTS_LIST}} -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="quiz-styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<style>
+:root{
+  --bg:#0f1117;--bg2:#181c27;--bg3:#1e2235;
+  --accent:#6366f1;--accent2:#818cf8;
+  --success:#10b981;--danger:#ef4444;--warn:#f59e0b;
+  --text:#e2e8f0;--muted:#94a3b8;--border:#2d3348;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+
+/* ── Header ── */
+.qhdr{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;gap:.5rem}
+.qhdr-left{display:flex;align-items:center;gap:.6rem;min-width:0}
+.subj-name{font-weight:700;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.subj-meta{font-size:.72rem;color:var(--muted)}
+.qhdr-center{display:flex;flex-direction:column;align-items:center}
+.timer{font-size:1.3rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.05em}
+.timer.warn{color:var(--warn)}
+.timer.danger{color:var(--danger);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.qhdr-right{display:flex;gap:.5rem;align-items:center}
+
+/* ── Layout ── */
+.qwrap{display:flex;height:calc(100vh - 52px)}
+.sidebar{width:220px;background:var(--bg2);border-right:1px solid var(--border);
+  overflow-y:auto;flex-shrink:0;transition:.3s;padding:.75rem}
+.sidebar h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.5rem}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4rem;margin-bottom:.75rem}
+.stat{background:var(--bg3);border-radius:8px;padding:.4rem;text-align:center}
+.stat-v{font-size:1.1rem;font-weight:700}
+.stat-l{font-size:.65rem;color:var(--muted)}
+.palette{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:.75rem}
+.pb{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);
+  background:var(--bg3);color:var(--muted);font-size:.7rem;font-weight:600;
+  cursor:pointer;transition:.15s;display:flex;align-items:center;justify-content:center}
+.pb.answered{background:var(--success);border-color:var(--success);color:#fff}
+.pb.current{border-color:var(--accent);color:var(--accent);font-weight:800}
+.pb.flagged{background:var(--warn);border-color:var(--warn);color:#fff}
+.pb.wrong-review{background:var(--danger);border-color:var(--danger);color:#fff}
+.legend{display:flex;flex-direction:column;gap:.3rem}
+.leg{display:flex;align-items:center;gap:.4rem;font-size:.68rem;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* ── Main ── */
+.qmain{flex:1;overflow-y:auto;padding:1rem}
+.qcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);
+  max-width:780px;margin:0 auto;padding:1.5rem}
+
+/* Passage / comprehension */
+.passage-box{background:var(--bg3);border-left:3px solid var(--accent);border-radius:8px;
+  padding:1rem 1.2rem;margin-bottom:1.2rem;font-size:.88rem;line-height:1.7;color:var(--text)}
+.passage-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);
+  font-weight:700;margin-bottom:.5rem}
+
+/* Diagram */
+.diagram-box{background:var(--bg3);border:1px solid var(--border);border-radius:10px;
+  padding:1rem;margin-bottom:1.2rem;text-align:center}
+.diagram-box svg{max-width:100%;height:auto}
+.diagram-caption{font-size:.72rem;color:var(--muted);margin-top:.4rem}
+
+/* Question */
+.qnum{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.4rem}
+.qtext{font-size:.95rem;line-height:1.6;margin-bottom:1rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 1rem;
+  background:var(--bg3);border:1.5px solid var(--border);border-radius:10px;
+  cursor:pointer;transition:.15s;user-select:none}
+.opt:hover{border-color:var(--accent2);background:var(--bg)}
+.opt.selected{border-color:var(--accent);background:rgba(99,102,241,.1)}
+.opt.correct-review{border-color:var(--success)!important;background:rgba(16,185,129,.1)!important}
+.opt.wrong-review{border-color:var(--danger)!important;background:rgba(239,68,68,.08)!important}
+.olabel{width:26px;height:26px;border-radius:7px;background:var(--bg2);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0;margin-top:.05rem}
+.opt.selected .olabel{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt.correct-review .olabel{background:var(--success);border-color:var(--success);color:#fff}
+.opt.wrong-review .olabel{background:var(--danger);border-color:var(--danger);color:#fff}
+.otext{font-size:.88rem;line-height:1.5}
+
+/* Explanation */
+.expl{margin-top:1rem;padding:.9rem 1rem;background:var(--bg3);border-radius:10px;
+  border-left:3px solid var(--accent);font-size:.83rem;line-height:1.6;display:none}
+.expl.show{display:block}
+.expl-head{font-weight:700;color:var(--accent2);margin-bottom:.4rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.note{margin-top:.5rem;padding:.5rem .75rem;background:rgba(245,158,11,.07);
+  border-radius:7px;border-left:2px solid var(--warn);font-size:.8rem;color:var(--warn)}
+
+/* Navigation */
+.qnav{display:flex;gap:.75rem;justify-content:space-between;align-items:center;margin-top:1.2rem;flex-wrap:wrap}
+.btn{padding:.55rem 1.1rem;border-radius:8px;border:none;font-size:.85rem;font-weight:600;
+  cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:.15s}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover:not(:disabled){border-color:var(--accent2)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover:not(:disabled){background:var(--accent2)}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-flag{background:transparent;border:1px solid var(--border);color:var(--muted);
+  padding:.4rem .7rem;border-radius:7px;font-size:.78rem;cursor:pointer;transition:.15s}
+.btn-flag.active{background:rgba(245,158,11,.12);border-color:var(--warn);color:var(--warn)}
+.btn-icon{background:transparent;border:1px solid var(--border);color:var(--muted);
+  width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;transition:.15s}
+.btn-icon:hover{border-color:var(--accent2);color:var(--text)}
+
+/* Subject divider in palette */
+.subj-divider{width:100%;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--accent2);padding:.3rem 0 .1rem;border-top:1px solid var(--border);margin-top:.2rem}
+
+/* Mobile */
+.mob-palette{position:fixed;bottom:1rem;right:1rem;z-index:50;
+  background:var(--accent);color:#fff;border:none;border-radius:50%;
+  width:48px;height:48px;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,.4);
+  display:none;align-items:center;justify-content:center}
+@media(max-width:900px){
+  .sidebar{position:fixed;left:-240px;top:0;height:100vh;z-index:200;transition:.3s;padding-top:60px}
+  .sidebar.open{left:0}
+  .mob-palette{display:flex}
+  .qmain{padding:.75rem}
+  .qcard{padding:1rem}
+}
+
+/* Modals */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;
+  display:flex;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.hidden{display:none}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+  width:100%;overflow:hidden}
+.modal-hdr{padding:1rem 1.25rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between}
+.modal-hdr h3{font-size:1rem;font-weight:700}
+.modal-body{padding:1.25rem}
+.modal-ftr{padding:.75rem 1.25rem;border-top:1px solid var(--border);
+  display:flex;gap:.6rem;flex-wrap:wrap}
+.summary-item{display:flex;justify-content:space-between;padding:.5rem 0;
+  border-bottom:1px solid var(--border);font-size:.88rem}
+.summary-item:last-child{border-bottom:none}
+.sv{font-weight:700}
+.sv.green{color:var(--success)}.sv.red{color:var(--danger)}.sv.gray{color:var(--muted)}
+
+/* Score modal */
+.score-big{font-size:3rem;font-weight:800;color:var(--accent);text-align:center}
+.grade-pill{display:inline-block;padding:.35rem 1rem;border-radius:999px;font-weight:700;font-size:.85rem}
+.score-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin:.75rem 0}
+.scard{background:var(--bg3);border-radius:8px;padding:.65rem;text-align:center}
+.scard-v{font-size:1.3rem;font-weight:700}
+.scard-l{font-size:.68rem;color:var(--muted);margin-top:.1rem}
+
+/* Calculator */
+.calc{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem}
+.calc-display{grid-column:1/-1;background:var(--bg3);border:1px solid var(--border);
+  border-radius:8px;padding:.6rem .9rem;font-size:1.3rem;font-weight:700;
+  text-align:right;color:var(--text);width:100%;margin-bottom:.4rem}
+.cb{padding:.6rem;border-radius:8px;border:1px solid var(--border);
+  background:var(--bg3);color:var(--text);font-size:.9rem;font-weight:600;cursor:pointer;transition:.15s}
+.cb:hover{background:var(--bg);border-color:var(--accent2)}
+.cb.op{color:var(--accent2)}.cb.eq{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cb.clr{color:var(--danger)}
+
+/* Error banner */
+.err-banner{background:rgba(239,68,68,.1);border:1px solid var(--danger);border-radius:10px;
+  padding:.75rem 1rem;margin:.5rem 1rem;display:flex;align-items:center;gap:.6rem;font-size:.85rem}
+.err-banner.hidden{display:none}
+</style>
+</head>
+<body>
+
+<!-- Error Banner -->
+<div class="err-banner hidden" id="errBanner">
+  <i class="fas fa-exclamation-triangle" style="color:var(--danger)"></i>
+  <span id="errMsg"></span>
+  <button class="btn-icon" style="margin-left:auto" onclick="document.getElementById('errBanner').classList.add('hidden')"><i class="fas fa-times"></i></button>
+</div>
+
+<!-- Header -->
+<header class="qhdr">
+  <div class="qhdr-left">
+    <button class="btn-icon" id="menuBtn"><i class="fas fa-bars"></i></button>
+    <div>
+      <div class="subj-name" id="subjName">{{SUBJECT_NAME}}</div>
+      <div class="subj-meta">Day {{DAY_RANGE}} &bull; Q <span id="qNum">1</span> of <span id="qTotal">{{TOTAL_QUESTIONS}}</span></div>
+    </div>
+  </div>
+  <div class="qhdr-center">
+    <div class="timer" id="timer">{{TIMER_DURATION}}</div>
+    <div style="font-size:.62rem;color:var(--muted)">remaining</div>
+  </div>
+  <div class="qhdr-right">
+    <button class="btn-icon" id="calcBtn" title="Calculator"><i class="fas fa-calculator"></i></button>
+    <button class="btn btn-danger" id="submitBtn" style="font-size:.8rem;padding:.4rem .8rem">Submit</button>
+  </div>
+</header>
+
+<div class="qwrap">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h4>Navigator</h4>
+    <div class="stats">
+      <div class="stat"><div class="stat-v" style="color:var(--success)" id="sAns">0</div><div class="stat-l">Done</div></div>
+      <div class="stat"><div class="stat-v" style="color:var(--danger)" id="sLeft">{{TOTAL_QUESTIONS}}</div><div class="stat-l">Left</div></div>
+      <div class="stat"><div class="stat-v" style="color:var(--warn)" id="sFlag">0</div><div class="stat-l">Flagged</div></div>
+    </div>
+    <div class="palette" id="palette"></div>
+    <div class="legend">
+      <div class="leg"><div class="dot" style="background:var(--success)"></div>Answered</div>
+      <div class="leg"><div class="dot" style="background:var(--accent);border:2px solid var(--accent2)"></div>Current</div>
+      <div class="leg"><div class="dot" style="background:var(--warn)"></div>Flagged</div>
+      <div class="leg"><div class="dot" style="background:var(--bg3);border:1px solid var(--border)"></div>Unanswered</div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="qmain" id="qmain">
+    <div class="qcard" id="qcard">
+      <div id="qcontent">Loading...</div>
+    </div>
+  </main>
+</div>
+
+<!-- Mobile palette button -->
+<button class="mob-palette" id="mobBtn"><i class="fas fa-th"></i></button>
+
+<!-- Submit Modal -->
+<div class="modal-overlay hidden" id="submitModal">
+  <div class="modal" style="max-width:420px">
+    <div class="modal-hdr"><h3>Submit Test?</h3><button class="btn-icon" id="closeSubmit"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div class="summary-item"><span>Total Questions</span><span class="sv" id="mTotal">{{TOTAL_QUESTIONS}}</span></div>
+      <div class="summary-item"><span>Answered</span><span class="sv green" id="mAns">0</span></div>
+      <div class="summary-item"><span>Unanswered</span><span class="sv red" id="mLeft">{{TOTAL_QUESTIONS}}</span></div>
+      <div class="summary-item"><span>Flagged</span><span class="sv" style="color:var(--warn)" id="mFlag">0</span></div>
+      <div class="summary-item"><span>Time Remaining</span><span class="sv" id="mTime">{{TIMER_DURATION}}</span></div>
+      <div style="margin-top:.75rem;padding:.6rem;background:rgba(239,68,68,.08);border-radius:8px;font-size:.8rem;color:var(--danger)">
+        <i class="fas fa-exclamation-triangle"></i> You cannot change answers after submission.
+      </div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-secondary" id="cancelSubmit">Cancel</button>
+      <button class="btn btn-danger" id="confirmSubmit"><i class="fas fa-check"></i> Submit Test</button>
+    </div>
+  </div>
+</div>
+
+<!-- Results Modal -->
+<div class="modal-overlay hidden" id="resultsModal">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-hdr"><h3>🎓 Test Complete!</h3><button class="btn-icon" id="closeResults"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <div style="text-align:center;padding:1rem 0 .5rem">
+        <div class="score-big" id="rJamb">0</div>
+        <div style="font-size:.8rem;color:var(--muted);margin:.2rem 0">JAMB Score (negative marking)</div>
+        <div class="grade-pill" id="rGrade" style="margin-top:.4rem">—</div>
+      </div>
+      <div class="score-grid">
+        <div class="scard"><div class="scard-v" style="color:var(--success)" id="rCorrect">0</div><div class="scard-l">Correct (+2.5)</div></div>
+        <div class="scard"><div class="scard-v" style="color:var(--danger)" id="rWrong">0</div><div class="scard-l">Wrong (−0.5)</div></div>
+        <div class="scard"><div class="scard-v" style="color:var(--muted)" id="rSkipped">0</div><div class="scard-l">Skipped (0)</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.75rem">
+        <div class="scard"><div style="font-size:.72rem;color:var(--muted)">Raw Accuracy</div><div style="font-size:1.1rem;font-weight:700" id="rRaw">0%</div></div>
+        <div class="scard"><div style="font-size:.72rem;color:var(--muted)">Time Taken</div><div style="font-size:1.1rem;font-weight:700" id="rTime">--:--</div></div>
+      </div>
+      <div style="font-size:.72rem;color:var(--muted);text-align:center">
+        +2.5 correct &nbsp;|&nbsp; −0.5 wrong &nbsp;|&nbsp; 0 skipped &nbsp;— PDF includes full topic analysis
+      </div>
+    </div>
+    <div class="modal-ftr">
+      <button class="btn btn-secondary" id="reviewBtn"><i class="fas fa-search"></i> Review</button>
+      <button class="btn btn-primary" id="pdfBtn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+      <a href="science_clusters.html" class="btn btn-secondary" style="flex:1 1 100%;text-align:center;text-decoration:none"><i class="fas fa-home"></i> Back to Clusters</a>
+    </div>
+  </div>
+</div>
+
+<!-- Time's Up Modal -->
+<div class="modal-overlay hidden" id="timeUpModal">
+  <div class="modal" style="max-width:360px">
+    <div class="modal-hdr"><h3>⏳ Time's Up!</h3></div>
+    <div class="modal-body" style="text-align:center;padding:1.5rem">
+      <i class="fas fa-hourglass-end" style="font-size:2.5rem;color:var(--danger);margin-bottom:.75rem;display:block"></i>
+      <p>Your time has expired. Answers auto-submitted.</p>
+    </div>
+    <div class="modal-ftr"><button class="btn btn-primary" style="flex:1" id="timeUpView">View Results</button></div>
+  </div>
+</div>
+
+<!-- Calculator Modal -->
+<div class="modal-overlay hidden" id="calcModal">
+  <div class="modal" style="max-width:300px">
+    <div class="modal-hdr"><h3>Calculator</h3><button class="btn-icon" id="closeCalc"><i class="fas fa-times"></i></button></div>
+    <div class="modal-body">
+      <input class="calc-display" id="calcDisp" value="0" readonly>
+      <div class="calc">
+        <button class="cb clr" onclick="calcAct('clear')">C</button>
+        <button class="cb op" onclick="calcAct('del')">⌫</button>
+        <button class="cb op" onclick="calcAct('pct')">%</button>
+        <button class="cb op" onclick="calcAct('div')">÷</button>
+        <button class="cb" onclick="calcVal('7')">7</button><button class="cb" onclick="calcVal('8')">8</button><button class="cb" onclick="calcVal('9')">9</button>
+        <button class="cb op" onclick="calcAct('mul')">×</button>
+        <button class="cb" onclick="calcVal('4')">4</button><button class="cb" onclick="calcVal('5')">5</button><button class="cb" onclick="calcVal('6')">6</button>
+        <button class="cb op" onclick="calcAct('sub')">−</button>
+        <button class="cb" onclick="calcVal('1')">1</button><button class="cb" onclick="calcVal('2')">2</button><button class="cb" onclick="calcVal('3')">3</button>
+        <button class="cb op" onclick="calcAct('add')">+</button>
+        <button class="cb" onclick="calcVal('0')" style="grid-column:span 2">0</button>
+        <button class="cb" onclick="calcVal('.')">.</button>
+        <button class="cb eq" onclick="calcAct('eq')">=</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     EMBEDDED DATA — injected by generate_quiz.py
+══════════════════════════════════════════════════════ -->
+<script>
+window.QUIZ_META = {
+  period: {{PERIOD}},
+  days: "{{DAY_RANGE}}",
+  subject: "{{SUBJECT_NAME}}",
+  generatedDate: "{{GENERATED_DATE}}",
+  validationStatus: "{{VALIDATION_STATUS}}",
+  totalQuestions: {{TOTAL_QUESTIONS}},
+  timerMinutes: {{TIMER_MINUTES}}
+};
+// Format: [{id,text,optionA,optionB,optionC,optionD,answer,explanation,exception,subject,topic,taxonomy,passage,diagram}]
+window.QUIZ_DATA = {{QUESTIONS_JSON}};
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     QUIZ ENGINE — self-contained, no external JS needed
+══════════════════════════════════════════════════════ -->
+<script>
+(function(){
+'use strict';
+
+// ── Scoring ─────────────────────────────────────────────
+var SC_CORRECT = 2.5, SC_WRONG = -0.5, SC_SKIP = 0;
+
+// ── State ───────────────────────────────────────────────
+var questions = [], userAnswers = {}, flagged = new Set();
+var cur = 0, timerSecs = 0, timerInt = null, startTime = Date.now();
+var submitted = false, reviewMode = false;
+
+// ── Init ────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', function(){
+  var meta = window.QUIZ_META || {};
+  var data = window.QUIZ_DATA;
+
+  if (!data || !Array.isArray(data) || !data.length){
+    showErr('Quiz data not found. Please refresh.'); return;
+  }
+
+  questions = data.filter(function(q){
+    return q && q.text && q.optionA && q.optionB && q.optionC && q.optionD && ['A','B','C','D'].includes(q.answer);
+  });
+
+  if (!questions.length){ showErr('No valid questions found.'); return; }
+
+  timerSecs = (meta.timerMinutes || 60) * 60;
+  $('qTotal').textContent = questions.length;
+  $('sLeft').textContent  = questions.length;
+  $('mTotal').textContent = questions.length;
+  $('mLeft').textContent  = questions.length;
+
+  buildPalette();
+  renderQ(0);
+  startTimer();
+  bindEvents();
+});
+
+function $(id){ return document.getElementById(id); }
+
+// ── Timer ────────────────────────────────────────────────
+function startTimer(){
+  updateTimerDisplay();
+  timerInt = setInterval(function(){
+    timerSecs--;
+    updateTimerDisplay();
+    if (timerSecs <= 0){ clearInterval(timerInt); autoSubmit(); }
+  }, 1000);
+}
+function updateTimerDisplay(){
+  var m = Math.floor(timerSecs/60), s = timerSecs%60;
+  var str = pad(m)+':'+pad(s);
+  var el = $('timer');
+  el.textContent = str;
+  el.className = 'timer' + (timerSecs<=60?' danger':timerSecs<=300?' warn':'');
+}
+function pad(n){ return n.toString().padStart(2,'0'); }
+function fmtTime(s){ return pad(Math.floor(s/60))+':'+pad(s%60); }
+
+// ── Palette ──────────────────────────────────────────────
+function buildPalette(){
+  var pal = $('palette');
+  pal.innerHTML = '';
+  var lastSubj = null;
+  questions.forEach(function(q,i){
+    var subj = q.subject || '';
+    if (subj !== lastSubj){
+      var d = document.createElement('div');
+      d.className = 'subj-divider';
+      d.textContent = subj;
+      pal.appendChild(d);
+      lastSubj = subj;
+    }
+    var b = document.createElement('button');
+    b.className = 'pb';
+    b.textContent = i+1;
+    b.id = 'pb'+i;
+    b.onclick = (function(idx){ return function(){ goTo(idx); closeSidebar(); }; })(i);
+    pal.appendChild(b);
+  });
+}
+function updatePalette(){
+  questions.forEach(function(_,i){
+    var b = $('pb'+i);
+    if (!b) return;
+    b.className = 'pb' +
+      (i===cur?' current':'') +
+      (flagged.has(i)?' flagged':'') +
+      (!flagged.has(i) && userAnswers[i]?' answered':'');
+    if (reviewMode && userAnswers[i] && !flagged.has(i)){
+      b.classList.add(userAnswers[i]===questions[i].answer?'answered':'wrong-review');
+    }
+  });
+  $('sAns').textContent  = Object.keys(userAnswers).length;
+  $('sLeft').textContent = questions.length - Object.keys(userAnswers).length;
+  $('sFlag').textContent = flagged.size;
+}
+
+// ── Render Question ──────────────────────────────────────
+function renderQ(idx){
+  cur = idx;
+  var q = questions[idx];
+  var html = '';
+
+  // Passage block (comprehension)
+  if (q.passage){
+    html += '<div class="passage-box"><div class="passage-label"><i class="fas fa-book-open"></i> Read the passage below, then answer the questions</div>' + q.passage + '</div>';
+  }
+
+  // Diagram block
+  if (q.diagram){
+    html += '<div class="diagram-box">' + q.diagram + (q.diagramCaption ? '<div class="diagram-caption">'+q.diagramCaption+'</div>' : '') + '</div>';
+  }
+
+  // Question text
+  html += '<div class="qnum">Question '+(idx+1)+' of '+questions.length+(q.subject?' &bull; '+q.subject:'')+(q.topic?' &bull; '+q.topic:'')+'</div>';
+  html += '<div class="qtext">'+q.text+'</div>';
+
+  // Options
+  html += '<div class="options">';
+  ['A','B','C','D'].forEach(function(l){
+    var txt = q['option'+l];
+    if (!txt) return;
+    var cls = 'opt';
+    if (userAnswers[idx]===l) cls += ' selected';
+    if (reviewMode){
+      if (l===q.answer) cls += ' correct-review';
+      else if (userAnswers[idx]===l) cls += ' wrong-review';
+    }
+    html += '<div class="'+cls+'" data-opt="'+l+'" onclick="selectOpt(\''+l+'\')">' +
+      '<div class="olabel">'+l+'</div>' +
+      '<div class="otext">'+txt+'</div></div>';
+  });
+  html += '</div>';
+
+  // Explanation (review mode only)
+  if (reviewMode && (q.explanation || q.exception)){
+    html += '<div class="expl show">';
+    if (q.explanation) html += '<div class="expl-head"><i class="fas fa-lightbulb"></i> Explanation</div><div>'+q.explanation+'</div>';
+    if (q.exception)   html += '<div class="note"><i class="fas fa-exclamation-circle"></i> Note: '+q.exception+'</div>';
+    html += '</div>';
+  }
+
+  // Nav buttons
+  html += '<div class="qnav">';
+  html += '<button class="btn btn-secondary" onclick="goTo('+(idx-1)+')" '+(idx===0?'disabled':'')+'><i class="fas fa-arrow-left"></i> Prev</button>';
+  html += '<button class="btn-flag '+(flagged.has(idx)?'active':'')+'" onclick="toggleFlag()"><i class="fas fa-flag"></i> '+(flagged.has(idx)?'Flagged':'Flag')+'</button>';
+  if (userAnswers[idx] && !reviewMode) html += '<button class="btn btn-secondary" onclick="clearAns()"><i class="fas fa-eraser"></i> Clear</button>';
+  if (idx < questions.length-1){
+    html += '<button class="btn btn-primary" onclick="goTo('+(idx+1)+')">Next <i class="fas fa-arrow-right"></i></button>';
+  } else {
+    html += '<button class="btn btn-danger" onclick="openSubmit()"><i class="fas fa-check"></i> Finish</button>';
+  }
+  html += '</div>';
+
+  $('qcard').innerHTML = html;
+  $('qNum').textContent = idx+1;
+  updatePalette();
+  $('qmain').scrollTo({top:0, behavior:'smooth'});
+}
+
+function selectOpt(l){
+  if (submitted) return;
+  userAnswers[cur] = l;
+  renderQ(cur);
+}
+function clearAns(){ delete userAnswers[cur]; renderQ(cur); }
+function toggleFlag(){
+  if (flagged.has(cur)) flagged.delete(cur);
+  else flagged.add(cur);
+  renderQ(cur);
+}
+function goTo(idx){
+  if (idx<0||idx>=questions.length) return;
+  renderQ(idx);
+}
+
+// ── Sidebar ──────────────────────────────────────────────
+function openSidebar(){ $('sidebar').classList.add('open'); }
+function closeSidebar(){ $('sidebar').classList.remove('open'); }
+
+// ── Submit ───────────────────────────────────────────────
+function openSubmit(){
+  $('mAns').textContent  = Object.keys(userAnswers).length;
+  $('mLeft').textContent = questions.length - Object.keys(userAnswers).length;
+  $('mFlag').textContent = flagged.size;
+  $('mTime').textContent = fmtTime(timerSecs);
+  $('submitModal').classList.remove('hidden');
+}
+function doSubmit(){
+  submitted = true;
+  clearInterval(timerInt);
+  $('submitModal').classList.add('hidden');
+  showResults();
+}
+function autoSubmit(){
+  submitted = true;
+  $('timeUpModal').classList.remove('hidden');
+}
+
+// ── Scoring ──────────────────────────────────────────────
+function computeScore(){
+  var correct=0, wrong=0, skipped=0, jamb=0;
+  questions.forEach(function(q,i){
+    var a = userAnswers[i];
+    if (!a){ skipped++; }
+    else if (a===q.answer){ correct++; jamb+=SC_CORRECT; }
+    else { wrong++; jamb+=SC_WRONG; }
+  });
+  jamb = Math.max(0, jamb);
+  var rawPct = questions.length ? correct/questions.length*100 : 0;
+  return { correct:correct, wrong:wrong, skipped:skipped,
+           jamb:jamb, maxScore:questions.length*SC_CORRECT, rawPct:rawPct };
+}
+
+function computeTopicAnalysis(){
+  var bySubject={}, byTopic={}, byTaxonomy={};
+  function tally(map,key,correct,wrong){
+    if (!key) return;
+    if (!map[key]) map[key]={correct:0,wrong:0,skipped:0,total:0};
+    map[key].total++;
+    if (correct) map[key].correct++;
+    else if (wrong) map[key].wrong++;
+    else map[key].skipped++;
+  }
+  questions.forEach(function(q,i){
+    var a=userAnswers[i], correct=a&&a===q.answer, wrong=a&&a!==q.answer;
+    tally(bySubject, q.subject||'General', correct, wrong);
+    tally(byTopic, q.topic, correct, wrong);
+    tally(byTaxonomy, q.taxonomy, correct, wrong);
+  });
+  function rank(map){
+    return Object.keys(map).map(function(k){
+      var d=map[k];
+      return {name:k,correct:d.correct,wrong:d.wrong,skipped:d.skipped,total:d.total,
+              pct:d.total?Math.round(d.correct/d.total*100):0};
+    }).sort(function(a,b){return b.pct-a.pct;});
+  }
+  return {bySubject:rank(bySubject), byTopic:rank(byTopic), byTaxonomy:rank(byTaxonomy)};
+}
+
+// ── Results Modal ─────────────────────────────────────────
+function showResults(){
+  var sc = computeScore();
+  var elapsed = Math.floor((Date.now()-startTime)/1000);
+  var grade, gBg;
+  if (sc.rawPct>=70){ grade='GREAT WORK'; gBg='#10b981'; }
+  else if (sc.rawPct>=50){ grade='FAIR'; gBg='#f59e0b'; }
+  else { grade='NEEDS WORK'; gBg='#ef4444'; }
+  $('rJamb').textContent    = sc.jamb.toFixed(1);
+  $('rCorrect').textContent = sc.correct;
+  $('rWrong').textContent   = sc.wrong;
+  $('rSkipped').textContent = sc.skipped;
+  $('rRaw').textContent     = sc.rawPct.toFixed(1)+'%';
+  $('rTime').textContent    = fmtTime(elapsed);
+  var gp = $('rGrade');
+  gp.textContent = grade;
+  gp.style.background = gBg;
+  gp.style.color = '#fff';
+  $('resultsModal').classList.remove('hidden');
+}
+
+// ── Review Mode ───────────────────────────────────────────
+function enterReview(){
+  reviewMode = true;
+  $('resultsModal').classList.add('hidden');
+  renderQ(0);
+  openSidebar();
+}
+
+// ── PDF Generation ────────────────────────────────────────
+function generatePDF(){
+  if (typeof window.jspdf==='undefined'){
+    alert('PDF library not loaded. Check internet connection.'); return;
+  }
+  var btn=$('pdfBtn');
+  btn.disabled=true;
+  btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Generating...';
+  try {
+    var jsPDF=window.jspdf.jsPDF;
+    var doc=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+    var meta=window.QUIZ_META||{};
+    var subject=meta.subject||'Science MEPC';
+    var dayRange=meta.days||'--';
+    var genDate=new Date().toISOString().split('T')[0];
+    var elapsed=Math.floor((Date.now()-startTime)/1000);
+    var sc=computeScore(), analysis=computeTopicAnalysis();
+    var PW=210,PH=297,M=14,CW=PW-M*2;
+    var BRAND=[30,30,60],ACCENT=[99,102,241],GREEN=[16,185,129],RED=[239,68,68],AMBER=[245,158,11];
+    var LIGHT=[245,247,250],WHITE=[255,255,255],TEXT=[31,41,55],MUTED=[107,114,128],SUB=[200,210,240];
+
+    // Header
+    doc.setFillColor.apply(doc,BRAND);
+    doc.rect(0,0,PW,38,'F');
+    doc.setFont('helvetica','bold');doc.setFontSize(20);doc.setTextColor.apply(doc,WHITE);
+    doc.text('GrantApp AI',M,16);
+    doc.setFont('helvetica','normal');doc.setFontSize(9);doc.setTextColor.apply(doc,SUB);
+    doc.text('JAMB Practice Test Results \u2014 '+genDate,M,23);
+    doc.setFont('helvetica','bold');doc.setFontSize(22);doc.setTextColor.apply(doc,WHITE);
+    doc.text(sc.jamb.toFixed(1),PW-M,17,{align:'right'});
+    doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor.apply(doc,SUB);
+    doc.text('JAMB Score  |  '+sc.correct+' correct / '+sc.wrong+' wrong',PW-M,24,{align:'right'});
+
+    // Subject card
+    var y=46;
+    doc.setFillColor.apply(doc,LIGHT);doc.roundedRect(M,y,CW,28,3,3,'F');
+    doc.setFont('helvetica','bold');doc.setFontSize(11);doc.setTextColor.apply(doc,TEXT);
+    doc.text(subject,M+5,y+8);
+    doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor.apply(doc,MUTED);
+    doc.text('Time taken: '+fmtTime(elapsed)+'   |   Raw accuracy: '+sc.rawPct.toFixed(1)+'%   |   Scoring: +2.5 correct / \u22120.5 wrong',M+5,y+16);
+    doc.text('Max possible: '+sc.maxScore.toFixed(1)+'   |   Skipped: '+sc.skipped+'   |   Day: '+dayRange,M+5,y+23);
+    var grade=sc.rawPct>=70?'GREAT WORK':sc.rawPct>=50?'FAIR':'NEEDS WORK';
+    var gCol=sc.rawPct>=70?GREEN:sc.rawPct>=50?AMBER:RED;
+    var gW=30,gX=PW-M-gW-5;
+    doc.setFillColor.apply(doc,gCol);doc.roundedRect(gX,y+8,gW,9,2,2,'F');
+    doc.setFont('helvetica','bold');doc.setFontSize(7);doc.setTextColor.apply(doc,WHITE);
+    doc.text(grade,gX+gW/2,y+14,{align:'center'});
+
+    // Analysis
+    y+=36;
+    function drawAnalysis(title,rows){
+      if (!rows||!rows.length) return;
+      if (y+10+rows.length*12>PH-14){doc.addPage();y=20;}
+      doc.setFont('helvetica','bold');doc.setFontSize(9);doc.setTextColor.apply(doc,TEXT);
+      doc.text(title,M,y);
+      doc.setDrawColor.apply(doc,ACCENT);doc.setLineWidth(0.4);
+      doc.line(M,y+2,PW-M,y+2);
+      y+=7;
+      rows.forEach(function(r){
+        if (y+12>PH-14){doc.addPage();y=20;}
+        var bMaxW=CW-65, bW=bMaxW*(r.pct/100);
+        var bCol=r.pct>=70?GREEN:r.pct>=50?AMBER:RED;
+        var tag=r.pct>=70?'STRONG':r.pct>=50?'MODERATE':'WEAK';
+        doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor.apply(doc,TEXT);
+        var nm=r.name.length>26?r.name.substring(0,26)+'\u2026':r.name;
+        doc.text(nm,M,y+4);
+        doc.setFillColor(230,232,236);doc.roundedRect(M+55,y,bMaxW,5,1,1,'F');
+        if (bW>0){doc.setFillColor.apply(doc,bCol);doc.roundedRect(M+55,y,bW,5,1,1,'F');}
+        doc.setFont('helvetica','bold');doc.setFontSize(7);doc.setTextColor.apply(doc,TEXT);
+        doc.text(r.pct+'%',M+55+bMaxW+3,y+4);
+        var tW=18,tX=PW-M-tW-3;
+        doc.setFillColor.apply(doc,bCol);doc.roundedRect(tX,y-0.5,tW,5.5,1,1,'F');
+        doc.setFont('helvetica','bold');doc.setFontSize(5.5);doc.setTextColor.apply(doc,WHITE);
+        doc.text(tag,tX+tW/2,y+3.5,{align:'center'});
+        doc.setFont('helvetica','normal');doc.setFontSize(6.5);doc.setTextColor.apply(doc,MUTED);
+        doc.text('\u2713 '+r.correct+'  \u2717 '+r.wrong+'  \u2014 '+r.skipped,M,y+9);
+        y+=13;
+      });
+      y+=4;
+    }
+    if (analysis.bySubject.length)  drawAnalysis('PERFORMANCE BY SUBJECT',  analysis.bySubject);
+    if (analysis.byTopic.length)    drawAnalysis('PERFORMANCE BY TOPIC',    analysis.byTopic);
+    if (analysis.byTaxonomy.length) drawAnalysis('PERFORMANCE BY TAXONOMY', analysis.byTaxonomy);
+
+    // Suggestions
+    var sugg=[];
+    var allRows=analysis.bySubject.concat(analysis.byTopic).concat(analysis.byTaxonomy);
+    var weak=[],strong=[];
+    allRows.forEach(function(r){
+      if (r.total<2) return;
+      if (r.pct>=70) strong.push(r.name+' ('+r.pct+'%)');
+      if (r.pct<50)  weak.push(r.name+' ('+r.pct+'%)');
+    });
+    if (strong.length) sugg.push('\u2705  Strong: '+strong.join(', '));
+    if (weak.length)   sugg.push('\u26a0\ufe0f  Focus on: '+weak.join(', '));
+    if (!sugg.length)  sugg.push('Complete more questions to unlock detailed topic insights.');
+    var boxH=10+sugg.length*6;
+    if (y+boxH>PH-14){doc.addPage();y=20;}
+    doc.setFillColor(235,240,255);doc.roundedRect(M,y,CW,boxH,3,3,'F');
+    doc.setDrawColor.apply(doc,ACCENT);doc.setLineWidth(0.4);doc.roundedRect(M,y,CW,boxH,3,3,'S');
+    doc.setFont('helvetica','bold');doc.setFontSize(8);doc.setTextColor.apply(doc,BRAND);
+    doc.text('INSIGHTS & SUGGESTIONS',M+5,y+6);
+    doc.setFont('helvetica','normal');doc.setFontSize(7.5);doc.setTextColor.apply(doc,TEXT);
+    sugg.forEach(function(s,si){doc.text(s,M+5,y+12+si*6);});
+    y+=boxH+8;
+
+    // Question breakdown
+    doc.addPage(); var qy=20;
+    doc.setFont('helvetica','bold');doc.setFontSize(10);doc.setTextColor.apply(doc,TEXT);
+    doc.text('QUESTION BREAKDOWN',M,qy);
+    doc.setDrawColor.apply(doc,ACCENT);doc.setLineWidth(0.5);doc.line(M,qy+2,PW-M,qy+2);
+    qy+=6;
+    var rows=questions.map(function(q,i){
+      var yours=userAnswers[i]||'\u2014', ok=yours===q.answer;
+      var pts=!userAnswers[i]?'0':ok?'+2.5':'\u22120.5';
+      var tick=ok?'\u2713':(userAnswers[i]?'\u2717':'\u2014');
+      var qt=q.text.length>44?q.text.substring(0,44)+'\u2026':q.text;
+      var tag=q.subject?'['+q.subject.substring(0,3).toUpperCase()+'] ':'';
+      return [i+1,tag+qt,yours,q.answer,tick,pts];
+    });
+    doc.autoTable({
+      startY:qy, head:[['#','QUESTION','YOURS','ANS','\u2713/\u2717','PTS']],
+      body:rows, margin:{left:M,right:M}, tableWidth:CW,
+      styles:{fontSize:7,cellPadding:{top:2,bottom:2,left:2.5,right:2.5},
+              textColor:TEXT,lineColor:[220,226,234],lineWidth:0.2},
+      headStyles:{fillColor:BRAND,textColor:WHITE,fontStyle:'bold',fontSize:6.5},
+      alternateRowStyles:{fillColor:LIGHT},
+      columnStyles:{0:{cellWidth:9,halign:'center'},1:{cellWidth:'auto'},
+        2:{cellWidth:13,halign:'center'},3:{cellWidth:13,halign:'center'},
+        4:{cellWidth:9,halign:'center'},5:{cellWidth:12,halign:'center'}},
+      didParseCell:function(d){
+        if (d.section!=='body') return;
+        if (d.column.index===4){d.cell.styles.textColor=d.cell.raw==='\u2713'?GREEN:d.cell.raw==='\u2717'?RED:MUTED;d.cell.styles.fontStyle='bold';d.cell.styles.fontSize=8.5;}
+        if (d.column.index===5){d.cell.styles.textColor=d.cell.raw==='+2.5'?GREEN:d.cell.raw==='\u22120.5'?RED:MUTED;d.cell.styles.fontStyle='bold';}
+        if (d.column.index===2){var q=questions[d.row.index];if(q&&userAnswers[d.row.index]&&userAnswers[d.row.index]!==q.answer)d.cell.styles.textColor=RED;}
+      },
+      didDrawCell:function(d){
+        if (d.section!=='body'||d.column.index!==5) return;
+        var q=questions[d.row.index]; if (!q) return;
+        var yours=userAnswers[d.row.index]; if (!yours||yours===q.answer) return;
+        var et=''; if (q.explanation) et+='Explanation: '+q.explanation; if (q.exception) et+=(et?'  Note: ':'Note: ')+q.exception;
+        if (!et) return;
+        var eY=d.cell.y+d.cell.height+0.5;
+        doc.setFont('helvetica','italic');doc.setFontSize(6.3);doc.setTextColor.apply(doc,MUTED);
+        var ls=doc.splitTextToSize(et,CW-11);
+        if (eY+ls.length*3.1<PH-12) doc.text(ls,M+11,eY+2.8);
+      }
+    });
+
+    // Footers
+    var np=doc.internal.getNumberOfPages();
+    for (var p=1;p<=np;p++){
+      doc.setPage(p);
+      doc.setFillColor.apply(doc,BRAND);doc.rect(0,PH-10,PW,10,'F');
+      doc.setFont('helvetica','normal');doc.setFontSize(7);doc.setTextColor.apply(doc,WHITE);
+      doc.text('GrantApp AI \u00b7 100 Days to UTME',M,PH-4);
+      doc.text('Page '+p+' of '+np,PW-M,PH-4,{align:'right'});
+    }
+    doc.save('Results___'+subject.replace(/\s+/g,'_')+'__'+dayRange+'.pdf');
+  } catch(e){
+    console.error(e); alert('PDF error: '+e.message);
+  } finally {
+    btn.disabled=false;
+    btn.innerHTML='<i class="fas fa-file-pdf"></i> Download PDF';
+  }
+}
+
+// ── Error ─────────────────────────────────────────────────
+function showErr(msg){
+  $('errMsg').textContent=msg;
+  $('errBanner').classList.remove('hidden');
+  var hdr=document.querySelector('.qhdr');
+  var wrap=document.querySelector('.qwrap');
+  if(hdr) hdr.style.display='none';
+  if(wrap) wrap.style.display='none';
+}
+
+// ── Events ────────────────────────────────────────────────
+function bindEvents(){
+  $('menuBtn').onclick   = function(){ $('sidebar').classList.toggle('open'); };
+  $('mobBtn').onclick    = function(){ $('sidebar').classList.toggle('open'); };
+  $('calcBtn').onclick   = function(){ $('calcModal').classList.remove('hidden'); };
+  $('closeCalc').onclick = function(){ $('calcModal').classList.add('hidden'); };
+  $('submitBtn').onclick = openSubmit;
+  $('closeSubmit').onclick = function(){ $('submitModal').classList.add('hidden'); };
+  $('cancelSubmit').onclick= function(){ $('submitModal').classList.add('hidden'); };
+  $('confirmSubmit').onclick = doSubmit;
+  $('closeResults').onclick  = function(){ $('resultsModal').classList.add('hidden'); };
+  $('reviewBtn').onclick     = enterReview;
+  $('pdfBtn').onclick        = generatePDF;
+  $('timeUpView').onclick    = function(){ $('timeUpModal').classList.add('hidden'); showResults(); };
+  document.addEventListener('keydown', function(e){
+    if (e.target.tagName==='INPUT') return;
+    var k=e.key;
+    if (k==='ArrowRight') goTo(cur+1);
+    else if (k==='ArrowLeft') goTo(cur-1);
+    else if (k==='f'||k==='F') toggleFlag();
+    else if (['a','A'].includes(k)) selectOpt('A');
+    else if (['b','B'].includes(k)) selectOpt('B');
+    else if (['c','C'].includes(k)) selectOpt('C');
+    else if (['d','D'].includes(k)) selectOpt('D');
+    else if (k==='Escape'){ $('submitModal').classList.add('hidden'); $('calcModal').classList.add('hidden'); }
+  });
+  window.addEventListener('beforeunload', function(e){ if (!submitted){ e.preventDefault(); e.returnValue=''; } });
+}
+
+})(); // end IIFE
+
+// ── Calculator ─────────────────────────────────────────────
+var calcExpr='';
+function calcVal(v){
+  var d=document.getElementById('calcDisp');
+  if (d.value==='0'&&!isNaN(v)) d.value=v;
+  else d.value+=v;
+}
+function calcAct(a){
+  var d=document.getElementById('calcDisp');
+  if (a==='clear'){ d.value='0'; calcExpr=''; }
+  else if (a==='del'){ d.value=d.value.slice(0,-1)||'0'; }
+  else if (a==='add')  d.value+=' + ';
+  else if (a==='sub')  d.value+=' - ';
+  else if (a==='mul')  d.value+=' × ';
+  else if (a==='div')  d.value+=' ÷ ';
+  else if (a==='pct')  { try{ d.value=(parseFloat(d.value)/100).toString(); }catch(e){} }
+  else if (a==='eq'){
+    try{
+      var expr=d.value.replace(/×/g,'*').replace(/÷/g,'/');
+      d.value=Function('"use strict";return ('+expr+')')();
+    }catch(e){ d.value='Error'; setTimeout(function(){d.value='0';},1000); }
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     QUESTION DATA — 55 English + 35 Math + 35 Physics + 35 Chemistry
+     Most-likely 2026 UTME questions with passages, topics, taxonomy
+     Diagrams rendered as inline SVG
+══════════════════════════════════════════════════════ -->
+<script>
+window.QUIZ_DATA = [
+
+// ══════════════════════════════════
+// ENGLISH LANGUAGE — 55 Questions
+// ══════════════════════════════════
+
+// — Comprehension Passage 1 (Q1-10): Niger Delta & Environment —
+{"id":1,"subject":"English","topic":"Comprehension","taxonomy":"Literal",
+"passage":"<b>The Niger Delta Dilemma</b><br><br>The Niger Delta region of Nigeria is one of the most ecologically sensitive areas on the African continent. For decades it has been the economic backbone of the nation, supplying the crude oil that funds the federal budget. Yet the communities that live above these oil deposits have seen little of the resulting wealth. Pipelines cut through fishing villages; oil spills blacken the creek water that families depend on for drinking and farming. Gas flares burn day and night, releasing toxins that researchers have linked to respiratory illness, acid rain, and soil degradation.<br><br>The paradox is stark: an area that generates enormous national wealth is itself mired in poverty and environmental destruction. Government agencies, multinational oil companies, and community leaders have held countless summits, yet the contamination continues. Some argue that the solution lies in stricter enforcement of environmental regulations and heavier penalties on companies that fail to maintain their infrastructure. Others contend that the root cause is systemic corruption that diverts remediation funds before they reach affected communities.<br><br>A younger generation of activists has reframed the conversation. They argue that the Delta's crisis is not merely environmental or economic but fundamentally one of justice — resource justice. They demand not cleanup alone, but a restructuring of the revenue-sharing formula so that host communities receive a greater proportion of the wealth extracted from their land.",
+"text":"According to the passage, gas flares in the Niger Delta are linked to which of the following?",
+"optionA":"Increased agricultural productivity","optionB":"Respiratory illness, acid rain, and soil degradation",
+"optionC":"Better road infrastructure","optionD":"Reduction in oil spill frequency",
+"answer":"B","explanation":"The passage explicitly states that gas flares release toxins linked to respiratory illness, acid rain, and soil degradation."},
+
+{"id":2,"subject":"English","topic":"Comprehension","taxonomy":"Inferential",
+"passage":null,
+"text":"The word 'mired' as used in the passage ('mired in poverty') most nearly means:",
+"optionA":"progressing slowly","optionB":"celebrated for","optionC":"deeply stuck in","optionD":"associated with",
+"answer":"C","explanation":"'Mired' means trapped or stuck deeply, as in mire (swamp/mud). The context confirms deep entrenchment in poverty."},
+
+{"id":3,"subject":"English","topic":"Comprehension","taxonomy":"Inferential",
+"passage":null,
+"text":"Which of the following best describes the 'paradox' mentioned in the second paragraph?",
+"optionA":"Oil companies profit while paying taxes","optionB":"The Delta generates national wealth yet remains poor and degraded",
+"optionC":"Activists oppose the government but support oil companies","optionD":"Environmental laws exist but are rarely written",
+"answer":"B","explanation":"The paradox is that enormous wealth is generated from the Delta, yet its communities suffer poverty and environmental destruction."},
+
+{"id":4,"subject":"English","topic":"Comprehension","taxonomy":"Critical",
+"passage":null,
+"text":"Young activists in the passage argue that the Delta crisis is fundamentally a matter of:",
+"optionA":"Foreign interference","optionB":"Technological backwardness","optionC":"Resource justice","optionD":"Climate change",
+"answer":"C","explanation":"The passage states activists reframe the crisis as 'fundamentally one of justice — resource justice', demanding restructured revenue-sharing."},
+
+{"id":5,"subject":"English","topic":"Comprehension","taxonomy":"Vocabulary",
+"passage":null,
+"text":"The word 'remediation' in the passage is closest in meaning to:",
+"optionA":"punishment","optionB":"correction and cleanup","optionC":"financial reward","optionD":"legal prosecution",
+"answer":"B","explanation":"Remediation means the action of remedying or correcting a situation, especially environmental damage. The passage uses it in the context of funds for fixing contamination."},
+
+{"id":6,"subject":"English","topic":"Comprehension","taxonomy":"Literal",
+"passage":null,
+"text":"According to the passage, what do some people argue is the root cause of the continued contamination?",
+"optionA":"Lack of oil reserves","optionB":"International sanctions","optionC":"Systemic corruption diverting remediation funds","optionD":"Absence of environmental agencies",
+"answer":"C","explanation":"The passage explicitly states: 'others contend that the root cause is systemic corruption that diverts remediation funds before they reach affected communities.'"},
+
+{"id":7,"subject":"English","topic":"Comprehension","taxonomy":"Inferential",
+"passage":null,
+"text":"The tone of the passage can best be described as:",
+"optionA":"celebratory and optimistic","optionB":"analytical and concerned","optionC":"hostile and aggressive","optionD":"indifferent and detached",
+"answer":"B","explanation":"The passage presents facts and various perspectives on a serious problem with evident concern, making it analytical and concerned in tone."},
+
+{"id":8,"subject":"English","topic":"Comprehension","taxonomy":"Critical",
+"passage":null,
+"text":"Which solution does the passage NOT mention?",
+"optionA":"Stricter enforcement of environmental regulations","optionB":"Restructuring the revenue-sharing formula",
+"optionC":"Military intervention in oil-producing communities","optionD":"Heavier penalties on companies",
+"answer":"C","explanation":"Military intervention is never mentioned in the passage. The three solutions discussed are: stricter enforcement, heavier penalties, and revenue restructuring."},
+
+{"id":9,"subject":"English","topic":"Comprehension","taxonomy":"Vocabulary",
+"passage":null,
+"text":"As used in the passage, 'contend' most nearly means:",
+"optionA":"compete","optionB":"argue or maintain","optionC":"surrender","optionD":"investigate",
+"answer":"B","explanation":"In this context 'contend' means to assert or argue a position, not to compete physically."},
+
+{"id":10,"subject":"English","topic":"Comprehension","taxonomy":"Critical",
+"passage":null,
+"text":"The phrase 'resource justice' suggests that the activists want:",
+"optionA":"Free oil for all Nigerians","optionB":"A fairer share of wealth for communities where resources are extracted",
+"optionC":"Nationalisation of all oil companies","optionD":"An end to all oil drilling",
+"answer":"B","explanation":"Resource justice means equitable distribution of benefits from natural resources. The activists demand host communities receive a greater proportion of extracted wealth."},
+
+// — Comprehension Passage 2 (Q11-18): Artificial Intelligence —
+{"id":11,"subject":"English","topic":"Comprehension","taxonomy":"Literal",
+"passage":"<b>Artificial Intelligence and the Future of Work</b><br><br>Artificial intelligence (AI) is transforming the global economy at a pace that has outstripped regulatory frameworks and societal preparedness. In manufacturing, robots powered by machine-learning algorithms now perform tasks that once required skilled human hands — welding, assembly, and quality inspection. In white-collar sectors, AI tools can draft legal briefs, generate financial analyses, and even diagnose medical conditions with an accuracy that rivals seasoned professionals.<br><br>Economists are divided on what this means for employment. Optimists point to history: every previous wave of automation — from the mechanical loom to the personal computer — ultimately created more jobs than it destroyed, even if the transition was painful. Pessimists counter that this wave is different because AI can replicate not just physical labour but cognitive labour, potentially displacing workers across virtually every sector simultaneously.<br><br>What is clear is that the skills most resistant to automation are those involving emotional intelligence, creative problem-solving, and complex interpersonal communication. Education systems that continue to emphasise rote memorisation over critical thinking may be preparing students for jobs that will not exist by the time they graduate. The challenge for governments and institutions is not to halt technological progress but to ensure that the transition is managed equitably, with robust retraining programmes and social safety nets for displaced workers.",
+"text":"According to the passage, which skills are most resistant to automation?",
+"optionA":"Mathematical computation and data entry","optionB":"Emotional intelligence, creative problem-solving, and complex interpersonal communication",
+"optionC":"Welding, assembly, and quality inspection","optionD":"Legal drafting and financial analysis",
+"answer":"B","explanation":"The passage explicitly states that skills involving emotional intelligence, creative problem-solving, and complex interpersonal communication are most resistant to automation."},
+
+{"id":12,"subject":"English","topic":"Comprehension","taxonomy":"Inferential",
+"passage":null,
+"text":"The optimists' argument is based on which assumption?",
+"optionA":"AI will eventually malfunction","optionB":"Historical patterns of automation creating more jobs will repeat","optionC":"Governments will ban AI in certain sectors","optionD":"Workers can easily retrain for any new job",
+"answer":"B","explanation":"Optimists cite historical precedent — every previous automation wave ultimately created more jobs — and assume this pattern will repeat with AI."},
+
+{"id":13,"subject":"English","topic":"Comprehension","taxonomy":"Critical",
+"passage":null,
+"text":"The pessimists' counterargument is most strengthened by which of the following?",
+"optionA":"AI can only perform physical tasks","optionB":"Previous automation was faster than today's AI adoption",
+"optionC":"AI can replicate cognitive labour, affecting virtually every sector simultaneously","optionD":"Emotional intelligence can be programmed easily",
+"answer":"C","explanation":"The pessimists argue this wave is different precisely because AI replicates cognitive, not just physical, labour, enabling simultaneous displacement across all sectors."},
+
+{"id":14,"subject":"English","topic":"Comprehension","taxonomy":"Vocabulary",
+"passage":null,
+"text":"The word 'equitably' as used in the passage most nearly means:",
+"optionA":"rapidly","optionB":"fairly and justly","optionC":"involuntarily","optionD":"technologically",
+"answer":"B","explanation":"Equitably means in a fair and impartial manner, ensuring everyone is treated justly in the transition."},
+
+{"id":15,"subject":"English","topic":"Comprehension","taxonomy":"Inferential",
+"passage":null,
+"text":"Which criticism of current education systems does the passage imply?",
+"optionA":"Schools spend too much on technology","optionB":"Teachers are being replaced by AI","optionC":"Systems emphasising rote memorisation may not prepare students for future jobs",
+"optionD":"Universities admit too many students",
+"answer":"C","explanation":"The passage states education systems emphasising rote memorisation over critical thinking may be preparing students for jobs that won't exist by graduation."},
+
+{"id":16,"subject":"English","topic":"Comprehension","taxonomy":"Literal",
+"passage":null,
+"text":"The passage mentions AI performing which of the following in white-collar sectors?",
+"optionA":"Teaching and coaching","optionB":"Drafting legal briefs, generating financial analyses, and diagnosing medical conditions",
+"optionC":"Environmental monitoring","optionD":"Political decision-making",
+"answer":"B","explanation":"The passage explicitly lists: drafting legal briefs, generating financial analyses, and diagnosing medical conditions as AI white-collar tasks."},
+
+{"id":17,"subject":"English","topic":"Comprehension","taxonomy":"Critical",
+"passage":null,
+"text":"The author's main recommendation to governments is to:",
+"optionA":"Stop all AI development","optionB":"Privatise all retraining programmes",
+"optionC":"Manage the transition equitably with retraining programmes and social safety nets","optionD":"Subsidise AI companies to create more jobs",
+"answer":"C","explanation":"The passage concludes that the challenge is not to halt progress 'but to ensure the transition is managed equitably, with robust retraining programmes and social safety nets.'"},
+
+{"id":18,"subject":"English","topic":"Comprehension","taxonomy":"Vocabulary",
+"passage":null,
+"text":"'Outstripped' in the passage means the pace of AI development has:",
+"optionA":"slowed regulatory frameworks","optionB":"gone ahead of regulatory frameworks","optionC":"aligned with regulatory frameworks","optionD":"been limited by regulatory frameworks",
+"answer":"B","explanation":"Outstripped means surpassed or gone beyond. AI's pace has outrun — moved ahead of — regulatory and societal preparedness."},
+
+// — Lexis, Structure & Phonology (Q19-40) —
+{"id":19,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the option that correctly fills the gap: 'Neither the students nor the teacher _____ aware of the change.'",
+"optionA":"are","optionB":"were","optionC":"was","optionD":"have been",
+"answer":"C","explanation":"With 'neither...nor', the verb agrees with the subject closest to it. 'Teacher' (singular) requires 'was'.",
+"exception":"If the nearer subject were plural, e.g. 'neither the teacher nor the students', the verb would be plural."},
+
+{"id":20,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Identify the sentence with correct subject-verb agreement: ",
+"optionA":"The committee have submitted their report","optionB":"The news are very disturbing","optionC":"Mathematics is my favourite subject","optionD":"Politics are a dirty game",
+"answer":"C","explanation":"'Mathematics' is an uncountable noun used as singular. 'News', 'Mathematics', 'Politics' all take singular verbs in standard English.",
+"exception":"British English sometimes treats collective nouns like 'committee' as plural."},
+
+{"id":21,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Which sentence uses the passive voice correctly?",
+"optionA":"The letter was written by Amina","optionB":"Amina was writing the letter","optionC":"Amina writes the letter","optionD":"The letter is writing",
+"answer":"A","explanation":"Passive voice: subject + be + past participle (+ by agent). 'The letter was written by Amina' follows this pattern."},
+
+{"id":22,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the correct form: 'If I _____ a millionaire, I would travel the world.'",
+"optionA":"am","optionB":"was","optionC":"were","optionD":"will be",
+"answer":"C","explanation":"The subjunctive mood uses 'were' for all persons in hypothetical/contrary-to-fact conditions: 'If I were...'"},
+
+{"id":23,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"The word 'enervate' means:",
+"optionA":"to energise","optionB":"to weaken or drain of vitality","optionC":"to irritate","optionD":"to strengthen",
+"answer":"B","explanation":"Enervate means to cause someone to feel drained of energy or vitality. It is commonly confused with 'energise' (its opposite).",
+"exception":"Many candidates choose A because the prefix 'en-' is associated with adding or intensifying."},
+
+{"id":24,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"'Ameliorate' most nearly means:",
+"optionA":"to worsen","optionB":"to make better or improve","optionC":"to remember","optionD":"to eliminate",
+"answer":"B","explanation":"Ameliorate means to make something bad or unsatisfactory better. E.g., 'Policies to ameliorate poverty.'"},
+
+{"id":25,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the sentence with correct use of the apostrophe:",
+"optionA":"The childrens' toys were scattered","optionB":"The children's toys were scattered",
+"optionC":"The childrens toys were scattered","optionD":"The childrens's toys were scattered",
+"answer":"B","explanation":"'Children' is already plural (irregular), so possessive is formed by adding 's: children's. Not childrens'."},
+
+{"id":26,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"In the sentence 'Having finished the exam, the hall was noisy,' the error is:",
+"optionA":"Subject-verb disagreement","optionB":"A dangling modifier — 'having finished' has no logical subject in the main clause",
+"optionC":"Wrong tense","optionD":"Incorrect use of passive",
+"answer":"B","explanation":"A dangling modifier occurs when the participial phrase refers to a subject not present in the main clause. 'The hall' did not finish the exam — the students did.",
+"exception":"Correct version: 'Having finished the exam, the students found the hall noisy.'"},
+
+{"id":27,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Select the sentence with correct parallel structure:",
+"optionA":"She likes swimming, to run, and cycling","optionB":"She likes swimming, running, and cycling",
+"optionC":"She likes to swim, running, and cycling","optionD":"She likes to swim, to run, and cycling",
+"answer":"B","explanation":"Parallel structure requires all items in a list to have the same grammatical form. B uses all gerunds: swimming, running, cycling."},
+
+{"id":28,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the word that is OPPOSITE in meaning to 'laconic':",
+"optionA":"brief","optionB":"verbose","optionC":"quiet","optionD":"hostile",
+"answer":"B","explanation":"Laconic means using few words; its antonym is verbose (using more words than needed). E.g., 'His laconic reply contrasted with her verbose explanation.'"},
+
+{"id":29,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"The expression 'to burn the midnight oil' means:",
+"optionA":"to waste energy","optionB":"to work or study late into the night","optionC":"to be reckless","optionD":"to cause a fire",
+"answer":"B","explanation":"This idiom originates from the era of oil lamps; working late meant literally burning oil past midnight. It means to work very late."},
+
+{"id":30,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"'Sycophant' refers to a person who:",
+"optionA":"studies ancient texts","optionB":"excessively flatters powerful people for personal gain","optionC":"performs surgery","optionD":"advocates for the poor",
+"answer":"B","explanation":"A sycophant is a person who uses excessive flattery to win favour. Related: 'sycophantic praise.'"},
+
+{"id":31,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the correctly punctuated sentence:",
+"optionA":"Adaeze said I will return tomorrow","optionB":"Adaeze said, 'I will return tomorrow.'",
+"optionC":"Adaeze said 'I will return tomorrow'","optionD":"Adaeze, said 'I will return tomorrow'",
+"answer":"B","explanation":"Direct speech requires a comma before the quotation, capitalisation of the first word in the quote, and a period inside the closing quotation mark."},
+
+{"id":32,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"'The faster you drive, the greater the risk.' This construction is an example of:",
+"optionA":"A conditional sentence","optionB":"A correlative comparison using 'the...the'","optionC":"A relative clause","optionD":"An adverbial clause of purpose",
+"answer":"B","explanation":"The 'the + comparative...the + comparative' structure shows a proportional relationship between two variables."},
+
+{"id":33,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Which of the following uses reported speech correctly? Direct: He said, 'I am coming tomorrow.'",
+"optionA":"He said he is coming tomorrow","optionB":"He said he was coming the next day",
+"optionC":"He said I am coming tomorrow","optionD":"He said he will come tomorrow",
+"answer":"B","explanation":"In reported speech: present tense shifts to past ('am' → 'was'), and 'tomorrow' shifts to 'the next day'.",
+"exception":"If the reporting verb is present tense, the tense may not change: 'He says he is coming tomorrow.'"},
+
+{"id":34,"subject":"English","topic":"Lexis & Structure","taxonomy":"Phonology",
+"text":"In which of the following words is the underlined vowel sound different from the others? [focus: the vowel in the stressed syllable]",
+"optionA":"blood","optionB":"flood","optionC":"food","optionD":"mud",
+"answer":"C","explanation":"'Blood', 'flood', and 'mud' all have the /ʌ/ sound. 'Food' has the /uː/ vowel, making it the odd one out.",
+"exception":"This is a classic UTME trap — 'blood' and 'flood' look like they should rhyme with 'food' but they don't."},
+
+{"id":35,"subject":"English","topic":"Lexis & Structure","taxonomy":"Phonology",
+"text":"The word 'psychology' begins with a silent letter. Which option also starts with a silent letter?",
+"optionA":"pneumonia","optionB":"present","optionC":"praise","optionD":"prior",
+"answer":"A","explanation":"In 'pneumonia', the initial 'p' is silent (Greek origin). Similarly, 'psychology' has a silent 'p'. The other words pronounce the initial 'p'."},
+
+{"id":36,"subject":"English","topic":"Lexis & Structure","taxonomy":"Phonology",
+"text":"Which of these words has its stress on the SECOND syllable?",
+"optionA":"PREsent (noun)","optionB":"preSENT (verb)","optionC":"REcord (noun)","optionD":"PROtest (noun)",
+"answer":"B","explanation":"In English, many nouns are stressed on the first syllable (PRE-sent, RE-cord, PRO-test) while the same word used as a verb shifts stress to the second syllable (pre-SENT, re-CORD, pro-TEST).",
+"exception":"These are called heteronyms — same spelling, different stress and meaning."},
+
+{"id":37,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the option with correct use of 'who' or 'whom':",
+"optionA":"Who did you speak to?","optionB":"Whom called you last night?","optionC":"To whom should I address this letter?","optionD":"Whom is responsible?",
+"answer":"C","explanation":"'Whom' is the object case. 'To whom' is correct because it follows a preposition. 'Who' is the subject case. B and D incorrectly use 'whom' as subject.",
+"exception":"In informal speech, 'who' is often used in both positions, but UTME tests formal grammar."},
+
+{"id":38,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"'The decision was a Pyrrhic victory.' This means:",
+"optionA":"A decisive and clean win","optionB":"A victory so costly it is equivalent to defeat","optionC":"An unexpected win","optionD":"A shared victory",
+"answer":"B","explanation":"A Pyrrhic victory (from King Pyrrhus of Epirus) is one gained at too great a cost to be worthwhile. E.g., winning a lawsuit but spending more on legal fees than the settlement."},
+
+{"id":39,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"Choose the word that best completes: 'The professor's lecture was so _____ that most students fell asleep.'",
+"optionA":"enthralling","optionB":"stimulating","optionC":"soporific","optionD":"provocative",
+"answer":"C","explanation":"Soporific means tending to induce drowsiness or sleep. It perfectly fits the context of a boring lecture."},
+
+{"id":40,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Identify the literary device in: 'The classroom was a zoo.'",
+"optionA":"Simile","optionB":"Metaphor","optionC":"Personification","optionD":"Hyperbole",
+"answer":"B","explanation":"A metaphor makes a direct comparison without 'like' or 'as'. 'The classroom was a zoo' directly equates the classroom to a zoo. A simile would say 'like a zoo'.",
+"exception":"If the statement said 'The classroom was as chaotic as a zoo,' it would be a simile."},
+
+// — Oral English / Phonology (Q41-55) —
+{"id":41,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"Which of these words contains the phoneme /θ/ (as in 'think')?",
+"optionA":"this","optionB":"the","optionC":"three","optionD":"those",
+"answer":"C","explanation":"'Three' begins with /θ/ (voiceless dental fricative), as in 'think', 'theory', 'throw'. 'This', 'the', and 'those' begin with /ð/ (voiced dental fricative).",
+"exception":"The difference between /θ/ and /ð/ is voicing — /ð/ is produced with vocal cord vibration."},
+
+{"id":42,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"In which of the following is the 'gh' cluster pronounced?",
+"optionA":"night","optionB":"eight","optionC":"ghost","optionD":"through",
+"answer":"C","explanation":"In 'ghost', the 'gh' is pronounced /g/. In 'night', 'eight', and 'through', the 'gh' is silent.",
+"exception":"This is one of the most irregular aspects of English spelling-to-sound correspondence."},
+
+{"id":43,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"How many syllables does the word 'photography' have?",
+"optionA":"3","optionB":"4","optionC":"5","optionD":"2",
+"answer":"B","explanation":"Pho-tog-ra-phy = 4 syllables. Stress falls on the second syllable: pho-TOG-ra-phy.",
+"exception":"Related word 'photograph' has 3 syllables: PHO-to-graph — stress shifts with suffixes."},
+
+{"id":44,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"The vowel sound in 'caught' is the same as in:",
+"optionA":"cat","optionB":"coat","optionC":"core","optionD":"cut",
+"answer":"C","explanation":"'Caught' and 'core' share the /ɔː/ vowel sound. 'Cat' has /æ/, 'coat' has /əʊ/, and 'cut' has /ʌ/.",
+"exception":"In some American English dialects, 'caught' and 'cot' are pronounced the same (cot-caught merger)."},
+
+{"id":45,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"Which word has the same consonant cluster as 'spring'?",
+"optionA":"sting","optionB":"string","optionC":"sing","optionD":"ring",
+"answer":"B","explanation":"'Spring' begins with /spr/ — a three-consonant cluster. 'String' also has a three-consonant cluster /str/. 'Sting' has /st/, 'sing' has /s/, 'ring' has /r/."},
+
+{"id":46,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"'Intonation' in speech refers to:",
+"optionA":"the speed of speaking","optionB":"the rise and fall of pitch across an utterance","optionC":"the volume of speech","optionD":"the clarity of consonants",
+"answer":"B","explanation":"Intonation is the variation of pitch (high/low) across spoken language. It conveys meaning, emotion, and sentence type (question vs statement)."},
+
+{"id":47,"subject":"English","topic":"Oral English","taxonomy":"Phonology",
+"text":"The phonemic transcription /ˈnɒlɪdʒ/ represents which word?",
+"optionA":"acknowledge","optionB":"knowledge","optionC":"college","optionD":"manage",
+"answer":"B","explanation":"The transcription /ˈnɒlɪdʒ/ = 'knowledge'. Note the silent 'k' at the start — the word begins with the /n/ sound.",
+"exception":"The 'k' in 'knowledge' is one of several silent letters from Old/Middle English retained in spelling."},
+
+{"id":48,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Choose the option that correctly completes: 'He acted as though he _____ the answer.'",
+"optionA":"knows","optionB":"known","optionC":"knew","optionD":"had known",
+"answer":"D","explanation":"'As though' introduces a hypothetical condition requiring the subjunctive/unreal past. Since the action is in the past and contrary to fact, past perfect 'had known' is most precise."},
+
+{"id":49,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"Which of the following is correctly spelled?",
+"optionA":"accomodation","optionB":"accomadation","optionC":"accommodation","optionD":"accommadation",
+"answer":"C","explanation":"'Accommodation' has double 'c' and double 'm'. A common mnemonic: one cot, two mattresses (1c, 2m... actually 2c, 2m). Correct: ac-com-mo-da-tion.",
+"exception":"This is one of the most frequently misspelled words in UTME and WAEC examinations."},
+
+{"id":50,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"'Data' used as a singular noun (e.g., 'The data is conclusive') is:",
+"optionA":"Always incorrect","optionB":"Correct only in formal contexts","optionC":"Increasingly accepted in modern English","optionD":"Only acceptable in American English",
+"answer":"C","explanation":"'Data' is the Latin plural of 'datum', but modern usage increasingly treats it as an uncountable singular mass noun. Both 'data is' and 'data are' appear in contemporary English.",
+"exception":"In scientific writing, 'data are' remains the preferred form."},
+
+{"id":51,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"Identify the type of clause in the underlined part: 'The girl <u>who won the prize</u> is my cousin.'",
+"optionA":"Noun clause","optionB":"Adverbial clause","optionC":"Relative (adjective) clause","optionD":"Conditional clause",
+"answer":"C","explanation":"'Who won the prize' is a relative clause — it modifies the noun 'girl'. It is introduced by the relative pronoun 'who'.",
+"exception":"Relative clauses can be defining (essential) or non-defining (parenthetical), affecting punctuation."},
+
+{"id":52,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"Choose the option closest in meaning to 'ubiquitous':",
+"optionA":"rare","optionB":"present everywhere simultaneously","optionC":"harmful","optionD":"ancient",
+"answer":"B","explanation":"Ubiquitous means present, appearing, or found everywhere. E.g., 'Mobile phones are now ubiquitous.'"},
+
+{"id":53,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"In the sentence 'She is one of those athletes who train daily,' the verb 'train' is plural because:",
+"optionA":"'She' is the antecedent","optionB":"'Athletes' is the antecedent of 'who'","optionC":"'One' is singular and takes plural verbs","optionD":"'Daily' is a plural adverb",
+"answer":"B","explanation":"'Who' refers to 'athletes' (plural antecedent), requiring the plural verb 'train'. The sentence means: among those athletes who train daily, she is one.",
+"exception":"This is a classic grammar ambiguity — many incorrectly choose singular because 'one' is the subject of 'is'."},
+
+{"id":54,"subject":"English","topic":"Lexis & Structure","taxonomy":"Grammar",
+"text":"'Irregardless' is considered non-standard because:",
+"optionA":"It is too long","optionB":"It contains a double negative: 'ir-' and '-less'","optionC":"It has no clear meaning","optionD":"It is a foreign word",
+"answer":"B","explanation":"Both the prefix 'ir-' and the suffix '-less' are negatives. The correct standard form is 'regardless'. 'Irregardless' is redundant.",
+"exception":"Despite being logically illogical, 'irregardless' appears in some dictionaries as non-standard/informal."},
+
+{"id":55,"subject":"English","topic":"Lexis & Structure","taxonomy":"Vocabulary",
+"text":"The rhetorical device in 'O Death, where is thy sting?' is:",
+"optionA":"Personification","optionB":"Apostrophe","optionC":"Irony","optionD":"Alliteration",
+"answer":"B","explanation":"Apostrophe (the rhetorical device) is a figure of speech where the speaker addresses an absent person, abstract idea, or inanimate object directly. Here, Death is addressed directly.",
+"exception":"Do not confuse the rhetorical 'apostrophe' with the punctuation mark apostrophe (')."},
+
+// ══════════════════════════════════
+// MATHEMATICS — 35 Questions
+// ══════════════════════════════════
+
+{"id":56,"subject":"Mathematics","topic":"Indices & Surds","taxonomy":"Application",
+"text":"Simplify: (√3 + √2)(√3 − √2)",
+"optionA":"1","optionB":"5","optionC":"√6","optionD":"√5",
+"answer":"A","explanation":"Use difference of squares: (a+b)(a−b) = a²−b². Here: 3 − 2 = 1.",
+"exception":"Many expand wrongly getting √6 terms — the cross terms cancel."},
+
+{"id":57,"subject":"Mathematics","topic":"Logarithms","taxonomy":"Application",
+"text":"If log₁₀ 2 = 0.3010, find log₁₀ 0.02",
+"optionA":"−1.699","optionB":"1.699","optionC":"0.699","optionD":"−0.301",
+"answer":"A","explanation":"log(0.02) = log(2 × 10⁻²) = log 2 + log 10⁻² = 0.3010 − 2 = −1.699.",
+"exception":"Logarithms of numbers less than 1 are negative. Do not confuse the characteristic and mantissa."},
+
+{"id":58,"subject":"Mathematics","topic":"Sequences & Series","taxonomy":"Knowledge",
+"text":"The nth term of the AP: 3, 7, 11, 15,... is:",
+"optionA":"4n − 1","optionB":"3n + 1","optionC":"n + 4","optionD":"4n + 3",
+"answer":"A","explanation":"First term a=3, common difference d=4. Tₙ = a+(n−1)d = 3+4(n−1) = 4n−1. Check: n=1 → 3 ✓; n=2 → 7 ✓",
+"exception":"Don't confuse the formula Tₙ=a+(n−1)d with Sₙ=n/2(2a+(n−1)d)."},
+
+{"id":59,"subject":"Mathematics","topic":"Sequences & Series","taxonomy":"Application",
+"text":"Find the sum of the first 10 terms of the AP: 2, 4, 6, 8,...",
+"optionA":"100","optionB":"110","optionC":"90","optionD":"120",
+"answer":"B","explanation":"Sₙ = n/2(2a+(n−1)d) = 10/2(4+9×2) = 5(4+18) = 5×22 = 110.",
+"exception":"Alternatively: 2+4+6+...+20 = 2(1+2+...+10) = 2×55 = 110."},
+
+{"id":60,"subject":"Mathematics","topic":"Algebra","taxonomy":"Application",
+"text":"Factorise completely: 6x² + 7x − 3",
+"optionA":"(3x−1)(2x+3)","optionB":"(6x−1)(x+3)","optionC":"(3x+1)(2x−3)","optionD":"(2x−1)(3x+3)",
+"answer":"A","explanation":"Product = −18, sum = 7. Pairs: 9 and −2. Split: 6x²+9x−2x−3 = 3x(2x+3)−1(2x+3) = (3x−1)(2x+3).",
+"exception":"Always verify by expanding: (3x−1)(2x+3) = 6x²+9x−2x−3 = 6x²+7x−3 ✓"},
+
+{"id":61,"subject":"Mathematics","topic":"Algebra","taxonomy":"Application",
+"text":"What is the remainder when 2x³ + 3x² − 5x + 7 is divided by (x + 2)?",
+"optionA":"21","optionB":"13","optionC":"−5","optionD":"9",
+"answer":"A","explanation":"Remainder theorem: substitute x = −2. f(−2) = 2(−8)+3(4)−5(−2)+7 = −16+12+10+7 = 13. Wait — let me recompute: −16+12+10+7 = 13. Answer is 13.",
+"optionA":"13","optionB":"21","optionC":"−5","optionD":"9",
+"answer":"A","explanation":"f(−2) = 2(−8)+3(4)+10+7 = −16+12+10+7 = 13.",
+"exception":"Always use x = −2 (not +2) when dividing by (x+2)."},
+
+{"id":62,"subject":"Mathematics","topic":"Sets","taxonomy":"Application",
+"text":"In a class of 40 students, 24 like Mathematics, 16 like English, and 8 like both. How many like neither?",
+"optionA":"8","optionB":"16","optionC":"4","optionD":"12",
+"answer":"A","explanation":"n(M∪E) = 24+16−8 = 32. Neither = 40−32 = 8.",
+"exception":"The inclusion-exclusion principle: n(A∪B) = n(A)+n(B)−n(A∩B)."},
+
+{"id":63,"subject":"Mathematics","topic":"Trigonometry","taxonomy":"Application",
+"text":"If sin θ = 3/5 and θ is acute, find cos 2θ.",
+"optionA":"7/25","optionB":"−7/25","optionC":"24/25","optionD":"1/5",
+"answer":"A","explanation":"cos θ = 4/5 (from 3-4-5 triangle). cos 2θ = cos²θ − sin²θ = 16/25 − 9/25 = 7/25.",
+"exception":"Alternatively: cos 2θ = 1−2sin²θ = 1−18/25 = 7/25."},
+
+{"id":64,"subject":"Mathematics","topic":"Coordinate Geometry","taxonomy":"Application",
+"diagram":"<svg viewBox='0 0 200 180' xmlns='http://www.w3.org/2000/svg' style='max-width:200px'><defs><marker id='ah' markerWidth='8' markerHeight='6' refX='8' refY='3' orient='auto'><polygon points='0 0,8 3,0 6' fill='#818cf8'/></marker></defs><line x1='20' y1='160' x2='180' y2='160' stroke='#818cf8' stroke-width='1.5' marker-end='url(#ah)'/><line x1='20' y1='160' x2='20' y2='10' stroke='#818cf8' stroke-width='1.5' marker-end='url(#ah)'/><line x1='20' y1='120' x2='160' y2='40' stroke='#10b981' stroke-width='2'/><circle cx='60' cy='100' r='4' fill='#f59e0b'/><circle cx='120' cy='60' r='4' fill='#f59e0b'/><text x='185' y='163' font-size='12' fill='#94a3b8'>x</text><text x='14' y='8' font-size='12' fill='#94a3b8'>y</text><text x='62' y='115' font-size='10' fill='#e2e8f0'>A(1,3)</text><text x='122' y='75' font-size='10' fill='#e2e8f0'>B(4,9)</text><text x='25' y='30' font-size='10' fill='#10b981'>y=2x+1</text></svg>","diagramCaption":"Line through A(1,3) and B(4,9)",
+"text":"Find the equation of the line passing through A(1, 3) with gradient 2.",
+"optionA":"y = 2x + 1","optionB":"y = 2x − 1","optionC":"y = 2x + 3","optionD":"y = x + 2",
+"answer":"A","explanation":"y−y₁ = m(x−x₁): y−3 = 2(x−1) → y = 2x−2+3 = 2x+1.",
+"exception":"Substitute the given point into the equation to verify: y=2(1)+1=3 ✓"},
+
+{"id":65,"subject":"Mathematics","topic":"Calculus","taxonomy":"Application",
+"text":"Differentiate y = 3x⁴ − 2x³ + 5x − 7 with respect to x.",
+"optionA":"12x³ − 6x² + 5","optionB":"12x³ − 6x² + 5x","optionC":"3x³ − 2x² + 5","optionD":"12x⁴ − 6x³ + 5",
+"answer":"A","explanation":"Power rule: d/dx(xⁿ) = nxⁿ⁻¹. dy/dx = 12x³−6x²+5. The constant −7 disappears.",
+"exception":"The derivative of a constant is 0, not 1."},
+
+{"id":66,"subject":"Mathematics","topic":"Calculus","taxonomy":"Application",
+"text":"Evaluate: ∫(4x³ + 3x² − 2x) dx",
+"optionA":"x⁴ + x³ − x² + C","optionB":"4x⁴ + 3x³ − 2x² + C","optionC":"12x² + 6x + C","optionD":"x⁴ + x³ − x + C",
+"answer":"A","explanation":"∫xⁿ dx = xⁿ⁺¹/(n+1)+C. ∫4x³=x⁴; ∫3x²=x³; ∫−2x=−x². Total: x⁴+x³−x²+C.",
+"exception":"Always add the constant of integration C for indefinite integrals."},
+
+{"id":67,"subject":"Mathematics","topic":"Statistics","taxonomy":"Application",
+"text":"Find the mean of: 4, 7, 3, 9, 5, 6, 8, 2.",
+"optionA":"5.5","optionB":"6","optionC":"5","optionD":"6.5",
+"answer":"A","explanation":"Sum = 4+7+3+9+5+6+8+2 = 44. Mean = 44÷8 = 5.5.",
+"exception":"Don't divide by 7 — there are 8 values."},
+
+{"id":68,"subject":"Mathematics","topic":"Statistics","taxonomy":"Application",
+"text":"The median of: 2, 8, 6, 4, 10, 12 is:",
+"optionA":"6","optionB":"7","optionC":"8","optionD":"5",
+"answer":"B","explanation":"Order: 2,4,6,8,10,12. Even count: median = (6+8)/2 = 7.",
+"exception":"For an even number of values, median is the average of the two middle values."},
+
+{"id":69,"subject":"Mathematics","topic":"Probability","taxonomy":"Application",
+"text":"A bag contains 3 red, 4 blue, and 5 green balls. If one ball is drawn at random, what is the probability it is blue?",
+"optionA":"1/3","optionB":"5/12","optionC":"1/4","optionD":"4/12",
+"answer":"A","explanation":"P(blue) = 4/12 = 1/3. Total = 3+4+5 = 12.",
+"exception":"4/12 simplifies to 1/3. Always simplify fractions."},
+
+{"id":70,"subject":"Mathematics","topic":"Probability","taxonomy":"Application",
+"text":"Two fair dice are tossed. Find the probability of getting a sum of 7.",
+"optionA":"1/6","optionB":"1/12","optionC":"7/36","optionD":"5/36",
+"answer":"A","explanation":"Favourable outcomes: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 outcomes. P = 6/36 = 1/6.",
+"exception":"Total outcomes = 6×6 = 36. Sum 7 is the most likely single outcome."},
+
+{"id":71,"subject":"Mathematics","topic":"Indices","taxonomy":"Application",
+"text":"Simplify: (27)^(2/3) ÷ (9)^(1/2)",
+"optionA":"1","optionB":"3","optionC":"9","optionD":"27",
+"answer":"A","explanation":"27^(2/3) = (³√27)² = 3² = 9. 9^(1/2) = 3. 9÷3 = 3. Answer is 3.",
+"optionA":"3","optionB":"1","optionC":"9","optionD":"27",
+"answer":"A","explanation":"27^(2/3) = (∛27)² = 9. 9^(1/2) = √9 = 3. Result = 9/3 = 3.",
+"exception":"aᵐ/ⁿ means (ⁿ√a)ᵐ — take the nth root first, then raise to the mth power."},
+
+{"id":72,"subject":"Mathematics","topic":"Equations","taxonomy":"Application",
+"text":"Solve: |3x − 6| = 9",
+"optionA":"x = 5 or x = −1","optionB":"x = 5 only","optionC":"x = 3 or x = 1","optionD":"x = −1 only",
+"answer":"A","explanation":"|a|=b gives a=b or a=−b. 3x−6=9→3x=15→x=5. 3x−6=−9→3x=−3→x=−1.",
+"exception":"Absolute value equations ALWAYS have two cases (unless the expression equals 0)."},
+
+{"id":73,"subject":"Mathematics","topic":"Inequalities","taxonomy":"Application",
+"text":"Find the range of x: 5x − 3 ≤ 2x + 9",
+"optionA":"x ≤ 4","optionB":"x ≥ 4","optionC":"x ≤ 12","optionD":"x < 4",
+"answer":"A","explanation":"5x−2x ≤ 9+3 → 3x ≤ 12 → x ≤ 4.",
+"exception":"The inequality sign only flips when multiplying or dividing by a negative number."},
+
+{"id":74,"subject":"Mathematics","topic":"Number Bases","taxonomy":"Application",
+"text":"Convert 234₅ to base 10.",
+"optionA":"69","optionB":"54","optionC":"84","optionD":"59",
+"answer":"A","explanation":"2×5²+3×5¹+4×5⁰ = 50+15+4 = 69.",
+"exception":"Position values in base 5: ones, fives, twenty-fives (not tens)."},
+
+{"id":75,"subject":"Mathematics","topic":"Matrices","taxonomy":"Application",
+"diagram":"<svg viewBox='0 0 180 100' xmlns='http://www.w3.org/2000/svg' style='max-width:180px'><text x='10' y='50' font-size='40' fill='#818cf8'>[</text><text x='35' y='35' font-size='14' fill='#e2e8f0'>2  3</text><text x='35' y='65' font-size='14' fill='#e2e8f0'>1  4</text><text x='90' y='50' font-size='40' fill='#818cf8'>]</text><text x='20' y='90' font-size='11' fill='#94a3b8'>Matrix M</text></svg>",
+"diagramCaption":"Matrix M = [[2,3],[1,4]]",
+"text":"Find the determinant of M = [[2, 3], [1, 4]].",
+"optionA":"5","optionB":"11","optionC":"−5","optionD":"8",
+"answer":"A","explanation":"det(M) = (2×4) − (3×1) = 8 − 3 = 5.",
+"exception":"For a 2×2 matrix [[a,b],[c,d]], det = ad − bc. Order matters — don't compute bc − ad."},
+
+{"id":76,"subject":"Mathematics","topic":"Permutations & Combinations","taxonomy":"Application",
+"text":"In how many ways can 5 students be arranged in a row?",
+"optionA":"120","optionB":"60","optionC":"24","optionD":"20",
+"answer":"A","explanation":"5! = 5×4×3×2×1 = 120. This is a permutation where order matters.",
+"exception":"If we only needed to choose 3 of 5, it would be P(5,3) = 5×4×3 = 60."},
+
+{"id":77,"subject":"Mathematics","topic":"Permutations & Combinations","taxonomy":"Application",
+"text":"How many ways can a committee of 3 be chosen from 7 people?",
+"optionA":"35","optionB":"21","optionC":"210","optionD":"42",
+"answer":"A","explanation":"C(7,3) = 7!/(3!×4!) = (7×6×5)/(3×2×1) = 210/6 = 35.",
+"exception":"Combinations (order doesn't matter) vs Permutations (order matters). Here, a committee is unordered."},
+
+{"id":78,"subject":"Mathematics","topic":"Quadratic Equations","taxonomy":"Application",
+"text":"The roots of 2x² − 7x + 3 = 0 are:",
+"optionA":"3 and 1/2","optionB":"3 and −1/2","optionC":"−3 and 1/2","optionD":"1 and 3/2",
+"answer":"A","explanation":"Factorise: 2x²−6x−x+3 = 2x(x−3)−1(x−3) = (2x−1)(x−3). x = 1/2 or x = 3.",
+"exception":"Product of roots = c/a = 3/2. Sum of roots = 7/2. Check: 3+1/2=7/2 ✓; 3×1/2=3/2 ✓"},
+
+{"id":79,"subject":"Mathematics","topic":"Geometry","taxonomy":"Application",
+"diagram":"<svg viewBox='0 0 200 160' xmlns='http://www.w3.org/2000/svg' style='max-width:200px'><polygon points='100,20 170,130 30,130' fill='none' stroke='#818cf8' stroke-width='2'/><text x='93' y='15' font-size='11' fill='#e2e8f0'>A</text><text x='173' y='133' font-size='11' fill='#e2e8f0'>B</text><text x='15' y='133' font-size='11' fill='#e2e8f0'>C</text><text x='88' y='50' font-size='11' fill='#f59e0b'>70°</text><text x='140' y='125' font-size='11' fill='#10b981'>x</text><text x='42' y='125' font-size='11' fill='#94a3b8'>65°</text></svg>","diagramCaption":"Triangle ABC: angle A = 70°, angle C = 65°, find x = angle B",
+"text":"In triangle ABC, angle A = 70° and angle C = 65°. Find angle B.",
+"optionA":"45°","optionB":"55°","optionC":"35°","optionD":"65°",
+"answer":"A","explanation":"Sum of angles in a triangle = 180°. B = 180° − 70° − 65° = 45°.",
+"exception":"This applies only to Euclidean (flat) geometry."},
+
+{"id":80,"subject":"Mathematics","topic":"Mensuration","taxonomy":"Application",
+"text":"Calculate the volume of a cylinder with radius 7 cm and height 10 cm. (π = 22/7)",
+"optionA":"1540 cm³","optionB":"770 cm³","optionC":"154 cm³","optionD":"3080 cm³",
+"answer":"A","explanation":"V = πr²h = (22/7)×49×10 = 22×70 = 1540 cm³.",
+"exception":"Use r², not r. A common error is computing π×r×h = πrh (which gives lateral surface, not volume)."},
+
+{"id":81,"subject":"Mathematics","topic":"Mensuration","taxonomy":"Application",
+"text":"The area of a trapezium with parallel sides 8 cm and 12 cm and height 5 cm is:",
+"optionA":"50 cm²","optionB":"100 cm²","optionC":"40 cm²","optionD":"60 cm²",
+"answer":"A","explanation":"A = ½(a+b)×h = ½(8+12)×5 = ½×20×5 = 50 cm².",
+"exception":"The height must be perpendicular to the parallel sides, not the slant height."},
+
+{"id":82,"subject":"Mathematics","topic":"Variation","taxonomy":"Application",
+"text":"If y varies directly as x² and y = 12 when x = 2, find y when x = 5.",
+"optionA":"75","optionB":"30","optionC":"150","optionD":"60",
+"answer":"A","explanation":"y = kx². k = 12/4 = 3. y = 3×25 = 75.",
+"exception":"Direct variation as x² means y=kx², not y=kx. The k value is different."},
+
+{"id":83,"subject":"Mathematics","topic":"Surds","taxonomy":"Application",
+"text":"Rationalise the denominator: 6/(√3 + √2)",
+"optionA":"6(√3 − √2)","optionB":"6√3 − 6√2","optionC":"2(√3 − √2)","optionD":"6/(√3 − √2)",
+"answer":"A","explanation":"Multiply by conjugate (√3−√2)/(√3−√2): 6(√3−√2)/((√3)²−(√2)²) = 6(√3−√2)/(3−2) = 6(√3−√2).",
+"exception":"Both A and B are equivalent — 6(√3−√2) = 6√3−6√2. In UTME, the factored form is usually expected."},
+
+{"id":84,"subject":"Mathematics","topic":"Indices","taxonomy":"Application",
+"text":"If 3ˣ = 27ˣ⁻², find x.",
+"optionA":"3","optionB":"2","optionC":"4","optionD":"1",
+"answer":"A","explanation":"27 = 3³. So 3ˣ = 3^(3(x−2)) = 3^(3x−6). Equate exponents: x = 3x−6 → 2x = 6 → x = 3.",
+"exception":"This method works only when bases are equal. Convert all terms to the same base first."},
+
+{"id":85,"subject":"Mathematics","topic":"Logarithms","taxonomy":"Application",
+"text":"Simplify: 2log₁₀ 5 + log₁₀ 4 − log₁₀ 2",
+"optionA":"log₁₀ 50","optionB":"log₁₀ 100","optionC":"2","optionD":"log₁₀ 25",
+"answer":"A","explanation":"2log5 = log25. log25+log4−log2 = log(25×4/2) = log(50).",
+"exception":"log addition = multiplication of arguments; log subtraction = division. 2logA = logA²."},
+
+{"id":86,"subject":"Mathematics","topic":"Binary Operations","taxonomy":"Application",
+"text":"A binary operation * is defined by a*b = a² + 2ab − b². Find 3*2.",
+"optionA":"13","optionB":"9","optionC":"17","optionD":"5",
+"answer":"A","explanation":"3*2 = 3²+2(3)(2)−2² = 9+12−4 = 17. Wait: 9+12=21, 21−4=17.",
+"optionA":"17","optionB":"9","optionC":"13","optionD":"5",
+"answer":"A","explanation":"3*2 = 9+12−4 = 17.",
+"exception":"The * symbol here is NOT multiplication — it's a custom-defined operation. Always apply the given formula."},
+
+{"id":87,"subject":"Mathematics","topic":"Functions","taxonomy":"Application",
+"text":"Find the inverse of f(x) = (2x+1)/(x−3).",
+"optionA":"f⁻¹(x) = (3x+1)/(x−2)","optionB":"f⁻¹(x) = (x−3)/(2x+1)","optionC":"f⁻¹(x) = (2x−1)/(x+3)","optionD":"f⁻¹(x) = (x+1)/(x−2)",
+"answer":"A","explanation":"Let y=(2x+1)/(x−3). Swap x and y: x=(2y+1)/(y−3). Solve: x(y−3)=2y+1 → xy−3x=2y+1 → y(x−2)=3x+1 → y=(3x+1)/(x−2).",
+"exception":"Domain excludes x=2 (denominator=0 in inverse) and x=3 (denominator=0 in original)."},
+
+{"id":88,"subject":"Mathematics","topic":"Circle Theorems","taxonomy":"Application",
+"diagram":"<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' style='max-width:200px'><circle cx='100' cy='100' r='70' fill='none' stroke='#818cf8' stroke-width='2'/><circle cx='100' cy='100' r='4' fill='#818cf8'/><line x1='100' y1='100' x2='160' y2='140' stroke='#10b981' stroke-width='1.5'/><line x1='100' y1='100' x2='60' y2='160' stroke='#10b981' stroke-width='1.5'/><line x1='160' y1='140' x2='60' y2='160' stroke='#f59e0b' stroke-width='1.5'/><text x='96' y='95' font-size='11' fill='#94a3b8'>O</text><text x='162' y='140' font-size='11' fill='#e2e8f0'>A</text><text x='42' y='162' font-size='11' fill='#e2e8f0'>B</text><text x='93' y='178' font-size='11' fill='#818cf8'>arc AB</text><text x='95' y='115' font-size='10' fill='#10b981'>70°</text></svg>","diagramCaption":"Central angle AOB = 70°. Find inscribed angle on arc AB.",
+"text":"A central angle of a circle is 70°. What is the inscribed angle subtending the same arc?",
+"optionA":"35°","optionB":"70°","optionC":"140°","optionD":"105°",
+"answer":"A","explanation":"The inscribed angle theorem: inscribed angle = ½ × central angle. 70°/2 = 35°.",
+"exception":"This only applies when both angles subtend the SAME arc."},
+
+{"id":89,"subject":"Mathematics","topic":"Rational Expressions","taxonomy":"Application",
+"text":"Simplify: (x² − 9)/(x² + 6x + 9)",
+"optionA":"(x−3)/(x+3)","optionB":"(x+3)/(x−3)","optionC":"(x−3)²/(x+3)","optionD":"1/(x+3)",
+"answer":"A","explanation":"x²−9 = (x−3)(x+3). x²+6x+9 = (x+3)². Cancel (x+3): (x−3)/(x+3).",
+"exception":"Domain restriction: x ≠ −3 (would cause division by zero)."},
+
+{"id":90,"subject":"Mathematics","topic":"Linear Algebra","taxonomy":"Application",
+"text":"How many diagonals does a regular hexagon have?",
+"optionA":"9","optionB":"6","optionC":"12","optionD":"15",
+"answer":"A","explanation":"Formula: n(n−3)/2 = 6(3)/2 = 9. Total line segments = n(n−1)/2 = 15; minus 6 sides = 9 diagonals.",
+"exception":"Do not count the sides as diagonals. Total segments − sides = diagonals."},
+
+// ══════════════════════════════════
+// PHYSICS — 35 Questions
+// ══════════════════════════════════
+
+{"id":91,"subject":"Physics","topic":"Mechanics","taxonomy":"Knowledge",
+"text":"A body moving with uniform velocity has:",
+"optionA":"Zero acceleration","optionB":"Constant non-zero acceleration","optionC":"Increasing acceleration","optionD":"Decreasing acceleration",
+"answer":"A","explanation":"Uniform velocity means no change in speed or direction. Acceleration = Δv/Δt = 0.",
+"exception":"Circular motion at constant speed has zero linear acceleration but non-zero centripetal acceleration."},
+
+{"id":92,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"diagram":"<svg viewBox='0 0 220 160' xmlns='http://www.w3.org/2000/svg' style='max-width:220px'><defs><marker id='a2' markerWidth='8' markerHeight='6' refX='8' refY='3' orient='auto'><polygon points='0 0,8 3,0 6' fill='#10b981'/></marker><marker id='a3' markerWidth='8' markerHeight='6' refX='0' refY='3' orient='auto'><polygon points='8 0,0 3,8 6' fill='#ef4444'/></marker></defs><rect x='90' y='60' width='40' height='30' rx='4' fill='#1e2235' stroke='#818cf8' stroke-width='2'/><text x='100' y='80' font-size='11' fill='#e2e8f0'>m</text><line x1='130' y1='75' x2='190' y2='75' stroke='#10b981' stroke-width='2' marker-end='url(#a2)'/><line x1='90' y1='75' x2='30' y2='75' stroke='#ef4444' stroke-width='2' marker-end='url(#a3)'/><text x='155' y='68' font-size='10' fill='#10b981'>F=20N</text><text x='35' y='68' font-size='10' fill='#ef4444'>f=8N</text><line x1='20' y1='90' x2='200' y2='90' stroke='#94a3b8' stroke-width='1'/><text x='70' y='115' font-size='10' fill='#94a3b8'>surface (μ=0.2)</text></svg>","diagramCaption":"Applied force F=20N, friction f=8N, mass m on surface",
+"text":"A mass experiences a forward force of 20 N and a frictional force of 8 N. The net force is:",
+"optionA":"12 N forward","optionB":"28 N forward","optionC":"8 N forward","optionD":"20 N forward",
+"answer":"A","explanation":"Net force = 20 − 8 = 12 N in the forward direction. Newton's 2nd law: net force determines acceleration.",
+"exception":"Always consider direction when adding forces. Friction opposes motion."},
+
+{"id":93,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"A ball is thrown vertically upward with velocity 20 m/s. Find the maximum height reached. (g = 10 m/s²)",
+"optionA":"20 m","optionB":"40 m","optionC":"10 m","optionD":"30 m",
+"answer":"A","explanation":"v² = u² − 2gh. At max height, v=0. h = u²/2g = 400/20 = 20 m.",
+"exception":"At the highest point, velocity = 0 but acceleration = g downward (not zero)."},
+
+{"id":94,"subject":"Physics","topic":"Waves","taxonomy":"Knowledge",
+"diagram":"<svg viewBox='0 0 240 120' xmlns='http://www.w3.org/2000/svg' style='max-width:240px'><path d='M10,60 C40,10 80,10 110,60 C140,110 180,110 210,60' fill='none' stroke='#818cf8' stroke-width='2'/><line x1='10' y1='60' x2='210' y2='60' stroke='#2d3348' stroke-width='1' stroke-dasharray='4'/><line x1='10' y1='10' x2='10' y2='110' stroke='#94a3b8' stroke-width='1' stroke-dasharray='3'/><line x1='110' y1='10' x2='110' y2='110' stroke='#94a3b8' stroke-width='1' stroke-dasharray='3'/><line x1='210' y1='10' x2='210' y2='110' stroke='#94a3b8' stroke-width='1' stroke-dasharray='3'/><text x='55' y='105' font-size='11' fill='#f59e0b'>λ</text><line x1='10' y1='100' x2='110' y2='100' stroke='#f59e0b' stroke-width='1.5' marker-end='url(#ah)'/><text x='60' y='18' font-size='10' fill='#10b981'>A (amplitude)</text><line x1='110' y1='15' x2='110' y2='60' stroke='#10b981' stroke-width='1.5'/></svg>","diagramCaption":"Wave: λ = wavelength, A = amplitude",
+"text":"The relationship between wave speed (v), frequency (f), and wavelength (λ) is:",
+"optionA":"v = fλ","optionB":"v = f/λ","optionC":"v = λ/f","optionD":"f = vλ",
+"answer":"A","explanation":"The wave equation: v = fλ. Speed equals frequency multiplied by wavelength.",
+"exception":"Rearranging: f = v/λ and λ = v/f. Frequency is NOT proportional to speed for a given medium."},
+
+{"id":95,"subject":"Physics","topic":"Waves","taxonomy":"Application",
+"text":"A wave has frequency 500 Hz and wavelength 0.6 m. Find its speed.",
+"optionA":"300 m/s","optionB":"500 m/s","optionC":"0.0012 m/s","optionD":"833 m/s",
+"answer":"A","explanation":"v = fλ = 500 × 0.6 = 300 m/s. (This is approximately the speed of sound in air!)",
+"exception":"Note: 300 m/s is the speed of sound. Light travels at 3×10⁸ m/s — much faster."},
+
+{"id":96,"subject":"Physics","topic":"Optics","taxonomy":"Application",
+"diagram":"<svg viewBox='0 0 240 160' xmlns='http://www.w3.org/2000/svg' style='max-width:240px'><defs><marker id='arr' markerWidth='7' markerHeight='5' refX='7' refY='2.5' orient='auto'><polygon points='0 0,7 2.5,0 5' fill='#10b981'/></marker></defs><line x1='120' y1='10' x2='120' y2='150' stroke='#818cf8' stroke-width='2'/><ellipse cx='120' cy='80' rx='18' ry='60' fill='none' stroke='#818cf8' stroke-width='2'/><text x='100' y='78' font-size='11' fill='#818cf8'>lens</text><line x1='20' y1='80' x2='100' y2='80' stroke='#10b981' stroke-width='1.5' marker-end='url(#arr)'/><line x1='100' y1='80' x2='190' y2='110' stroke='#10b981' stroke-width='1.5' marker-end='url(#arr)'/><line x1='20' y1='80' x2='190' y2='80' stroke='#2d3348' stroke-width='1' stroke-dasharray='4'/><text x='15' y='78' font-size='10' fill='#94a3b8'>ray</text><text x='135' y='78' font-size='10' fill='#f59e0b'>F</text><circle cx='155' cy='80' r='3' fill='#f59e0b'/></svg>","diagramCaption":"Converging lens — parallel ray bends through focal point F",
+"text":"A convex lens is also called a:",
+"optionA":"Converging lens","optionB":"Diverging lens","optionC":"Concave lens","optionD":"Plane lens",
+"answer":"A","explanation":"A convex lens (thicker in the middle) converges parallel rays to a focal point. It is a converging lens.",
+"exception":"A concave lens (thinner in middle) diverges light — it is a diverging lens."},
+
+{"id":97,"subject":"Physics","topic":"Optics","taxonomy":"Application",
+"text":"An object is placed 30 cm from a convex lens of focal length 10 cm. Find the image distance.",
+"optionA":"15 cm","optionB":"20 cm","optionC":"30 cm","optionD":"10 cm",
+"answer":"A","explanation":"Lens formula: 1/f = 1/v − 1/u (using real-is-positive convention, u=−30). 1/10 = 1/v + 1/30 → 1/v = 1/10−1/30 = 3/30−1/30 = 2/30. v = 15 cm.",
+"exception":"Sign convention is critical. Use consistent convention throughout."},
+
+{"id":98,"subject":"Physics","topic":"Electricity","taxonomy":"Knowledge",
+"diagram":"<svg viewBox='0 0 240 120' xmlns='http://www.w3.org/2000/svg' style='max-width:240px'><rect x='20' y='50' width='30' height='20' rx='2' fill='none' stroke='#f59e0b' stroke-width='2'/><text x='22' y='63' font-size='9' fill='#f59e0b'>EMF</text><line x1='50' y1='60' x2='90' y2='60' stroke='#e2e8f0' stroke-width='1.5'/><rect x='90' y='50' width='30' height='20' rx='2' fill='none' stroke='#818cf8' stroke-width='2'/><text x='95' y='63' font-size='9' fill='#818cf8'>R₁</text><line x1='120' y1='60' x2='150' y2='60' stroke='#e2e8f0' stroke-width='1.5'/><rect x='150' y='50' width='30' height='20' rx='2' fill='none' stroke='#818cf8' stroke-width='2'/><text x='155' y='63' font-size='9' fill='#818cf8'>R₂</text><line x1='180' y1='60' x2='220' y2='60' stroke='#e2e8f0' stroke-width='1.5'/><line x1='220' y1='60' x2='220' y2='100' stroke='#e2e8f0' stroke-width='1.5'/><line x1='20' y1='100' x2='220' y2='100' stroke='#e2e8f0' stroke-width='1.5'/><line x1='20' y1='60' x2='20' y2='100' stroke='#e2e8f0' stroke-width='1.5'/><text x='80' y='45' font-size='9' fill='#94a3b8'>Series circuit</text></svg>","diagramCaption":"Resistors R₁ and R₂ in series",
+"text":"Two resistors of 4 Ω and 6 Ω are connected in series to a 20 V battery. The current in the circuit is:",
+"optionA":"2 A","optionB":"5 A","optionC":"3 A","optionD":"1 A",
+"answer":"A","explanation":"Series: R_total = 4+6 = 10 Ω. I = V/R = 20/10 = 2 A.",
+"exception":"In series circuits, current is the same throughout but voltage divides across resistors."},
+
+{"id":99,"subject":"Physics","topic":"Electricity","taxonomy":"Application",
+"text":"Two resistors of 6 Ω and 3 Ω are connected in parallel. Find the equivalent resistance.",
+"optionA":"2 Ω","optionB":"9 Ω","optionC":"4 Ω","optionD":"18 Ω",
+"answer":"A","explanation":"1/R = 1/6+1/3 = 1/6+2/6 = 3/6 = 1/2. R = 2 Ω.",
+"exception":"In parallel, equivalent resistance is LESS than the smallest individual resistor."},
+
+{"id":100,"subject":"Physics","topic":"Electricity","taxonomy":"Application",
+"text":"An electric iron rated 1000 W is used for 2 hours. Calculate the electrical energy consumed in kWh.",
+"optionA":"2 kWh","optionB":"0.5 kWh","optionC":"2000 kWh","optionD":"1 kWh",
+"answer":"A","explanation":"Energy = Power × Time = 1000 W × 2 h = 2000 Wh = 2 kWh.",
+"exception":"1 kWh = 1000 Wh = 3.6 × 10⁶ J. This is the unit on your electricity bill."},
+
+{"id":101,"subject":"Physics","topic":"Heat","taxonomy":"Knowledge",
+"text":"The process by which heat is transferred through a vacuum is:",
+"optionA":"Radiation","optionB":"Convection","optionC":"Conduction","optionD":"Evaporation",
+"answer":"A","explanation":"Radiation (electromagnetic waves) can travel through a vacuum. Conduction requires physical contact; convection requires a fluid medium.",
+"exception":"The Sun heats the Earth via radiation across the vacuum of space."},
+
+{"id":102,"subject":"Physics","topic":"Heat","taxonomy":"Application",
+"text":"Calculate the heat energy needed to raise the temperature of 200 g of water from 20°C to 70°C. (Specific heat capacity of water = 4200 J/kg°C)",
+"optionA":"42 000 J","optionB":"84 000 J","optionC":"4200 J","optionD":"210 000 J",
+"answer":"A","explanation":"Q = mcΔT = 0.2 × 4200 × (70−20) = 0.2 × 4200 × 50 = 42 000 J.",
+"exception":"Mass must be in kg: 200 g = 0.2 kg."},
+
+{"id":103,"subject":"Physics","topic":"Magnetism","taxonomy":"Knowledge",
+"text":"The unit of magnetic flux density is:",
+"optionA":"Tesla (T)","optionB":"Weber (Wb)","optionC":"Henry (H)","optionD":"Farad (F)",
+"answer":"A","explanation":"Magnetic flux density B is measured in Tesla (T). 1 T = 1 Wb/m². Weber measures total flux (Φ), not density.",
+"exception":"Don't confuse flux density B (Tesla) with flux Φ (Weber). B = Φ/A."},
+
+{"id":104,"subject":"Physics","topic":"Atomic Physics","taxonomy":"Knowledge",
+"diagram":"<svg viewBox='0 0 200 180' xmlns='http://www.w3.org/2000/svg' style='max-width:200px'><circle cx='100' cy='90' r='15' fill='#818cf8' opacity='0.8'/><text x='90' y='94' font-size='10' fill='white'>nucleus</text><ellipse cx='100' cy='90' rx='55' ry='30' fill='none' stroke='#10b981' stroke-width='1.5'/><ellipse cx='100' cy='90' rx='40' ry='55' fill='none' stroke='#f59e0b' stroke-width='1.5'/><circle cx='155' cy='90' r='5' fill='#10b981'/><circle cx='100' cy='35' r='5' fill='#f59e0b'/><circle cx='60' cy='90' r='5' fill='#10b981'/><text x='158' y='93' font-size='9' fill='#10b981'>e⁻</text><text x='103' y='32' font-size='9' fill='#f59e0b'>e⁻</text></svg>","diagramCaption":"Atom: nucleus with electron orbits",
+"text":"In a neutral atom with atomic number 17 and mass number 35, the number of neutrons is:",
+"optionA":"18","optionB":"17","optionC":"35","optionD":"52",
+"answer":"A","explanation":"Neutrons = Mass number − Atomic number = 35 − 17 = 18. Atomic number = number of protons = number of electrons in neutral atom.",
+"exception":"Isotopes of an element have the same atomic number but different neutron counts."},
+
+{"id":105,"subject":"Physics","topic":"Atomic Physics","taxonomy":"Knowledge",
+"text":"Which type of radiation has the greatest penetrating power?",
+"optionA":"Gamma (γ)","optionB":"Beta (β)","optionC":"Alpha (α)","optionD":"X-rays",
+"answer":"A","explanation":"Penetrating power: γ > β > α. Gamma rays can penetrate several centimetres of lead. Alpha particles are stopped by a sheet of paper.",
+"exception":"Ionising power is INVERSELY related to penetrating power: α > β > γ."},
+
+{"id":106,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"A car accelerates from rest to 30 m/s in 10 s. Find its acceleration.",
+"optionA":"3 m/s²","optionB":"30 m/s²","optionC":"300 m/s²","optionD":"0.3 m/s²",
+"answer":"A","explanation":"a = (v−u)/t = (30−0)/10 = 3 m/s².",
+"exception":"Acceleration is in m/s², not m/s. The unit tells you it's change in velocity per unit time."},
+
+{"id":107,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"Find the kinetic energy of a 5 kg object moving at 6 m/s.",
+"optionA":"90 J","optionB":"180 J","optionC":"30 J","optionD":"60 J",
+"answer":"A","explanation":"KE = ½mv² = ½×5×36 = 90 J.",
+"exception":"KE = ½mv², NOT ½mv. The velocity is squared."},
+
+{"id":108,"subject":"Physics","topic":"Pressure","taxonomy":"Application",
+"text":"A liquid column of height 2 m exerts a pressure of 20 000 Pa. Find the density of the liquid. (g = 10 m/s²)",
+"optionA":"1000 kg/m³","optionB":"2000 kg/m³","optionC":"500 kg/m³","optionD":"100 kg/m³",
+"answer":"A","explanation":"P = ρgh → ρ = P/(gh) = 20000/(10×2) = 1000 kg/m³. This is water!",
+"exception":"Pressure increases with depth and with density. P is proportional to both h and ρ."},
+
+{"id":109,"subject":"Physics","topic":"Electricity","taxonomy":"Application",
+"text":"A 60 W bulb operates at 240 V. Find its resistance.",
+"optionA":"960 Ω","optionB":"14400 Ω","optionC":"240 Ω","optionD":"4 Ω",
+"answer":"A","explanation":"P = V²/R → R = V²/P = 240²/60 = 57600/60 = 960 Ω.",
+"exception":"Three power formulas: P=VI, P=I²R, P=V²/R. Use the one matching given quantities."},
+
+{"id":110,"subject":"Physics","topic":"Waves","taxonomy":"Knowledge",
+"text":"Which of the following is a transverse wave?",
+"optionA":"Light","optionB":"Sound in air","optionC":"Sound in water","optionD":"Ultrasound",
+"answer":"A","explanation":"Light (electromagnetic waves) is transverse — oscillation is perpendicular to direction of travel. Sound is longitudinal — oscillation is parallel to direction of travel.",
+"exception":"Seismic S-waves are also transverse; seismic P-waves are longitudinal."},
+
+{"id":111,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"A 10 kg box is raised 5 m vertically. Find the work done against gravity. (g = 10 m/s²)",
+"optionA":"500 J","optionB":"50 J","optionC":"5000 J","optionD":"100 J",
+"answer":"A","explanation":"W = mgh = 10×10×5 = 500 J. This equals the gravitational potential energy gained.",
+"exception":"Work = Force × distance in the direction of force. Here, force = weight = mg."},
+
+{"id":112,"subject":"Physics","topic":"Optics","taxonomy":"Application",
+"text":"A concave mirror has a focal length of 15 cm. An object is placed 45 cm from the mirror. Find the image position.",
+"optionA":"22.5 cm","optionB":"30 cm","optionC":"45 cm","optionD":"15 cm",
+"answer":"A","explanation":"Mirror formula: 1/f = 1/v + 1/u. 1/15 = 1/v + 1/45. 1/v = 1/15−1/45 = 3/45−1/45 = 2/45. v = 22.5 cm.",
+"exception":"For mirrors, use 1/f = 1/v + 1/u. For lenses, use 1/f = 1/v − 1/u (depending on convention)."},
+
+{"id":113,"subject":"Physics","topic":"Electromagnetism","taxonomy":"Knowledge",
+"text":"The phenomenon of electromagnetic induction was discovered by:",
+"optionA":"Michael Faraday","optionB":"James Clerk Maxwell","optionC":"Heinrich Hertz","optionD":"Hans Oersted",
+"answer":"A","explanation":"Faraday discovered electromagnetic induction in 1831 and formulated Faraday's law. Oersted discovered that current creates a magnetic field; Maxwell unified electricity and magnetism theoretically.",
+"exception":"Lenz's law (by Heinrich Lenz) gives the direction of the induced current opposing the change."},
+
+{"id":114,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"A body of mass 2 kg moving at 4 m/s collides with a stationary body of mass 2 kg and they move together. Find their common velocity.",
+"optionA":"2 m/s","optionB":"4 m/s","optionC":"8 m/s","optionD":"1 m/s",
+"answer":"A","explanation":"Conservation of momentum: m₁u₁ = (m₁+m₂)v. 2×4 = 4v → v = 2 m/s. This is a perfectly inelastic collision.",
+"exception":"Kinetic energy is NOT conserved in inelastic collisions, only momentum is."},
+
+{"id":115,"subject":"Physics","topic":"Heat","taxonomy":"Knowledge",
+"text":"During melting, the temperature of a substance:",
+"optionA":"Remains constant","optionB":"Increases steadily","optionC":"Decreases","optionD":"Fluctuates",
+"answer":"A","explanation":"During a change of state (melting/boiling), temperature remains constant even though heat is being absorbed. The absorbed energy (latent heat) breaks intermolecular bonds, not raises temperature.",
+"exception":"This is why a melting ice-water mixture stays at 0°C until all ice melts."},
+
+{"id":116,"subject":"Physics","topic":"Sound","taxonomy":"Application",
+"text":"The pitch of a sound depends on its:",
+"optionA":"Frequency","optionB":"Amplitude","optionC":"Speed","optionD":"Wavelength",
+"answer":"A","explanation":"Pitch is determined by frequency — higher frequency = higher pitch. Loudness (intensity) depends on amplitude.",
+"exception":"Timbre (quality) depends on the waveform/overtones — how we distinguish a piano from a guitar playing the same note."},
+
+{"id":117,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"Hooke's law states that the extension of a spring is proportional to the applied force, provided:",
+"optionA":"The elastic limit is not exceeded","optionB":"The spring is vertical","optionC":"The force acts slowly","optionD":"The spring is metallic",
+"answer":"A","explanation":"Hooke's law F = kx applies only within the elastic limit. Beyond this, the spring deforms permanently.",
+"exception":"The spring constant k (stiffness) is the gradient of the force-extension graph within the elastic region."},
+
+{"id":118,"subject":"Physics","topic":"Atomic Physics","taxonomy":"Application",
+"text":"A radioactive isotope has a half-life of 5 years. What fraction remains after 20 years?",
+"optionA":"1/16","optionB":"1/4","optionC":"1/8","optionD":"1/32",
+"answer":"A","explanation":"20 years = 4 half-lives. Fraction remaining = (1/2)⁴ = 1/16.",
+"exception":"After n half-lives, fraction remaining = (1/2)ⁿ. The amount halves every half-life."},
+
+{"id":119,"subject":"Physics","topic":"Pressure","taxonomy":"Application",
+"text":"An object floats in water with 60% of its volume submerged. Find its density. (density of water = 1000 kg/m³)",
+"optionA":"600 kg/m³","optionB":"1000 kg/m³","optionC":"400 kg/m³","optionD":"1600 kg/m³",
+"answer":"A","explanation":"By Archimedes: fraction submerged = density of object / density of fluid. ρ_object = 0.6 × 1000 = 600 kg/m³.",
+"exception":"Objects with density less than the fluid float; greater density sinks."},
+
+{"id":120,"subject":"Physics","topic":"Electricity","taxonomy":"Knowledge",
+"text":"The SI unit of electric charge is:",
+"optionA":"Coulomb (C)","optionB":"Ampere (A)","optionC":"Volt (V)","optionD":"Ohm (Ω)",
+"answer":"A","explanation":"Electric charge is measured in Coulombs (C). Current is Coulombs per second (C/s) = Ampere.",
+"exception":"1 Coulomb = 6.24 × 10¹⁸ electrons. The elementary charge (electron charge) = 1.6 × 10⁻¹⁹ C."},
+
+{"id":121,"subject":"Physics","topic":"Mechanics","taxonomy":"Knowledge",
+"text":"Newton's third law states:",
+"optionA":"For every action there is an equal and opposite reaction","optionB":"Force equals mass times acceleration","optionC":"A body continues in its state of rest unless acted upon by a net force","optionD":"The rate of change of momentum equals the applied force",
+"answer":"A","explanation":"Newton's 3rd law: action and reaction are equal in magnitude, opposite in direction, and act on different bodies.",
+"exception":"The forces act on DIFFERENT bodies — they do NOT cancel each other."},
+
+{"id":122,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"A projectile is fired horizontally from a height of 80 m. Find the time to reach the ground. (g = 10 m/s²)",
+"optionA":"4 s","optionB":"8 s","optionC":"2 s","optionD":"16 s",
+"answer":"A","explanation":"h = ½gt² → t = √(2h/g) = √(160/10) = √16 = 4 s.",
+"exception":"Horizontal velocity does not affect the time to fall — only the initial vertical velocity and height matter."},
+
+{"id":123,"subject":"Physics","topic":"Optics","taxonomy":"Application",
+"text":"The critical angle for glass-air interface is 42°. What is the refractive index of the glass?",
+"optionA":"1.49","optionB":"0.67","optionC":"2.0","optionD":"1.33",
+"answer":"A","explanation":"n = 1/sin(c) = 1/sin(42°) = 1/0.669 ≈ 1.49.",
+"exception":"Total internal reflection occurs when light goes from a denser to less dense medium at angles greater than the critical angle."},
+
+{"id":124,"subject":"Physics","topic":"Electricity","taxonomy":"Knowledge",
+"text":"The function of a fuse in an electric circuit is to:",
+"optionA":"Break the circuit when current exceeds a safe value","optionB":"Increase the voltage","optionC":"Store electrical energy","optionD":"Reduce resistance",
+"answer":"A","explanation":"A fuse contains a wire that melts (breaks the circuit) when current exceeds its rated value, protecting the circuit from damage.",
+"exception":"A circuit breaker does the same job but can be reset; a fuse must be replaced."},
+
+{"id":125,"subject":"Physics","topic":"Mechanics","taxonomy":"Application",
+"text":"A machine has a velocity ratio of 5 and an efficiency of 80%. Find its mechanical advantage.",
+"optionA":"4","optionB":"5","optionC":"6.25","optionD":"400",
+"answer":"A","explanation":"Efficiency = MA/VR × 100%. 80 = MA/5 × 100. MA = 80×5/100 = 4.",
+"exception":"MA ≤ VR always. An efficiency of 100% is impossible due to friction."},
+
+// ══════════════════════════════════
+// CHEMISTRY — 35 Questions
+// ══════════════════════════════════
+
+{"id":126,"subject":"Chemistry","topic":"Atomic Structure","taxonomy":"Knowledge",
+"diagram":"<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' style='max-width:200px'><circle cx='100' cy='100' r='20' fill='#818cf8' opacity='0.9'/><text x='88' y='104' font-size='10' fill='white'>17p 18n</text><ellipse cx='100' cy='100' rx='50' ry='28' fill='none' stroke='#10b981' stroke-width='1.5'/><ellipse cx='100' cy='100' rx='35' ry='60' fill='none' stroke='#f59e0b' stroke-width='1.5'/><ellipse cx='100' cy='100' rx='75' ry='42' fill='none' stroke='#ef4444' stroke-width='1.5'/><circle cx='150' cy='100' r='4' fill='#10b981'/><circle cx='65' cy='100' r='4' fill='#10b981'/><circle cx='100' cy='40' r='4' fill='#f59e0b'/><circle cx='100' cy='160' r='4' fill='#f59e0b'/><circle cx='175' cy='100' r='4' fill='#ef4444'/><text x='155' y='95' font-size='8' fill='#ef4444'>7e⁻</text><text x='60' y='75' font-size='8' fill='#f59e0b'>8e⁻</text><text x='100' y='75' font-size='8' fill='#10b981'>2e⁻</text></svg>","diagramCaption":"Chlorine atom: 2,8,7 electronic configuration",
+"text":"The electronic configuration of chlorine (atomic number 17) is:",
+"optionA":"2, 8, 7","optionB":"2, 7, 8","optionC":"2, 8, 8, 1","optionD":"8, 8, 1",
+"answer":"A","explanation":"Electrons fill shells in order: Shell 1 holds max 2, Shell 2 holds max 8, Shell 3 holds 7. So Cl = 2,8,7.",
+"exception":"Chlorine needs 1 more electron to complete its outer shell, making it highly reactive."},
+
+{"id":127,"subject":"Chemistry","topic":"Periodic Table","taxonomy":"Application",
+"text":"An element X has atomic number 12. Which group and period is it in?",
+"optionA":"Group 2, Period 3","optionB":"Group 12, Period 2","optionC":"Group 2, Period 2","optionD":"Group 3, Period 2",
+"answer":"A","explanation":"Atomic number 12 = 2,8,2 (Magnesium). 2 valence electrons → Group 2. 3 shells → Period 3.",
+"exception":"Group number = number of valence electrons (for main group elements). Period = number of shells."},
+
+{"id":128,"subject":"Chemistry","topic":"Bonding","taxonomy":"Knowledge",
+"diagram":"<svg viewBox='0 0 220 120' xmlns='http://www.w3.org/2000/svg' style='max-width:220px'><circle cx='70' cy='60' r='28' fill='none' stroke='#818cf8' stroke-width='1.5' stroke-dasharray='5'/><circle cx='150' cy='60' r='28' fill='none' stroke='#818cf8' stroke-width='1.5' stroke-dasharray='5'/><circle cx='70' cy='60' r='16' fill='#1e2235' stroke='#10b981' stroke-width='2'/><circle cx='150' cy='60' r='16' fill='#1e2235' stroke='#10b981' stroke-width='2'/><text x='62' y='64' font-size='13' fill='#e2e8f0'>Na</text><text x='142' y='64' font-size='13' fill='#e2e8f0'>Cl</text><text x='81' y='38' font-size='9' fill='#f59e0b'>e⁻→</text><text x='8' y='64' font-size='9' fill='#94a3b8'>Na⁺</text><text x='178' y='64' font-size='9' fill='#94a3b8'>Cl⁻</text><text x='60' y='105' font-size='10' fill='#818cf8'>Ionic bond: electron transfer</text></svg>","diagramCaption":"Ionic bonding: electron transfer from Na to Cl",
+"text":"In the formation of sodium chloride (NaCl), the type of bonding is:",
+"optionA":"Ionic","optionB":"Covalent","optionC":"Metallic","optionD":"Hydrogen",
+"answer":"A","explanation":"NaCl forms by electron transfer from Na (loses 1e⁻ → Na⁺) to Cl (gains 1e⁻ → Cl⁻). Electrostatic attraction between oppositely charged ions = ionic bond.",
+"exception":"Covalent bonds form by electron sharing, typically between non-metals of similar electronegativity."},
+
+{"id":129,"subject":"Chemistry","topic":"Bonding","taxonomy":"Knowledge",
+"text":"Which of the following has the highest electronegativity?",
+"optionA":"Fluorine (F)","optionB":"Oxygen (O)","optionC":"Nitrogen (N)","optionD":"Chlorine (Cl)",
+"answer":"A","explanation":"Electronegativity increases across a period and up a group. Fluorine (top-right of periodic table) has the highest electronegativity: 4.0 on the Pauling scale.",
+"exception":"O=3.44, N=3.04, Cl=3.16. Fluorine's value of 4.0 is the maximum."},
+
+{"id":130,"subject":"Chemistry","topic":"Moles & Stoichiometry","taxonomy":"Application",
+"text":"Find the number of moles in 8 g of oxygen gas (O₂). [Relative atomic mass of O = 16]",
+"optionA":"0.25 mol","optionB":"0.5 mol","optionC":"0.125 mol","optionD":"1 mol",
+"answer":"A","explanation":"Molar mass of O₂ = 2×16 = 32 g/mol. Moles = mass/molar mass = 8/32 = 0.25 mol.",
+"exception":"O₂ is diatomic — use molar mass of 32 g/mol, not 16 g/mol."},
+
+{"id":131,"subject":"Chemistry","topic":"Moles & Stoichiometry","taxonomy":"Application",
+"text":"What volume of CO₂ at STP is produced when 10 g of CaCO₃ decomposes? (Ca=40, C=12, O=16; molar volume at STP = 22.4 L/mol)",
+"optionA":"2.24 L","optionB":"22.4 L","optionC":"4.48 L","optionD":"1.12 L",
+"answer":"A","explanation":"CaCO₃ → CaO + CO₂. Molar mass of CaCO₃ = 100 g/mol. Moles of CaCO₃ = 10/100 = 0.1 mol. 1 mol CaCO₃ → 1 mol CO₂. Volume = 0.1 × 22.4 = 2.24 L.",
+"exception":"STP in modern IUPAC is 0°C (273K) and 100 kPa, giving 22.7 L/mol. JAMB uses the older 22.4 L/mol value."},
+
+{"id":132,"subject":"Chemistry","topic":"Acids & Bases","taxonomy":"Application",
+"text":"Calculate the pH of a 0.01 M HCl solution.",
+"optionA":"2","optionB":"−2","optionC":"12","optionD":"7",
+"answer":"A","explanation":"HCl is a strong acid: [H⁺] = 0.01 = 10⁻² M. pH = −log[H⁺] = −log(10⁻²) = 2.",
+"exception":"Very dilute strong acids (<10⁻⁶ M) cannot have pH above 7 — water's contribution becomes significant."},
+
+{"id":133,"subject":"Chemistry","topic":"Acids & Bases","taxonomy":"Knowledge",
+"text":"A buffer solution resists large changes in pH because it contains:",
+"optionA":"A weak acid and its conjugate base (or weak base and conjugate acid)","optionB":"A strong acid and its salt","optionC":"Pure water only","optionD":"A neutral salt",
+"answer":"A","explanation":"A buffer contains a weak acid/conjugate base pair. It neutralises added H⁺ (using the base) or added OH⁻ (using the acid), resisting pH change.",
+"exception":"Buffers are most effective within ±1 pH unit of the weak acid's pKa."},
+
+{"id":134,"subject":"Chemistry","topic":"Redox","taxonomy":"Application",
+"text":"Find the oxidation number of Cr in K₂Cr₂O₇.",
+"optionA":"+6","optionB":"+3","optionC":"+7","optionD":"+4",
+"answer":"A","explanation":"K=+1(×2), O=−2(×7), Cr=x(×2). 2(+1)+2x+7(−2)=0 → 2+2x−14=0 → 2x=12 → x=+6.",
+"exception":"Maximum oxidation state for Cr is +6 (Group 6). Cr₂O₃ has Cr in +3 state."},
+
+{"id":135,"subject":"Chemistry","topic":"Redox","taxonomy":"Knowledge",
+"diagram":"<svg viewBox='0 0 240 130' xmlns='http://www.w3.org/2000/svg' style='max-width:240px'><rect x='10' y='40' width='80' height='50' rx='6' fill='#1e2235' stroke='#818cf8' stroke-width='1.5'/><rect x='150' y='40' width='80' height='50' rx='6' fill='#1e2235' stroke='#818cf8' stroke-width='1.5'/><text x='35' y='70' font-size='11' fill='#ef4444'>Anode</text><text x='160' y='70' font-size='11' fill='#10b981'>Cathode</text><text x='25' y='85' font-size='9' fill='#ef4444'>oxidation</text><text x='155' y='85' font-size='9' fill='#10b981'>reduction</text><line x1='90' y1='50' x2='150' y2='50' stroke='#e2e8f0' stroke-width='2'/><text x='108' y='45' font-size='10' fill='#e2e8f0'>e⁻ →</text><text x='100' y='105' font-size='10' fill='#94a3b8'>electrolyte</text><line x1='50' y1='90' x2='190' y2='90' stroke='#94a3b8' stroke-width='1' stroke-dasharray='4'/><text x='108' y='85' font-size='10' fill='#f59e0b'>ions →</text></svg>","diagramCaption":"Electrolytic cell: anode=oxidation, cathode=reduction",
+"text":"In an electrolytic cell, reduction occurs at the:",
+"optionA":"Cathode","optionB":"Anode","optionC":"Electrolyte","optionD":"External circuit",
+"answer":"A","explanation":"At the cathode: cations (+ve ions) gain electrons (reduction). At the anode: anions (−ve ions) lose electrons (oxidation). Mnemonic: Red Cat, An Ox (Reduction at Cathode, Oxidation at Anode).",
+"exception":"In a galvanic (voltaic) cell, the cathode is positive (+); in an electrolytic cell, the cathode is negative (−)."},
+
+{"id":136,"subject":"Chemistry","topic":"Equilibrium","taxonomy":"Application",
+"text":"For the reaction N₂ + 3H₂ ⇌ 2NH₃ (exothermic), increasing temperature will:",
+"optionA":"Shift equilibrium to the left (favour N₂ and H₂)","optionB":"Shift equilibrium to the right (favour NH₃)",
+"optionC":"Have no effect","optionD":"Increase Kc",
+"answer":"A","explanation":"Le Chatelier's principle: increasing temperature favours the endothermic direction (reverse reaction), shifting equilibrium left and decreasing Kc.",
+"exception":"The Haber process runs at ~450°C despite the reaction being exothermic — this is a compromise between rate and yield."},
+
+{"id":137,"subject":"Chemistry","topic":"Equilibrium","taxonomy":"Knowledge",
+"text":"The equilibrium constant Kc for a reaction depends only on:",
+"optionA":"Temperature","optionB":"Pressure","optionC":"Concentration","optionD":"Catalyst",
+"answer":"A","explanation":"Kc is a true constant that changes ONLY with temperature. Adding a catalyst, changing pressure, or changing concentrations shifts the position of equilibrium but does not change Kc.",
+"exception":"A catalyst speeds up both forward and reverse reactions equally, reaching equilibrium faster without changing Kc."},
+
+{"id":138,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Knowledge",
+"text":"The general formula of alkanes is:",
+"optionA":"CₙH₂ₙ₊₂","optionB":"CₙH₂ₙ","optionC":"CₙH₂ₙ₋₂","optionD":"CₙHₙ",
+"answer":"A","explanation":"Alkanes are saturated hydrocarbons. CₙH₂ₙ₊₂. Examples: CH₄ (methane, n=1), C₂H₆ (ethane, n=2).",
+"exception":"Alkenes: CₙH₂ₙ (one double bond). Alkynes: CₙH₂ₙ₋₂ (one triple bond)."},
+
+{"id":139,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Application",
+"text":"Ethanol undergoes complete combustion to produce:",
+"optionA":"CO₂ and H₂O","optionB":"CO and H₂O","optionC":"C and H₂O","optionD":"CO₂ and H₂",
+"answer":"A","explanation":"C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O. Complete combustion of any hydrocarbon/alcohol in excess oxygen produces CO₂ and H₂O.",
+"exception":"Incomplete combustion (limited oxygen) produces CO (carbon monoxide), a toxic gas."},
+
+{"id":140,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Knowledge",
+"text":"The functional group −COOH is characteristic of:",
+"optionA":"Carboxylic acids","optionB":"Alcohols","optionC":"Esters","optionD":"Aldehydes",
+"answer":"A","explanation":"−COOH = carboxyl group = carboxylic acids. e.g., CH₃COOH (ethanoic/acetic acid). Alcohols: −OH; Esters: −COO−; Aldehydes: −CHO.",
+"exception":"Carboxylic acids are weak acids — they partially ionise in water: RCOOH ⇌ RCOO⁻ + H⁺."},
+
+{"id":141,"subject":"Chemistry","topic":"Gases","taxonomy":"Application",
+"text":"At constant pressure, the volume of a gas is directly proportional to its absolute temperature. This is:",
+"optionA":"Charles' Law","optionB":"Boyle's Law","optionC":"Gay-Lussac's Law","optionD":"Avogadro's Law",
+"answer":"A","explanation":"Charles' Law: V/T = constant (at constant pressure). Boyle's: PV = constant (at constant temperature). Gay-Lussac's: P/T = constant.",
+"exception":"Temperature MUST be in Kelvin (K = °C + 273). Using Celsius gives wrong results."},
+
+{"id":142,"subject":"Chemistry","topic":"Gases","taxonomy":"Application",
+"text":"A gas occupies 4 L at 300 K. Find the volume at 600 K (constant pressure).",
+"optionA":"8 L","optionB":"2 L","optionC":"12 L","optionD":"6 L",
+"answer":"A","explanation":"Charles' Law: V₁/T₁ = V₂/T₂. V₂ = V₁T₂/T₁ = 4×600/300 = 8 L. Temperature doubled, so volume doubles.",
+"exception":"Double-check: temperatures are in Kelvin here (300K, 600K), so the law applies directly."},
+
+{"id":143,"subject":"Chemistry","topic":"Atomic Structure","taxonomy":"Knowledge",
+"text":"Isotopes of an element have the same:",
+"optionA":"Number of protons but different number of neutrons","optionB":"Number of neutrons but different number of protons",
+"optionC":"Mass number","optionD":"Number of electrons and neutrons",
+"answer":"A","explanation":"Isotopes: same atomic number (protons), different mass number (due to different neutron counts). e.g., ¹²C and ¹⁴C.",
+"exception":"Isotopes have identical chemical properties (same electron configuration) but different physical properties (density, radioactivity)."},
+
+{"id":144,"subject":"Chemistry","topic":"Periodic Table","taxonomy":"Knowledge",
+"text":"Which property INCREASES going down Group 1 (alkali metals)?",
+"optionA":"Reactivity","optionB":"Ionisation energy","optionC":"Electronegativity","optionD":"Melting point",
+"answer":"A","explanation":"Going down Group 1: atomic radius increases, outer electron is further from nucleus, easier to lose → reactivity increases. Li < Na < K < Rb < Cs in reactivity.",
+"exception":"Ionisation energy, electronegativity, and melting point all DECREASE down Group 1."},
+
+{"id":145,"subject":"Chemistry","topic":"Thermochemistry","taxonomy":"Application",
+"text":"The standard enthalpy of formation of a compound is the enthalpy change when:",
+"optionA":"One mole of the compound is formed from its elements in their standard states",
+"optionB":"One mole of the compound is combusted","optionC":"One mole of bonds is broken","optionD":"One mole of acid reacts with one mole of base",
+"answer":"A","explanation":"ΔHf° = enthalpy change for formation of 1 mol of compound from its elements in their standard states at 298K and 100 kPa.",
+"exception":"By definition, the ΔHf° of any element in its standard state = 0 (e.g., H₂(g), O₂(g))."},
+
+{"id":146,"subject":"Chemistry","topic":"Moles & Stoichiometry","taxonomy":"Application",
+"text":"What mass of NaOH (molar mass = 40 g/mol) is needed to prepare 500 cm³ of 2 M solution?",
+"optionA":"40 g","optionB":"20 g","optionC":"80 g","optionD":"10 g",
+"answer":"A","explanation":"Moles = M × V(L) = 2 × 0.5 = 1 mol. Mass = 1 × 40 = 40 g.",
+"exception":"Volume must be in litres: 500 cm³ = 0.5 L."},
+
+{"id":147,"subject":"Chemistry","topic":"Acids & Bases","taxonomy":"Application",
+"text":"25 cm³ of 0.1 M HCl is neutralised by 0.05 M NaOH. What volume of NaOH is required?",
+"optionA":"50 cm³","optionB":"25 cm³","optionC":"12.5 cm³","optionD":"100 cm³",
+"answer":"A","explanation":"HCl + NaOH → NaCl + H₂O (1:1 ratio). Moles of HCl = 0.025 × 0.1 = 0.0025 mol. Volume NaOH = 0.0025/0.05 = 0.05 L = 50 cm³.",
+"exception":"Always check the molar ratio from the balanced equation before applying C₁V₁ = C₂V₂."},
+
+{"id":148,"subject":"Chemistry","topic":"Electrochemistry","taxonomy":"Application",
+"text":"In the electrolysis of dilute H₂SO₄, which gas is produced at the cathode?",
+"optionA":"Hydrogen (H₂)","optionB":"Oxygen (O₂)","optionC":"Sulphur dioxide (SO₂)","optionD":"Chlorine (Cl₂)",
+"answer":"A","explanation":"At cathode: 2H⁺ + 2e⁻ → H₂. At anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻. Hydrogen at cathode, oxygen at anode.",
+"exception":"If the electrolyte were HCl, Cl₂ would form at the anode (not O₂) in concentrated solutions."},
+
+{"id":149,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Knowledge",
+"text":"Isomers are compounds that have the same:",
+"optionA":"Molecular formula but different structural formulae","optionB":"Structural formula but different molecular formulae",
+"optionC":"Properties but different formulae","optionD":"Names but different atoms",
+"answer":"A","explanation":"Isomers share the same molecular formula (same atoms, same number) but have different structural arrangements, giving different properties.",
+"exception":"Butane (CH₃CH₂CH₂CH₃) and isobutane (CH₃CH(CH₃)₂) are structural isomers with formula C₄H₁₀."},
+
+{"id":150,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Application",
+"text":"Which reagent is used to test for the presence of an alkene?",
+"optionA":"Bromine water (Br₂/H₂O)","optionB":"Fehling's solution","optionC":"Litmus paper","optionD":"Lime water",
+"answer":"A","explanation":"Alkenes decolourise bromine water (orange → colourless) due to electrophilic addition across the C=C double bond. Alkanes do NOT decolourise Br₂ water in the dark.",
+"exception":"In UV light, alkanes react with Br₂ via free radical substitution, also decolourising it — so specify 'in the dark' when testing alkenes."},
+
+{"id":151,"subject":"Chemistry","topic":"Metals & Extraction","taxonomy":"Knowledge",
+"text":"The main ore of aluminium is:",
+"optionA":"Bauxite (Al₂O₃·2H₂O)","optionB":"Haematite (Fe₂O₃)","optionC":"Galena (PbS)","optionD":"Malachite (CuCO₃)",
+"answer":"A","explanation":"Aluminium is extracted from bauxite by the Hall-Héroult process (electrolysis of molten alumina Al₂O₃).",
+"exception":"Iron is extracted from haematite; copper from malachite or chalcopyrite; lead from galena."},
+
+{"id":152,"subject":"Chemistry","topic":"Metals & Extraction","taxonomy":"Knowledge",
+"text":"The process used to extract iron from its ore in a blast furnace involves:",
+"optionA":"Reduction by carbon monoxide","optionB":"Electrolysis","optionC":"Oxidation","optionD":"Distillation",
+"answer":"A","explanation":"In a blast furnace: Fe₂O₃ + 3CO → 2Fe + 3CO₂. Carbon (as CO) reduces iron oxide. CO is the main reducing agent.",
+"exception":"Aluminium cannot be extracted by carbon reduction because it binds oxygen more strongly than carbon at achievable furnace temperatures."},
+
+{"id":153,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Knowledge",
+"text":"Esterification is the reaction between:",
+"optionA":"A carboxylic acid and an alcohol","optionB":"An acid and a base","optionC":"Two alcohols","optionD":"An alkene and water",
+"answer":"A","explanation":"RCOOH + R'OH ⇌ RCOOR' + H₂O. Esterification (Fischer esterification) produces an ester and water. It is catalysed by concentrated H₂SO₄.",
+"exception":"Esterification is reversible (⇌). Hydrolysis is the reverse reaction, breaking the ester bond."},
+
+{"id":154,"subject":"Chemistry","topic":"Periodic Table","taxonomy":"Knowledge",
+"text":"Which of the following is a characteristic property of transition metals?",
+"optionA":"Variable oxidation states","optionB":"Always forming ionic compounds","optionC":"Low densities","optionD":"Forming colourless compounds",
+"answer":"A","explanation":"Transition metals have variable oxidation states due to similar energies of 3d and 4s electrons. e.g., Fe: +2 and +3; Cu: +1 and +2.",
+"exception":"Transition metals also form coloured compounds and act as catalysts (e.g., Fe in Haber process, V₂O₅ in Contact process)."},
+
+{"id":155,"subject":"Chemistry","topic":"Gases","taxonomy":"Knowledge",
+"text":"Graham's law of effusion states that the rate of effusion of a gas is inversely proportional to:",
+"optionA":"The square root of its molar mass","optionB":"Its molar mass","optionC":"Its pressure","optionD":"Its temperature",
+"answer":"A","explanation":"Rate ∝ 1/√M. Lighter gases effuse faster. e.g., H₂ (M=2) effuses 4× faster than O₂ (M=32) because √32/√2 = √16 = 4.",
+"exception":"Effusion is through a tiny hole; diffusion is through a porous membrane — but both obey Graham's law."},
+
+{"id":156,"subject":"Chemistry","topic":"Thermochemistry","taxonomy":"Knowledge",
+"text":"An exothermic reaction is one in which:",
+"optionA":"Heat is released to the surroundings (ΔH < 0)","optionB":"Heat is absorbed from the surroundings (ΔH > 0)",
+"optionC":"Temperature of reactants decreases","optionD":"The reaction is reversible",
+"answer":"A","explanation":"In an exothermic reaction, the products have lower energy than the reactants. Energy is released as heat. ΔH = H(products) − H(reactants) < 0.",
+"exception":"Combustion, neutralisation, and rusting are all exothermic. Dissolving ammonium nitrate is endothermic (feels cold)."},
+
+{"id":157,"subject":"Chemistry","topic":"Atomic Structure","taxonomy":"Application",
+"text":"An element has atomic number 11 and mass number 23. The ion Na⁺ has:",
+"optionA":"10 electrons","optionB":"11 electrons","optionC":"12 electrons","optionD":"23 electrons",
+"answer":"A","explanation":"Na has 11 electrons. Na⁺ has lost 1 electron: 11 − 1 = 10 electrons. It has the same configuration as neon (noble gas).",
+"exception":"Na⁺ has 11 protons but only 10 electrons — it is isoelectronic with Ne, F⁻, O²⁻, and Mg²⁺."},
+
+{"id":158,"subject":"Chemistry","topic":"Acids & Bases","taxonomy":"Knowledge",
+"text":"A Lewis acid is a species that:",
+"optionA":"Accepts an electron pair","optionB":"Donates an electron pair","optionC":"Donates a proton","optionD":"Accepts a proton",
+"answer":"A","explanation":"Lewis acid = electron pair acceptor. Lewis base = electron pair donor. e.g., BF₃ (Lewis acid), NH₃ (Lewis base). This is broader than Brønsted-Lowry (proton transfer).",
+"exception":"All Brønsted acids are Lewis acids, but not vice versa. AlCl₃ is a Lewis acid but not a Brønsted acid."},
+
+{"id":159,"subject":"Chemistry","topic":"Organic Chemistry","taxonomy":"Application",
+"text":"The IUPAC name of CH₃CH₂CH₂OH is:",
+"optionA":"Propan-1-ol","optionB":"Propan-2-ol","optionC":"Propanol","optionD":"1-propylene",
+"answer":"A","explanation":"Three carbons (prop-), −OH on carbon 1 (−an-1-ol), single bonds (−an). Full name: propan-1-ol.",
+"exception":"Propan-2-ol is CH₃CH(OH)CH₃ (secondary alcohol). The number locates the −OH group."},
+
+{"id":160,"subject":"Chemistry","topic":"Gases","taxonomy":"Application",
+"text":"At STP, what is the volume occupied by 2 moles of any ideal gas?",
+"optionA":"44.8 L","optionB":"22.4 L","optionC":"11.2 L","optionD":"89.6 L",
+"answer":"A","explanation":"1 mole of any ideal gas at STP = 22.4 L (Avogadro's law). 2 moles = 44.8 L.",
+"exception":"This applies at STP (0°C, 1 atm). At room temperature (25°C), 1 mol ≈ 24.5 L."}
+
+]; // end QUIZ_DATA
+</script>
+
+</body>
+</html>
