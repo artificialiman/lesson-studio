@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SS1 Physics — First Term</title>
+<style>
+/* ============================================================
+   SS1 PHYSICS — FIRST TERM
+   Print-first. No JS. Weeks as units.
+   ALL text bold (700 body, 900 headings). Thick rules everywhere.
+   Structure: DEFINITIONS UP FRONT → THEORY → LAWS → PRINCIPLES → FORMULAE → EXAMPLES
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:5pt solid #1a3d6e;
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#444;
+  font-weight:700;
+}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:4pt solid #1a3d6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a3d6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a3d6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a3d6e;
+  border-bottom:2.6pt solid #8fae99;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols2 > li{break-inside:avoid}
+ul.cols2, ol.cols2{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:2.6pt solid #7d897d;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.law{border-color:#1a3d6e;border-width:3pt}
+.box.principle{border-color:#2e6b3e;border-width:3pt}
+.box.def{border-color:#7d5a2e;border-width:3pt}
+.box.formula{border-color:#6b2e6b;border-width:3pt}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a3d6e;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+table.long{break-inside:auto}
+tr{break-inside:avoid}
+th,td{
+  border:2.2pt solid #5f5a4e;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#e6eee8;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:2.6pt solid #5f5a4e;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.kw{font-weight:900}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+b{font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1.8pt solid #7d897d;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split{break-inside:avoid}
+  table.long{break-inside:auto}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+pre{margin:0 0 8px;font-family:Consolas,"Courier New",monospace;font-size:10.4pt;font-weight:700;line-height:1.35;break-inside:avoid}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>SS1 Physics — First Term</h1>
+  <p class="term">Fundamental &amp; Derived Quantities · Measurement · Position, Distance &amp; Displacement · Scalars &amp; Vectors · Speed, Velocity &amp; Acceleration · Motion · Print Edition</p>
+</header>
+
+<!-- ============================================================
+     HOW THIS DOCUMENT IS ORGANISED
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">TERM</span>How This Document Is Organised</h2>
+  <p class="meta"><b>Content:</b> The structure used throughout. Read this first.</p>
+
+  <p><b>This document follows the standard scientific hierarchy. Each level adds something the previous level could not provide. Nothing is repeated.</b></p>
+
+  <table>
+    <tr><th style="width:22%">Level</th><th>What it provides</th><th style="width:28%">How it is established</th></tr>
+    <tr><td class="k">DEFINITIONS</td><td>Precise meanings of the quantities and terms used. No mechanism, no conditions.</td><td>By convention. A definition cannot be wrong, only useless.</td></tr>
+    <tr><td class="k">THEORY</td><td>The physical model. What we believe is happening and why.</td><td>By explanatory power. A theory can be replaced.</td></tr>
+    <tr><td class="k">LAWS</td><td>Statements of regularity that relate measurable quantities.</td><td>By experiment. A law can be falsified.</td></tr>
+    <tr><td class="k">PRINCIPLES</td><td>Broad rules from which laws can be derived.</td><td>By their generality. A principle underlies many laws.</td></tr>
+    <tr><td class="k">FORMULAE</td><td>Compact mathematical statements of laws and definitions, with symbols and units.</td><td>By derivation from laws and definitions.</td></tr>
+    <tr><td class="k">EXAMPLES</td><td>Worked problems that demonstrate reasoning, not just substitution.</td><td>By application of the formulae.</td></tr>
+  </table>
+
+  <p><b>Not every topic has laws or principles.</b> Where a topic has none, the document says so. A scientific document does not invent laws to fill a template.</p>
+
+  <p><b>Definitions are given once, up front, in the opening section.</b> They are not repeated in the weekly notes. The weekly notes assume the definitions are known and build on them.</p>
+</section>
+
+<!-- ============================================================
+     MASTER DEFINITIONS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">TERM</span>Master Definitions</h2>
+  <p class="meta"><b>Content:</b> Every quantity and term used in this term, defined precisely. Learn these first. The weekly notes assume they are known.</p>
+
+  <h3>A. Quantities and Units</h3>
+  <table class="long">
+    <tr><th style="width:28%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Physical quantity</td><td>A property of a body or phenomenon that can be measured and expressed as a number with a unit.</td></tr>
+    <tr><td class="k">Fundamental quantity</td><td>A quantity that cannot be derived from any other quantity. Also called a base quantity.</td></tr>
+    <tr><td class="k">Derived quantity</td><td>A quantity obtained by combining fundamental quantities by multiplication or division.</td></tr>
+    <tr><td class="k">Fundamental unit</td><td>The unit of a fundamental quantity.</td></tr>
+    <tr><td class="k">Derived unit</td><td>The unit of a derived quantity, obtained by combining fundamental units.</td></tr>
+    <tr><td class="k">SI units</td><td>The International System of Units: seven fundamental units from which all others are derived.</td></tr>
+    <tr><td class="k">Dimension</td><td>The way a quantity is composed from the fundamental quantities of mass, length and time (with current, temperature, amount and luminous intensity as needed).</td></tr>
+    <tr><td class="k">Dimensional formula</td><td>The expression of a derived quantity in terms of the fundamental quantities.</td></tr>
+  </table>
+
+  <h3>B. Measurement</h3>
+  <table class="long">
+    <tr><th style="width:28%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Measurement</td><td>The comparison of a physical quantity with a standard of the same kind.</td></tr>
+    <tr><td class="k">Mass</td><td>The quantity of matter in a body. SI unit: kilogram (kg).</td></tr>
+    <tr><td class="k">Weight</td><td>The gravitational force acting on a body: W = mg. SI unit: newton (N).</td></tr>
+    <tr><td class="k">Length</td><td>The distance between two points. SI unit: metre (m).</td></tr>
+    <tr><td class="k">Time</td><td>The interval between two events. SI unit: second (s).</td></tr>
+    <tr><td class="k">Accuracy</td><td>The closeness of a measured value to the true value.</td></tr>
+    <tr><td class="k">Precision</td><td>The closeness of repeated measurements to one another.</td></tr>
+    <tr><td class="k">Systematic error</td><td>An error that is consistent in size and direction, and that shifts all readings the same way.</td></tr>
+    <tr><td class="k">Random error</td><td>An error that varies unpredictably in size and direction between readings.</td></tr>
+    <tr><td class="k">Zero error</td><td>A systematic error caused by an instrument not reading zero when it should.</td></tr>
+    <tr><td class="k">Parallax error</td><td>A reading error caused by viewing a scale from an angle rather than directly.</td></tr>
+  </table>
+
+  <h3>C. Position, Distance and Displacement</h3>
+  <table class="long">
+    <tr><th style="width:28%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Position</td><td>The location of a point in space relative to a chosen origin.</td></tr>
+    <tr><td class="k">Distance</td><td>The total length of the path travelled. A scalar. SI unit: metre (m).</td></tr>
+    <tr><td class="k">Displacement</td><td>The change in position of a body, measured as a straight line from start to finish, with direction. A vector. SI unit: metre (m).</td></tr>
+    <tr><td class="k">Reference point</td><td>The origin from which position is measured.</td></tr>
+  </table>
+
+  <h3>D. Scalars and Vectors</h3>
+  <table class="long">
+    <tr><th style="width:28%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Scalar</td><td>A quantity that has magnitude only.</td></tr>
+    <tr><td class="k">Vector</td><td>A quantity that has both magnitude and direction.</td></tr>
+    <tr><td class="k">Resultant</td><td>The single vector that has the same effect as two or more vectors combined.</td></tr>
+    <tr><td class="k">Components</td><td>The two perpendicular vectors whose combined effect equals a given vector.</td></tr>
+    <tr><td class="k">Resolution</td><td>The process of splitting a vector into two perpendicular components.</td></tr>
+    <tr><td class="k">Equilibrium</td><td>The state in which the resultant of all forces on a body is zero.</td></tr>
+  </table>
+
+  <h3>E. Speed, Velocity and Acceleration</h3>
+  <table class="long">
+    <tr><th style="width:28%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Speed</td><td>The rate of change of distance with time. A scalar. SI unit: m/s.</td></tr>
+    <tr><td class="k">Velocity</td><td>The rate of change of displacement with time. A vector. SI unit: m/s.</td></tr>
+    <tr><td class="k">Average speed</td><td>Total distance travelled divided by total time taken.</td></tr>
+    <tr><td class="k">Average velocity</td><td>Total displacement divided by total time taken.</td></tr>
+    <tr><td class="k">Instantaneous speed</td><td>The speed at a particular instant.</td></tr>
+    <tr><td class="k">Instantaneous velocity</td><td>The velocity at a particular instant.</td></tr>
+    <tr><td class="k">Acceleration</td><td>The rate of change of velocity with time. A vector. SI unit: m/s².</td></tr>
+    <tr><td class="k">Uniform acceleration</td><td>Acceleration that is constant in magnitude and direction.</td></tr>
+    <tr><td class="k">Retardation (deceleration)</td><td>Acceleration directed opposite to the velocity.</td></tr>
+  </table>
+
+  <h3>F. Motion</h3>
+  <table class="long">
+    <tr><th style="width:28%">Term</th><th>Definition</th></tr>
+    <tr><td class="k">Motion</td><td>The change in position of a body with time relative to a reference point.</td></tr>
+    <tr><td class="k">Translational motion</td><td>Motion in which every point of the body moves through the same displacement.</td></tr>
+    <tr><td class="k">Rotational motion</td><td>Motion in which the body turns about an axis.</td></tr>
+    <tr><td class="k">Oscillatory motion</td><td>Motion in which the body moves back and forth about a fixed point.</td></tr>
+    <tr><td class="k">Rectilinear motion</td><td>Motion in a straight line.</td></tr>
+    <tr><td class="k">Uniform motion</td><td>Motion with constant velocity.</td></tr>
+    <tr><td class="k">Free fall</td><td>Motion under gravity alone, with no other force acting.</td></tr>
+    <tr><td class="k">Projectile</td><td>A body moving under gravity after being given an initial velocity.</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================
+     WEEK 1 — FUNDAMENTAL AND DERIVED QUANTITIES AND UNITS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 1</span>Fundamental and Derived Quantities and Units</h2>
+  <p class="meta"><b>Content:</b> Meaning of physical quantities; fundamental quantities and units; derived quantities and units; SI units; dimensional analysis.</p>
+
+  <h3>1.1 Theory of Quantities and Units</h3>
+  <p><b>Physics is a quantitative science.</b> Every statement in physics is a statement about measurable quantities. To measure a quantity, we compare it with a standard of the same kind. The result is a number followed by a unit.</p>
+  <p><b>A physical quantity is a property that can be measured and expressed as a number with a unit.</b> Examples: length, mass, time, force, energy. Non-examples: beauty, intelligence — they cannot be measured with a standard.</p>
+  <p><b>Some quantities are more basic than others.</b> Length, mass and time cannot be expressed in terms of anything simpler. They are fundamental. Speed, force and energy can be expressed in terms of length, mass and time. They are derived.</p>
+  <p><b>The choice of which quantities are fundamental is a convention, not a discovery.</b> The SI system fixes seven fundamental quantities. All other quantities in physics are derived from them.</p>
+
+  <h3>1.2 Laws of Quantities and Units</h3>
+  <div class="box law">
+    <h4>Law of Homogeneity of Dimensions</h4>
+    <p><b>In any valid physical equation, the dimensions of all terms must be the same.</b> Quantities of different dimensions cannot be added or equated.</p>
+    <p><i>This is not an experimental law. It is a consistency requirement. Any equation that violates it is wrong.</i></p>
+  </div>
+
+  <h3>1.3 Principles of Quantities and Units</h3>
+  <div class="box principle">
+    <h4>Principle of Dimensional Consistency</h4>
+    <p><b>A physical equation is dimensionally consistent only if every term has the same dimensions.</b> This principle is used to check equations and to derive the form of unknown relations.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Unit Consistency</h4>
+    <p><b>In any calculation, all quantities must be expressed in units of the same system before they are combined.</b> Mixing systems (e.g. cm with m) produces numerical errors even when the formula is correct.</p>
+  </div>
+
+  <h3>1.4 Formulae and Tables</h3>
+  <h4>The Seven SI Fundamental Quantities</h4>
+  <table>
+    <tr><th>Quantity</th><th>SI Unit</th><th>Symbol</th></tr>
+    <tr><td class="k">Length</td><td>metre</td><td>m</td></tr>
+    <tr><td class="k">Mass</td><td>kilogram</td><td>kg</td></tr>
+    <tr><td class="k">Time</td><td>second</td><td>s</td></tr>
+    <tr><td class="k">Electric current</td><td>ampere</td><td>A</td></tr>
+    <tr><td class="k">Thermodynamic temperature</td><td>kelvin</td><td>K</td></tr>
+    <tr><td class="k">Amount of substance</td><td>mole</td><td>mol</td></tr>
+    <tr><td class="k">Luminous intensity</td><td>candela</td><td>cd</td></tr>
+  </table>
+
+  <h4>Common Derived Quantities and Their Units</h4>
+  <table>
+    <tr><th>Quantity</th><th>Formula</th><th>Derived unit</th><th>SI base form</th></tr>
+    <tr><td class="k">Area</td><td>length × length</td><td>m²</td><td>m²</td></tr>
+    <tr><td class="k">Volume</td><td>length³</td><td>m³</td><td>m³</td></tr>
+    <tr><td class="k">Speed / Velocity</td><td>distance / time</td><td>m/s</td><td>m s⁻¹</td></tr>
+    <tr><td class="k">Acceleration</td><td>velocity / time</td><td>m/s²</td><td>m s⁻²</td></tr>
+    <tr><td class="k">Force</td><td>mass × acceleration</td><td>newton (N)</td><td>kg m s⁻²</td></tr>
+    <tr><td class="k">Work / Energy</td><td>force × distance</td><td>joule (J)</td><td>kg m² s⁻²</td></tr>
+    <tr><td class="k">Power</td><td>energy / time</td><td>watt (W)</td><td>kg m² s⁻³</td></tr>
+    <tr><td class="k">Density</td><td>mass / volume</td><td>kg/m³</td><td>kg m⁻³</td></tr>
+    <tr><td class="k">Pressure</td><td>force / area</td><td>pascal (Pa)</td><td>kg m⁻¹ s⁻²</td></tr>
+    <tr><td class="k">Momentum</td><td>mass × velocity</td><td>kg m/s</td><td>kg m s⁻¹</td></tr>
+  </table>
+
+  <h4>Dimensional Formulae</h4>
+  <table>
+    <tr><th>Quantity</th><th>Dimensional formula</th></tr>
+    <tr><td class="k">Length</td><td>[L]</td></tr>
+    <tr><td class="k">Mass</td><td>[M]</td></tr>
+    <tr><td class="k">Time</td><td>[T]</td></tr>
+    <tr><td class="k">Area</td><td>[L²]</td></tr>
+    <tr><td class="k">Volume</td><td>[L³]</td></tr>
+    <tr><td class="k">Speed / Velocity</td><td>[L T⁻¹]</td></tr>
+    <tr><td class="k">Acceleration</td><td>[L T⁻²]</td></tr>
+    <tr><td class="k">Force</td><td>[M L T⁻²]</td></tr>
+    <tr><td class="k">Work / Energy</td><td>[M L² T⁻²]</td></tr>
+    <tr><td class="k">Power</td><td>[M L² T⁻³]</td></tr>
+    <tr><td class="k">Density</td><td>[M L⁻³]</td></tr>
+    <tr><td class="k">Pressure</td><td>[M L⁻¹ T⁻²]</td></tr>
+    <tr><td class="k">Momentum</td><td>[M L T⁻¹]</td></tr>
+  </table>
+
+  <h3>1.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Direct dimensional check</h4>
+    <p>Show that the equation v = u + at is dimensionally consistent.</p>
+<pre>Left side: v has dimensions [L T⁻¹]
+Right side: u has dimensions [L T⁻¹]
+            at has dimensions [L T⁻²] × [T] = [L T⁻¹]
+Both terms on the right have the same dimensions as the left.
+The equation is dimensionally consistent.</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Deriving a derived unit</h4>
+    <p>Derive the SI base unit of force from F = ma.</p>
+<pre>F = mass × acceleration
+Unit of mass = kg
+Unit of acceleration = m/s²
+Therefore unit of force = kg × m/s² = kg m s⁻² = newton (N)</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Dimensional formula of a derived quantity</h4>
+    <p>Find the dimensional formula of pressure, given P = F / A.</p>
+<pre>[F] = [M L T⁻²]
+[A] = [L²]
+[P] = [M L T⁻²] / [L²] = [M L⁻¹ T⁻²]</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Unit conversion</h4>
+    <p>Convert a density of 2.5 g/cm³ into kg/m³.</p>
+<pre>1 g/cm³ = 1000 kg/m³
+2.5 g/cm³ = 2.5 × 1000 = 2500 kg/m³</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Identifying an unknown quantity</h4>
+    <p>A quantity has dimensions [M L² T⁻²]. Which physical quantity is it?</p>
+<pre>Compare with the table: [M L² T⁻²] is the dimension of work or energy.
+The quantity is energy.</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 2 — MEASUREMENTS OF MASS, WEIGHT, LENGTH AND TIME
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 2</span>Measurements of Mass, Weight, Length and Time</h2>
+  <p class="meta"><b>Content:</b> Instruments for measurement; accuracy and precision; errors in measurement; significant figures.</p>
+
+  <h3>2.1 Theory of Measurement</h3>
+  <p><b>Every measurement is a comparison with a standard.</b> The standard is fixed by international agreement. The act of measurement inevitably introduces some uncertainty, because no instrument is perfect and no observer is perfect.</p>
+  <p><b>Mass and weight are different quantities.</b> Mass is the quantity of matter, measured with a beam balance, and is the same everywhere. Weight is the gravitational force on the body, measured with a spring balance, and varies with the local value of g.</p>
+  <p><b>Length is measured with rules, calipers and micrometers.</b> The choice of instrument depends on the size of the object and the precision required. A metre rule reads to 1 mm. A vernier caliper reads to 0.1 mm. A micrometer screw gauge reads to 0.01 mm.</p>
+  <p><b>Time is measured with clocks and stopwatches.</b> A mechanical stopwatch reads to 0.1 s. A digital stopwatch reads to 0.01 s. The period of a pendulum can be timed over many oscillations to reduce the effect of reaction-time error.</p>
+  <p><b>Accuracy and precision are different qualities.</b> A measurement can be precise but not accurate (repeated readings cluster but miss the true value). It can be accurate but not precise (readings scatter around the true value). The best measurements are both.</p>
+
+  <h3>2.2 Laws of Measurement</h3>
+  <p><b>Measurement is not governed by laws in the way that motion is.</b> It is governed by principles of error and by the definitions of the quantities. The only regularity that has the status of a law is the rule for combining errors, stated below as a principle.</p>
+
+  <h3>2.3 Principles of Measurement</h3>
+  <div class="box principle">
+    <h4>Principle of Least Count</h4>
+    <p><b>The uncertainty of a single reading is half the least count of the instrument, or the least count itself, depending on the convention used.</b> The least count is the smallest change in the quantity that the instrument can detect.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Repeated Measurement</h4>
+    <p><b>Repeating a measurement and taking the average reduces the effect of random errors.</b> The average of many readings is more reliable than a single reading.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Error Combination</h4>
+    <p><b>When quantities are combined, their errors combine according to fixed rules.</b> For sums and differences, absolute errors add. For products and quotients, fractional errors add.</p>
+  </div>
+
+  <h3>2.4 Formulae and Tables</h3>
+  <h4>Instruments and Their Uses</h4>
+  <table>
+    <tr><th>Quantity</th><th>Instrument</th><th>Least count</th></tr>
+    <tr><td class="k">Length (rough)</td><td>Metre rule</td><td>1 mm</td></tr>
+    <tr><td class="k">Length (small objects)</td><td>Vernier caliper</td><td>0.1 mm</td></tr>
+    <tr><td class="k">Length (very small objects)</td><td>Micrometer screw gauge</td><td>0.01 mm</td></tr>
+    <tr><td class="k">Mass</td><td>Beam balance</td><td>0.1 g or better</td></tr>
+    <tr><td class="k">Weight</td><td>Spring balance</td><td>Depends on range</td></tr>
+    <tr><td class="k">Time (short intervals)</td><td>Digital stopwatch</td><td>0.01 s</td></tr>
+    <tr><td class="k">Time (long intervals)</td><td>Clock</td><td>1 s</td></tr>
+  </table>
+
+  <h4>Error Combination Rules</h4>
+  <table>
+    <tr><th>Operation</th><th>Rule for error</th></tr>
+    <tr><td class="k">Sum or difference (x = a ± b)</td><td>Δx = Δa + Δb</td></tr>
+    <tr><td class="k">Product or quotient (x = a × b or a / b)</td><td>Δx/x = Δa/a + Δb/b</td></tr>
+    <tr><td class="k">Power (x = aⁿ)</td><td>Δx/x = n × (Δa/a)</td></tr>
+  </table>
+
+  <h3>2.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Average of repeated readings</h4>
+    <p>Five readings of a length are 2.34 cm, 2.35 cm, 2.33 cm, 2.36 cm and 2.32 cm. Find the average and state the precision.</p>
+<pre>Average = (2.34 + 2.35 + 2.33 + 2.36 + 2.32) / 5
+Average = 11.70 / 5 = 2.34 cm
+The readings vary by ±0.02 cm, so the measurement is precise to about 0.02 cm.</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Mass and weight</h4>
+    <p>A body has a mass of 5 kg. Find its weight on Earth (g = 9.8 m/s²) and on the Moon (g = 1.6 m/s²).</p>
+<pre>On Earth: W = mg = 5 × 9.8 = 49 N
+On Moon:  W = mg = 5 × 1.6 = 8 N
+The mass is 5 kg in both places.</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Combining errors</h4>
+    <p>The length of a rectangle is (10.0 ± 0.1) cm and the width is (5.0 ± 0.1) cm. Find the area and its uncertainty.</p>
+<pre>Area = 10.0 × 5.0 = 50.0 cm²
+Fractional error = 0.1/10.0 + 0.1/5.0 = 0.01 + 0.02 = 0.03
+Absolute error = 0.03 × 50.0 = 1.5 cm²
+Area = (50.0 ± 1.5) cm²</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Timing many oscillations</h4>
+    <p>A student times 20 oscillations of a pendulum and obtains 40.0 s. The stopwatch least count is 0.1 s. Find the period and its uncertainty.</p>
+<pre>Period = 40.0 / 20 = 2.00 s
+Uncertainty per oscillation = 0.1 / 20 = 0.005 s
+Period = (2.00 ± 0.005) s</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Significant figures</h4>
+    <p>A length is measured as 0.00340 m. How many significant figures are present?</p>
+<pre>Leading zeros are not significant.
+The digits 3, 4 and 0 are significant.
+The measurement has 3 significant figures.</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 3 — POSITION, DISTANCE AND DISPLACEMENT
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 3</span>Position, Distance and Displacement</h2>
+  <p class="meta"><b>Content:</b> Concept of position; distance and displacement; applications; distance–time and displacement–time graphs.</p>
+
+  <h3>3.1 Theory of Position and Displacement</h3>
+  <p><b>Position requires a reference point.</b> A body has no absolute position. When we say a body is at x = 5 m, we mean 5 m from a chosen origin, in a chosen positive direction. Change the origin and the position changes.</p>
+  <p><b>Distance and displacement differ in kind.</b> Distance is the total length of the path travelled, regardless of direction. Displacement is the straight-line change in position, with direction. Distance is a scalar; displacement is a vector.</p>
+  <p><b>Displacement does not depend on the path taken.</b> If a body starts at A and ends at B, its displacement is the same whatever route it followed. Distance, in contrast, depends entirely on the route.</p>
+  <p><b>A round trip has zero displacement but non-zero distance.</b> This is the clearest way to see that the two quantities are distinct.</p>
+
+  <h3>3.2 Laws of Position and Displacement</h3>
+  <div class="box law">
+    <h4>Law of Vector Addition for Displacement</h4>
+    <p><b>If a body undergoes successive displacements, the resultant displacement is the vector sum of the individual displacements.</b></p>
+    <p><i>This law is the basis for all calculations involving displacement in two or three dimensions.</i></p>
+  </div>
+
+  <h3>3.3 Principles of Position and Displacement</h3>
+  <div class="box principle">
+    <h4>Principle of Relativity of Position</h4>
+    <p><b>Position is always measured relative to a chosen reference point.</b> No position is absolute. Changing the reference point changes all positions by the same vector.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Path Independence of Displacement</h4>
+    <p><b>Displacement depends only on the initial and final positions, not on the path taken.</b></p>
+  </div>
+
+  <h3>3.4 Formulae for Position and Displacement</h3>
+  <table>
+    <tr><th style="width:32%">Quantity</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td class="k">Displacement in one dimension</td><td>Δx = x₂ − x₁</td><td>x₂ = final position; x₁ = initial position.</td></tr>
+    <tr><td class="k">Distance along a straight path</td><td>d = |Δx|</td><td>Only when motion is in one direction.</td></tr>
+    <tr><td class="k">Resultant displacement (two perpendicular parts)</td><td>Δr = √(Δx² + Δy²)</td><td>Magnitude only; direction found by tan θ = Δy / Δx.</td></tr>
+    <tr><td class="k">Average speed</td><td>v̄ = total distance / total time</td><td>Scalar.</td></tr>
+    <tr><td class="k">Average velocity</td><td>v̄ = total displacement / total time</td><td>Vector.</td></tr>
+  </table>
+
+  <h3>3.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Distance and displacement on a straight line</h4>
+    <p>A boy walks 8 m east, then 3 m west. Find the distance travelled and the displacement.</p>
+<pre>Distance = 8 + 3 = 11 m
+Displacement = 8 − 3 = 5 m east</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Round trip</h4>
+    <p>A runner completes one lap of a circular track of radius 50 m. Find the distance and the displacement.</p>
+<pre>Distance = circumference = 2πr = 2π(50) ≈ 314 m
+Displacement = 0 (start and finish are the same point)</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Displacement in two dimensions</h4>
+    <p>A girl walks 4 m east, then 3 m north. Find her displacement.</p>
+<pre>Magnitude = √(4² + 3²) = √25 = 5 m
+Direction: tan θ = 3/4 = 0.75, θ = 36.9° north of east
+Displacement = 5 m at 36.9° north of east</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Average speed and average velocity</h4>
+    <p>A cyclist travels 30 km east in 2 h, then 30 km west in 1 h. Find the average speed and the average velocity for the whole journey.</p>
+<pre>Total distance = 30 + 30 = 60 km
+Total time = 2 + 1 = 3 h
+Average speed = 60 / 3 = 20 km/h
+Total displacement = 30 − 30 = 0 km
+Average velocity = 0 / 3 = 0 km/h</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Position on a line</h4>
+    <p>A particle is at x = 2 m and moves to x = −5 m. Find its displacement.</p>
+<pre>Δx = x₂ − x₁ = −5 − 2 = −7 m
+The displacement is 7 m in the negative direction.</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 4 — SCALARS AND VECTORS
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 4</span>Scalars and Vectors</h2>
+  <p class="meta"><b>Content:</b> Definitions; differences; addition of vectors; resolution of vectors; equilibrium.</p>
+
+  <h3>4.1 Theory of Scalars and Vectors</h3>
+  <p><b>Some quantities are fully described by a number and a unit.</b> Mass, time and temperature are of this kind. They are scalars.</p>
+  <p><b>Other quantities require a direction as well.</b> Displacement, velocity and force are of this kind. They are vectors. A vector is fully specified only when both its magnitude and its direction are given.</p>
+  <p><b>Vectors do not add like ordinary numbers.</b> Adding 3 N and 4 N gives 7 N only if the forces act along the same line. If they act at right angles, the resultant is 5 N. If they act in opposite directions, the resultant is 1 N. The direction matters.</p>
+  <p><b>Any vector can be split into two perpendicular components.</b> This is called resolution. It allows vector problems to be reduced to two independent scalar problems along the chosen axes.</p>
+
+  <h3>4.2 Laws of Scalars and Vectors</h3>
+  <div class="box law">
+    <h4>Triangle Law of Vector Addition</h4>
+    <p><b>If two vectors are represented in magnitude and direction by two sides of a triangle taken in order, the resultant is represented by the third side taken in the opposite order.</b></p>
+  </div>
+  <div class="box law">
+    <h4>Parallelogram Law of Vector Addition</h4>
+    <p><b>If two vectors are represented by two adjacent sides of a parallelogram, the resultant is represented by the diagonal through their common point.</b></p>
+  </div>
+  <div class="box law">
+    <h4>Law of Commutative Addition</h4>
+    <p><b>Vector addition is commutative:</b> A + B = B + A.</p>
+  </div>
+
+  <h3>4.3 Principles of Scalars and Vectors</h3>
+  <div class="box principle">
+    <h4>Principle of Vector Resolution</h4>
+    <p><b>Any vector can be replaced by two perpendicular components whose vector sum equals the original vector.</b> The components are A cos θ and A sin θ when θ is measured from one of the axes.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Equilibrium</h4>
+    <p><b>A body is in equilibrium when the vector sum of all forces acting on it is zero.</b> In component form, the sum of the x-components is zero and the sum of the y-components is zero.</p>
+  </div>
+
+  <h3>4.4 Formulae for Scalars and Vectors</h3>
+  <table>
+    <tr><th style="width:34%">Quantity</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td class="k">Resultant of two perpendicular vectors</td><td>R = √(A² + B²)</td><td>Pythagoras.</td></tr>
+    <tr><td class="k">Direction of resultant</td><td>tan θ = B / A</td><td>θ measured from A towards B.</td></tr>
+    <tr><td class="k">Resultant of two vectors at angle θ</td><td>R = √(A² + B² + 2AB cos θ)</td><td>General parallelogram law.</td></tr>
+    <tr><td class="k">x-component of a vector</td><td>Aₓ = A cos θ</td><td>θ measured from the x-axis.</td></tr>
+    <tr><td class="k">y-component of a vector</td><td>A_y = A sin θ</td><td>θ measured from the x-axis.</td></tr>
+    <tr><td class="k">Equilibrium condition</td><td>ΣFₓ = 0 and ΣF_y = 0</td><td>Sum of components along each axis is zero.</td></tr>
+  </table>
+
+  <h4>Scalars and Vectors Compared</h4>
+  <table>
+    <tr><th>Scalars</th><th>Vectors</th></tr>
+    <tr><td>Magnitude only.</td><td>Magnitude and direction.</td></tr>
+    <tr><td>Add by ordinary arithmetic.</td><td>Add by triangle or parallelogram law.</td></tr>
+    <tr><td>Examples: mass, time, speed, distance, energy, temperature.</td><td>Examples: displacement, velocity, acceleration, force, momentum.</td></tr>
+  </table>
+
+  <h3>4.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Perpendicular vectors</h4>
+    <p>Two forces of 6 N and 8 N act at right angles. Find the resultant.</p>
+<pre>R = √(6² + 8²) = √100 = 10 N
+Direction: tan θ = 8/6 = 1.333, θ = 53.1° from the 6 N force</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Same direction and opposite direction</h4>
+    <p>Two forces of 10 N and 4 N act on a body. Find the resultant when they act in the same direction and when they act in opposite directions.</p>
+<pre>Same direction: R = 10 + 4 = 14 N
+Opposite direction: R = 10 − 4 = 6 N in the direction of the 10 N force</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Resolution of a vector</h4>
+    <p>A force of 50 N acts at 30° to the horizontal. Find its horizontal and vertical components.</p>
+<pre>Horizontal component = 50 cos 30° = 50 × 0.866 = 43.3 N
+Vertical component   = 50 sin 30° = 50 × 0.500 = 25.0 N</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Resultant at an angle</h4>
+    <p>Two forces of 5 N and 7 N act at 60° to each other. Find the resultant.</p>
+<pre>R = √(5² + 7² + 2 × 5 × 7 × cos 60°)
+R = √(25 + 49 + 35) = √109 = 10.4 N</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Equilibrium of three forces</h4>
+    <p>A body is acted on by two forces: 8 N east and 6 N north. What third force will keep it in equilibrium?</p>
+<pre>Resultant of the two forces = √(8² + 6²) = 10 N at 36.9° north of east
+For equilibrium, the third force must be equal and opposite:
+10 N at 36.9° south of west</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 5 — MIDTERM EXAMINATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 5</span>Midterm Examination</h2>
+  <p class="meta"><b>Content:</b> Midterm examination covering Weeks 1–4.</p>
+  <div class="box">
+    <h4>Topics Covered</h4>
+    <ul class="tight">
+      <li>Fundamental and derived quantities and units; SI units; dimensional analysis.</li>
+      <li>Measurement of mass, weight, length and time; accuracy, precision and errors.</li>
+      <li>Position, distance and displacement; average speed and average velocity.</li>
+      <li>Scalars and vectors; addition and resolution of vectors; equilibrium.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 6 — SPEED, VELOCITY AND ACCELERATION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 6</span>Speed, Velocity and Acceleration</h2>
+  <p class="meta"><b>Content:</b> Definitions; equations; graphical representation; uniform and non-uniform motion.</p>
+
+  <h3>6.1 Theory of Speed, Velocity and Acceleration</h3>
+  <p><b>Speed measures how fast a body moves, without regard to direction.</b> It is the rate of change of distance. A body can have high speed and zero velocity, as in circular motion at constant speed.</p>
+  <p><b>Velocity measures how fast and in what direction.</b> It is the rate of change of displacement. A change in direction at constant speed is a change in velocity, and therefore requires acceleration.</p>
+  <p><b>Acceleration measures how quickly velocity changes.</b> It is the rate of change of velocity. A body accelerates if its speed changes, if its direction changes, or if both change.</p>
+  <p><b>Graphs make the relationships visible.</b> On a distance–time graph, the slope is speed. On a velocity–time graph, the slope is acceleration and the area under the graph is displacement.</p>
+
+  <h3>6.2 Laws of Motion (Introductory)</h3>
+  <div class="box law">
+    <h4>Definition of Acceleration</h4>
+    <p><b>Acceleration is the rate of change of velocity:</b> a = (v − u) / t, for uniform acceleration.</p>
+  </div>
+
+  <h3>6.3 Principles of Speed, Velocity and Acceleration</h3>
+  <div class="box principle">
+    <h4>Principle of Graph Interpretation</h4>
+    <p><b>On a distance–time graph, the slope at any point gives the speed. On a velocity–time graph, the slope gives the acceleration and the area under the graph gives the displacement.</b></p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Relative Motion</h4>
+    <p><b>The velocity of a body depends on the frame of reference from which it is measured.</b> A passenger walking forward in a moving train has a different velocity relative to the train and relative to the ground.</p>
+  </div>
+
+  <h3>6.4 Formulae for Speed, Velocity and Acceleration</h3>
+  <table>
+    <tr><th style="width:34%">Quantity</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td class="k">Average speed</td><td>v̄ = d / t</td><td>d = total distance.</td></tr>
+    <tr><td class="k">Average velocity</td><td>v̄ = s / t</td><td>s = displacement.</td></tr>
+    <tr><td class="k">Acceleration</td><td>a = (v − u) / t</td><td>u = initial velocity; v = final velocity.</td></tr>
+    <tr><td class="k">Uniform velocity</td><td>v = s / t</td><td>When a = 0.</td></tr>
+    <tr><td class="k">Distance from velocity–time graph</td><td>s = area under graph</td><td>Includes sign for displacement.</td></tr>
+    <tr><td class="k">Slope of distance–time graph</td><td>slope = speed</td><td>Positive or negative.</td></tr>
+    <tr><td class="k">Slope of velocity–time graph</td><td>slope = acceleration</td><td>Positive or negative.</td></tr>
+  </table>
+
+  <h3>6.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Average speed</h4>
+    <p>A car travels 180 km in 2.5 h. Find its average speed.</p>
+<pre>v̄ = d / t = 180 / 2.5 = 72 km/h</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Acceleration</h4>
+    <p>A car accelerates from 10 m/s to 30 m/s in 5 s. Find its acceleration.</p>
+<pre>a = (v − u) / t = (30 − 10) / 5 = 4 m/s²</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Retardation</h4>
+    <p>A train moving at 20 m/s brakes uniformly and stops in 8 s. Find its retardation.</p>
+<pre>a = (v − u) / t = (0 − 20) / 8 = −2.5 m/s²
+The retardation is 2.5 m/s².</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Distance from average velocity</h4>
+    <p>A body moves with uniform acceleration from 4 m/s to 12 m/s in 6 s. Find the distance travelled.</p>
+<pre>Average velocity = (4 + 12) / 2 = 8 m/s
+Distance = average velocity × time = 8 × 6 = 48 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Relative velocity</h4>
+    <p>Two cars move in the same direction at 20 m/s and 15 m/s. Find their relative velocity. Then find it when they move in opposite directions.</p>
+<pre>Same direction: 20 − 15 = 5 m/s
+Opposite direction: 20 + 15 = 35 m/s</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 7 — MIDTERM BREAK
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 7</span>Midterm Break</h2>
+  <p class="meta"><b>Content:</b> No classes. Use this week to revise Weeks 1–6.</p>
+</section>
+
+<!-- ============================================================
+     WEEK 8 — MOTION
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 8</span>Motion</h2>
+  <p class="meta"><b>Content:</b> Concept of motion; types of motion; equations of uniformly accelerated motion.</p>
+
+  <h3>8.1 Theory of Motion</h3>
+  <p><b>Motion is the change in position with time relative to a reference point.</b> A body is in motion if its position changes; it is at rest if its position does not change, relative to the chosen reference.</p>
+  <p><b>Motion is relative.</b> A passenger sitting in a moving train is at rest relative to the train and in motion relative to the ground. There is no absolute rest or absolute motion.</p>
+  <p><b>Motion can be classified by its path and by its velocity.</b> By path: rectilinear (straight line), circular, oscillatory. By velocity: uniform (constant velocity) or non-uniform (changing velocity).</p>
+  <p><b>The equations of uniformly accelerated motion describe the simplest non-uniform case.</b> They apply only when the acceleration is constant in magnitude and direction. They connect five quantities: initial velocity u, final velocity v, acceleration a, time t, and displacement s.</p>
+
+  <h3>8.2 Laws of Motion</h3>
+  <div class="box law">
+    <h4>First Equation of Motion</h4>
+    <p><b>v = u + at</b></p>
+    <p><i>Follows directly from the definition of acceleration.</i></p>
+  </div>
+  <div class="box law">
+    <h4>Second Equation of Motion</h4>
+    <p><b>s = ut + ½at²</b></p>
+    <p><i>Follows from the average velocity and the definition of acceleration.</i></p>
+  </div>
+  <div class="box law">
+    <h4>Third Equation of Motion</h4>
+    <p><b>v² = u² + 2as</b></p>
+    <p><i>Eliminates time from the first two equations.</i></p>
+  </div>
+
+  <h3>8.3 Principles of Motion</h3>
+  <div class="box principle">
+    <h4>Principle of Independence of Motion Components</h4>
+    <p><b>Horizontal and vertical motions are independent.</b> A projectile's horizontal motion is unaffected by its vertical motion.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Relativity of Motion</h4>
+    <p><b>Whether a body is at rest or in motion depends on the frame of reference of the observer.</b></p>
+  </div>
+
+  <h3>8.4 Formulae for Motion</h3>
+  <table>
+    <tr><th style="width:34%">Quantity</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td class="k">First equation of motion</td><td>v = u + at</td><td>Velocity–time relation.</td></tr>
+    <tr><td class="k">Second equation of motion</td><td>s = ut + ½at²</td><td>Displacement–time relation.</td></tr>
+    <tr><td class="k">Third equation of motion</td><td>v² = u² + 2as</td><td>Velocity–displacement relation.</td></tr>
+    <tr><td class="k">Average velocity (uniform acceleration)</td><td>v̄ = (u + v) / 2</td><td>Only for constant acceleration.</td></tr>
+    <tr><td class="k">Displacement</td><td>s = v̄ t</td><td>General definition.</td></tr>
+    <tr><td class="k">Free fall from rest</td><td>v = gt, h = ½gt², v² = 2gh</td><td>u = 0, a = g.</td></tr>
+  </table>
+
+  <h3>8.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — First equation</h4>
+    <p>A car starts from rest and accelerates at 3 m/s² for 8 s. Find its final velocity.</p>
+<pre>v = u + at = 0 + 3 × 8 = 24 m/s</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Second equation</h4>
+    <p>A body starts from rest and accelerates at 2 m/s² for 5 s. Find the distance travelled.</p>
+<pre>s = ut + ½at² = 0 + ½ × 2 × 25 = 25 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Third equation</h4>
+    <p>A car travelling at 20 m/s decelerates uniformly at 4 m/s². Find the distance it travels before stopping.</p>
+<pre>v² = u² + 2as  →  0 = 20² + 2(−4)s
+16s = 400  →  s = 25 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Free fall</h4>
+    <p>A stone is dropped from a height of 80 m. Find the time to reach the ground and the velocity just before impact. Use g = 10 m/s².</p>
+<pre>h = ½gt²  →  80 = ½ × 10 × t²  →  t² = 16  →  t = 4 s
+v = gt = 10 × 4 = 40 m/s</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Two-step problem</h4>
+    <p>A train accelerates from rest at 2 m/s² for 10 s, then travels at constant velocity for 20 s. Find the total distance travelled.</p>
+<pre>Phase 1: v = 0 + 2 × 10 = 20 m/s
+         s₁ = 0 + ½ × 2 × 100 = 100 m
+Phase 2: s₂ = 20 × 20 = 400 m
+Total distance = 100 + 400 = 500 m</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 9 — MOTION (CONTINUED)
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 9</span>Motion (Continued)</h2>
+  <p class="meta"><b>Content:</b> Applications of the equations of motion in real life; projectiles; circular motion (introduction).</p>
+
+  <h3>9.1 Theory of Applications of Motion</h3>
+  <p><b>The equations of motion apply to any body moving with constant acceleration.</b> The most important real applications are: falling bodies, vehicles under uniform acceleration or braking, and projectiles near the Earth's surface.</p>
+  <p><b>A projectile is a body moving under gravity alone after being given an initial velocity.</b> It has both horizontal and vertical motion. The horizontal motion is at constant velocity; the vertical motion is uniformly accelerated by gravity. The two are independent.</p>
+  <p><b>Circular motion at constant speed still involves acceleration.</b> The speed is constant, but the direction of velocity changes, so the body accelerates towards the centre of the circle. This acceleration is called centripetal acceleration.</p>
+  <p><b>Real problems often involve more than one phase.</b> The total distance is the sum of the distances in each phase. Each phase is treated with the equations of motion separately.</p>
+
+  <h3>9.2 Laws of Motion (Continued)</h3>
+  <div class="box law">
+    <h4>Equations of Motion for Free Fall</h4>
+    <p><b>For a body falling from rest under gravity:</b></p>
+<pre>v = gt
+h = ½gt²
+v² = 2gh</pre>
+  </div>
+  <div class="box law">
+    <h4>Equations for a Projectile (Introduction)</h4>
+    <p><b>Horizontal motion:</b> x = uₓ t. <b>Vertical motion:</b> y = u_y t − ½gt².</p>
+  </div>
+
+  <h3>9.3 Principles of Motion (Continued)</h3>
+  <div class="box principle">
+    <h4>Principle of Independence of Components</h4>
+    <p><b>The horizontal and vertical motions of a projectile are independent.</b> Changing the horizontal velocity does not change the time of flight.</p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Centripetal Acceleration</h4>
+    <p><b>A body moving in a circle at constant speed has an acceleration directed towards the centre, of magnitude a = v² / r.</b></p>
+  </div>
+
+  <h3>9.4 Formulae for Applications</h3>
+  <table>
+    <tr><th style="width:34%">Quantity</th><th>Formula</th><th>Notes</th></tr>
+    <tr><td class="k">Time of flight (projectile, level ground)</td><td>T = 2u sin θ / g</td><td>θ = angle of projection.</td></tr>
+    <tr><td class="k">Range of a projectile</td><td>R = u² sin 2θ / g</td><td>Maximum when θ = 45°.</td></tr>
+    <tr><td class="k">Maximum height</td><td>H = u² sin²θ / 2g</td><td>When vertical velocity is zero.</td></tr>
+    <tr><td class="k">Centripetal acceleration</td><td>a = v² / r</td><td>Directed towards the centre.</td></tr>
+    <tr><td class="k">Centripetal force</td><td>F = mv² / r</td><td>Force required to maintain circular motion.</td></tr>
+  </table>
+
+  <h3>9.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Falling body</h4>
+    <p>A ball is dropped from a tower and hits the ground after 3 s. Find the height of the tower. Use g = 10 m/s².</p>
+<pre>h = ½gt² = ½ × 10 × 9 = 45 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Thrown vertically upwards</h4>
+    <p>A ball is thrown vertically upwards at 20 m/s. Find the maximum height reached and the time to reach it. Use g = 10 m/s².</p>
+<pre>At maximum height, v = 0:
+v² = u² − 2gh  →  0 = 400 − 2 × 10 × h  →  h = 20 m
+v = u − gt  →  0 = 20 − 10t  →  t = 2 s</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Projectile range</h4>
+    <p>A ball is projected at 30 m/s at 45° to the horizontal. Find its range. Use g = 10 m/s².</p>
+<pre>R = u² sin 2θ / g = 30² × sin 90° / 10
+R = 900 × 1 / 10 = 90 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Centripetal acceleration</h4>
+    <p>A car moves round a circular track of radius 50 m at 20 m/s. Find its centripetal acceleration.</p>
+<pre>a = v² / r = 20² / 50 = 400 / 50 = 8 m/s²</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Multi-phase problem</h4>
+    <p>A car accelerates uniformly from rest to 30 m/s in 10 s, travels at 30 m/s for 20 s, then decelerates uniformly to rest in 5 s. Find the total distance travelled.</p>
+<pre>Phase 1: s₁ = ½(0 + 30) × 10 = 150 m
+Phase 2: s₂ = 30 × 20 = 600 m
+Phase 3: s₃ = ½(30 + 0) × 5 = 75 m
+Total distance = 150 + 600 + 75 = 825 m</pre>
+  </div>
+</section>
+
+<!-- ============================================================
+     WEEK 10 — MOTION (CONTINUED)
+     ============================================================ -->
+<section class="week">
+  <h2><span class="wk">WEEK 10</span>Motion (Continued)</h2>
+  <p class="meta"><b>Content:</b> Graphical analysis of motion; problem solving; interpretation of distance–time, velocity–time and acceleration–time graphs.</p>
+
+  <h3>10.1 Theory of Graphical Analysis</h3>
+  <p><b>A graph is a compact statement of the relation between two quantities.</b> For motion, the most useful graphs are distance–time, velocity–time, and acceleration–time.</p>
+  <p><b>The slope of a graph has physical meaning.</b> On a distance–time graph, the slope is speed. On a velocity–time graph, the slope is acceleration. On an acceleration–time graph, the slope has no simple everyday meaning in this course.</p>
+  <p><b>The area under a graph also has physical meaning.</b> On a velocity–time graph, the area under the curve is displacement. On an acceleration–time graph, the area under the curve is change in velocity.</p>
+  <p><b>Different segments of a graph tell different parts of the story.</b> A horizontal line on a velocity–time graph means constant velocity. A sloping straight line means uniform acceleration. A curved line means non-uniform acceleration.</p>
+
+  <h3>10.2 Laws of Graphical Analysis</h3>
+  <div class="box law">
+    <h4>Slope Rule</h4>
+    <p><b>The slope of a distance–time graph gives speed. The slope of a velocity–time graph gives acceleration.</b></p>
+  </div>
+  <div class="box law">
+    <h4>Area Rule</h4>
+    <p><b>The area under a velocity–time graph gives displacement. The area under an acceleration–time graph gives change in velocity.</b></p>
+  </div>
+
+  <h3>10.3 Principles of Graphical Analysis</h3>
+  <div class="box principle">
+    <h4>Principle of Graphical Addition</h4>
+    <p><b>When a graph has several straight-line segments, the total displacement is the sum of the areas under each segment.</b></p>
+  </div>
+  <div class="box principle">
+    <h4>Principle of Instantaneous Slope</h4>
+    <p><b>The instantaneous speed or acceleration at any point is given by the slope of the tangent to the graph at that point.</b></p>
+  </div>
+
+  <h3>10.4 Formulae and Graph Reading</h3>
+  <table>
+    <tr><th style="width:34%">Graph</th><th>Slope gives</th><th>Area gives</th></tr>
+    <tr><td class="k">Distance–time</td><td>Speed</td><td>No direct meaning</td></tr>
+    <tr><td class="k">Velocity–time</td><td>Acceleration</td><td>Displacement</td></tr>
+    <tr><td class="k">Acceleration–time</td><td>No direct meaning</td><td>Change in velocity</td></tr>
+  </table>
+
+  <h3>10.5 Worked Examples</h3>
+  <div class="box formula">
+    <h4>Example 1 — Slope of distance–time graph</h4>
+    <p>A distance–time graph is a straight line through the points (0, 0) and (5, 20). Find the speed.</p>
+<pre>Speed = slope = (20 − 0) / (5 − 0) = 4 m/s</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 2 — Area under a velocity–time graph</h4>
+    <p>A velocity–time graph rises uniformly from 0 to 10 m/s over 4 s, then stays at 10 m/s for 6 s. Find the total displacement.</p>
+<pre>Phase 1 (triangle): area = ½ × 4 × 10 = 20 m
+Phase 2 (rectangle): area = 6 × 10 = 60 m
+Total displacement = 20 + 60 = 80 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 3 — Acceleration from a velocity–time graph</h4>
+    <p>A velocity–time graph has a straight line from (2, 6) to (8, 24). Find the acceleration.</p>
+<pre>Acceleration = slope = (24 − 6) / (8 − 2) = 18 / 6 = 3 m/s²</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 4 — Deceleration from a graph</h4>
+    <p>A velocity–time graph falls uniformly from 15 m/s to 0 m/s over 5 s. Find the deceleration and the distance travelled.</p>
+<pre>Deceleration = −15 / 5 = −3 m/s²  (magnitude 3 m/s²)
+Distance = area of triangle = ½ × 5 × 15 = 37.5 m</pre>
+  </div>
+
+  <div class="box formula">
+    <h4>Example 5 — Multi-segment graph</h4>
+    <p>A velocity–time graph has three segments: (0–4 s) from 0 to 12 m/s; (4–10 s) constant at 12 m/s; (10–14 s) from 12 m/s to 0. Find the total distance.</p>
+<pre>Segment 1: ½ × 4 × 12 = 24 m
+Segment 2: 6 × 12 = 72 m
+Segment 3: ½ × 4 × 12 = 24 m
+Total distance = 24 + 72 + 24 = 120 m</pre>
+  </div>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>
