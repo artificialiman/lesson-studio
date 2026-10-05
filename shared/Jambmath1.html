@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAMB Mathematics — Notation Supplement</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #000; background: #fff;
+    line-height: 1.5;
+    max-width: 190mm; margin: 0 auto;
+    padding: 8mm 6mm;
+  }
+  @media print {
+    html { font-size: 10pt; }
+    body { max-width: 100%; padding: 4mm 3mm; line-height: 1.4; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+    h1, h2, h3 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+    .question-block { page-break-inside: avoid; }
+    .notation-box { page-break-inside: avoid; }
+  }
+  h1 {
+    font-size: 1.9rem; font-weight: 900;
+    letter-spacing: -0.5px;
+    border-bottom: 4px solid #000;
+    padding-bottom: 6px; margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 1.35rem; font-weight: 900;
+    border-bottom: 3px solid #000;
+    padding-bottom: 4px;
+    margin-top: 28px; margin-bottom: 10px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  h3 {
+    font-size: 1.1rem; font-weight: 900;
+    margin-top: 18px; margin-bottom: 8px;
+    border-left: 6px solid #000; padding-left: 8px;
+  }
+  h4 {
+    font-size: 1rem; font-weight: 900;
+    margin-top: 14px; margin-bottom: 6px;
+    text-decoration: underline;
+  }
+  p { margin-bottom: 8px; font-weight: 600; }
+  strong, b { font-weight: 900; }
+  em { font-style: italic; font-weight: 700; }
+  hr { border: none; border-top: 4px solid #000; margin: 20px 0; }
+  ul, ol { margin: 6px 0 10px 22px; font-weight: 600; }
+  li { margin-bottom: 4px; }
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 10px 0 14px 0; font-size: 0.92rem; font-weight: 700;
+  }
+  th {
+    background: #fff; color: #000; font-weight: 900;
+    text-transform: uppercase; font-size: 0.82rem;
+    letter-spacing: 0.4px;
+    border: 3px solid #000; padding: 5px 6px; text-align: center;
+  }
+  td {
+    border: 2px solid #000; padding: 4px 6px;
+    vertical-align: middle; font-weight: 600; text-align: center;
+  }
+  tr:nth-child(even) td { background: #f2f2f2; }
+
+  /* ===== QUESTION BLOCKS ===== */
+  .question-block {
+    margin-bottom: 10px; padding: 6px 0;
+    border-bottom: 2px solid #000;
+  }
+  .question-block:last-child { border-bottom: none; }
+  .q-num { font-weight: 900; font-size: 1rem; }
+  .q-text { font-weight: 700; margin: 4px 0 4px 0; }
+  .options { margin-left: 18px; font-weight: 600; }
+  .options span {
+    display: inline-block; min-width: 48%; margin-bottom: 2px;
+  }
+
+  .answer-key {
+    border: 4px solid #000; padding: 10px 12px;
+    margin: 16px 0; page-break-inside: avoid;
+  }
+  .answer-key h3 { border-left: none; padding-left: 0; margin-top: 0; }
+  .answer-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 2px 8px; font-weight: 700; font-size: 0.92rem;
+  }
+  .answer-grid div { padding: 2px 0; border-bottom: 1px solid #000; }
+
+  .callout {
+    border: 4px solid #000; padding: 10px 12px;
+    margin: 14px 0; page-break-inside: avoid;
+  }
+  .callout-title {
+    font-weight: 900; text-transform: uppercase;
+    font-size: 0.85rem; letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px; margin-bottom: 6px;
+  }
+  .section-label {
+    font-weight: 900; font-size: 0.88rem;
+    text-transform: uppercase; letter-spacing: 1px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px; margin: 22px 0 8px 0;
+  }
+  .center { text-align: center; }
+  .small { font-size: 0.85rem; }
+  .no-break { page-break-inside: avoid; }
+  .notation-box {
+    border: 3px solid #000;
+    padding: 12px 14px;
+    margin: 12px 0;
+    page-break-inside: avoid;
+  }
+  .notation-title {
+    font-weight: 900; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px; margin-bottom: 10px;
+  }
+  .notation-row {
+    padding: 8px 0;
+    border-bottom: 1px dashed #000;
+    font-size: 1.05rem;
+  }
+  .notation-row:last-child { border-bottom: none; }
+  .notation-label {
+    font-weight: 900; font-size: 0.8rem;
+    display: block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  /* ============================================================ */
+  /* MATHEMATICAL NOTATION CLASSES */
+  /* ============================================================ */
+
+  /* --- Fractions (stacked) --- */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 1.1;
+    margin: 0 3px;
+    font-size: 0.95em;
+  }
+  .frac > .num {
+    border-bottom: 2.2px solid #000;
+    padding: 1px 5px 2px 5px;
+  }
+  .frac > .den {
+    padding: 1px 5px 1px 5px;
+  }
+
+  /* Large display fraction */
+  .frac-lg {
+    font-size: 1.1em;
+    margin: 0 6px;
+  }
+  .frac-lg > .num,
+  .frac-lg > .den {
+    padding: 2px 8px;
+  }
+
+  /* --- Square root --- */
+  .sqrt {
+    display: inline-flex;
+    align-items: stretch;
+    vertical-align: middle;
+    margin: 0 2px;
+  }
+  .sqrt > .radicand {
+    border-top: 2px solid #000;
+    padding: 1px 4px 0 4px;
+    margin-left: -1px;
+  }
+  .sqrt::before {
+    content: "√";
+    font-size: 1.3em;
+    line-height: 1;
+    align-self: center;
+    margin-top: -2px;
+  }
+
+  /* --- System of equations (brace) --- */
+  .system {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    gap: 8px;
+    margin: 6px 0;
+  }
+  .system::before {
+    content: "";
+    width: 8px;
+    align-self: stretch;
+    border-left: 2.5px solid #000;
+    border-top: 2.5px solid #000;
+    border-bottom: 2.5px solid #000;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .system > .eqs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* --- Matrix --- */
+  .matrix {
+    display: inline-grid;
+    gap: 4px 14px;
+    padding: 6px 14px;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+  .matrix.cols-2 { grid-template-columns: repeat(2, auto); }
+  .matrix.cols-3 { grid-template-columns: repeat(3, auto); }
+  .matrix.cols-4 { grid-template-columns: repeat(4, auto); }
+  .matrix > span { text-align: center; min-width: 1.5em; }
+  .matrix::before,
+  .matrix::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 7px;
+    border: 2.5px solid #000;
+  }
+  .matrix::before {
+    left: 0;
+    border-right: none;
+  }
+  .matrix::after {
+    right: 0;
+    border-left: none;
+  }
+
+  /* Determinant (vertical bars) */
+  .det {
+    display: inline-grid;
+    gap: 4px 14px;
+    padding: 6px 10px;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+  .det.cols-2 { grid-template-columns: repeat(2, auto); }
+  .det.cols-3 { grid-template-columns: repeat(3, auto); }
+  .det > span { text-align: center; min-width: 1.5em; }
+  .det::before,
+  .det::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: #000;
+  }
+  .det::before { left: 0; }
+  .det::after { right: 0; }
+
+  /* --- Column vector --- */
+  .cvec {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    gap: 2px;
+    padding: 3px 8px;
+    position: relative;
+    margin: 0 4px;
+  }
+  .cvec::before,
+  .cvec::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 6px;
+    border: 2.2px solid #000;
+  }
+  .cvec::before { left: 0; border-right: none; }
+  .cvec::after { right: 0; border-left: none; }
+
+  /* --- Integral --- */
+  .integral {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+  .integral .int-sym {
+    font-size: 2em;
+    line-height: 0.9;
+    font-style: italic;
+    margin-right: 1px;
+  }
+  .integral .limits {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.7em;
+    line-height: 1.2;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+  .integral .limits .upper { margin-bottom: 4px; }
+  .integral .limits .lower { margin-top: 4px; }
+
+  /* --- Summation (Sigma) --- */
+  .summation {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 4px;
+    line-height: 1;
+  }
+  .summation .upper,
+  .summation .lower {
+    font-size: 0.75em;
+    line-height: 1.1;
+  }
+  .summation .sigma {
+    font-size: 1.9em;
+    line-height: 0.85;
+    margin: -2px 0;
+  }
+
+  /* --- x-bar (mean) --- */
+  .xbar {
+    display: inline-block;
+    position: relative;
+    padding-top: 2px;
+  }
+  .xbar::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: #000;
+  }
+
+  /* --- Superscript / Subscript shorthand --- */
+  .sup { vertical-align: super; font-size: 0.72em; font-weight: 900; }
+  .sub { vertical-align: sub; font-size: 0.72em; font-weight: 900; }
+
+  /* --- Combination nCr stacked --- */
+  .ncr {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin: 0 3px;
+    font-size: 0.95em;
+  }
+  .ncr .pre-sup,
+  .ncr .pre-sub {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.72em;
+    line-height: 1;
+    margin-right: -1px;
+    text-align: right;
+  }
+  .ncr .pre-sup { align-self: flex-start; }
+  .ncr .big {
+    font-size: 1.15em;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  /* --- Long division layout --- */
+  .long-div {
+    display: inline-block;
+    border-left: 2.5px solid #000;
+    border-top: 2.5px solid #000;
+    padding: 4px 0 0 10px;
+    position: relative;
+    margin-left: 30px;
+  }
+  .long-div::before {
+    content: attr(data-divisor);
+    position: absolute;
+    left: -85px;
+    top: 4px;
+    font-weight: 900;
+  }
+  .long-div > .step {
+    display: block;
+    padding: 2px 0;
+    font-weight: 700;
+  }
+
+  /* ============================================================ */
+  /* DATA DISPLAY CLASSES */
+  /* ============================================================ */
+
+  /* --- Histogram (CSS bars) --- */
+  .histogram {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 220px;
+    border-left: 2.5px solid #000;
+    border-bottom: 2.5px solid #000;
+    padding: 0 10px 0 0;
+    margin: 10px 0;
+    position: relative;
+  }
+  .histogram .bar {
+    width: 48px;
+    background: #fff;
+    border: 2px solid #000;
+    border-bottom: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 900;
+    padding-top: 2px;
+  }
+  .histogram-labels {
+    display: flex;
+    gap: 3px;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-top: 2px;
+  }
+  .histogram-labels span {
+    width: 48px;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 900;
+  }
+
+  /* --- Frequency Table style tweaks --- */
+  .freq-table td:first-child,
+  .freq-table th:first-child {
+    text-align: left;
+    font-weight: 900;
+  }
+  .freq-table td:not(:first-child) {
+    text-align: center;
+  }
+
+  /* --- Truth table --- */
+  .truth-table th,
+  .truth-table td {
+    padding: 5px 8px;
+    font-family: "Courier New", monospace;
+    font-size: 0.95rem;
+  }
+
+  /* --- Stem-and-Leaf --- */
+  .stem-leaf {
+    display: inline-block;
+    border: 3px solid #000;
+    padding: 8px 14px;
+    margin: 8px 0;
+    font-family: "Courier New", monospace;
+    font-weight: 900;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .stem-leaf .head {
+    border-bottom: 2.2px solid #000;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    letter-spacing: 4px;
+  }
+  .stem-leaf .row {
+    white-space: pre;
+    padding: 1px 0;
+  }
+
+  /* --- Pseudo log table --- */
+  .log-table {
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+  }
+  .log-table th,
+  .log-table td {
+    padding: 3px 8px;
+  }
+
+  /* --- Definition list style (for symbols) --- */
+  dl.symbols {
+    margin: 10px 0;
+  }
+  dl.symbols dt {
+    font-weight: 900;
+    font-size: 1rem;
+    margin-top: 6px;
+    display: inline-block;
+    min-width: 60px;
+  }
+  dl.symbols dd {
+    display: inline;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+</style>
+</head>
+<body>
+
+<h1>JAMB MATHEMATICS — NOTATION SUPPLEMENT</h1>
+<p><strong>The missing typesetting layer:</strong> stacked fractions, matrices with brackets, systems of equations, integral/summation notation, frequency distribution tables, truth tables, log tables, histograms, stem-and-leaf plots, and every other format JAMB tests — rendered in pure CSS.</p>
+<hr>
+
+<!-- ============================================================ -->
+<!-- PART A: FRACTIONS & RADICALS -->
+<!-- ============================================================ -->
+
+<h2>Part A — Fractions &amp; Radicals</h2>
+
+<p><strong>Why this matters:</strong> JAMB writes fractions as <em>stacked vertical expressions</em> — numerator over denominator with a horizontal bar. Reading them correctly is the difference between solving the question and misreading it.</p>
+
+<div class="notation-box">
+  <div class="notation-title">A.1 — Basic Fractions</div>
+
+  <div class="notation-row">
+    <span class="notation-label">Simple fraction</span>
+    <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+    &nbsp; = &nbsp; three-quarters
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Improper fraction</span>
+    <span class="frac"><span class="num">7</span><span class="den">3</span></span>
+    &nbsp; = &nbsp; 2<span class="frac"><span class="num">1</span><span class="den">3</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Algebraic fraction</span>
+    <span class="frac"><span class="num">2x + 1</span><span class="den">x − 3</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Quadratic fraction</span>
+    <span class="frac"><span class="num">x² − 4</span><span class="den">x² + 3x + 2</span></span>
+    &nbsp; = &nbsp;
+    <span class="frac"><span class="num">(x−2)(x+2)</span><span class="den">(x+2)(x+1)</span></span>
+    &nbsp; = &nbsp;
+    <span class="frac"><span class="num">x − 2</span><span class="den">x + 1</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Continued fraction</span>
+    1 + <span class="frac"><span class="num">1</span><span class="den">2 + <span class="frac"><span class="num">1</span><span class="den">3</span></span></span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Big display fraction (calculus)</span>
+    <span class="frac frac-lg"><span class="num">dy</span><span class="den">dx</span></span>
+    &nbsp; = &nbsp;
+    <span class="frac frac-lg"><span class="num">d</span><span class="den">dx</span></span>(x² + 3x)
+  </div>
+</div>
+
+<div class="notation-box">
+  <div class="notation-title">A.2 — Surds and Radicals</div>
+
+  <div class="notation-row">
+    <span class="notation-label">Simple square root</span>
+    <span class="sqrt"><span class="radicand">16</span></span>
+    &nbsp; = &nbsp; 4
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Root with expression</span>
+    <span class="sqrt"><span class="radicand">x² + y²</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Cube root</span>
+    <sup>3</sup><span class="sqrt"><span class="radicand">27</span></span>
+    &nbsp; = &nbsp; 3
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Rationalization</span>
+    <span class="frac"><span class="num">1</span><span class="den"><span class="sqrt"><span class="radicand">5</span></span> − 1</span></span>
+    &nbsp; × &nbsp;
+    <span class="frac"><span class="num"><span class="sqrt"><span class="radicand">5</span></span> + 1</span><span class="den"><span class="sqrt"><span class="radicand">5</span></span> + 1</span></span>
+    &nbsp; = &nbsp;
+    <span class="frac"><span class="num"><span class="sqrt"><span class="radicand">5</span></span> + 1</span><span class="den">4</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Nested radical</span>
+    <span class="sqrt"><span class="radicand">7 + <span class="sqrt"><span class="radicand">13</span></span></span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Fractional index</span>
+    x<sup class="sup">3/2</sup> &nbsp; = &nbsp; <span class="sqrt"><span class="radicand">x³</span></span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART B: MATRICES -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part B — Matrices</h2>
+
+<p><strong>Why this matters:</strong> Matrices appear in almost every JAMB paper — addition, scalar multiplication, matrix multiplication, determinants, and inverse. You must be able to read them fluently.</p>
+
+<div class="notation-box">
+  <div class="notation-title">B.1 — Matrix Layout and Order</div>
+
+  <div class="notation-row">
+    <span class="notation-label">2 × 2 Matrix A</span>
+    A &nbsp;=&nbsp;
+    <span class="matrix cols-2">
+      <span>a</span><span>b</span>
+      <span>c</span><span>d</span>
+    </span>
+    &nbsp;&nbsp;&nbsp; (2 rows, 2 columns)
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">3 × 3 Identity Matrix I</span>
+    I &nbsp;=&nbsp;
+    <span class="matrix cols-3">
+      <span>1</span><span>0</span><span>0</span>
+      <span>0</span><span>1</span><span>0</span>
+      <span>0</span><span>0</span><span>1</span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Column vector</span>
+    <span class="cvec">
+      <span>3</span>
+      <span>−2</span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Row vector</span>
+    ( 4 &nbsp; −1 &nbsp; 7 )
+  </div>
+</div>
+
+<div class="notation-box">
+  <div class="notation-title">B.2 — Matrix Operations</div>
+
+  <div class="notation-row">
+    <span class="notation-label">Addition</span>
+    <span class="matrix cols-2">
+      <span>1</span><span>2</span>
+      <span>3</span><span>4</span>
+    </span>
+    &nbsp;+&nbsp;
+    <span class="matrix cols-2">
+      <span>5</span><span>6</span>
+      <span>7</span><span>8</span>
+    </span>
+    &nbsp;=&nbsp;
+    <span class="matrix cols-2">
+      <span>6</span><span>8</span>
+      <span>10</span><span>12</span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Scalar multiplication</span>
+    3 &nbsp;×&nbsp;
+    <span class="matrix cols-2">
+      <span>1</span><span>0</span>
+      <span>2</span><span>−1</span>
+    </span>
+    &nbsp;=&nbsp;
+    <span class="matrix cols-2">
+      <span>3</span><span>0</span>
+      <span>6</span><span>−3</span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Matrix multiplication</span>
+    <span class="matrix cols-2">
+      <span>1</span><span>2</span>
+      <span>3</span><span>4</span>
+    </span>
+    <span class="matrix cols-2">
+      <span>5</span><span>6</span>
+      <span>7</span><span>8</span>
+    </span>
+    &nbsp;=&nbsp;
+    <span class="matrix cols-2">
+      <span>19</span><span>22</span>
+      <span>43</span><span>50</span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Determinant of a 2×2 matrix</span>
+    |A| &nbsp;=&nbsp;
+    <span class="det cols-2">
+      <span>a</span><span>b</span>
+      <span>c</span><span>d</span>
+    </span>
+    &nbsp;=&nbsp; ad − bc
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Determinant of a 3×3 matrix</span>
+    |B| &nbsp;=&nbsp;
+    <span class="det cols-3">
+      <span>a</span><span>b</span><span>c</span>
+      <span>d</span><span>e</span><span>f</span>
+      <span>g</span><span>h</span><span>i</span>
+    </span>
+    &nbsp;=&nbsp; a(ei − fh) − b(di − fg) + c(dh − eg)
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Inverse of a 2×2 matrix</span>
+    A<sup class="sup">−1</sup> &nbsp;=&nbsp;
+    <span class="frac"><span class="num">1</span><span class="den">ad − bc</span></span>
+    <span class="matrix cols-2">
+      <span>d</span><span>−b</span>
+      <span>−c</span><span>a</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART C: SYSTEMS, INTEGRALS, SUMMATIONS -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part C — Systems, Integrals, Summations</h2>
+
+<div class="notation-box">
+  <div class="notation-title">C.1 — Systems of Equations</div>
+
+  <div class="notation-row">
+    <span class="notation-label">Two linear equations</span>
+    <span class="system">
+      <span class="eqs">
+        <span>2x + 3y = 12</span>
+        <span>x − y = 1</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Three equations</span>
+    <span class="system">
+      <span class="eqs">
+        <span>x + y + z = 6</span>
+        <span>2x − y + z = 3</span>
+        <span>x + 2y − z = 2</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Linear + Quadratic (simultaneous)</span>
+    <span class="system">
+      <span class="eqs">
+        <span>x² + y² = 25</span>
+        <span>x + y = 7</span>
+      </span>
+    </span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Augmented matrix (for solving)</span>
+    <span class="matrix cols-4">
+      <span>2</span><span>3</span><span>1</span><span>12</span>
+      <span>1</span><span>−1</span><span>0</span><span>1</span>
+      <span>0</span><span>1</span><span>1</span><span>3</span>
+    </span>
+  </div>
+</div>
+
+<div class="notation-box">
+  <div class="notation-title">C.2 — Integral Notation</div>
+
+  <div class="notation-row">
+    <span class="notation-label">Indefinite integral</span>
+    <span class="integral">
+      <span class="int-sym">∫</span>
+    </span>
+    x² dx &nbsp;=&nbsp;
+    <span class="frac"><span class="num">x³</span><span class="den">3</span></span>
+    + C
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Definite integral</span>
+    <span class="integral">
+      <span class="int-sym">∫</span>
+      <span class="limits">
+        <span class="upper">2</span>
+        <span class="lower">0</span>
+      </span>
+    </span>
+    x dx &nbsp;=&nbsp; 2
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Integral of a fraction</span>
+    <span class="integral">
+      <span class="int-sym">∫</span>
+      <span class="limits">
+        <span class="upper">3</span>
+        <span class="lower">1</span>
+      </span>
+    </span>
+    <span class="frac"><span class="num">1</span><span class="den">x</span></span>
+    dx &nbsp;=&nbsp; ln 3
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Area under a curve</span>
+    Area =
+    <span class="integral">
+      <span class="int-sym">∫</span>
+      <span class="limits">
+        <span class="upper">b</span>
+        <span class="lower">a</span>
+      </span>
+    </span>
+    f(x) dx
+  </div>
+</div>
+
+<div class="notation-box">
+  <div class="notation-title">C.3 — Summation &amp; Series Notation</div>
+
+  <div class="notation-row">
+    <span class="notation-label">Sum of first n terms</span>
+    <span class="summation">
+      <span class="upper">n</span>
+      <span class="sigma">Σ</span>
+      <span class="lower">i=1</span>
+    </span>
+    x<sub class="sub">i</sub>
+    &nbsp;=&nbsp;
+    <span class="frac"><span class="num">n(n+1)</span><span class="den">2</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Sum of a GP</span>
+    S<sub class="sub">n</sub> =
+    <span class="frac"><span class="num">a(1 − rⁿ)</span><span class="den">1 − r</span></span>
+    &nbsp;&nbsp; (r ≠ 1)
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Sum to infinity</span>
+    S<sub class="sub">∞</sub> =
+    <span class="frac"><span class="num">a</span><span class="den">1 − r</span></span>
+    &nbsp;&nbsp; (|r| &lt; 1)
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Binomial coefficient (stacked)</span>
+    <span class="ncr">
+      <span class="pre-sup">n</span>
+      <span class="big">C</span>
+      <span class="pre-sub">r</span>
+    </span>
+    &nbsp;=&nbsp;
+    <span class="frac"><span class="num">n!</span><span class="den">r!(n − r)!</span></span>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Permutation (stacked)</span>
+    <span class="ncr">
+      <span class="pre-sup">n</span>
+      <span class="big">P</span>
+      <span class="pre-sub">r</span>
+    </span>
+    &nbsp;=&nbsp;
+    <span class="frac"><span class="num">n!</span><span class="den">(n − r)!</span></span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART D: STATISTICAL & DATA TABLES -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part D — Statistical &amp; Data Tables</h2>
+
+<p><strong>Why this matters:</strong> JAMB Statistics questions are almost always <em>table-based</em>. You must read frequencies, class intervals, cumulative frequencies, and probability distributions without error.</p>
+
+<h3>D.1 — Frequency Distribution Table</h3>
+
+<p>Raw scores: 2, 3, 3, 4, 4, 4, 5, 5, 6, 7</p>
+
+<table class="freq-table">
+  <thead>
+    <tr>
+      <th>Score (x)</th>
+      <th>Tally</th>
+      <th>Frequency (f)</th>
+      <th>fx</th>
+      <th>Cumulative f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>2</td><td>|</td><td>1</td><td>2</td><td>1</td></tr>
+    <tr><td>3</td><td>||</td><td>2</td><td>6</td><td>3</td></tr>
+    <tr><td>4</td><td>|||</td><td>3</td><td>12</td><td>6</td></tr>
+    <tr><td>5</td><td>||</td><td>2</td><td>10</td><td>8</td></tr>
+    <tr><td>6</td><td>|</td><td>1</td><td>6</td><td>9</td></tr>
+    <tr><td>7</td><td>|</td><td>1</td><td>7</td><td>10</td></tr>
+    <tr style="background:#fff">
+      <td><strong>Total</strong></td>
+      <td></td>
+      <td><strong>Σf = 10</strong></td>
+      <td><strong>Σfx = 43</strong></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mean = <span class="frac"><span class="num">Σfx</span><span class="den">Σf</span></span> = <span class="frac"><span class="num">43</span><span class="den">10</span></span> = 4.3</p>
+
+<h3>D.2 — Grouped Frequency Distribution</h3>
+
+<table class="freq-table">
+  <thead>
+    <tr>
+      <th>Class Interval</th>
+      <th>Class Boundary</th>
+      <th>Midpoint (x)</th>
+      <th>f</th>
+      <th>fx</th>
+      <th>Cum. f</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1 – 10</td><td>0.5 – 10.5</td><td>5.5</td><td>4</td><td>22</td><td>4</td></tr>
+    <tr><td>11 – 20</td><td>10.5 – 20.5</td><td>15.5</td><td>8</td><td>124</td><td>12</td></tr>
+    <tr><td>21 – 30</td><td>20.5 – 30.5</td><td>25.5</td><td>12</td><td>306</td><td>24</td></tr>
+    <tr><td>31 – 40</td><td>30.5 – 40.5</td><td>35.5</td><td>6</td><td>213</td><td>30</td></tr>
+    <tr style="background:#fff">
+      <td><strong>Total</strong></td><td></td><td></td>
+      <td><strong>Σf = 30</strong></td>
+      <td><strong>Σfx = 665</strong></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Mean = <span class="frac"><span class="num">665</span><span class="den">30</span></span> ≈ 22.17</p>
+
+<h3>D.3 — Probability Distribution Table</h3>
+
+<table class="freq-table">
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P(X = x)</strong></td>
+      <td><span class="frac"><span class="num">1</span><span class="den">8</span></span></td>
+      <td><span class="frac"><span class="num">3</span><span class="den">8</span></span></td>
+      <td><span class="frac"><span class="num">3</span><span class="den">8</span></span></td>
+      <td><span class="frac"><span class="num">1</span><span class="den">8</span></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>E(X) = Σ x · P(X = x) = (0 × ⅛) + (1 × ⅜) + (2 × ⅜) + (3 × ⅛) = <strong>1.5</strong></p>
+
+<h3>D.4 — Truth Table</h3>
+
+<table class="truth-table">
+  <thead>
+    <tr>
+      <th>p</th>
+      <th>q</th>
+      <th>p ∧ q</th>
+      <th>p ∨ q</th>
+      <th>¬p</th>
+      <th>p → q</th>
+      <th>p ↔ q</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>T</td><td>T</td><td>T</td><td>T</td><td>F</td><td>T</td><td>T</td></tr>
+    <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td></tr>
+    <tr><td>F</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td><td>F</td></tr>
+    <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+  </tbody>
+</table>
+
+<h3>D.5 — Trigonometric Values Table</h3>
+
+<table class="log-table">
+  <thead>
+    <tr>
+      <th>θ</th>
+      <th>0°</th>
+      <th>30°</th>
+      <th>45°</th>
+      <th>60°</th>
+      <th>90°</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>sin θ</strong></td>
+      <td>0</td>
+      <td><span class="frac"><span class="num">1</span><span class="den">2</span></span></td>
+      <td><span class="frac"><span class="num">1</span><span class="den">√2</span></span></td>
+      <td><span class="frac"><span class="num">√3</span><span class="den">2</span></span></td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><strong>cos θ</strong></td>
+      <td>1</td>
+      <td><span class="frac"><span class="num">√3</span><span class="den">2</span></span></td>
+      <td><span class="frac"><span class="num">1</span><span class="den">√2</span></span></td>
+      <td><span class="frac"><span class="num">1</span><span class="den">2</span></span></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><strong>tan θ</strong></td>
+      <td>0</td>
+      <td><span class="frac"><span class="num">1</span><span class="den">√3</span></span></td>
+      <td>1</td>
+      <td>√3</td>
+      <td>undefined</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>D.6 — Logarithm Table (Excerpt)</h3>
+
+<table class="log-table">
+  <thead>
+    <tr>
+      <th>x</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>1.0</strong></td><td>0000</td><td>0043</td><td>0086</td><td>0128</td><td>0170</td><td>0212</td></tr>
+    <tr><td><strong>1.1</strong></td><td>0414</td><td>0453</td><td>0492</td><td>0531</td><td>0569</td><td>0607</td></tr>
+    <tr><td><strong>1.2</strong></td><td>0792</td><td>0828</td><td>0864</td><td>0899</td><td>0934</td><td>0969</td></tr>
+    <tr><td><strong>1.3</strong></td><td>1139</td><td>1173</td><td>1206</td><td>1239</td><td>1271</td><td>1303</td></tr>
+    <tr><td><strong>1.4</strong></td><td>1461</td><td>1492</td><td>1523</td><td>1553</td><td>1584</td><td>1614</td></tr>
+  </tbody>
+</table>
+
+<p class="small">Reading: log 1.25 = 0.0969. Characteristic from magnitude of number; mantissa from table.</p>
+
+<!-- ============================================================ -->
+<!-- PART E: DATA DISPLAYS -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part E — Data Displays</h2>
+
+<h3>E.1 — Histogram</h3>
+
+<p>Frequency distribution: 1–10 (f=4), 11–20 (f=8), 21–30 (f=12), 31–40 (f=6)</p>
+
+<div class="histogram">
+  <div class="bar" style="height: 33%;">4</div>
+  <div class="bar" style="height: 67%;">8</div>
+  <div class="bar" style="height: 100%;">12</div>
+  <div class="bar" style="height: 50%;">6</div>
+</div>
+<div class="histogram-labels">
+  <span>1–10</span>
+  <span>11–20</span>
+  <span>21–30</span>
+  <span>31–40</span>
+</div>
+
+<p class="small">Height of each bar = frequency. Bars touch because data is continuous.</p>
+
+<h3>E.2 — Stem-and-Leaf Plot</h3>
+
+<div class="stem-leaf">
+  <div class="head">Stem | Leaf</div>
+  <div class="row">  2  | 1  4  7</div>
+  <div class="row">  3  | 0  2  5  8  9</div>
+  <div class="row">  4  | 1  3  6</div>
+  <div class="row">  5  | 2  5  5</div>
+</div>
+
+<p class="small">Key: 3 | 2 means 32. Data: 21, 24, 27, 30, 32, 35, 38, 39, 41, 43, 46, 52, 55, 55.</p>
+
+<h3>E.3 — Box Plot (Box-and-Whisker)</h3>
+
+<div class="notation-box">
+  <svg viewBox="0 0 700 200" width="700" height="200">
+    <!-- Axis -->
+    <line x1="60" y1="120" x2="660" y2="120" stroke="#000" stroke-width="2.5"/>
+    <g stroke="#000" stroke-width="1.5">
+      <line x1="60" y1="115" x2="60" y2="125"/>
+      <line x1="180" y1="115" x2="180" y2="125"/>
+      <line x1="300" y1="115" x2="300" y2="125"/>
+      <line x1="420" y1="115" x2="420" y2="125"/>
+      <line x1="540" y1="115" x2="540" y2="125"/>
+      <line x1="660" y1="115" x2="660" y2="125"/>
+    </g>
+    <text x="52" y="145" font-size="11" font-weight="900">0</text>
+    <text x="172" y="145" font-size="11" font-weight="900">10</text>
+    <text x="292" y="145" font-size="11" font-weight="900">20</text>
+    <text x="412" y="145" font-size="11" font-weight="900">30</text>
+    <text x="532" y="145" font-size="11" font-weight="900">40</text>
+    <text x="652" y="145" font-size="11" font-weight="900">50</text>
+
+    <!-- Box: Q1=12, Median=22, Q3=38 -->
+    <line x1="180" y1="90" x2="180" y2="40" stroke="#000" stroke-width="2.5"/>
+    <line x1="180" y1="40" x2="420" y2="40" stroke="#000" stroke-width="2.5"/>
+    <line x1="420" y1="40" x2="420" y2="90" stroke="#000" stroke-width="2.5"/>
+    <line x1="180" y1="90" x2="420" y2="90" stroke="#000" stroke-width="2.5"/>
+    <line x1="300" y1="40" x2="300" y2="90" stroke="#000" stroke-width="3"/>
+
+    <!-- Whiskers: min=3, max=48 -->
+    <line x1="180" y1="65" x2="84" y2="65" stroke="#000" stroke-width="2.5"/>
+    <line x1="84" y1="40" x2="84" y2="90" stroke="#000" stroke-width="2.5"/>
+    <line x1="420" y1="65" x2="600" y2="65" stroke="#000" stroke-width="2.5"/>
+    <line x1="600" y1="40" x2="600" y2="90" stroke="#000" stroke-width="2.5"/>
+
+    <!-- Labels -->
+    <text x="60" y="30" font-size="10" font-weight="900">Min</text>
+    <text x="165" y="30" font-size="10" font-weight="900">Q₁</text>
+    <text x="290" y="30" font-size="10" font-weight="900">Median</text>
+    <text x="405" y="30" font-size="10" font-weight="900">Q₃</text>
+    <text x="582" y="30" font-size="10" font-weight="900">Max</text>
+  </svg>
+</div>
+
+<p class="small">Five-number summary: Min = 3, Q₁ = 12, Median = 22, Q₃ = 38, Max = 48. Interquartile range IQR = Q₃ − Q₁ = 26.</p>
+
+<!-- ============================================================ -->
+<!-- PART F: SET NOTATION & LOGIC -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part F — Set Notation &amp; Logic</h2>
+
+<h3>F.1 — Symbol Reference Table</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Symbol</th>
+      <th>Meaning</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>∈</td><td>Is an element of</td><td>3 ∈ {1, 2, 3, 4}</td></tr>
+    <tr><td>∉</td><td>Is not an element of</td><td>5 ∉ {1, 2, 3, 4}</td></tr>
+    <tr><td>⊂</td><td>Is a proper subset of</td><td>{1, 2} ⊂ {1, 2, 3}</td></tr>
+    <tr><td>⊆</td><td>Is a subset of</td><td>{1, 2} ⊆ {1, 2}</td></tr>
+    <tr><td>∪</td><td>Union</td><td>A ∪ B</td></tr>
+    <tr><td>∩</td><td>Intersection</td><td>A ∩ B</td></tr>
+    <tr><td>′</td><td>Complement</td><td>A′ = elements not in A</td></tr>
+    <tr><td>∅</td><td>Empty set</td><td>{ } or ∅</td></tr>
+    <tr><td>n(A)</td><td>Number of elements in A</td><td>n({a, b, c}) = 3</td></tr>
+    <tr><td>ξ or U</td><td>Universal set</td><td>The whole sample space</td></tr>
+    <tr><td>|x|</td><td>Absolute value</td><td>|−5| = 5</td></tr>
+    <tr><td>⇒</td><td>Implies</td><td>x = 2 ⇒ x² = 4</td></tr>
+    <tr><td>⇔</td><td>If and only if</td><td>x² = 4 ⇔ x = ±2</td></tr>
+    <tr><td>∴</td><td>Therefore</td><td>a = b, b = c ∴ a = c</td></tr>
+    <tr><td>≈</td><td>Approximately equal to</td><td>π ≈ 3.14159</td></tr>
+    <tr><td>≠</td><td>Not equal to</td><td>2 ≠ 3</td></tr>
+    <tr><td>≤</td><td>Less than or equal to</td><td>x ≤ 5</td></tr>
+    <tr><td>≥</td><td>Greater than or equal to</td><td>x ≥ 5</td></tr>
+  </tbody>
+</table>
+
+<h3>F.2 — Set-Builder Notation</h3>
+
+<div class="notation-box">
+  <div class="notation-row">
+    <span class="notation-label">Set of even numbers between 1 and 10</span>
+    A = { x : x is even, 1 &lt; x &lt; 10 } = { 2, 4, 6, 8 }
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Set of solutions to an inequality</span>
+    B = { x : x ∈ ℝ, x ≥ 3 }
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Interval notation</span>
+    { x : 2 ≤ x &lt; 7 } = [2, 7)
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART G: POLYNOMIAL & BINOMIAL NOTATION -->
+<!-- ============================================================ -->
+
+<h2>Part G — Polynomial &amp; Binomial Notation</h2>
+
+<h3>G.1 — Factor &amp; Remainder Theorem Layout</h3>
+
+<div class="notation-box">
+  <div class="notation-row">
+    <span class="notation-label">If (x − 2) is a factor of f(x) = x³ + ax² − 4x + 4</span>
+    f(2) = (2)³ + a(2)² − 4(2) + 4 = 0<br>
+    8 + 4a − 8 + 4 = 0<br>
+    4a + 4 = 0 → <strong>a = −1</strong>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Remainder when f(x) = x³ − 2x + 1 is divided by (x − 1)</span>
+    Remainder = f(1) = 1³ − 2(1) + 1 = <strong>0</strong>
+  </div>
+</div>
+
+<h3>G.2 — Binomial Expansion Layout</h3>
+
+<div class="notation-box">
+  <div class="notation-row">
+    <span class="notation-label">General expansion</span>
+    (a + b)<sup class="sup">n</sup> =
+    <span class="ncr"><span class="pre-sup">n</span><span class="big">C</span><span class="pre-sub">0</span></span>
+    a<sup class="sup">n</sup> +
+    <span class="ncr"><span class="pre-sup">n</span><span class="big">C</span><span class="pre-sub">1</span></span>
+    a<sup class="sup">n−1</sup>b +
+    <span class="ncr"><span class="pre-sup">n</span><span class="big">C</span><span class="pre-sub">2</span></span>
+    a<sup class="sup">n−2</sup>b² + ⋯ +
+    <span class="ncr"><span class="pre-sup">n</span><span class="big">C</span><span class="pre-sub">n</span></span>
+    b<sup class="sup">n</sup>
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Expansion of (1 + 2x)⁴</span>
+    1 + 4(2x) + 6(2x)² + 4(2x)³ + (2x)⁴<br>
+    = 1 + 8x + 24x² + 32x³ + 16x⁴
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">General term</span>
+    T<sub class="sub">r+1</sub> =
+    <span class="ncr"><span class="pre-sup">n</span><span class="big">C</span><span class="pre-sub">r</span></span>
+    a<sup class="sup">n−r</sup> b<sup class="sup">r</sup>
+  </div>
+</div>
+
+<h3>G.3 — Function Notation</h3>
+
+<div class="notation-box">
+  <div class="notation-row">
+    <span class="notation-label">Function definition</span>
+    f : x ↦ 2x + 3 &nbsp;&nbsp; or &nbsp;&nbsp; f(x) = 2x + 3
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Composite function</span>
+    (f ∘ g)(x) = f(g(x))
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Inverse function</span>
+    f<sup class="sup">−1</sup>(x) = <span class="frac"><span class="num">x − 3</span><span class="den">2</span></span>
+    &nbsp;&nbsp; for f(x) = 2x + 3
+  </div>
+
+  <div class="notation-row">
+    <span class="notation-label">Domain and range</span>
+    f(x) = √(x − 2), &nbsp; Domain: x ≥ 2, &nbsp; Range: f(x) ≥ 0
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART H: PRACTICE QUESTIONS -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part H — Notation Practice Questions (25 Questions)</h2>
+
+<p><strong>Instructions:</strong> These questions require you to read and interpret mathematical notation correctly. Show each answer in standard form.</p>
+
+<div class="section-label">Fractions &amp; Radicals (Q1–6)</div>
+
+<div class="question-block">
+  <span class="q-num">1.</span>
+  <p class="q-text">Simplify:
+    <span class="frac"><span class="num">3</span><span class="den">4</span></span>
+    +
+    <span class="frac"><span class="num">5</span><span class="den">6</span></span>
+  </p>
+  <div class="options">
+    <span>A. 19/12</span><span>B. 8/10</span><span>C. 15/24</span><span>D. 4/5</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">2.</span>
+  <p class="q-text">Simplify:
+    <span class="frac"><span class="num">2x² + 4x</span><span class="den">2x</span></span>
+  </p>
+  <div class="options">
+    <span>A. x + 2</span><span>B. x² + 2</span><span>C. 2x + 4</span><span>D. x + 4</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">3.</span>
+  <p class="q-text">Rationalize:
+    <span class="frac"><span class="num">1</span><span class="den"><span class="sqrt"><span class="radicand">3</span></span> + 1</span></span>
+  </p>
+  <div class="options">
+    <span>A. (√3 − 1)/2</span><span>B. (√3 + 1)/2</span><span>C. √3 − 1</span><span>D. 2/(√3 − 1)</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">4.</span>
+  <p class="q-text">Evaluate:
+    <span class="sqrt"><span class="radicand">81</span></span>
+    +
+    <span class="sqrt"><span class="radicand">49</span></span>
+  </p>
+  <div class="options">
+    <span>A. 14</span><span>B. 16</span><span>C. 18</span><span>D. 20</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">5.</span>
+  <p class="q-text">Simplify:
+    <span class="frac"><span class="num">x² − 9</span><span class="den">x + 3</span></span>
+  </p>
+  <div class="options">
+    <span>A. x − 3</span><span>B. x + 3</span><span>C. x² − 3</span><span>D. x − 9</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">6.</span>
+  <p class="q-text">Express as a single fraction:
+    <span class="frac"><span class="num">1</span><span class="den">x</span></span>
+    +
+    <span class="frac"><span class="num">1</span><span class="den">y</span></span>
+  </p>
+  <div class="options">
+    <span>A. 2/(x+y)</span><span>B. (x+y)/xy</span><span>C. (y+x)/xy</span><span>D. 1/(x+y)</span>
+  </div>
+</div>
+
+<div class="section-label">Matrices (Q7–12)</div>
+
+<div class="question-block">
+  <span class="q-num">7.</span>
+  <p class="q-text">Find the determinant of
+    <span class="det cols-2">
+      <span>3</span><span>1</span>
+      <span>4</span><span>2</span>
+    </span>
+  </p>
+  <div class="options">
+    <span>A. 2</span><span>B. 4</span><span>C. 6</span><span>D. 10</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">8.</span>
+  <p class="q-text">If A =
+    <span class="matrix cols-2">
+      <span>2</span><span>0</span>
+      <span>1</span><span>3</span>
+    </span>
+    and B =
+    <span class="matrix cols-2">
+      <span>1</span><span>1</span>
+      <span>0</span><span>2</span>
+    </span>
+    find A + B.
+  </p>
+  <div class="options">
+    <span>A. (3 1 / 1 5)</span><span>B. (2 0 / 0 6)</span><span>C. (3 0 / 1 5)</span><span>D. (3 1 / 0 5)</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">9.</span>
+  <p class="q-text">Find 3A where A =
+    <span class="matrix cols-2">
+      <span>1</span><span>−1</span>
+      <span>2</span><span>0</span>
+    </span>
+  </p>
+  <div class="options">
+    <span>A. (3 −3 / 6 0)</span><span>B. (3 −1 / 2 0)</span><span>C. (1 −3 / 6 0)</span><span>D. (4 2 / 5 3)</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">10.</span>
+  <p class="q-text">The order (dimensions) of
+    <span class="matrix cols-3">
+      <span>1</span><span>2</span><span>3</span>
+      <span>4</span><span>5</span><span>6</span>
+    </span>
+    is
+  </p>
+  <div class="options">
+    <span>A. 3 × 2</span><span>B. 2 × 3</span><span>C. 6 × 1</span><span>D. 1 × 6</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">11.</span>
+  <p class="q-text">The identity matrix of order 2 is
+    <span class="matrix cols-2">
+      <span>1</span><span>?</span>
+      <span>?</span><span>1</span>
+    </span>.
+    Find the missing entries.
+  </p>
+  <div class="options">
+    <span>A. 0 and 0</span><span>B. 1 and 0</span><span>C. 0 and 1</span><span>D. 1 and 1</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">12.</span>
+  <p class="q-text">If |A| = 0, then the matrix A is said to be:</p>
+  <div class="options">
+    <span>A. Identity</span><span>B. Singular</span><span>C. Scalar</span><span>D. Symmetric</span>
+  </div>
+</div>
+
+<div class="section-label">Systems, Integrals, Summations (Q13–18)</div>
+
+<div class="question-block">
+  <span class="q-num">13.</span>
+  <p class="q-text">Solve:
+    <span class="system">
+      <span class="eqs">
+        <span>x + y = 7</span>
+        <span>x − y = 1</span>
+      </span>
+    </span>
+  </p>
+  <div class="options">
+    <span>A. (4,3)</span><span>B. (3,4)</span><span>C. (5,2)</span><span>D. (2,5)</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">14.</span>
+  <p class="q-text">Evaluate:
+    <span class="integral">
+      <span class="int-sym">∫</span>
+      <span class="limits"><span class="upper">2</span><span class="lower">0</span></span>
+    </span>
+    x² dx
+  </p>
+  <div class="options">
+    <span>A. 4/3</span><span>B. 8/3</span><span>C. 4</span><span>D. 8</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">15.</span>
+  <p class="q-text">Evaluate:
+    <span class="integral">
+      <span class="int-sym">∫</span>
+      <span class="limits"><span class="upper">1</span><span class="lower">0</span></span>
+    </span>
+    (2x + 1) dx
+  </p>
+  <div class="options">
+    <span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 4</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">16.</span>
+  <p class="q-text">Evaluate:
+    <span class="summation">
+      <span class="upper">5</span>
+      <span class="sigma">Σ</span>
+      <span class="lower">i=1</span>
+    </span>
+    i
+  </p>
+  <div class="options">
+    <span>A. 10</span><span>B. 15</span><span>C. 20</span><span>D. 25</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">17.</span>
+  <p class="q-text">The sum to infinity of a GP with first term 6 and common ratio 1/3 is:</p>
+  <div class="options">
+    <span>A. 7</span><span>B. 8</span><span>C. 9</span><span>D. 18</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">18.</span>
+  <p class="q-text">Evaluate
+    <span class="ncr">
+      <span class="pre-sup">5</span>
+      <span class="big">C</span>
+      <span class="pre-sub">2</span>
+    </span>
+  </p>
+  <div class="options">
+    <span>A. 5</span><span>B. 10</span><span>C. 20</span><span>D. 60</span>
+  </div>
+</div>
+
+<div class="section-label">Tables &amp; Data (Q19–25)</div>
+
+<div class="question-block">
+  <span class="q-num">19.</span>
+  <p class="q-text">Using the truth table values, if p = T and q = F, then (p ∨ q) ∧ ¬p is:</p>
+  <div class="options">
+    <span>A. T</span><span>B. F</span><span>C. Undefined</span><span>D. Depends on context</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">20.</span>
+  <p class="q-text">For the frequency table with Σf = 10 and Σfx = 43, the mean is:</p>
+  <div class="options">
+    <span>A. 3.8</span><span>B. 4.0</span><span>C. 4.3</span><span>D. 5.0</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">21.</span>
+  <p class="q-text">From the grouped frequency table, the modal class is:</p>
+  <div class="options">
+    <span>A. 1–10</span><span>B. 11–20</span><span>C. 21–30</span><span>D. 31–40</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">22.</span>
+  <p class="q-text">Using the log table, log 1.25 =</p>
+  <div class="options">
+    <span>A. 0.0453</span><span>B. 0.0828</span><span>C. 0.0969</span><span>D. 0.1239</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">23.</span>
+  <p class="q-text">Using the trigonometric table, cos 60° =</p>
+  <div class="options">
+    <span>A. 1/2</span><span>B. √3/2</span><span>C. 1/√2</span><span>D. 1</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">24.</span>
+  <p class="q-text">In the stem-and-leaf plot given, the median is the value corresponding to:</p>
+  <div class="options">
+    <span>A. 32</span><span>B. 35</span><span>C. 39</span><span>D. 41</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">25.</span>
+  <p class="q-text">In the probability distribution table P(X = 2) =</p>
+  <div class="options">
+    <span>A. 1/8</span><span>B. 3/8</span><span>C. 1/2</span><span>D. 3/4</span>
+  </div>
+</div>
+
+<div class="answer-key no-break">
+  <h3>Answer Key — Notation Practice Questions</h3>
+  <div class="answer-grid">
+    <div>1. A</div><div>2. A</div><div>3. A</div><div>4. B</div><div>5. A</div>
+    <div>6. C</div><div>7. A</div><div>8. A</div><div>9. A</div><div>10. B</div>
+    <div>11. A</div><div>12. B</div><div>13. A</div><div>14. B</div><div>15. B</div>
+    <div>16. B</div><div>17. C</div><div>18. B</div><div>19. B</div><div>20. C</div>
+    <div>21. C</div><div>22. C</div><div>23. A</div><div>24. B</div><div>25. B</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART I: HOW TO USE -->
+<!-- ============================================================ -->
+
+<h2>Part I — How to Use This Supplement</h2>
+
+<div class="callout no-break">
+  <div class="callout-title">Study Protocol</div>
+  <ol>
+    <li><strong>Read every notation display aloud</strong> as a full mathematical sentence. "3 over 4" for <span class="frac"><span class="num">3</span><span class="den">4</span></span>, "integral from 0 to 2 of x dx" for the definite integral, "5 choose 2" for the combination.</li>
+    <li><strong>Redraw each notation format from memory.</strong> Especially: matrix brackets, fraction bars, integral limits, sigma notation, system braces.</li>
+    <li><strong>Practise reading tables under time pressure.</strong> JAMB gives you roughly 90 seconds per question. Table-based statistics questions must be solved in under 2 minutes.</li>
+    <li><strong>Keep the symbol reference table (Part F) beside you</strong> during practice. Every symbol should become instant recall.</li>
+    <li><strong>Complete the 25 notation questions</strong> and score 22+ before moving to the next topic.</li>
+  </ol>
+</div>
+
+<h3>What This Supplement Adds to the Archive</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Format</th>
+      <th>Where JAMB Uses It</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Stacked fractions</strong></td><td>Algebraic simplification, surds, probability, calculus</td></tr>
+    <tr><td><strong>Radicals with overline</strong></td><td>Surds, irrational equations, distance formula</td></tr>
+    <tr><td><strong>Matrices with brackets</strong></td><td>Simultaneous equations, transformations, determinants</td></tr>
+    <tr><td><strong>Determinant bars</strong></td><td>Matrix algebra, area of triangles via coordinates</td></tr>
+    <tr><td><strong>System braces</strong></td><td>Simultaneous equations — linear and quadratic</td></tr>
+    <tr><td><strong>Integral with limits</strong></td><td>Definite integrals, area under curve</td></tr>
+    <tr><td><strong>Sigma notation</strong></td><td>Series, AP/GP sums, mean formula</td></tr>
+    <tr><td><strong>nCr / nPr stacked</strong></td><td>Permutation, combination, binomial expansion</td></tr>
+    <tr><td><strong>Frequency tables</strong></td><td>Mean, median, mode, cumulative frequency</td></tr>
+    <tr><td><strong>Probability distribution tables</strong></td><td>Expected value, variance of discrete random variables</td></tr>
+    <tr><td><strong>Truth tables</strong></td><td>Logic, set theory, conditional statements</td></tr>
+    <tr><td><strong>Log tables</strong></td><td>Logarithm computations</td></tr>
+    <tr><td><strong>Trig tables</strong></td><td>Special angles, sine/cosine rule problems</td></tr>
+    <tr><td><strong>Histograms</strong></td><td>Grouped data, modal class</td></tr>
+    <tr><td><strong>Stem-and-leaf plots</strong></td><td>Data ordering, median, quartiles</td></tr>
+    <tr><td><strong>Box plots</strong></td><td>Five-number summary, IQR, outliers</td></tr>
+    <tr><td><strong>Set notation</strong></td><td>Set theory, Venn diagrams, inequalities</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<p class="small center"><strong>JAMB MATHEMATICS — NOTATION SUPPLEMENT</strong> · All notation rendered in pure CSS · JavaScript-free · Print-optimised · Ink-economical</p>
+
+</body>
+</html>

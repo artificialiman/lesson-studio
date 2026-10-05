@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAMB Mathematics — Mastery Archive &amp; Diagram Supplement</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #000; background: #fff;
+    line-height: 1.45;
+    max-width: 190mm; margin: 0 auto;
+    padding: 8mm 6mm;
+  }
+  @media print {
+    html { font-size: 10pt; }
+    body { max-width: 100%; padding: 4mm 3mm; line-height: 1.35; }
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+    h1, h2, h3 { page-break-after: avoid; }
+    table { page-break-inside: avoid; }
+    .question-block { page-break-inside: avoid; }
+    .diagram-box { page-break-inside: avoid; }
+  }
+  h1 {
+    font-size: 1.9rem; font-weight: 900;
+    letter-spacing: -0.5px;
+    border-bottom: 4px solid #000;
+    padding-bottom: 6px; margin-bottom: 4px;
+  }
+  h2 {
+    font-size: 1.35rem; font-weight: 900;
+    border-bottom: 3px solid #000;
+    padding-bottom: 4px;
+    margin-top: 28px; margin-bottom: 10px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  h3 {
+    font-size: 1.1rem; font-weight: 900;
+    margin-top: 18px; margin-bottom: 8px;
+    border-left: 6px solid #000; padding-left: 8px;
+  }
+  h4 {
+    font-size: 1rem; font-weight: 900;
+    margin-top: 14px; margin-bottom: 6px;
+    text-decoration: underline;
+  }
+  p { margin-bottom: 8px; font-weight: 600; }
+  strong, b { font-weight: 900; }
+  em { font-style: italic; font-weight: 700; }
+  hr { border: none; border-top: 4px solid #000; margin: 20px 0; }
+  ul, ol { margin: 6px 0 10px 22px; font-weight: 600; }
+  li { margin-bottom: 4px; }
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 10px 0 14px 0; font-size: 0.92rem; font-weight: 700;
+  }
+  th {
+    background: #fff; color: #000; font-weight: 900;
+    text-transform: uppercase; font-size: 0.82rem;
+    letter-spacing: 0.4px;
+    border: 3px solid #000; padding: 5px 6px; text-align: left;
+  }
+  td {
+    border: 2px solid #000; padding: 4px 6px;
+    vertical-align: top; font-weight: 600;
+  }
+  tr:nth-child(even) td { background: #f2f2f2; }
+  .question-block {
+    margin-bottom: 10px; padding: 6px 0;
+    border-bottom: 2px solid #000;
+  }
+  .question-block:last-child { border-bottom: none; }
+  .q-num { font-weight: 900; font-size: 1rem; }
+  .q-text { font-weight: 700; margin: 4px 0 4px 0; }
+  .options { margin-left: 18px; font-weight: 600; }
+  .options span {
+    display: inline-block; min-width: 48%; margin-bottom: 2px;
+  }
+  .answer-key {
+    border: 4px solid #000; padding: 10px 12px;
+    margin: 16px 0; page-break-inside: avoid;
+  }
+  .answer-key h3 { border-left: none; padding-left: 0; margin-top: 0; }
+  .answer-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 2px 8px; font-weight: 700; font-size: 0.92rem;
+  }
+  .answer-grid div { padding: 2px 0; border-bottom: 1px solid #000; }
+  .callout {
+    border: 4px solid #000; padding: 10px 12px;
+    margin: 14px 0; page-break-inside: avoid;
+  }
+  .callout-title {
+    font-weight: 900; text-transform: uppercase;
+    font-size: 0.85rem; letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px; margin-bottom: 6px;
+  }
+  .section-label {
+    font-weight: 900; font-size: 0.88rem;
+    text-transform: uppercase; letter-spacing: 1px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px; margin: 22px 0 8px 0;
+  }
+  .center { text-align: center; }
+  .small { font-size: 0.85rem; }
+  .no-break { page-break-inside: avoid; }
+  .diagram-box {
+    border: 3px solid #000; padding: 8px 10px;
+    margin: 12px 0; page-break-inside: avoid;
+    background: #fff;
+  }
+  .diagram-title {
+    font-weight: 900; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3px; margin-bottom: 6px;
+  }
+  .diagram-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; margin: 10px 0;
+  }
+  .diagram-grid-3 {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px; margin: 10px 0;
+  }
+  .diagram-cell {
+    border: 2px solid #000; padding: 6px;
+    text-align: center; page-break-inside: avoid;
+  }
+  .diagram-cell .label {
+    font-weight: 900; font-size: 0.82rem; margin-top: 4px;
+  }
+  svg { display: block; margin: 0 auto; max-width: 100%; }
+</style>
+</head>
+<body>
+
+<h1>JAMB MATHEMATICS — MASTERY ARCHIVE</h1>
+<p><strong>Complete Record:</strong> Exam Architecture · 50-Question General Diagnostic · Algebra Mastery Set (55 Questions) · Diagram &amp; Graph Supplement · 25 Diagram-Based Questions</p>
+<hr>
+
+<!-- ============================================================ -->
+<!-- PART 1: EXAM ARCHITECTURE -->
+<!-- ============================================================ -->
+
+<h2>Part 1 — Exam Architecture &amp; Strategy</h2>
+
+<h3>1.1 The JAMB Mathematics Syllabus</h3>
+
+<p>The syllabus tests conceptual understanding, computational accuracy, and the ability to apply mathematical reasoning to real-world problems. The exam carries <strong>40 questions</strong> drawn from five major sections:</p>
+
+<ul>
+  <li><strong>Number and Numeration</strong> — number bases, fractions/decimals/approximations, indices, logarithms, surds, sets, ratio/proportion, percentages, interest, permutation and combination, probability.</li>
+  <li><strong>Algebra and Functions</strong> — polynomials, quadratic equations, simultaneous equations, inequalities, sequences and series, variation, functions, binomial expansion, matrices.</li>
+  <li><strong>Geometry and Trigonometry</strong> — angles, polygons, circles (theorems), area and volume, latitude and longitude, trigonometry ratios, sine and cosine rules, bearings, vectors.</li>
+  <li><strong>Calculus</strong> — differentiation (polynomial, trig, exponential, logarithmic), applications of differentiation (rates, maxima/minima), integration (indefinite and definite), area under curves.</li>
+  <li><strong>Statistics</strong> — mean/median/mode, measures of dispersion, cumulative frequency, histograms, probability distributions.</li>
+</ul>
+
+<h3>1.2 Paper Types &amp; the Question Bank</h3>
+
+<p><strong>Old system (pre-2013):</strong> Fixed paper types (A, B, C, D). First question asked "What type is this?"</p>
+
+<p><strong>CBT transition (2013–2024):</strong> Full computer-based testing. Code words like <strong>"DIBU"</strong> and <strong>"SELF"</strong> served as anti-cheating markers.</p>
+
+<p><strong>Modern system (2025+):</strong> <strong>Full-scale shuffling</strong> of both questions and answer options. Every candidate receives a <strong>unique permutation</strong>. The old alphabetical system is obsolete.</p>
+
+<div class="callout">
+  <div class="callout-title">Key Fact</div>
+  <p>JAMB Mathematics maintains a large <strong>item bank</strong>. Each candidate sees roughly <strong>40 questions</strong> per session. Exact prediction is statistically impossible — but the <strong>topic blueprint</strong> is structurally guaranteed.</p>
+</div>
+
+<h3>1.3 High-Probability Topics (Verified Weightings)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Topic</th>
+      <th>% of Questions</th>
+      <th>Why It's Guaranteed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><strong>Algebra</strong> (polynomials, quadratics, sequences, logs, surds, functions)</td><td><strong>~25–30%</strong></td><td>Highest-weight single block. Every exam carries 10–12 algebra questions.</td></tr>
+    <tr><td>2</td><td><strong>Number &amp; Numeration</strong> (indices, logs, surds, bases, sets, probability)</td><td><strong>~20%</strong></td><td>Foundation for all other sections. Guaranteed in every paper.</td></tr>
+    <tr><td>3</td><td><strong>Geometry &amp; Trigonometry</strong> (circle theorems, polygons, sine/cosine rules, bearings, vectors)</td><td><strong>~20–25%</strong></td><td>Diagram-heavy. Circle theorems appear without exception.</td></tr>
+    <tr><td>4</td><td><strong>Calculus</strong> (differentiation, integration, applications)</td><td><strong>~10–15%</strong></td><td>Guaranteed 4–6 questions. Focus on differentiation and area under curves.</td></tr>
+    <tr><td>5</td><td><strong>Statistics</strong> (mean/median/mode, dispersion, ogive, probability)</td><td><strong>~10–15%</strong></td><td>Consistent presence. Ogive and probability are reliable.</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="callout-title">The 70% Rule</div>
+  <p><strong>Algebra + Number + Geometry = over 65% of every exam.</strong> Add Calculus and you reach <strong>~80%</strong>. This distribution is forced by the blueprint. Master these four blocks.</p>
+</div>
+
+<h3>1.4 How JAMB Constructs the Exam</h3>
+
+<p><strong>Test Blueprint (Table of Specification):</strong> Maps exactly how many questions come from each topic. Forces high-weight areas to appear every year.</p>
+
+<p><strong>Item Response Theory (IRT):</strong> Balances difficulty and discrimination across parallel test forms. Every candidate receives a statistically equivalent exam.</p>
+
+<!-- ============================================================ -->
+<!-- PART 2: GENERAL DIAGNOSTIC -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part 2 — General Mathematics Diagnostic (50 Questions)</h2>
+
+<p><strong>Instructions:</strong> Attempt all 50 questions. Time: 75 minutes. Focus on identifying <em>where</em> you struggle, not just your total score.</p>
+
+<!-- NUMBER -->
+<div class="section-label">Section A — Number &amp; Numeration (10 Questions)</div>
+
+<div class="question-block">
+  <span class="q-num">1.</span>
+  <p class="q-text">Simplify (2√3 − √2)(2√3 + √2).</p>
+  <div class="options">
+    <span>A. 10</span><span>B. 12</span><span>C. 14</span><span>D. 16</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">2.</span>
+  <p class="q-text">If log₁₀ 2 = 0.3010, find log₁₀ 8.</p>
+  <div class="options">
+    <span>A. 0.6020</span><span>B. 0.9030</span><span>C. 1.2040</span><span>D. 2.4080</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">3.</span>
+  <p class="q-text">Express 0.000045 in standard form.</p>
+  <div class="options">
+    <span>A. 4.5 × 10⁻⁵</span><span>B. 4.5 × 10⁻⁴</span><span>C. 4.5 × 10⁵</span><span>D. 45 × 10⁻⁶</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">4.</span>
+  <p class="q-text">Convert 234₅ to base 10.</p>
+  <div class="options">
+    <span>A. 55</span><span>B. 64</span><span>C. 69</span><span>D. 74</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">5.</span>
+  <p class="q-text">Convert 11011₂ to decimal.</p>
+  <div class="options">
+    <span>A. 25</span><span>B. 26</span><span>C. 27</span><span>D. 28</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">6.</span>
+  <p class="q-text">Simplify 27^(2/3).</p>
+  <div class="options">
+    <span>A. 3</span><span>B. 6</span><span>C. 9</span><span>D. 18</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">7.</span>
+  <p class="q-text">Find the LCM of 12, 15, and 20.</p>
+  <div class="options">
+    <span>A. 30</span><span>B. 60</span><span>C. 120</span><span>D. 180</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">8.</span>
+  <p class="q-text">If 3ˣ = 81, find x.</p>
+  <div class="options">
+    <span>A. 2</span><span>B. 3</span><span>C. 4</span><span>D. 5</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">9.</span>
+  <p class="q-text">Simplify 81^(−1/4).</p>
+  <div class="options">
+    <span>A. 1/3</span><span>B. 1/9</span><span>C. 3</span><span>D. 9</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">10.</span>
+  <p class="q-text">Find the HCF of 24 and 36.</p>
+  <div class="options">
+    <span>A. 4</span><span>B. 6</span><span>C. 12</span><span>D. 24</span>
+  </div>
+</div>
+
+<!-- ALGEBRA -->
+<div class="section-label">Section B — Algebra &amp; Functions (12 Questions)</div>
+
+<div class="question-block">
+  <span class="q-num">11.</span>
+  <p class="q-text">Solve: 2x + 5 = 15.</p>
+  <div class="options">
+    <span>A. 3</span><span>B. 5</span><span>C. 7</span><span>D. 10</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">12.</span>
+  <p class="q-text">Factorize x² − 5x + 6.</p>
+  <div class="options">
+    <span>A. (x−2)(x−3)</span><span>B. (x+2)(x+3)</span><span>C. (x−1)(x−6)</span><span>D. (x+1)(x+6)</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">13.</span>
+  <p class="q-text">Solve: x² − 4x + 3 = 0.</p>
+  <div class="options">
+    <span>A. x = 1 or 3</span><span>B. x = −1 or −3</span><span>C. x = 2 or 3</span><span>D. x = 1 or 4</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">14.</span>
+  <p class="q-text">Find the sum of the roots of 2x² − 5x + 3 = 0.</p>
+  <div class="options">
+    <span>A. 3/2</span><span>B. 5/2</span><span>C. −5/2</span><span>D. 2/3</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">15.</span>
+  <p class="q-text">Find the product of the roots of 2x² − 5x + 3 = 0.</p>
+  <div class="options">
+    <span>A. 3/2</span><span>B. 5/2</span><span>C. 2/3</span><span>D. −3/2</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">16.</span>
+  <p class="q-text">y varies directly as x. If y = 10 when x = 2, find y when x = 5.</p>
+  <div class="options">
+    <span>A. 20</span><span>B. 25</span><span>C. 30</span><span>D. 50</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">17.</span>
+  <p class="q-text">Find the 5th term of an AP with first term 3 and common difference 4.</p>
+  <div class="options">
+    <span>A. 15</span><span>B. 19</span><span>C. 23</span><span>D. 27</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">18.</span>
+  <p class="q-text">Find the sum of the first 10 terms of the AP 2, 5, 8, …</p>
+  <div class="options">
+    <span>A. 145</span><span>B. 155</span><span>C. 165</span><span>D. 175</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">19.</span>
+  <p class="q-text">Find the 4th term of the GP 2, 6, 18, …</p>
+  <div class="options">
+    <span>A. 36</span><span>B. 48</span><span>C. 54</span><span>D. 72</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">20.</span>
+  <p class="q-text">Solve for x: (x+1)/(x−1) = 3.</p>
+  <div class="options">
+    <span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 4</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">21.</span>
+  <p class="q-text">If α and β are roots of x² − 5x + 6 = 0, find α² + β².</p>
+  <div class="options">
+    <span>A. 11</span><span>B. 13</span><span>C. 15</span><span>D. 17</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">22.</span>
+  <p class="q-text">Simplify (x² − 9)/(x − 3), where x ≠ 3.</p>
+  <div class="options">
+    <span>A. x − 3</span><span>B. x + 3</span><span>C. x² + 3</span><span>D. x − 9</span>
+  </div>
+</div>
+
+<!-- GEOMETRY & TRIG -->
+<div class="section-label">Section C — Geometry &amp; Trigonometry (10 Questions)</div>
+
+<div class="question-block">
+  <span class="q-num">23.</span>
+  <p class="q-text">Find the sum of the interior angles of a hexagon.</p>
+  <div class="options">
+    <span>A. 540°</span><span>B. 720°</span><span>C. 900°</span><span>D. 1080°</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">24.</span>
+  <p class="q-text">Find each exterior angle of a regular pentagon.</p>
+  <div class="options">
+    <span>A. 60°</span><span>B. 72°</span><span>C. 90°</span><span>D. 108°</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">25.</span>
+  <p class="q-text">If sin θ = 3/5 and θ is acute, find cos θ.</p>
+  <div class="options">
+    <span>A. 2/5</span><span>B. 3/4</span><span>C. 4/5</span><span>D. 5/3</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">26.</span>
+  <p class="q-text">Evaluate tan 45°.</p>
+  <div class="options">
+    <span>A. 0</span><span>B. 1/2</span><span>C. 1</span><span>D. √3</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">27.</span>
+  <p class="q-text">In a right triangle, opposite = 3 and hypotenuse = 5. Find sin θ.</p>
+  <div class="options">
+    <span>A. 3/4</span><span>B. 3/5</span><span>C. 4/5</span><span>D. 5/3</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">28.</span>
+  <p class="q-text">The angle in a semicircle is:</p>
+  <div class="options">
+    <span>A. 45°</span><span>B. 60°</span><span>C. 90°</span><span>D. 180°</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">29.</span>
+  <p class="q-text">The angle at the centre is ______ the angle at the circumference on the same arc.</p>
+  <div class="options">
+    <span>A. Half</span><span>B. Equal to</span><span>C. Twice</span><span>D. Three times</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">30.</span>
+  <p class="q-text">A bearing of 045° means:</p>
+  <div class="options">
+    <span>A. 45° from North toward West</span><span>B. 45° from North toward East</span><span>C. 45° from South toward East</span><span>D. 45° from East toward North</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">31.</span>
+  <p class="q-text">The cosine rule states that:</p>
+  <div class="options">
+    <span>A. a² = b² + c² + 2bc cos A</span><span>B. a² = b² + c² − 2bc cos A</span><span>C. a/sin A = b/sin B</span><span>D. a² = b² − c² + 2bc cos A</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">32.</span>
+  <p class="q-text">Find the area of a triangle with sides 3 cm and 4 cm, included angle 30°.</p>
+  <div class="options">
+    <span>A. 3 cm²</span><span>B. 4 cm²</span><span>C. 6 cm²</span><span>D. 12 cm²</span>
+  </div>
+</div>
+
+<!-- CALCULUS -->
+<div class="section-label">Section D — Calculus (8 Questions)</div>
+
+<div class="question-block">
+  <span class="q-num">33.</span>
+  <p class="q-text">Differentiate x³ with respect to x.</p>
+  <div class="options">
+    <span>A. 3x</span><span>B. x²</span><span>C. 3x²</span><span>D. x⁴/4</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">34.</span>
+  <p class="q-text">Differentiate sin x with respect to x.</p>
+  <div class="options">
+    <span>A. −cos x</span><span>B. cos x</span><span>C. −sin x</span><span>D. tan x</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">35.</span>
+  <p class="q-text">If y = 3x² + 2x, find dy/dx at x = 2.</p>
+  <div class="options">
+    <span>A. 10</span><span>B. 12</span><span>C. 14</span><span>D. 16</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">36.</span>
+  <p class="q-text">Evaluate ∫ 2x dx.</p>
+  <div class="options">
+    <span>A. x² + C</span><span>B. 2x² + C</span><span>C. x + C</span><span>D. 2 + C</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">37.</span>
+  <p class="q-text">Evaluate ∫₀² x dx.</p>
+  <div class="options">
+    <span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 4</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">38.</span>
+  <p class="q-text">Differentiate eˣ with respect to x.</p>
+  <div class="options">
+    <span>A. xeˣ⁻¹</span><span>B. eˣ</span><span>C. eˣ/x</span><span>D. ln x</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">39.</span>
+  <p class="q-text">Differentiate ln x with respect to x.</p>
+  <div class="options">
+    <span>A. ln x</span><span>B. x</span><span>C. 1/x</span><span>D. −1/x²</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">40.</span>
+  <p class="q-text">Find the gradient of y = x² − 4x at x = 3.</p>
+  <div class="options">
+    <span>A. 0</span><span>B. 1</span><span>C. 2</span><span>D. 3</span>
+  </div>
+</div>
+
+<!-- STATISTICS -->
+<div class="section-label">Section E — Statistics &amp; Probability (10 Questions)</div>
+
+<div class="question-block">
+  <span class="q-num">41.</span>
+  <p class="q-text">Find the mean of 2, 4, 6, 8, 10.</p>
+  <div class="options">
+    <span>A. 5</span><span>B. 6</span><span>C. 7</span><span>D. 8</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">42.</span>
+  <p class="q-text">Find the median of 3, 5, 7, 9, 11, 13.</p>
+  <div class="options">
+    <span>A. 7</span><span>B. 8</span><span>C. 9</span><span>D. 10</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">43.</span>
+  <p class="q-text">Find the mode of 2, 3, 3, 4, 5, 3, 2.</p>
+  <div class="options">
+    <span>A. 2</span><span>B. 3</span><span>C. 4</span><span>D. 5</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">44.</span>
+  <p class="q-text">In how many ways can 5 students be chosen from 10?</p>
+  <div class="options">
+    <span>A. 50</span><span>B. 120</span><span>C. 252</span><span>D. 30240</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">45.</span>
+  <p class="q-text">How many distinct arrangements can be made from the letters of "BOOK"?</p>
+  <div class="options">
+    <span>A. 6</span><span>B. 12</span><span>C. 24</span><span>D. 48</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">46.</span>
+  <p class="q-text">Find the probability of getting a head in one toss of a fair coin.</p>
+  <div class="options">
+    <span>A. 0</span><span>B. 1/4</span><span>C. 1/2</span><span>D. 1</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">47.</span>
+  <p class="q-text">Find the probability of getting a sum of 7 with two fair dice.</p>
+  <div class="options">
+    <span>A. 1/12</span><span>B. 1/9</span><span>C. 1/6</span><span>D. 5/36</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">48.</span>
+  <p class="q-text">Find the range of 3, 7, 2, 9, 5.</p>
+  <div class="options">
+    <span>A. 5</span><span>B. 6</span><span>C. 7</span><span>D. 9</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">49.</span>
+  <p class="q-text">If P(A) = 0.4, find P(A′).</p>
+  <div class="options">
+    <span>A. 0.4</span><span>B. 0.5</span><span>C. 0.6</span><span>D. 0.8</span>
+  </div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">50.</span>
+  <p class="q-text">In a class of 30, 18 like Maths, 15 like Physics, 10 like both. How many like neither?</p>
+  <div class="options">
+    <span>A. 3</span><span>B. 5</span><span>C. 7</span><span>D. 9</span>
+  </div>
+</div>
+
+<div class="answer-key no-break">
+  <h3>Answer Key — General Diagnostic</h3>
+  <div class="answer-grid">
+    <div>1. A</div><div>2. B</div><div>3. A</div><div>4. C</div><div>5. C</div>
+    <div>6. C</div><div>7. B</div><div>8. C</div><div>9. A</div><div>10. C</div>
+    <div>11. B</div><div>12. A</div><div>13. A</div><div>14. B</div><div>15. A</div>
+    <div>16. B</div><div>17. B</div><div>18. B</div><div>19. C</div><div>20. B</div>
+    <div>21. B</div><div>22. B</div><div>23. B</div><div>24. B</div><div>25. C</div>
+    <div>26. C</div><div>27. B</div><div>28. C</div><div>29. C</div><div>30. B</div>
+    <div>31. B</div><div>32. A</div><div>33. C</div><div>34. B</div><div>35. C</div>
+    <div>36. A</div><div>37. B</div><div>38. B</div><div>39. C</div><div>40. C</div>
+    <div>41. B</div><div>42. B</div><div>43. B</div><div>44. C</div><div>45. B</div>
+    <div>46. C</div><div>47. C</div><div>48. C</div><div>49. C</div><div>50. C</div>
+  </div>
+</div>
+
+<div class="callout no-break">
+  <div class="callout-title">Diagnostic Guide</div>
+  <table>
+    <thead>
+      <tr><th>Section</th><th>Questions</th><th>Score</th><th>Focus</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Number &amp; Numeration</td><td>1–10</td><td>___/10</td><td>Below 6: revise indices, logs, surds, number bases.</td></tr>
+      <tr><td>Algebra &amp; Functions</td><td>11–22</td><td>___/12</td><td>Below 7: <strong>highest-priority block.</strong> Drill quadratics, sequences, variation.</td></tr>
+      <tr><td>Geometry &amp; Trigonometry</td><td>23–32</td><td>___/10</td><td>Below 6: master circle theorems, trig ratios, sine/cosine rules.</td></tr>
+      <tr><td>Calculus</td><td>33–40</td><td>___/8</td><td>Below 5: focus on differentiation rules and definite integrals.</td></tr>
+      <tr><td>Statistics &amp; Probability</td><td>41–50</td><td>___/10</td><td>Below 6: revise combinatorics, probability rules, ogive.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 3: ALGEBRA MASTERY SET -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part 3 — Algebra Mastery Set</h2>
+
+<h3>3.1 Topic Overview</h3>
+
+<p><strong>Historical Weight:</strong> <strong>~25–30%</strong> of all JAMB Mathematics questions — the single highest-weight block. Expect <strong>10–12 algebra questions per exam</strong>.</p>
+
+<h4>Variation Map</h4>
+
+<table>
+  <thead>
+    <tr><th>#</th><th>Variation</th><th>Frequency</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Simplification of algebraic expressions</td><td>High</td></tr>
+    <tr><td>2</td><td>Factorization (quadratic, difference of squares, sum/difference of cubes)</td><td>Very High</td></tr>
+    <tr><td>3</td><td>Solving linear equations</td><td>High</td></tr>
+    <tr><td>4</td><td>Solving quadratics (factorization, formula, completing square)</td><td>Very High</td></tr>
+    <tr><td>5</td><td>Nature of roots (discriminant)</td><td>High</td></tr>
+    <tr><td>6</td><td>Sum and product of roots</td><td>Very High</td></tr>
+    <tr><td>7</td><td>Simultaneous equations (linear-linear, linear-quadratic)</td><td>High</td></tr>
+    <tr><td>8</td><td>Inequalities (linear and quadratic)</td><td>High</td></tr>
+    <tr><td>9</td><td>Indices</td><td>Very High</td></tr>
+    <tr><td>10</td><td>Logarithms</td><td>Very High</td></tr>
+    <tr><td>11</td><td>Surds and rationalization</td><td>Very High</td></tr>
+    <tr><td>12</td><td>Change of subject of formula</td><td>Medium</td></tr>
+    <tr><td>13</td><td>Variation (direct, inverse, joint, partial)</td><td>High</td></tr>
+    <tr><td>14</td><td>Arithmetic progression</td><td>Very High</td></tr>
+    <tr><td>15</td><td>Geometric progression</td><td>Very High</td></tr>
+    <tr><td>16</td><td>Sum to infinity of GP</td><td>High</td></tr>
+    <tr><td>17</td><td>Partial fractions</td><td>Medium</td></tr>
+    <tr><td>18</td><td>Remainder and factor theorems</td><td>High</td></tr>
+    <tr><td>19</td><td>Binomial expansion</td><td>Medium</td></tr>
+    <tr><td>20</td><td>Functions (composite, inverse, domain, range)</td><td>High</td></tr>
+  </tbody>
+</table>
+
+<div class="section-label">3.2 — Algebra Diagnostic (20 Questions)</div>
+
+<div class="question-block">
+  <span class="q-num">1.</span>
+  <p class="q-text">Simplify 2⁵ × 2⁻³.</p>
+  <div class="options"><span>A. 2</span><span>B. 4</span><span>C. 8</span><span>D. 16</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">2.</span>
+  <p class="q-text">Simplify log 100 + log 10.</p>
+  <div class="options"><span>A. 2</span><span>B. 3</span><span>C. 10</span><span>D. 100</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">3.</span>
+  <p class="q-text">Rationalize 4/(√5 − 1).</p>
+  <div class="options"><span>A. √5 + 1</span><span>B. √5 − 1</span><span>C. 4√5 + 4</span><span>D. √5/4</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">4.</span>
+  <p class="q-text">Solve x² − 9 = 0.</p>
+  <div class="options"><span>A. x = 3 only</span><span>B. x = ±3</span><span>C. x = 9</span><span>D. x = ±9</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">5.</span>
+  <p class="q-text">Find the discriminant of 2x² − 3x + 1 = 0.</p>
+  <div class="options"><span>A. 1</span><span>B. −1</span><span>C. 17</span><span>D. 0</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">6.</span>
+  <p class="q-text">Find the sum of the roots of x² + 5x − 6 = 0.</p>
+  <div class="options"><span>A. −6</span><span>B. −5</span><span>C. 5</span><span>D. 6</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">7.</span>
+  <p class="q-text">Find the product of the roots of x² + 5x − 6 = 0.</p>
+  <div class="options"><span>A. −6</span><span>B. −5</span><span>C. 5</span><span>D. 6</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">8.</span>
+  <p class="q-text">Solve: 3x − 2y = 4 and x + y = 3.</p>
+  <div class="options"><span>A. x = 2, y = 1</span><span>B. x = 1, y = 2</span><span>C. x = 3, y = 0</span><span>D. x = 0, y = 3</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">9.</span>
+  <p class="q-text">Solve: x² − x − 6 &gt; 0.</p>
+  <div class="options"><span>A. −2 &lt; x &lt; 3</span><span>B. x &lt; −2 or x &gt; 3</span><span>C. x &gt; 3 only</span><span>D. x &lt; −3 or x &gt; 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">10.</span>
+  <p class="q-text">If y varies inversely as x and y = 4 when x = 2, find y when x = 8.</p>
+  <div class="options"><span>A. 1</span><span>B. 2</span><span>C. 4</span><span>D. 16</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">11.</span>
+  <p class="q-text">Find the 5th term of an AP with first term 7 and common difference −2.</p>
+  <div class="options"><span>A. −3</span><span>B. −1</span><span>C. 1</span><span>D. 3</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">12.</span>
+  <p class="q-text">Find the sum to infinity of a GP with a = 8 and r = 1/2.</p>
+  <div class="options"><span>A. 12</span><span>B. 14</span><span>C. 16</span><span>D. 20</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">13.</span>
+  <p class="q-text">Make x the subject of y = 2x − 5.</p>
+  <div class="options"><span>A. x = (y − 5)/2</span><span>B. x = (y + 5)/2</span><span>C. x = 2y − 5</span><span>D. x = 5 − y/2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">14.</span>
+  <p class="q-text">Express 2x/[(x−1)(x+1)] in partial fractions.</p>
+  <div class="options"><span>A. 1/(x−1) + 1/(x+1)</span><span>B. 1/(x−1) − 1/(x+1)</span><span>C. 2/(x−1) + 2/(x+1)</span><span>D. 1/(x+1) + 1/(x−1)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">15.</span>
+  <p class="q-text">Factorize x³ − 27.</p>
+  <div class="options"><span>A. (x−3)(x²+3x+9)</span><span>B. (x−3)³</span><span>C. (x+3)(x²−3x+9)</span><span>D. (x−3)(x²+9)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">16.</span>
+  <p class="q-text">Find the remainder when x³ + 2x² − x + 1 is divided by (x+2).</p>
+  <div class="options"><span>A. −3</span><span>B. 1</span><span>C. 3</span><span>D. 5</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">17.</span>
+  <p class="q-text">Expand (1 − x)³.</p>
+  <div class="options"><span>A. 1 − 3x + 3x² − x³</span><span>B. 1 + 3x + 3x² + x³</span><span>C. 1 − 3x + 3x² + x³</span><span>D. 1 − x³</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">18.</span>
+  <p class="q-text">If f(x) = x² + 1, find f(f(2)).</p>
+  <div class="options"><span>A. 5</span><span>B. 10</span><span>C. 26</span><span>D. 50</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">19.</span>
+  <p class="q-text">Find the inverse of f(x) = (x−1)/2.</p>
+  <div class="options"><span>A. f⁻¹(x) = 2x + 1</span><span>B. f⁻¹(x) = 2x − 1</span><span>C. f⁻¹(x) = (x+1)/2</span><span>D. f⁻¹(x) = x/2 + 1</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">20.</span>
+  <p class="q-text">Simplify (x² − 4)/(x² + 3x + 2), x ≠ −2, −1.</p>
+  <div class="options"><span>A. (x−2)/(x+1)</span><span>B. (x+2)/(x+1)</span><span>C. (x−2)/(x−1)</span><span>D. (x+2)/(x−1)</span></div>
+</div>
+
+<div class="answer-key no-break">
+  <h3>Answer Key — Algebra Diagnostic</h3>
+  <div class="answer-grid">
+    <div>1. B</div><div>2. B</div><div>3. A</div><div>4. B</div><div>5. A</div>
+    <div>6. B</div><div>7. A</div><div>8. A</div><div>9. B</div><div>10. A</div>
+    <div>11. B</div><div>12. C</div><div>13. B</div><div>14. A</div><div>15. A</div>
+    <div>16. C</div><div>17. A</div><div>18. C</div><div>19. A</div><div>20. A</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3.3 MASTERY SET -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<div class="section-label">3.3 — Algebra Mastery Set (55 Questions)</div>
+
+<h3>Part A — Indices &amp; Logarithms (Variations 9, 10) — 10 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">1.</span>
+  <p class="q-text">Simplify 2³ × 2⁴.</p>
+  <div class="options"><span>A. 32</span><span>B. 64</span><span>C. 128</span><span>D. 256</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">2.</span>
+  <p class="q-text">Simplify (3²)³.</p>
+  <div class="options"><span>A. 81</span><span>B. 243</span><span>C. 729</span><span>D. 2187</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">3.</span>
+  <p class="q-text">Evaluate 16^(3/4).</p>
+  <div class="options"><span>A. 4</span><span>B. 6</span><span>C. 8</span><span>D. 12</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">4.</span>
+  <p class="q-text">Solve 2ˣ = 32.</p>
+  <div class="options"><span>A. 3</span><span>B. 4</span><span>C. 5</span><span>D. 6</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">5.</span>
+  <p class="q-text">If log 2 = 0.3010, find log 5.</p>
+  <div class="options"><span>A. 0.3010</span><span>B. 0.4771</span><span>C. 0.6990</span><span>D. 1.3010</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">6.</span>
+  <p class="q-text">Simplify log 8 + log 5 − log 4.</p>
+  <div class="options"><span>A. 0.5</span><span>B. 1</span><span>C. 2</span><span>D. 10</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">7.</span>
+  <p class="q-text">Solve log₂ x = 3.</p>
+  <div class="options"><span>A. 6</span><span>B. 8</span><span>C. 9</span><span>D. 27</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">8.</span>
+  <p class="q-text">Simplify (27/8)^(2/3).</p>
+  <div class="options"><span>A. 4/9</span><span>B. 9/4</span><span>C. 3/2</span><span>D. 27/8</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">9.</span>
+  <p class="q-text">If 5^(2x−1) = 125, find x.</p>
+  <div class="options"><span>A. 1</span><span>B. 2</span><span>C. 3</span><span>D. 4</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">10.</span>
+  <p class="q-text">Evaluate 100⁰ + 2⁰.</p>
+  <div class="options"><span>A. 0</span><span>B. 1</span><span>C. 2</span><span>D. 100</span></div>
+</div>
+
+<h3>Part B — Surds (Variation 11) — 8 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">11.</span>
+  <p class="q-text">Simplify √50.</p>
+  <div class="options"><span>A. 2√5</span><span>B. 5√2</span><span>C. 10√5</span><span>D. 25√2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">12.</span>
+  <p class="q-text">Simplify √18 + √8.</p>
+  <div class="options"><span>A. 5√2</span><span>B. √26</span><span>C. 2√5</span><span>D. 6√2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">13.</span>
+  <p class="q-text">Rationalize 1/√5.</p>
+  <div class="options"><span>A. √5</span><span>B. √5/5</span><span>C. 5√5</span><span>D. 1/5</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">14.</span>
+  <p class="q-text">Rationalize 2/(3−√2).</p>
+  <div class="options"><span>A. 2(3+√2)/7</span><span>B. 2(3−√2)/7</span><span>C. (3+√2)/2</span><span>D. 2/(3+√2)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">15.</span>
+  <p class="q-text">Simplify (√3+1)(√3−1).</p>
+  <div class="options"><span>A. 2</span><span>B. 4</span><span>C. 3</span><span>D. 1</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">16.</span>
+  <p class="q-text">Simplify √12 × √3.</p>
+  <div class="options"><span>A. 3</span><span>B. 4</span><span>C. 6</span><span>D. 12</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">17.</span>
+  <p class="q-text">Simplify √27 / √3.</p>
+  <div class="options"><span>A. 1</span><span>B. 3</span><span>C. 9</span><span>D. 27</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">18.</span>
+  <p class="q-text">If x√2 = √8, find x.</p>
+  <div class="options"><span>A. 1</span><span>B. 2</span><span>C. √2</span><span>D. 4</span></div>
+</div>
+
+<h3>Part C — Quadratics, Polynomials &amp; Partial Fractions (Variations 2, 4, 5, 6, 17, 18) — 12 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">19.</span>
+  <p class="q-text">Solve x² − 7x + 12 = 0.</p>
+  <div class="options"><span>A. x = 2 or 6</span><span>B. x = 3 or 4</span><span>C. x = −3 or −4</span><span>D. x = 1 or 12</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">20.</span>
+  <p class="q-text">Find the discriminant of x² − 4x + 5 = 0.</p>
+  <div class="options"><span>A. −4</span><span>B. 4</span><span>C. 36</span><span>D. −36</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">21.</span>
+  <p class="q-text">Find the sum of the roots of 3x² − 6x + 2 = 0.</p>
+  <div class="options"><span>A. 1</span><span>B. 2</span><span>C. −2</span><span>D. 2/3</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">22.</span>
+  <p class="q-text">Find the product of the roots of 3x² − 6x + 2 = 0.</p>
+  <div class="options"><span>A. 2/3</span><span>B. 3/2</span><span>C. 2</span><span>D. −2/3</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">23.</span>
+  <p class="q-text">If α + β = 4 and αβ = 3, find α² + β².</p>
+  <div class="options"><span>A. 7</span><span>B. 10</span><span>C. 13</span><span>D. 16</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">24.</span>
+  <p class="q-text">Find k if x² + kx + 9 is a perfect square.</p>
+  <div class="options"><span>A. ±3</span><span>B. ±6</span><span>C. ±9</span><span>D. 0</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">25.</span>
+  <p class="q-text">Factorize x³ − 8.</p>
+  <div class="options"><span>A. (x−2)(x²+2x+4)</span><span>B. (x−2)³</span><span>C. (x+2)(x²−2x+4)</span><span>D. (x−2)(x²+4)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">26.</span>
+  <p class="q-text">Find the remainder when x³ − 2x + 1 is divided by (x−1).</p>
+  <div class="options"><span>A. −1</span><span>B. 0</span><span>C. 1</span><span>D. 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">27.</span>
+  <p class="q-text">If (x−2) is a factor of x³ + ax² − 4x + 4, find a.</p>
+  <div class="options"><span>A. −1</span><span>B. 0</span><span>C. 1</span><span>D. 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">28.</span>
+  <p class="q-text">Solve x² + 2x − 15 = 0.</p>
+  <div class="options"><span>A. x = 3 or −5</span><span>B. x = −3 or 5</span><span>C. x = 3 or 5</span><span>D. x = −3 or −5</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">29.</span>
+  <p class="q-text">Express x² − 6x + 5 in the form (x−p)² + q.</p>
+  <div class="options"><span>A. (x−3)² − 4</span><span>B. (x−3)² + 4</span><span>C. (x+3)² − 4</span><span>D. (x−6)² + 5</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">30.</span>
+  <p class="q-text">Express 1/[(x−1)(x+2)] in partial fractions.</p>
+  <div class="options"><span>A. 1/[3(x−1)] − 1/[3(x+2)]</span><span>B. 1/(x−1) − 1/(x+2)</span><span>C. 1/[3(x−1)] + 1/[3(x+2)]</span><span>D. 1/(x−1) + 1/(x+2)</span></div>
+</div>
+
+<h3>Part D — Simultaneous Equations &amp; Inequalities (Variations 7, 8) — 8 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">31.</span>
+  <p class="q-text">Solve: x + y = 5, x − y = 1.</p>
+  <div class="options"><span>A. x = 3, y = 2</span><span>B. x = 2, y = 3</span><span>C. x = 4, y = 1</span><span>D. x = 1, y = 4</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">32.</span>
+  <p class="q-text">Solve: 2x + 3y = 12, x − y = 1.</p>
+  <div class="options"><span>A. x = 3, y = 2</span><span>B. x = 2, y = 1</span><span>C. x = 4, y = 3</span><span>D. x = 1, y = 1</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">33.</span>
+  <p class="q-text">Solve: x² + y² = 25, x + y = 7.</p>
+  <div class="options"><span>A. (3,4) or (4,3)</span><span>B. (1,6) or (6,1)</span><span>C. (2,5) or (5,2)</span><span>D. (−3,4) or (3,4)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">34.</span>
+  <p class="q-text">Solve: x² + y = 5, x + y = 3.</p>
+  <div class="options"><span>A. (2,1) or (−1,4)</span><span>B. (1,2) or (−2,5)</span><span>C. (3,0) or (−1,4)</span><span>D. (2,1) only</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">35.</span>
+  <p class="q-text">Solve: 2x − 3 &lt; 7.</p>
+  <div class="options"><span>A. x &lt; 2</span><span>B. x &lt; 5</span><span>C. x &gt; 5</span><span>D. x &gt; 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">36.</span>
+  <p class="q-text">Solve: −3 ≤ 2x + 1 ≤ 7.</p>
+  <div class="options"><span>A. −2 ≤ x ≤ 3</span><span>B. −1 ≤ x ≤ 3</span><span>C. −2 ≤ x ≤ 4</span><span>D. 0 ≤ x ≤ 3</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">37.</span>
+  <p class="q-text">Solve: x² − 5x + 6 &lt; 0.</p>
+  <div class="options"><span>A. x &lt; 2 or x &gt; 3</span><span>B. 2 &lt; x &lt; 3</span><span>C. x &lt; 3</span><span>D. x &gt; 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">38.</span>
+  <p class="q-text">Solve: x² ≥ 4.</p>
+  <div class="options"><span>A. x ≥ 2 only</span><span>B. x ≤ −2 or x ≥ 2</span><span>C. −2 ≤ x ≤ 2</span><span>D. x ≥ 4</span></div>
+</div>
+
+<h3>Part E — Sequences &amp; Series (Variations 14, 15, 16) — 8 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">39.</span>
+  <p class="q-text">Find the 10th term of the AP 3, 7, 11, …</p>
+  <div class="options"><span>A. 39</span><span>B. 40</span><span>C. 43</span><span>D. 44</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">40.</span>
+  <p class="q-text">Find the sum of the first 20 terms of the AP 1, 4, 7, …</p>
+  <div class="options"><span>A. 570</span><span>B. 580</span><span>C. 590</span><span>D. 600</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">41.</span>
+  <p class="q-text">Find the 6th term of the GP 2, 6, 18, …</p>
+  <div class="options"><span>A. 162</span><span>B. 324</span><span>C. 486</span><span>D. 729</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">42.</span>
+  <p class="q-text">Find the sum of the first 5 terms of the GP 1, 2, 4, …</p>
+  <div class="options"><span>A. 15</span><span>B. 21</span><span>C. 31</span><span>D. 63</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">43.</span>
+  <p class="q-text">Find the sum to infinity of the GP 1, 1/2, 1/4, …</p>
+  <div class="options"><span>A. 3/2</span><span>B. 2</span><span>C. 4</span><span>D. ∞</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">44.</span>
+  <p class="q-text">If the 3rd term of a GP is 12 and the 5th term is 48, find r.</p>
+  <div class="options"><span>A. ±2</span><span>B. 2 only</span><span>C. 4</span><span>D. ±4</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">45.</span>
+  <p class="q-text">The sum of the first n natural numbers is:</p>
+  <div class="options"><span>A. n²</span><span>B. n(n+1)</span><span>C. n(n+1)/2</span><span>D. 2n</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">46.</span>
+  <p class="q-text">The first term of a GP is 5 and the common ratio is −2. Find the 4th term.</p>
+  <div class="options"><span>A. −40</span><span>B. −20</span><span>C. 40</span><span>D. 80</span></div>
+</div>
+
+<h3>Part F — Variation &amp; Change of Subject (Variations 12, 13) — 5 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">47.</span>
+  <p class="q-text">y varies directly as x². If y = 12 when x = 2, find y when x = 3.</p>
+  <div class="options"><span>A. 18</span><span>B. 27</span><span>C. 36</span><span>D. 48</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">48.</span>
+  <p class="q-text">y varies inversely as x. If y = 6 when x = 3, find y when x = 9.</p>
+  <div class="options"><span>A. 2</span><span>B. 3</span><span>C. 4</span><span>D. 18</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">49.</span>
+  <p class="q-text">z varies jointly as x and y. If z = 12 when x = 2 and y = 3, find z when x = 4 and y = 5.</p>
+  <div class="options"><span>A. 20</span><span>B. 30</span><span>C. 40</span><span>D. 50</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">50.</span>
+  <p class="q-text">Make x the subject of y = (3x+1)/(x−2).</p>
+  <div class="options"><span>A. x = (1+2y)/(y−3)</span><span>B. x = (1−2y)/(y−3)</span><span>C. x = (2y+1)/(3+y)</span><span>D. x = (y+1)/(y−3)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">51.</span>
+  <p class="q-text">If P = 2(l + b), make b the subject.</p>
+  <div class="options"><span>A. b = P/2 − l</span><span>B. b = P/2 + l</span><span>C. b = P − 2l</span><span>D. b = (P−l)/2</span></div>
+</div>
+
+<h3>Part G — Functions &amp; Binomial Expansion (Variations 19, 20) — 4 Questions</h3>
+
+<div class="question-block">
+  <span class="q-num">52.</span>
+  <p class="q-text">If f(x) = 2x+1 and g(x) = x², find f(g(3)).</p>
+  <div class="options"><span>A. 13</span><span>B. 19</span><span>C. 25</span><span>D. 49</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">53.</span>
+  <p class="q-text">Find the inverse of f(x) = 3x − 2.</p>
+  <div class="options"><span>A. (x+2)/3</span><span>B. (x−2)/3</span><span>C. 3x+2</span><span>D. x/3 + 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">54.</span>
+  <p class="q-text">Expand (1 + x)⁴.</p>
+  <div class="options"><span>A. 1 + 4x + 6x² + 4x³ + x⁴</span><span>B. 1 + 4x + 4x² + 4x³ + x⁴</span><span>C. 1 + x⁴</span><span>D. 1 + 4x + 8x² + 4x³ + x⁴</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">55.</span>
+  <p class="q-text">Find the 3rd term in the expansion of (1 + 2x)⁵.</p>
+  <div class="options"><span>A. 20x²</span><span>B. 40x²</span><span>C. 80x²</span><span>D. 10x²</span></div>
+</div>
+
+<div class="answer-key no-break">
+  <h3>Answer Key — Algebra Mastery Set</h3>
+  <div class="answer-grid">
+    <div>1. C</div><div>2. C</div><div>3. C</div><div>4. C</div><div>5. C</div>
+    <div>6. B</div><div>7. B</div><div>8. B</div><div>9. B</div><div>10. C</div>
+    <div>11. B</div><div>12. A</div><div>13. B</div><div>14. A</div><div>15. A</div>
+    <div>16. C</div><div>17. B</div><div>18. B</div><div>19. B</div><div>20. A</div>
+    <div>21. B</div><div>22. A</div><div>23. B</div><div>24. B</div><div>25. A</div>
+    <div>26. B</div><div>27. A</div><div>28. A</div><div>29. A</div><div>30. A</div>
+    <div>31. A</div><div>32. A</div><div>33. A</div><div>34. A</div><div>35. B</div>
+    <div>36. A</div><div>37. B</div><div>38. B</div><div>39. A</div><div>40. C</div>
+    <div>41. C</div><div>42. C</div><div>43. B</div><div>44. A</div><div>45. C</div>
+    <div>46. A</div><div>47. B</div><div>48. A</div><div>49. C</div><div>50. A</div>
+    <div>51. A</div><div>52. B</div><div>53. A</div><div>54. A</div><div>55. B</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 4: DIAGRAM SUPPLEMENT -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part 4 — Diagram &amp; Graph Supplement</h2>
+
+<h3>A.1 — Quadratic Graph (Parabola)</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">y = x² − 4x + 3 — Roots, Axis of Symmetry, Vertex</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 420 400" width="420" height="400">
+      <!-- Grid -->
+      <g stroke="#000" stroke-width="0.5" opacity="0.25">
+        <line x1="80" y1="30" x2="80" y2="380"/>
+        <line x1="130" y1="30" x2="130" y2="380"/>
+        <line x1="180" y1="30" x2="180" y2="380"/>
+        <line x1="230" y1="30" x2="230" y2="380"/>
+        <line x1="280" y1="30" x2="280" y2="380"/>
+        <line x1="330" y1="30" x2="330" y2="380"/>
+        <line x1="380" y1="30" x2="380" y2="380"/>
+        <line x1="60" y1="90" x2="400" y2="90"/>
+        <line x1="60" y1="140" x2="400" y2="140"/>
+        <line x1="60" y1="190" x2="400" y2="190"/>
+        <line x1="60" y1="240" x2="400" y2="240"/>
+        <line x1="60" y1="340" x2="400" y2="340"/>
+      </g>
+      <!-- Axes -->
+      <line x1="60" y1="290" x2="400" y2="290" stroke="#000" stroke-width="2.5"/>
+      <line x1="130" y1="30" x2="130" y2="380" stroke="#000" stroke-width="2.5"/>
+      <polygon points="400,290 390,284 390,296" fill="#000"/>
+      <polygon points="130,30 124,40 136,40" fill="#000"/>
+      <text x="395" y="310" font-size="12" font-weight="900">x</text>
+      <text x="112" y="25" font-size="12" font-weight="900">y</text>
+      <!-- Parabola -->
+      <path d="M 130 140 Q 230 540 330 140" fill="none" stroke="#000" stroke-width="3"/>
+      <!-- Roots -->
+      <circle cx="180" cy="290" r="5" fill="#000"/>
+      <circle cx="280" cy="290" r="5" fill="#000"/>
+      <text x="170" y="312" font-size="11" font-weight="900">(1,0)</text>
+      <text x="270" y="312" font-size="11" font-weight="900">(3,0)</text>
+      <!-- Vertex -->
+      <circle cx="230" cy="340" r="5" fill="#000"/>
+      <text x="215" y="362" font-size="11" font-weight="900">(2,−1)</text>
+      <!-- Axis of symmetry -->
+      <line x1="230" y1="30" x2="230" y2="380" stroke="#000" stroke-width="1.5" stroke-dasharray="6,4"/>
+      <text x="235" y="50" font-size="11" font-weight="900">x = 2</text>
+      <!-- y-intercept -->
+      <circle cx="130" cy="140" r="5" fill="#000"/>
+      <text x="100" y="135" font-size="11" font-weight="900">(0,3)</text>
+      <!-- Labels -->
+      <text x="80" y="380" font-size="11" font-weight="900">Roots: x = 1, x = 3 · Vertex: (2, −1) · Opens upward (a &gt; 0)</text>
+    </svg>
+  </div>
+</div>
+
+<h3>A.2 — Straight Line Graph</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">y = 2x + 1 — Gradient and Intercepts</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 400 340" width="400" height="340">
+      <!-- Axes -->
+      <line x1="60" y1="290" x2="380" y2="290" stroke="#000" stroke-width="2.5"/>
+      <line x1="60" y1="290" x2="60" y2="30" stroke="#000" stroke-width="2.5"/>
+      <polygon points="380,290 370,284 370,296" fill="#000"/>
+      <polygon points="60,30 54,40 66,40" fill="#000"/>
+      <text x="375" y="310" font-size="12" font-weight="900">x</text>
+      <text x="42" y="25" font-size="12" font-weight="900">y</text>
+      <!-- Line: from (0,1) to (3,7) — scaled: origin at (60,290), 1 unit = 40px -->
+      <line x1="60" y1="250" x2="300" y2="10" stroke="#000" stroke-width="2.5"/>
+      <!-- Intercepts -->
+      <circle cx="60" cy="250" r="5" fill="#000"/>
+      <text x="15" y="245" font-size="11" font-weight="900">(0,1)</text>
+      <!-- Gradient triangle -->
+      <line x1="100" y1="210" x2="180" y2="210" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="180" y1="210" x2="180" y2="50" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="130" y="205" font-size="11" font-weight="900">Δx</text>
+      <text x="185" y="140" font-size="11" font-weight="900">Δy</text>
+      <text x="200" y="320" font-size="12" font-weight="900">Gradient m = Δy/Δx = 2 · y-intercept = 1</text>
+    </svg>
+  </div>
+</div>
+
+<h3>A.3 — Inequalities on a Number Line</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">x &lt; −2 or x ≥ 3 (solution shown)</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 700 140" width="700" height="140">
+      <!-- Number line -->
+      <line x1="40" y1="70" x2="660" y2="70" stroke="#000" stroke-width="2.5"/>
+      <polygon points="660,70 650,64 650,76" fill="#000"/>
+      <!-- Ticks -->
+      <g stroke="#000" stroke-width="1.8">
+        <line x1="100" y1="62" x2="100" y2="78"/>
+        <line x1="200" y1="62" x2="200" y2="78"/>
+        <line x1="300" y1="62" x2="300" y2="78"/>
+        <line x1="400" y1="62" x2="400" y2="78"/>
+        <line x1="500" y1="62" x2="500" y2="78"/>
+        <line x1="600" y1="62" x2="600" y2="78"/>
+      </g>
+      <text x="92" y="100" font-size="12" font-weight="900">−3</text>
+      <text x="192" y="100" font-size="12" font-weight="900">−2</text>
+      <text x="292" y="100" font-size="12" font-weight="900">−1</text>
+      <text x="392" y="100" font-size="12" font-weight="900">0</text>
+      <text x="492" y="100" font-size="12" font-weight="900">1</text>
+      <text x="592" y="100" font-size="12" font-weight="900">2</text>
+      <!-- Shading: x < -2 -->
+      <line x1="40" y1="45" x2="200" y2="45" stroke="#000" stroke-width="3"/>
+      <circle cx="200" cy="45" r="6" fill="#fff" stroke="#000" stroke-width="2.5"/>
+      <!-- Shading: x >= 3 -->
+      <line x1="500" y1="45" x2="650" y2="45" stroke="#000" stroke-width="3"/>
+      <circle cx="500" cy="45" r="6" fill="#000"/>
+      <!-- Labels -->
+      <text x="60" y="35" font-size="12" font-weight="900">x &lt; −2</text>
+      <text x="520" y="35" font-size="12" font-weight="900">x ≥ 3</text>
+      <text x="250" y="125" font-size="11" font-weight="900">Open circle = excluded · Filled circle = included</text>
+    </svg>
+  </div>
+</div>
+
+<h3>A.4 — Cumulative Frequency Curve (Ogive)</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">Ogive — Reading Median, Quartiles</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 500 400" width="500" height="400">
+      <!-- Axes -->
+      <line x1="70" y1="350" x2="460" y2="350" stroke="#000" stroke-width="2.5"/>
+      <line x1="70" y1="350" x2="70" y2="40" stroke="#000" stroke-width="2.5"/>
+      <polygon points="460,350 450,344 450,356" fill="#000"/>
+      <polygon points="70,40 64,50 76,50" fill="#000"/>
+      <text x="455" y="370" font-size="11" font-weight="900">Class boundary</text>
+      <text x="20" y="40" font-size="11" font-weight="900">Cum. freq.</text>
+      <!-- Ogive curve (S-shape) -->
+      <path d="M 80 340 Q 150 330 200 300 Q 260 250 300 190 Q 340 130 400 90 Q 430 75 440 70"
+            fill="none" stroke="#000" stroke-width="2.8"/>
+      <!-- Median line -->
+      <line x1="70" y1="200" x2="295" y2="200" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="295" y1="200" x2="295" y2="350" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="30" y="205" font-size="11" font-weight="900">N/2</text>
+      <text x="270" y="370" font-size="11" font-weight="900">Median</text>
+      <!-- Quartile lines -->
+      <line x1="70" y1="100" x2="395" y2="100" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="395" y1="100" x2="395" y2="350" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="30" y="105" font-size="11" font-weight="900">3N/4</text>
+      <text x="370" y="370" font-size="11" font-weight="900">Q₃</text>
+      <line x1="70" y1="300" x2="205" y2="300" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <line x1="205" y1="300" x2="205" y2="350" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <text x="30" y="305" font-size="11" font-weight="900">N/4</text>
+      <text x="185" y="370" font-size="11" font-weight="900">Q₁</text>
+    </svg>
+  </div>
+</div>
+
+<!-- CIRCLE THEOREMS -->
+<div class="page-break"></div>
+
+<h2>Part B — Circle Theorems (Visual Reference)</h2>
+
+<p><strong>Why this matters:</strong> Circle theorems are <em>guaranteed</em> to appear in every JAMB Mathematics paper. You must recognise each configuration instantly.</p>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 1 — Angle at Centre = 2 × Angle at Circumference</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 300" width="340" height="300">
+      <circle cx="170" cy="150" r="110" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="170" cy="150" r="3" fill="#000"/>
+      <text x="155" y="145" font-size="12" font-weight="900">O</text>
+      <!-- A at top (170,40), B at right (280,150), C at left (60,150) -->
+      <line x1="170" y1="150" x2="170" y2="40" stroke="#000" stroke-width="2"/>
+      <line x1="170" y1="150" x2="280" y2="150" stroke="#000" stroke-width="2"/>
+      <line x1="60" y1="150" x2="170" y2="40" stroke="#000" stroke-width="2"/>
+      <line x1="60" y1="150" x2="280" y2="150" stroke="#000" stroke-width="2"/>
+      <text x="175" y="35" font-size="12" font-weight="900">A</text>
+      <text x="285" y="155" font-size="12" font-weight="900">B</text>
+      <text x="40" y="155" font-size="12" font-weight="900">C</text>
+      <!-- Angles -->
+      <path d="M 195 150 A 25 25 0 0 0 185 125" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="198" y="135" font-size="11" font-weight="900">90°</text>
+      <path d="M 75 150 A 15 15 0 0 0 85 138" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="88" y="142" font-size="11" font-weight="900">45°</text>
+      <text x="20" y="285" font-size="11" font-weight="900">∠AOB = 2 × ∠ACB</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 2 — Angle in a Semicircle = 90°</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 280" width="340" height="280">
+      <circle cx="170" cy="160" r="110" fill="none" stroke="#000" stroke-width="2.5"/>
+      <!-- Diameter AB -->
+      <line x1="60" y1="160" x2="280" y2="160" stroke="#000" stroke-width="2"/>
+      <text x="45" y="165" font-size="12" font-weight="900">A</text>
+      <text x="285" y="165" font-size="12" font-weight="900">B</text>
+      <circle cx="170" cy="160" r="3" fill="#000"/>
+      <text x="155" y="180" font-size="12" font-weight="900">O</text>
+      <!-- C on circle -->
+      <line x1="60" y1="160" x2="230" y2="80" stroke="#000" stroke-width="2"/>
+      <line x1="280" y1="160" x2="230" y2="80" stroke="#000" stroke-width="2"/>
+      <text x="228" y="72" font-size="12" font-weight="900">C</text>
+      <!-- Right angle marker -->
+      <polyline points="220,92 232,104 244,92" fill="none" stroke="#000" stroke-width="2"/>
+      <text x="180" y="260" font-size="11" font-weight="900">∠ACB = 90°</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 3 — Angles in the Same Segment are Equal</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 280" width="340" height="280">
+      <circle cx="170" cy="150" r="110" fill="none" stroke="#000" stroke-width="2.5"/>
+      <!-- Chord AB -->
+      <line x1="80" y1="90" x2="270" y2="90" stroke="#000" stroke-width="2"/>
+      <text x="62" y="90" font-size="12" font-weight="900">A</text>
+      <text x="275" y="90" font-size="12" font-weight="900">B</text>
+      <!-- Points C and D on same arc -->
+      <line x1="80" y1="90" x2="120" y2="235" stroke="#000" stroke-width="1.8"/>
+      <line x1="270" y1="90" x2="120" y2="235" stroke="#000" stroke-width="1.8"/>
+      <text x="100" y="252" font-size="12" font-weight="900">C</text>
+      <line x1="80" y1="90" x2="230" y2="230" stroke="#000" stroke-width="1.8"/>
+      <line x1="270" y1="90" x2="230" y2="230" stroke="#000" stroke-width="1.8"/>
+      <text x="230" y="250" font-size="12" font-weight="900">D</text>
+      <!-- Angles -->
+      <path d="M 108 218 A 18 18 0 0 1 128 200" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="90" y="212" font-size="10" font-weight="900">∠1</text>
+      <path d="M 220 216 A 18 18 0 0 0 240 198" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="240" y="220" font-size="10" font-weight="900">∠2</text>
+      <text x="60" y="270" font-size="11" font-weight="900">∠ACB = ∠ADB (same chord AB)</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 4 — Cyclic Quadrilateral: Opposite Angles are Supplementary</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 300" width="340" height="300">
+      <circle cx="170" cy="150" r="110" fill="none" stroke="#000" stroke-width="2.5"/>
+      <!-- Quadrilateral ABCD -->
+      <polygon points="100,68 260,100 245,240 90,215" fill="none" stroke="#000" stroke-width="2.2"/>
+      <text x="80" y="65" font-size="12" font-weight="900">A</text>
+      <text x="265" y="98" font-size="12" font-weight="900">B</text>
+      <text x="250" y="255" font-size="12" font-weight="900">C</text>
+      <text x="72" y="220" font-size="12" font-weight="900">D</text>
+      <!-- Angle labels -->
+      <text x="118" y="90" font-size="10" font-weight="900">110°</text>
+      <text x="232" y="145" font-size="10" font-weight="900">70°</text>
+      <text x="80" y="190" font-size="10" font-weight="900">95°</text>
+      <text x="200" y="235" font-size="10" font-weight="900">85°</text>
+      <text x="30" y="285" font-size="11" font-weight="900">∠A + ∠C = 180° · ∠B + ∠D = 180°</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 5 — Tangent ⊥ Radius at Point of Contact</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 260" width="340" height="260">
+      <circle cx="170" cy="130" r="90" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="170" cy="130" r="3" fill="#000"/>
+      <text x="155" y="145" font-size="12" font-weight="900">O</text>
+      <!-- Radius to tangent point -->
+      <line x1="170" y1="130" x2="260" y2="130" stroke="#000" stroke-width="2"/>
+      <text x="215" y="120" font-size="11" font-weight="900">r</text>
+      <!-- Tangent at (260,130) -->
+      <line x1="180" y1="40" x2="340" y2="220" stroke="#000" stroke-width="2.5"/>
+      <circle cx="260" cy="130" r="4" fill="#000"/>
+      <text x="260" y="120" font-size="12" font-weight="900">T</text>
+      <!-- Right angle marker -->
+      <polyline points="245,130 245,115 260,115" fill="none" stroke="#000" stroke-width="2"/>
+      <text x="30" y="245" font-size="11" font-weight="900">OT ⊥ tangent at T → ∠OTP = 90°</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 6 — Alternate Segment Theorem</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 280" width="340" height="280">
+      <circle cx="170" cy="150" r="100" fill="none" stroke="#000" stroke-width="2.5"/>
+      <!-- Tangent at A -->
+      <line x1="20" y1="220" x2="320" y2="220" stroke="#000" stroke-width="2.5"/>
+      <circle cx="180" cy="220" r="4" fill="#000"/>
+      <text x="185" y="238" font-size="12" font-weight="900">A</text>
+      <!-- Chord AB -->
+      <line x1="180" y1="220" x2="90" y2="130" stroke="#000" stroke-width="2"/>
+      <text x="75" y="125" font-size="12" font-weight="900">B</text>
+      <!-- Point C in alternate segment -->
+      <line x1="180" y1="220" x2="240" y2="70" stroke="#000" stroke-width="2"/>
+      <text x="245" y="65" font-size="12" font-weight="900">C</text>
+      <line x1="90" y1="130" x2="240" y2="70" stroke="#000" stroke-width="2"/>
+      <!-- Angle between tangent and chord -->
+      <path d="M 195 220 A 15 15 0 0 0 185 205" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="200" y="205" font-size="10" font-weight="900">x</text>
+      <!-- Angle in alternate segment -->
+      <path d="M 105 130 A 15 15 0 0 0 130 135" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="120" y="150" font-size="10" font-weight="900">x</text>
+      <text x="20" y="270" font-size="11" font-weight="900">Angle between tangent &amp; chord = angle in alternate segment</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 7 — Two Tangents from External Point are Equal</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 280" width="340" height="280">
+      <circle cx="150" cy="140" r="80" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="150" cy="140" r="3" fill="#000"/>
+      <text x="135" y="155" font-size="12" font-weight="900">O</text>
+      <!-- External point P -->
+      <circle cx="300" cy="140" r="4" fill="#000"/>
+      <text x="305" y="145" font-size="12" font-weight="900">P</text>
+      <!-- Tangents -->
+      <line x1="300" y1="140" x2="200" y2="80" stroke="#000" stroke-width="2.2"/>
+      <line x1="300" y1="140" x2="200" y2="200" stroke="#000" stroke-width="2.2"/>
+      <circle cx="200" cy="80" r="3" fill="#000"/>
+      <circle cx="200" cy="200" r="3" fill="#000"/>
+      <text x="195" y="75" font-size="11" font-weight="900">A</text>
+      <text x="195" y="218" font-size="11" font-weight="900">B</text>
+      <text x="245" y="105" font-size="11" font-weight="900">PA</text>
+      <text x="245" y="185" font-size="11" font-weight="900">PB</text>
+      <text x="40" y="270" font-size="11" font-weight="900">PA = PB · OP bisects ∠APB</text>
+    </svg>
+  </div>
+</div>
+
+<div class="diagram-box">
+  <div class="diagram-title">Theorem 8 — Perpendicular from Centre to Chord Bisects It</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 340 280" width="340" height="280">
+      <circle cx="170" cy="140" r="100" fill="none" stroke="#000" stroke-width="2.5"/>
+      <circle cx="170" cy="140" r="3" fill="#000"/>
+      <text x="155" y="155" font-size="12" font-weight="900">O</text>
+      <!-- Chord AB -->
+      <line x1="80" y1="180" x2="260" y2="180" stroke="#000" stroke-width="2.2"/>
+      <text x="62" y="185" font-size="12" font-weight="900">A</text>
+      <text x="265" y="185" font-size="12" font-weight="900">B</text>
+      <!-- Perpendicular from O to midpoint M -->
+      <line x1="170" y1="140" x2="170" y2="180" stroke="#000" stroke-width="2"/>
+      <circle cx="170" cy="180" r="3" fill="#000"/>
+      <text x="175" y="200" font-size="12" font-weight="900">M</text>
+      <!-- Right angle marker -->
+      <polyline points="170,165 185,165 185,180" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="30" y="270" font-size="11" font-weight="900">OM ⊥ AB → AM = MB</text>
+    </svg>
+  </div>
+</div>
+
+<!-- TRIGONOMETRY -->
+<div class="page-break"></div>
+
+<h2>Part C — Trigonometry Diagrams</h2>
+
+<h3>C.1 — Labelled Triangle for Sine &amp; Cosine Rules</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">Standard Triangle with Vertices A, B, C</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 460 300" width="460" height="300">
+      <!-- Triangle -->
+      <polygon points="60,250 400,250 280,40" fill="none" stroke="#000" stroke-width="2.5"/>
+      <text x="45" y="265" font-size="14" font-weight="900">B</text>
+      <text x="405" y="265" font-size="14" font-weight="900">C</text>
+      <text x="275" y="30" font-size="14" font-weight="900">A</text>
+      <!-- Side labels -->
+      <text x="220" y="270" font-size="12" font-weight="900">a</text>
+      <text x="320" y="140" font-size="12" font-weight="900">b</text>
+      <text x="155" y="140" font-size="12" font-weight="900">c</text>
+      <!-- Angle arcs -->
+      <path d="M 85 250 A 25 25 0 0 0 78 232" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="88" y="240" font-size="11" font-weight="900">B</text>
+      <path d="M 375 250 A 25 25 0 0 0 385 234" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="358" y="240" font-size="11" font-weight="900">C</text>
+      <path d="M 268 60 A 25 25 0 0 0 292 62" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="278" y="75" font-size="11" font-weight="900">A</text>
+      <!-- Formulas -->
+      <text x="20" y="292" font-size="12" font-weight="900">Sine rule: a/sin A = b/sin B = c/sin C</text>
+      <text x="20" y="315" font-size="12" font-weight="900">Cosine rule: a² = b² + c² − 2bc cos A</text>
+      <text x="20" y="338" font-size="12" font-weight="900">Area = ½ ab sin C</text>
+    </svg>
+  </div>
+</div>
+
+<h3>C.2 — Unit Circle with Trig Ratios</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">sin θ = y · cos θ = x · tan θ = y/x</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 400 400" width="400" height="400">
+      <!-- Axes -->
+      <line x1="30" y1="200" x2="370" y2="200" stroke="#000" stroke-width="2"/>
+      <line x1="200" y1="30" x2="200" y2="370" stroke="#000" stroke-width="2"/>
+      <polygon points="370,200 360,194 360,206" fill="#000"/>
+      <polygon points="200,30 194,40 206,40" fill="#000"/>
+      <text x="365" y="220" font-size="11" font-weight="900">x</text>
+      <text x="182" y="25" font-size="11" font-weight="900">y</text>
+      <!-- Unit circle -->
+      <circle cx="200" cy="200" r="130" fill="none" stroke="#000" stroke-width="2.2"/>
+      <!-- Angle 45° -->
+      <line x1="200" y1="200" x2="292" y2="108" stroke="#000" stroke-width="2.2"/>
+      <circle cx="292" cy="108" r="4" fill="#000"/>
+      <text x="298" y="105" font-size="11" font-weight="900">P(x, y)</text>
+      <!-- Arc for angle -->
+      <path d="M 240 200 A 40 40 0 0 0 228 172" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="238" y="185" font-size="12" font-weight="900">θ</text>
+      <!-- Projections -->
+      <line x1="292" y1="108" x2="292" y2="200" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <line x1="292" y1="108" x2="200" y2="108" stroke="#000" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="290" y="225" font-size="11" font-weight="900">cos θ</text>
+      <text x="140" y="103" font-size="11" font-weight="900">sin θ</text>
+      <!-- Labels on axes -->
+      <text x="320" y="220" font-size="10" font-weight="900">(1,0)</text>
+      <text x="205" y="80" font-size="10" font-weight="900">(0,1)</text>
+      <text x="60" y="220" font-size="10" font-weight="900">(−1,0)</text>
+      <text x="205" y="340" font-size="10" font-weight="900">(0,−1)</text>
+    </svg>
+  </div>
+</div>
+
+<h3>C.3 — Angle of Elevation and Depression</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">Observer, Object and Horizontal Reference Lines</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 600 340" width="600" height="340">
+      <!-- Ground -->
+      <line x1="30" y1="280" x2="570" y2="280" stroke="#000" stroke-width="2.5"/>
+      <!-- Building -->
+      <rect x="440" y="80" width="60" height="200" fill="none" stroke="#000" stroke-width="2.5"/>
+      <!-- Observer (dot) -->
+      <circle cx="80" cy="280" r="6" fill="#000"/>
+      <text x="60" y="305" font-size="12" font-weight="900">Observer</text>
+      <!-- Top of building -->
+      <circle cx="470" cy="80" r="5" fill="#000"/>
+      <text x="480" y="80" font-size="12" font-weight="900">Top</text>
+      <!-- Elevation line -->
+      <line x1="80" y1="280" x2="470" y2="80" stroke="#000" stroke-width="2.2"/>
+      <!-- Horizontal reference at observer -->
+      <line x1="80" y1="280" x2="470" y2="280" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+      <!-- Elevation angle -->
+      <path d="M 130 280 A 50 50 0 0 0 110 258" fill="none" stroke="#000" stroke-width="1.8"/>
+      <text x="120" y="265" font-size="12" font-weight="900">θ</text>
+      <text x="120" y="235" font-size="11" font-weight="900">elevation</text>
+      <!-- Height and distance labels -->
+      <line x1="470" y1="80" x2="470" y2="280" stroke="#000" stroke-width="1.5"/>
+      <text x="475" y="185" font-size="12" font-weight="900">h</text>
+      <text x="270" y="300" font-size="12" font-weight="900">d</text>
+      <text x="30" y="330" font-size="11" font-weight="900">tan θ = h/d</text>
+    </svg>
+  </div>
+</div>
+
+<!-- VECTORS & BEARINGS -->
+<div class="page-break"></div>
+
+<h2>Part D — Vectors &amp; Bearings</h2>
+
+<h3>D.1 — Vector Addition (Triangle and Parallelogram)</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">Resultant of Two Vectors</div>
+  <div class="diagram-grid">
+
+    <div class="diagram-cell">
+      <svg viewBox="0 0 320 220" width="320" height="220">
+        <line x1="40" y1="180" x2="200" y2="180" stroke="#000" stroke-width="2.5"/>
+        <polygon points="200,180 190,174 190,186" fill="#000"/>
+        <text x="110" y="200" font-size="14" font-weight="900">a</text>
+        <line x1="200" y1="180" x2="260" y2="60" stroke="#000" stroke-width="2.5"/>
+        <polygon points="260,60 250,62 254,72" fill="#000"/>
+        <text x="242" y="130" font-size="14" font-weight="900">b</text>
+        <!-- Resultant -->
+        <line x1="40" y1="180" x2="260" y2="60" stroke="#000" stroke-width="2.8"/>
+        <polygon points="260,60 246,62 250,72" fill="#000"/>
+        <text x="120" y="105" font-size="14" font-weight="900">R = a + b</text>
+      </svg>
+      <div class="label">Triangle Method</div>
+    </div>
+
+    <div class="diagram-cell">
+      <svg viewBox="0 0 320 220" width="320" height="220">
+        <line x1="40" y1="180" x2="200" y2="180" stroke="#000" stroke-width="2.5"/>
+        <polygon points="200,180 190,174 190,186" fill="#000"/>
+        <text x="110" y="200" font-size="14" font-weight="900">a</text>
+        <line x1="40" y1="180" x2="100" y2="60" stroke="#000" stroke-width="2.5"/>
+        <polygon points="100,60 88,64 92,74" fill="#000"/>
+        <text x="45" y="130" font-size="14" font-weight="900">b</text>
+        <!-- Dashed construction -->
+        <line x1="200" y1="180" x2="260" y2="60" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <line x1="100" y1="60" x2="260" y2="60" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <!-- Resultant -->
+        <line x1="40" y1="180" x2="260" y2="60" stroke="#000" stroke-width="2.8"/>
+        <polygon points="260,60 248,62 252,72" fill="#000"/>
+        <text x="130" y="110" font-size="14" font-weight="900">R</text>
+      </svg>
+      <div class="label">Parallelogram Method</div>
+    </div>
+
+  </div>
+</div>
+
+<h3>D.2 — Bearings</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">Bearing of B from A — Measured Clockwise from North</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 500 450" width="500" height="450">
+      <!-- Point A -->
+      <circle cx="180" cy="350" r="5" fill="#000"/>
+      <text x="150" y="370" font-size="14" font-weight="900">A</text>
+      <!-- North line at A -->
+      <line x1="180" y1="350" x2="180" y2="100" stroke="#000" stroke-width="2" stroke-dasharray="6,4"/>
+      <polygon points="180,100 174,112 186,112" fill="#000"/>
+      <text x="185" y="105" font-size="13" font-weight="900">N</text>
+      <!-- Point B -->
+      <circle cx="370" cy="180" r="5" fill="#000"/>
+      <text x="380" y="175" font-size="14" font-weight="900">B</text>
+      <!-- Line AB -->
+      <line x1="180" y1="350" x2="370" y2="180" stroke="#000" stroke-width="2.5"/>
+      <!-- Angle arc from North to AB -->
+      <path d="M 180 260 A 90 90 0 0 1 246 285" fill="none" stroke="#000" stroke-width="2"/>
+      <text x="210" y="245" font-size="13" font-weight="900">θ</text>
+      <!-- East reference -->
+      <line x1="180" y1="350" x2="370" y2="350" stroke="#000" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="375" y="355" font-size="12" font-weight="900">E</text>
+      <!-- Label -->
+      <text x="30" y="425" font-size="12" font-weight="900">Bearing of B from A = θ (measured clockwise from North)</text>
+    </svg>
+  </div>
+</div>
+
+<!-- 3D MENSURATION -->
+<div class="page-break"></div>
+
+<h2>Part E — 3D Mensuration (Solids)</h2>
+
+<div class="diagram-box">
+  <div class="diagram-title">Cylinder, Cone, Sphere, Cuboid</div>
+  <div class="diagram-grid">
+
+    <div class="diagram-cell">
+      <svg viewBox="0 0 240 240" width="240" height="240">
+        <!-- Top ellipse -->
+        <ellipse cx="120" cy="60" rx="60" ry="18" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- Side lines -->
+        <line x1="60" y1="60" x2="60" y2="190" stroke="#000" stroke-width="2.5"/>
+        <line x1="180" y1="60" x2="180" y2="190" stroke="#000" stroke-width="2.5"/>
+        <!-- Bottom ellipse: front arc solid, back arc dashed -->
+        <path d="M 60 190 A 60 18 0 0 0 180 190" fill="none" stroke="#000" stroke-width="2.5"/>
+        <path d="M 60 190 A 60 18 0 0 1 180 190" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <!-- Labels -->
+        <line x1="120" y1="60" x2="180" y2="60" stroke="#000" stroke-width="1.3"/>
+        <text x="145" y="55" font-size="11" font-weight="900">r</text>
+        <line x1="210" y1="60" x2="210" y2="190" stroke="#000" stroke-width="1.3"/>
+        <text x="215" y="130" font-size="11" font-weight="900">h</text>
+        <text x="30" y="225" font-size="10" font-weight="900">V = πr²h · CSA = 2πrh</text>
+      </svg>
+      <div class="label">Cylinder</div>
+    </div>
+
+    <div class="diagram-cell">
+      <svg viewBox="0 0 240 240" width="240" height="240">
+        <!-- Apex -->
+        <circle cx="120" cy="30" r="4" fill="#000"/>
+        <!-- Slant lines -->
+        <line x1="120" y1="30" x2="55" y2="190" stroke="#000" stroke-width="2.5"/>
+        <line x1="120" y1="30" x2="185" y2="190" stroke="#000" stroke-width="2.5"/>
+        <!-- Base -->
+        <path d="M 55 190 A 65 18 0 0 0 185 190" fill="none" stroke="#000" stroke-width="2.5"/>
+        <path d="M 55 190 A 65 18 0 0 1 185 190" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <!-- Height -->
+        <line x1="120" y1="30" x2="120" y2="190" stroke="#000" stroke-width="1.3" stroke-dasharray="4,3"/>
+        <text x="125" y="115" font-size="11" font-weight="900">h</text>
+        <!-- Radius -->
+        <line x1="120" y1="190" x2="185" y2="190" stroke="#000" stroke-width="1.3"/>
+        <text x="150" y="185" font-size="11" font-weight="900">r</text>
+        <!-- Slant -->
+        <text x="80" y="115" font-size="11" font-weight="900">l</text>
+        <text x="20" y="225" font-size="10" font-weight="900">V = ⅓πr²h · CSA = πrl</text>
+      </svg>
+      <div class="label">Cone</div>
+    </div>
+
+    <div class="diagram-cell">
+      <svg viewBox="0 0 240 240" width="240" height="240">
+        <!-- Circle -->
+        <circle cx="120" cy="120" r="85" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- Equator ellipse -->
+        <ellipse cx="120" cy="120" rx="85" ry="22" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <!-- Radius -->
+        <line x1="120" y1="120" x2="205" y2="120" stroke="#000" stroke-width="1.3"/>
+        <text x="155" y="115" font-size="11" font-weight="900">r</text>
+        <text x="40" y="225" font-size="10" font-weight="900">V = (4/3)πr³ · SA = 4πr²</text>
+      </svg>
+      <div class="label">Sphere</div>
+    </div>
+
+    <div class="diagram-cell">
+      <svg viewBox="0 0 240 240" width="240" height="240">
+        <!-- Front face -->
+        <rect x="40" y="100" width="110" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- Back face (offset) -->
+        <rect x="90" y="60" width="110" height="100" fill="none" stroke="#000" stroke-width="2.5"/>
+        <!-- Connecting lines -->
+        <line x1="40" y1="100" x2="90" y2="60" stroke="#000" stroke-width="2"/>
+        <line x1="150" y1="100" x2="200" y2="60" stroke="#000" stroke-width="2"/>
+        <line x1="40" y1="200" x2="90" y2="160" stroke="#000" stroke-width="2"/>
+        <line x1="150" y1="200" x2="200" y2="160" stroke="#000" stroke-width="2"/>
+        <!-- Labels -->
+        <text x="75" y="220" font-size="11" font-weight="900">l</text>
+        <text x="15" y="155" font-size="11" font-weight="900">h</text>
+        <text x="165" y="80" font-size="11" font-weight="900">b</text>
+        <text x="15" y="235" font-size="10" font-weight="900">V = lbh · SA = 2(lb + lh + bh)</text>
+      </svg>
+      <div class="label">Cuboid</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PROBABILITY -->
+<h3>E.1 — Venn Diagram</h3>
+
+<div class="diagram-box">
+  <div class="diagram-title">Two Sets A and B with Universal Set</div>
+  <div class="diagram-cell">
+    <svg viewBox="0 0 380 260" width="380" height="260">
+      <!-- Universe rectangle -->
+      <rect x="20" y="20" width="340" height="220" fill="none" stroke="#000" stroke-width="2.5"/>
+      <text x="340" y="40" font-size="13" font-weight="900">U</text>
+      <!-- Circle A -->
+      <circle cx="150" cy="130" r="75" fill="none" stroke="#000" stroke-width="2.2"/>
+      <text x="90" y="80" font-size="14" font-weight="900">A</text>
+      <!-- Circle B -->
+      <circle cx="240" cy="130" r="75" fill="none" stroke="#000" stroke-width="2.2"/>
+      <text x="285" y="80" font-size="14" font-weight="900">B</text>
+      <!-- Region labels -->
+      <text x="110" y="135" font-size="12" font-weight="900">a</text>
+      <text x="190" y="135" font-size="12" font-weight="900">b</text>
+      <text x="260" y="135" font-size="12" font-weight="900">c</text>
+      <text x="35" y="240" font-size="11" font-weight="900">d</text>
+      <!-- Legend -->
+      <text x="20" y="270" font-size="11" font-weight="900">a = |A only| · b = |A∩B| · c = |B only| · d = neither · |A∪B| = a+b+c</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 5: DIAGRAM-BASED QUESTIONS -->
+<!-- ============================================================ -->
+
+<div class="page-break"></div>
+
+<h2>Part 5 — Diagram-Based Exam Questions (25 Questions)</h2>
+
+<div class="section-label">Circle Theorems (Q1–8)</div>
+
+<div class="question-block">
+  <span class="q-num">1.</span>
+  <p class="q-text">In a circle, the angle at the centre is 80°. The angle at the circumference subtending the same arc is:</p>
+  <div class="options"><span>A. 20°</span><span>B. 40°</span><span>C. 80°</span><span>D. 160°</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">2.</span>
+  <p class="q-text">The angle in a semicircle is always:</p>
+  <div class="options"><span>A. 45°</span><span>B. 60°</span><span>C. 90°</span><span>D. 180°</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">3.</span>
+  <p class="q-text">In a cyclic quadrilateral ABCD, if ∠A = 110°, then ∠C equals:</p>
+  <div class="options"><span>A. 55°</span><span>B. 70°</span><span>C. 110°</span><span>D. 250°</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">4.</span>
+  <p class="q-text">A tangent meets a radius at the point of contact at an angle of:</p>
+  <div class="options"><span>A. 45°</span><span>B. 60°</span><span>C. 90°</span><span>D. 180°</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">5.</span>
+  <p class="q-text">Two tangents from an external point P touch a circle at A and B. If PA = 7 cm, then PB =</p>
+  <div class="options"><span>A. 3.5 cm</span><span>B. 7 cm</span><span>C. 14 cm</span><span>D. 49 cm</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">6.</span>
+  <p class="q-text">A perpendicular drawn from the centre of a circle to a chord:</p>
+  <div class="options"><span>A. Makes the chord twice as long</span><span>B. Bisects the chord</span><span>C. Is parallel to the chord</span><span>D. Equals the radius</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">7.</span>
+  <p class="q-text">In the alternate segment theorem, the angle between a tangent and a chord equals:</p>
+  <div class="options"><span>A. The angle at the centre</span><span>B. The angle in the alternate segment</span><span>C. 90°</span><span>D. Twice the angle at the centre</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">8.</span>
+  <p class="q-text">Angles in the same segment of a circle are:</p>
+  <div class="options"><span>A. Supplementary</span><span>B. Complementary</span><span>C. Equal</span><span>D. Twice the central angle</span></div>
+</div>
+
+<div class="section-label">Graphs &amp; Inequalities (Q9–13)</div>
+
+<div class="question-block">
+  <span class="q-num">9.</span>
+  <p class="q-text">From the parabola y = x² − 4x + 3, the coordinates of the vertex are:</p>
+  <div class="options"><span>A. (2, −1)</span><span>B. (−2, 1)</span><span>C. (0, 3)</span><span>D. (1, 0)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">10.</span>
+  <p class="q-text">For y = x² − 4x + 3, the axis of symmetry is:</p>
+  <div class="options"><span>A. x = 1</span><span>B. x = 2</span><span>C. x = 3</span><span>D. y = 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">11.</span>
+  <p class="q-text">The gradient of the line y = 2x + 1 is:</p>
+  <div class="options"><span>A. 0</span><span>B. 1</span><span>C. 2</span><span>D. −2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">12.</span>
+  <p class="q-text">The solution to x² − 5x + 6 &lt; 0 shown on a number line is:</p>
+  <div class="options"><span>A. x &lt; 2 or x &gt; 3</span><span>B. 2 &lt; x &lt; 3</span><span>C. x &lt; 3</span><span>D. x &gt; 2</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">13.</span>
+  <p class="q-text">On a cumulative frequency curve, the median corresponds to the value at:</p>
+  <div class="options"><span>A. N/4</span><span>B. N/2</span><span>C. 3N/4</span><span>D. N</span></div>
+</div>
+
+<div class="section-label">Trigonometry &amp; Bearings (Q14–18)</div>
+
+<div class="question-block">
+  <span class="q-num">14.</span>
+  <p class="q-text">In a triangle ABC with sides a, b, c, the sine rule states:</p>
+  <div class="options"><span>A. a/sin A = b/sin B</span><span>B. a² = b² + c² − 2bc cos A</span><span>C. Area = ½bc sin A</span><span>D. a + b = c</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">15.</span>
+  <p class="q-text">In a right triangle with opposite = 3, adjacent = 4, tan θ =</p>
+  <div class="options"><span>A. 3/5</span><span>B. 3/4</span><span>C. 4/5</span><span>D. 4/3</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">16.</span>
+  <p class="q-text">On the unit circle, sin θ is the:</p>
+  <div class="options"><span>A. x-coordinate</span><span>B. y-coordinate</span><span>C. Ratio y/x</span><span>D. Radius</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">17.</span>
+  <p class="q-text">A bearing of 090° means the direction is:</p>
+  <div class="options"><span>A. North</span><span>B. East</span><span>C. South</span><span>D. West</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">18.</span>
+  <p class="q-text">If the angle of elevation to the top of a building is 45°, then the height equals:</p>
+  <div class="options"><span>A. Half the horizontal distance</span><span>B. The horizontal distance</span><span>C. Twice the horizontal distance</span><span>D. √3 times the horizontal distance</span></div>
+</div>
+
+<div class="section-label">3D Mensuration (Q19–22)</div>
+
+<div class="question-block">
+  <span class="q-num">19.</span>
+  <p class="q-text">The volume of a cylinder with radius 3 cm and height 7 cm is:</p>
+  <div class="options"><span>A. 21π cm³</span><span>B. 42π cm³</span><span>C. 63π cm³</span><span>D. 126π cm³</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">20.</span>
+  <p class="q-text">The volume of a cone with radius 3 cm and height 7 cm is:</p>
+  <div class="options"><span>A. 7π cm³</span><span>B. 21π cm³</span><span>C. 63π cm³</span><span>D. 189π cm³</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">21.</span>
+  <p class="q-text">The surface area of a sphere of radius 3 cm is:</p>
+  <div class="options"><span>A. 9π cm²</span><span>B. 18π cm²</span><span>C. 36π cm²</span><span>D. 108π cm²</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">22.</span>
+  <p class="q-text">The volume of a cuboid with dimensions 3, 4, 5 is:</p>
+  <div class="options"><span>A. 12</span><span>B. 20</span><span>C. 47</span><span>D. 60</span></div>
+</div>
+
+<div class="section-label">Vectors &amp; Probability (Q23–25)</div>
+
+<div class="question-block">
+  <span class="q-num">23.</span>
+  <p class="q-text">If a = (2,3) and b = (1,−1), then a + b =</p>
+  <div class="options"><span>A. (3,2)</span><span>B. (1,4)</span><span>C. (3,4)</span><span>D. (2,−3)</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">24.</span>
+  <p class="q-text">The magnitude of vector (2,3) is:</p>
+  <div class="options"><span>A. 5</span><span>B. √5</span><span>C. √13</span><span>D. 13</span></div>
+</div>
+
+<div class="question-block">
+  <span class="q-num">25.</span>
+  <p class="q-text">In a Venn diagram with |A| = 15, |B| = 12, |A∩B| = 5, the value of |A∪B| is:</p>
+  <div class="options"><span>A. 20</span><span>B. 22</span><span>C. 27</span><span>D. 32</span></div>
+</div>
+
+<div class="answer-key no-break">
+  <h3>Answer Key — Diagram-Based Questions</h3>
+  <div class="answer-grid">
+    <div>1. B</div><div>2. C</div><div>3. B</div><div>4. C</div><div>5. B</div>
+    <div>6. B</div><div>7. B</div><div>8. C</div><div>9. A</div><div>10. B</div>
+    <div>11. C</div><div>12. B</div><div>13. B</div><div>14. A</div><div>15. B</div>
+    <div>16. B</div><div>17. B</div><div>18. B</div><div>19. C</div><div>20. B</div>
+    <div>21. C</div><div>22. D</div><div>23. A</div><div>24. C</div><div>25. B</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PART 6: HOW TO USE -->
+<!-- ============================================================ -->
+
+<h2>Part 6 — How to Use This Archive</h2>
+
+<div class="callout no-break">
+  <div class="callout-title">Mastery Protocol</div>
+  <ol>
+    <li><strong>Do the 50-question General Diagnostic first.</strong> Score each section. Identify your weakest block.</li>
+    <li><strong>Do the 20-question Algebra Diagnostic.</strong> Map your weak variations. Algebra is the highest-weight block — you cannot afford gaps here.</li>
+    <li><strong>Work through the 55-question Algebra Mastery Set in batches of 10.</strong> For every wrong answer, identify the variation and drill 10 more of that single type.</li>
+    <li><strong>Study the diagram supplement.</strong> Redraw every circle theorem, every 3D solid, and the parabola from memory.</li>
+    <li><strong>Complete the 25 diagram-based questions.</strong> These test visual reasoning — a skill JAMB rewards consistently.</li>
+    <li><strong>Do not move to the next topic</strong> until you score 50+/55 on the Algebra set and 22+/25 on the diagram questions.</li>
+  </ol>
+</div>
+
+<h3>Next Topics to Build Mastery Sets For</h3>
+<ol>
+  <li><strong>Number &amp; Numeration</strong> (~20%) — indices, logs, surds, bases, sets, probability</li>
+  <li><strong>Geometry &amp; Trigonometry</strong> (~22%) — circle theorems, polygons, sine/cosine rules, bearings</li>
+  <li><strong>Calculus</strong> (~12%) — differentiation rules, applications, integration, area under curves</li>
+  <li><strong>Statistics &amp; Probability</strong> (~12%) — mean/median/mode, dispersion, ogive, combinatorics</li>
+</ol>
+
+<h3>Complete Study System</h3>
+<table>
+  <thead>
+    <tr><th>File</th><th>Subject</th><th>Contents</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Physics</td><td>Text mastery archive (exam architecture, 50-question diagnostic, Simple Machines mastery set)</td></tr>
+    <tr><td>2</td><td>Physics</td><td>Diagram supplement (vectors, circuits, ray diagrams, graphs, apparatus)</td></tr>
+    <tr><td>3</td><td>Chemistry</td><td>Text mastery archive (exam architecture, 50-question diagnostic, Organic Chemistry mastery set)</td></tr>
+    <tr><td>4</td><td>Chemistry</td><td>Diagram supplement (structures, isomers, apparatus, reaction schemes)</td></tr>
+    <tr><td>5</td><td>Mathematics</td><td><strong>This file</strong> — full archive + diagram supplement combined</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<p class="small center"><strong>JAMB MATHEMATICS — MASTERY ARCHIVE &amp; DIAGRAM SUPPLEMENT</strong> · All diagrams rendered as inline SVG · JavaScript-free · Print-optimised · Ink-economical</p>
+
+</body>
+</html>
