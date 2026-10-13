@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Vanilla Web Dev Test — HTML · CSS · JS | UTMEDaily · GrantApp AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0A0E1A; --card:#111827; --card2:#161E2E; --text:#E8EDF5;
+      --ter:rgba(232,237,245,0.42); --sec:rgba(232,237,245,0.7);
+      --sep:rgba(255,255,255,0.08); --r:14px;
+      --mono:'Space Mono',monospace; --sans:'DM Sans',sans-serif;
+      --html:#e34c26; --css:#264de4; --js:#f7df1e; --jsdk:#b8a800;
+      --green:#10B981; --red:#EF4444;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+    body{font-family:var(--sans);font-size:16px;color:var(--text);background:var(--bg);line-height:1.5;padding-bottom:calc(env(safe-area-inset-bottom)+80px);}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.5;}
+    #watermark{position:fixed;inset:0;z-index:9999;pointer-events:none;overflow:hidden;display:flex;flex-direction:column;gap:2rem;padding:1rem;transform:rotate(-20deg) scale(1.5);opacity:0.055;font-family:var(--mono);font-weight:700;color:#f0eff4;white-space:nowrap;}
+
+    .lang-strip{display:flex;height:5px;}
+    .ls-html{flex:1;background:var(--html);}
+    .ls-css{flex:1;background:var(--css);}
+    .ls-js{flex:1;background:var(--jsdk);}
+
+    .hdr{background:rgba(10,14,26,0.94);border-bottom:1px solid var(--sep);padding:calc(env(safe-area-inset-top)+14px) 20px 14px;position:sticky;top:0;z-index:100;backdrop-filter:blur(24px);}
+    .hdr-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .hdr-brand{font-family:var(--mono);font-size:11px;color:#f7df1e;opacity:0.8;}
+    .hdr-title{font-family:var(--mono);font-size:13px;font-weight:700;}
+    .hdr-sub{font-size:11px;color:var(--ter);margin-top:2px;}
+    .gtimer{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:20px;background:rgba(247,223,30,0.07);border:1px solid rgba(247,223,30,0.2);}
+    .gtimer-txt{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--jsdk);}
+
+    .score-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 20px;}
+    .sc{background:var(--card);border-radius:10px;padding:10px;text-align:center;border:1px solid var(--sep);}
+    .sc-v{font-family:var(--mono);font-size:18px;font-weight:700;}
+    .sc-v.c{color:var(--green);} .sc-v.w{color:var(--red);} .sc-v.s{color:var(--ter);}
+
+    .prog-wrap{padding:0 20px 10px;}
+    .prog-track{height:3px;background:var(--sep);border-radius:99px;}
+    .prog-fill{height:100%;background:linear-gradient(90deg,var(--html),var(--css),var(--jsdk));width:0%;border-radius:99px;transition:width 0.4s;}
+
+    #qc{padding:8px 20px 20px;}
+
+    .sec-div{margin:4px 0 12px;padding:12px 18px;border-radius:10px;display:flex;align-items:center;gap:12px;}
+    .sec-html{background:rgba(227,76,38,0.07);border:1px solid rgba(227,76,38,0.25);}
+    .sec-css{background:rgba(38,77,228,0.07);border:1px solid rgba(38,77,228,0.3);}
+    .sec-js{background:rgba(247,223,30,0.05);border:1px solid rgba(247,223,30,0.2);}
+    .sec-icon{font-size:1.3rem;}
+    .sec-title{font-family:var(--mono);font-size:12px;font-weight:700;}
+    .sec-title.html{color:var(--html);}
+    .sec-title.css{color:#5b7cf7;}
+    .sec-title.js{color:var(--jsdk);}
+    .sec-meta{font-size:11px;color:var(--ter);margin-top:2px;}
+
+    .qcard{background:var(--card);border:1px solid var(--sep);border-radius:var(--r);padding:20px;margin-bottom:14px;}
+    .qcard.html{border-top:2px solid rgba(227,76,38,0.5);}
+    .qcard.css{border-top:2px solid rgba(91,124,247,0.5);}
+    .qcard.js{border-top:2px solid rgba(247,223,30,0.4);}
+    .qcard-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--sep);flex-wrap:wrap;gap:6px;}
+    .qnum{font-family:var(--mono);font-size:11px;color:var(--ter);}
+    .qtag{font-size:10px;padding:3px 9px;border-radius:99px;}
+    .qtag.html{background:rgba(227,76,38,0.12);color:#f87171;}
+    .qtag.css{background:rgba(91,124,247,0.12);color:#93a6fd;}
+    .qtag.js{background:rgba(247,223,30,0.1);color:var(--jsdk);}
+    .qlevel{font-size:10px;padding:3px 8px;border-radius:99px;}
+    .qlevel.beginner{background:rgba(16,185,129,0.08);color:var(--green);}
+    .qlevel.intermediate{background:rgba(245,158,11,0.1);color:#f59e0b;}
+    .qlevel.advanced{background:rgba(239,68,68,0.1);color:#f87171;}
+
+    .qtxt{font-size:15px;line-height:1.65;margin-bottom:16px;}
+    pre.snippet{background:#0d1117;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 14px;margin-bottom:14px;overflow-x:auto;font-family:var(--mono);font-size:12px;line-height:1.7;color:#c9d1d9;}
+    pre.snippet .ht{color:#7ee787;}  /* html tag */
+    pre.snippet .at{color:#79c0ff;}  /* attribute */
+    pre.snippet .vl{color:#a5d6ff;}  /* value */
+    pre.snippet .cm{color:#8b949e;font-style:italic;} /* comment */
+    pre.snippet .kw{color:#ff7b72;}  /* keyword */
+    pre.snippet .fn{color:#d2a8ff;}  /* function */
+    pre.snippet .st{color:#a5d6ff;}  /* string */
+    pre.snippet .nm{color:#79c0ff;}  /* number */
+    pre.snippet .pr{color:#ffa657;}  /* property */
+    pre.snippet .sl{color:#7ee787;}  /* selector */
+
+    .opts{display:flex;flex-direction:column;gap:8px;}
+    .opt{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border-radius:10px;border:1px solid var(--sep);background:var(--card2);cursor:pointer;transition:border-color 0.15s,background 0.15s;}
+    .opt:hover:not(.locked){border-color:rgba(247,223,30,0.3);}
+    .opt.sel{border-color:rgba(247,223,30,0.45);background:rgba(247,223,30,0.05);}
+    .opt.ok{border-color:var(--green);background:rgba(16,185,129,0.07);}
+    .opt.no{border-color:var(--red);background:rgba(239,68,68,0.07);}
+    .opt.locked{cursor:default;}
+    .opt-key{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--jsdk);width:20px;flex-shrink:0;}
+    .opt-txt{font-family:var(--mono);font-size:12.5px;line-height:1.5;}
+
+    .abtn{margin-top:12px;width:100%;padding:11px;background:var(--jsdk);color:#000;font-weight:700;border:none;border-radius:10px;cursor:pointer;font-size:13px;font-family:var(--mono);}
+    .abtn:disabled{opacity:0.25;cursor:not-allowed;}
+
+    .exp{display:none;margin-top:12px;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.18);border-radius:10px;padding:14px;font-size:13px;line-height:1.65;}
+    .exp.show{display:block;}
+    .exp-mark.pos{background:rgba(16,185,129,0.15);color:var(--green);display:inline-block;padding:3px 10px;border-radius:6px;margin-bottom:8px;font-family:var(--mono);font-size:12px;}
+    .exp-mark.neg{background:rgba(239,68,68,0.12);color:var(--red);display:inline-block;padding:3px 10px;border-radius:6px;margin-bottom:8px;font-family:var(--mono);font-size:12px;}
+    .exp-tip{color:rgba(232,237,245,0.5);font-size:12px;border-top:1px solid var(--sep);padding-top:8px;margin-top:8px;font-family:var(--mono);}
+
+    .submit-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,0.96);border-top:1px solid var(--sep);padding:12px 20px calc(env(safe-area-inset-bottom)+12px);display:flex;gap:10px;z-index:200;backdrop-filter:blur(16px);}
+    .submit-btn{flex:1;padding:13px;font-weight:700;border:none;border-radius:10px;cursor:pointer;font-size:13px;font-family:var(--mono);}
+    .submit-btn.primary{background:var(--jsdk);color:#000;}
+    .submit-btn.ghost{background:var(--card2);color:var(--text);border:1px solid var(--sep);}
+
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:4000;}
+    .modal-overlay.show{display:flex;}
+    .modal{background:var(--card);border-radius:16px;padding:24px;max-width:400px;width:90%;}
+    .modal h3{margin-bottom:12px;font-family:var(--mono);}
+    .modal-row{margin-bottom:8px;font-size:14px;}
+    .modal-btns{display:flex;gap:10px;margin-top:16px;}
+    .modal-btn{flex:1;padding:11px;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;font-family:var(--mono);}
+    .modal-btn.primary{background:var(--jsdk);color:#000;}
+    .modal-btn.ghost{background:var(--sep);color:var(--text);}
+
+    .timeup{position:fixed;inset:0;background:rgba(10,14,26,0.98);display:none;align-items:center;justify-content:center;z-index:5000;}
+    .timeup.show{display:flex;}
+    .timeup-box{background:var(--card);border-radius:20px;padding:32px;text-align:center;max-width:380px;}
+    .timeup-icons{font-size:28px;margin-bottom:14px;letter-spacing:4px;}
+    .timeup-ttl{font-family:var(--mono);font-size:18px;font-weight:700;margin-bottom:6px;}
+    .timeup-sub{color:var(--ter);font-size:12px;margin-bottom:14px;font-family:var(--mono);}
+    .timeup-score{font-family:var(--mono);font-size:52px;font-weight:700;color:var(--jsdk);margin-bottom:8px;}
+    .timeup-grade{font-size:13px;color:var(--sec);margin-bottom:20px;}
+    .timeup-btn{padding:13px 32px;background:var(--jsdk);color:#000;font-weight:700;border:none;border-radius:10px;cursor:pointer;font-size:14px;font-family:var(--mono);}
+
+    @media print{body{background:#fff;color:#000;}.hdr,.submit-bar,.timeup,.modal-overlay,.abtn,.score-strip,.lang-strip{display:none;}.exp{display:block!important;}}
+  </style>
+</head>
+<body>
+
+<div class="lang-strip"><span class="ls-html"></span><span class="ls-css"></span><span class="ls-js"></span></div>
+<div id="watermark" aria-hidden="true"></div>
+
+<header class="hdr">
+  <div class="hdr-row">
+    <div>
+      <span class="hdr-brand">UTMEDaily · GrantApp AI</span>
+      <div class="hdr-title">&lt;HTML&gt; · {CSS} · JS() — Vanilla Web Dev Test</div>
+      <div class="hdr-sub">40 questions · 35 min · Beginner → Advanced · <span id="answered-count">0</span> answered</div>
+    </div>
+    <div class="gtimer"><span class="gtimer-txt" id="gtime">35:00</span></div>
+  </div>
+</header>
+
+<div class="score-strip">
+  <div class="sc"><div class="sc-v" id="sc-total">40</div><div style="font-size:11px;color:var(--ter);">Total</div></div>
+  <div class="sc"><div class="sc-v c" id="sc-corr">0</div><div style="font-size:11px;color:var(--ter);">Correct</div></div>
+  <div class="sc"><div class="sc-v w" id="sc-wrong">0</div><div style="font-size:11px;color:var(--ter);">Wrong</div></div>
+  <div class="sc"><div class="sc-v s" id="sc-skip">40</div><div style="font-size:11px;color:var(--ter);">Left</div></div>
+</div>
+<div class="prog-wrap"><div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div></div>
+
+<div id="qc"></div>
+
+<div class="submit-bar">
+  <span style="font-size:11px;color:var(--ter);align-self:center;font-family:var(--mono);" id="sub-prog">0/40</span>
+  <button class="submit-btn primary" onclick="showModal()">Submit</button>
+  <button class="submit-btn ghost" onclick="window.print()">PDF</button>
+</div>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Submit quiz?</h3>
+    <div class="modal-row">Answered: <b id="m-ans">0</b></div>
+    <div class="modal-row">Remaining: <b id="m-left">40</b></div>
+    <div class="modal-btns">
+      <button class="modal-btn ghost" onclick="hideModal()">Keep Going</button>
+      <button class="modal-btn primary" onclick="submitQuiz()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<div class="timeup" id="tu">
+  <div class="timeup-box">
+    <div class="timeup-icons">🌐💻⚡</div>
+    <div class="timeup-ttl" id="tu-title">Results</div>
+    <div class="timeup-sub">HTML · CSS · JavaScript</div>
+    <div class="timeup-score" id="tu-score">0%</div>
+    <div class="timeup-grade" id="tu-grade"></div>
+    <button class="timeup-btn" onclick="document.getElementById('tu').classList.remove('show')">Review Answers</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var wm=document.getElementById('watermark');
+  if(wm){var t='HTML · CSS · JavaScript · Vanilla · GrantApp AI · ';var row='';for(var i=0;i<5;i++)row+=t;var h='';for(var j=0;j<12;j++)h+='<span>'+row+'</span>';wm.innerHTML=h;}
+})();
+
+const Q = [
+
+  /* ══════════════════════════════════════════
+     SECTION 1 — HTML (Q1–14)
+  ══════════════════════════════════════════ */
+
+  {id:1,lang:'html',topic:'HTML — Structure',level:'beginner',
+   text:'What does DOCTYPE declaration do?',
+   opts:{A:'Links a CSS stylesheet to the page',B:'Tells the browser which version of HTML the document uses so it renders in standards mode',C:'Defines the character encoding of the page',D:'Loads JavaScript before the page parses'},
+   ans:'B',
+   exp:'<!DOCTYPE html> instructs the browser to use standards mode (not quirks mode). Without it, browsers fall back to quirks mode — replicating old IE bugs. It must be the very first line of an HTML document. In HTML5 the declaration is simply <!DOCTYPE html> regardless of the exact version.',
+   tip:'<!DOCTYPE html> → standards mode. No doctype → quirks mode (broken box model, layout bugs)'},
+
+  {id:2,lang:'html',topic:'HTML — Semantics',level:'beginner',
+   code:`<div id="nav">...</div>\n<div id="main">...</div>\n<div id="footer">...</div>`,
+   text:'The snippet above uses <div> for layout regions. Which rewrite is semantically correct?',
+   opts:{
+     A:'<section id="nav"> · <article id="main"> · <aside id="footer">',
+     B:'<nav> · <main> · <footer>',
+     C:'<header> · <div class="content"> · <div class="foot">',
+     D:'<p id="nav"> · <p id="main"> · <p id="footer">'
+   },
+   ans:'B',
+   exp:'HTML5 semantic elements communicate meaning to browsers, screen readers and search engines. <nav> = navigation links; <main> = primary page content (only one per page); <footer> = footer content. Others: <header>, <article>, <section>, <aside>. Using <div> for everything is functional but loses semantics.',
+   tip:'Semantic HTML5: <header> <nav> <main> <article> <section> <aside> <footer> — use them instead of generic <div>'},
+
+  {id:3,lang:'html',topic:'HTML — Forms',level:'beginner',
+   text:'Which input type shows a date picker natively in modern browsers?',
+   opts:{A:'type="text"',B:'type="datetime"',C:'type="date"',D:'type="calendar"'},
+   ans:'C',
+   exp:'<input type="date"> renders a native date picker in Chrome, Firefox, Safari (modern), and Edge. Other date-related types: type="datetime-local" (date + time), type="time", type="month", type="week". type="datetime" (without -local) was deprecated. type="calendar" does not exist.',
+   tip:'Date inputs: type="date" · type="time" · type="datetime-local" · type="month" · type="week"'},
+
+  {id:4,lang:'html',topic:'HTML — Attributes',level:'beginner',
+   text:'What is the purpose of the alt attribute on an <img> tag?',
+   opts:{
+     A:'Sets the image tooltip shown on hover',
+     B:'Provides alternative text for screen readers and displays when the image fails to load — required for accessibility',
+     C:'Specifies the image file format',
+     D:'Controls the image loading priority'
+   },
+   ans:'B',
+   exp:'alt provides a text alternative for images. Screen readers read it aloud. When the image fails to load, alt text is shown. For decorative images, use alt="" (empty, not omitted). Omitting alt entirely is an accessibility violation (WCAG 2.1). The title attribute provides the hover tooltip — a separate thing.',
+   tip:'alt="" = decorative (skip for screen reader). Meaningful image → descriptive alt. Never omit alt.'},
+
+  {id:5,lang:'html',topic:'HTML — Links',level:'beginner',
+   code:`<a href="https://example.com" target="_blank">Visit</a>`,
+   text:'What security attribute should always accompany target="_blank"?',
+   opts:{
+     A:'rel="noopener noreferrer"',
+     B:'rel="external"',
+     C:'crossorigin="anonymous"',
+     D:'sandbox="allow-scripts"'
+   },
+   ans:'A',
+   exp:'target="_blank" opens a new tab where the new page can access window.opener — allowing it to redirect the original tab (reverse tabnapping attack). Adding rel="noopener noreferrer" prevents this: noopener nullifies window.opener; noreferrer also hides the Referer header. Modern browsers now default to noopener for _blank but explicitly writing it is best practice.',
+   tip:'Always: <a href="..." target="_blank" rel="noopener noreferrer"> — prevents reverse tabnapping'},
+
+  {id:6,lang:'html',topic:'HTML — Meta Tags',level:'intermediate',
+   text:'Which meta tag makes a page responsive on mobile devices?',
+   opts:{
+     A:'<meta name="mobile" content="responsive">',
+     B:'<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+     C:'<meta http-equiv="X-UA-Compatible" content="IE=edge">',
+     D:'<meta name="screen-size" content="auto">'
+   },
+   ans:'B',
+   exp:'The viewport meta tag tells mobile browsers not to scale down the page to fit a virtual 980px layout (default without it). width=device-width sets the viewport to the device\'s actual screen width. initial-scale=1.0 sets the initial zoom level to 100%. Without this, media queries in CSS still fire but the page appears zoomed out.',
+   tip:'<meta name="viewport" content="width=device-width, initial-scale=1.0"> — required for every responsive site'},
+
+  {id:7,lang:'html',topic:'HTML — Tables',level:'beginner',
+   code:`<table>\n  <tr>\n    <th>Name</th>\n    <th>Score</th>\n  </tr>\n  <tr>\n    <td>Emeka</td>\n    <td>95</td>\n  </tr>\n</table>`,
+   text:'What is missing from this table for proper accessibility?',
+   opts:{
+     A:'A <caption> element and scope attributes on <th>',
+     B:'A border attribute on <table>',
+     C:'colspan attributes on all cells',
+     D:'A summary attribute on each <tr>'
+   },
+   ans:'A',
+   exp:'Accessible tables need: (1) <caption> — describes the table\'s purpose for screen readers; (2) scope="col" or scope="row" on <th> — tells screen readers which cells the header applies to. Example: <th scope="col">Name</th>. The border attribute is presentational (use CSS instead). summary was deprecated in HTML5.',
+   tip:'Accessible table: <caption> + <th scope="col|row"> + <thead>/<tbody>/<tfoot>'},
+
+  {id:8,lang:'html',topic:'HTML — Loading',level:'intermediate',
+   code:`<script src="app.js"></script>`,
+   text:'Where and how should this script tag be placed for best page load performance?',
+   opts:{
+     A:'In <head> with no changes',
+     B:'Before </body> closing tag, or in <head> with defer attribute',
+     C:'In <head> with async attribute always',
+     D:'Scripts must always be inline — external files block rendering'
+   },
+   ans:'B',
+   exp:'<script> without attributes in <head> blocks HTML parsing until the script downloads and executes. Solutions: (1) Place before </body> — HTML already parsed; (2) defer — downloads in parallel, executes after DOM is parsed, in order; (3) async — downloads in parallel, executes immediately when ready (breaks execution order). defer is usually the right choice for app scripts.',
+   tip:'defer = parallel download + executes after DOM parsed + order preserved. async = parallel download + executes immediately (out of order)'},
+
+  {id:9,lang:'html',topic:'HTML — Data Attributes',level:'intermediate',
+   code:`<button data-user-id="42" data-role="admin">Delete</button>`,
+   text:'How do you read the data-user-id value in JavaScript?',
+   opts:{
+     A:'element.getAttribute("data-user-id")',
+     B:'element.dataset.userId',
+     C:'Both A and B are correct',
+     D:'element.data["user-id"]'
+   },
+   ans:'C',
+   exp:'Both methods work. getAttribute("data-user-id") returns the raw string. dataset.userId uses camelCase — the dataset API converts kebab-case (data-user-id) to camelCase (userId) automatically. dataset is the modern idiomatic approach. element.data["user-id"] does not exist in the DOM API.',
+   tip:'data-user-id → element.dataset.userId (camelCase). data-role → element.dataset.role'},
+
+  {id:10,lang:'html',topic:'HTML — Forms',level:'intermediate',
+   text:'Which combination correctly prevents a form from submitting while validating client-side in JavaScript?',
+   opts:{
+     A:'event.stop() inside the submit handler',
+     B:'return false at the end of an onclick handler on the button',
+     C:'event.preventDefault() inside the form\'s submit event listener',
+     D:'form.disable = true before validation runs'
+   },
+   ans:'C',
+   exp:'Attach a listener to the form\'s submit event (not the button\'s click), then call event.preventDefault() to cancel the native submission. This lets you validate first and conditionally allow or block submission. return false only works in old-style inline event handlers and doesn\'t apply to addEventListener. event.stop() does not exist.',
+   tip:'form.addEventListener("submit", (e) => { e.preventDefault(); /* validate */ })'},
+
+  {id:11,lang:'html',topic:'HTML — Accessibility',level:'intermediate',
+   text:'What does aria-label do?',
+   opts:{
+     A:'Applies a CSS label style to an element',
+     B:'Provides an accessible name for elements that have no visible text — read aloud by screen readers',
+     C:'Labels a form input for visual display only',
+     D:'Marks an element as a landmark for keyboard navigation'
+   },
+   ans:'B',
+   exp:'aria-label gives an element an accessible name when visible text is absent or insufficient. Example: <button aria-label="Close dialog">✕</button> — the screen reader says "Close dialog" not just "✕". aria-labelledby references another element\'s id as the label. role="region" + aria-label = landmark. ARIA (Accessible Rich Internet Applications) supplements HTML semantics.',
+   tip:'aria-label: accessible name for icon buttons, SVGs, inputs. aria-labelledby: reference another element. aria-describedby: extra description'},
+
+  {id:12,lang:'html',topic:'HTML — Iframes',level:'intermediate',
+   text:'Which attribute restricts what an embedded <iframe> can do (run scripts, submit forms etc.)?',
+   opts:{A:'allow="none"',B:'sandbox',C:'permissions="restricted"',D:'crossorigin="use-credentials"'},
+   ans:'B',
+   exp:'The sandbox attribute on <iframe> applies a restrictive security policy: by default it blocks scripts, forms, popups, and same-origin access. You can selectively re-enable features: sandbox="allow-scripts" (scripts), sandbox="allow-forms" (forms), sandbox="allow-same-origin". Without sandbox, an embedded third-party page runs in full trust.',
+   tip:'<iframe sandbox> blocks scripts/forms/popups. Re-enable selectively: sandbox="allow-scripts allow-forms"'},
+
+  {id:13,lang:'html',topic:'HTML — Head Elements',level:'beginner',
+   text:'Which element in <head> correctly links an external CSS file?',
+   opts:{
+     A:'<script src="style.css">',
+     B:'<style href="style.css">',
+     C:'<link rel="stylesheet" href="style.css">',
+     D:'<css src="style.css">'
+   },
+   ans:'C',
+   exp:'<link rel="stylesheet" href="style.css"> is the correct syntax. rel="stylesheet" tells the browser this link is a CSS stylesheet. href points to the file. <script> loads JS. <style> is for inline CSS. <css> is not an HTML element. The link element is self-closing (no </link> needed).',
+   tip:'<link rel="stylesheet" href="..."> · <link rel="icon" href="..."> · <link rel="preload" ...>'},
+
+  {id:14,lang:'html',topic:'HTML — Block vs Inline',level:'beginner',
+   text:'Which of the following is an INLINE element by default?',
+   opts:{A:'<div>',B:'<p>',C:'<section>',D:'<span>'},
+   ans:'D',
+   exp:'<span> is an inline element — it does not start a new line and only takes up as much width as its content. Block elements (<div>, <p>, <section>, <article>, <h1>–<h6>) start on a new line and take full available width. You can override this with CSS display property. Never put block elements inside inline elements (invalid HTML).',
+   tip:'Inline: <span> <a> <strong> <em> <img> <input> <label>. Block: <div> <p> <section> <h1-6> <ul> <li>'},
+
+  /* ══════════════════════════════════════════
+     SECTION 2 — CSS (Q15–27)
+  ══════════════════════════════════════════ */
+
+  {id:15,lang:'css',topic:'CSS — Specificity',level:'intermediate',
+   text:'Given these rules, which colour does the paragraph get?',
+   code:`#content p { color: red; }\n.text { color: blue; }\np { color: green; }`,
+   opts:{A:'green — element selectors always win',B:'blue — class beats element',C:'red — ID has highest specificity',D:'The last rule always wins'},
+   ans:'C',
+   exp:'CSS specificity order (highest → lowest): inline styles → ID selectors (#) → class/attribute/pseudo-class selectors (.) → element/pseudo-element selectors (p, div). ID (1,0,0) beats class (0,1,0) beats element (0,0,1). #content p = (1,0,1) which beats .text = (0,1,0). So the paragraph is red.',
+   tip:'Specificity: inline=1000 · #id=100 · .class/:pseudo=10 · element=1. !important overrides all (avoid it)'},
+
+  {id:16,lang:'css',topic:'CSS — Box Model',level:'beginner',
+   text:'With box-sizing: border-box, a div with width: 200px, padding: 20px, and border: 5px has a total rendered width of:',
+   opts:{A:'250px',B:'200px',C:'160px',D:'230px'},
+   ans:'B',
+   exp:'box-sizing: border-box makes padding and border included INSIDE the declared width. Total rendered width = 200px (always). The content area shrinks to accommodate padding and border: content = 200 − 20×2 − 5×2 = 150px. With the default content-box, width would be the content area alone, and total = 200+40+10 = 250px.',
+   tip:'border-box: width = content+padding+border (total = declared width). content-box (default): width = content only (total grows)'},
+
+  {id:17,lang:'css',topic:'CSS — Flexbox',level:'intermediate',
+   code:`.container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}`,
+   text:'What does justify-content: space-between do in this flex container?',
+   opts:{
+     A:'Centers all items horizontally',
+     B:'Places equal space between items; first item at start edge, last item at end edge',
+     C:'Adds equal space around each item (including edges)',
+     D:'Stretches all items to fill the container width'
+   },
+   ans:'B',
+   exp:'In a row-direction flex container: justify-content controls the MAIN AXIS (horizontal). space-between: first item flush left, last flush right, equal gaps between items. space-around: equal space on both sides of each item (half-gap at edges). space-evenly: equal space everywhere including edges. align-items controls the CROSS AXIS (vertical here).',
+   tip:'justify-content: main axis. align-items: cross axis. flex-direction: row (default) or column'},
+
+  {id:18,lang:'css',topic:'CSS — Grid',level:'intermediate',
+   code:`.grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  gap: 16px;\n}`,
+   text:'What does 1fr mean in CSS Grid?',
+   opts:{
+     A:'1 pixel fraction of the container',
+     B:'1 fixed-width column of 100px',
+     C:'1 fractional unit — one equal share of the available space after fixed/auto columns are accounted for',
+     D:'First row height only'
+   },
+   ans:'C',
+   exp:'fr is the fraction unit in CSS Grid. repeat(3, 1fr) creates 3 equal-width columns, each taking 1/3 of the available space (minus gaps). 2fr 1fr 1fr would give the first column twice the width of the others. fr respects gap, padding, and fixed-width columns before distributing remaining space.',
+   tip:'grid-template-columns: 1fr 2fr 1fr (25% · 50% · 25%). repeat(4, 1fr) = 4 equal cols. minmax(100px, 1fr) = minimum 100px'},
+
+  {id:19,lang:'css',topic:'CSS — Positioning',level:'intermediate',
+   text:'An element with position: absolute is positioned relative to:',
+   opts:{
+     A:'The viewport always',
+     B:'The nearest ancestor that has position set to anything other than static',
+     C:'The document body always',
+     D:'The next sibling element'
+   },
+   ans:'B',
+   exp:'position: absolute removes the element from normal flow and positions it relative to its nearest positioned ancestor (position: relative, absolute, fixed, or sticky). If no ancestor is positioned, it falls back to the initial containing block (usually <html>). This is why a common pattern is giving a parent position: relative to contain an absolute child.',
+   tip:'absolute → nearest positioned ancestor. fixed → viewport. sticky → scrolling container. relative → its own normal-flow position'},
+
+  {id:20,lang:'css',topic:'CSS — Selectors',level:'intermediate',
+   text:'What does the selector a:not(.active):hover target?',
+   opts:{
+     A:'All links on hover',
+     B:'Links with class active on hover',
+     C:'Links that do NOT have class active, when hovered',
+     D:'Links inside elements that are not hovered'
+   },
+   ans:'C',
+   exp:':not() is a negation pseudo-class. a:not(.active) matches all <a> elements that do NOT have the class active. Adding :hover means this rule only applies when such a link is hovered. This is useful for styling inactive navigation links differently from the current/active link on hover.',
+   tip:':not() negation: p:not(.highlight) · input:not([disabled]) · li:not(:last-child)'},
+
+  {id:21,lang:'css',topic:'CSS — Variables',level:'intermediate',
+   code:`:root {\n  --primary: #22c55e;\n  --spacing: 1rem;\n}\n\n.btn {\n  background: var(--primary);\n  padding: var(--spacing);\n}`,
+   text:'What is a key advantage of CSS custom properties (variables) over preprocessor variables (like Sass $vars)?',
+   opts:{
+     A:'CSS variables are processed faster at compile time',
+     B:'CSS variables are live in the browser — they can be changed at runtime via JavaScript and cascade/inherit like any CSS property',
+     C:'CSS variables work in IE11 without polyfills',
+     D:'CSS variables can hold complex functions automatically'
+   },
+   ans:'B',
+   exp:'CSS custom properties are resolved at runtime in the browser. This means: (1) JS can update them — document.documentElement.style.setProperty("--primary", "#ff0000"); (2) they cascade and inherit through the DOM like normal properties; (3) they can be overridden at different scopes (:root vs .dark-mode). Sass variables are compiled away before the browser sees them.',
+   tip:'JS + CSS vars: element.style.setProperty("--var", value) and getComputedStyle(el).getPropertyValue("--var")'},
+
+  {id:22,lang:'css',topic:'CSS — Pseudo-elements',level:'intermediate',
+   code:`.btn::after {\n  content: " →";\n  display: inline-block;\n}`,
+   text:'What is the difference between ::before/::after (pseudo-elements) and :hover (pseudo-class)?',
+   opts:{
+     A:'Pseudo-elements select a state of an element; pseudo-classes create virtual elements',
+     B:'Pseudo-classes (: single colon) target states/conditions; pseudo-elements (:: double colon) create virtual sub-elements in the DOM',
+     C:'They are identical — the colon count is just a style preference',
+     D:'::before and ::after require JavaScript to function'
+   },
+   ans:'B',
+   exp:'Pseudo-classes (:hover, :focus, :nth-child, :not) target elements based on state, position, or condition. Pseudo-elements (::before, ::after, ::first-line, ::placeholder) create virtual elements that don\'t exist in the HTML DOM but can be styled. ::before/::after require a content property (even content:"" for decorative use). Double colon (::) is the CSS3 syntax; single (:) still works for legacy reasons.',
+   tip:'::before ::after require content:"". They are generated content — not in the DOM, not selectable by JS'},
+
+  {id:23,lang:'css',topic:'CSS — Responsive',level:'intermediate',
+   text:'In a mobile-first CSS approach, media queries should be written as:',
+   opts:{
+     A:'max-width queries — default styles target desktop, narrow down for mobile',
+     B:'min-width queries — default styles target mobile, expand up for larger screens',
+     C:'Both are identical in outcome',
+     D:'Only viewport units (vw, vh) — media queries are legacy'
+   },
+   ans:'B',
+   exp:'Mobile-first: write base styles for the smallest screen (no media query), then use min-width breakpoints to add complexity for larger screens. Example: base styles → @media (min-width: 768px) { tablet styles } → @media (min-width: 1024px) { desktop styles }. Desktop-first is the opposite. Mobile-first is recommended because most traffic is mobile and it tends to produce lighter CSS for small screens.',
+   tip:'Mobile-first: min-width queries. @media (min-width: 768px) { ... } — layer up complexity'},
+
+  {id:24,lang:'css',topic:'CSS — Animation',level:'advanced',
+   code:`@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n.card {\n  animation: fadeIn 0.3s ease-out forwards;\n}`,
+   text:'What does the forwards fill-mode do in this animation?',
+   opts:{
+     A:'Makes the animation play forward (not backwards)',
+     B:'The element retains the styles of the final keyframe (to) after the animation ends',
+     C:'Causes the animation to loop forward indefinitely',
+     D:'Applies the animation only on the forward scroll direction'
+   },
+   ans:'B',
+   exp:'animation-fill-mode: forwards keeps the element in the state of the last keyframe after the animation completes. Without it, the element snaps back to its original styles when the animation ends. Other values: backwards (apply from keyframe styles before animation starts, during delay); both (combine backwards + forwards); none (default — no fill).',
+   tip:'fill-mode: forwards (hold end state) · backwards (apply start state during delay) · both (both)'},
+
+  {id:25,lang:'css',topic:'CSS — Performance',level:'advanced',
+   text:'Which CSS property should you prefer to animate for the best performance, and why?',
+   opts:{
+     A:'width and height — they are simple numeric properties',
+     B:'top and left — they move elements without repainting',
+     C:'transform and opacity — they are composited on the GPU and do not trigger layout or paint',
+     D:'margin and padding — they update cheaply in the box model'
+   },
+   ans:'C',
+   exp:'The browser rendering pipeline: JavaScript → Style → Layout → Paint → Composite. Changing width/height/margin triggers Layout (expensive — recalculates all affected elements). Changing background/color triggers Paint. Changing transform/opacity only triggers Compositing — handled by the GPU directly. This is why transform: translateX() for movement and opacity for fades give smooth 60fps animations.',
+   tip:'GPU composited: transform · opacity. Avoid animating: width/height · top/left · margin · padding (trigger layout)'},
+
+  {id:26,lang:'css',topic:'CSS — Specificity Wars',level:'advanced',
+   text:'Why is using !important considered bad practice in most cases?',
+   opts:{
+     A:'It makes the stylesheet file larger',
+     B:'It breaks CSS inheritance for all child elements',
+     C:'It overrides all other specificity including inline styles, making future debugging and overriding very difficult — fighting it requires more !important',
+     D:'It only works in Chrome and not Firefox'
+   },
+   ans:'C',
+   exp:'!important overrides everything — even inline styles — and creates a specificity arms race: once you use it, overriding requires another !important of at least equal specificity, leading to unmaintainable code. Legitimate uses: utility classes (.hidden { display: none !important }), overriding third-party library styles when no other way exists, and user stylesheets for accessibility. Avoid in component/application CSS.',
+   tip:'!important last resort. Better fix: increase specificity with a more specific selector, or restructure CSS architecture'},
+
+  {id:27,lang:'css',topic:'CSS — Modern Layout',level:'advanced',
+   text:'What does place-items: center do on a grid or flex container?',
+   opts:{
+     A:'Centers the container itself on the page',
+     B:'Shorthand for align-items: center + justify-items: center — centers items on both axes simultaneously',
+     C:'Only centers text content within each cell',
+     D:'Centers the grid tracks, not the items'
+   },
+   ans:'B',
+   exp:'place-items is a shorthand for align-items (cross/block axis) and justify-items (main/inline axis) in a single declaration. In Grid: display:grid; place-items:center perfectly centers each grid item in its cell. In Flex, place-items also works. The single-value form (place-items: center) sets both to center. Useful for centering a single element: display:grid; place-items:center on the parent.',
+   tip:'Perfect centering: .parent { display:grid; place-items:center; } — one line, works for single or multiple children'},
+
+  /* ══════════════════════════════════════════
+     SECTION 3 — JAVASCRIPT (Q28–40)
+  ══════════════════════════════════════════ */
+
+  {id:28,lang:'js',topic:'JS — var/let/const',level:'beginner',
+   code:`console.log(x);\nvar x = 5;`,
+   text:'What does this code output?',
+   opts:{A:'5',B:'ReferenceError: x is not defined',C:'undefined',D:'null'},
+   ans:'C',
+   exp:'var declarations are hoisted to the top of their scope and initialised to undefined. The code behaves as: var x; console.log(x); x = 5; — so it logs undefined, not an error. let and const are also hoisted but NOT initialised — accessing them before declaration throws a ReferenceError (Temporal Dead Zone). This is why let/const are safer than var.',
+   tip:'var: hoisted + initialised to undefined. let/const: hoisted but in TDZ — ReferenceError before declaration'},
+
+  {id:29,lang:'js',topic:'JS — Event Loop',level:'advanced',
+   code:`console.log('A');\nsetTimeout(() => console.log('B'), 0);\nconsole.log('C');`,
+   text:'What is the output order?',
+   opts:{A:'A B C',B:'B A C',C:'A C B',D:'C A B'},
+   ans:'C',
+   exp:'The event loop: synchronous code runs first (call stack). setTimeout callbacks go to the Web API, then the task queue after the delay. Even with 0ms delay, the callback waits for the call stack to empty. So: 1) console.log(\'A\') → A; 2) setTimeout registered; 3) console.log(\'C\') → C; 4) stack empty → callback fires → B. Output: A C B.',
+   tip:'Call stack first → Microtasks (Promises) → Task queue (setTimeout/setInterval). Zero delay ≠ immediate execution'},
+
+  {id:30,lang:'js',topic:'JS — DOM',level:'beginner',
+   text:'What is the correct way to select the first element with class "card" in vanilla JS?',
+   opts:{
+     A:'document.getElementsByClass("card")[0]',
+     B:'document.querySelector(".card")',
+     C:'document.findElement(".card")',
+     D:'document.select("card")'
+   },
+   ans:'B',
+   exp:'document.querySelector(selector) returns the FIRST element matching any valid CSS selector. document.querySelectorAll returns all matches (NodeList). getElementsByClassName("card") (no "s") returns all matches as an HTMLCollection but you\'d need [0]. querySelector is more versatile as it accepts any CSS selector (.card, #id, div > p, [attr]).',
+   tip:'querySelector(css) → first match. querySelectorAll(css) → NodeList of all. getElementById(id) → single element by id'},
+
+  {id:31,lang:'js',topic:'JS — Events',level:'beginner',
+   code:`document.querySelector('#btn')\n  .addEventListener('click', handleClick);`,
+   text:'What is the advantage of addEventListener over the onclick attribute?',
+   opts:{
+     A:'addEventListener is faster to type',
+     B:'addEventListener allows multiple handlers on the same event; onclick overwrites the previous handler',
+     C:'onclick does not work in modern browsers',
+     D:'addEventListener automatically prevents default browser behaviour'
+   },
+   ans:'B',
+   exp:'element.onclick = fn assigns ONE handler — adding a second overwrites the first. addEventListener adds to a listener list — you can attach multiple handlers for the same event on the same element and they all fire. It also supports event options (capture, once, passive). Inline onclick="..." mixes HTML and JS (separation of concerns violation).',
+   tip:'addEventListener: multiple listeners · capture/bubble control · removeEventListener support · once:true option'},
+
+  {id:32,lang:'js',topic:'JS — Closures',level:'intermediate',
+   code:`function makeCounter() {\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\nconst counter = makeCounter();\nconsole.log(counter()); // ?\nconsole.log(counter()); // ?`,
+   text:'What does this output?',
+   opts:{A:'0, 0',B:'1, 1',C:'1, 2',D:'undefined, undefined'},
+   ans:'C',
+   exp:'A closure is a function that retains access to its outer scope even after that scope has returned. makeCounter returns the inner function which closes over count. Each call to counter() increments the same count variable in memory. First call: count becomes 1, returns 1. Second call: count becomes 2, returns 2. Output: 1, 2.',
+   tip:'Closures: inner function remembers outer scope variables. Used for: data privacy, factory functions, memoisation, module pattern'},
+
+  {id:33,lang:'js',topic:'JS — Promises & Fetch',level:'intermediate',
+   code:`fetch('https://api.example.com/data')\n  .then(res => res.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));`,
+   text:'What does res.json() return?',
+   opts:{
+     A:'The parsed JSON object directly',
+     B:'Another Promise that resolves to the parsed JSON object',
+     C:'A JSON string',
+     D:'undefined — JSON is read from res.body directly'
+   },
+   ans:'B',
+   exp:'fetch() returns a Promise<Response>. Response.json() reads the response body stream and returns a SECOND Promise that resolves to the parsed JavaScript object. This is why you need two .then() calls. Response.text() similarly returns a Promise<string>. If the server returns invalid JSON, res.json() rejects and .catch() fires.',
+   tip:'fetch → Promise<Response> → .json() → Promise<Object>. Always check res.ok before .json() for error handling'},
+
+  {id:34,lang:'js',topic:'JS — Async/Await',level:'intermediate',
+   code:`async function getData() {\n  const res = await fetch('/api/users');\n  const data = await res.json();\n  return data;\n}`,
+   text:'What does the async keyword on a function mean?',
+   opts:{
+     A:'The function runs on a separate thread',
+     B:'The function always returns a Promise — even if you return a plain value, it is wrapped in Promise.resolve()',
+     C:'The function can only contain await expressions, nothing else',
+     D:'The function executes before all other synchronous code'
+   },
+   ans:'B',
+   exp:'async functions: (1) always return a Promise — return 42 becomes Promise.resolve(42); (2) allow the use of await inside; (3) still run synchronously up to the first await. They do NOT create new threads — JavaScript is single-threaded. await pauses execution of the async function (not the entire engine) until the Promise settles.',
+   tip:'async fn always returns a Promise. await pauses the async fn, not the thread. Use try/catch inside async for error handling'},
+
+  {id:35,lang:'js',topic:'JS — Array Methods',level:'intermediate',
+   code:`const nums = [1, 2, 3, 4, 5];\nconst result = nums\n  .filter(n => n % 2 === 0)\n  .map(n => n * 10);\nconsole.log(result);`,
+   text:'What does result contain?',
+   opts:{A:'[10, 20, 30, 40, 50]',B:'[20, 40]',C:'[1, 3, 5]',D:'[2, 4]'},
+   ans:'B',
+   exp:'filter(n => n % 2 === 0) keeps even numbers: [2, 4]. map(n => n * 10) multiplies each by 10: [20, 40]. Array methods chain — each returns a new array. They do not mutate the original. Key methods: filter (subset), map (transform), reduce (aggregate), find (first match), some/every (boolean checks), forEach (side effects — no return value).',
+   tip:'filter → new array (subset). map → new array (same length, transformed). reduce → single value. None mutate the original'},
+
+  {id:36,lang:'js',topic:'JS — Destructuring',level:'intermediate',
+   code:`const user = { name: 'Emeka', age: 22, city: 'Lagos' };\nconst { name, ...rest } = user;\nconsole.log(rest);`,
+   text:'What does rest contain?',
+   opts:{A:'{ name: "Emeka" }',B:'{ age: 22, city: "Lagos" }',C:'["Emeka", 22, "Lagos"]',D:'undefined'},
+   ans:'B',
+   exp:'Object destructuring with rest syntax (...rest) collects all remaining properties not explicitly destructured. { name, ...rest } extracts name into its own variable and puts everything else ({ age: 22, city: "Lagos" }) into rest. This is the object spread rest pattern — distinct from array rest. It creates a shallow copy of the remaining properties.',
+   tip:'{ a, ...rest } = obj — rest gets all props except a. [...rest] = arr — rest gets all elements after explicit ones'},
+
+  {id:37,lang:'js',topic:'JS — this keyword',level:'advanced',
+   code:`const obj = {\n  name: 'Test',\n  greet: function() {\n    setTimeout(function() {\n      console.log(this.name);\n    }, 100);\n  }\n};\nobj.greet();`,
+   text:'What does this.name log?',
+   opts:{A:'"Test"',B:'undefined',C:'ReferenceError',D:'null'},
+   ans:'B',
+   exp:'Inside a regular function passed to setTimeout, this is the global object (window in browsers) or undefined in strict mode — NOT obj. this in regular functions is determined by how the function is called. Fix options: (1) arrow function: setTimeout(() => console.log(this.name), 100) — arrows inherit this from surrounding lexical scope; (2) const self = this before setTimeout; (3) .bind(this).',
+   tip:'Arrow functions: no own this — inherit from lexical scope. Regular functions: this = caller. Fix: setTimeout(() => ...)'},
+
+  {id:38,lang:'js',topic:'JS — Storage',level:'intermediate',
+   text:'What is the key difference between localStorage and sessionStorage?',
+   opts:{
+     A:'localStorage is faster; sessionStorage is more secure',
+     B:'localStorage persists until explicitly cleared; sessionStorage is cleared when the browser tab is closed',
+     C:'sessionStorage can store larger data than localStorage',
+     D:'localStorage is only available over HTTPS; sessionStorage works on HTTP'
+   },
+   ans:'B',
+   exp:'Both store key-value strings. localStorage: persists indefinitely across sessions, tabs, and browser restarts (until explicitly cleared or the user clears browser data). sessionStorage: scoped to a single tab and session — cleared when the tab is closed. Both: ~5MB limit, synchronous API, strings only (JSON.stringify/parse for objects), not accessible by server (unlike cookies).',
+   tip:'localStorage: persists forever. sessionStorage: cleared on tab close. Cookies: sent to server. Limit: ~5MB each'},
+
+  {id:39,lang:'js',topic:'JS — Modules',level:'advanced',
+   code:`<script type="module" src="app.js"></script>`,
+   text:'Which statement about ES Modules (type="module") is TRUE?',
+   opts:{
+     A:'Module scripts execute synchronously before DOM parsing completes',
+     B:'Modules are deferred by default, scoped (no global pollution), and support import/export syntax',
+     C:'Modules require a bundler like Webpack to work in any browser',
+     D:'Modules cannot import from other local files — only from CDNs'
+   },
+   ans:'B',
+   exp:'ES Modules (type="module"): (1) deferred by default — parse HTML first, execute after; (2) strict mode automatically; (3) own scope — variables declared in a module are not added to window; (4) support import/export; (5) CORS-restricted (must be served from a server for cross-origin imports). Modern browsers support them natively without a bundler for basic use.',
+   tip:'type="module": auto-deferred · strict mode · scoped · import/export · must be served (not file://)'},
+
+  {id:40,lang:'js',topic:'JS — Performance',level:'advanced',
+   text:'What is event delegation and why is it more performant than attaching listeners to every list item?',
+   opts:{
+     A:'Event delegation binds multiple events to one element using a comma-separated string',
+     B:'A single listener is placed on a parent element; it handles events from child elements using event.target — saving memory and automatically covering dynamically added children',
+     C:'Event delegation uses requestAnimationFrame to batch DOM event callbacks',
+     D:'It is a browser API that automatically delegates events to Web Workers'
+   },
+   ans:'B',
+   exp:'Instead of 1000 click listeners on 1000 list items, attach ONE listener to the <ul>. Events bubble up from the clicked <li> to <ul>. Check event.target (or event.target.closest()) to identify which item was clicked. Benefits: (1) one listener = less memory; (2) dynamically added items are automatically handled (no re-binding); (3) simpler cleanup. This is the standard pattern for lists, tables, and dynamic UIs.',
+   tip:'ul.addEventListener("click", e => { const li = e.target.closest("li"); if(li) handle(li); }) — one listener, all items'}
+];
+
+const SECTIONS = [
+  {beforeId:1,  lang:'html', icon:'🟠', title:'SECTION 1 — HTML (Q1–14)', meta:'Structure · Semantics · Forms · Attributes · Accessibility · Meta · Loading · Data Attributes · Security'},
+  {beforeId:15, lang:'css',  icon:'🔵', title:'SECTION 2 — CSS (Q15–27)', meta:'Specificity · Box Model · Flexbox · Grid · Positioning · Selectors · Variables · Pseudo-elements · Responsive · Animation · Performance'},
+  {beforeId:28, lang:'js',   icon:'🟡', title:'SECTION 3 — JAVASCRIPT (Q28–40)', meta:'Hoisting · Event Loop · DOM · Events · Closures · Promises · Async/Await · Array Methods · Destructuring · this · Storage · Modules · Event Delegation'}
+];
+
+var SA={};
+function shuffle(a){for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function buildOpts(q){
+  let e=shuffle([{k:'A',t:q.opts.A},{k:'B',t:q.opts.B},{k:'C',t:q.opts.C},{k:'D',t:q.opts.D}]);
+  let o={},a=q.ans;
+  ['A','B','C','D'].forEach((l,i)=>{o[l]=e[i].t;if(e[i].k===q.ans)a=l;});
+  return{opts:o,ans:a};
+}
+let ST={c:0,w:0,n:0,ids:new Set()},UA={},done=false,SECS=35*60,TI=null;
+function startTimer(){
+  let r=SECS,el=document.getElementById('gtime');
+  function f(s){let m=Math.floor(s/60),ss=s%60;return(m<10?'0':'')+m+':'+(ss<10?'0':'')+ss;}
+  el.textContent=f(r);
+  TI=setInterval(()=>{r--;el.textContent=f(r);if(r<=300)el.style.color='#f87171';if(r<=0){clearInterval(TI);timeUp();}},1000);
+}
+function stopTimer(){if(TI)clearInterval(TI);}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function colorize(code, lang){
+  let s = escHtml(code);
+  if(lang==='css'||lang==='html'){
+    // highlight CSS properties and values
+    s=s.replace(/\/\*[\s\S]*?\*\//g, m=>`<span class="cm">${m}</span>`);
+    s=s.replace(/([\w-]+)(\s*:\s*)([\w\s,#%().'"-]+)(;)/g,
+      (_,p,c,v,semi)=>`<span class="pr">${p}</span>${c}<span class="vl">${v}</span>${semi}`);
+    s=s.replace(/([.#]?[\w-]+)(?=\s*\{)/g,m=>`<span class="sl">${m}</span>`);
+  }
+  if(lang==='js'){
+    s=s.replace(/\/\/[^\n]*/g, m=>`<span class="cm">${m}</span>`);
+    s=s.replace(/\b(const|let|var|function|return|async|await|new|class|import|export|from|if|else|for|of|in)\b/g,
+      m=>`<span class="kw">${m}</span>`);
+    s=s.replace(/'([^']*)'/g, (_,c)=>`<span class="st">'${c}'</span>`);
+    s=s.replace(/"([^"]*)"/g, (_,c)=>`<span class="st">"${c}"</span>`);
+    s=s.replace(/`([^`]*)`/g, (_,c)=>`<span class="st">\`${c}\`</span>`);
+    s=s.replace(/\b(\d+)\b/g, m=>`<span class="nm">${m}</span>`);
+    s=s.replace(/\b([A-Z][a-z]\w+|console|document|window|fetch|setTimeout|Promise)\b/g,
+      m=>`<span class="fn">${m}</span>`);
+  }
+  if(lang==='html'){
+    s=s.replace(/&lt;(\/?[\w]+)/g, (_,t)=>`&lt;<span class="ht">${t}</span>`);
+    s=s.replace(/([\w-]+)(=)(&quot;|")/g, (_,a,eq,q)=>`<span class="at">${a}</span>${eq}${q}`);
+  }
+  return s;
+}
+
+function render(){
+  let cont=document.getElementById('qc'),TOT=Q.length,SM={};
+  SECTIONS.forEach(s=>SM[s.beforeId]=s);
+  let h='';
+  Q.forEach(q=>{
+    let l=q.lang;
+    if(SM[q.id]){
+      let s=SM[q.id];
+      h+=`<div class="sec-div sec-${l}"><span class="sec-icon">${s.icon}</span><div><div class="sec-title ${l}">${s.title}</div><div class="sec-meta">${s.meta}</div></div></div>`;
+    }
+    let sh=buildOpts(q);SA[q.id]=sh.ans;
+    let codeHtml='';
+    if(q.code){
+      let colored=colorize(q.code, l);
+      codeHtml=`<pre class="snippet">${colored}</pre>`;
+    }
+    let oh='';
+    ['A','B','C','D'].forEach(lbl=>{
+      oh+=`<div class="opt" data-id="${q.id}" data-a="${lbl}"><span class="opt-key">${lbl}.</span><span class="opt-txt">${sh.opts[lbl]}</span></div>`;
+    });
+    h+=`<div class="qcard ${l}">
+      <div class="qcard-top">
+        <span class="qnum">Q${q.id} / ${TOT}</span>
+        <span class="qtag ${l}">${q.topic}</span>
+        <span class="qlevel ${q.level}">${q.level}</span>
+      </div>
+      <div class="qtxt">${q.text}</div>
+      ${codeHtml}
+      <div class="opts">${oh}</div>
+      <button class="abtn" data-qid="${q.id}" disabled>Check Answer</button>
+      <div class="exp" id="exp${q.id}"></div>
+    </div>`;
+  });
+  cont.innerHTML=h;attach();
+}
+
+function attach(){
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.addEventListener('click',function(){
+      if(done||this.classList.contains('locked'))return;
+      let qid=parseInt(this.dataset.id);
+      document.querySelectorAll(`.opt[data-id="${qid}"]`).forEach(x=>x.classList.remove('sel'));
+      this.classList.add('sel');
+      UA[qid]=this.dataset.a;
+      let b=document.querySelector(`.abtn[data-qid="${qid}"]`);if(b)b.disabled=false;
+    });
+  });
+  document.querySelectorAll('.abtn').forEach(b=>{
+    b.addEventListener('click',function(){
+      if(done)return;
+      let qid=parseInt(this.dataset.qid),q=Q.find(x=>x.id===qid),chosen=UA[qid],correct=SA[qid],ok=(chosen===correct);
+      document.querySelectorAll(`.opt[data-id="${qid}"]`).forEach(o=>{
+        o.classList.add('locked');o.style.pointerEvents='none';
+        if(o.dataset.a===correct)o.classList.add('ok');
+        else if(o.dataset.a===chosen)o.classList.add('no');
+      });
+      let ex=document.getElementById(`exp${qid}`);
+      ex.innerHTML=`<span class="exp-mark ${ok?'pos':'neg'}">${ok?'✓ correct':`✗ wrong — correct: ${correct}`}</span><div style="margin-top:8px;">${q.exp}</div>${q.tip?`<div class="exp-tip">// ${q.tip}</div>`:''}`;
+      ex.classList.add('show');this.disabled=true;
+      if(!ST.ids.has(qid)){ST.n++;ST.ids.add(qid);if(ok)ST.c++;else ST.w++;updateStats();}
+    });
+  });
+}
+function updateStats(){
+  let tot=Q.length,left=tot-ST.n;
+  document.getElementById('sc-corr').textContent=ST.c;
+  document.getElementById('sc-wrong').textContent=ST.w;
+  document.getElementById('sc-skip').textContent=left;
+  document.getElementById('answered-count').textContent=ST.n;
+  document.getElementById('sub-prog').textContent=`${ST.n}/${tot}`;
+  document.getElementById('m-ans').textContent=ST.n;
+  document.getElementById('m-left').textContent=left;
+  document.getElementById('prog-fill').style.width=(ST.n/tot*100)+'%';
+}
+function showModal(){document.getElementById('modal').classList.add('show');}
+function hideModal(){document.getElementById('modal').classList.remove('show');}
+function grade(p){
+  if(p>=90)return'Senior Dev level — exceptional ✓';
+  if(p>=75)return'Mid-level proficiency — solid fundamentals';
+  if(p>=60)return'Junior level — good base, keep going';
+  if(p>=45)return'Developing — revisit key concepts';
+  return'Beginner — start with MDN Web Docs';
+}
+function finish(){
+  let pct=Math.round((ST.c/Q.length)*100);
+  document.getElementById('tu-score').textContent=pct+'%';
+  document.getElementById('tu-grade').textContent=grade(pct);
+  document.getElementById('tu').classList.add('show');
+}
+function submitQuiz(){hideModal();done=true;stopTimer();document.querySelectorAll('.abtn:not([disabled])').forEach(b=>b.click());finish();}
+function timeUp(){done=true;document.querySelectorAll('.opt').forEach(o=>{o.style.pointerEvents='none';o.classList.add('locked');});document.querySelectorAll('.abtn').forEach(b=>b.disabled=true);document.getElementById('tu-title').textContent="Time's Up!";finish();}
+render();startTimer();
+</script>
+</body>
+</html>

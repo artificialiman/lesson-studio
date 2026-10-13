@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula Interpretation: Reading the Maths in Physics</title>
+<style>
+/* ============================================================
+   FORMULA INTERPRETATION
+   Print-first. No JS. Weeks as units.
+   ALL text bold (700 body, 900 headings). Thick rules everywhere.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:4.5pt solid #1a3d6e;
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#444;
+  font-weight:700;
+}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:3.6pt solid #1a3d6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a3d6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a3d6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a3d6e;
+  border-bottom:2.4pt solid #8fae99;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols2 > li{break-inside:avoid}
+ul.cols2, ol.cols2{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:2.4pt solid #7d897d;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a3d6e;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+table.long{break-inside:auto}
+tr{break-inside:avoid}
+th,td{
+  border:2pt solid #5f5a4e;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#e6eee8;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:2.4pt solid #5f5a4e;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.kw{font-weight:900}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+b{font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1.6pt solid #7d897d;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split{break-inside:avoid}
+  table.long{break-inside:auto}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+table.qt td,table.qt th{font-size:9.3pt;padding:3px 6px}
+table.qt td.k{white-space:nowrap}
+table.mp td,table.mp th{font-size:9.1pt;padding:3px 5px}
+table.mp td.k{white-space:normal}
+tr.sub td{background:#e6eee8;font-weight:900;font-size:10pt;border-top:2.4pt solid #5f5a4e}
+.week{break-before:auto!important;page-break-before:auto!important}
+h2{margin-top:14px}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>Formula Interpretation: Reading the Maths in Physics</h1>
+  <p class="term">Proportion · inverse · square · root · rate · change in · net · Greek letters · scaling tables · formula map · 36 drills · Print Edition</p>
+</header>
+<section class="week">
+  <h2><span class="wk">PART 1</span>Definitions for the Term</h2>
+<table class="long"><tr><th style="width:26%">Term</th><th>Definition</th></tr>
+<tr><td class="k">Formula</td><td>A rule that links quantities by equal signs and operations, so that known values give an unknown one.</td></tr>
+<tr><td class="k">Quantity</td><td>Something that can be measured: it has a number and a unit.</td></tr>
+<tr><td class="k">Variable</td><td>A quantity that can take different values in a problem.</td></tr>
+<tr><td class="k">Constant</td><td>A quantity that stays fixed in the problem (g, c, G, or a quantity held steady).</td></tr>
+<tr><td class="k">Constant of proportionality (k)</td><td>The fixed number that turns a proportion into an equation: y ∝ x becomes y = kx.</td></tr>
+<tr><td class="k">Directly proportional (y ∝ x)</td><td>y and x rise and fall together in the same ratio; y ÷ x stays fixed; the graph is a straight line through the origin.</td></tr>
+<tr><td class="k">Inversely proportional (y ∝ 1 ÷ x)</td><td>y falls as x rises in the same ratio; y × x stays fixed; the graph is a curve (hyperbola).</td></tr>
+<tr><td class="k">Square law (y ∝ x²)</td><td>y changes by the square of the change in x: x doubled gives y four times.</td></tr>
+<tr><td class="k">Inverse square law (y ∝ 1 ÷ x²)</td><td>y changes by the inverse square of the change in x: x doubled gives y one quarter.</td></tr>
+<tr><td class="k">Square root relation (y ∝ √x)</td><td>y changes by the square root of the change in x: x four times gives y two times.</td></tr>
+<tr><td class="k">Joint variation</td><td>y depends on several quantities at once; their factors multiply (P = ρQgh).</td></tr>
+<tr><td class="k">Rate</td><td>How much a quantity changes for each unit of another, usually time: change ÷ time. 'Per' means divided by.</td></tr>
+<tr><td class="k">Δ (delta, 'change in')</td><td>Final value minus initial value: Δx = x(final) − x(initial). It can be negative.</td></tr>
+<tr><td class="k">δ (small delta)</td><td>A very small change.</td></tr>
+<tr><td class="k">Gradient (slope)</td><td>Rise ÷ run on a graph; the rate of change of y with x.</td></tr>
+<tr><td class="k">Intercept</td><td>The value of y where the graph meets the y-axis (x = 0).</td></tr>
+<tr><td class="k">Net (resultant)</td><td>The single value that has the same effect as several acting together; for forces, the vector sum ΣF.</td></tr>
+<tr><td class="k">Σ (sigma, 'sum of')</td><td>Add up every term of the kind shown.</td></tr>
+<tr><td class="k">Scalar</td><td>A quantity with size only (mass, time, energy).</td></tr>
+<tr><td class="k">Vector</td><td>A quantity with size and direction (force, velocity, momentum).</td></tr>
+<tr><td class="k">Average</td><td>Total of a quantity ÷ total time (or number), not the mean of the end values unless the change is uniform.</td></tr>
+<tr><td class="k">Instantaneous</td><td>The value at one moment; the gradient of the graph at that point.</td></tr>
+<tr><td class="k">Ratio</td><td>One quantity divided by another of the same kind; it has no unit (efficiency, MA, relative density).</td></tr>
+<tr><td class="k">Percentage change</td><td>(new − old) ÷ old × 100 %.</td></tr>
+<tr><td class="k">Dimension and unit</td><td>Dimension is the kind of quantity (length, time, mass); unit is the measure of it (m, s, kg). Both sides of a formula must match.</td></tr>
+<tr><td class="k">Limiting case</td><td>A check at an extreme value (zero, very large) to see if a formula behaves sensibly.</td></tr>
+<tr><td class="k">Order of magnitude</td><td>The nearest power of ten of a number: 4 × 10⁻⁷ is of order 10⁻⁶.</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 2</span>How to Read a Formula</h2>
+<h3>The Six Reading Moves</h3>
+<table class="long"><tr><th style="width:5%">Move</th><th style="width:35%">What to do</th><th>Example: F = GMm ÷ r²</th></tr>
+<tr><td>1</td><td>Name every symbol: quantity, unit, scalar or vector</td><td>F force (N, vector); G constant; M, m masses (kg); r distance between centres (m)</td></tr>
+<tr><td>2</td><td>Find the structure: product, quotient, power, root, sum, difference, trig, log</td><td>Product on top (G, M, m); r² below</td></tr>
+<tr><td>3</td><td>Read each symbol's role: top is direct, below is inverse, power sets the scaling</td><td>F ∝ M; F ∝ m; F ∝ 1 ÷ r²</td></tr>
+<tr><td>4</td><td>Hold everything else fixed and state the proportionality</td><td>With M and m fixed, F ∝ 1 ÷ r²</td></tr>
+<tr><td>5</td><td>Run the doubling test: double or halve one quantity at a time</td><td>r × 2 gives F × ¼; M × 2 gives F × 2</td></tr>
+<tr><td>6</td><td>Check units and limits: what if x → 0 or very large?</td><td>N = N m² kg⁻² × kg × kg ÷ m². As r → ∞, F → 0; as r → 0 the formula fails (point masses)</td></tr>
+</table>
+<h3>Reading the Parts of a Written Formula</h3>
+<table class="long"><tr><th style="width:22%">Part</th><th style="width:22%">Name</th><th>Meaning</th></tr>
+<tr><td class="k">a ÷ b, or a over b</td><td>fraction; b is 'under' the bar</td><td>Quantity b is in the denominator: the result is inversely proportional to b</td></tr>
+<tr><td class="k">√( … )</td><td>root; the quantity 'under the root'</td><td>Everything inside the sign is square-rooted together, not each term</td></tr>
+<tr><td class="k">x²</td><td>square</td><td>The result changes with the square of x</td></tr>
+<tr><td class="k">x⁻¹, x⁻²</td><td>negative power</td><td>Same as 1 ÷ x and 1 ÷ x²; unit like m s⁻¹ means 'per second'</td></tr>
+<tr><td class="k">x₀, x(i), x(f)</td><td>subscript</td><td>Initial, reference, or kind (rms, max, av); never a multiplier</td></tr>
+<tr><td class="k">Δx, δx</td><td>change in</td><td>Final minus initial; δ is a tiny change</td></tr>
+<tr><td class="k">Σ</td><td>sum of</td><td>ΣF = vector sum of all forces: the net force</td></tr>
+<tr><td class="k">x̄, x(av), ⟨x⟩</td><td>mean</td><td>Average value</td></tr>
+<tr><td class="k">bars around x</td><td>magnitude of x; size only</td><td>Ignore the sign or direction</td></tr>
+<tr><td class="k">ẋ, dx/dt</td><td>rate</td><td>Change of x per unit time; the gradient of the x–t graph</td></tr>
+<tr><td class="k">∝</td><td>proportional to</td><td>Same as '= k ×' with k fixed</td></tr>
+<tr><td class="k">≈, ≪, ≫</td><td>approximately; much smaller; much larger</td><td>Approximation rules: ≈ in rounding, ≪ lets small terms be dropped</td></tr>
+<tr><td class="k">cos θ, sin θ, tan θ</td><td>angle function</td><td>Numbers between −1 and 1 (tan any value); θ in degrees or radians</td></tr>
+<tr><td class="k">ln x, log x, eˣ</td><td>logarithm, exponential</td><td>Equal steps in x give equal factors in eˣ; ln undoes eˣ</td></tr>
+<tr><td class="k">( ) × ( )</td><td>brackets</td><td>Work out inside first; (a + b)² is not a² + b²</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 3</span>The Structures a Formula Can Have</h2>
+<table class="long"><tr><th style="width:13%">Structure</th><th style="width:14%">Written</th><th style="width:25%">Plain reading</th><th style="width:20%">Graph of y against x</th><th>Formulas where it appears</th></tr>
+<tr><td class="k">Direct proportion</td><td>y = kx</td><td>Rises with x at a fixed ratio</td><td>Straight line through the origin</td><td>F = ma (a), V = IR (I), p = ρgh, Q = mcΔθ, F = ke, W = Fd, s = vt</td></tr>
+<tr><td class="k">Inverse proportion</td><td>y = k ÷ x</td><td>Falls as x rises; y × x fixed</td><td>Hyperbola, never touches the axes</td><td>v = fλ (f and λ at fixed v), I = V ÷ R (R), a = F ÷ m (m), Boyle P ÷ V, p = F ÷ A (A)</td></tr>
+<tr><td class="k">Square</td><td>y = kx²</td><td>Grows faster and faster</td><td>Parabola from the origin</td><td>KE = ½mv², s = ½at², P = I²R, E = ½CV², F = mv² ÷ r (v), intensity ∝ amplitude²</td></tr>
+<tr><td class="k">Inverse square</td><td>y = k ÷ x²</td><td>Spreads over an area that grows as r²</td><td>Steep curve falling to the axis</td><td>F = GMm ÷ r², F = kQq ÷ r², g = GM ÷ r², I = P ÷ 4πr²</td></tr>
+<tr><td class="k">Cube</td><td>y = kx³</td><td>Volume-type scaling</td><td>Steeper parabola</td><td>Mass of a sphere (r³), volume of a cube</td></tr>
+<tr><td class="k">Square root</td><td>y = k√x</td><td>Grows more and more slowly</td><td>Half-parabola on its side</td><td>v = √(2gh), T = 2π√(l ÷ g), v = √(T ÷ μ), v = √(GM ÷ r), f₀ = 1 ÷ 2π√(LC)</td></tr>
+<tr><td class="k">Three-halves power</td><td>y = kx^1.5</td><td>Combined square and root</td><td>Curve between linear and square</td><td>Kepler: T ∝ r^1.5</td></tr>
+<tr><td class="k">Linear with intercept</td><td>y = mx + c</td><td>Fixed start plus steady change</td><td>Straight line, intercept c, gradient m</td><td>v = u + at, R = R₀(1 + αθ), E = aL + b, s = vt + s₀</td></tr>
+<tr><td class="k">Sum or difference</td><td>y = a + b; a − b</td><td>Parts add or oppose</td><td>—</td><td>Net force ΣF, net work, ΔKE, V = E − Ir</td></tr>
+<tr><td class="k">Product of several (joint)</td><td>y = kxzw</td><td>Factors multiply</td><td>—</td><td>P = ρQgh, F = BIl sin θ, E = Pt, H = I²Rt</td></tr>
+<tr><td class="k">Fraction of like quantities</td><td>y = a ÷ b (same kind)</td><td>A ratio with no unit</td><td>—</td><td>Efficiency, MA, VR, relative density, refractive index</td></tr>
+<tr><td class="k">Reciprocal sum</td><td>1 ÷ y = 1 ÷ a + 1 ÷ b</td><td>Add the reciprocals, then invert</td><td>—</td><td>1 ÷ f = 1 ÷ u + 1 ÷ v, parallel resistors, series capacitors</td></tr>
+<tr><td class="k">Trigonometric</td><td>y = k sin θ or cos θ</td><td>Share of the quantity that points a certain way</td><td>Wave between −1 and 1</td><td>F cos θ, u sin θ, R ∝ sin 2θ, BIl sin θ</td></tr>
+<tr><td class="k">Exponential decay</td><td>y = y₀e⁻ᵏˣ or y₀(½)^(x ÷ T)</td><td>Equal steps give equal factors</td><td>Curve falling towards the axis</td><td>N = N₀(½)^(t ÷ T), V = V₀e^(−t ÷ RC)</td></tr>
+<tr><td class="k">Logarithmic</td><td>y = k log x</td><td>Equal factors give equal steps</td><td>Slowly rising curve</td><td>Decibel L = 10 log(I ÷ I₀)</td></tr>
+</table>
+<h3>The Scaling Table: What Happens to y When x Is Multiplied</h3>
+<table class="long"><tr><th style="width:20%">Relation</th><th style="width:16%">Written</th><th>x × 2</th><th>x × 3</th><th>x × 4</th><th>x × ½</th></tr>
+<tr><td class="k">direct proportion</td><td>y ∝ x</td><td>× 2</td><td>× 3</td><td>× 4</td><td>× 0.5</td></tr>
+<tr><td class="k">square</td><td>y ∝ x²</td><td>× 4</td><td>× 9</td><td>× 16</td><td>× 0.25</td></tr>
+<tr><td class="k">cube</td><td>y ∝ x³</td><td>× 8</td><td>× 27</td><td>× 64</td><td>× 0.125</td></tr>
+<tr><td class="k">square root</td><td>y ∝ √x</td><td>× 1.41</td><td>× 1.73</td><td>× 2</td><td>× 0.707</td></tr>
+<tr><td class="k">inverse</td><td>y ∝ 1 ÷ x</td><td>× 0.5</td><td>× 0.333</td><td>× 0.25</td><td>× 2</td></tr>
+<tr><td class="k">inverse square</td><td>y ∝ 1 ÷ x²</td><td>× 0.25</td><td>× 0.111</td><td>× 0.0625</td><td>× 4</td></tr>
+<tr><td class="k">inverse root</td><td>y ∝ 1 ÷ √x</td><td>× 0.707</td><td>× 0.577</td><td>× 0.5</td><td>× 1.41</td></tr>
+<tr><td class="k">three-halves power</td><td>y ∝ x^1.5</td><td>× 2.83</td><td>× 5.2</td><td>× 8</td><td>× 0.354</td></tr>
+</table>
+<h3>Percentage Effect: If x Changes by p %, y Changes by</h3>
+<table class="long"><tr><th style="width:20%">Relation</th><th>x +10 %</th><th>x +20 %</th><th>x +50 %</th><th>x +100 %</th><th>x −10 %</th><th>x −20 %</th><th>x −50 %</th></tr>
+<tr><td class="k">y ∝ x</td><td>+10 %</td><td>+20 %</td><td>+50 %</td><td>+100 %</td><td>−10 %</td><td>−20 %</td><td>−50 %</td></tr>
+<tr><td class="k">y ∝ x²</td><td>+21 %</td><td>+44 %</td><td>+125 %</td><td>+300 %</td><td>−19 %</td><td>−36 %</td><td>−75 %</td></tr>
+<tr><td class="k">y ∝ x³</td><td>+33.1 %</td><td>+72.8 %</td><td>+237.5 %</td><td>+700 %</td><td>−27.1 %</td><td>−48.8 %</td><td>−87.5 %</td></tr>
+<tr><td class="k">y ∝ √x</td><td>+4.88 %</td><td>+9.54 %</td><td>+22.5 %</td><td>+41.4 %</td><td>−5.13 %</td><td>−10.6 %</td><td>−29.3 %</td></tr>
+<tr><td class="k">y ∝ 1 ÷ x</td><td>−9.09 %</td><td>−16.7 %</td><td>−33.3 %</td><td>−50 %</td><td>+11.1 %</td><td>+25 %</td><td>+100 %</td></tr>
+<tr><td class="k">y ∝ 1 ÷ x²</td><td>−17.4 %</td><td>−30.6 %</td><td>−55.6 %</td><td>−75 %</td><td>+23.5 %</td><td>+56.25 %</td><td>+300 %</td></tr>
+<tr><td class="k">y ∝ 1 ÷ √x</td><td>−4.65 %</td><td>−8.71 %</td><td>−18.4 %</td><td>−29.3 %</td><td>+5.41 %</td><td>+11.8 %</td><td>+41.4 %</td></tr>
+</table>
+<p>Formula: new ÷ old = (1 + p ÷ 100)ⁿ for y ∝ xⁿ. A 20 % rise in x on y ∝ 1 ÷ x gives a 16.7 % fall in y, not 20 %.</p>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 4</span>Words That Hide Mathematics</h2>
+<table class="long"><tr><th style="width:26%">Phrase</th><th style="width:30%">Means in maths</th><th>Example</th></tr>
+<tr><td class="k">per; 'each'; 'for every'</td><td>divide by: a ÷ b</td><td>m s⁻¹ is metres per second: m ÷ s</td></tr>
+<tr><td class="k">of</td><td>multiply</td><td>20 % of 50 N = 0.20 × 50</td></tr>
+<tr><td class="k">percent</td><td>÷ 100</td><td>3 % = 0.03</td></tr>
+<tr><td class="k">rate; 'rate of change'</td><td>change ÷ time (gradient of a graph)</td><td>acceleration = rate of change of velocity</td></tr>
+<tr><td class="k">'rate of … per unit …'</td><td>ratio of the two changes</td><td>heating rate in °C per minute</td></tr>
+<tr><td class="k">change in; difference; Δ</td><td>final − initial</td><td>Δθ = 70 − 20 = 50 °C</td></tr>
+<tr><td class="k">net; resultant; overall</td><td>sum with directions or signs (ΣF)</td><td>12 N right and 5 N left give 7 N net</td></tr>
+<tr><td class="k">total; sum</td><td>add</td><td>total resistance in series</td></tr>
+<tr><td class="k">average; mean</td><td>total ÷ number (or total ÷ total time)</td><td>average speed = total distance ÷ total time</td></tr>
+<tr><td class="k">directly proportional; varies as</td><td>y = kx</td><td>F = ma: F is proportional to a</td></tr>
+<tr><td class="k">inversely proportional; varies inversely as</td><td>y = k ÷ x</td><td>current is inversely proportional to R</td></tr>
+<tr><td class="k">proportional to the square of</td><td>y = kx²</td><td>KE is proportional to v²</td></tr>
+<tr><td class="k">inversely proportional to the square of</td><td>y = k ÷ x²</td><td>gravity is inversely proportional to r²</td></tr>
+<tr><td class="k">proportional to the product of</td><td>y = kxz</td><td>F = kQq ÷ r²: numerator is the product of charges</td></tr>
+<tr><td class="k">under; 'in the denominator'; 'below the line'</td><td>divide by it</td><td>r² is under GMm in F = GMm ÷ r²</td></tr>
+<tr><td class="k">under the root</td><td>inside √( )</td><td>T = 2π√(l ÷ g): l ÷ g is under the root</td></tr>
+<tr><td class="k">twice; double; two times as</td><td>× 2</td><td></td></tr>
+<tr><td class="k">half; halved</td><td>× ½</td><td></td></tr>
+<tr><td class="k">'increases by 20 %'</td><td>× 1.2</td><td>rise from 50 to 60</td></tr>
+<tr><td class="k">'decreases by 20 %'</td><td>× 0.8</td><td>fall from 50 to 40</td></tr>
+<tr><td class="k">'falls to 20 %'</td><td>× 0.2</td><td></td></tr>
+<tr><td class="k">'x times as large as y'</td><td>x = k × y with k as given</td><td>three times as large means 3y</td></tr>
+<tr><td class="k">at least; not less than</td><td>≥</td><td>current of at least 5 A</td></tr>
+<tr><td class="k">at most; not more than; maximum</td><td>≤</td><td>resultant at most F₁ + F₂</td></tr>
+<tr><td class="k">negligible; ignore</td><td>set to zero</td><td>negligible friction: f = 0</td></tr>
+<tr><td class="k">uniform; constant; steady</td><td>does not change; rate = 0</td><td>uniform speed: a = 0</td></tr>
+<tr><td class="k">from rest; starts from rest</td><td>initial value 0</td><td>u = 0</td></tr>
+<tr><td class="k">comes to rest; stops</td><td>final value 0</td><td>v = 0</td></tr>
+<tr><td class="k">exactly; 'just'</td><td>equal sign at the limit</td><td>just leaves the ground: N = 0</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 5</span>Greek Letters and Symbols</h2>
+<table class="long"><tr><th style="width:9%">Symbol</th><th style="width:12%">Say</th><th style="width:45%">Usual meaning in physics</th><th>Examples</th></tr>
+<tr><td class="k">α</td><td>alpha</td><td>Angular acceleration; linear expansivity; alpha particle</td><td>ΔL = αLΔθ; τ = Iα</td></tr>
+<tr><td class="k">β</td><td>beta</td><td>Area expansivity (β = 2α); beta particle</td><td>ΔA = βAΔθ</td></tr>
+<tr><td class="k">γ</td><td>gamma</td><td>Volume expansivity (γ = 3α); gamma ray; ratio of specific heats</td><td>ΔV = γVΔθ</td></tr>
+<tr><td class="k">Δ</td><td>delta (capital)</td><td>Change in: final − initial</td><td>Δθ, Δv, Δt, Δp</td></tr>
+<tr><td class="k">δ</td><td>delta (small)</td><td>A very small change</td><td>δx, δt</td></tr>
+<tr><td class="k">ε</td><td>epsilon</td><td>EMF (also E); permittivity ε₀</td><td>ε = Blv; C = ε₀A ÷ d</td></tr>
+<tr><td class="k">η</td><td>eta</td><td>Efficiency; viscosity</td><td>η = useful ÷ total</td></tr>
+<tr><td class="k">θ</td><td>theta ('tita')</td><td>An angle; also temperature in °C</td><td>F cos θ; ΔL = αLΔθ</td></tr>
+<tr><td class="k">λ</td><td>lambda</td><td>Wavelength; decay constant; wavelength of light in λ = h ÷ p</td><td>v = fλ; A = λN</td></tr>
+<tr><td class="k">μ</td><td>mu</td><td>Coefficient of friction; mass per unit length; permeability μ₀; prefix micro (10⁻⁶)</td><td>f = μR; v = √(T ÷ μ)</td></tr>
+<tr><td class="k">ν</td><td>nu</td><td>Frequency (some books use f)</td><td>E = hν</td></tr>
+<tr><td class="k">π</td><td>pi</td><td>3.14159 (ratio of circumference to diameter)</td><td>C = 2πr; T = 2π√(l ÷ g)</td></tr>
+<tr><td class="k">ρ</td><td>rho</td><td>Density; resistivity</td><td>ρ = m ÷ V; R = ρL ÷ A</td></tr>
+<tr><td class="k">σ</td><td>sigma (small)</td><td>Conductivity; surface charge density</td><td>σ = 1 ÷ ρ</td></tr>
+<tr><td class="k">Σ</td><td>sigma (capital)</td><td>Sum of; 'net'</td><td>ΣF = ma</td></tr>
+<tr><td class="k">τ</td><td>tau</td><td>Torque; time constant; period in some books</td><td>τ = Fd; τ = RC</td></tr>
+<tr><td class="k">φ, Φ</td><td>phi</td><td>Phase angle; work function (Φ); magnetic flux (Φ)</td><td>tan φ = (X(L) − X(C)) ÷ R; Φ = BA</td></tr>
+<tr><td class="k">ω</td><td>omega (small)</td><td>Angular velocity or frequency (rad s⁻¹)</td><td>ω = 2πf; v = ωr</td></tr>
+<tr><td class="k">Ω</td><td>omega (capital)</td><td>Ohm, the unit of resistance</td><td>V ÷ I in Ω</td></tr>
+<tr><td class="k">∝</td><td>'proportional to'</td><td>Same as = k ×</td><td>F ∝ a</td></tr>
+<tr><td class="k">≈</td><td>'approximately equal'</td><td>Rounding or small-angle use</td><td>sin θ ≈ θ for small θ (in radians)</td></tr>
+<tr><td class="k">∴</td><td>therefore</td><td>Conclusion of a working</td><td></td></tr>
+<tr><td class="k">Δx ÷ Δt</td><td>'change of x per unit time'</td><td>Average rate</td><td>average speed</td></tr>
+<tr><td class="k">dx ÷ dt</td><td>'rate of change of x'</td><td>Instantaneous rate; gradient at a point</td><td>v = ds ÷ dt</td></tr>
+<tr><td class="k">∫</td><td>integral ('accumulate')</td><td>Area under a graph</td><td>work = ∫F dx</td></tr>
+<tr><td class="k">bars around x; x̄</td><td>magnitude; mean</td><td>Size only; average</td><td></td></tr>
+</table>
+<h3>Subscripts, Superscripts and Marks</h3>
+<table class="long"><tr><th style="width:20%">Marking</th><th style="width:40%">Meaning</th><th>Examples</th></tr>
+<tr><td class="k">Subscript 0 (x₀)</td><td>Initial, reference or peak</td><td>v₀, I₀, N₀; ε₀ and μ₀ are 'free space' constants</td></tr>
+<tr><td class="k">Subscripts i, f</td><td>initial, final</td><td>v(i), v(f)</td></tr>
+<tr><td class="k">Subscripts rms, av, max, min</td><td>root-mean-square, average, greatest, least</td><td>I(rms) = I₀ ÷ √2</td></tr>
+<tr><td class="k">Subscripts ∥, ⟂</td><td>parallel to, perpendicular to</td><td>F⟂ gives the normal reaction</td></tr>
+<tr><td class="k">Subscript n</td><td>n-th harmonic or level</td><td>f(n) = nv ÷ 2L; E(n) = −13.6 ÷ n²</td></tr>
+<tr><td class="k">Superscript 2, 3</td><td>square, cube</td><td>v², r³</td></tr>
+<tr><td class="k">Superscript −1, −2</td><td>reciprocal, inverse square</td><td>m s⁻¹, m s⁻²</td></tr>
+<tr><td class="k">Prime (x′)</td><td>the new or second value</td><td>f′ after the Doppler shift; v′ after the collision</td></tr>
+<tr><td class="k">Arrow over a symbol (v⃗), or bold</td><td>vector (has direction)</td><td>F⃗, p⃗</td></tr>
+<tr><td class="k">Hat (x̂)</td><td>unit vector</td><td>direction only</td></tr>
+<tr><td class="k">Dot over a symbol (ẋ)</td><td>rate of change with time</td><td>ẋ = velocity</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 6</span>The Same Letter, Different Meanings</h2>
+<table class="long"><tr><th style="width:9%">Letter</th><th style="width:63%">Can mean</th><th>How to tell</th></tr>
+<tr><td class="k">T</td><td>period (s); temperature (K); tension (N); torque is τ</td><td>Unit: s, K or N; period uses 1 ÷ f</td></tr>
+<tr><td class="k">t</td><td>time (s)</td><td>Lower case, in seconds</td></tr>
+<tr><td class="k">R</td><td>resistance (Ω); radius of Earth or curvature (m); gas constant (J mol⁻¹ K⁻¹)</td><td>Unit and context: ohms, metres, or PV = nRT</td></tr>
+<tr><td class="k">r</td><td>radius or distance (m); internal resistance (Ω)</td><td>r in E = V + Ir is a resistance</td></tr>
+<tr><td class="k">C</td><td>capacitance (F); coulomb (unit); celsius (unit)</td><td>Italic C is capacitance; roman C is the coulomb</td></tr>
+<tr><td class="k">c</td><td>speed of light (3 × 10⁸ m s⁻¹); specific heat capacity (J kg⁻¹ K⁻¹)</td><td>c = 4200 is heat capacity; c = 3 × 10⁸ is light</td></tr>
+<tr><td class="k">Q</td><td>heat (J); charge (C)</td><td>Q = mcΔθ is heat; Q = It is charge</td></tr>
+<tr><td class="k">q</td><td>charge (C); heat per kg is not q</td><td>Small charge in F = kQq ÷ r²</td></tr>
+<tr><td class="k">E</td><td>energy (J); emf (V); electric field (N C⁻¹); effort (N)</td><td>Context and unit</td></tr>
+<tr><td class="k">V</td><td>volume (m³); potential difference (V); voltage</td><td>PV = nRT uses volume; V = IR uses volts</td></tr>
+<tr><td class="k">P</td><td>power (W); pressure (Pa); P with a number and no unit is a lens power in D</td><td>p small is momentum or pressure</td></tr>
+<tr><td class="k">p</td><td>momentum (kg m s⁻¹); pressure (Pa)</td><td>p = mv is momentum; p = ρgh is pressure</td></tr>
+<tr><td class="k">W</td><td>work (J); weight (N); watt is the unit W</td><td>W = Fd is work; W = mg is weight</td></tr>
+<tr><td class="k">w</td><td>weight (N), width (m)</td><td></td></tr>
+<tr><td class="k">F</td><td>force (N); farad (unit)</td><td>Italic F is force</td></tr>
+<tr><td class="k">f</td><td>frequency (Hz); focal length (m); friction force (N)</td><td>f = 1 ÷ T; 1 ÷ f = 1 ÷ u + 1 ÷ v; f = μR</td></tr>
+<tr><td class="k">g</td><td>acceleration of free fall (m s⁻²); gram (unit)</td><td>Italic g is the field strength</td></tr>
+<tr><td class="k">m</td><td>mass (kg); metre (unit); magnification; milli prefix</td><td>Italic m is mass; m = v ÷ u is magnification</td></tr>
+<tr><td class="k">a</td><td>acceleration (m s⁻²); amplitude (m); side length</td><td>Context</td></tr>
+<tr><td class="k">A</td><td>area (m²); ampere (unit); mass number</td><td>A = πr² is area; A in ⁴₂He is mass number; roman A is amperes</td></tr>
+<tr><td class="k">N</td><td>number of turns or particles; newton (unit); normal reaction (N)</td><td>Italic N is a count or force</td></tr>
+<tr><td class="k">n</td><td>refractive index; number of moles; number of ropes; harmonic number</td><td>Context</td></tr>
+<tr><td class="k">I</td><td>current (A); moment of inertia; intensity (W m⁻²)</td><td>I = V ÷ R is current</td></tr>
+<tr><td class="k">L</td><td>length (m); inductance (H); latent heat (J kg⁻¹); angular momentum</td><td>L = mL (heat) uses specific latent heat</td></tr>
+<tr><td class="k">k</td><td>Hooke's constant (N m⁻¹); Coulomb constant (9 × 10⁹); thermal conductivity; any constant of proportionality</td><td>The unit tells which</td></tr>
+<tr><td class="k">B</td><td>magnetic flux density (T)</td><td>F = BIl</td></tr>
+<tr><td class="k">d</td><td>distance, diameter, separation (m); small change in calculus</td><td>d in d ÷ dt is calculus</td></tr>
+<tr><td class="k">h</td><td>height (m); Planck constant (6.63 × 10⁻³⁴ J s)</td><td>mgh uses height; E = hf uses Planck</td></tr>
+</table>
+<p>Rule: when a letter is unclear, check its unit and check which formula it sits in; both sides of a formula must have the same units.</p>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 7</span>Formula Interpretation Map</h2>
+<table class="long mp"><tr><th style="width:16%">Formula</th><th style="width:21%">Plain reading</th><th style="width:20%">Proportional to (others fixed)</th><th style="width:19%">Doubling test</th><th>Trap</th></tr>
+<tr class="sub"><td colspan="5">Motion</td></tr>
+<tr><td class="k">v = d ÷ t</td><td>distance covered each second</td><td>v ∝ d; v ∝ 1 ÷ t</td><td>t × 2 gives v × ½</td><td>Average speed uses total distance ÷ total time</td></tr>
+<tr><td class="k">a = Δv ÷ Δt</td><td>change of velocity each second</td><td>a ∝ Δv; a ∝ 1 ÷ Δt</td><td>Δt × ½ gives a × 2</td><td>Δv = final − initial; a < 0 may be speeding up in the negative direction</td></tr>
+<tr><td class="k">v = u + at</td><td>start speed plus gain</td><td>v is linear in t, intercept u</td><td>t × 2 doubles the gain, not v</td><td>The graph misses the origin unless u = 0</td></tr>
+<tr><td class="k">s = ut + ½at²</td><td>coasting plus accelerating</td><td>From rest s ∝ t²</td><td>t × 2 gives s × 4</td><td>Successive seconds from rest cover 1 : 3 : 5</td></tr>
+<tr><td class="k">v² = u² + 2as</td><td>speed squared grows with distance</td><td>From rest v² ∝ s</td><td>s × 4 gives v × 2</td><td>Stopping distance ∝ v²: speed × 2 gives distance × 4</td></tr>
+<tr><td class="k">ω = 2πf = 2π ÷ T</td><td>radians each second</td><td>ω ∝ f; ω ∝ 1 ÷ T</td><td>f × 2 gives ω × 2</td><td>rpm ÷ 60 first</td></tr>
+<tr><td class="k">a = v² ÷ r</td><td>inward acceleration</td><td>a ∝ v²; a ∝ 1 ÷ r</td><td>v × 2 gives a × 4; r × 2 gives a × ½</td><td>Directed to the centre, not along the speed</td></tr>
+<tr class="sub"><td colspan="5">Forces</td></tr>
+<tr><td class="k">ΣF = ma</td><td>net force = mass × acceleration</td><td>a ∝ ΣF; a ∝ 1 ÷ m</td><td>m × 2 at fixed F gives a × ½</td><td>Use the NET force</td></tr>
+<tr><td class="k">W = mg</td><td>pull of gravity on a mass</td><td>W ∝ m; W ∝ g</td><td>On the Moon W × 1 ÷ 6; mass unchanged</td><td>Mass and weight differ</td></tr>
+<tr><td class="k">f = μR</td><td>friction ∝ normal reaction</td><td>f ∝ R</td><td>R × 2 gives f × 2</td><td>Not dependent on contact area; R is not always mg</td></tr>
+<tr><td class="k">p = F ÷ A</td><td>force spread over an area</td><td>p ∝ F; p ∝ 1 ÷ A</td><td>A × ½ gives p × 2</td><td>A in m²</td></tr>
+<tr><td class="k">p = ρgh</td><td>pressure of a liquid column</td><td>p ∝ ρ; p ∝ h</td><td>h × 2 gives p × 2</td><td>Not dependent on container shape</td></tr>
+<tr><td class="k">Upthrust = ρVg</td><td>weight of fluid displaced</td><td>U ∝ ρ(fluid); U ∝ V(submerged)</td><td>V × 2 gives U × 2</td><td>Not dependent on depth once submerged</td></tr>
+<tr><td class="k">F = ke</td><td>stretch ∝ pull</td><td>F ∝ e</td><td>e × 2 gives F × 2</td><td>e is extension, not length; elastic limit</td></tr>
+<tr><td class="k">Ft = Δp</td><td>impulse = change of momentum</td><td>F ∝ 1 ÷ t for fixed Δp</td><td>t × 2 gives F × ½</td><td>Why air bags and crumple zones work</td></tr>
+<tr class="sub"><td colspan="5">Energy and power</td></tr>
+<tr><td class="k">W = Fd cos θ</td><td>force along the motion times distance</td><td>W ∝ F, d, cos θ</td><td>θ = 90° gives W = 0</td><td>Perpendicular force does no work</td></tr>
+<tr><td class="k">KE = ½mv²</td><td>energy of motion</td><td>KE ∝ m; KE ∝ v²</td><td>v × 2 gives KE × 4</td><td>Never negative; not ∝ v</td></tr>
+<tr><td class="k">PE = mgh</td><td>energy of height</td><td>PE ∝ m, g, h</td><td>h × 3 gives PE × 3</td><td>Depends on chosen zero level</td></tr>
+<tr><td class="k">P = W ÷ t</td><td>rate of doing work</td><td>P ∝ W; P ∝ 1 ÷ t</td><td>t × ½ gives P × 2</td><td>1 kWh is energy, not power</td></tr>
+<tr><td class="k">P = Fv</td><td>power = force × speed</td><td>P ∝ F, v</td><td>At fixed P, v × 2 gives F × ½</td><td>At constant speed F = resistance</td></tr>
+<tr><td class="k">η = out ÷ in</td><td>share of input that is useful</td><td>0 ≤ η ≤ 1</td><td>—</td><td>Never above 100 %; chain efficiencies multiply</td></tr>
+<tr class="sub"><td colspan="5">Gravitation</td></tr>
+<tr><td class="k">F = GMm ÷ r²</td><td>inverse square pull</td><td>F ∝ M, m; F ∝ 1 ÷ r²</td><td>r × 2 gives F × ¼; M and m × 2 gives F × 4</td><td>r is between centres</td></tr>
+<tr><td class="k">g = GM ÷ r²</td><td>field strength</td><td>g ∝ M; g ∝ 1 ÷ r²</td><td>r × 2 gives g × ¼</td><td>Independent of the small mass</td></tr>
+<tr><td class="k">T² = 4π²r³ ÷ GM</td><td>period and radius of an orbit</td><td>T ∝ r^1.5</td><td>r × 4 gives T × 8</td><td>Independent of the satellite's mass</td></tr>
+<tr><td class="k">v = √(GM ÷ r)</td><td>orbital speed</td><td>v ∝ 1 ÷ √r</td><td>r × 4 gives v × ½</td><td>Higher orbits are slower</td></tr>
+<tr class="sub"><td colspan="5">Heat and gases</td></tr>
+<tr><td class="k">Q = mcΔθ</td><td>heat to change temperature</td><td>Q ∝ m, c, Δθ</td><td>m × 2 gives Q × 2</td><td>Δθ is a difference: °C = K</td></tr>
+<tr><td class="k">Q = mL</td><td>heat to change state</td><td>Q ∝ m</td><td>—</td><td>Temperature stays fixed during the change</td></tr>
+<tr><td class="k">ΔL = αLΔθ</td><td>expansion</td><td>ΔL ∝ L, α, Δθ</td><td>Δθ × 2 gives ΔL × 2</td><td>Area uses 2α, volume 3α</td></tr>
+<tr><td class="k">Q ÷ t = kAΔθ ÷ d</td><td>conduction rate</td><td>∝ k, A, Δθ; ∝ 1 ÷ d</td><td>d × 2 gives rate × ½</td><td>Series bars: same rate in each</td></tr>
+<tr><td class="k">PV = constant (T fixed)</td><td>Boyle's law</td><td>P ∝ 1 ÷ V</td><td>V × 2 gives P × ½</td><td>Use absolute pressure</td></tr>
+<tr><td class="k">V ÷ T = constant (P fixed)</td><td>Charles's law</td><td>V ∝ T (kelvin)</td><td>T(K) × 2 gives V × 2</td><td>Never use °C</td></tr>
+<tr><td class="k">PV = nRT</td><td>ideal gas</td><td>P ∝ nT ÷ V</td><td>T × 2 at fixed V, n gives P × 2</td><td>V in m³ with Pa</td></tr>
+<tr class="sub"><td colspan="5">Waves, sound and light</td></tr>
+<tr><td class="k">v = fλ</td><td>wave equation</td><td>v ∝ f; v ∝ λ; at fixed v, f ∝ 1 ÷ λ</td><td>f × 2 gives λ × ½</td><td>The medium fixes v, the source fixes f</td></tr>
+<tr><td class="k">f = 1 ÷ T</td><td>frequency and period</td><td>f ∝ 1 ÷ T</td><td>T × 2 gives f × ½</td><td>—</td></tr>
+<tr><td class="k">f = (1 ÷ 2L)√(T ÷ μ)</td><td>string note</td><td>f ∝ 1 ÷ L; f ∝ √T; f ∝ 1 ÷ √μ</td><td>T × 4 gives f × 2</td><td>T is tension here</td></tr>
+<tr><td class="k">Intensity ∝ amplitude²</td><td>loudness or brightness</td><td>I ∝ A²</td><td>A × 2 gives I × 4</td><td>—</td></tr>
+<tr><td class="k">I = P ÷ 4πr²</td><td>spreading over a sphere</td><td>I ∝ P; I ∝ 1 ÷ r²</td><td>r × 2 gives I × ¼</td><td>Inverse square from a point source</td></tr>
+<tr><td class="k">n = sin i ÷ sin r = c ÷ v</td><td>refractive index</td><td>n ≥ 1</td><td>—</td><td>Angles are measured from the normal</td></tr>
+<tr><td class="k">1 ÷ f = 1 ÷ u + 1 ÷ v</td><td>lens or mirror</td><td>reciprocal sum</td><td>—</td><td>Do not invert each term separately</td></tr>
+<tr><td class="k">m = v ÷ u</td><td>magnification</td><td>m ∝ v</td><td>—</td><td>Ratio with no unit</td></tr>
+<tr><td class="k">E = hf = hc ÷ λ</td><td>photon energy</td><td>E ∝ f; E ∝ 1 ÷ λ</td><td>λ × ½ gives E × 2</td><td>Brightness changes number, not energy</td></tr>
+<tr class="sub"><td colspan="5">Electricity and magnetism</td></tr>
+<tr><td class="k">V = IR</td><td>Ohm's law</td><td>I ∝ V; I ∝ 1 ÷ R</td><td>R × 2 at fixed V gives I × ½</td><td>Ohmic conductors only</td></tr>
+<tr><td class="k">R = ρL ÷ A</td><td>resistance of a wire</td><td>R ∝ L; R ∝ 1 ÷ A</td><td>L × 2: R × 2; diameter × 2: R × ¼</td><td>Stretched wire: R × n²</td></tr>
+<tr><td class="k">P = VI = I²R = V² ÷ R</td><td>electrical power</td><td>Fixed V: P ∝ 1 ÷ R; fixed I: P ∝ R; fixed R: P ∝ V²</td><td>V × ½ gives P × ¼</td><td>Pick the form whose quantity is fixed</td></tr>
+<tr><td class="k">1 ÷ R = Σ(1 ÷ R)</td><td>parallel resistors</td><td>reciprocal sum</td><td>—</td><td>Total is smaller than the smallest</td></tr>
+<tr><td class="k">E = V + Ir</td><td>cell with internal resistance</td><td>V = E − Ir</td><td>—</td><td>V = E only at zero current</td></tr>
+<tr><td class="k">F = kQq ÷ r²</td><td>electric force</td><td>F ∝ Q, q; F ∝ 1 ÷ r²</td><td>r × 2 gives F × ¼</td><td>Same shape as gravity</td></tr>
+<tr><td class="k">C = Q ÷ V; E = ½CV²</td><td>capacitor</td><td>C ∝ Q; E ∝ V²</td><td>V × 2 gives E × 4</td><td>Isolated: Q fixed; connected: V fixed</td></tr>
+<tr><td class="k">F = BIl sin θ</td><td>force on a current</td><td>F ∝ B, I, l, sin θ</td><td>I × 2 gives F × 2</td><td>θ = 0° gives zero force</td></tr>
+<tr><td class="k">ε = Blv; ε = NΔΦ ÷ Δt</td><td>induced emf</td><td>ε ∝ B, l, v; ε ∝ N, ΔΦ ÷ Δt</td><td>v × 2 gives ε × 2</td><td>Opposes the change (Lenz)</td></tr>
+<tr><td class="k">Vp ÷ Vs = Np ÷ Ns</td><td>transformer</td><td>Vs ∝ Ns</td><td>Ns × 2 gives Vs × 2</td><td>Voltage up means current down</td></tr>
+<tr><td class="k">f₀ = 1 ÷ 2π√(LC)</td><td>resonance</td><td>f₀ ∝ 1 ÷ √L; 1 ÷ √C</td><td>L × 4 gives f₀ × ½</td><td>At resonance Z = R</td></tr>
+<tr class="sub"><td colspan="5">Nuclear</td></tr>
+<tr><td class="k">N = N₀(½)^(t ÷ T)</td><td>half-life decay</td><td>exponential</td><td>t × 2 squares the fraction left</td><td>Equal times, equal fractions, not equal amounts</td></tr>
+<tr><td class="k">A = λN</td><td>activity</td><td>A ∝ N</td><td>N × ½ gives A × ½</td><td>T = 0.693 ÷ λ</td></tr>
+<tr><td class="k">E = Δm c²</td><td>mass–energy</td><td>E ∝ Δm</td><td>Δm × 2 gives E × 2</td><td>c² is 9 × 10¹⁶ m² s⁻²</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 8</span>Interpretation Drills: Triples</h2>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">8.1 Direct proportion: y ∝ x: the ratio y ÷ x stays fixed; factors multiply across several variables</td></tr>
+<tr><td class="k">8.1a</td><td>In F = ma with the mass fixed, the acceleration goes from 2 to 6 m s⁻². By what factor does the net force change?</td><td>F ∝ a, so factor = 6 ÷ 2 = 3. <b>Ans: × 3</b></td></tr>
+<tr><td class="k">8.1b</td><td>In V = IR, the voltage across a resistor is made 3 times larger and the resistance 2 times larger. By what factor does the current change?</td><td>I = V ÷ R: factor = 3 ÷ 2 = 1.5. <b>Ans: × 1.5</b></td></tr>
+<tr><td class="k">8.1c</td><td>A wire has resistance 8 Ω. Another wire of the same metal and thickness is 25 % longer. Find its resistance.</td><td>R ∝ L, so R = 8 × 1.25 = 10 Ω. <b>Ans: 10 Ω</b></td></tr>
+<tr class="sub"><td colspan="3">8.2 Inverse proportion: y ∝ 1 ÷ x: y × x stays fixed; a rise of p % in x does not give a fall of p % in y</td></tr>
+<tr><td class="k">8.2a</td><td>A wave travels in a medium where its speed is fixed. Its frequency goes from 200 Hz to 800 Hz. By what factor does the wavelength change?</td><td>v = fλ fixed, so λ ∝ 1 ÷ f: factor = 200 ÷ 800 = 0.25. <b>Ans: × 0.25</b></td></tr>
+<tr><td class="k">8.2b</td><td>In I = V ÷ R, the voltage is doubled and the resistance is made four times larger. By what factor does the current change?</td><td>Factor = 2 ÷ 4 = 0.5. <b>Ans: × 0.5</b></td></tr>
+<tr><td class="k">8.2c</td><td>At constant temperature a gas has its pressure raised by 20 %. By what percentage does the volume change?</td><td>PV = constant, so V₂ ÷ V₁ = P₁ ÷ P₂ = 1 ÷ 1.2 = 0.833. Change = −16.7 %, a fall of 16.7 %, not 20 %. <b>Ans: −16.7 %</b></td></tr>
+<tr class="sub"><td colspan="3">8.3 Square law: y ∝ x²: change x by a factor k and y changes by k²</td></tr>
+<tr><td class="k">8.3a</td><td>A car's speed becomes 3 times larger. By what factor does its kinetic energy change?</td><td>KE ∝ v²: factor = 3² = 9. <b>Ans: × 9</b></td></tr>
+<tr><td class="k">8.3b</td><td>In P = I²R, the current is doubled and the resistance is made three times larger. By what factor does the power change?</td><td>Factor = 2² × 3 = 12. <b>Ans: × 12</b></td></tr>
+<tr><td class="k">8.3c</td><td>(i) A car's speed rises by 10 %: find the percentage change in its kinetic energy (and in its stopping distance). (ii) Its kinetic energy rises by 21 %: find the percentage change in speed.</td><td>(i) Factor = 1.1² = 1.21, a rise of 21 %. (ii) v ∝ √KE: factor = √1.21 = 1.1, a rise of 10 %. <b>Ans: (i) +21 %; (ii) +10 %</b></td></tr>
+<tr class="sub"><td colspan="3">8.4 Inverse square law: y ∝ 1 ÷ x²: change x by a factor k and y changes by 1 ÷ k²</td></tr>
+<tr><td class="k">8.4a</td><td>At twice the distance from Earth's centre, by what factor does g change?</td><td>g ∝ 1 ÷ r²: factor = 1 ÷ 2² = 0.25. <b>Ans: × 0.25</b></td></tr>
+<tr><td class="k">8.4b</td><td>In F = kQ₁Q₂ ÷ r², both charges are made 3 times larger and the separation 3 times larger. By what factor does the force change?</td><td>Factor = (3 × 3) ÷ 3² = 1. The force is unchanged. <b>Ans: × 1</b></td></tr>
+<tr><td class="k">8.4c</td><td>A lamp gives 36 W m⁻² at 2 m. Find the intensity at 5 m and the distance at which it is 4 W m⁻².</td><td>I ∝ 1 ÷ r²: I = 36 × (2 ÷ 5)² = 5.76 W m⁻². For 4: r = 2 × √(36 ÷ 4) = 6 m. <b>Ans: 5.76 W m⁻²; 6 m</b></td></tr>
+<tr class="sub"><td colspan="3">8.5 Square root relation: y ∝ √x: change x by a factor k and y changes by √k; a root is applied to everything under it</td></tr>
+<tr><td class="k">8.5a</td><td>A pendulum is made 4 times longer. By what factor does its period change?</td><td>T = 2π√(l ÷ g): T ∝ √l, factor = √4 = 2. <b>Ans: × 2</b></td></tr>
+<tr><td class="k">8.5b</td><td>On the Moon g is one sixth of Earth's. By what factor does the speed of an object dropped from the same height change on landing (v = √(2gh)), and by what factor does a pendulum's period change?</td><td>v ∝ √g: factor = √(1 ÷ 6) = 0.408. T ∝ 1 ÷ √g: factor = √6 = 2.45. <b>Ans: speed × 0.408; period × 2.45</b></td></tr>
+<tr><td class="k">8.5c</td><td>For a stretched string f = (1 ÷ 2L)√(T ÷ μ). The tension is made 9 times larger, μ 4 times larger and the length 3 times larger. By what factor does f change?</td><td>f ∝ √T ÷ (L√μ): factor = √9 ÷ (3 × √4) = 3 ÷ 6 = 0.5. <b>Ans: × 0.5</b></td></tr>
+<tr class="sub"><td colspan="3">8.6 Cubes and joint variation: y ∝ x³; several quantities multiply in joint variation</td></tr>
+<tr><td class="k">8.6a</td><td>A solid sphere's radius is doubled (same material). By what factor does its mass change?</td><td>m ∝ r³: factor = 2³ = 8. <b>Ans: × 8</b></td></tr>
+<tr><td class="k">8.6b</td><td>In P = ηρQgh the flow is doubled, the head is made 1.5 times larger and the efficiency falls from 90 % to 80 %. By what factor does the output power change?</td><td>Factor = 2 × 1.5 × (0.8 ÷ 0.9) = 2.67. <b>Ans: × 2.67</b></td></tr>
+<tr><td class="k">8.6c</td><td>A satellite at 4.2 × 10<sup>7</sup> m has a period of 1 day. By Kepler's law (T ∝ r^1.5), find the period at 3.84 × 10<sup>8</sup> m (the Moon's orbit).</td><td>Ratio of radii = 3.84 × 10<sup>8</sup> ÷ 4.2 × 10<sup>7</sup> = 9.14. T = 1 day × 9.14^1.5 = 27.6 days. <b>Ans: 27.6 days</b></td></tr>
+<tr class="sub"><td colspan="3">8.7 Reading graphs: gradient and intercept: y = mx + c: the gradient m is the rate; the intercept c is the starting value</td></tr>
+<tr><td class="k">8.7a</td><td>A velocity–time line passes through (0 s, 5 m s⁻¹) and (4 s, 17 m s⁻¹). Find the initial velocity, the acceleration and the velocity at 10 s.</td><td>u = intercept = 5 m s⁻¹. a = gradient = (17 − 5) ÷ 4 = 3 m s⁻². v = u + at = 5 + 3 × 10 = 35 m s⁻¹. <b>Ans: u = 5 m s⁻¹; a = 3 m s⁻²; v = 35 m s⁻¹</b></td></tr>
+<tr><td class="k">8.7b</td><td>A graph of T² against l for a pendulum is a straight line through the origin with gradient 4.0 s² m⁻¹. Find g.</td><td>T² = (4π² ÷ g) l, so gradient = 4π² ÷ g and g = 4π² ÷ 4.0 = 9.87 m s⁻². <b>Ans: 9.87 m s⁻²</b></td></tr>
+<tr><td class="k">8.7c</td><td>A resistance is 100 Ω at 0 °C and 139 Ω at 100 °C, rising linearly. Find the temperature coefficient α (R = R₀(1 + αθ)) and the resistance at 60 °C.</td><td>α = (R − R₀) ÷ (R₀θ) = (139 − 100) ÷ (100 × 100) = 3.9 × 10<sup>-3</sup> K⁻¹. R(60) = 100 × (1 + 3.9 × 10<sup>-3</sup> × 60) = 123.4 Ω. <b>Ans: α = 3.9 × 10<sup>-3</sup> K⁻¹; R = 123.4 Ω</b></td></tr>
+<tr class="sub"><td colspan="3">8.8 Rate and change in (Δ): rate = Δquantity ÷ Δt; the gradient of a graph is the rate</td></tr>
+<tr><td class="k">8.8a</td><td>A body's velocity goes from 12 m s⁻¹ to 30 m s⁻¹ in 6 s. Find the average acceleration.</td><td>a = Δv ÷ Δt = (30 − 12) ÷ 6 = 3 m s⁻². <b>Ans: 3 m s⁻²</b></td></tr>
+<tr><td class="k">8.8b</td><td>A 0.15 kg ball moving at 20 m s⁻¹ is stopped in 0.02 s. Find the net force, using force = rate of change of momentum.</td><td>F = Δp ÷ Δt = 0.15 × 20 ÷ 0.02 = 150 N. <b>Ans: 150 N</b></td></tr>
+<tr><td class="k">8.8c</td><td>A heater warms water at 2 °C per minute using 500 W. For the same water, find the power for 5 °C per minute, and the temperature after 8 minutes at the first rate starting from 20 °C.</td><td>Rate of warming ∝ power: P = 500 × 5 ÷ 2 = 1 250 W. Temperature = 20 + 2 × 8 = 36 °C. <b>Ans: 1 250 W; 36 °C</b></td></tr>
+<tr class="sub"><td colspan="3">8.9 Net and sum (Σ): net = sum with signs or directions; equilibrium means the net is zero</td></tr>
+<tr><td class="k">8.9a</td><td>A 2 kg body has forces of 12 N to the right, 5 N to the left and friction of 3 N to the left. Find the net force and the acceleration.</td><td>Net = 12 − 5 − 3 = 4 N to the right. a = 4 ÷ 2 = 2 m s⁻². <b>Ans: net 4 N; a = 2 m s⁻²</b></td></tr>
+<tr><td class="k">8.9b</td><td>Forces of 10 N east, 6 N west and 4 N north act on a body. What fourth force gives equilibrium?</td><td>Net so far: east 10 − 6 = 4 N and north 4 N, so the resultant is √(4² + 4²) = 5.66 N at 45° north of east. The fourth force is equal and opposite: 5.66 N at 45° south of west. <b>Ans: 5.66 N at 45° south of west</b></td></tr>
+<tr><td class="k">8.9c</td><td>A 5 kg block starts from rest and is pushed 8 m by a 30 N force against 10 N of friction. Use net work = ΔKE to find its final speed.</td><td>Net work = (30 − 10) × 8 = 160 J = ½mv², so v = √(2 × 160 ÷ 5) = 8 m s⁻¹. <b>Ans: 8 m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">8.10 Percent and 'times as': new ÷ old = 1 ± p ÷ 100; percentages are always taken on the old value</td></tr>
+<tr><td class="k">8.10a</td><td>A quantity falls from 80 to 60. Find the percentage fall. Then find the percentage rise needed to go from 60 back to 80.</td><td>Fall = (80 − 60) ÷ 80 × 100 = 25 %. Rise = (80 − 60) ÷ 60 × 100 = 33.3 %. The two are different because the 'old' value differs. <b>Ans: fall 25 %; rise 33.3 %</b></td></tr>
+<tr><td class="k">8.10b</td><td>A car's speed rises by 20 % and its mass falls by 20 %. Find the percentage change in kinetic energy.</td><td>KE ∝ mv²: factor = 1.2² × 0.8 = 1.152. Change = 15.2 %. <b>Ans: +15.2 %</b></td></tr>
+<tr><td class="k">8.10c</td><td>R = V ÷ I: V is measured with 2 % error and I with 3 % error. Find the percentage error in R.</td><td>For a quotient the percentage errors add: 2 + 3 = 5 %. <b>Ans: 5 %</b></td></tr>
+<tr class="sub"><td colspan="3">8.11 Angles: sin, cos, tan: sin θ and cos θ lie between −1 and 1; cos 0° = 1, cos 90° = 0, sin 90° = 1</td></tr>
+<tr><td class="k">8.11a</td><td>In W = Fd cos θ, find the fraction of Fd that becomes work at θ = 0°, 60° and 90°.</td><td>cos 0° = 1; cos 60° = 0.5; cos 90° = 0. <b>Ans: 1; 0.5; 0</b></td></tr>
+<tr><td class="k">8.11b</td><td>A projectile's range is ∝ sin 2θ. Which angle gives the same range as 20°, and which gives the greatest range?</td><td>sin 2θ = sin(180° − 2θ), so θ and 90° − θ give equal range: 70°. The greatest sin 2θ = 1 is at 2θ = 90°: 45°. <b>Ans: 70°; 45°</b></td></tr>
+<tr><td class="k">8.11c</td><td>In F = BIl sin θ, find F as a fraction of its maximum at θ = 30°, and the angle at which F = 0.8 of the maximum.</td><td>At 30°: sin 30° = 0.5. sin θ = 0.8 gives θ = 53.1°. <b>Ans: 0.5 of maximum; 53.1°</b></td></tr>
+<tr class="sub"><td colspan="3">8.12 Exponential and logarithm: equal steps give equal factors (exponential); equal factors give equal steps (logarithm)</td></tr>
+<tr><td class="k">8.12a</td><td>In N = N₀(½)^(t ÷ T), find the fraction left after 3 half-lives and after 2.5 half-lives.</td><td>(½)³ = 0.125. (½)^2.5 = 0.177. <b>Ans: 0.125; 0.177</b></td></tr>
+<tr><td class="k">8.12b</td><td>Sound intensity level L = 10 log(I ÷ I₀) in decibels. Find the rise in L when the intensity becomes 100 times larger, and when it doubles (two identical machines).</td><td>×100: ΔL = 10 log 100 = 20 dB. ×2: ΔL = 10 log 2 = 3.01 dB. <b>Ans: +20 dB; +3.01 dB</b></td></tr>
+<tr><td class="k">8.12c</td><td>A capacitor discharges as V = V₀e^(−t ÷ τ) with τ = RC = 2 s. Find the fraction left after 1τ and 2τ, and the time to fall to 10 %.</td><td>e⁻¹ = 0.368; e⁻² = 0.135. For 10 %: t = τ ln 10 = 2 × 2.3 = 4.61 s. <b>Ans: 0.368; 0.135; 4.61 s</b></td></tr>
+</table>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>

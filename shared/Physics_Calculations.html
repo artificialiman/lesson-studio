@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physics Calculations: Teaching and Practice Manual</title>
+<style>
+/* ============================================================
+   PHYSICS CALCULATIONS MANUAL
+   Print-first. No JS. Weeks as units.
+   ALL text bold (700 body, 900 headings). Thick rules everywhere.
+   ============================================================ */
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  padding:16px 18px 48px;
+  background:#eef0ec;
+  color:#111;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:11pt;
+  line-height:1.5;
+  font-weight:700;
+  orphans:3;
+  widows:3;
+}
+
+.sheet{
+  max-width:1080px;
+  margin:0 auto;
+  background:#fff;
+  padding:24px 28px 32px;
+  box-shadow:0 1px 5px rgba(0,0,0,.13);
+}
+
+/* ---------- head ---------- */
+.doc-head{
+  border-bottom:4.5pt solid #1a3d6e;
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+h1{
+  font-size:20pt;
+  margin:0;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  font-weight:900;
+}
+.doc-head .term{
+  margin:4px 0 0;
+  font-size:10.4pt;
+  color:#444;
+  font-weight:700;
+}
+
+/* ---------- headings ---------- */
+h2{
+  font-size:15pt;
+  margin:0 0 10px;
+  padding:0 0 7px;
+  border-bottom:3.6pt solid #1a3d6e;
+  line-height:1.3;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h2 .wk{
+  display:inline-block;
+  font-size:10.4pt;
+  font-weight:900;
+  letter-spacing:.7px;
+  background:#1a3d6e;
+  color:#fff;
+  padding:3px 9px 4px;
+  border-radius:3px;
+  vertical-align:2px;
+  margin-right:10px;
+  white-space:nowrap;
+}
+h3{
+  font-size:13pt;
+  margin:14px 0 6px;
+  color:#1a3d6e;
+  break-after:avoid;
+  page-break-after:avoid;
+  font-weight:900;
+}
+h4{
+  font-size:10.6pt;
+  margin:0 0 6px;
+  padding-bottom:3px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  color:#1a3d6e;
+  border-bottom:2.4pt solid #8fae99;
+  break-after:avoid;
+  font-weight:900;
+}
+p{margin:0 0 6px;font-weight:700}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 8px;padding-left:20px;font-weight:700}
+li{margin:0 0 3px;break-inside:avoid;font-weight:700}
+ul.tight,ol.tight{padding-left:18px}
+.cols2{column-count:2;column-gap:20px}
+.cols2 > li{break-inside:avoid}
+ul.cols2, ol.cols2{margin-bottom:8px}
+
+/* ---------- boxes ---------- */
+.box{
+  border:2.4pt solid #7d897d;
+  border-radius:3px;
+  padding:10px 12px 9px;
+  margin:0 0 12px;
+  break-inside:avoid;
+}
+.box.obj{margin-bottom:12px}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:12px 0 6px;
+}
+.split > .box{margin-bottom:0}
+
+/* ---------- meta ---------- */
+.meta{
+  margin:0 0 10px;
+  font-size:10.2pt;
+  color:#333;
+  font-weight:700;
+}
+.meta b{color:#1a3d6e;font-weight:900}
+
+/* ---------- tables ---------- */
+table{
+  border-collapse:collapse;
+  width:100%;
+  margin:6px 0 12px;
+  font-size:10.2pt;
+  break-inside:avoid;
+  font-weight:700;
+}
+table.long{break-inside:auto}
+tr{break-inside:avoid}
+th,td{
+  border:2pt solid #5f5a4e;
+  padding:5px 8px;
+  vertical-align:top;
+  text-align:left;
+  font-weight:700;
+}
+th{
+  background:#e6eee8;
+  font-size:9.6pt;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  border:2.4pt solid #5f5a4e;
+  font-weight:900;
+}
+td.k{font-weight:900;white-space:nowrap}
+td.kw{font-weight:900}
+
+/* ---------- misc ---------- */
+.week{
+  margin:0 0 6px;
+  break-before:page;
+  page-break-before:always;
+}
+.week:first-of-type{
+  break-before:auto;
+  page-break-before:auto;
+}
+b{font-weight:900}
+
+/* ---------- screen toolbar ---------- */
+.toolbar{
+  max-width:1080px;
+  margin:0 auto 12px;
+  font-size:10pt;
+  color:#444;
+  font-weight:700;
+}
+.toolbar kbd{
+  font:inherit;font-size:9.4pt;background:#fff;
+  border:1.6pt solid #7d897d;border-radius:3px;padding:1px 6px;
+  font-weight:700;
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{ size:A4; margin:10mm 11mm; }
+  body{
+    background:#fff;
+    padding:0;
+    font-size:10.6pt;
+    line-height:1.48;
+    font-weight:700;
+  }
+  .sheet{
+    max-width:none;
+    margin:0;
+    padding:0;
+    box-shadow:none;
+  }
+  .no-print{display:none !important}
+  h1{font-size:17pt}
+  h2{font-size:14pt}
+  h3{font-size:12pt}
+  a{color:#000;text-decoration:none}
+  .box,table,.split{break-inside:avoid}
+  table.long{break-inside:auto}
+  h2,h3,h4{break-after:avoid;page-break-after:avoid}
+}
+pre{margin:0 0 6px;font-family:Consolas,"Courier New",monospace;font-size:10pt;font-weight:700}
+table.qt td,table.qt th{font-size:9.3pt;padding:3px 6px}
+table.qt td.k{white-space:nowrap}
+table.mp td,table.mp th{font-size:9.1pt;padding:3px 5px}
+table.mp td.k{white-space:normal}
+tr.sub td{background:#e6eee8;font-weight:900;font-size:10pt;border-top:2.4pt solid #5f5a4e}
+.week{break-before:auto!important;page-break-before:auto!important}
+h2{margin-top:14px}
+</style>
+</head>
+<body>
+
+<div class="toolbar no-print">
+  Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>⌘</kbd>+<kbd>P</kbd>) to print. Set margins <b>Default</b>, scale <b>100%</b>, background graphics <b>off</b>. Each week starts on a fresh page.
+</div>
+
+<div class="sheet">
+
+<header class="doc-head">
+  <h1>Physics Calculations: Teaching and Practice Manual</h1>
+  <p class="term">Secondary school physics · source relations and variation maps · constants and limits · 60 calculation families · 180 worked questions · Print Edition</p>
+</header>
+<section class="week">
+  <h2><span class="wk">PART 1</span>How Every Physics Calculation Is Built</h2>
+<p>Each calculation family has one <b>source relation</b>. Every question in the family is that relation with one or more of six changes applied. Listing the changes for each family shows every form a question can take.</p>
+<h3>The Six Changes</h3>
+<table class="long"><tr><th style="width:18%">Change</th><th style="width:42%">What varies</th><th>Example</th></tr>
+<tr><td class="k">Unknown swapped</td><td>The same relation solved for each quantity in turn</td><td>v = u + at solved for v, for u, for a or for t</td></tr>
+<tr><td class="k">Indirect input</td><td>A quantity has to be built before the relation can be used</td><td>m = ρV; W = mg; area from diameter; rad s⁻¹ from rpm</td></tr>
+<tr><td class="k">Modifier</td><td>A factor multiplies or splits the relation</td><td>cos θ, sin θ, efficiency, percentage loss, rate × time</td></tr>
+<tr><td class="k">Staging</td><td>The relation applies in more than one stage or to more than one body</td><td>Two-leg journey; chain of efficiencies; warm then melt then boil</td></tr>
+<tr><td class="k">Hidden constant or condition</td><td>A value or state the question never states</td><td>g, c, ρ of water, STP, "from rest", "in air", "ideal"</td></tr>
+<tr><td class="k">Curveball concept</td><td>A principle changes the method</td><td>Perpendicular force does no work; Kelvin not Celsius; terminal velocity means a = 0</td></tr>
+</table>
+<h3>The Solution Routine</h3>
+<table class="long"><tr><th style="width:6%">Step</th><th style="width:40%">Action</th><th>Error it removes</th></tr>
+<tr><td class="k">1</td><td>Write the knowns with units and mark the unknown</td><td>Solving for the wrong quantity</td></tr>
+<tr><td class="k">2</td><td>Convert everything to SI</td><td>Unit errors: km h⁻¹, cm², g, minutes, °C</td></tr>
+<tr><td class="k">3</td><td>Name the source relation and the condition that allows it</td><td>Wrong formula: constant a, from rest, ideal</td></tr>
+<tr><td class="k">4</td><td>Rearrange in symbols before substituting</td><td>Arithmetic slips; shows what cancels (mass in free fall)</td></tr>
+<tr><td class="k">5</td><td>Substitute with units and compute</td><td>Missing or wrong unit</td></tr>
+<tr><td class="k">6</td><td>Check the unit, the size and the limit</td><td>Impossible answers: efficiency above 100 %, sin above 1, speed above c</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">PART 2</span>Constants, Units, Conversions, Hidden Conditions, Limits</h2>
+<h3>Constants and Standard Values</h3>
+<table class="long"><tr><th style="width:30%">Quantity</th><th style="width:30%">Value</th><th>Note</th></tr>
+<tr><td class="k">Acceleration of free fall g</td><td>9.8 m s⁻² (use 10 m s⁻² if the question says so)</td><td>Varies from 9.78 at the equator to 9.83 at the poles</td></tr>
+<tr><td class="k">Gravitational constant G</td><td>6.67 × 10⁻¹¹ N m² kg⁻²</td><td></td></tr>
+<tr><td class="k">Mass of Earth</td><td>6.0 × 10²⁴ kg</td><td>5.97 × 10²⁴ more exactly</td></tr>
+<tr><td class="k">Radius of Earth</td><td>6.4 × 10⁶ m</td><td>6.37 × 10⁶ m mean</td></tr>
+<tr><td class="k">Mass and radius of Moon</td><td>7.3 × 10²² kg; 1.7 × 10⁶ m</td><td>Moon's g is about one sixth of Earth's</td></tr>
+<tr><td class="k">Earth–Moon and Earth–Sun distances</td><td>3.84 × 10⁸ m; 1.5 × 10¹¹ m</td><td>Sunlight takes about 8.3 minutes to reach Earth</td></tr>
+<tr><td class="k">Speed of light c</td><td>3.0 × 10⁸ m s⁻¹ in vacuum or air</td><td>2.998 × 10⁸ more exactly</td></tr>
+<tr><td class="k">Speed of sound in air</td><td>340 m s⁻¹ (330 at 0 °C in some syllabuses)</td><td>About 0.6 m s⁻¹ more for each °C; water about 1 500; steel about 5 000</td></tr>
+<tr><td class="k">Density of water</td><td>1000 kg m⁻³ = 1 g cm⁻³ at 4 °C</td><td>Sea water about 1 030</td></tr>
+<tr><td class="k">Density of air; mercury; ice</td><td>1.29 kg m⁻³; 13 600 kg m⁻³; 920 kg m⁻³</td><td>Ice floats because it is less dense than water</td></tr>
+<tr><td class="k">Atmospheric pressure</td><td>1.01 × 10⁵ Pa = 760 mmHg = 10.3 m of water</td><td>1 mmHg = 133 Pa</td></tr>
+<tr><td class="k">Specific heat capacity of water</td><td>4200 J kg⁻¹ K⁻¹ (4.2 J g⁻¹ K⁻¹)</td><td>Ice about 2100; steam about 2000</td></tr>
+<tr><td class="k">Other specific heat capacities (J kg⁻¹ K⁻¹)</td><td>Aluminium 900; iron 450; copper 390; lead 130; glass 840; mercury 140</td><td>Water's high value is why seas warm slowly</td></tr>
+<tr><td class="k">Specific latent heat of fusion of ice</td><td>3.36 × 10⁵ J kg⁻¹ (336 J g⁻¹)</td><td>Melts at 0 °C</td></tr>
+<tr><td class="k">Specific latent heat of vaporisation of water</td><td>2.26 × 10⁶ J kg⁻¹ (2260 J g⁻¹)</td><td>Boils at 100 °C at standard pressure</td></tr>
+<tr><td class="k">Linear expansivity α (K⁻¹)</td><td>Aluminium 2.3 × 10⁻⁵; copper 1.7 × 10⁻⁵; iron and steel 1.2 × 10⁻⁵; glass 0.9 × 10⁻⁵</td><td>Area expansivity β = 2α; volume expansivity γ = 3α</td></tr>
+<tr><td class="k">Thermal conductivity k (W m⁻¹ K⁻¹)</td><td>Copper 390; aluminium 205; steel 50; glass 1.0; brick 0.7; wood 0.15</td><td>Metals conduct best, still air worst</td></tr>
+<tr><td class="k">Absolute zero; STP</td><td>−273 °C = 0 K; 273 K and 1.01 × 10⁵ Pa</td><td>Molar volume of an ideal gas at STP is 22.4 L (0.0224 m³)</td></tr>
+<tr><td class="k">Molar gas constant R; Avogadro constant</td><td>8.31 J mol⁻¹ K⁻¹; 6.02 × 10²³ mol⁻¹</td><td>PV = nRT</td></tr>
+<tr><td class="k">Refractive index (air, water, glass, diamond)</td><td>1.00; 1.33; 1.50; 2.42</td><td>Always at least 1; light slows in denser media</td></tr>
+<tr><td class="k">Coulomb constant k; permittivity ε₀</td><td>9.0 × 10⁹ N m² C⁻²; 8.85 × 10⁻¹² F m⁻¹</td><td>k = 1 ÷ (4πε₀)</td></tr>
+<tr><td class="k">Elementary charge e; electron mass; proton mass</td><td>1.6 × 10⁻¹⁹ C; 9.11 × 10⁻³¹ kg; 1.67 × 10⁻²⁷ kg</td><td>1 eV = 1.6 × 10⁻¹⁹ J</td></tr>
+<tr><td class="k">Permeability of free space μ₀</td><td>4π × 10⁻⁷ H m⁻¹</td><td></td></tr>
+<tr><td class="k">Resistivity ρ (Ω m)</td><td>Silver 1.6 × 10⁻⁸; copper 1.7 × 10⁻⁸; aluminium 2.8 × 10⁻⁸; iron 1.0 × 10⁻⁷; nichrome 1.1 × 10⁻⁶</td><td>Heating elements use high-resistivity wire</td></tr>
+<tr><td class="k">Nigerian mains</td><td>230 V, 50 Hz; three-phase 415 V</td><td>Peak voltage = 230 × √2 = 325 V</td></tr>
+<tr><td class="k">Planck constant h</td><td>6.63 × 10⁻³⁴ J s</td><td>E = hf</td></tr>
+<tr><td class="k">Atomic mass unit u</td><td>1.66 × 10⁻²⁷ kg = 931 MeV</td><td>Energy from E = mc²</td></tr>
+<tr><td class="k">Rydberg-type hydrogen energy</td><td>E(n) = −13.6 eV ÷ n²</td><td>Ground state −13.6 eV</td></tr>
+</table>
+<h3>SI Units in Base Terms</h3>
+<table class="long"><tr><th style="width:26%">Quantity</th><th style="width:20%">Unit</th><th>In other units</th></tr>
+<tr><td class="k">Force</td><td>newton (N)</td><td>kg m s⁻²</td></tr>
+<tr><td class="k">Work, energy, heat</td><td>joule (J)</td><td>N m = kg m² s⁻²</td></tr>
+<tr><td class="k">Power</td><td>watt (W)</td><td>J s⁻¹</td></tr>
+<tr><td class="k">Pressure</td><td>pascal (Pa)</td><td>N m⁻²</td></tr>
+<tr><td class="k">Frequency</td><td>hertz (Hz)</td><td>s⁻¹</td></tr>
+<tr><td class="k">Charge</td><td>coulomb (C)</td><td>A s</td></tr>
+<tr><td class="k">Potential difference</td><td>volt (V)</td><td>J C⁻¹</td></tr>
+<tr><td class="k">Resistance</td><td>ohm (Ω)</td><td>V A⁻¹</td></tr>
+<tr><td class="k">Capacitance</td><td>farad (F)</td><td>C V⁻¹</td></tr>
+<tr><td class="k">Inductance</td><td>henry (H)</td><td>V s A⁻¹</td></tr>
+<tr><td class="k">Magnetic flux density</td><td>tesla (T)</td><td>N A⁻¹ m⁻¹ = Wb m⁻²</td></tr>
+<tr><td class="k">Magnetic flux</td><td>weber (Wb)</td><td>V s = T m²</td></tr>
+<tr><td class="k">Lens power</td><td>dioptre (D)</td><td>m⁻¹</td></tr>
+<tr><td class="k">Activity</td><td>becquerel (Bq)</td><td>decays s⁻¹</td></tr>
+</table>
+<h3>Prefixes and Conversions</h3>
+<table class="long"><tr><th style="width:20%">Item</th><th style="width:30%">Value</th><th style="width:20%">Item</th><th>Value</th></tr>
+<tr><td class="k">nano (n)</td><td>10⁻⁹</td><td>kilo (k)</td><td>10³</td></tr>
+<tr><td class="k">micro (μ)</td><td>10⁻⁶</td><td>mega (M)</td><td>10⁶</td></tr>
+<tr><td class="k">milli (m)</td><td>10⁻³</td><td>giga (G)</td><td>10⁹</td></tr>
+<tr><td class="k">centi (c)</td><td>10⁻²</td><td>tera (T)</td><td>10¹²</td></tr>
+<tr><td class="k">km h⁻¹ → m s⁻¹</td><td>÷ 3.6 (72 km h⁻¹ = 20 m s⁻¹)</td><td>rpm → rad s⁻¹</td><td>× 2π ÷ 60</td></tr>
+<tr><td class="k">cm² → m²</td><td>× 10⁻⁴</td><td>cm³ → m³</td><td>× 10⁻⁶</td></tr>
+<tr><td class="k">litre → m³</td><td>× 10⁻³</td><td>g cm⁻³ → kg m⁻³</td><td>× 1000</td></tr>
+<tr><td class="k">°C → K</td><td>+ 273</td><td>degrees → radians</td><td>× π ÷ 180</td></tr>
+<tr><td class="k">kWh → J</td><td>× 3.6 × 10⁶</td><td>eV → J</td><td>× 1.6 × 10⁻¹⁹</td></tr>
+<tr><td class="k">horsepower → W</td><td>× 746</td><td>atm → Pa</td><td>× 1.01 × 10⁵</td></tr>
+<tr><td class="k">minute, hour, day → s</td><td>60; 3600; 86 400</td><td>year → s</td><td>3.15 × 10⁷</td></tr>
+</table>
+<h3>Phrases That Carry Numbers</h3>
+<table class="long"><tr><th style="width:32%">Phrase</th><th>Means</th></tr>
+<tr><td class="k">from rest; starts from rest; dropped</td><td>initial speed u = 0</td></tr>
+<tr><td class="k">comes to rest; stops; just stops</td><td>final speed v = 0</td></tr>
+<tr><td class="k">at the highest point</td><td>vertical velocity = 0 (acceleration is still g)</td></tr>
+<tr><td class="k">uniform or constant speed</td><td>a = 0 and net force = 0</td></tr>
+<tr><td class="k">smooth; frictionless</td><td>friction = 0</td></tr>
+<tr><td class="k">light string; ideal pulley</td><td>massless; same tension throughout; no friction</td></tr>
+<tr><td class="k">ideal transformer or machine</td><td>efficiency 100 %; power in = power out</td></tr>
+<tr><td class="k">freely falling; projectile</td><td>only gravity acts; a = g downwards</td></tr>
+<tr><td class="k">in equilibrium</td><td>ΣF = 0 and Σmoments = 0</td></tr>
+<tr><td class="k">terminal velocity</td><td>a = 0: weight = drag (and upthrust)</td></tr>
+<tr><td class="k">just leaves the surface or just completes the loop</td><td>contact force N = 0</td></tr>
+<tr><td class="k">elastic collision</td><td>kinetic energy conserved as well as momentum</td></tr>
+<tr><td class="k">completely inelastic; stick together</td><td>common final velocity; maximum KE loss</td></tr>
+<tr><td class="k">at STP</td><td>T = 273 K, P = 1.01 × 10⁵ Pa</td></tr>
+<tr><td class="k">in air</td><td>refractive index 1.00</td></tr>
+<tr><td class="k">at the critical angle</td><td>angle of refraction = 90°</td></tr>
+<tr><td class="k">at minimum deviation</td><td>ray passes symmetrically through the prism</td></tr>
+<tr><td class="k">at resonance (series RLC)</td><td>X(L) = X(C); impedance = R; current is maximum</td></tr>
+<tr><td class="k">balanced bridge</td><td>no galvanometer current; ratios equal</td></tr>
+<tr><td class="k">after n half-lives</td><td>fraction left = (½)ⁿ</td></tr>
+<tr><td class="k">maximum power transfer</td><td>load resistance R = internal resistance r</td></tr>
+<tr><td class="k">negligible mass, resistance, loss</td><td>set it to zero</td></tr>
+</table>
+<h3>Limits and Sanity Checks</h3>
+<table class="long"><tr><th style="width:28%">Quantity</th><th style="width:36%">Limit</th><th>Use</th></tr>
+<tr><td class="k">Efficiency</td><td>Below 100 % for a real machine</td><td>Reject 105 % or 'more than input'</td></tr>
+<tr><td class="k">sin θ, cos θ</td><td>Between −1 and 1</td><td>Reject sin θ = 1.4 in refraction</td></tr>
+<tr><td class="k">Speed</td><td>Below c = 3.0 × 10⁸ m s⁻¹</td><td>Check relativistic-size answers</td></tr>
+<tr><td class="k">Refractive index</td><td>At least 1</td><td>Reject n = 0.8</td></tr>
+<tr><td class="k">Critical angle</td><td>Exists only going from denser to rarer medium</td><td>No total internal reflection from air into glass</td></tr>
+<tr><td class="k">Range of a projectile</td><td>Maximum at 45°: R(max) = u² ÷ g</td><td>Check against given launch speed</td></tr>
+<tr><td class="k">Resultant of two forces</td><td>F₁ − F₂ ≤ R ≤ F₁ + F₂</td><td>3 N and 4 N can give 1 N to 7 N, never 9 N</td></tr>
+<tr><td class="k">Temperature</td><td>Not below 0 K</td><td>Gas-law temperatures must be in kelvin</td></tr>
+<tr><td class="k">Coefficient of friction μ</td><td>Usually 0 to about 1.5</td><td>μ = 6 is a slip</td></tr>
+<tr><td class="k">Fraction remaining after decay</td><td>Between 0 and 1</td><td>N never goes negative</td></tr>
+<tr><td class="k">Power factor</td><td>0 to 1</td><td>cos φ above 1 is wrong</td></tr>
+<tr><td class="k">Image distance in a mirror or lens</td><td>Real-is-positive: real image v > 0; virtual v < 0</td><td>Sign tells the image type</td></tr>
+<tr><td class="k">Terminal speed</td><td>Below the speed reached in vacuum free fall</td><td>Drag only reduces speed</td></tr>
+<tr><td class="k">Transformer output power</td><td>At most the input power</td><td>Output current cannot exceed what the primary supplies</td></tr>
+<tr><td class="k">Mass of a daughter nucleus plus fragments</td><td>Less than the parent's mass</td><td>The difference is released as energy</td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 1</span>Measurement and Units</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">1.1 Units and conversion</td><td>new value = old value × conversion factor</td><td>Length, area, volume, speed, density; prefix up or down; compound units (km h⁻¹, g cm⁻³, kWh)</td><td>Prefix table; 1 L = 10⁻³ m³; 1 h = 3600 s</td><td>The factor for area is squared and for volume cubed: 1 m² = 10⁴ cm², not 100</td></tr>
+<tr><td class="k">1.2 Density and relative density</td><td>ρ = m ÷ V; relative density = ρ(substance) ÷ ρ(water)</td><td>Solve for m, V or ρ; irregular solid by displacement; alloys and mixtures; hollow objects</td><td>ρ(water) = 1000 kg m⁻³</td><td>In an alloy the volumes add; the densities do not average unless the volumes are equal</td></tr>
+<tr><td class="k">1.3 Mean and percentage error</td><td>mean = Σx ÷ n; % error = (error ÷ true value) × 100</td><td>Mean of readings; error from the true value; errors of a product or quotient; instrument precision</td><td>Least count: metre rule 1 mm; vernier 0.1 mm; micrometer 0.01 mm</td><td>For products and quotients add percentage errors; for sums and differences add absolute errors</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">1.1 Units and conversion</td></tr>
+<tr><td class="k">1.1a</td><td>Convert 72 km h⁻¹ to m s⁻¹.</td><td>72 × 1000 ÷ 3600 = 20 m s⁻¹ (divide by 3.6). <b>Ans: 20 m s⁻¹</b></td></tr>
+<tr><td class="k">1.1b</td><td>A sheet has an area of 150 cm². Express it in m².</td><td>1 cm = 10⁻² m, so 1 cm² = 10⁻⁴ m². 150 × 10⁻⁴ = 0.015 m². <b>Ans: 0.015 m²</b></td></tr>
+<tr><td class="k">1.1c</td><td>A liquid has density 0.85 g cm⁻³. Express this in kg m⁻³ and find the mass of 2.5 litres.</td><td>0.85 × 1000 = 850 kg m⁻³. 2.5 L = 2.5 × 10⁻³ m³. Mass = ρV = 850 × 2.5 × 10⁻³ = 2.125 kg. <b>Ans: 850 kg m⁻³; 2.125 kg</b></td></tr>
+<tr class="sub"><td colspan="3">1.2 Density and relative density</td></tr>
+<tr><td class="k">1.2a</td><td>A block measures 10 cm × 5 cm × 4 cm and has mass 1.6 kg. Find its density in kg m⁻³.</td><td>V = 0.10 × 0.05 × 0.04 = 2 × 10<sup>-4</sup> m³. ρ = m ÷ V = 1.6 ÷ 2 × 10<sup>-4</sup> = 8 000 kg m⁻³. <b>Ans: 8 000 kg m⁻³</b></td></tr>
+<tr><td class="k">1.2b</td><td>A stone of mass 120 g raises the water in a measuring cylinder from 50 mL to 90 mL. Find its volume, density and relative density.</td><td>V = 90 − 50 = 40 cm³. ρ = 120 ÷ 40 = 3 g cm⁻³ = 3 000 kg m⁻³. Relative density = 3 (water is 1 g cm⁻³). <b>Ans: 40 cm³; 3 000 kg m⁻³; 3</b></td></tr>
+<tr><td class="k">1.2c</td><td>An alloy is made from 3 kg of metal A (density 8900 kg m⁻³) and 2 kg of metal B (density 2700 kg m⁻³). Find its density, assuming the volumes add.</td><td>V = 3 ÷ 8900 + 2 ÷ 2700 = 1.078 × 10<sup>-3</sup> m³. ρ = total mass ÷ total volume = 5 ÷ 1.078 × 10<sup>-3</sup> = 4 640 kg m⁻³ (the simple average, 5 800, is wrong). <b>Ans: 4 640 kg m⁻³</b></td></tr>
+<tr class="sub"><td colspan="3">1.3 Mean and percentage error</td></tr>
+<tr><td class="k">1.3a</td><td>Four readings of a length are 2.45, 2.48, 2.46 and 2.47 cm. Find the mean.</td><td>Mean = (2.45 + 2.48 + 2.46 + 2.47) ÷ 4 = 2.465 cm. <b>Ans: 2.465 cm</b></td></tr>
+<tr><td class="k">1.3b</td><td>An experiment gives g = 9.5 m s⁻² where the accepted value is 9.8. Find the percentage error.</td><td>Error = 9.8 − 9.5 = 0.3. % error = 0.3 ÷ 9.8 × 100 = 3.06 %. <b>Ans: 3.06 %</b></td></tr>
+<tr><td class="k">1.3c</td><td>A rectangle is measured as 20.0 ± 0.1 cm by 5.0 ± 0.1 cm. Find its area and the percentage and absolute uncertainty.</td><td>Area = 20.0 × 5.0 = 100 cm². % uncertainties: 0.5 % + 2 % = 2.5 %. Absolute = 2.5 % of 100 = ± 2.5 cm². <b>Ans: 100 cm² ± 2.5 cm² (2.5 %)</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 2</span>Motion</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">2.1 Speed, velocity and average speed</td><td>speed = distance ÷ time; velocity = displacement ÷ time</td><td>Average over several legs; equal distances or equal times; train crossing a bridge or pole; relative speed; km h⁻¹ conversion</td><td>Convert to m s⁻¹ with ÷ 3.6</td><td>Average speed over equal distances is not the mean of the two speeds; a full lap gives displacement 0, so velocity 0</td></tr>
+<tr><td class="k">2.2 Equations of motion (uniform acceleration)</td><td>v = u + at;  s = ut + ½at²;  v² = u² + 2as;  s = ½(u + v)t</td><td>Pick the equation that omits the unknown variable; braking (a negative); reaction time then braking; two bodies meeting</td><td>Constant acceleration only; 'from rest' u = 0</td><td>Stopping distance grows with the square of speed; reaction time adds distance at constant speed</td></tr>
+<tr><td class="k">2.3 Free fall</td><td>v = u + gt;  h = ut + ½gt²;  v² = u² + 2gh;  H(max) = u² ÷ 2g</td><td>Dropped; thrown up or down; maximum height and time of flight; object released from a moving balloon or lift; depth of a well by echo or splash</td><td>g = 10 m s⁻² downward; air resistance ignored</td><td>At the top v = 0 but a = g; a body thrown up lands with the same speed; a released object keeps the balloon's velocity</td></tr>
+<tr><td class="k">2.4 Velocity–time graphs</td><td>slope = acceleration;  area under the graph = displacement</td><td>Trapezium and triangle areas; deceleration; average speed from a graph; graph that crosses zero (reversal)</td><td>Time on the x-axis, velocity on the y-axis</td><td>Area below the axis is negative displacement: distance and displacement then differ</td></tr>
+<tr><td class="k">2.5 Projectile motion</td><td>x = (u cos θ)t with a = 0;  y = (u sin θ)t − ½gt²</td><td>Horizontal launch from a height; launch at an angle; range, height, time; hitting a target at a given distance; speed and direction on landing</td><td>g = 10 m s⁻²; ignore air; R = u² sin 2θ ÷ g; T = 2u sin θ ÷ g; H = u² sin²θ ÷ 2g</td><td>Horizontal speed never changes; angles that add to 90° (30° and 60°) give equal range; range is greatest at 45°</td></tr>
+<tr><td class="k">2.6 Circular motion</td><td>v = ωr;  ω = 2πf = 2π ÷ T;  a = v² ÷ r = ω²r;  F = mv² ÷ r</td><td>Rpm to rad s⁻¹; period and frequency; tension, friction or gravity as the centripetal force; top and bottom of a vertical circle; flat bend</td><td>Centripetal force is the net inward force; g = 10 m s⁻²</td><td>Centripetal force is not an extra force; at the top of a loop the minimum speed is √(gr), where the contact force is zero</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">2.1 Speed, velocity and average speed</td></tr>
+<tr><td class="k">2.1a</td><td>A car covers 60 km in 1.5 h. Find its average speed in km h⁻¹ and m s⁻¹.</td><td>v = 60 ÷ 1.5 = 40 km h⁻¹ = 40 ÷ 3.6 = 11.1 m s⁻¹. <b>Ans: 40 km h⁻¹ = 11.1 m s⁻¹</b></td></tr>
+<tr><td class="k">2.1b</td><td>A car travels the first 60 km at 40 km h⁻¹ and the next 60 km at 60 km h⁻¹. Find its average speed for the whole trip.</td><td>t₁ = 60 ÷ 40 = 1.5 h; t₂ = 60 ÷ 60 = 1 h. Average = 120 ÷ 2.5 = 48 km h⁻¹. (The mean of 40 and 60 would be 50: wrong.) <b>Ans: 48 km h⁻¹</b></td></tr>
+<tr><td class="k">2.1c</td><td>A train 200 m long moving at 72 km h⁻¹ crosses a platform 300 m long. How long does it take from the engine reaching the platform to the last coach leaving it?</td><td>v = 72 ÷ 3.6 = 20 m s⁻¹. Distance = train length + platform length = 500 m. t = 500 ÷ 20 = 25 s. <b>Ans: 25 s</b></td></tr>
+<tr class="sub"><td colspan="3">2.2 Equations of motion (uniform acceleration)</td></tr>
+<tr><td class="k">2.2a</td><td>A car accelerates from rest at 2 m s⁻² for 8 s. Find its final speed and the distance covered.</td><td>v = u + at = 0 + 2 × 8 = 16 m s⁻¹. s = ½at² = ½ × 2 × 8² = 64 m. <b>Ans: 16 m s⁻¹; 64 m</b></td></tr>
+<tr><td class="k">2.2b</td><td>A car moving at 30 m s⁻¹ brakes uniformly at 5 m s⁻². Find the stopping distance and the stopping time.</td><td>v² = u² − 2as with v = 0: s = u² ÷ 2a = 900 ÷ 10 = 90 m. t = u ÷ a = 6 s. <b>Ans: 90 m; 6 s</b></td></tr>
+<tr><td class="k">2.2c</td><td>A driver at 20 m s⁻¹ has a reaction time of 0.7 s, then brakes at 4 m s⁻². Find the total stopping distance, and the same at 40 m s⁻¹.</td><td>At 20 m s⁻¹: thinking distance = 20 × 0.7 = 14 m; braking = 400 ÷ 8 = 50 m; total 64 m. At 40 m s⁻¹: 28 + 200 = 228 m. Doubling the speed more than tripled the distance. <b>Ans: 64 m; 228 m</b></td></tr>
+<tr class="sub"><td colspan="3">2.3 Free fall</td></tr>
+<tr><td class="k">2.3a</td><td>A stone is dropped from a cliff and hits the ground after 3 s. Find the height of the cliff and the speed on impact.</td><td>h = ½gt² = ½ × 10 × 3² = 45 m. v = gt = 10 × 3 = 30 m s⁻¹. <b>Ans: 45 m; 30 m s⁻¹</b></td></tr>
+<tr><td class="k">2.3b</td><td>A ball is thrown vertically upward at 25 m s⁻¹. Find the greatest height and the total time in the air.</td><td>H = u² ÷ 2g = 625 ÷ 20 = 31.25 m. Time up = u ÷ g = 2.5 s; total = 5 s. <b>Ans: 31.25 m; 5 s</b></td></tr>
+<tr><td class="k">2.3c</td><td>A balloon rising at 5 m s⁻¹ releases a sandbag when 40 m above the ground. Find the time for the bag to reach the ground and its speed there.</td><td>Take up as positive: −40 = 5t − 5t². So 5t² − 5t − 40 = 0, giving t = (5 + √(5² + 4 × 5 × 40)) ÷ 10 = 3.37 s. v = gt − 5 = 28.7 m s⁻¹ downward. The bag first rises, because it starts with the balloon's 5 m s⁻¹. <b>Ans: 3.37 s; 28.7 m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">2.4 Velocity–time graphs</td></tr>
+<tr><td class="k">2.4a</td><td>A body accelerates from rest to 12 m s⁻¹ in 6 s, moves at constant speed for 10 s, then stops uniformly in 4 s. Find the total distance.</td><td>Triangle 1: ½ × 6 × 12 = 36 m. Rectangle: 12 × 10 = 120 m. Triangle 2: ½ × 4 × 12 = 24 m. Total = 180 m. <b>Ans: 180 m</b></td></tr>
+<tr><td class="k">2.4b</td><td>For the journey above, find the average speed and the acceleration in the last stage.</td><td>Average speed = 180 ÷ 20 = 9 m s⁻¹. Last stage: a = (0 − 12) ÷ 4 = −3 m s⁻² (negative: slowing). <b>Ans: 9 m s⁻¹; −3 m s⁻²</b></td></tr>
+<tr><td class="k">2.4c</td><td>A body's velocity rises from 0 to 20 m s⁻¹ in 4 s, stays at 20 m s⁻¹ for 6 s, then falls uniformly to −10 m s⁻¹ in 4 s. Find the displacement and the distance travelled.</td><td>Stage 3 crosses zero 2.67 s after it starts (20 ÷ 30 × 4). Areas: 0–4 s: 40 m; 4–10 s: 120 m; forward part of stage 3: 26.7 m; backward part: 6.67 m. Displacement = 40 + 120 + 26.7 − 6.67 = 180 m. Distance = 193 m. <b>Ans: displacement 180 m; distance 193 m</b></td></tr>
+<tr class="sub"><td colspan="3">2.5 Projectile motion</td></tr>
+<tr><td class="k">2.5a</td><td>A ball is kicked horizontally at 15 m s⁻¹ from a cliff 20 m high. Find the time to land and the horizontal distance.</td><td>Vertical: h = ½gt², so t = √(2h ÷ g) = √(40 ÷ 10) = 2 s. Horizontal: x = ut = 15 × 2 = 30 m. <b>Ans: 2 s; 30 m</b></td></tr>
+<tr><td class="k">2.5b</td><td>A projectile leaves the ground at 40 m s⁻¹ at 30° above the horizontal. Find the time of flight, the maximum height and the range.</td><td>u sin θ = 20, u cos θ = 34.6. T = 2u sin θ ÷ g = 4 s. H = (u sin θ)² ÷ 2g = 20 m. R = u² sin 2θ ÷ g = 139 m. <b>Ans: 4 s; 20 m; 139 m</b></td></tr>
+<tr><td class="k">2.5c</td><td>A ball is launched at 25 m s⁻¹ at an angle with sin θ = 0.8 and cos θ = 0.6, towards a wall 30 m away. Find the height at which it hits the wall and its vertical velocity there.</td><td>t = x ÷ (u cos θ) = 30 ÷ 15 = 2 s. y = (u sin θ)t − ½gt² = 20 × 2 − 5 × 4 = 20 m. v(y) = 20 − 10 × 2 = 0 m s⁻¹, so the ball is at the top of its path. <b>Ans: 20 m; 0 m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">2.6 Circular motion</td></tr>
+<tr><td class="k">2.6a</td><td>A 0.5 kg stone is whirled on a 0.8 m string in a horizontal circle at 4 m s⁻¹. Find the tension.</td><td>The tension provides the centripetal force: F = mv² ÷ r = 0.5 × 16 ÷ 0.8 = 10 N. <b>Ans: 10 N</b></td></tr>
+<tr><td class="k">2.6b</td><td>A wheel turns at 1200 rpm. Find ω, the frequency and the speed of a point on its rim of radius 0.3 m.</td><td>ω = 2π × 1200 ÷ 60 = 126 rad s⁻¹. f = 1200 ÷ 60 = 20 Hz. v = ωr = 126 × 0.3 = 37.7 m s⁻¹. <b>Ans: 126 rad s⁻¹; 20 Hz; 37.7 m s⁻¹</b></td></tr>
+<tr><td class="k">2.6c</td><td>A car takes a flat bend of radius 50 m where μ = 0.8. Find the greatest safe speed. Then find the least speed at the top of a vertical circle of radius 0.9 m for an object just to stay in contact.</td><td>Friction supplies the force: μmg = mv² ÷ r, so v = √(μgr) = √(0.8 × 10 × 50) = 20 m s⁻¹ (mass cancels). At the top, N = 0 and mg = mv² ÷ r, so v = √(gr) = √(10 × 0.9) = 3 m s⁻¹. <b>Ans: 20 m s⁻¹; 3 m s⁻¹</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 3</span>Forces, Moments, Pressure and Fluids</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">3.1 Newton's second law and weight</td><td>ΣF = ma;  W = mg</td><td>Find F, m or a; net force with friction or drag; connected bodies; lift (R = m(g ± a)); two masses over a pulley</td><td>g = 10 m s⁻²; weight is in N, mass in kg</td><td>Use the net force, not the applied force; the scale in a lift reads the contact force, not the weight</td></tr>
+<tr><td class="k">3.2 Friction and inclined planes</td><td>f = μR;  on a slope R = mg cos θ, pull down the slope = mg sin θ</td><td>Constant speed vs accelerating; pull at an angle (R changes); a = g(sin θ − μ cos θ); angle of friction tan θ = μ; force to push up a slope</td><td>sin 30° = 0.5, cos 30° = 0.866; sin 53° = 0.8, cos 53° = 0.6</td><td>R is not always mg: on a slope it is mg cos θ; a pull above the horizontal reduces R</td></tr>
+<tr><td class="k">3.3 Resolution and resultant of vectors</td><td>F(x) = F cos θ;  F(y) = F sin θ;  R² = A² + B² + 2AB cos θ (θ between the two vectors)</td><td>Perpendicular vectors; any angle; equilibrium of three forces; boat crossing a river; bearings</td><td>R lies between |A − B| and A + B</td><td>Components sum separately to zero in equilibrium; the heading of a boat is not its path</td></tr>
+<tr><td class="k">3.4 Momentum, impulse and collisions</td><td>p = mv;  impulse = Ft = Δp;  Σp(before) = Σp(after)</td><td>Stick together; bounce; explosion or recoil; mean force from contact time; kinetic energy lost</td><td>Momentum is a vector: opposite directions subtract</td><td>Kinetic energy is conserved only in elastic collisions; a rebound changes velocity by the sum of the two speeds</td></tr>
+<tr><td class="k">3.5 Moments and equilibrium</td><td>Σ clockwise moments = Σ anticlockwise moments;  ΣF up = ΣF down</td><td>Seesaw; uniform beam on two supports; metre rule balanced with a mass; hinged beams and ladders; reaction at the pivot</td><td>The weight of a uniform rod acts at its midpoint</td><td>Include the weight of the beam itself; the pivot reaction equals the total downward force when balanced</td></tr>
+<tr><td class="k">3.6 Hooke's law and springs</td><td>F = ke;  energy stored = ½ke² = ½Fe</td><td>Find k from data; length from extension; springs in series (1/k = 1/k₁ + 1/k₂) and parallel (k = k₁ + k₂); energy stored</td><td>Valid only within the elastic limit</td><td>e is the extension beyond natural length, not the total length; in series each spring carries the full load</td></tr>
+<tr><td class="k">3.7 Pressure in solids and liquids</td><td>p = F ÷ A;  p = ρgh;  total pressure = P(atm) + ρgh</td><td>Pressure of a standing person or a sharp point; pressure at a depth; gauge or absolute; U-tube and mercury manometer; barometer</td><td>P(atm) = 1.01 × 10⁵ Pa = 76 cm Hg; ρ(water) = 1000; ρ(Hg) = 13 600</td><td>Liquid pressure depends on depth and density only, not on container shape; gauge pressure excludes the atmosphere</td></tr>
+<tr><td class="k">3.8 Archimedes' principle and floating</td><td>upthrust = weight of fluid displaced = ρ(fluid)Vg;  floating: upthrust = weight</td><td>Apparent weight = W − U; density by weighing in air and water; fraction submerged = ρ(object) ÷ ρ(fluid); extra load to sink; balloon lift</td><td>ρ(water) = 1000 kg m⁻³</td><td>Upthrust depends on submerged volume and fluid density, not on depth or the object's weight; a floating object displaces its own weight of fluid</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">3.1 Newton's second law and weight</td></tr>
+<tr><td class="k">3.1a</td><td>A 1200 kg car has an engine force of 3000 N against resistance of 600 N. Find its acceleration.</td><td>Net force = 3000 − 600 = 2400 N. a = F ÷ m = 2400 ÷ 1200 = 2 m s⁻². <b>Ans: 2 m s⁻²</b></td></tr>
+<tr><td class="k">3.1b</td><td>A 3 kg block pushes a 2 kg block along a smooth floor under a 10 N push on the 3 kg block. Find the acceleration and the force between the blocks.</td><td>Both move together: a = 10 ÷ (3 + 2) = 2 m s⁻². The 3 kg block pushes the 2 kg block with F = 2 × 2 = 4 N. <b>Ans: 2 m s⁻²; 4 N</b></td></tr>
+<tr><td class="k">3.1c</td><td>A 60 kg person stands on a scale in a lift. Find the reading when the lift accelerates up at 2 m s⁻², accelerates down at 2 m s⁻², and moves at constant speed.</td><td>Up: R = m(g + a) = 60 × 12 = 720 N. Down: R = m(g − a) = 60 × 8 = 480 N. Constant speed: R = mg = 600 N. <b>Ans: 720 N; 480 N; 600 N</b></td></tr>
+<tr class="sub"><td colspan="3">3.2 Friction and inclined planes</td></tr>
+<tr><td class="k">3.2a</td><td>A 20 kg box slides on a level floor with μ = 0.3. Find the horizontal force that keeps it sliding at constant speed.</td><td>R = mg = 200 N. At constant speed the push equals friction: F = μR = 0.3 × 200 = 60 N. <b>Ans: 60 N</b></td></tr>
+<tr><td class="k">3.2b</td><td>A block slides down a rough slope at 30° to the horizontal with μ = 0.2. Find its acceleration.</td><td>a = g(sin θ − μ cos θ) = 10 × (0.5 − 0.2 × 0.866) = 3.27 m s⁻². (Mass cancels.) <b>Ans: 3.27 m s⁻²</b></td></tr>
+<tr><td class="k">3.2c</td><td>A 50 kg crate is pulled by a rope at 30° above the horizontal with 200 N. μ = 0.25. Find the acceleration.</td><td>Vertical: R = mg − F sin θ = 500 − 100 = 400 N. Friction = 0.25 × 400 = 100 N. Horizontal pull = F cos θ = 173 N. a = (173 − 100) ÷ 50 = 1.46 m s⁻². <b>Ans: 1.46 m s⁻²</b></td></tr>
+<tr class="sub"><td colspan="3">3.3 Resolution and resultant of vectors</td></tr>
+<tr><td class="k">3.3a</td><td>Forces of 6 N east and 8 N north act at a point. Find the resultant and its direction.</td><td>R = √(6² + 8²) = 10 N. Angle north of east = tan⁻¹(8 ÷ 6) = 53.1°. <b>Ans: 10 N at 53.1° north of east</b></td></tr>
+<tr><td class="k">3.3b</td><td>Forces of 10 N and 15 N act at 60° to each other. Find the magnitude of the resultant.</td><td>R² = 10² + 15² + 2 × 10 × 15 × cos 60° = 475, so R = 21.8 N. <b>Ans: 21.8 N</b></td></tr>
+<tr><td class="k">3.3c</td><td>A boat moves at 4 m s⁻¹ in still water, heading straight across a river 120 m wide that flows at 3 m s⁻¹. Find the crossing time, the downstream drift, the actual speed and the angle between the path and the heading.</td><td>t = 120 ÷ 4 = 30 s. Drift = 3 × 30 = 90 m. Speed = √(4² + 3²) = 5 m s⁻¹. The path deviates 36.9° from the heading. <b>Ans: 30 s; 90 m; 5 m s⁻¹; 36.9°</b></td></tr>
+<tr class="sub"><td colspan="3">3.4 Momentum, impulse and collisions</td></tr>
+<tr><td class="k">3.4a</td><td>A 1200 kg car moving at 15 m s⁻¹ hits a stationary 800 kg car and they move off together. Find the common speed.</td><td>1200 × 15 = (1200 + 800)v, so v = 18 000 ÷ 2000 = 9 m s⁻¹. <b>Ans: 9 m s⁻¹</b></td></tr>
+<tr><td class="k">3.4b</td><td>A 0.15 kg ball hits a wall at 20 m s⁻¹ and rebounds at 15 m s⁻¹. The contact lasts 0.01 s. Find the impulse and the mean force.</td><td>Δp = m(v − u) = 0.15 × (15 + 20) = 5.25 N s (the directions are opposite, so the speeds add). F = Δp ÷ t = 5.25 ÷ 0.01 = 525 N. <b>Ans: 5.25 N s; 525 N</b></td></tr>
+<tr><td class="k">3.4c</td><td>A 4 kg trolley at 3 m s⁻¹ meets a 2 kg trolley moving the opposite way at 2 m s⁻¹. They stick together. Find the common velocity and the kinetic energy lost.</td><td>Take the first direction as positive: p = 4 × 3 + 2 × (-2) = 8 kg m s⁻¹. v = 8 ÷ 6 = 1.33 m s⁻¹. KE before = 22 J; after = 5.33 J; lost = 16.7 J (heat and sound). <b>Ans: 1.33 m s⁻¹; 16.7 J</b></td></tr>
+<tr class="sub"><td colspan="3">3.5 Moments and equilibrium</td></tr>
+<tr><td class="k">3.5a</td><td>A 30 kg child sits 2 m from the pivot of a seesaw. Where must a 40 kg child sit on the other side to balance it?</td><td>30 × 10 × 2 = 40 × 10 × d, so d = 60 ÷ 40 = 1.5 m. <b>Ans: 1.5 m</b></td></tr>
+<tr><td class="k">3.5b</td><td>A uniform beam 4 m long of mass 20 kg rests on supports at its two ends. A 50 kg load is 1 m from the left end. Find the two reactions.</td><td>Moments about the left end: R(right) × 4 = 200 × 2.0 + 500 × 1 = 900, so R(right) = 225 N. R(left) = 700 − 225 = 475 N. <b>Ans: 475 N (left); 225 N (right)</b></td></tr>
+<tr><td class="k">3.5c</td><td>A uniform metre rule balances at the 40 cm mark with a 100 g mass hung at the 10 cm mark. Find the mass of the rule.</td><td>The rule's weight acts at the 50 cm mark, 10 cm from the pivot. The 100 g mass is 30 cm from the pivot on the other side. M × 10 = 100 × 30, so M = 300 g. <b>Ans: 300 g</b></td></tr>
+<tr class="sub"><td colspan="3">3.6 Hooke's law and springs</td></tr>
+<tr><td class="k">3.6a</td><td>A spring extends 4.0 cm under a 6 N load. Find k and the extension under 15 N.</td><td>k = F ÷ e = 6 ÷ 0.04 = 150 N m⁻¹. e = 15 ÷ 150 = 0.1 m = 10 cm. <b>Ans: 150 N m⁻¹; 10 cm</b></td></tr>
+<tr><td class="k">3.6b</td><td>A spring of natural length 20 cm has k = 200 N m⁻¹. Find its length under an 8 N load and the energy stored.</td><td>e = 8 ÷ 200 = 0.04 m = 4 cm. Length = 20 + 4 = 24 cm. E = ½ke² = ½ × 200 × 0.04² = 0.16 J. <b>Ans: 24 cm; 0.16 J</b></td></tr>
+<tr><td class="k">3.6c</td><td>Two springs of constants 300 and 600 N m⁻¹ are joined in series and then in parallel. Find the effective constant of each arrangement and the extension under 18 N.</td><td>Series: 1/k = 1/300 + 1/600, so k = 200 N m⁻¹; e = 18 ÷ 200 = 0.09 m. Parallel: k = 300 + 600 = 900 N m⁻¹; e = 18 ÷ 900 = 0.02 m. <b>Ans: series 200 N m⁻¹, 0.09 m; parallel 900 N m⁻¹, 0.02 m</b></td></tr>
+<tr class="sub"><td colspan="3">3.7 Pressure in solids and liquids</td></tr>
+<tr><td class="k">3.7a</td><td>A 60 kg person stands on two feet, each of area 200 cm². Find the pressure on the ground.</td><td>F = mg = 600 N. A = 2 × 0.02 = 0.04 m². p = F ÷ A = 600 ÷ 0.04 = 15 000 Pa. <b>Ans: 15 000 Pa</b></td></tr>
+<tr><td class="k">3.7b</td><td>A diver is 30 m deep in sea water of density 1030 kg m⁻³. Find the gauge and total pressure. (P(atm) = 1.01 × 10⁵ Pa)</td><td>Gauge = ρgh = 1030 × 10 × 30 = 309 000 Pa. Total = 309 000 + 101 000 = 410 000 Pa. <b>Ans: 309 000 Pa; 410 000 Pa</b></td></tr>
+<tr><td class="k">3.7c</td><td>In an open mercury manometer the mercury is 12.0 cm higher on the open side than on the gas side. Find the gas pressure in Pa and in cm Hg. (Atmosphere 76 cm Hg)</td><td>The gas pressure exceeds the atmosphere by the extra column: P = 101000 + 13600 × 10 × 0.12 = 117 000 Pa. In cm Hg: 76 + 12.0 = 88.0 cm Hg. <b>Ans: 117 000 Pa = 88.0 cm Hg</b></td></tr>
+<tr class="sub"><td colspan="3">3.8 Archimedes' principle and floating</td></tr>
+<tr><td class="k">3.8a</td><td>A block of volume 0.002 m³ is completely under water. Find the upthrust.</td><td>U = ρVg = 1000 × 0.002 × 10 = 20 N. <b>Ans: 20 N</b></td></tr>
+<tr><td class="k">3.8b</td><td>An object weighs 12 N in air and 8 N in water. Find the upthrust, its volume, density and relative density.</td><td>U = 12 − 8 = 4 N. V = U ÷ ρg = 4 ÷ 10 000 = 4 × 10<sup>-4</sup> m³. m = 12 ÷ 10 = 1.2 kg. ρ = m ÷ V = 3 000 kg m⁻³. Relative density = 3. <b>Ans: 4 N; 4 × 10<sup>-4</sup> m³; 3 000 kg m⁻³; 3</b></td></tr>
+<tr><td class="k">3.8c</td><td>A wooden block of density 600 kg m⁻³ and volume 0.01 m³ floats in water. Find the fraction submerged and the mass that must be placed on it to just submerge it.</td><td>Floating: fraction = 600 ÷ 1000 = 0.6. To just submerge, the extra weight equals the unused upthrust: (1000 − 600) × 10 × 0.01 = 40 N, a mass of 4 kg. <b>Ans: 0.6; 4 kg</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 4</span>Work, Energy, Power and Machines</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">4.1 Work and energy</td><td>W = Fd cos θ;  PE = mgh;  KE = ½mv²;  net work = change in KE</td><td>Force at an angle; lifting; friction; energy conservation on ramps and swings; spring energy; stopping distance</td><td>g = 10 m s⁻²; PE is measured from a chosen level</td><td>A force perpendicular to the motion does no work; mass cancels in free fall and on a smooth ramp</td></tr>
+<tr><td class="k">4.2 Power and efficiency</td><td>P = W ÷ t = Fv;  efficiency = useful output ÷ total input × 100 %</td><td>Vehicle at constant speed (F = resistance); lifting loads; chains of efficiencies; horsepower and kWh</td><td>1 hp = 746 W; 1 kWh = 3.6 × 10⁶ J</td><td>At constant speed the driving force equals the resistance; efficiencies in a chain multiply</td></tr>
+<tr><td class="k">4.3 Machines</td><td>MA = load ÷ effort;  VR = effort distance ÷ load distance;  η = MA ÷ VR × 100 %</td><td>Pulley (n ropes), inclined plane (l ÷ h), wheel and axle (R ÷ r), lever, screw (2πr ÷ p), hydraulic press; friction from lost work</td><td>Real machines: MA < VR</td><td>Efficiency from forces and from distances must agree; the load can be a weight in N or a mass in kg</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">4.1 Work and energy</td></tr>
+<tr><td class="k">4.1a</td><td>A sledge is pulled 12 m by a rope at 60° to the ground with a force of 50 N. Find the work done. (cos 60° = 0.5)</td><td>W = Fd cos θ = 50 × 12 × 0.5 = 300 J. <b>Ans: 300 J</b></td></tr>
+<tr><td class="k">4.1b</td><td>A 2 kg ball is released from rest at the top of a smooth curved ramp 1.8 m high. Find its speed and kinetic energy at the bottom.</td><td>mgh = ½mv², so v = √(2gh) = √(2 × 10 × 1.8) = 6 m s⁻¹. KE = mgh = 2 × 10 × 1.8 = 36 J. <b>Ans: 6 m s⁻¹; 36 J</b></td></tr>
+<tr><td class="k">4.1c</td><td>A 5 kg block sliding at 8 m s⁻¹ on a rough level surface stops after 10 m. Find the work done by friction, the friction force and μ.</td><td>Work done by friction = KE lost = ½ × 5 × 8² = 160 J. f = 160 ÷ 10 = 16 N. μ = f ÷ mg = 16 ÷ 50 = 0.32. <b>Ans: 160 J; 16 N; 0.32</b></td></tr>
+<tr class="sub"><td colspan="3">4.2 Power and efficiency</td></tr>
+<tr><td class="k">4.2a</td><td>A car moves at constant speed 20 m s⁻¹ against a total resistance of 1500 N. Find the engine power delivered to the wheels.</td><td>Constant speed: driving force = 1500 N. P = Fv = 1500 × 20 = 30 000 W = 30 kW. <b>Ans: 30 kW</b></td></tr>
+<tr><td class="k">4.2b</td><td>A pump lifts 500 kg of water through 12 m every minute and is 60 % efficient. Find the input power.</td><td>Useful power = mgh ÷ t = 500 × 10 × 12 ÷ 60 = 1 000 W. Input = 1 000 ÷ 0.6 = 1 670 W. <b>Ans: 1 670 W</b></td></tr>
+<tr><td class="k">4.2c</td><td>A 4000 W motor of efficiency 80 % drives a hoist of efficiency 70 % raising a 300 kg load at constant speed. Find the speed of the load.</td><td>Useful power = 4000 × 0.8 × 0.7 = 2 240 W. At constant speed, force = weight = 3000 N, so v = P ÷ F = 2 240 ÷ 3000 = 0.747 m s⁻¹. <b>Ans: 0.747 m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">4.3 Machines</td></tr>
+<tr><td class="k">4.3a</td><td>A block and tackle with 5 supporting ropes lifts 800 N with an effort of 200 N. Find MA, VR and efficiency.</td><td>MA = 800 ÷ 200 = 4. VR = 5. η = 4 ÷ 5 × 100 = 80 %. <b>Ans: MA 4; VR 5; 80 %</b></td></tr>
+<tr><td class="k">4.3b</td><td>An inclined plane is 5 m long and 1 m high. An effort of 100 N parallel to the plane moves a 400 N load up it. Find VR, MA, efficiency and the friction force.</td><td>VR = 5 ÷ 1 = 5. MA = 400 ÷ 100 = 4. η = 4 ÷ 5 × 100 = 80 %. Work in = 100 × 5 = 500 J; useful = 400 × 1 = 400 J; wasted 100 J = f × 5, f = 20 N. <b>Ans: VR 5; MA 4; 80 %; 20 N</b></td></tr>
+<tr><td class="k">4.3c</td><td>A wheel and axle has wheel radius 0.5 m and axle radius 0.05 m and is 90 % efficient. What load does a 60 N effort lift, and how far does the effort move when the load rises 2 m?</td><td>VR = 0.5 ÷ 0.05 = 10. MA = 0.9 × 10 = 9. Load = 60 × 9 = 540 N. Effort distance = VR × 2 = 20 m. <b>Ans: 540 N; 20 m</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 5</span>Gravitation and Orbits</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">5.1 Gravitational force and g</td><td>F = GMm ÷ r²;  g = GM ÷ r²;  g at height = g₀(R ÷ r)²</td><td>Force between two masses; g on a planet; weight at altitude; weight versus mass; g from falling-body data</td><td>G = 6.67 × 10⁻¹¹; Earth: M = 6.0 × 10²⁴ kg, R = 6.4 × 10⁶ m</td><td>r is the distance between centres; g falls as 1 ÷ r², and mass never changes with place</td></tr>
+<tr><td class="k">5.2 Orbits and escape</td><td>GMm ÷ r² = mv² ÷ r;  v = √(GM ÷ r);  T = 2π√(r³ ÷ GM);  v(esc) = √(2GM ÷ R)</td><td>Orbital speed and period at a given height; geostationary radius; mass of a planet from a moon's orbit; escape speed; Kepler's third law</td><td>Height is measured from the surface; r from the centre</td><td>The satellite's own mass cancels; r = R + h; higher orbits are slower</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">5.1 Gravitational force and g</td></tr>
+<tr><td class="k">5.1a</td><td>Two 50 kg masses are 2 m apart. Find the gravitational force between them. (G = 6.67 × 10⁻¹¹)</td><td>F = Gm₁m₂ ÷ r² = 6.67 × 10⁻¹¹ × 50 × 50 ÷ 2² = 4.17 × 10<sup>-8</sup> N, far too small to notice. <b>Ans: 4.17 × 10<sup>-8</sup> N</b></td></tr>
+<tr><td class="k">5.1b</td><td>Find g on a planet of mass 6.4 × 10<sup>23</sup> kg and radius 3 400 000 m.</td><td>g = GM ÷ R² = 6.67 × 10⁻¹¹ × 6.4 × 10<sup>23</sup> ÷ (3 400 000)² = 3.69 m s⁻². <b>Ans: 3.69 m s⁻²</b></td></tr>
+<tr><td class="k">5.1c</td><td>An astronaut of mass 80 kg is 6 400 000 m above Earth's surface (surface g = 10 m s⁻²). Find g there, her weight, and her weight and mass at the surface.</td><td>r = 6.4 × 10⁶ + 6 400 000 = 1.28 × 10<sup>7</sup> m, twice the Earth's radius, so g falls to ¼: g = 10 ÷ 4 = 2.5 m s⁻². Weight = 80 × 2.5 = 200 N. At the surface: weight 800 N. Her mass is 80 kg in both places. <b>Ans: g = 2.5 m s⁻²; weight 200 N; surface 800 N; mass 80 kg</b></td></tr>
+<tr class="sub"><td colspan="3">5.2 Orbits and escape</td></tr>
+<tr><td class="k">5.2a</td><td>Find the orbital speed of a satellite at a radius of 7 000 000 m from Earth's centre. (GM = 4.0 × 10¹⁴ m³ s⁻²)</td><td>v = √(GM ÷ r) = √(4 × 10<sup>14</sup> ÷ 7 000 000) = 7 560 m s⁻¹. <b>Ans: 7 560 m s⁻¹</b></td></tr>
+<tr><td class="k">5.2b</td><td>Find the period of the satellite in the previous question, in seconds and minutes.</td><td>T = 2π√(r³ ÷ GM) = 2π√((7 000 000)³ ÷ 4 × 10<sup>14</sup>) = 5 820 s = 96.9 minutes. <b>Ans: 5 820 s (96.9 min)</b></td></tr>
+<tr><td class="k">5.2c</td><td>A moon orbits a planet at a radius of 4.2 × 10<sup>8</sup> m with a period of 1.77 days. Find the mass of the planet.</td><td>T = 1.77 × 86 400 = 153 000 s. From T² = 4π²r³ ÷ GM: M = 4π²r³ ÷ (GT²) = 4π² × (4.2 × 10<sup>8</sup>)³ ÷ (6.67 × 10⁻¹¹ × 153 000²) = 1.88 × 10<sup>27</sup> kg. <b>Ans: 1.88 × 10<sup>27</sup> kg</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 6</span>Heat</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">6.1 Specific heat capacity</td><td>Q = mcΔθ;  heat capacity C = mc</td><td>Find Q, m, c or Δθ; heat capacity of a body; kinetic energy turned to heat (mass cancels); two-stage warming</td><td>c(water) = 4200 J kg⁻¹ K⁻¹; a change of 1 °C equals a change of 1 K</td><td>Δθ is a difference, so °C and K give the same value; when KE becomes heat the mass cancels</td></tr>
+<tr><td class="k">6.2 Method of mixtures</td><td>heat lost by hot bodies = heat gained by cold bodies</td><td>Water with water; hot metal into water; calorimeter included; find an unknown c</td><td>Ignore losses unless told; the calorimeter has its own mc</td><td>Write both sides with the same final temperature T; include the container when its mass is given</td></tr>
+<tr><td class="k">6.3 Latent heat</td><td>Q = mL (temperature constant during the change of state)</td><td>Melting, boiling, condensing, freezing; full path from ice below 0 °C to steam; steam mixed with water</td><td>L(fusion of ice) = 3.36 × 10⁵ J kg⁻¹; L(vaporisation) = 2.26 × 10⁶ J kg⁻¹; c(ice) = 2100</td><td>Add every stage: warm, change state, warm; during the change of state the temperature does not move</td></tr>
+<tr><td class="k">6.4 Electrical heating and energy balance</td><td>η × Pt = mcΔθ (+ mL);  flowing water: ηP = (m ÷ t)cΔθ</td><td>Find time, power, efficiency or cost; boiling dry; continuous-flow heaters (kg per second)</td><td>c(water) = 4200; L(vaporisation) = 2.26 × 10⁶ J kg⁻¹</td><td>For flow heaters use mass per second; boiling away needs mL, far more than reaching 100 °C</td></tr>
+<tr><td class="k">6.5 Thermal expansion</td><td>ΔL = αLΔθ;  ΔA = βAΔθ (β = 2α);  ΔV = γVΔθ (γ = 3α)</td><td>Rails and bridges; sheets and holes; liquids in containers (apparent expansion); bimetallic strips</td><td>α: steel 1.2 × 10⁻⁵, aluminium 2.3 × 10⁻⁵, copper 1.7 × 10⁻⁵ per K</td><td>A hole expands as if it were made of the material; Δθ is the temperature change; apparent expansion = γ(liquid) − γ(container)</td></tr>
+<tr><td class="k">6.6 Conduction</td><td>Q ÷ t = kAΔθ ÷ d</td><td>Rate through a wall or rod; length, area, temperature difference; composite bars in series; interface temperature</td><td>k: copper 390, aluminium 205, brick 0.7, glass 1.0 W m⁻¹ K⁻¹</td><td>Rate is proportional to area and temperature difference, inversely to thickness; in series the same rate flows through both bars</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">6.1 Specific heat capacity</td></tr>
+<tr><td class="k">6.1a</td><td>Find the heat needed to raise 2 kg of water from 20 °C to 70 °C.</td><td>Q = mcΔθ = 2 × 4200 × 50 = 420 000 J. <b>Ans: 420 000 J</b></td></tr>
+<tr><td class="k">6.1b</td><td>An aluminium block of mass 0.5 kg (c = 900 J kg⁻¹ K⁻¹) absorbs 22 500 J. Find the temperature rise.</td><td>Δθ = Q ÷ mc = 22 500 ÷ (0.5 × 900) = 50 °C. <b>Ans: 50 °C</b></td></tr>
+<tr><td class="k">6.1c</td><td>A lead bullet (c = 130 J kg⁻¹ K⁻¹) hits a wall at 260 m s⁻¹. Half its kinetic energy becomes heat in the bullet. Find the temperature rise.</td><td>½ × ½mv² = mcΔθ, so Δθ = ¼v² ÷ c = 0.25 × 260² ÷ 130 = 130 °C. The mass cancels. <b>Ans: 130 °C</b></td></tr>
+<tr class="sub"><td colspan="3">6.2 Method of mixtures</td></tr>
+<tr><td class="k">6.2a</td><td>0.2 kg of water at 80 °C is mixed with 0.3 kg of water at 20 °C. Find the final temperature.</td><td>m₁c(T₁ − T) = m₂c(T − T₂), so T = (m₁T₁ + m₂T₂) ÷ (m₁ + m₂) = (0.2 × 80 + 0.3 × 20) ÷ 0.5 = 44 °C. <b>Ans: 44 °C</b></td></tr>
+<tr><td class="k">6.2b</td><td>A 0.4 kg copper block (c = 390) at 100 °C is dropped into 0.5 kg of water at 20 °C. Ignoring the container, find the final temperature.</td><td>0.4 × 390 × (100 − T) = 0.5 × 4200 × (T − 20). T = (15 600 + 42 000) ÷ (156 + 2 100) = 25.5 °C. <b>Ans: 25.5 °C</b></td></tr>
+<tr><td class="k">6.2c</td><td>A copper calorimeter of mass 0.1 kg (c = 390) holds 0.3 kg of water at 20 °C. A 0.2 kg metal sample at 100 °C is added and the final temperature is 28 °C. Find the specific heat capacity of the metal.</td><td>Gained by water: 0.3 × 4200 × 8 = 10 080 J. By calorimeter: 0.1 × 390 × 8 = 312 J. Total = 10 400 J. Lost by metal: 0.2 × c × 72 = 14.4c. c = 10 400 ÷ 14.4 = 722 J kg⁻¹ K⁻¹. <b>Ans: 722 J kg⁻¹ K⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">6.3 Latent heat</td></tr>
+<tr><td class="k">6.3a</td><td>Find the heat needed to melt 0.5 kg of ice at 0 °C.</td><td>Q = mL = 0.5 × 336 000 = 168 000 J. <b>Ans: 168 000 J</b></td></tr>
+<tr><td class="k">6.3b</td><td>Find the heat needed to change 2 kg of ice at −10 °C into water at 20 °C.</td><td>Warm the ice: 2 × 2100 × 10 = 42 000 J. Melt: 2 × 336 000 = 672 000 J. Warm the water: 2 × 4200 × 20 = 168 000 J. Total = 882 000 J. <b>Ans: 882 000 J</b></td></tr>
+<tr><td class="k">6.3c</td><td>Steam at 100 °C is passed into 0.5 kg of water at 20 °C until the water reaches 60 °C. Find the mass of steam condensed. (Ignore losses; L = 2.26 × 10⁶ J kg⁻¹)</td><td>Heat gained by water = 0.5 × 4200 × 40 = 84 000 J. Each kg of steam gives L + c(100 − 60) = 2 260 000 + 4200 × 40 = 2 428 000 J. Mass = 84 000 ÷ 2 428 000 = 0.0346 kg = 34.6 g. <b>Ans: 34.6 g</b></td></tr>
+<tr class="sub"><td colspan="3">6.4 Electrical heating and energy balance</td></tr>
+<tr><td class="k">6.4a</td><td>A 2.5 kW kettle heats 1 kg of water from 20 °C to 100 °C with no loss. Find the time.</td><td>Pt = mcΔθ: t = 1 × 4200 × 80 ÷ 2500 = 134.4 s. <b>Ans: 134.4 s</b></td></tr>
+<tr><td class="k">6.4b</td><td>A 3 kW shower heater is 90 % efficient and warms flowing water from 22 °C to 40 °C. Find the flow rate in kg s⁻¹ and litres per minute.</td><td>ηP = (m ÷ t)cΔθ: m ÷ t = 0.9 × 3000 ÷ (4200 × 18) = 0.0357 kg s⁻¹ = 2.14 litres per minute (1 kg of water is 1 litre). <b>Ans: 0.0357 kg s⁻¹ = 2.14 L min⁻¹</b></td></tr>
+<tr><td class="k">6.4c</td><td>A 2 kW kettle is left on after the water boils. How long to boil away 0.2 kg of water, and how much energy is used in kWh?</td><td>Pt = mL: t = 0.2 × 2 260 000 ÷ 2000 = 226 s. E = 2.0 kW × 0.0628 h = 0.126 kWh. <b>Ans: 226 s; 0.126 kWh</b></td></tr>
+<tr class="sub"><td colspan="3">6.5 Thermal expansion</td></tr>
+<tr><td class="k">6.5a</td><td>A steel rail 30 m long (α = 1.2 × 10<sup>-5</sup> K⁻¹) is heated from 20 °C to 50 °C. Find the increase in length.</td><td>ΔL = αLΔθ = 1.2 × 10<sup>-5</sup> × 30 × 30 = 0.0108 m = 10.8 mm. <b>Ans: 10.8 mm</b></td></tr>
+<tr><td class="k">6.5b</td><td>An aluminium sheet of area 3 m² (α = 2.3 × 10<sup>-5</sup> K⁻¹) is heated by 80 °C. Find the increase in area.</td><td>β = 2α = 4.6 × 10<sup>-5</sup> K⁻¹. ΔA = βAΔθ = 4.6 × 10<sup>-5</sup> × 3 × 80 = 0.01104 m². <b>Ans: 0.01104 m²</b></td></tr>
+<tr><td class="k">6.5c</td><td>A glass flask (γ = 2.7 × 10<sup>-5</sup> K⁻¹) is exactly filled with 500 cm³ of mercury (γ = 1.8 × 10<sup>-4</sup> K⁻¹) at 20 °C. How much mercury overflows at 70 °C?</td><td>Apparent expansion uses the difference: ΔV = (γ(Hg) − γ(glass))VΔθ = (1.8 × 10<sup>-4</sup> − 2.7 × 10<sup>-5</sup>) × 500 × 50 = 3.825 cm³. <b>Ans: 3.825 cm³</b></td></tr>
+<tr class="sub"><td colspan="3">6.6 Conduction</td></tr>
+<tr><td class="k">6.6a</td><td>A brick wall 0.25 m thick and 12 m² in area has k = 0.7 W m⁻¹ K⁻¹. The inside is 10 °C warmer than the outside. Find the rate of heat flow.</td><td>Q ÷ t = kAΔθ ÷ d = 0.7 × 12 × 10 ÷ 0.25 = 336 W. <b>Ans: 336 W</b></td></tr>
+<tr><td class="k">6.6b</td><td>A copper rod 0.5 m long with cross-section 4 × 10<sup>-4</sup> m² has its ends at 100 °C and 0 °C. Find the rate of heat flow.</td><td>Q ÷ t = kAΔθ ÷ d = 390 × 4 × 10<sup>-4</sup> × 100 ÷ 0.5 = 31.2 W. <b>Ans: 31.2 W</b></td></tr>
+<tr><td class="k">6.6c</td><td>A copper bar (k = 390) and an aluminium bar (k = 205), each 0.4 m long and 5 × 10<sup>-4</sup> m² in cross-section, are joined end to end with the copper end at 100 °C and the aluminium end at 0 °C. Find the rate of heat flow and the temperature of the joint.</td><td>Thermal resistance L ÷ kA: copper 2.05 K W⁻¹, aluminium 3.9 K W⁻¹. Rate = 100 ÷ (2.05 + 3.9) = 16.8 W. Temperature drop across copper = 16.8 × 2.05 = 34.5 °C, so the joint is at 65.5 °C. <b>Ans: 16.8 W; 65.5 °C</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 7</span>Gas Laws</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">7.1 Boyle's law</td><td>P₁V₁ = P₂V₂ (constant mass and temperature)</td><td>Compression and expansion; bubble rising from depth; air trapped by mercury in a tube; pump strokes</td><td>P(atm) = 1.01 × 10⁵ Pa = 76 cm Hg</td><td>Use absolute pressure (add the atmosphere); in a tube the trapped gas pressure changes with orientation</td></tr>
+<tr><td class="k">7.2 Charles's law and the pressure law</td><td>V ÷ T = constant (constant P);  P ÷ T = constant (constant V);  T in kelvin</td><td>Volume change with temperature; pressure of a sealed gas; tyre pressure (gauge versus absolute)</td><td>T(K) = θ(°C) + 273</td><td>Temperatures must be in kelvin; tyres use gauge pressure, so add the atmosphere first</td></tr>
+<tr><td class="k">7.3 General gas law and ideal gas equation</td><td>P₁V₁ ÷ T₁ = P₂V₂ ÷ T₂;  PV = nRT</td><td>Reduce a volume to STP; moles and molecules from P, V, T; balloon changing altitude</td><td>STP: 273 K and 1.01 × 10⁵ Pa; molar volume 22.4 L; R = 8.31; N(A) = 6.02 × 10²³</td><td>Pressures can be in any unit but the same for both states; V must be in m³ for PV = nRT with Pa</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">7.1 Boyle's law</td></tr>
+<tr><td class="k">7.1a</td><td>A gas of volume 600 cm³ at 100 000 Pa is compressed isothermally to 200 cm³. Find the new pressure.</td><td>P₂ = P₁V₁ ÷ V₂ = 100 000 × 600 ÷ 200 = 300 000 Pa. <b>Ans: 300 000 Pa</b></td></tr>
+<tr><td class="k">7.1b</td><td>A bubble of volume 2 cm³ forms at the bottom of a lake 20 m deep. The atmosphere is 1.0 × 10⁵ Pa and ρ(water) = 1000. Find its volume at the surface.</td><td>Pressure at the bottom = 1.0 × 10⁵ + 1000 × 10 × 20 = 300 000 Pa. V₂ = P₁V₁ ÷ P₀ = 300 000 × 2 ÷ 100 000 = 6 cm³. <b>Ans: 6 cm³</b></td></tr>
+<tr><td class="k">7.1c</td><td>A tube sealed at one end lies horizontal with a 20 cm column of air trapped by a 10 cm mercury thread. It is turned vertical with the open end up. The atmosphere is 76 cm Hg. Find the new length of the air column.</td><td>Horizontal: P₁ = 76 cm Hg. Vertical (open end up): P₂ = 76 + 10 = 86 cm Hg. 76 × 20 = 86 × L₂, so L₂ = 17.7 cm. <b>Ans: 17.7 cm</b></td></tr>
+<tr class="sub"><td colspan="3">7.2 Charles's law and the pressure law</td></tr>
+<tr><td class="k">7.2a</td><td>A gas occupies 300 cm³ at 27 °C. Find its volume at 127 °C at constant pressure.</td><td>T₁ = 27 + 273 = 300 K; T₂ = 127 + 273 = 400 K. V₂ = V₁T₂ ÷ T₁ = 300 × 400 ÷ 300 = 400 cm³. <b>Ans: 400 cm³</b></td></tr>
+<tr><td class="k">7.2b</td><td>A sealed gas has a pressure of 120 000 Pa at 20 °C. Find the pressure at 80 °C.</td><td>T₁ = 293 K; T₂ = 353 K. P₂ = P₁T₂ ÷ T₁ = 120 000 × 353 ÷ 293 = 145 000 Pa. <b>Ans: 145 000 Pa</b></td></tr>
+<tr><td class="k">7.2c</td><td>A car tyre at 27 °C has a gauge pressure of 200 kPa. After driving, its temperature is 57 °C. Find the new gauge pressure, taking the volume as constant and the atmosphere as 101 kPa.</td><td>Absolute P₁ = 200 + 101 = 301 kPa. P₂ = 301 × 330 ÷ 300 = 331.1 kPa. Gauge = 331.1 − 101 = 230.1 kPa. <b>Ans: 230.1 kPa</b></td></tr>
+<tr class="sub"><td colspan="3">7.3 General gas law and ideal gas equation</td></tr>
+<tr><td class="k">7.3a</td><td>A gas of volume 2 L at 27 °C and 100 000 Pa is brought to STP. Find its volume.</td><td>V₂ = P₁V₁T₂ ÷ (T₁P₂) = 100 000 × 2 × 273 ÷ (300 × 101 000) = 1.8 L. <b>Ans: 1.8 L</b></td></tr>
+<tr><td class="k">7.3b</td><td>A gas at 100 000 Pa and 300 K occupies 5 × 10<sup>-3</sup> m³. Find the number of moles and the number of molecules. (R = 8.31)</td><td>n = PV ÷ RT = 100 000 × 5 × 10<sup>-3</sup> ÷ (8.31 × 300) = 0.201 mol. N = n × 6.02 × 10²³ = 1.21 × 10<sup>23</sup>. <b>Ans: 0.201 mol; 1.21 × 10<sup>23</sup> molecules</b></td></tr>
+<tr><td class="k">7.3c</td><td>A balloon of volume 10 L at 27 °C and 100 000 Pa rises to where the pressure is 50 000 Pa and the temperature is −23 °C. Find its new volume.</td><td>T₁ = 300 K; T₂ = 250 K. V₂ = P₁V₁T₂ ÷ (T₁P₂) = 100 000 × 10 × 250 ÷ (300 × 50 000) = 16.7 L. <b>Ans: 16.7 L</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 8</span>Waves and Sound</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">8.1 The wave equation</td><td>v = fλ;  T = 1 ÷ f</td><td>Find v, f or λ; counting crests; MHz and kHz; wave crossing into a new medium</td><td>c = 3 × 10⁸ m s⁻¹; v(sound in air) = 340 m s⁻¹</td><td>Frequency is fixed by the source: refraction changes v and λ, not f</td></tr>
+<tr><td class="k">8.2 Speed of sound and echoes</td><td>v = distance ÷ time;  echo: v = 2d ÷ t</td><td>Echo from a cliff; sonar depth; lightning and thunder; two-position echo problem</td><td>v(air) = 340 m s⁻¹; v(sea water) = 1500 m s⁻¹</td><td>The sound travels to the surface and back: the distance is half of v × t</td></tr>
+<tr><td class="k">8.3 Resonance in air columns</td><td>closed pipe: L + e = λ ÷ 4, f = (2n − 1)v ÷ 4(L + e);  open pipe: f = nv ÷ 2L;  two resonances: v = 2f(L₂ − L₁)</td><td>Fundamental and overtones; find length or v; end correction from two resonance lengths</td><td>v(air) = 340 m s⁻¹</td><td>A closed pipe has only odd harmonics; two resonance lengths remove the end correction</td></tr>
+<tr><td class="k">8.4 Stretched strings</td><td>f = (1 ÷ 2L)√(T ÷ μ);  μ = mass ÷ length</td><td>Fundamental frequency; tension change; length change; harmonics; sonometer tuning</td><td>T in newtons; μ in kg m⁻¹</td><td>f ∝ 1 ÷ L and f ∝ √T; μ is mass per unit length, not total mass</td></tr>
+<tr><td class="k">8.5 Beats and the Doppler effect</td><td>beat frequency = |f₁ − f₂|;  source approaching: f′ = fv ÷ (v − v(s));  receding: f′ = fv ÷ (v + v(s))</td><td>Beat count; identifying an unknown fork (wax or file); moving source and still listener</td><td>v(sound) = 340 m s⁻¹</td><td>Loading a fork lowers its frequency, filing raises it; a moving source changes the denominator</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">8.1 The wave equation</td></tr>
+<tr><td class="k">8.1a</td><td>A radio wave has frequency 100 MHz. Find its wavelength. (c = 3 × 10⁸ m s⁻¹)</td><td>λ = v ÷ f = 3 × 10<sup>8</sup> ÷ 1 × 10<sup>8</sup> = 3 m. <b>Ans: 3 m</b></td></tr>
+<tr><td class="k">8.1b</td><td>Water-wave crests are 0.6 m apart and 4 crests pass a point in 2 s. Find the frequency and speed.</td><td>f = 4 ÷ 2 = 2 Hz. v = fλ = 2 × 0.6 = 1.2 m s⁻¹. <b>Ans: 2 Hz; 1.2 m s⁻¹</b></td></tr>
+<tr><td class="k">8.1c</td><td>A sound of frequency 680 Hz passes from air (speed 340 m s⁻¹) into water (speed 1500 m s⁻¹). Find the wavelength in each and the frequency in water.</td><td>Air: λ = 340 ÷ 680 = 0.5 m. Water: λ = 1500 ÷ 680 = 2.21 m. Frequency stays 680 Hz. <b>Ans: 0.5 m; 2.21 m; 680 Hz</b></td></tr>
+<tr class="sub"><td colspan="3">8.2 Speed of sound and echoes</td></tr>
+<tr><td class="k">8.2a</td><td>An echo from a cliff returns 0.8 s after a shout. Find the distance to the cliff. (v = 340 m s⁻¹)</td><td>d = vt ÷ 2 = 340 × 0.8 ÷ 2 = 136 m. <b>Ans: 136 m</b></td></tr>
+<tr><td class="k">8.2b</td><td>A ship's sonar pulse returns from the sea bed after 0.4 s. Sea-water sound speed is 1500 m s⁻¹. Find the depth.</td><td>d = vt ÷ 2 = 1500 × 0.4 ÷ 2 = 300 m. <b>Ans: 300 m</b></td></tr>
+<tr><td class="k">8.2c</td><td>A person hears an echo 3.0 s after a shot. After walking 85 m towards the cliff and firing again, the echo comes after 2.5 s. Find the speed of sound and the original distance.</td><td>2d ÷ v = 3.0 and 2(d − 85) ÷ v = 2.5. Subtracting: 2 × 85 ÷ v = 0.5, so v = 340 m s⁻¹. d = vt₁ ÷ 2 = 510 m. <b>Ans: 340 m s⁻¹; 510 m</b></td></tr>
+<tr class="sub"><td colspan="3">8.3 Resonance in air columns</td></tr>
+<tr><td class="k">8.3a</td><td>A closed pipe is 0.25 m long (ignore end correction). Find the fundamental and the first overtone. (v = 340 m s⁻¹)</td><td>f₁ = v ÷ 4L = 340 ÷ 1.0 = 340 Hz. The next resonance is the third harmonic: 3f₁ = 1 020 Hz. <b>Ans: 340 Hz; 1 020 Hz</b></td></tr>
+<tr><td class="k">8.3b</td><td>An open pipe is 0.5 m long. Find its fundamental and next two overtones. (v = 340 m s⁻¹)</td><td>f₁ = v ÷ 2L = 340 ÷ 1.0 = 340 Hz. Overtones: 2f₁ = 680 Hz and 3f₁ = 1 020 Hz (all harmonics present). <b>Ans: 340 Hz; 680 Hz; 1 020 Hz</b></td></tr>
+<tr><td class="k">8.3c</td><td>A 512 Hz fork resonates in a closed tube at lengths 16.0 cm and 49.5 cm. Find the speed of sound and the end correction.</td><td>λ ÷ 2 = 0.495 − 0.16 = 0.335 m, so λ = 0.67 m. v = fλ = 512 × 0.67 = 343 m s⁻¹. L₁ + e = λ ÷ 4 = 0.1675 m, so e = 7.5 × 10<sup>-3</sup> m = 0.75 cm. <b>Ans: 343 m s⁻¹; 0.75 cm</b></td></tr>
+<tr class="sub"><td colspan="3">8.4 Stretched strings</td></tr>
+<tr><td class="k">8.4a</td><td>A string 0.8 m long with mass per unit length 4 × 10<sup>-3</sup> kg m⁻¹ is under tension 100 N. Find its fundamental frequency.</td><td>f = (1 ÷ 2L)√(T ÷ μ) = (1 ÷ 1.6)√(100 ÷ 4 × 10<sup>-3</sup>) = 98.8 Hz. <b>Ans: 98.8 Hz</b></td></tr>
+<tr><td class="k">8.4b</td><td>A string sounds at 200 Hz. Find the new frequency if the tension is made four times larger, and if instead the length is halved at the original tension.</td><td>Four times the tension: f ∝ √T, so f = 200 × 2 = 400 Hz. Half the length: f ∝ 1 ÷ L, so f = 200 × 2 = 400 Hz. <b>Ans: 400 Hz; 400 Hz</b></td></tr>
+<tr><td class="k">8.4c</td><td>A sonometer wire 0.6 m long with μ = 2 × 10<sup>-3</sup> kg m⁻¹ resonates at 300 Hz in its fundamental. Find the tension.</td><td>f = (1 ÷ 2L)√(T ÷ μ), so T = μ(2Lf)² = 2 × 10<sup>-3</sup> × (1.2 × 300)² = 259.2 N. <b>Ans: 259.2 N</b></td></tr>
+<tr class="sub"><td colspan="3">8.5 Beats and the Doppler effect</td></tr>
+<tr><td class="k">8.5a</td><td>Two tuning forks of 256 Hz and 260 Hz are sounded together. Find the beat frequency.</td><td>Beats per second = |260 − 256| = 4 Hz. <b>Ans: 4 beats per second</b></td></tr>
+<tr><td class="k">8.5b</td><td>An ambulance siren of 700 Hz moves at 30 m s⁻¹ past a still listener. Find the frequency heard as it approaches and as it recedes. (v = 340 m s⁻¹)</td><td>Approaching: f′ = 700 × 340 ÷ (340 − 30) = 768 Hz. Receding: f′ = 700 × 340 ÷ (340 + 30) = 643 Hz. <b>Ans: 768 Hz; 643 Hz</b></td></tr>
+<tr><td class="k">8.5c</td><td>A fork of unknown frequency gives 3 beats per second with a 512 Hz fork. After it is loaded with wax the beat rate becomes 5 per second. Find its original frequency.</td><td>Original f = 512 ± 3: either 515 or 509 Hz. Wax lowers the frequency. If f had been 515 Hz, lowering it would reduce the beats; they rose, so the fork was below 512 Hz. Original frequency = 512 − 3 = 509 Hz. <b>Ans: 509 Hz</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 9</span>Light</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">9.1 Plane mirrors</td><td>image distance = object distance;  rotating a mirror by θ turns the reflected ray by 2θ;  images between two mirrors n = 360° ÷ θ − 1</td><td>Object–image separation; person walking towards a mirror; rotated mirror; two inclined mirrors; minimum mirror height</td><td>Image is virtual, upright, same size, laterally inverted</td><td>The image is as far behind the mirror as the object is in front, so the image is 2d from the object and approaches at 2v</td></tr>
+<tr><td class="k">9.2 Curved mirrors</td><td>1 ÷ f = 1 ÷ u + 1 ÷ v;  m = v ÷ u = image height ÷ object height;  f = R ÷ 2</td><td>Real or virtual image; magnification; convex mirror; find f from radius of curvature</td><td>Real-is-positive convention: concave f > 0, convex f < 0, virtual image v < 0</td><td>A negative v means a virtual image behind the mirror; a convex mirror always gives a virtual, smaller, upright image</td></tr>
+<tr><td class="k">9.3 Refraction</td><td>n = sin i ÷ sin r = c ÷ v;  real depth ÷ apparent depth = n;  sin C = 1 ÷ n</td><td>Find an angle or n; speed of light in a medium; apparent depth; critical angle; total internal reflection</td><td>n(air) = 1.00; n(water) = 1.33; n(glass) = 1.5; c = 3 × 10⁸ m s⁻¹</td><td>Apparent depth is less than real depth; total internal reflection happens only from denser to rarer and only above the critical angle</td></tr>
+<tr><td class="k">9.4 Thin lenses</td><td>1 ÷ f = 1 ÷ u + 1 ÷ v;  m = v ÷ u;  power P = 1 ÷ f (f in metres, unit dioptre);  lenses in contact: P = P₁ + P₂</td><td>Real or virtual image; find f or u; power of a lens; combinations in contact</td><td>Real-is-positive: convex f > 0, concave f < 0</td><td>Convert f to metres before finding power; powers add for lenses in contact, focal lengths do not</td></tr>
+<tr><td class="k">9.5 Prisms and total internal reflection</td><td>n = sin[(A + D) ÷ 2] ÷ sin(A ÷ 2);  sin C = 1 ÷ n</td><td>n from minimum deviation; minimum deviation from n; right-angled prism reflectors</td><td>Minimum deviation: the ray passes symmetrically</td><td>Total internal reflection needs the angle of incidence above C; a glass prism with n = 1.5 has C = 41.8°</td></tr>
+<tr><td class="k">9.6 Optical instruments and the eye</td><td>magnifying glass: M = 1 + D ÷ f (image at near point), M = D ÷ f (relaxed);  telescope: M = f(o) ÷ f(e);  corrective power P = 1 ÷ f</td><td>Magnifying glass at near point or relaxed; telescope in normal adjustment; lens to correct short or long sight</td><td>Near point D = 25 cm for the normal eye</td><td>Short sight needs a diverging lens (negative power), long sight a converging lens; tube length = f(o) + f(e)</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">9.1 Plane mirrors</td></tr>
+<tr><td class="k">9.1a</td><td>A person stands 2 m in front of a plane mirror. How far is she from her image?</td><td>Image distance = 2 m behind the mirror. Separation = 2 × 2 = 4 m. <b>Ans: 4 m</b></td></tr>
+<tr><td class="k">9.1b</td><td>A person walks towards a plane mirror at 1.5 m s⁻¹. At what speed does the image approach the person?</td><td>The image moves towards the mirror at 1.5 m s⁻¹ as well, so relative speed = 2 × 1.5 = 3 m s⁻¹. <b>Ans: 3 m s⁻¹</b></td></tr>
+<tr><td class="k">9.1c</td><td>Two plane mirrors are inclined at 60°. How many images of an object between them are formed? Separately, a mirror turns through 15°: through what angle does a fixed reflected ray turn?</td><td>n = 360 ÷ 60 − 1 = 5 images. A mirror turned by θ turns the reflected ray by 2θ = 2 × 15 = 30°. <b>Ans: 5 images; 30°</b></td></tr>
+<tr class="sub"><td colspan="3">9.2 Curved mirrors</td></tr>
+<tr><td class="k">9.2a</td><td>An object is 30 cm from a concave mirror of focal length 10 cm. Find the image distance and magnification.</td><td>1 ÷ v = 1 ÷ 10 − 1 ÷ 30, so v = 15 cm (positive: real, in front). m = v ÷ u = 0.5: diminished, inverted. <b>Ans: v = 15 cm; m = 0.5</b></td></tr>
+<tr><td class="k">9.2b</td><td>An object is 6 cm from a concave mirror of focal length 10 cm. Find the image distance, magnification and image type.</td><td>1 ÷ v = 1 ÷ 10 − 1 ÷ 6, so v = −15 cm (negative: virtual, behind the mirror). m = 15 ÷ 6 = 2.5: magnified and upright. This is the shaving-mirror setting (object inside the focal length). <b>Ans: v = −15 cm; m = 2.5; virtual, upright</b></td></tr>
+<tr><td class="k">9.2c</td><td>A convex mirror has radius of curvature 40 cm. An object is 60 cm in front of it. Find the image distance and magnification.</td><td>f = −R ÷ 2 = −20 cm (virtual focus). 1 ÷ v = 1 ÷ (−20) − 1 ÷ 60, so v = −15 cm. m = 15 ÷ 60 = 0.25: virtual, upright, diminished. <b>Ans: v = −15 cm; m = 0.25</b></td></tr>
+<tr class="sub"><td colspan="3">9.3 Refraction</td></tr>
+<tr><td class="k">9.3a</td><td>A ray in air meets glass (n = 1.5) at an angle of incidence of 45°. Find the angle of refraction.</td><td>sin r = sin i ÷ n = 0.707 ÷ 1.5 = 0.471, so r = 28.1°. <b>Ans: 28.1°</b></td></tr>
+<tr><td class="k">9.3b</td><td>Find the speed of light in water of refractive index 1.33.</td><td>v = c ÷ n = 3 × 10<sup>8</sup> ÷ 1.33 = 2.26 × 10<sup>8</sup> m s⁻¹. <b>Ans: 2.26 × 10<sup>8</sup> m s⁻¹</b></td></tr>
+<tr><td class="k">9.3c</td><td>A coin lies at the bottom of a pool 2.0 m deep (n = 1.33). Find its apparent depth seen from above, and the critical angle for water to air.</td><td>Apparent depth = real ÷ n = 2.0 ÷ 1.33 = 1.5 m. sin C = 1 ÷ 1.33 = 0.752, so C = 48.8°. <b>Ans: 1.5 m; 48.8°</b></td></tr>
+<tr class="sub"><td colspan="3">9.4 Thin lenses</td></tr>
+<tr><td class="k">9.4a</td><td>An object is 45 cm from a convex lens of focal length 15 cm. Find the image distance and magnification.</td><td>1 ÷ v = 1 ÷ 15 − 1 ÷ 45, so v = 22.5 cm (real). m = 22.5 ÷ 45 = 0.5. <b>Ans: v = 22.5 cm; m = 0.5</b></td></tr>
+<tr><td class="k">9.4b</td><td>Find the power of a lens of focal length 25 cm, and the focal length of a lens of power +4 D.</td><td>P = 1 ÷ f = 1 ÷ 0.25 = 4 D. f = 1 ÷ P = 1 ÷ 4 = 0.25 m = 25 cm. <b>Ans: 4 D; 25 cm</b></td></tr>
+<tr><td class="k">9.4c</td><td>Two thin lenses of power +5 D and −2 D are in contact. Find the combined power and focal length, and the image distance for an object 50 cm away.</td><td>P = 5 + (−2) = 3 D; f = 1 ÷ 3 = 33.3 cm. 1 ÷ v = P − 1 ÷ u = 3 − 2 = 1, so v = 1 m. <b>Ans: P = 3 D; f = 33.3 cm; v = 1 m</b></td></tr>
+<tr class="sub"><td colspan="3">9.5 Prisms and total internal reflection</td></tr>
+<tr><td class="k">9.5a</td><td>A prism of angle 60° has a minimum deviation of 37°. Find the refractive index.</td><td>n = sin((A + D) ÷ 2) ÷ sin(A ÷ 2) = sin 48.5° ÷ sin 30° = 0.749 ÷ 0.5 = 1.5. <b>Ans: 1.5</b></td></tr>
+<tr><td class="k">9.5b</td><td>A prism of angle 60° is made of glass of n = 1.5. Find the minimum deviation.</td><td>sin((A + D) ÷ 2) = n sin(A ÷ 2) = 1.5 × 0.5 = 0.75, so (A + D) ÷ 2 = 48.6° and D = 2 × 48.6 − 60 = 37.2°. <b>Ans: 37.2°</b></td></tr>
+<tr><td class="k">9.5c</td><td>A ray enters one face of a right-angled isosceles glass prism (n = 1.5) and meets the long face at 45°. Is the ray totally internally reflected?</td><td>C = sin⁻¹(1 ÷ 1.5) = 41.8°. Since 45° > 41.8°, total internal reflection occurs. Periscopes and binoculars use this: it reflects better than a silvered mirror. <b>Ans: C = 41.8°; yes, total internal reflection</b></td></tr>
+<tr class="sub"><td colspan="3">9.6 Optical instruments and the eye</td></tr>
+<tr><td class="k">9.6a</td><td>A magnifying glass has f = 5 cm. Find the angular magnification with the image at the near point (D = 25 cm) and with the eye relaxed.</td><td>Near point: M = 1 + D ÷ f = 1 + 25 ÷ 5 = 6. Relaxed eye: M = D ÷ f = 5. <b>Ans: 6; 5</b></td></tr>
+<tr><td class="k">9.6b</td><td>A telescope has an objective of focal length 100 cm and an eyepiece of 5 cm. Find the magnification and tube length in normal adjustment.</td><td>M = f(o) ÷ f(e) = 100 ÷ 5 = 20. Length = 100 + 5 = 105 cm. <b>Ans: M = 20; 105 cm</b></td></tr>
+<tr><td class="k">9.6c</td><td>A short-sighted person has a far point of 80.0 cm. Find the power of the lens needed for distant objects. A long-sighted person has a near point of 100.0 cm. Find the lens power needed to read at 25 cm.</td><td>Short sight: the lens must put distant objects at the far point, so f = −0.8 m and P = −1.25 D (diverging). Long sight: 1 ÷ f = 1 ÷ 0.25 − 1 ÷ 1.0 = 3, so P = +3 D (converging). <b>Ans: −1.25 D; +3 D</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 10</span>Electrostatics and Capacitors</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">10.1 Coulomb's law, field and potential</td><td>F = kQ₁Q₂ ÷ r²;  E = F ÷ q = kQ ÷ r²;  V = kQ ÷ r;  uniform field E = V ÷ d</td><td>Force between charges; field and potential of a point charge; charge in a uniform field; work moving a charge</td><td>k = 9 × 10⁹; e = 1.6 × 10⁻¹⁹ C; m(e) = 9.11 × 10⁻³¹ kg</td><td>Force and field fall as 1 ÷ r²; potential falls as 1 ÷ r and is a scalar; fields add as vectors</td></tr>
+<tr><td class="k">10.2 Capacitance</td><td>C = Q ÷ V;  C = ε₀A ÷ d (air);  energy = ½CV² = ½QV</td><td>Charge, voltage, capacitance; parallel-plate geometry; energy stored; plates moved with a battery connected or disconnected</td><td>ε₀ = 8.85 × 10⁻¹² F m⁻¹</td><td>Disconnected means Q is fixed; connected means V is fixed. Doubling the separation halves C either way</td></tr>
+<tr><td class="k">10.3 Capacitor combinations</td><td>series: 1 ÷ C = Σ(1 ÷ Cᵢ), same charge;  parallel: C = ΣCᵢ, same voltage</td><td>Series and parallel totals; charge and voltage on each; connecting a charged to an uncharged capacitor</td><td>Charge is conserved when capacitors are joined</td><td>Series capacitors share voltage inversely with C; joining charged capacitors loses energy as heat and sparks</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">10.1 Coulomb's law, field and potential</td></tr>
+<tr><td class="k">10.1a</td><td>Two charges of 2 μC and 3 μC are 0.3 m apart in air. Find the force between them.</td><td>F = kQ₁Q₂ ÷ r² = 9 × 10⁹ × 2 × 10⁻⁶ × 3 × 10⁻⁶ ÷ 0.3² = 0.6 N (repulsive). <b>Ans: 0.6 N</b></td></tr>
+<tr><td class="k">10.1b</td><td>Find the field strength and potential 0.5 m from a point charge of 5 nC.</td><td>E = kQ ÷ r² = 9 × 10⁹ × 5 × 10⁻⁹ ÷ 0.5² = 180 N C⁻¹. V = kQ ÷ r = 90 V. <b>Ans: 180 N C⁻¹; 90 V</b></td></tr>
+<tr><td class="k">10.1c</td><td>An electron starts from rest at one of two parallel plates 2.0 cm apart with a 400 V p.d. across them. Find the field, the force, the acceleration and the speed on reaching the other plate.</td><td>E = V ÷ d = 400 ÷ 0.02 = 20 000 V m⁻¹. F = eE = 3.2 × 10<sup>-15</sup> N. a = F ÷ m = 3.51 × 10<sup>15</sup> m s⁻². Energy: ½mv² = eV, so v = √(2eV ÷ m) = 1.19 × 10<sup>7</sup> m s⁻¹. <b>Ans: E = 20 000 V m⁻¹; F = 3.2 × 10<sup>-15</sup> N; a = 3.51 × 10<sup>15</sup> m s⁻²; v = 1.19 × 10<sup>7</sup> m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">10.2 Capacitance</td></tr>
+<tr><td class="k">10.2a</td><td>A 10 μF capacitor is charged to 12 V. Find the charge and the energy stored.</td><td>Q = CV = 1 × 10<sup>-5</sup> × 12 = 1.2 × 10<sup>-4</sup> C. E = ½CV² = ½ × 1 × 10<sup>-5</sup> × 12² = 7.2 × 10<sup>-4</sup> J. <b>Ans: Q = 1.2 × 10<sup>-4</sup> C; E = 7.2 × 10<sup>-4</sup> J</b></td></tr>
+<tr><td class="k">10.2b</td><td>A parallel-plate capacitor has plate area 0.04 m² and separation 1.0 mm with air between. Find its capacitance.</td><td>C = ε₀A ÷ d = 8.85 × 10⁻¹² × 0.04 ÷ 1 × 10<sup>-3</sup> = 3.54 × 10<sup>-10</sup> F = 354 pF. <b>Ans: 354 pF</b></td></tr>
+<tr><td class="k">10.2c</td><td>A 5 μF capacitor is charged to 100 V and disconnected. The plate separation is then doubled. Find the new capacitance, voltage and energy, and compare the energy with the original.</td><td>Charge stays Q = 5 × 10<sup>-6</sup> × 100 = 5 × 10<sup>-4</sup> C. C = 2.5 μF. V = Q ÷ C = 200 V. Energy = ½CV² = 0.05 J against the original 0.025 J: doubled, because work was done pulling the plates apart. <b>Ans: C = 2.5 μF; V = 200 V; E = 0.05 J (original 0.025 J)</b></td></tr>
+<tr class="sub"><td colspan="3">10.3 Capacitor combinations</td></tr>
+<tr><td class="k">10.3a</td><td>Find the total capacitance of 2 μF and 3 μF in series and in parallel.</td><td>Series: 1 ÷ C = 1 ÷ 2 + 1 ÷ 3, so C = 1.2 μF. Parallel: C = 2 + 3 = 5 μF. <b>Ans: series 1.2 μF; parallel 5 μF</b></td></tr>
+<tr><td class="k">10.3b</td><td>Capacitors of 4 μF and 12 μF are in series across 100 V. Find the charge on each and the p.d. across each.</td><td>C = 3 μF. Q = CV = 3 × 100 = 300 μC on each. V₁ = Q ÷ C₁ = 75 V; V₂ = Q ÷ C₂ = 25 V (they add to 100 V). <b>Ans: Q = 300 μC; 75 V and 25 V</b></td></tr>
+<tr><td class="k">10.3c</td><td>A 6 μF capacitor charged to 100 V is connected across an uncharged 3 μF capacitor. Find the common voltage and the energy lost.</td><td>Q = 6 × 100 = 600 μC is shared: V = Q ÷ (C₁ + C₂) = 600 ÷ 9 = 66.7 V. Energy before = 0.03 J; after = 0.02 J; lost = 0.01 J. <b>Ans: V = 66.7 V; lost 0.01 J</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 11</span>Current Electricity</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">11.1 Charge, current and Ohm's law</td><td>Q = It;  V = IR;  I = nAvq</td><td>Charge passed; number of electrons; resistance from a reading; current from a changed voltage; drift speed</td><td>e = 1.6 × 10⁻¹⁹ C; time in seconds</td><td>Charge carriers drift very slowly (about 10⁻⁴ m s⁻¹) even though the lamp lights at once; convert minutes to seconds</td></tr>
+<tr><td class="k">11.2 Resistivity</td><td>R = ρL ÷ A;  A = πd² ÷ 4;  stretched wire: R ∝ L² (volume fixed)</td><td>Resistance from dimensions; diameter versus radius; wire drawn out; element length from power rating</td><td>ρ: copper 1.7 × 10⁻⁸, nichrome 1.1 × 10⁻⁶ Ω m</td><td>Use A = πd² ÷ 4 with the diameter; stretching to n times the length multiplies R by n²</td></tr>
+<tr><td class="k">11.3 Series and parallel networks</td><td>series: R = ΣR, same current;  parallel: 1 ÷ R = Σ(1 ÷ R), same p.d.</td><td>Total resistance; current in each branch; mixed networks; p.d. across each part</td><td>Parallel total is always smaller than the smallest branch</td><td>The same current flows through series parts and the same p.d. across parallel parts; work from the outside in, then back out</td></tr>
+<tr><td class="k">11.4 EMF and internal resistance</td><td>E = V + Ir;  I = E ÷ (R + r);  maximum power when R = r</td><td>Terminal p.d. under load; find r from two readings; short-circuit current; maximum power transfer</td><td>V = E only when no current flows</td><td>Terminal p.d. drops as current rises; at maximum power transfer the efficiency is only 50 %</td></tr>
+<tr><td class="k">11.5 Electrical power and energy cost</td><td>P = VI = I²R = V² ÷ R;  E = Pt;  1 kWh = 3.6 × 10⁶ J</td><td>Current and resistance from a rating; fuse choice; appliance on the wrong voltage; two bulbs in series; cost over a month</td><td>Resistance of an appliance stays fixed; fuse values 3 A, 5 A, 13 A</td><td>A 60 W bulb in series with a 100 W bulb: the 60 W one glows brighter (larger R, so larger I²R)</td></tr>
+<tr><td class="k">11.6 Meters: shunts and multipliers</td><td>shunt: R(s) = I(g)R(g) ÷ (I − I(g));  multiplier: R(m) = V ÷ I(g) − R(g)</td><td>Extending an ammeter range; making a voltmeter; effect of a meter on the circuit</td><td>Shunt in parallel with the galvanometer; multiplier in series</td><td>A voltmeter must have very high resistance and an ammeter very low; a voltmeter connected across a resistor lowers the p.d. it reads</td></tr>
+<tr><td class="k">11.7 Metre bridge and potentiometer</td><td>metre bridge: X ÷ S = l ÷ (100 − l);  potentiometer: E₁ ÷ E₂ = l₁ ÷ l₂;  r = R(l₁ − l₂) ÷ l₂</td><td>Unknown resistance; comparing emfs; internal resistance of a cell; zero galvanometer current</td><td>At balance no current flows through the galvanometer</td><td>A potentiometer draws no current at balance, so it measures emf, not terminal p.d. under load</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">11.1 Charge, current and Ohm's law</td></tr>
+<tr><td class="k">11.1a</td><td>A current of 0.5 A flows for 2 minutes. Find the charge that passes and the number of electrons.</td><td>t = 120 s. Q = It = 0.5 × 120 = 60 C. N = Q ÷ e = 60 ÷ (1.6 × 10⁻¹⁹) = 3.75 × 10<sup>20</sup> electrons. <b>Ans: 60 C; 3.75 × 10<sup>20</sup> electrons</b></td></tr>
+<tr><td class="k">11.1b</td><td>A resistor passes 0.4 A when 6 V is applied. Find its resistance and the current at 9 V (ohmic conductor).</td><td>R = V ÷ I = 6 ÷ 0.4 = 15 Ω. I = V ÷ R = 9 ÷ 15 = 0.6 A. <b>Ans: 15 Ω; 0.6 A</b></td></tr>
+<tr><td class="k">11.1c</td><td>A copper wire of cross-section 1 × 10<sup>-6</sup> m² carries 2 A. The free-electron density is 8.5 × 10<sup>28</sup> m⁻³. Find the drift speed.</td><td>I = nAve, so v = I ÷ (nAe) = 2 ÷ (8.5 × 10<sup>28</sup> × 1 × 10<sup>-6</sup> × 1.6 × 10⁻¹⁹) = 1.47 × 10<sup>-4</sup> m s⁻¹, about a tenth of a millimetre per second. <b>Ans: 1.47 × 10<sup>-4</sup> m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">11.2 Resistivity</td></tr>
+<tr><td class="k">11.2a</td><td>A copper wire 50 m long and 0.8 mm in diameter has ρ = 1.7 × 10<sup>-8</sup> Ω m. Find its resistance.</td><td>A = πd² ÷ 4 = π × (8 × 10<sup>-4</sup>)² ÷ 4 = 5.03 × 10<sup>-7</sup> m². R = ρL ÷ A = 1.7 × 10<sup>-8</sup> × 50 ÷ 5.03 × 10<sup>-7</sup> = 1.69 Ω. <b>Ans: 1.69 Ω</b></td></tr>
+<tr><td class="k">11.2b</td><td>A wire of resistance 10 Ω is stretched uniformly to 3 times its length. Find its new resistance.</td><td>Volume is fixed: length × 3 means area ÷ 3, so R rises by 3 × 3 = 9 times: R = 10 × 9 = 90 Ω. <b>Ans: 90 Ω</b></td></tr>
+<tr><td class="k">11.2c</td><td>A heater element is rated 1000 W at 230 V and is made of nichrome (ρ = 1.1 × 10<sup>-6</sup> Ω m) wire of diameter 0.4 mm. Find its resistance and the length of wire needed.</td><td>R = V² ÷ P = 230² ÷ 1000 = 52.9 Ω. A = π(4 × 10<sup>-4</sup>)² ÷ 4 = 1.26 × 10<sup>-7</sup> m². L = RA ÷ ρ = 52.9 × 1.26 × 10<sup>-7</sup> ÷ 1.1 × 10<sup>-6</sup> = 6.04 m. <b>Ans: R = 52.9 Ω; L = 6.04 m</b></td></tr>
+<tr class="sub"><td colspan="3">11.3 Series and parallel networks</td></tr>
+<tr><td class="k">11.3a</td><td>A 3 Ω and a 6 Ω resistor in parallel are in series with a 4 Ω resistor across 12 V. Find the total resistance, the current and the p.d. across each part.</td><td>Parallel part: 3 × 6 ÷ (3 + 6) = 2 Ω. Total = 2 + 4 = 6 Ω. I = 12 ÷ 6 = 2 A. p.d. across the parallel part = 2 × 2 = 4 V; across the 4 Ω = 8 V. <b>Ans: R = 6 Ω; I = 2 A; 4 V and 8 V</b></td></tr>
+<tr><td class="k">11.3b</td><td>Resistors of 12 Ω, 6 Ω and 4 Ω are connected in parallel across 12 V. Find the total resistance, the total current and each branch current.</td><td>1 ÷ R = 1 ÷ 12 + 1 ÷ 6 + 1 ÷ 4 = 0.5, so R = 2 Ω. I = 12 ÷ 2 = 6 A. Branches: 1 A, 2 A and 3 A (they add to 6 A). <b>Ans: R = 2 Ω; I = 6 A; 1 A, 2 A, 3 A</b></td></tr>
+<tr><td class="k">11.3c</td><td>A group of 4 Ω and 12 Ω in parallel is in series with a group of 6 Ω and 3 Ω in parallel, across 15 V. Find the current in each of the four resistors.</td><td>Group A = 3 Ω; group B = 2 Ω; total 5 Ω; I = 15 ÷ 5 = 3 A. p.d. across A = 9 V, across B = 6 V. Currents: 4 Ω: 2.25 A; 12 Ω: 0.75 A; 6 Ω: 1 A; 3 Ω: 2 A. <b>Ans: 2.25 A; 0.75 A; 1 A; 2 A</b></td></tr>
+<tr class="sub"><td colspan="3">11.4 EMF and internal resistance</td></tr>
+<tr><td class="k">11.4a</td><td>A cell of emf 1.5 V and internal resistance 0.5 Ω is connected to a 2.5 Ω resistor. Find the current and the terminal p.d.</td><td>I = E ÷ (R + r) = 1.5 ÷ 3.0 = 0.5 A. V = IR = 0.5 × 2.5 = 1.25 V. (Check: E − Ir = 1.5 − 0.25 = 1.25 V.) <b>Ans: I = 0.5 A; V = 1.25 V</b></td></tr>
+<tr><td class="k">11.4b</td><td>A battery has an open-circuit voltage of 12.0 V. It reads 11.4 V while supplying 3 A. Find its internal resistance.</td><td>Lost volts = E − V = 12.0 − 11.4 = 0.6 V = Ir, so r = 0.6 ÷ 3 = 0.2 Ω. <b>Ans: 0.2 Ω</b></td></tr>
+<tr><td class="k">11.4c</td><td>A cell has emf 6 V and internal resistance 2 Ω. Find the load that takes maximum power, that power, the efficiency then, and the short-circuit current.</td><td>Maximum power at R = r = 2 Ω. I = 6 ÷ 4 = 1.5 A. P = I²R = 4.5 W. Efficiency = R ÷ (R + r) = 50 %. Short circuit: I = E ÷ r = 3 A. <b>Ans: R = 2 Ω; P = 4.5 W; 50 %; 3 A</b></td></tr>
+<tr class="sub"><td colspan="3">11.5 Electrical power and energy cost</td></tr>
+<tr><td class="k">11.5a</td><td>A heater is rated 2300 W at 230 V. Find its current and resistance, and choose a fuse from 3 A, 5 A and 13 A.</td><td>I = P ÷ V = 2300 ÷ 230 = 10 A. R = V ÷ I = 23 Ω. The fuse must be just above 10 A: 13 A. <b>Ans: I = 10 A; R = 23 Ω; 13 A fuse</b></td></tr>
+<tr><td class="k">11.5b</td><td>A 60 W, 230 V bulb is connected to 115 V. Find the power it gives out (resistance unchanged).</td><td>R = V² ÷ P = 230² ÷ 60 = 882 Ω. P = V² ÷ R = 115² ÷ 882 = 15 W (a quarter, because the voltage is halved). <b>Ans: 15 W</b></td></tr>
+<tr><td class="k">11.5c</td><td>A 60 W, 230 V bulb and a 100 W, 230 V bulb are connected in series across 230 V. Find the power in each and say which is brighter.</td><td>R₁ = 230² ÷ 60 = 882 Ω; R₂ = 230² ÷ 100 = 529 Ω. I = 230 ÷ 1 410 = 0.163 A. P₁ = I²R₁ = 23.4 W; P₂ = I²R₂ = 14.1 W. The 60 W bulb is brighter. <b>Ans: 23.4 W; 14.1 W; 60 W bulb brighter</b></td></tr>
+<tr class="sub"><td colspan="3">11.6 Meters: shunts and multipliers</td></tr>
+<tr><td class="k">11.6a</td><td>A galvanometer of resistance 50 Ω gives full-scale deflection at 10 mA. Find the shunt needed to read up to 1 A.</td><td>The shunt carries I − I(g) = 0.99 A at the same p.d. (0.5 V). R(s) = 0.5 ÷ 0.99 = 0.505 Ω. <b>Ans: 0.505 Ω in parallel</b></td></tr>
+<tr><td class="k">11.6b</td><td>The same galvanometer is to read up to 10 V. Find the series resistance needed.</td><td>Total resistance = V ÷ I(g) = 10 ÷ 0.01 = 1 000 Ω. Multiplier = 1 000 − 50 = 950 Ω. <b>Ans: 950 Ω in series</b></td></tr>
+<tr><td class="k">11.6c</td><td>A 12 V supply drives two 500 Ω resistors in series. Find the true p.d. across one, and the reading when a 1000 Ω voltmeter is connected across it.</td><td>True: 12 ÷ 2 = 6 V. With the meter: 500 Ω in parallel with 1000 Ω = 333 Ω. Total = 833 Ω; V = 12 × 333 ÷ 833 = 4.8 V. The meter loads the circuit and reads low. <b>Ans: true 6 V; reads 4.8 V</b></td></tr>
+<tr class="sub"><td colspan="3">11.7 Metre bridge and potentiometer</td></tr>
+<tr><td class="k">11.7a</td><td>A metre bridge balances with the unknown resistance X in the left gap and a 6 Ω resistor in the right gap, at 40 cm from the left end. Find X.</td><td>X ÷ S = l ÷ (100 − l), so X = 6 × 40 ÷ 60 = 4 Ω. <b>Ans: 4 Ω</b></td></tr>
+<tr><td class="k">11.7b</td><td>A potentiometer balances a cell of unknown emf at 75 cm and a standard cell of 1.02 V at 50 cm. Find the unknown emf.</td><td>E₁ ÷ E₂ = l₁ ÷ l₂, so E = 1.02 × 75 ÷ 50 = 1.53 V. <b>Ans: 1.53 V</b></td></tr>
+<tr><td class="k">11.7c</td><td>On a potentiometer a cell balances at 80 cm on open circuit, and at 64 cm when it supplies a 4 Ω resistor. Find its internal resistance.</td><td>E ∝ 80; terminal p.d. ∝ 64. r = R(l₁ − l₂) ÷ l₂ = 4 × 16 ÷ 64 = 1 Ω. <b>Ans: 1 Ω</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 12</span>Magnetism, Induction and Alternating Current</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">12.1 Force on a current and on a moving charge</td><td>F = BIl sin θ;  F = Bqv sin θ;  r = mv ÷ qB;  coil torque = NBIA</td><td>Force on a wire; direction and angle; charge in a field; radius of a circular path; torque on a coil</td><td>μ₀ = 4π × 10⁻⁷; e = 1.6 × 10⁻¹⁹ C; m(e) = 9.11 × 10⁻³¹ kg</td><td>The force is zero when the current runs parallel to the field; the force on a moving charge does no work, so speed is unchanged</td></tr>
+<tr><td class="k">12.2 Electromagnetic induction</td><td>ε = N ΔΦ ÷ Δt;  Φ = BA;  motional emf ε = Blv;  generator peak ε₀ = NBAω</td><td>Emf from changing flux; rod moving in a field; current and opposing force; generator output</td><td>Φ in webers; ω = 2πf</td><td>The induced force opposes the motion (Lenz's law): mechanical power in equals electrical power out</td></tr>
+<tr><td class="k">12.3 Alternating current</td><td>I(rms) = I₀ ÷ √2;  V(rms) = V₀ ÷ √2;  mean power = I(rms)²R = ½I₀²R</td><td>Peak and r.m.s. conversions; heating effect; transformer with efficiency and a lamp</td><td>Meters read r.m.s.; Nigerian mains 230 V r.m.s.</td><td>Mean power is half of peak power, not 0.7 of it; an AC meter shows r.m.s. not peak</td></tr>
+<tr><td class="k">12.4 Series RLC circuit and resonance</td><td>X(L) = 2πfL;  X(C) = 1 ÷ 2πfC;  Z = √[R² + (X(L) − X(C))²];  f₀ = 1 ÷ 2π√(LC)</td><td>Reactances; impedance; current and phase; resonant frequency; voltages across L and C at resonance</td><td>Use L in henries and C in farads</td><td>At resonance Z = R and current is greatest; voltages across L and C can exceed the supply voltage</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">12.1 Force on a current and on a moving charge</td></tr>
+<tr><td class="k">12.1a</td><td>A wire 0.2 m long carries 5 A at right angles to a field of 0.4 T. Find the force on it.</td><td>F = BIl = 0.4 × 5 × 0.2 = 0.4 N. <b>Ans: 0.4 N</b></td></tr>
+<tr><td class="k">12.1b</td><td>An electron moves at 2 000 000 m s⁻¹ at right angles to a 0.01 T field. Find the force and the radius of its circular path.</td><td>F = Bqv = 0.01 × 1.6 × 10⁻¹⁹ × 2 000 000 = 3.2 × 10<sup>-15</sup> N. The force supplies the centripetal force: r = mv ÷ qB = 1.14 × 10<sup>-3</sup> m = 1.14 mm. <b>Ans: F = 3.2 × 10<sup>-15</sup> N; r = 1.14 mm</b></td></tr>
+<tr><td class="k">12.1c</td><td>(i) A 0.6 m wire carrying 4 A makes 30° with a 0.5 T field: find the force. (ii) A coil of 100 turns and area 4 × 10<sup>-3</sup> m² carries 0.5 A in a 0.3 T field, its plane parallel to the field: find the torque.</td><td>(i) F = BIl sin θ = 0.5 × 4 × 0.6 × 0.5 = 0.6 N. (ii) τ = NBIA = 100 × 0.3 × 0.5 × 4 × 10<sup>-3</sup> = 0.06 N m. <b>Ans: (i) 0.6 N; (ii) 0.06 N m</b></td></tr>
+<tr class="sub"><td colspan="3">12.2 Electromagnetic induction</td></tr>
+<tr><td class="k">12.2a</td><td>The flux through a 200-turn coil falls from 0.02 Wb to 0.005 Wb in 0.1 s. Find the induced emf.</td><td>ε = NΔΦ ÷ Δt = 200 × 0.015 ÷ 0.1 = 30 V. <b>Ans: 30 V</b></td></tr>
+<tr><td class="k">12.2b</td><td>A rod 0.5 m long moves at 4 m s⁻¹ at right angles to a 0.3 T field in a circuit of resistance 2 Ω. Find the emf, current, the force opposing the motion and the power supplied.</td><td>ε = Blv = 0.3 × 0.5 × 4 = 0.6 V. I = 0.6 ÷ 2 = 0.3 A. F = BIl = 0.045 N. P = Fv = 0.18 W = εI = 0.18 W. <b>Ans: ε = 0.6 V; I = 0.3 A; F = 0.045 N; P = 0.18 W</b></td></tr>
+<tr><td class="k">12.2c</td><td>A generator coil has 100 turns of area 0.02 m² and rotates at 50 Hz in a 0.5 T field. Find the peak emf and the r.m.s. emf.</td><td>ω = 2πf = 314 rad s⁻¹. Peak ε₀ = NBAω = 100 × 0.5 × 0.02 × 314 = 314 V. r.m.s. = ε₀ ÷ √2 = 222 V. <b>Ans: peak 314 V; r.m.s. 222 V</b></td></tr>
+<tr class="sub"><td colspan="3">12.3 Alternating current</td></tr>
+<tr><td class="k">12.3a</td><td>Nigerian mains is 230 V r.m.s. Find the peak voltage.</td><td>V₀ = V(rms) × √2 = 230 × 1.414 = 325 V. <b>Ans: 325 V</b></td></tr>
+<tr><td class="k">12.3b</td><td>An alternating current of peak value 5 A flows through a 20 Ω resistor. Find the r.m.s. current and the mean power.</td><td>I(rms) = 5 ÷ √2 = 3.54 A. P = I²R = 12.5 × 20 = 250 W (half of the peak power 500 W). <b>Ans: 3.54 A; 250 W</b></td></tr>
+<tr><td class="k">12.3c</td><td>A transformer steps 230 V down to 12 V to run a 24 W lamp and is 95 % efficient. Find the turns ratio, the secondary current and the primary current.</td><td>Np : Ns = 230 : 12 = 19.2 : 1. I(s) = 24 ÷ 12 = 2 A. Input power = 24 ÷ 0.95 = 25.3 W. I(p) = 25.3 ÷ 230 = 0.11 A. <b>Ans: 19.2 : 1; 2 A; 0.11 A</b></td></tr>
+<tr class="sub"><td colspan="3">12.4 Series RLC circuit and resonance</td></tr>
+<tr><td class="k">12.4a</td><td>Find the reactances at 50 Hz of a 0.5 H inductor and a 10 μF capacitor.</td><td>X(L) = 2πfL = 2π × 50 × 0.5 = 157 Ω. X(C) = 1 ÷ 2πfC = 1 ÷ (2π × 50 × 1 × 10<sup>-5</sup>) = 318 Ω. <b>Ans: X(L) = 157 Ω; X(C) = 318 Ω</b></td></tr>
+<tr><td class="k">12.4b</td><td>A 100 Ω resistor, 0.5 H inductor and 10 μF capacitor are in series across 230 V, 50 Hz. Find the impedance, current and phase angle.</td><td>X(L) − X(C) = 157 − 318 = −161 Ω. Z = √(100² + −161²) = 190 Ω. I = 230 ÷ 190 = 1.21 A. tan φ = −161 ÷ 100, so φ = −58.2° (negative: capacitive, current leads the voltage). <b>Ans: Z = 190 Ω; I = 1.21 A; φ = −58.2°</b></td></tr>
+<tr><td class="k">12.4c</td><td>For the same circuit find the resonant frequency, the current at resonance and the voltage across the inductor at resonance.</td><td>f₀ = 1 ÷ 2π√(LC) = 1 ÷ 2π√(0.5 × 1 × 10<sup>-5</sup>) = 71.2 Hz. At resonance Z = R, so I = 230 ÷ 100 = 2.3 A. X(L) = 2π × 71.2 × 0.5 = 224 Ω; V(L) = I × X(L) = 514 V, which is larger than the 230 V supply. <b>Ans: f₀ = 71.2 Hz; I = 2.3 A; V(L) = 514 V</b></td></tr>
+</table>
+</section>
+<section class="week">
+  <h2><span class="wk">CHAPTER 13</span>Atomic and Nuclear Physics</h2>
+  <h3>Source Relations and Everything That Varies</h3>
+<table class="long mp"><tr><th style="width:15%">Family</th><th style="width:19%">Source relation</th><th style="width:27%">What can change</th><th style="width:18%">Constants and conditions</th><th>Curveball</th></tr>
+<tr><td class="k">13.1 Photons and the photoelectric effect</td><td>E = hf = hc ÷ λ;  hf = φ + KE(max);  φ = hf₀;  eV(s) = KE(max)</td><td>Photon energy in J and eV; maximum kinetic energy; stopping potential; threshold frequency or wavelength; maximum speed</td><td>h = 6.63 × 10⁻³⁴ J s; 1 eV = 1.6 × 10⁻¹⁹ J; c = 3 × 10⁸</td><td>No emission below the threshold frequency, however bright the light; brightness changes the number of electrons, not their energy</td></tr>
+<tr><td class="k">13.2 Energy levels and X-rays</td><td>E(n) = −13.6 ÷ n² eV;  photon energy = E(i) − E(f);  X-ray: eV = hf(max) = hc ÷ λ(min)</td><td>Photon from a transition; ionisation energy from a level; wavelength of the line; X-ray cut-off frequency and wavelength</td><td>Ground state n = 1 is −13.6 eV; ionisation takes the electron to 0 eV</td><td>The emitted photon carries the difference of two levels; the X-ray cut-off depends only on the tube voltage</td></tr>
+<tr><td class="k">13.3 Radioactive decay and half-life</td><td>N = N₀(½)^(t ÷ T);  A = λN;  T = ln 2 ÷ λ = 0.693 ÷ λ</td><td>Amount or activity after a time; half-life from two readings; decay constant; age of a sample</td><td>1 year = 3.15 × 10⁷ s</td><td>Equal fractions go in equal times, never equal amounts; background count must be subtracted</td></tr>
+<tr><td class="k">13.4 Nuclear equations and mass–energy</td><td>A and Z are conserved;  E = Δm c²;  1 u = 931 MeV;  binding energy per nucleon = BE ÷ A</td><td>Complete a decay equation; mass defect and binding energy; energy from fission or fusion</td><td>m(p) = 1.00728 u; m(n) = 1.00866 u; c = 3 × 10⁸</td><td>Alpha decay lowers A by 4 and Z by 2; beta decay keeps A and raises Z by 1; the product always has less mass than the parts</td></tr>
+</table>
+  <h3>Practice: Triples</h3>
+<table class="long qt"><tr><th style="width:5.5%">Q</th><th style="width:44%">Question</th><th>Working and answer</th></tr>
+<tr class="sub"><td colspan="3">13.1 Photons and the photoelectric effect</td></tr>
+<tr><td class="k">13.1a</td><td>Find the energy of a photon of wavelength 500 nm in joules and in electron-volts.</td><td>E = hc ÷ λ = 6.63 × 10⁻³⁴ × 3 × 10⁸ ÷ 5 × 10<sup>-7</sup> = 3.98 × 10<sup>-19</sup> J = 3.98 × 10<sup>-19</sup> ÷ (1.6 × 10⁻¹⁹) = 2.49 eV. <b>Ans: 3.98 × 10<sup>-19</sup> J = 2.49 eV</b></td></tr>
+<tr><td class="k">13.1b</td><td>A metal has work function 2.0 eV. Light of wavelength 400 nm falls on it. Find the maximum kinetic energy of the electrons and the stopping potential.</td><td>Photon energy = hc ÷ λ ÷ e = 3.11 eV. KE(max) = 3.11 − 2.0 = 1.11 eV, so the stopping potential is 1.11 V. <b>Ans: KE(max) = 1.11 eV; V(s) = 1.11 V</b></td></tr>
+<tr><td class="k">13.1c</td><td>A metal has a threshold wavelength of 600 nm. Find its work function in eV, and the maximum speed of electrons released by 400 nm light.</td><td>φ = hc ÷ λ₀ = 2.07 eV. Photon energy at 400 nm = 3.11 eV. KE(max) = 1.04 eV = 1.66 × 10<sup>-19</sup> J. v = √(2KE ÷ m) = √(2 × 1.66 × 10<sup>-19</sup> ÷ 9.11 × 10⁻³¹) = 603 000 m s⁻¹. <b>Ans: φ = 2.07 eV; v = 603 000 m s⁻¹</b></td></tr>
+<tr class="sub"><td colspan="3">13.2 Energy levels and X-rays</td></tr>
+<tr><td class="k">13.2a</td><td>An electron in hydrogen falls from n = 3 to n = 2. Find the photon energy and wavelength.</td><td>E₃ = −13.6 ÷ 9 = −1.51 eV; E₂ = −13.6 ÷ 4 = −3.4 eV. Photon energy = 1.89 eV. λ = hc ÷ E = 6.58 × 10<sup>-7</sup> m = 658 nm (red light). <b>Ans: 1.89 eV; 658 nm</b></td></tr>
+<tr><td class="k">13.2b</td><td>How much energy is needed to ionise a hydrogen atom whose electron is in the n = 2 level?</td><td>E(2) = −13.6 ÷ 4 = −3.4 eV. To reach 0 eV the electron needs 3.4 eV. <b>Ans: 3.4 eV</b></td></tr>
+<tr><td class="k">13.2c</td><td>An X-ray tube operates at 40 kV. Find the maximum photon frequency and the minimum wavelength.</td><td>eV = hf(max): f = 1.6 × 10⁻¹⁹ × 40 000 ÷ 6.63 × 10⁻³⁴ = 9.65 × 10<sup>18</sup> Hz. λ(min) = c ÷ f = 3.11 × 10<sup>-11</sup> m = 0.0311 nm. <b>Ans: f = 9.65 × 10<sup>18</sup> Hz; λ = 3.11 × 10<sup>-11</sup> m</b></td></tr>
+<tr class="sub"><td colspan="3">13.3 Radioactive decay and half-life</td></tr>
+<tr><td class="k">13.3a</td><td>A sample of 80 g has a half-life of 8 days. How much remains after 24 days?</td><td>Number of half-lives = 24 ÷ 8 = 3. Mass = 80 × (½)³ = 10 g. <b>Ans: 10 g</b></td></tr>
+<tr><td class="k">13.3b</td><td>The activity of a source falls from 3200 Bq to 400 Bq in 15 hours. Find the half-life.</td><td>3200 → 1600 → 800 → 400: 3 half-lives in 15 h, so T = 15 ÷ 3 = 5 h. <b>Ans: 5 h</b></td></tr>
+<tr><td class="k">13.3c</td><td>Carbon-14 has a half-life of 5730 years. Find the decay constant in s⁻¹ and the fraction left after 10000 years.</td><td>λ = 0.693 ÷ (5730 × 3.15 × 10⁷) = 3.84 × 10<sup>-12</sup> s⁻¹. Fraction = (½)^(10000 ÷ 5730) = 0.298. <b>Ans: λ = 3.84 × 10<sup>-12</sup> s⁻¹; fraction 0.298</b></td></tr>
+<tr class="sub"><td colspan="3">13.4 Nuclear equations and mass–energy</td></tr>
+<tr><td class="k">13.4a</td><td>Uranium-238 (Z = 92) decays by alpha emission. Find the mass number and atomic number of the daughter nucleus.</td><td>An alpha particle is ⁴₂He. A = 238 − 4 = 234; Z = 92 − 2 = 90. The daughter is thorium-234 (Z = 90). <b>Ans: A = 234; Z = 90 (thorium-234)</b></td></tr>
+<tr><td class="k">13.4b</td><td>Helium-4 has nuclear mass 4.00151 u. Find the mass defect, the binding energy and the binding energy per nucleon. (m(p) = 1.00728 u, m(n) = 1.00866 u, 1 u = 931 MeV)</td><td>Mass of parts = 2(1.00728) + 2(1.00866) = 4.03188 u. Mass defect = 0.03037 u. BE = 0.03037 × 931 = 28.3 MeV. Per nucleon = 28.3 ÷ 4 = 7.07 MeV. <b>Ans: Δm = 0.03037 u; BE = 28.3 MeV; 7.07 MeV per nucleon</b></td></tr>
+<tr><td class="k">13.4c</td><td>In a reactor 0.1 % of the mass of 1 kg of uranium-235 is converted to energy. Find the energy released and the mass of coal (3 × 10⁷ J kg⁻¹) that gives the same energy.</td><td>Δm = 0.001 × 1 = 0.001 kg. E = Δmc² = 0.001 × (3 × 10⁸)² = 9 × 10<sup>13</sup> J. Coal = 9 × 10<sup>13</sup> ÷ 3 × 10<sup>7</sup> = 3 000 000 kg (3 000 tonnes). <b>Ans: E = 9 × 10<sup>13</sup> J; coal 3 000 tonnes</b></td></tr>
+</table>
+</section>
+
+</div><!-- /sheet -->
+</body>
+</html>
