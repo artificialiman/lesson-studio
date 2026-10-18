@@ -1,0 +1,478 @@
+SS2 MATHEMATICS EXAMINATION
+60 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 1 hour 30 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: LOGIC
+------------------------------------------------------------------
+
+1. The negation of the statement “It is raining” is
+A. It is not raining
+B. It is raining heavily
+C. It is sunny
+D. It may rain
+E. It is not sunny
+
+2. The statement p ∧ q is true only when
+A. p is true and q is false
+B. p is false and q is true
+C. both p and q are true
+D. both p and q are false
+E. either p or q is true
+
+3. The statement p ∨ q is false only when
+A. p is true and q is false
+B. p is false and q is true
+C. both p and q are true
+D. both p and q are false
+E. p implies q
+
+4. The implication p → q is false only when
+A. p is true and q is true
+B. p is true and q is false
+C. p is false and q is true
+D. p is false and q is false
+E. p and q are both true
+
+5. The converse of p → q is
+A. q → p
+B. ¬p → ¬q
+C. ¬q → ¬p
+D. p ∧ q
+E. p ∨ q
+
+6. The contrapositive of p → q is
+A. q → p
+B. ¬p → ¬q
+C. ¬q → ¬p
+D. p → ¬q
+E. q → ¬p
+
+7. A tautology is a statement that is
+A. always false
+B. sometimes true
+C. always true
+D. neither true nor false
+E. true only when p is true
+
+8. If p is true and q is false, the truth value of p → q is
+A. true
+B. false
+C. undecided
+D. both true and false
+E. neither true nor false
+
+------------------------------------------------------------------
+SECTION B: TRIGONOMETRIC FUNCTIONS, IDENTITIES AND COMPOUND ANGLES
+------------------------------------------------------------------
+
+9. sin 30° =
+A. 0
+B. 1/2
+C. √2/2
+D. √3/2
+E. 1
+
+10. cos 60° =
+A. 0
+B. 1/2
+C. √2/2
+D. √3/2
+E. 1
+
+11. tan 45° =
+A. 0
+B. 1/2
+C. 1
+D. √3
+E. undefined
+
+12. Which of the following is a trigonometric identity?
+A. sin²θ − cos²θ = 1
+B. sin²θ + cos²θ = 1
+C. sinθ + cosθ = 1
+D. tanθ = cosθ/sinθ
+E. sin2θ = sinθ
+
+13. tan θ is equal to
+A. cosθ/sinθ
+B. sinθ/cosθ
+C. sinθ cosθ
+D. 1/sinθ
+E. 1/cosθ
+
+14. sin(A + B) =
+A. sinA cosB − cosA sinB
+B. sinA cosB + cosA sinB
+C. cosA cosB − sinA sinB
+D. cosA cosB + sinA sinB
+E. sinA + sinB
+
+15. cos(A + B) =
+A. cosA cosB − sinA sinB
+B. cosA cosB + sinA sinB
+C. sinA cosB + cosA sinB
+D. sinA cosB − cosA sinB
+E. cosA + cosB
+
+16. If sin θ = 3/5 and θ is acute, then cos θ =
+A. 2/5
+B. 3/5
+C. 4/5
+D. 5/4
+E. 1/5
+
+17. sin 2A =
+A. sinA cosA
+B. 2sinA cosA
+C. 2sinA
+D. cos²A − sin²A
+E. 1 − 2sin²A
+
+18. cos 2A =
+A. 2sinA cosA
+B. sin²A − cos²A
+C. cos²A − sin²A
+D. 1 + 2sin²A
+E. sinA + cosA
+
+------------------------------------------------------------------
+SECTION C: SYNTHETIC DIVISION, REMAINDER THEOREM AND BINOMIAL EXPANSION
+------------------------------------------------------------------
+
+19. Using synthetic division, divide x² + 3x + 2 by x + 1. The quotient is
+A. x + 1
+B. x + 2
+C. x − 2
+D. x² + 2
+E. x − 1
+
+20. The remainder when f(x) = x³ − 2x + 1 is divided by x − 1 is
+A. −1
+B. 0
+C. 1
+D. 2
+E. 3
+
+21. The remainder when x³ + 2x² − x + 3 is divided by x + 2 is
+A. 1
+B. 3
+C. 5
+D. 7
+E. 9
+
+22. If x − 2 is a factor of f(x), then
+A. f(2) = 1
+B. f(2) = 0
+C. f(−2) = 0
+D. f(0) = 2
+E. f(2) = −1
+
+23. The value of ⁵C₂ is
+A. 5
+B. 10
+C. 15
+D. 20
+E. 25
+
+24. In the expansion of (1 + x)³, the coefficient of x² is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 6
+
+25. In the expansion of (1 + x)⁴, the coefficient of x³ is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 6
+
+26. In the expansion of (1 + 2x)³, the coefficient of x is
+A. 2
+B. 4
+C. 6
+D. 8
+E. 12
+
+------------------------------------------------------------------
+SECTION D: QUADRATIC EQUATIONS AND ROOTS OF POLYNOMIALS
+------------------------------------------------------------------
+
+27. The roots of x² − 5x + 6 = 0 are
+A. 1 and 6
+B. 2 and 3
+C. −2 and −3
+D. 1 and 5
+E. −1 and 6
+
+28. The discriminant of x² + 4x + 1 = 0 is
+A. 8
+B. 10
+C. 12
+D. 16
+E. 20
+
+29. If the discriminant of a quadratic equation is less than zero, the roots are
+A. real and equal
+B. real and distinct
+C. not real
+D. zero
+E. rational
+
+30. The sum of the roots of 2x² − 6x + 4 = 0 is
+A. −3
+B. −2
+C. 2
+D. 3
+E. 4
+
+31. The product of the roots of 2x² − 6x + 4 = 0 is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 6
+
+32. The quadratic equation whose roots are 1 and 2 is
+A. x² + 3x + 2 = 0
+B. x² − 3x + 2 = 0
+C. x² − 2x + 3 = 0
+D. x² + 2x − 3 = 0
+E. x² − 3x − 2 = 0
+
+33. The almighty formula for solving ax² + bx + c = 0 is
+A. x = (−b ± √(b² − 4ac))/2a
+B. x = (b ± √(b² + 4ac))/2a
+C. x = (−b ± √(b² + 4ac))/a
+D. x = (b ± √(b² − 4ac))/a
+E. x = (−b ± √(4ac − b²))/2a
+
+34. If α and β are roots of x² − 3x + 2 = 0, then α + β =
+A. −3
+B. −2
+C. 2
+D. 3
+E. 5
+
+35. Solve x² = 9.
+A. x = 3 only
+B. x = −3 only
+C. x = ±3
+D. x = 9
+E. x = ±9
+
+36. If one root of x² + kx + 6 = 0 is 2, then k =
+A. −5
+B. −3
+C. 3
+D. 5
+E. 6
+
+------------------------------------------------------------------
+SECTION E: TANGENT AND NORMAL
+------------------------------------------------------------------
+
+37. The gradient of the curve y = x² at x = 3 is
+A. 3
+B. 6
+C. 9
+D. 12
+E. 18
+
+38. The gradient of the tangent to y = x² at x = 1 is
+A. 0
+B. 1
+C. 2
+D. 3
+E. 4
+
+39. The gradient of the normal to y = x² at x = 1 is
+A. −2
+B. −1/2
+C. 1/2
+D. 1
+E. 2
+
+40. The equation of the tangent to y = x² at the point (1, 1) is
+A. y = x
+B. y = 2x − 1
+C. y = 2x + 1
+D. y = x + 1
+E. y = −2x + 3
+
+41. If y = 3x² + 2x, then dy/dx =
+A. 3x + 2
+B. 6x + 2
+C. 6x² + 2
+D. 3x² + 2x
+E. 6x
+
+42. If the gradient of a tangent is 4, the gradient of the normal is
+A. 4
+B. −4
+C. 1/4
+D. −1/4
+E. 2
+
+------------------------------------------------------------------
+SECTION F: SINE AND COSINE RULE
+------------------------------------------------------------------
+
+43. The sine rule is stated as
+A. a/sinA = b/sinB = c/sinC
+B. a² = b² + c² − 2bc cosA
+C. a/sinA = b/cosB
+D. sinA/a = sinB/c
+E. a + b = sinA + sinB
+
+44. The cosine rule is stated as
+A. a/sinA = b/sinB
+B. a² = b² + c² − 2bc cosA
+C. a² = b² + c² + 2bc cosA
+D. a = b sinA
+E. sin²A + cos²A = 1
+
+45. In a triangle, A = 30°, a = 5 and B = 60°. Find b.
+A. 5
+B. 5√3
+C. 10
+D. 10√3
+E. 5√2
+
+46. If b = 7, c = 5 and A = 60°, then a² =
+A. 19
+B. 29
+C. 39
+D. 49
+E. 59
+
+47. The cosine rule is used when we know
+A. two angles and one side
+B. two sides and the included angle
+C. three angles only
+D. one side and one angle only
+E. no sides
+
+48. The sine rule is used when we know
+A. two angles and one side
+B. two sides and the included angle
+C. three sides only
+D. one angle only
+E. no angle
+
+49. In a right-angled triangle, a = 8, b = 6 and C = 90°. Find c.
+A. 8
+B. 10
+C. 12
+D. 14
+E. 16
+
+50. The area of a triangle with a = 6, b = 8 and C = 30° is
+A. 6
+B. 12
+C. 18
+D. 24
+E. 48
+
+------------------------------------------------------------------
+SECTION G: INDICES AND LOGARITHMS
+------------------------------------------------------------------
+
+51. Solve 2^x = 16.
+A. 2
+B. 3
+C. 4
+D. 5
+E. 8
+
+52. log₂ 32 =
+A. 2
+B. 3
+C. 4
+D. 5
+E. 6
+
+53. log₁₀ 1000 =
+A. 1
+B. 2
+C. 3
+D. 4
+E. 10
+
+54. log a + log b =
+A. log(a + b)
+B. log(ab)
+C. log(a/b)
+D. log(a − b)
+E. log a · log b
+
+55. log a − log b =
+A. log(a + b)
+B. log(ab)
+C. log(a/b)
+D. log(b/a)
+E. log a ÷ log b
+
+56. log aⁿ =
+A. n + log a
+B. n log a
+C. log(na)
+D. (log a)ⁿ
+E. log a / n
+
+57. 3⁰ =
+A. 0
+B. 1
+C. 3
+D. 1/3
+E. undefined
+
+58. 9^(1/2) =
+A. 1
+B. 2
+C. 3
+D. 4.5
+E. 81
+
+59. If log₂ x = 3, then x =
+A. 5
+B. 6
+C. 8
+D. 9
+E. 12
+
+60. Solve 2^(x + 1) = 8.
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. A      2. C      3. D      4. B      5. A
+6. C      7. C      8. B
+
+9. B     10. B     11. C     12. B     13. B
+14. B    15. A     16. C     17. B     18. C
+
+19. B    20. B     21. C     22. B     23. B
+24. C    25. D     26. C
+
+27. B    28. C     29. C     30. D     31. B
+32. B    33. A     34. D     35. C     36. A
+
+37. B    38. C     39. B     40. B     41. B
+42. D
+
+43. A    44. B     45. B     46. C     47. B
+48. A    49. B     50. B
+
+51. C    52. D     53. C     54. B     55. C
+56. B    57. B     58. C     59. C     60. B
+==================================================================

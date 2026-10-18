@@ -1,0 +1,318 @@
+SS1 DIGITAL TECHNOLOGIES EXAMINATION
+40 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 45 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: NUMBER BASE CONVERSIONS
+------------------------------------------------------------------
+
+1. Convert binary 1011₂ to decimal.
+A. 9
+B. 10
+C. 11
+D. 12
+E. 13
+
+2. Convert decimal 25 to binary.
+A. 11001₂
+B. 10101₂
+C. 10011₂
+D. 11010₂
+E. 11101₂
+
+3. Convert octal 17₈ to decimal.
+A. 13
+B. 14
+C. 15
+D. 16
+E. 17
+
+4. Convert decimal 45 to octal.
+A. 45₈
+B. 53₈
+C. 55₈
+D. 57₈
+E. 65₈
+
+5. Convert hexadecimal 2A₁₆ to decimal.
+A. 40
+B. 41
+C. 42
+D. 43
+E. 44
+
+6. Convert decimal 255 to hexadecimal.
+A. FE₁₆
+B. FF₁₆
+C. 100₁₆
+D. 1FF₁₆
+E. F0₁₆
+
+7. Convert binary 1111₂ to hexadecimal.
+A. E₁₆
+B. F₁₆
+C. 10₁₆
+D. 15₁₆
+E. 1F₁₆
+
+8. Convert hexadecimal A3₁₆ to binary.
+A. 10100011₂
+B. 10100010₂
+C. 1010011₂
+D. 11010011₂
+E. 10010011₂
+
+9. Convert octal 24₈ to binary.
+A. 10100₂
+B. 11000₂
+C. 10010₂
+D. 10110₂
+E. 11100₂
+
+10. Convert binary 11001₂ to octal.
+A. 21₈
+B. 31₈
+C. 41₈
+D. 51₈
+E. 61₈
+
+11. Convert decimal 100 to binary.
+A. 1100100₂
+B. 1101000₂
+C. 1010100₂
+D. 1110000₂
+E. 1001100₂
+
+12. Convert hexadecimal 1F₁₆ to decimal.
+A. 29
+B. 30
+C. 31
+D. 32
+E. 33
+
+------------------------------------------------------------------
+SECTION B: DEFINITIONS
+------------------------------------------------------------------
+
+13. Hardware refers to the
+A. programs stored in a computer
+B. physical components of a computer
+C. data stored in a computer
+D. instructions given to a computer
+E. network connecting computers
+
+14. A byte consists of
+A. 4 bits
+B. 8 bits
+C. 16 bits
+D. 32 bits
+E. 64 bits
+
+15. A bit is
+A. the smallest unit of data (binary digit 0 or 1)
+B. a group of 8 bytes
+C. a picture element
+D. a character
+E. a word
+
+16. A pixel is
+A. the smallest element of a digital image
+B. a unit of storage
+C. a binary digit
+D. a type of software
+E. a network device
+
+17. Software is
+A. the physical parts of a computer
+B. a set of programs/instructions that control the computer
+C. raw facts
+D. a network cable
+E. a storage device
+
+18. Data is
+A. processed information
+B. raw facts and figures
+C. a set of programs
+D. physical hardware
+E. an output device
+
+19. Information is
+A. raw facts
+B. processed data
+C. hardware
+D. software
+E. a network
+
+20. A computer is
+A. a calculator only
+B. an electronic device that accepts data, processes it and gives information
+C. a typewriter
+D. a television set
+E. a radio
+
+------------------------------------------------------------------
+SECTION C: ACRONYMS
+------------------------------------------------------------------
+
+21. DBMS stands for
+A. Data Base Management System
+B. Database Management System
+C. Data Management System
+D. Digital Base Management System
+E. Database Monitoring System
+
+22. NITDA stands for
+A. National Information Technology Development Agency
+B. Nigerian Information Technology Development Agency
+C. National Internet Technology Development Agency
+D. National Information Technology Data Agency
+E. National Information Technology Development Association
+
+23. ISP stands for
+A. Internet Service Provider
+B. Internet System Provider
+C. Internal Service Provider
+D. Information Service Provider
+E. Internet Software Provider
+
+24. DNS stands for
+A. Domain Name System
+B. Digital Name System
+C. Domain Network System
+D. Data Name System
+E. Domain Name Server
+
+25. VPN stands for
+A. Virtual Public Network
+B. Virtual Private Network
+C. Visual Private Network
+D. Virtual Personal Network
+E. Virtual Protected Network
+
+26. URL stands for
+A. Uniform Resource Locator
+B. Universal Resource Locator
+C. Uniform Retrieval Locator
+D. Unified Resource Locator
+E. Universal Retrieval Locator
+
+27. HTML stands for
+A. HyperText Markup Language
+B. HyperText Marking Language
+C. HighText Markup Language
+D. HyperTool Markup Language
+E. HyperText Machine Language
+
+28. HTTP stands for
+A. HyperText Transfer Protocol
+B. HyperText Transmission Protocol
+C. HighText Transfer Protocol
+D. HyperTool Transfer Protocol
+E. HyperText Transport Protocol
+
+29. LAN stands for
+A. Local Area Network
+B. Large Area Network
+C. Long Area Network
+D. Local Access Network
+E. Limited Area Network
+
+30. CPU stands for
+A. Central Processing Unit
+B. Computer Processing Unit
+C. Central Program Unit
+D. Control Processing Unit
+E. Central Processor Unit
+
+------------------------------------------------------------------
+SECTION D: OPERATING SYSTEM TYPES
+------------------------------------------------------------------
+
+31. Which operating system allows multiple users to use a computer simultaneously?
+A. Batch processing OS
+B. Real-time OS
+C. Time-sharing OS
+D. Single-user OS
+E. Embedded OS
+
+32. A real-time operating system is designed for
+A. batch jobs
+B. immediate processing within strict time constraints
+C. multitasking only
+D. single-user use only
+E. mobile phones only
+
+33. A batch processing operating system executes
+A. jobs one by one interactively
+B. jobs in groups without user interaction
+C. real-time applications
+D. network services
+E. mobile applications
+
+34. A distributed operating system
+A. manages a single computer
+B. manages a group of independent computers as one system
+C. is used only on mobile devices
+D. is an embedded system
+E. is a batch system
+
+35. An embedded operating system is typically found in
+A. mainframes
+B. dedicated devices/appliances
+C. supercomputers
+D. large servers
+E. desktop computers only
+
+36. A multi-tasking operating system allows
+A. only one task to run at a time
+B. multiple tasks to run concurrently
+C. multiple users only
+D. batch jobs only
+E. real-time control only
+
+37. A single-user operating system is designed for
+A. many users at a time
+B. one user at a time
+C. network environments only
+D. real-time systems only
+E. embedded systems only
+
+38. A network operating system primarily provides
+A. local processing only
+B. services to computers over a network
+C. real-time control
+D. batch processing
+E. mobile apps
+
+39. Android and iOS are examples of
+A. desktop operating systems
+B. mobile operating systems
+C. network operating systems
+D. batch operating systems
+E. real-time operating systems
+
+40. Which of the following is NOT an operating system?
+A. Windows
+B. Linux
+C. macOS
+D. Python
+E. Android
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. C      2. A      3. C      4. C      5. C
+6. B      7. B      8. A      9. A     10. B
+11. A    12. C
+
+13. B    14. B     15. A     16. A     17. B
+18. B    19. B     20. B
+
+21. B    22. A     23. A     24. A     25. B
+26. A    27. A     28. A     29. A     30. A
+
+31. C    32. B     33. B     34. B     35. B
+36. B    37. B     38. B     39. B     40. D
+==================================================================

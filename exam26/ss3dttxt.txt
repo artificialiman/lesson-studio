@@ -1,0 +1,362 @@
+SS3 DIGITAL TECHNOLOGIES EXAMINATION
+40 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 45 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: UNIVERSAL KEYBOARD SHORTCUTS
+------------------------------------------------------------------
+
+1. Across most applications, Ctrl + C is used to
+A. cut selected content
+B. copy selected content
+C. paste copied content
+D. close the application
+E. clear the screen
+
+2. Across most applications, Ctrl + V is used to
+A. paste copied/cut content
+B. view settings
+C. validate input
+D. select all
+E. save file
+
+3. Across most applications, Ctrl + X is used to
+A. cut selected content
+B. copy selected content
+C. close window
+D. create new file
+E. undo action
+
+4. Across most applications, Ctrl + Z is used to
+A. undo the last action
+B. redo the last action
+C. zoom in
+D. save
+E. select all
+
+5. Across most applications, Ctrl + Y is commonly used to
+A. redo the last undone action
+B. undo the last action
+C. copy
+D. paste
+E. find
+
+6. Across most applications, Ctrl + A is used to
+A. select all
+B. add new
+C. align text
+D. apply style
+E. open file
+
+7. Across most applications, Ctrl + S is used to
+A. save the current file
+B. select all
+C. sort data
+D. split window
+E. start slideshow
+
+8. Across most applications, Ctrl + P is used to
+A. print
+B. paste
+C. preview
+D. page setup
+E. open
+
+9. Across most applications, Ctrl + F is used to
+A. find/search
+B. format
+C. file new
+D. full screen
+E. fix errors
+
+10. Across most applications, Ctrl + N is commonly used to
+A. create a new file/document
+B. open an existing file
+C. save as
+D. print
+E. close
+
+11. Alt + Tab is commonly used to
+A. switch between open applications/windows
+B. close the active window
+C. open task manager
+D. rename a file
+E. refresh the page
+
+12. Ctrl + Alt + Delete is commonly used to
+A. open the security options screen/task manager
+B. delete all files
+C. restart the computer directly
+D. format a drive
+E. copy files
+
+------------------------------------------------------------------
+SECTION B: NIGERIAN CYBER CRIME ACT
+------------------------------------------------------------------
+
+13. The Nigerian Cyber Crime Act was enacted in
+A. 2011
+B. 2013
+C. 2015
+D. 2017
+E. 2019
+
+14. The primary aim of the Nigerian Cyber Crime Act is to
+A. regulate the importation of computers
+B. prohibit and punish cybercrimes and protect critical national information infrastructure
+C. license internet service providers only
+D. control social media usage only
+E. tax online businesses
+
+15. Under the Nigerian Cyber Crime Act, cyberstalking is
+A. a criminal offence
+B. a civil matter only
+C. allowed if done anonymously
+D. not mentioned in the Act
+E. only punishable if money is involved
+
+16. Identity theft under the Nigerian Cyber Crime Act is
+A. an offence punishable by law
+B. legal if for research
+C. not covered by the Act
+D. only a civil wrong
+E. allowed with consent
+
+17. The Nigerian Cyber Crime Act applies to
+A. only government offices
+B. only banks
+C. persons and organisations within Nigeria and related offences
+D. only foreign nationals
+E. only students
+
+18. Electronic fraud under the Nigerian Cyber Crime Act is
+A. prohibited and punishable
+B. allowed for small amounts
+C. not addressed
+D. legal if reported
+E. only a civil issue
+
+19. The Act establishes the office of the
+A. National Cyber Security Adviser/Coordinator
+B. Minister of Internet
+C. Director of Social Media
+D. Cyber Police Commissioner
+E. ICT Governor
+
+20. Critical national information infrastructure under the Act includes
+A. systems essential to national security, economy and public safety
+B. only personal computers
+C. only social media platforms
+D. only school computers
+E. only mobile phones
+
+21. Under the Nigerian Cyber Crime Act, unauthorised access to a computer system is
+A. an offence
+B. allowed for IT students
+C. legal if no damage is done
+D. only a civil matter
+E. permitted for journalists
+
+22. The Nigerian Cyber Crime Act provides for
+A. investigation and prosecution of cybercrimes
+B. banning all computers
+C. closing all cybercafés
+D. prohibiting internet use
+E. nationalising ISPs
+
+23. Cyberterrorism under the Nigerian Cyber Crime Act is
+A. a serious offence
+B. legal for activists
+C. not mentioned
+D. only a civil wrong
+E. allowed during protests
+
+24. The Act requires service providers to
+A. cooperate with law enforcement and keep records as required
+B. publish users’ passwords
+C. shut down at night
+D. ban all foreign websites
+E. provide free internet
+
+------------------------------------------------------------------
+SECTION C: NUMBER SYSTEMS
+------------------------------------------------------------------
+
+25. Convert binary 1101₂ to decimal.
+A. 11
+B. 12
+C. 13
+D. 14
+E. 15
+
+26. Convert decimal 37 to binary.
+A. 100101₂
+B. 101001₂
+C. 110101₂
+D. 100111₂
+E. 101101₂
+
+27. Convert octal 36₈ to decimal.
+A. 28
+B. 29
+C. 30
+D. 31
+E. 32
+
+28. Convert decimal 64 to octal.
+A. 100₈
+B. 80₈
+C. 64₈
+D. 110₈
+E. 70₈
+
+29. Convert hexadecimal B4₁₆ to decimal.
+A. 170
+B. 176
+C. 180
+D. 184
+E. 190
+
+30. Convert decimal 200 to hexadecimal.
+A. C8₁₆
+B. B8₁₆
+C. D8₁₆
+D. A8₁₆
+E. E8₁₆
+
+31. Convert binary 101010₂ to octal.
+A. 52₈
+B. 42₈
+C. 62₈
+D. 72₈
+E. 32₈
+
+32. Convert octal 17₈ to binary.
+A. 1111₂
+B. 1011₂
+C. 1101₂
+D. 1001₂
+E. 1110₂
+
+33. Convert hexadecimal 2E₁₆ to binary.
+A. 101110₂
+B. 101100₂
+C. 111010₂
+D. 110110₂
+E. 100110₂
+
+34. A binary number 10000000₂ is equivalent to
+A. 128₁₀
+B. 127₁₀
+C. 129₁₀
+D. 130₁₀
+E. 126₁₀
+
+35. A file size is 256₁₀ bits. Express it in hexadecimal.
+A. 100₁₆
+B. FF₁₆
+C. 101₁₆
+D. FE₁₆
+E. 110₁₆
+
+36. Convert 111111₂ to decimal.
+A. 63
+B. 64
+C. 65
+D. 62
+E. 61
+
+------------------------------------------------------------------
+SECTION D: FLOWCHARTS
+------------------------------------------------------------------
+
+37. In a flowchart, an oval (rounded rectangle) represents
+A. start/end
+B. process
+C. decision
+D. input/output
+E. connector
+
+38. In a flowchart, a rectangle represents
+A. a process/action
+B. start/end
+C. decision
+D. input/output
+E. arrow
+
+39. In a flowchart, a diamond represents
+A. a decision
+B. a process
+C. start/end
+D. input/output
+E. connector
+
+40. In a flowchart, a parallelogram represents
+A. input/output
+B. process
+C. decision
+D. start/end
+E. connector
+
+41. In a flowchart, an arrow represents
+A. the direction of flow
+B. a decision
+C. a process
+D. an input
+E. a connector only
+
+42. In a flowchart, a small circle (connector) is used to
+A. connect parts of a flowchart across pages
+B. represent a decision
+C. show input
+D. show output
+E. mark the end
+
+43. A flowchart is best defined as
+A. a diagram that shows the steps of an algorithm or process
+B. a type of database
+C. a spreadsheet formula
+D. a network cable
+E. a programming language
+
+44. The correct sequence in a simple flowchart for finding the sum of two numbers is
+A. start → input numbers → add → output sum → end
+B. start → add → input → end → output
+C. input → end → add → start → output
+D. start → output → add → input → end
+E. add → start → input → output → end
+
+45. If a flowchart decision asks “Is x > 10?”, the two branches are
+A. Yes/No
+B. True/False only
+C. Start/End
+D. Input/Output
+E. Process/Decision
+
+46. A flowchart symbol with a rectangle is used for
+A. calculation or assignment
+B. branching
+C. reading data
+D. printing results
+E. ending the program
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. B      2. A      3. A      4. A      5. A
+6. A      7. A      8. A      9. A     10. A
+11. A    12. A
+
+13. C    14. B     15. A     16. A     17. C
+18. A    19. A     20. A     21. A     22. A
+23. A    24. A
+
+25. C    26. A     27. C     28. A     29. B
+30. A    31. A     32. A     33. A     34. A
+35. A    36. A
+
+37. A    38. A     39. A     40. A     41. A
+42. A    43. A     44. A     45. A     46. A
+==================================================================

@@ -1,0 +1,472 @@
+SS1 CHEMISTRY EXAMINATION — 60 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 1 hour 30 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+[RMM: H = 1, C = 12, N = 14, O = 16, Na = 23, S = 32, Cl = 35.5, Ca = 40]
+
+------------------------------------------------------------------
+SECTION A: ACIDS, BASES AND PARTICLES
+------------------------------------------------------------------
+
+1. An Arrhenius acid is a substance that
+A. donates an electron pair
+B. produces hydrogen ions (H⁺) in water
+C. accepts a proton
+D. produces hydroxide ions (OH⁻) in water
+E. accepts an electron pair
+
+2. An Arrhenius base is a substance that
+A. produces hydroxide ions (OH⁻) in water
+B. produces hydrogen ions (H⁺) in water
+C. donates a proton
+D. accepts an electron pair
+E. is always insoluble in water
+
+3. A Bronsted–Lowry acid is a
+A. proton acceptor
+B. electron pair donor
+C. proton donor
+D. hydroxide ion producer
+E. electron pair acceptor
+
+4. A Bronsted–Lowry base is a
+A. proton donor
+B. proton acceptor
+C. electron pair acceptor
+D. hydrogen ion producer
+E. salt producer
+
+5. A Lewis acid is a
+A. proton donor
+B. proton acceptor
+C. electron pair acceptor
+D. electron pair donor
+E. hydroxide ion producer
+
+6. A Lewis base is a
+A. proton donor
+B. electron pair donor
+C. electron pair acceptor
+D. hydrogen ion producer
+E. proton acceptor only
+
+7. The conjugate acid of water (H₂O) is
+A. OH⁻
+B. H₃O⁺
+C. H⁺
+D. H₂O₂
+E. O²⁻
+
+8. A strong acid reacts with a strong base to give
+A. salt + water
+B. salt + hydrogen
+C. acid + base
+D. oxide + water
+E. salt + oxygen
+
+9. The particle H⁺ is called a
+A. hydride ion
+B. hydrogen ion (proton)
+C. hydroxide ion
+D. hydronium ion
+E. oxide ion
+
+10. The particle H₃O⁺ is called a
+A. hydroxide ion
+B. hydride ion
+C. hydroxonium (oxonium) ion
+D. ammonium ion
+E. hydrogen ion
+
+11. The particle OH⁻ is called a
+A. hydroxide ion
+B. hydronium ion
+C. oxide ion
+D. hydrogen ion
+E. carbonate ion
+
+12. The particle NH₄⁺ is called an
+A. ammonium ion
+B. ammonia ion
+C. nitride ion
+D. nitrate ion
+E. hydride ion
+
+13. The particle CO₃²⁻ is called a
+A. carbonate ion
+B. carbonite ion
+C. carbide ion
+D. hydrogen carbonate ion
+E. carboxyl ion
+
+14. The compound Al₂(CO₃)₃ is named
+A. aluminium carbonate
+B. aluminium hydrogen carbonate
+C. aluminium carbide
+D. aluminium carbonite
+E. aluminium oxide
+
+15. The compound H₂SO₄ is named
+A. tetraoxosulphate(IV) acid
+B. tetraoxosulphate(VI) acid
+C. trioxosulphate(VI) acid
+D. sulphurous acid
+E. hydrogen sulphide
+
+------------------------------------------------------------------
+SECTION B: REACTION TYPES
+------------------------------------------------------------------
+
+16. A reactive metal such as sodium reacts with water to give
+A. metal oxide + hydrogen
+B. metal hydroxide + hydrogen
+C. metal hydroxide + oxygen
+D. metal hydride + oxygen
+E. metal + water only
+
+17. Hydrogen reacts with chlorine to form
+A. HCl
+B. HClO
+C. Cl₂O
+D. H₂Cl
+E. HClO₃
+
+18. Hydrogen reacts with bromine to form
+A. HBr
+B. HBrO
+C. Br₂O
+D. H₂Br
+E. HBrO₃
+
+19. Hydrogen reacts with fluorine to form
+A. HF
+B. HFO
+C. F₂O
+D. H₂F
+E. HF₂
+
+20. The reaction N₂ + 3H₂ → 2NH₃ is an example of
+A. decomposition
+B. combination (synthesis)
+C. displacement
+D. double decomposition
+E. neutralization
+
+21. Hydrogen reacts with oxygen to form
+A. H₂O
+B. H₂O₂
+C. OH
+D. HO₂
+E. O₃
+
+22. Two glucose molecules combine to form
+A. sucrose + water
+B. maltose + water
+C. fructose + water
+D. starch + oxygen
+E. lactose + hydrogen
+
+23. Glucose reacts with fructose to form
+A. maltose + water
+B. sucrose + water
+C. starch + water
+D. cellulose + water
+E. lactose + oxygen
+
+24. Two amino acid molecules combine to form
+A. dipeptide + water
+B. protein + oxygen
+C. glucose + water
+D. fatty acid + water
+E. glycerol + water
+
+25. Fatty acid reacts with glycerol to form
+A. fat/oil + water
+B. glucose + water
+C. protein + water
+D. starch + oxygen
+E. amino acid + water
+
+------------------------------------------------------------------
+SECTION C: VALENCY, FORMULAE AND NAMING
+------------------------------------------------------------------
+
+26. The valency of the hydrogen ion (H⁺) is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 0
+
+27. The charge on the hydroxonium ion (H₃O⁺) is
+A. −1
+B. +1
+C. +2
+D. −2
+E. 0
+
+28. The correct formula for aluminium carbonate is
+A. AlCO₃
+B. Al₂CO₃
+C. Al₂(CO₃)₃
+D. Al(CO₃)₃
+E. Al₃(CO₃)₂
+
+29. The valency of sodium (Na) is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+30. The valency of calcium (Ca) is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+31. The valency of aluminium (Al) is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+32. The valency of iron in FeCl₂ is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+33. The valency of iron in FeCl₃ is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+34. The valency of the sulphate ion (SO₄²⁻) is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+35. The valency of the nitrate ion (NO₃⁻) is
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+36. The correct formula for sodium sulphate is
+A. NaSO₄
+B. Na₂SO₄
+C. Na(SO₄)₂
+D. Na₂(SO₄)₃
+E. Na₃SO₄
+
+37. The correct formula for calcium chloride is
+A. CaCl
+B. Ca₂Cl
+C. CaCl₂
+D. Ca₂Cl₂
+E. CaCl₃
+
+38. The correct formula for aluminium oxide is
+A. AlO
+B. Al₂O
+C. AlO₂
+D. Al₂O₃
+E. Al₃O₂
+
+------------------------------------------------------------------
+SECTION D: COEFFICIENT BALANCING
+------------------------------------------------------------------
+
+39. Balance: __H₂ + __O₂ → __H₂O
+A. 1, 1, 1
+B. 2, 1, 2
+C. 2, 2, 1
+D. 1, 2, 2
+E. 3, 1, 3
+
+40. Balance: __Fe + __O₂ → __Fe₂O₃
+A. 2, 3, 1
+B. 4, 3, 2
+C. 3, 2, 1
+D. 4, 2, 2
+E. 1, 1, 1
+
+41. Balance: __KClO₃ → __KCl + __O₂
+A. 1, 1, 1
+B. 2, 2, 3
+C. 2, 1, 3
+D. 3, 2, 2
+E. 1, 2, 3
+
+42. Balance: __N₂ + __H₂ → __NH₃
+A. 1, 3, 2
+B. 1, 2, 2
+C. 2, 3, 2
+D. 2, 6, 4
+E. 1, 1, 1
+
+43. Balance: __CH₄ + __O₂ → __CO₂ + __H₂O
+A. 1, 1, 1, 1
+B. 1, 2, 1, 2
+C. 1, 2, 2, 1
+D. 2, 4, 2, 4
+E. 1, 3, 1, 2
+
+44. Balance: __Na + __H₂O → __NaOH + __H₂
+A. 1, 1, 1, 1
+B. 2, 2, 2, 1
+C. 2, 1, 2, 2
+D. 1, 2, 1, 2
+E. 3, 3, 3, 1
+
+45. Balance: __Al + __HCl → __AlCl₃ + __H₂
+A. 2, 6, 2, 3
+B. 1, 3, 1, 1
+C. 2, 3, 2, 3
+D. 3, 6, 3, 2
+E. 1, 2, 1, 1
+
+46. Balance: __H₂SO₄ + __NaOH → __Na₂SO₄ + __H₂O
+A. 1, 1, 1, 1
+B. 1, 2, 1, 2
+C. 2, 1, 1, 2
+D. 1, 2, 2, 1
+E. 2, 4, 2, 4
+
+47. Balance: __C₃H₈ + __O₂ → __CO₂ + __H₂O
+A. 1, 5, 3, 4
+B. 1, 3, 3, 4
+C. 2, 10, 6, 8
+D. 1, 4, 3, 4
+E. 1, 5, 4, 3
+
+48. Balance: __Fe₂O₃ + __CO → __Fe + __CO₂
+A. 1, 3, 2, 3
+B. 1, 2, 2, 2
+C. 2, 3, 4, 3
+D. 1, 1, 2, 1
+E. 2, 6, 4, 6
+
+------------------------------------------------------------------
+SECTION E: RMM CALCULATIONS
+------------------------------------------------------------------
+
+49. The relative molecular mass of H₂O is
+A. 16
+B. 17
+C. 18
+D. 20
+E. 22
+
+50. The relative molecular mass of HNO₃ is
+A. 47
+B. 53
+C. 63
+D. 73
+E. 80
+
+51. The relative molecular mass of NaCl is
+A. 23
+B. 35.5
+C. 58.5
+D. 68.5
+E. 78.5
+
+52. The relative molecular mass of CO₂ is
+A. 28
+B. 32
+C. 44
+D. 56
+E. 64
+
+53. The relative molecular mass of H₂SO₄ is
+A. 49
+B. 80
+C. 98
+D. 100
+E. 108
+
+54. The relative molecular mass of NaOH is
+A. 20
+B. 30
+C. 40
+D. 50
+E. 60
+
+55. The relative molecular mass of CaCO₃ is
+A. 56
+B. 84
+C. 100
+D. 112
+E. 120
+
+56. The relative molecular mass of NH₃ is
+A. 14
+B. 17
+C. 18
+D. 20
+E. 31
+
+------------------------------------------------------------------
+SECTION F: MISCELLANEOUS
+------------------------------------------------------------------
+
+57. The chemical name for vitamin C is
+A. ascorbic acid
+B. retinol
+C. thiamine
+D. riboflavin
+E. niacin
+
+58. The functional group C=O is called
+A. hydroxyl
+B. carbonyl
+C. carboxyl
+D. amino
+E. ester
+
+59. Which of the following is a strong acid?
+A. HCl
+B. CH₃COOH
+C. H₂CO₃
+D. HCN
+E. H₂O
+
+60. Which of the following is a Lewis base?
+A. NH₃
+B. BF₃
+C. H⁺
+D. AlCl₃
+E. SO₃
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. B      2. A      3. C      4. B      5. C
+6. B      7. B      8. A      9. B     10. C
+
+11. A     12. A     13. A     14. A     15. B
+16. B     17. A     18. A     19. A     20. B
+21. A     22. B     23. B     24. A     25. A
+
+26. A     27. B     28. C     29. A     30. B
+31. C     32. B     33. C     34. B     35. A
+36. B     37. C     38. D
+
+39. B     40. B     41. B     42. A     43. B
+44. B     45. A     46. B     47. A     48. A
+
+49. C     50. C     51. C     52. C     53. C
+54. C     55. C     56. B
+
+57. A     58. B     59. A     60. A
+==================================================================

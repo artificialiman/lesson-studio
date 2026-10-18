@@ -1,0 +1,333 @@
+SS3 MATHEMATICS EXAMINATION
+40 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 1 hour
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: PARTIAL FRACTIONS
+------------------------------------------------------------------
+
+1. Express 1/(x² − 1) in partial fractions: 1/(x² − 1) = A/(x − 1) + B/(x + 1). Find A.
+A. 1/2
+B. 1
+C. −1/2
+D. 2
+E. 0
+
+2. (2x + 3)/((x + 1)(x + 2)) = A/(x + 1) + B/(x + 2). Find A.
+A. 1
+B. 2
+C. 3
+D. −1
+E. 0
+
+3. 5/(x² − 4) = A/(x − 2) + B/(x + 2). Find A.
+A. 5/4
+B. 5/2
+C. 5
+D. 1/4
+E. 2
+
+4. (x + 4)/(x(x + 2)) = A/x + B/(x + 2). Find A.
+A. 2
+B. 1
+C. 4
+D. −2
+E. 0
+
+5. Which is the correct partial fraction form for (3x + 2)/((x − 1)(x + 3))?
+A. A/(x − 1) + B/(x + 3)
+B. A/(x − 1) + B/(x − 3)
+C. A/(x + 1) + B/(x + 3)
+D. A/(x − 1)² + B/(x + 3)
+E. A/(x − 1) + B/(x + 3) + C
+
+------------------------------------------------------------------
+SECTION B: MATRICES
+------------------------------------------------------------------
+
+6. If A = [[1, 2], [3, 4]], the determinant of A is
+A. −2
+B. 2
+C. 10
+D. −10
+E. 0
+
+7. If A = [[1, 2], [3, 4]] and B = [[2, 0], [1, 3]], find AB.
+A. [[4, 6], [10, 12]]
+B. [[2, 6], [10, 12]]
+C. [[4, 6], [9, 12]]
+D. [[4, 5], [10, 12]]
+E. [[1, 2], [3, 4]]
+
+8. The inverse of [[2, 1], [1, 1]] is
+A. [[1, −1], [−1, 2]]
+B. [[1, 1], [1, 2]]
+C. [[2, −1], [−1, 1]]
+D. [[−1, 1], [1, −2]]
+E. [[1, 0], [0, 1]]
+
+9. If A = [[3, 1], [2, 4]], the trace of A is
+A. 7
+B. 6
+C. 5
+D. 4
+E. 12
+
+10. The 2 × 2 identity matrix is
+A. [[1, 0], [0, 1]]
+B. [[0, 1], [1, 0]]
+C. [[1, 1], [1, 1]]
+D. [[0, 0], [0, 0]]
+E. [[1, 0], [1, 0]]
+
+------------------------------------------------------------------
+SECTION C: INEQUALITIES
+------------------------------------------------------------------
+
+11. Solve 2x − 3 < 7.
+A. x < 5
+B. x > 5
+C. x < 2
+D. x > 2
+E. x = 5
+
+12. Solve x² − 5x + 6 > 0.
+A. x < 2 or x > 3
+B. 2 < x < 3
+C. x > 2
+D. x < 3
+E. −2 < x < 3
+
+13. Solve |x − 2| < 3.
+A. −1 < x < 5
+B. x < 5
+C. x > −1
+D. −5 < x < 1
+E. x < −1 or x > 5
+
+14. Solve 3x + 2 ≥ x + 8.
+A. x ≥ 3
+B. x ≤ 3
+C. x ≥ 2
+D. x ≤ 2
+E. x = 3
+
+15. Solve 5 − 2x > 1.
+A. x < 2
+B. x > 2
+C. x < 3
+D. x > 3
+E. x = 2
+
+------------------------------------------------------------------
+SECTION D: VARIANCE AND CORRELATION
+------------------------------------------------------------------
+
+16. Variance is the square of the
+A. mean
+B. standard deviation
+C. range
+D. median
+E. mode
+
+17. The variance of the data 2, 4, 6, 8, 10 is
+A. 8
+B. 6
+C. 10
+D. 4
+E. 12
+
+18. The correlation coefficient always lies between
+A. −1 and 1
+B. 0 and 1
+C. −1 and 0
+D. 0 and 2
+E. −2 and 2
+
+19. A correlation coefficient of r = −0.9 indicates
+A. strong negative correlation
+B. weak negative correlation
+C. strong positive correlation
+D. no correlation
+E. perfect positive correlation
+
+20. Standard deviation is the
+A. square root of variance
+B. square of variance
+C. mean of the data
+D. range of the data
+E. sum of deviations
+
+------------------------------------------------------------------
+SECTION E: PROBABILITY
+------------------------------------------------------------------
+
+21. The probability of any event lies between
+A. 0 and 1
+B. −1 and 1
+C. 0 and 2
+D. 1 and 2
+E. −1 and 0
+
+22. A fair die is rolled once. The probability of getting an even number is
+A. 1/2
+B. 1/3
+C. 1/6
+D. 2/3
+E. 1/4
+
+23. Two fair coins are tossed. The probability of getting two heads is
+A. 1/4
+B. 1/2
+C. 1/3
+D. 3/4
+E. 1
+
+24. A card is drawn from a standard deck of 52 cards. The probability that it is a red card is
+A. 1/2
+B. 1/4
+C. 1/13
+D. 2/13
+E. 1/26
+
+25. If P(A) = 0.3 and P(B) = 0.4, and A and B are mutually exclusive, then P(A or B) =
+A. 0.7
+B. 0.12
+C. 0.1
+D. 0.5
+E. 0.3
+
+------------------------------------------------------------------
+SECTION F: BASIC INDICES
+------------------------------------------------------------------
+
+26. Simplify 2³ × 2⁴.
+A. 2⁷
+B. 2¹²
+C. 4⁷
+D. 2⁶
+E. 4¹²
+
+27. Simplify (3²)³.
+A. 3⁶
+B. 3⁵
+C. 3⁹
+D. 9⁶
+E. 3⁸
+
+28. Evaluate 5⁰.
+A. 1
+B. 0
+C. 5
+D. 1/5
+E. undefined
+
+29. Evaluate 16^(1/2).
+A. 4
+B. 8
+C. 2
+D. 32
+E. 1/4
+
+30. Simplify (2x³)².
+A. 4x⁶
+B. 2x⁶
+C. 4x⁵
+D. 2x⁵
+E. 4x⁹
+
+------------------------------------------------------------------
+SECTION G: ALGEBRAIC FRACTIONS
+------------------------------------------------------------------
+
+31. Simplify (x² − 4)/(x − 2).
+A. x + 2
+B. x − 2
+C. x² + 2
+D. x + 4
+E. 2x
+
+32. Simplify (x² + 3x + 2)/(x + 1).
+A. x + 2
+B. x − 2
+C. x + 1
+D. x² + 2
+E. 2x + 1
+
+33. Solve 1/(x − 1) = 2.
+A. x = 3/2
+B. x = 1/2
+C. x = 2
+D. x = 3
+E. x = −1/2
+
+34. Simplify 1/x + 1/(x + 1).
+A. (2x + 1)/(x(x + 1))
+B. (x + 1)/(x(x + 1))
+C. 2/(2x + 1)
+D. (2x − 1)/(x(x + 1))
+E. 1/(x(x + 1))
+
+35. Simplify (a² − b²)/(a − b).
+A. a + b
+B. a − b
+C. a² + b²
+D. ab
+E. 1
+
+------------------------------------------------------------------
+SECTION H: DIFFERENTIATION AND INTEGRATION OF SPECIAL FUNCTIONS
+------------------------------------------------------------------
+
+36. d/dx (sin x) =
+A. cos x
+B. −cos x
+C. sin x
+D. −sin x
+E. tan x
+
+37. d/dx (eˣ) =
+A. eˣ
+B. x eˣ
+C. eˣ / x
+D. ln x
+E. 1/eˣ
+
+38. ∫ cos x dx =
+A. sin x + C
+B. −sin x + C
+C. cos x + C
+D. −cos x + C
+E. tan x + C
+
+39. d/dx (ln x) =
+A. 1/x
+B. ln x
+C. x
+D. eˣ
+E. −1/x²
+
+40. ∫ eˣ dx =
+A. eˣ + C
+B. eˣ / x + C
+C. x eˣ + C
+D. ln x + C
+E. 1/eˣ + C
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. A      2. A      3. A      4. A      5. A
+6. A      7. A      8. A      9. A     10. A
+
+11. A    12. A     13. A     14. A     15. A
+16. B    17. A     18. A     19. A     20. A
+
+21. A    22. A     23. A     24. A     25. A
+26. A    27. A     28. A     29. A     30. A
+
+31. A    32. A     33. A     34. A     35. A
+36. A    37. A     38. A     39. A     40. A
+==================================================================

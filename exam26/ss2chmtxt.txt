@@ -1,0 +1,376 @@
+CHEMISTRY EXAMINATION — SS2
+60 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 1 hour 30 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: DEFINITIONS, OILRIG AND FARADAY'S LAWS
+------------------------------------------------------------------
+
+1. Electrolysis is best defined as the
+A. breaking down of a compound by heat
+B. decomposition of an electrolyte by the passage of an electric current
+C. dissolving of a solid in water
+D. conduction of electricity through a metal wire
+E. combination of ions to form a compound
+
+2. An electrolyte is a substance which
+A. conducts electricity in solution or molten state and is decomposed by it
+B. conducts electricity without being decomposed
+C. does not conduct electricity at all
+D. is always a metal
+E. dissolves in water but never conducts
+
+3. Which of the following is a NON-electrolyte?
+A. Sodium chloride solution
+B. Dilute tetraoxosulphate(VI) acid
+C. Sugar solution
+D. Copper(II) sulphate solution
+E. Molten lead(II) bromide
+
+4. OILRIG stands for
+A. Oxidation Is Loss, Reduction Is Gain (of electrons)
+B. Oxidation Is Gain, Reduction Is Loss (of electrons)
+C. Oxygen Is Lost, Reduction Is Gain
+D. Oxidation Involves Loss, Reduction Involves Gas
+E. Oxidation Is Loss, Reduction Is Gain (of protons)
+
+5. In terms of electrons, oxidation is the
+A. gain of electrons
+B. loss of electrons
+C. gain of protons
+D. loss of neutrons
+E. gain of oxygen only
+
+6. Reduction is the
+A. loss of electrons
+B. gain of electrons
+C. gain of oxygen
+D. loss of hydrogen
+E. increase in oxidation number
+
+7. The electrode at which oxidation takes place is the
+A. cathode
+B. anode
+C. electrolyte
+D. salt bridge
+E. voltameter
+
+8. The cathode is the electrode where
+A. oxidation occurs
+B. reduction occurs
+C. electrons are given up
+D. anions are attracted
+E. gas is always produced
+
+9. Faraday's first law of electrolysis states that the mass of substance deposited is
+A. inversely proportional to the quantity of charge passed
+B. directly proportional to the quantity of charge passed
+C. independent of the quantity of charge
+D. proportional to temperature only
+E. equal to the atomic mass of the substance
+
+10. Faraday's second law of electrolysis states that when the same quantity of electricity is passed through different electrolytes, the masses of substances deposited are
+A. always equal
+B. proportional to their chemical equivalent masses
+C. inversely proportional to their valencies
+D. always in the ratio 1:2
+E. independent of their equivalent masses
+
+------------------------------------------------------------------
+SECTION B: COEFFICIENT BALANCING
+------------------------------------------------------------------
+
+11. Balance: __H2 + __O2 → __H2O
+A. 1, 1, 1
+B. 2, 1, 2
+C. 2, 2, 1
+D. 1, 2, 2
+E. 3, 1, 3
+
+12. Balance: __Fe + __O2 → __Fe2O3
+A. 2, 3, 1
+B. 4, 3, 2
+C. 3, 2, 1
+D. 4, 2, 2
+E. 1, 1, 1
+
+13. Balance: __KClO3 → __KCl + __O2
+A. 1, 1, 1
+B. 2, 2, 3
+C. 2, 1, 3
+D. 3, 2, 2
+E. 1, 2, 3
+
+14. Balance: __N2 + __H2 → __NH3
+A. 1, 3, 2
+B. 1, 2, 2
+C. 2, 3, 2
+D. 2, 6, 4
+E. 1, 1, 1
+
+15. Balance: __CH4 + __O2 → __CO2 + __H2O
+A. 1, 1, 1, 1
+B. 1, 2, 1, 2
+C. 1, 2, 2, 1
+D. 2, 4, 2, 4
+E. 1, 3, 1, 2
+
+16. Balance: __Al + __HCl → __AlCl3 + __H2
+A. 2, 6, 2, 3
+B. 1, 3, 1, 1
+C. 2, 3, 2, 3
+D. 3, 6, 3, 2
+E. 1, 2, 1, 1
+
+17. Balance: __Na + __H2O → __NaOH + __H2
+A. 1, 1, 1, 1
+B. 2, 2, 2, 1
+C. 2, 1, 2, 2
+D. 1, 2, 1, 2
+E. 3, 3, 3, 1
+
+18. Balance: __Fe2O3 + __CO → __Fe + __CO2
+A. 1, 3, 2, 3
+B. 1, 2, 2, 2
+C. 2, 3, 4, 3
+D. 1, 1, 2, 1
+E. 2, 6, 4, 6
+
+19. Balance: __H2SO4 + __NaOH → __Na2SO4 + __H2O
+A. 1, 1, 1, 1
+B. 1, 2, 1, 2
+C. 2, 1, 1, 2
+D. 1, 2, 2, 1
+E. 2, 4, 2, 4
+
+20. Balance: __C3H8 + __O2 → __CO2 + __H2O
+A. 1, 5, 3, 4
+B. 1, 3, 3, 4
+C. 2, 10, 6, 8
+D. 1, 4, 3, 4
+E. 1, 5, 4, 3
+
+21. Balance: __NH3 + __O2 → __NO + __H2O
+A. 4, 5, 4, 6
+B. 2, 3, 2, 3
+C. 1, 1, 1, 1
+D. 4, 4, 4, 4
+E. 2, 5, 2, 3
+
+22. Balance: __Cu + __HNO3 → __Cu(NO3)2 + __NO2 + __H2O
+A. 1, 4, 1, 2, 2
+B. 1, 2, 1, 1, 1
+C. 2, 8, 2, 4, 4
+D. 1, 3, 1, 2, 1
+E. 2, 4, 2, 2, 2
+
+------------------------------------------------------------------
+SECTION C: VALENCY OF METALS AND HALOGENS / VALENCY CALCULATIONS
+------------------------------------------------------------------
+
+23. The valency of sodium (Na) is
+A. 1   B. 2   C. 3   D. 4   E. 0
+
+24. The valency of calcium (Ca) is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+25. The valency of aluminium (Al) is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+26. The valency of the sulphate ion (SO4) is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+27. The valency of the nitrate ion (NO3) is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+28. The valency of the carbonate ion (CO3) is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+29. The valency of the ammonium ion (NH4) is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+30. The valency of iron in FeCl3 is
+A. 1   B. 2   C. 3   D. 4   E. 5
+
+31. The chemical formula of calcium chloride is
+A. CaCl   B. Ca2Cl   C. CaCl2   D. Ca2Cl2   E. CaCl3
+
+32. The chemical formula of aluminium sulphate is
+A. AlSO4   B. Al2SO4   C. Al(SO4)3   D. Al2(SO4)3   E. Al3(SO4)2
+
+------------------------------------------------------------------
+SECTION D: ELECTROLYSIS CALCULATIONS
+(F = 96500 C mol⁻¹; Cu = 64; Ag = 108; Al = 27; molar volume at STP = 22.4 dm³)
+
+33. The quantity of charge passed when a current of 5 A flows for 10 minutes is
+A. 50 C   B. 300 C   C. 3000 C   D. 30000 C   E. 500 C
+
+34. The mass of silver deposited when 96500 C is passed through silver trioxonitrate(V) solution is
+A. 108 g   B. 54 g   C. 216 g   D. 27 g   E. 9.65 g
+
+35. The mass of copper deposited when a current of 2 A is passed through copper(II) sulphate solution for 1930 s is
+A. 0.64 g   B. 1.28 g   C. 2.56 g   D. 3.20 g   E. 0.32 g
+
+36. The time required to deposit 0.64 g of copper from copper(II) sulphate solution using a current of 2 A is
+A. 965 s   B. 482.5 s   C. 1930 s   D. 100 s   E. 500 s
+
+37. The volume of hydrogen produced at STP when 96500 C is passed through dilute tetraoxosulphate(VI) acid is
+A. 22.4 dm³   B. 11.2 dm³   C. 5.6 dm³   D. 44.8 dm³   E. 1.12 dm³
+
+38. The number of faradays required to deposit 1 mole of aluminium from Al³⁺ is
+A. 1   B. 2   C. 3   D. 4   E. 6
+
+39. The quantity of charge carried by one mole of electrons is
+A. 9650 C   B. 96500 C   C. 193000 C   D. 48250 C   E. 1 C
+
+40. The mass of copper deposited when 0.5 faraday is passed through copper(II) sulphate solution is
+A. 8 g   B. 16 g   C. 32 g   D. 64 g   E. 4 g
+
+41. The time required for a current of 1 A to deposit 1.08 g of silver is
+A. 965 s   B. 96.5 s   C. 9650 s   D. 482.5 s   E. 1930 s
+
+42. Which of the following equations requires 2 faradays per mole of metal deposited?
+A. Ag⁺ + e⁻ → Ag
+B. Cu²⁺ + 2e⁻ → Cu
+C. Al³⁺ + 3e⁻ → Al
+D. Na⁺ + e⁻ → Na
+E. Fe³⁺ + 3e⁻ → Fe
+
+------------------------------------------------------------------
+SECTION E: SOLUBILITY AND SOLUBILITY CALCULATIONS
+------------------------------------------------------------------
+
+43. Solubility is defined as the
+A. mass of solute in grams that saturates 100 g of solvent at a given temperature
+B. mass of solvent in grams that dissolves 100 g of solute
+C. total mass of a solution
+D. mass of solute in 1 dm³ of any solution
+E. rate at which a solute dissolves
+
+44. A saturated solution is one which
+A. contains more solute than it can dissolve
+B. contains the maximum amount of solute it can dissolve at that temperature
+C. contains no solute
+D. contains very little solute
+E. is always concentrated
+
+45. The solubility of a salt is 25 g per 100 g of water at 30 °C. The mass that dissolves in 200 g of water at the same temperature is
+A. 25 g   B. 50 g   C. 75 g   D. 100 g   E. 12.5 g
+
+46. If 40 g of a solute saturates 250 g of water at 25 °C, the solubility of the solute per 100 g of water is
+A. 8 g   B. 16 g   C. 25 g   D. 40 g   E. 10 g
+
+47. The solubility of a salt is 36 g per 100 g of water. The mass of water needed to dissolve 18 g of the salt is
+A. 18 g   B. 36 g   C. 50 g   D. 72 g   E. 100 g
+
+48. A saturated solution contains 80 g of a salt in 100 g of water at 60 °C. On cooling to 20 °C, the solubility becomes 30 g per 100 g of water. The mass of crystals deposited is
+A. 30 g   B. 50 g   C. 80 g   D. 110 g   E. 20 g
+
+49. For most solids, an increase in temperature
+A. decreases solubility
+B. increases solubility
+C. has no effect on solubility
+D. first decreases then increases solubility
+E. makes the solute insoluble
+
+50. The solubility of a gas in water
+A. increases as temperature rises
+B. decreases as temperature rises
+C. is unaffected by temperature
+D. is always zero
+E. increases with pressure only
+
+51. Solubility is usually expressed in
+A. g per 100 g of water
+B. g per 100 g of solution
+C. mol per 100 g of solute
+D. cm³ per 100 g of water
+E. g per 1 g of water
+
+52. A saturated solution of a salt has a solubility of 20 g per 100 g of water. The mass of the salt contained in 120 g of the saturated solution is
+A. 20 g   B. 24 g   C. 100 g   D. 12 g   E. 40 g
+
+------------------------------------------------------------------
+SECTION F: NAMES, MOLAR MASSES AND MISCELLANEOUS
+------------------------------------------------------------------
+
+53. A battery is also known as a/an
+A. accumulator (secondary cell)
+B. resistor
+C. capacitor
+D. transformer
+E. generator
+
+54. Battery acid is essentially
+A. hydrochloric acid
+B. nitric acid
+C. tetraoxosulphate(VI) acid (sulphuric acid)
+D. ethanoic acid
+E. carbonic acid
+
+55. The chemical name for vitamin C is
+A. ascorbic acid
+B. retinol
+C. thiamine
+D. riboflavin
+E. niacin
+
+56. The functional group C=O is called
+A. hydroxyl
+B. carbonyl
+C. carboxyl
+D. amino
+E. ester
+
+57. K2Cr2O7 is named
+A. potassium chromate
+B. potassium dichromate
+C. potassium permanganate
+D. potassium carbonate
+E. potassium chlorate
+
+58. The molar mass of copper (Cu = 64) is
+A. 32 g/mol
+B. 64 g/mol
+C. 128 g/mol
+D. 16 g/mol
+E. 56 g/mol
+
+59. The molar mass of iron (Fe = 56) is
+A. 28 g/mol
+B. 56 g/mol
+C. 112 g/mol
+D. 26 g/mol
+E. 64 g/mol
+
+60. The molar mass of H2SO4 (H = 1, S = 32, O = 16) is
+A. 49 g/mol
+B. 98 g/mol
+C. 80 g/mol
+D. 64 g/mol
+E. 100 g/mol
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. B      2. A      3. C      4. A      5. B
+6. B      7. B      8. B      9. B     10. B
+
+11. B     12. B     13. B     14. A     15. B
+16. A     17. B     18. A     19. B     20. A
+21. A     22. A
+
+23. A     24. B     25. C     26. B     27. A
+28. B     29. A     30. C     31. C     32. D
+
+33. C     34. A     35. B     36. A     37. B
+38. C     39. B     40. B     41. A     42. B
+
+43. A     44. B     45. B     46. B     47. C
+48. B     49. B     50. B     51. A     52. A
+
+53. A     54. C     55. A     56. B     57. B
+58. B     59. B     60. B
+==================================================================

@@ -1,0 +1,484 @@
+SS1 FURTHER MATHEMATICS EXAMINATION
+60 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 1 hour 30 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: SETS AND VENN DIAGRAMS
+------------------------------------------------------------------
+
+1. If A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, find A ∩ B.
+A. {1, 2}
+B. {3, 4}
+C. {5, 6}
+D. {1, 2, 3, 4, 5, 6}
+E. ∅
+
+2. If n(A) = 12, n(B) = 18 and n(A ∩ B) = 5, find n(A ∪ B).
+A. 20
+B. 25
+C. 30
+D. 35
+E. 15
+
+3. In a class of 40 students, 25 like Mathematics, 20 like Physics and 10 like both. How many like neither?
+A. 5
+B. 10
+C. 15
+D. 20
+E. 25
+
+4. If A ⊂ B, then A ∪ B is equal to
+A. A
+B. B
+C. ∅
+D. A ∩ B
+E. A'
+
+5. The number of subsets of a set with 5 elements is
+A. 10
+B. 16
+C. 25
+D. 32
+E. 64
+
+6. If n(A) = 10, n(B) = 15 and n(A ∪ B) = 20, find n(A ∩ B).
+A. 3
+B. 4
+C. 5
+D. 6
+E. 7
+
+7. If U = {1, 2, 3, 4, 5} and A = {2, 4}, find A'.
+A. {1, 3, 5}
+B. {2, 4}
+C. {1, 2, 3}
+D. {3, 4, 5}
+E. {1, 2, 5}
+
+8. In a Venn diagram, the region outside both circles represents
+A. A ∩ B
+B. A ∪ B
+C. (A ∪ B)'
+D. A' ∩ B
+E. A ∩ B'
+
+9. If n(A) = 10, n(B) = 12 and n(A ∩ B) = 4, find n(A ∪ B).
+A. 14
+B. 16
+C. 18
+D. 20
+E. 22
+
+10. If n(A) = 10, n(B) = 12 and n(A ∩ B) = 4, the number of elements in exactly one of A and B is
+A. 10
+B. 12
+C. 14
+D. 16
+E. 18
+
+------------------------------------------------------------------
+SECTION B: ALGEBRAIC FRACTIONS
+------------------------------------------------------------------
+
+11. Simplify (x² − 9)/(x − 3).
+A. x − 3
+B. x + 3
+C. x² + 3
+D. x + 9
+E. 3x
+
+12. Simplify (2x + 4)/(x² − 4).
+A. 2/(x − 2)
+B. 2/(x + 2)
+C. 1/(x − 2)
+D. (x + 2)/(x − 2)
+E. 2(x + 2)
+
+13. Simplify (x² − 4)/(x² + x − 6).
+A. (x − 2)/(x + 3)
+B. (x + 2)/(x + 3)
+C. (x + 2)/(x − 3)
+D. (x − 2)/(x − 3)
+E. (x + 3)/(x + 2)
+
+14. Solve 3/(x + 2) = 1/2.
+A. x = 1
+B. x = 2
+C. x = 3
+D. x = 4
+E. x = 5
+
+15. Simplify 1/x + 1/y.
+A. (x + y)/xy
+B. (x − y)/xy
+C. xy/(x + y)
+D. (x + y)/(x − y)
+E. 2/xy
+
+16. Simplify (x + 1)/x − x/(x + 1).
+A. 1/[x(x + 1)]
+B. (2x + 1)/[x(x + 1)]
+C. (2x − 1)/[x(x + 1)]
+D. (x + 1)/x
+E. 1/(x + 1)
+
+17. Simplify (a² − b²)/(a + b)².
+A. (a − b)/(a + b)
+B. (a + b)/(a − b)
+C. a − b
+D. a + b
+E. 1
+
+18. Simplify (x² + 5x + 6)/(x² − 4).
+A. (x + 3)/(x − 2)
+B. (x − 3)/(x + 2)
+C. (x + 2)/(x − 3)
+D. (x − 2)/(x + 3)
+E. (x + 3)/(x + 2)
+
+------------------------------------------------------------------
+SECTION C: FUNCTIONS, COMPOSITE AND INVERSE
+------------------------------------------------------------------
+
+19. If f(x) = 2x + 3, find f(5).
+A. 8
+B. 10
+C. 13
+D. 15
+E. 18
+
+20. If f(x) = x² and g(x) = x + 1, find f(g(x)).
+A. x² + 1
+B. (x + 1)²
+C. x² + x
+D. x² + x + 1
+E. x + 1
+
+21. If f(x) = 3x − 1, find f⁻¹(x).
+A. (x − 1)/3
+B. (x + 1)/3
+C. 3x + 1
+D. (x/3) + 1
+E. 3/(x + 1)
+
+22. If f(x) = 2x + 1 and g(x) = x − 3, find f(g(x)).
+A. 2x − 5
+B. 2x − 2
+C. 2x + 4
+D. 2x + 5
+E. 2x − 3
+
+23. If f(x) = x/(x − 1), find f(2).
+A. 0
+B. 1
+C. 2
+D. 3
+E. 4
+
+24. If f(x) = 3x + 2, find f⁻¹(4).
+A. 1/3
+B. 2/3
+C. 1
+D. 2
+E. 3
+
+25. If f(x) = x² − 1 and g(x) = 2x, find g(f(x)).
+A. 2x² − 1
+B. 2x² − 2
+C. 2x² + 2
+D. 4x² − 1
+E. x² − 2
+
+26. If f(x) = 4x − 5, find x when f(x) = 7.
+A. 1
+B. 2
+C. 3
+D. 4
+E. 5
+
+------------------------------------------------------------------
+SECTION D: BINARY OPERATIONS
+------------------------------------------------------------------
+
+27. A binary operation * is defined by a * b = a + b + ab. Find 2 * 3.
+A. 5
+B. 6
+C. 8
+D. 11
+E. 13
+
+28. If a * b = a² + b², find 2 * 3.
+A. 5
+B. 10
+C. 13
+D. 25
+E. 36
+
+29. If a * b = 2a − b, find 5 * 3.
+A. 4
+B. 5
+C. 7
+D. 10
+E. 13
+
+30. If a * b = ab/2, find 4 * 6.
+A. 6
+B. 8
+C. 10
+D. 12
+E. 24
+
+31. If a * b = a + b − ab, find 3 * 2.
+A. −1
+B. 0
+C. 1
+D. 2
+E. 5
+
+32. If a * b = (a + b)/2, find 4 * 8.
+A. 4
+B. 5
+C. 6
+D. 8
+E. 12
+
+33. If a * b = a^b, find 2 * 3.
+A. 5
+B. 6
+C. 8
+D. 9
+E. 12
+
+------------------------------------------------------------------
+SECTION E: INDICES
+------------------------------------------------------------------
+
+34. Simplify 2³ × 2⁴.
+A. 2⁷
+B. 2¹²
+C. 4⁷
+D. 2⁶
+E. 4¹²
+
+35. Simplify (x³)⁴.
+A. x⁷
+B. x¹²
+C. x⁶⁴
+D. x⁹
+E. x
+
+36. Simplify 8^(2/3).
+A. 2
+B. 4
+C. 8
+D. 16
+E. 32
+
+37. Simplify 16^(−1/2).
+A. −4
+B. −1/4
+C. 1/4
+D. 4
+E. 1/16
+
+38. Solve 2^x = 32.
+A. 3
+B. 4
+C. 5
+D. 6
+E. 7
+
+39. Simplify (a²b³)/(ab).
+A. ab²
+B. a²b²
+C. a³b⁴
+D. ab³
+E. a²b³
+
+40. Evaluate 27^(1/3).
+A. 2
+B. 3
+C. 4
+D. 6
+E. 9
+
+41. Simplify x⁰ (x ≠ 0).
+A. 0
+B. 1
+C. x
+D. x²
+E. undefined
+
+------------------------------------------------------------------
+SECTION F: LOGARITHMS AND INDICES
+------------------------------------------------------------------
+
+42. If log₂ 8 = x, find x.
+A. 1
+B. 2
+C. 3
+D. 4
+E. 8
+
+43. Express 10² = 100 in logarithmic form.
+A. log₂ 100 = 10
+B. log₁₀ 100 = 2
+C. log₁₀ 2 = 100
+D. log₁₀₀ 10 = 2
+E. log₂ 10 = 100
+
+44. Evaluate log₃ 81.
+A. 2
+B. 3
+C. 4
+D. 5
+E. 9
+
+45. Simplify log₂ 4 + log₂ 8.
+A. 2
+B. 3
+C. 5
+D. 6
+E. 12
+
+46. If log x = 2 (common logarithm), find x.
+A. 20
+B. 100
+C. 200
+D. 1000
+E. 2
+
+47. If log₅ 125 = 3, then
+A. 3⁵ = 125
+B. 5³ = 125
+C. 125³ = 5
+D. 5¹²⁵ = 3
+E. 3¹²⁵ = 5
+
+------------------------------------------------------------------
+SECTION G: AP AND GP FORMULAE AND CALCULATIONS
+------------------------------------------------------------------
+
+48. The 5th term of an AP with first term 2 and common difference 3 is
+A. 11
+B. 12
+C. 13
+D. 14
+E. 15
+
+49. The sum of the first 10 terms of an AP with first term 1 and common difference 2 is
+A. 90
+B. 95
+C. 100
+D. 105
+E. 110
+
+50. The 4th term of a GP with first term 2 and common ratio 3 is
+A. 18
+B. 27
+C. 54
+D. 81
+E. 162
+
+51. The sum of the first 4 terms of a GP with first term 1 and common ratio 2 is
+A. 7
+B. 15
+C. 16
+D. 31
+E. 32
+
+52. Find the 10th term of the AP: 3, 7, 11, ...
+A. 35
+B. 39
+C. 43
+D. 47
+E. 51
+
+53. Find the 5th term of the GP: 2, 6, 18, ...
+A. 54
+B. 108
+C. 162
+D. 324
+E. 486
+
+54. Find the sum to infinity of a GP with first term 4 and common ratio 1/2.
+A. 4
+B. 6
+C. 8
+D. 10
+E. 12
+
+55. If 2, x, 8 are in GP, find the positive value of x.
+A. 3
+B. 4
+C. 5
+D. 6
+E. 16
+
+------------------------------------------------------------------
+SECTION H: AP/GP WORD PROBLEMS
+------------------------------------------------------------------
+
+56. A man saves $100 in the first month and increases his savings by $20 each month. How much does he save in the 12th month?
+A. $220
+B. $240
+C. $300
+D. $320
+E. $340
+
+57. A ball is dropped from a height of 100 m and rebounds 3/4 of the height each time. Find the height after the 2nd rebound.
+A. 75 m
+B. 56.25 m
+C. 42.19 m
+D. 50 m
+E. 37.5 m
+
+58. A salary starts at $50,000 and increases by 10% each year. Find the salary in the 3rd year.
+A. $55,000
+B. $60,000
+C. $60,500
+D. $66,550
+E. $70,000
+
+59. How many terms are there in the AP: 5, 9, 13, ..., 101?
+A. 23
+B. 24
+C. 25
+D. 26
+E. 27
+
+60. A GP has first term 3 and common ratio 2. Which term first exceeds 100?
+A. 5th
+B. 6th
+C. 7th
+D. 8th
+E. 9th
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. B      2. B      3. A      4. B      5. D
+6. C      7. A      8. C      9. C     10. C
+
+11. B     12. A     13. B     14. D     15. A
+16. B     17. A     18. A
+
+19. C     20. B     21. B     22. A     23. C
+24. B     25. B     26. C
+
+27. D     28. C     29. C     30. D     31. A
+32. C     33. C
+
+34. A     35. B     36. B     37. C     38. C
+39. A     40. B     41. B
+
+42. C     43. B     44. C     45. C     46. B
+47. B
+
+48. D     49. C     50. C     51. B     52. B
+53. C     54. C     55. B
+
+56. D     57. B     58. C     59. C     60. C
+==================================================================

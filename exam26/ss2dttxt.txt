@@ -1,0 +1,478 @@
+SS2 DIGITAL TECHNOLOGIES EXAMINATION
+60 OBJECTIVE QUESTIONS (OPTIONS A – E)
+Time Allowed: 1 hour 30 minutes
+
+INSTRUCTIONS: Choose the correct option from A to E for each question.
+
+------------------------------------------------------------------
+SECTION A: KEYBOARD SHORTCUTS — WORD PROCESSING (MS WORD)
+------------------------------------------------------------------
+
+1. In Microsoft Word, the shortcut Ctrl + S is used to
+A. select all
+B. save the document
+C. print the document
+D. open a new document
+E. close the document
+
+2. In Microsoft Word, Ctrl + C is used to
+A. cut selected text
+B. copy selected text
+C. paste copied text
+D. clear formatting
+E. centre text
+
+3. In Microsoft Word, Ctrl + V is used to
+A. cut
+B. copy
+C. paste
+D. undo
+E. redo
+
+4. In Microsoft Word, Ctrl + X is used to
+A. cut selected text
+B. copy selected text
+C. paste
+D. save
+E. print
+
+5. In Microsoft Word, Ctrl + Z is used to
+A. redo the last action
+B. undo the last action
+C. zoom in
+D. save
+E. select all
+
+6. In Microsoft Word, Ctrl + P is used to
+A. paste
+B. print
+C. preview
+D. page setup
+E. paragraph
+
+7. In Microsoft Word, Ctrl + A is used to
+A. select all
+B. add a page
+C. align text
+D. apply style
+E. open file
+
+8. In Microsoft Word, Ctrl + B is used to
+A. bold selected text
+B. break page
+C. build table
+D. backspace
+E. border
+
+9. In Microsoft Word, Ctrl + I is used to
+A. indent text
+B. italicise selected text
+C. insert image
+D. increase font
+E. ignore spelling
+
+10. In Microsoft Word, Ctrl + U is used to
+A. underline selected text
+B. undo
+C. update field
+D. unlink
+E. upload
+
+------------------------------------------------------------------
+SECTION B: KEYBOARD SHORTCUTS — SPREADSHEETS (MS EXCEL)
+------------------------------------------------------------------
+
+11. In Microsoft Excel, Ctrl + C is used to
+A. copy selected cells
+B. cut selected cells
+C. clear contents
+D. calculate
+E. create chart
+
+12. In Microsoft Excel, Ctrl + V is used to
+A. paste copied cells
+B. view formulas
+C. validate data
+D. insert values
+E. save
+
+13. In Microsoft Excel, Ctrl + X is used to
+A. cut selected cells
+B. copy selected cells
+C. clear formatting
+D. close workbook
+E. calculate
+
+14. In Microsoft Excel, Ctrl + Z is used to
+A. undo the last action
+B. redo the last action
+C. zoom
+D. save
+E. select all
+
+15. In Microsoft Excel, Ctrl + S is used to
+A. save the workbook
+B. sort data
+C. select all
+D. sum values
+E. split cells
+
+16. In Microsoft Excel, Ctrl + Home moves the cursor to
+A. the last cell
+B. cell A1
+C. the next sheet
+D. the formula bar
+E. the end of the row
+
+17. In Microsoft Excel, the shortcut Ctrl + ; (semicolon) inserts
+A. the current date
+B. the current time
+C. a formula
+D. a new sheet
+E. a comment
+
+18. In Microsoft Excel, Alt + = is used to
+A. insert AutoSum
+B. insert a chart
+C. insert a function
+D. insert a comment
+E. insert a hyperlink
+
+19. In Microsoft Excel, F2 is used to
+A. edit the active cell
+B. rename a sheet
+C. format cells
+D. find
+E. filter
+
+20. In Microsoft Excel, Ctrl + Arrow key is used to
+A. jump to the edge of the data region
+B. copy the cell
+C. insert a row
+D. delete a row
+E. open a file
+
+------------------------------------------------------------------
+SECTION C: KEYBOARD SHORTCUTS — SDK / PROGRAMMING ENVIRONMENT
+------------------------------------------------------------------
+
+21. In most code editors/IDEs, Ctrl + S is used to
+A. save the file
+B. run the program
+C. stop the program
+D. search
+E. select all
+
+22. In most code editors/IDEs, Ctrl + C is used to
+A. copy selected text
+B. compile
+C. comment code
+D. close file
+E. create file
+
+23. In most code editors/IDEs, Ctrl + V is used to
+A. paste copied text
+B. validate code
+C. view output
+D. version control
+E. variable declaration
+
+24. In most code editors/IDEs, Ctrl + Z is used to
+A. undo
+B. redo
+C. zoom
+D. save
+E. run
+
+25. In most code editors/IDEs, Ctrl + F is used to
+A. find/search
+B. format code
+C. fix errors
+D. file new
+E. full screen
+
+26. In most code editors/IDEs, Ctrl + / (slash) is commonly used to
+A. comment/uncomment the selected line(s)
+B. divide numbers
+C. open a terminal
+D. close the editor
+E. save as
+
+27. In most code editors/IDEs, F5 is commonly used to
+A. run/start debugging the program
+B. save the file
+C. find
+D. replace
+E. close
+
+28. In most code editors/IDEs, Ctrl + Shift + F is commonly used to
+A. search across files
+B. format document
+C. full screen
+D. find and replace
+E. fold code
+
+------------------------------------------------------------------
+SECTION D: DEFINITIONS
+------------------------------------------------------------------
+
+29. Word processing is the
+A. creation and editing of text documents using a computer
+B. processing of numbers only
+C. storage of images
+D. design of web pages
+E. management of databases
+
+30. A spreadsheet is a
+A. grid of rows and columns used for calculations and data analysis
+B. text document
+C. presentation slide
+D. database table only
+E. image editor
+
+31. A database is
+A. an organised collection of data that can be easily accessed, managed and updated
+B. a text file
+C. a spreadsheet only
+D. a web page
+E. a programming language
+
+32. A Database Management System (DBMS) is
+A. software used to create, manage and query databases
+B. a hardware device
+C. a type of spreadsheet
+D. a word processor
+E. a network cable
+
+33. An SDK (Software Development Kit) is
+A. a set of tools, libraries and documentation for developing software
+B. a type of spreadsheet
+C. a database
+D. a word processor
+E. a hardware component
+
+34. Word processing software is used mainly for
+A. typing, editing and formatting text documents
+B. performing calculations
+C. storing large databases
+D. designing circuits
+E. editing images
+
+35. Spreadsheet software is used mainly for
+A. calculations, formulas and data analysis
+B. typing letters
+C. editing videos
+D. managing networks
+E. programming
+
+------------------------------------------------------------------
+SECTION E: CSS TAGS AND HIERARCHY
+------------------------------------------------------------------
+
+36. CSS stands for
+A. Cascading Style Sheets
+B. Computer Style Sheets
+C. Creative Style Sheets
+D. Cascading System Sheets
+E. Common Style Sheets
+
+37. In CSS, the selector p { color: red; } targets
+A. all paragraph elements
+B. all images
+C. all headings
+D. the page body
+E. all links
+
+38. In CSS, the selector #header targets
+A. an element with id="header"
+B. all elements with class="header"
+C. all header tags
+D. the page title
+E. the first element
+
+39. In CSS, the selector .menu targets
+A. all elements with class="menu"
+B. an element with id="menu"
+C. all menu tags
+D. the page body
+E. all links
+
+40. In CSS specificity hierarchy, which has the highest priority?
+A. Inline style
+B. ID selector
+C. Class selector
+D. Element selector
+E. Universal selector
+
+41. In CSS specificity, an ID selector is more specific than
+A. a class selector
+B. an inline style
+C. !important
+D. the user agent stylesheet only
+E. nothing
+
+42. In CSS, the universal selector is
+A. *
+B. #
+C. .
+D. @
+E. &
+
+43. In CSS, the correct order of specificity from lowest to highest is
+A. element < class < ID < inline
+B. class < element < ID < inline
+C. ID < class < element < inline
+D. inline < ID < class < element
+E. element < ID < class < inline
+
+44. In CSS, the rule h1, h2 { color: blue; } applies to
+A. both h1 and h2 elements
+B. only h1
+C. only h2
+D. all headings except h1 and h2
+E. the body only
+
+45. In CSS, the property "color" controls
+A. text colour
+B. background colour
+C. border colour
+D. font size
+E. margin
+
+------------------------------------------------------------------
+SECTION F: MATRICES AND TENSORS IN INFORMATION PROCESSING
+------------------------------------------------------------------
+
+46. A matrix is good for information processing because it
+A. stores and processes data in a structured 2-D grid for efficient computation
+B. stores only text
+C. cannot represent images
+D. is only used in mathematics, not computing
+E. replaces all databases
+
+47. In computing, matrices are widely used in
+A. image processing, graphics and machine learning
+B. typing documents only
+C. printing only
+D. networking cables
+E. power supply
+
+48. A major advantage of matrices in information processing is that they
+A. allow parallel/vectorised operations on large data sets
+B. cannot be stored in memory
+C. are only useful for small data
+D. require no algorithms
+E. replace operating systems
+
+49. A tensor can be described as
+A. a generalisation of matrices to higher dimensions
+B. a type of spreadsheet
+C. a database table
+D. a word processor
+E. a network protocol
+
+50. Tensors are better than matrices for modern information processing because they
+A. can represent higher-dimensional data such as colour images, videos and deep-learning models
+B. are always smaller in size
+C. cannot be used in machine learning
+D. only store text
+E. replace all matrices completely in every case
+
+51. In deep learning, tensors are used because they
+A. support multi-dimensional arrays and efficient GPU computation
+B. are only for 2-D data
+C. cannot represent images
+D. are slower than matrices always
+E. are only theoretical
+
+52. A colour image is often represented as a tensor with dimensions
+A. height × width × colour channels
+B. height × width only
+C. rows × columns only
+D. one dimension only
+E. time only
+
+------------------------------------------------------------------
+SECTION G: NUMBER SYSTEM CONVERSION — WORD PROBLEMS
+------------------------------------------------------------------
+
+53. A computer stores a file size as 10110₂ bits. What is this size in decimal?
+A. 20
+B. 21
+C. 22
+D. 23
+E. 24
+
+54. A student records 45₁₀ in a register. Express this number in binary.
+A. 101101₂
+B. 101011₂
+C. 110101₂
+D. 100101₂
+E. 111101₂
+
+55. A memory address is written as 2F₁₆. What is its decimal value?
+A. 45
+B. 46
+C. 47
+D. 48
+E. 49
+
+56. A network device uses octal number 74₈. Convert it to decimal.
+A. 58
+B. 59
+C. 60
+D. 61
+E. 62
+
+57. A colour code uses hexadecimal 1A₁₆. Convert it to binary.
+A. 11010₂
+B. 11011₂
+C. 11100₂
+D. 10010₂
+E. 10110₂
+
+58. A file occupies 11001₂ kilobytes. Convert this to octal.
+A. 31₈
+B. 32₈
+C. 33₈
+D. 34₈
+E. 35₈
+
+59. A student converts decimal 200 to hexadecimal and obtains
+A. C8₁₆
+B. B8₁₆
+C. D8₁₆
+D. A8₁₆
+E. E8₁₆
+
+60. A binary number 11111111₂ is equivalent to
+A. 255₁₀
+B. 254₁₀
+C. 256₁₀
+D. 253₁₀
+E. 252₁₀
+
+==================================================================
+ANSWER KEY
+==================================================================
+1. B      2. B      3. C      4. A      5. B
+6. B      7. A      8. A      9. B     10. A
+
+11. A    12. A     13. A     14. A     15. A
+16. B    17. A     18. A     19. A     20. A
+
+21. A    22. A     23. A     24. A     25. A
+26. A    27. A     28. A
+
+29. A    30. A     31. A     32. A     33. A
+34. A    35. A
+
+36. A    37. A     38. A     39. A     40. A
+41. A    42. A     43. A     44. A     45. A
+
+46. A    47. A     48. A     49. A     50. A
+51. A    52. A
+
+53. C    54. A     55. C     56. C     57. A
+58. A    59. A     60. A
+==================================================================
