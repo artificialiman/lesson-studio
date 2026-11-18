@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Manual I — First Contact</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a;
+    --red:#8a2f1c; --red-bg:#f3e1db; --red-rule:#cf9b8c;
+    --blue:#27485e; --blue-bg:#dde8ee; --blue-rule:#9bb8c8;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+  .page{padding:3.2rem 0 1.2rem;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);min-width:4.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.9rem}
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2rem;line-height:1.12;margin:.1rem 0 .3rem;font-weight:600}
+  .caseline{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:1.3rem}
+  h3{font-size:1.18rem;margin:2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  /* voices */
+  .voice{border-radius:4px;padding:.9rem 1.1rem;margin:1rem 0;border:1px solid;border-left-width:3px}
+  .voice .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:.45rem}
+  .red{background:var(--red-bg);border-color:var(--red-rule);border-left-color:var(--red)}
+  .red .who{color:var(--red)}
+  .blue{background:var(--blue-bg);border-color:var(--blue-rule);border-left-color:var(--blue)}
+  .blue .who{color:var(--blue)}
+  .voice p{margin:.5rem 0}
+  .voice p:first-of-type{margin-top:0}
+  .voice p:last-child{margin-bottom:0}
+  /* reduction */
+  .reduction{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);border-radius:3px;font-family:var(--mono);font-size:.78rem;line-height:1.75;padding:1rem 1.2rem;margin:1.3rem 0;white-space:pre-wrap;overflow-x:auto}
+  .reduction .k{color:var(--accent)}
+  .reduction .minus{color:var(--red)}
+  .rlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-2);margin:1.3rem 0 -.6rem}
+  .record{font-size:.76rem;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.8rem;margin:1.2rem 0;font-style:italic}
+  /* chorus */
+  .chorus{background:var(--plate-bg);color:var(--plate-ink);margin:2.4rem -1.4rem;padding:2.4rem 1.8rem 1.6rem;border-top:3px double var(--plate-rule);border-bottom:3px double var(--plate-rule)}
+  .chorus .clabel{font-family:var(--mono);font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:#c6a86f;text-align:center;margin-bottom:1.3rem}
+  .chorus p{color:#e7dcc6;margin:.7rem 0}
+  .chorus b{color:#f0e6cf}
+  @media print{body{background:#fff;font-size:11pt}.chorus,.voice,.reduction{break-inside:avoid;}.chorus{margin-left:0;margin-right:0}.plate-title{min-height:0;height:100vh}}
+  @media(max-width:600px){body{font-size:16px}.plate-title h1{font-size:2.1rem}.toc-line{flex-wrap:wrap}.toc-line .equiv{text-align:left;width:100%}}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <section class="plate-title">
+    <div class="vol">The Manual &nbsp;·&nbsp; Book I of III</div>
+    <h1>The Manual</h1>
+    <div class="sub">First Contact</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences · a correspondence across real recoveries</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · The hands-on tier of the Principles Cyber set · For the Working Defender</div>
+    <div class="granted">A Granted Publication</div>
+    <div class="seal">G</div>
+  </section>
+
+  <!-- THE THREE VOICES -->
+  <section class="page">
+    <h2 class="sec-h">The Three Voices</h2>
+    <p class="lede">The Principles books argued the why. The Standards fixed the reference. The Manual does neither — it listens. It stages the work as what it actually is: a correspondence between two trades that never meet, overheard across real recoveries, with a third voice that will not let a lesson pass unmarked.</p>
+
+    <div class="voice red"><span class="who">Red — the one who got in</span>
+      <p>Speaks for the threat: how first contact was made, which door, which borrowed key. Red is not a tutor and gives no recipes — Red is the reconstructed record of what already happened, in the first person, because a defender who cannot hear how the door opened cannot close it.</p></div>
+
+    <div class="voice blue"><span class="who">Blue — the one who answered</span>
+      <p>Speaks for the response: what stood, what should have, what was rebuilt after. Blue answers Red move for move — threat with response, bootstrap tool with response product, vulnerability with standardized fix.</p></div>
+
+    <div class="chorus" style="margin-top:1.4rem">
+      <div class="clabel">The Chorus — the third voice</div>
+      <p>Steps out of the scene to round up — to say what the exchange meant, where it recurs, and what it implies for the reader's own walls. The Chorus carries the sums-and-differences reduction: every case subtracted to its paired difference, <b>threat − response</b>, and the remainder named.</p>
+    </div>
+
+    <p style="margin-top:1.6rem">Every case in this book is real and documented; the record is cited at each case's foot. Real life is set above fiction here on purpose — no invented adversary is as instructive as the one that actually walked in. Book I takes the first move only: <b>First Contact</b> — how they got in. The Long Hallway and Recovery &amp; Doctrine follow.</p>
+    <div class="foot"><span>The Manual I · First Contact</span><span>Granted · 1</span></div>
+  </section>
+
+  <!-- TOC -->
+  <section class="page">
+    <h2 class="sec-h">The Cases</h2>
+    <div class="toc-line"><span class="marker">Case I</span><span class="name">The Borrowed Door — Target, 2013</span><span class="equiv">Vector: the trusted third party</span></div>
+    <div class="toc-line"><span class="marker">Case II</span><span class="name">The Side Gate — Colonial Pipeline, 2021</span><span class="equiv">Vector: the dormant credential</span></div>
+    <div class="toc-line"><span class="marker">Case III</span><span class="name">The Open Window — Equifax, 2017</span><span class="equiv">Vector: the unpatched public flaw</span></div>
+    <p class="toc-note">Three doors, three first contacts. A vendor's stolen key, a forgotten account, a patch not applied — none of them exotic, every one of them enough. First Contact is rarely clever. It is almost always a door someone trusted and stopped watching.</p>
+    <div class="foot"><span>The Manual I · First Contact</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- CASE I TARGET -->
+  <section class="page">
+    <div class="sec-open">Case I</div>
+    <h1 class="chap">The Borrowed Door</h1>
+    <div class="caseline">Target Corporation · United States · late 2013 · ~40M cards, ~70M records</div>
+    <p class="lede">The vector is the trusted third party. Red never approached the retailer at all — Red approached the company that fixed its fridges.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>I didn't knock on your front door. I knocked on your air-conditioning repairman's.</p>
+      <p>Your vendor read email like everyone reads email. One message, one attachment, and a commodity password-stealer sat on his machine for weeks, handing me the credentials he used to bill you. Those credentials opened your vendor portal — a door <em>you</em> built, for <em>him</em>, and left connected to the rest of the house. From the billing side of your network I walked toward the registers. Nobody stopped me, because once I was inside your wall, your wall assumed I belonged.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>The lesson was not "distrust the repairman." It was that his door should never have reached the registers.</p>
+      <p>The rebuild: vendor access carved off into its own segment, reaching only the billing systems it needed and nothing more — least privilege, drawn as a network. Multi-factor on every vendor login, so a stolen password alone is a dead end. And the hardest truth of this one — the alerts <em>fired</em>. The monitoring saw the intrusion and raised it. What failed was not detection; it was the decision to act on what detection said. A caught alarm nobody answers is an alarm that was never there.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (a trusted vendor's access)  <span class="minus">−</span>  <span class="k">response</span> (segmented, least-privilege vendor access)
+<span class="k">tool</span>    (commodity phishing malware) <span class="minus">−</span>  <span class="k">product</span>  (mail filtering + vendor MFA)
+<span class="k">vuln</span>    (flat trust from billing → POS) <span class="minus">−</span> <span class="k">standard</span> (PCI-DSS segmentation; third-party risk mgmt)
+<span class="k">remainder</span> = trust you extended once and never scoped</div>
+
+    <p class="record">The record: initial access via credentials stolen from HVAC vendor Fazio Mechanical Services, phished with the Citadel malware; attackers reached Target's network through a vendor web portal and pivoted to point-of-sale systems; ~40M payment cards and ~70M customer records exposed; disclosed December 2013. Sources: KrebsOnSecurity; US Senate Commerce Committee staff report; Aorato / CSO analysis.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>The weakest link is never where you are looking, because you are looking at what you own. The attacker looks at what you <b>trust</b> — and trust runs outward, through vendors, contractors, integrations, each with a key you cut and then forgot you cut.</p>
+      <p>Mark this, because the whole set turns on it: <b>trust is transitive, and that is the danger.</b> Every party you trust, you also trust everyone <em>they</em> fail to keep out. First Contact, in this case, was not made against Target. It was made against the least-defended company that Target had quietly made part of itself.</p>
+    </div>
+    <div class="foot"><span>The Manual I · Case I</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- CASE II COLONIAL -->
+  <section class="page">
+    <div class="sec-open">Case II</div>
+    <h1 class="chap">The Side Gate</h1>
+    <div class="caseline">Colonial Pipeline · United States · May 2021 · ~45% of East Coast fuel halted</div>
+    <p class="lede">The vector is the dormant credential. Red did not break a lock. Red used a key you had stopped using but never took back.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>You locked every door you walked through. You forgot the one you had stopped walking through.</p>
+      <p>There was an old remote-access account — a VPN profile no longer in use, still switched on. Its password, a good one, complex, had surfaced in a batch of leaked credentials somewhere else entirely; a person had reused it, the way people do. One login. No second step waited to catch me — no code, no token, nothing but the password itself. The account hadn't been used in a long time, which is exactly why no one was watching it. A key you forget is still a key.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>Two controls, either of which alone would have ended it before it began.</p>
+      <p>First: deprovisioning. Access that is no longer used is not dormant — it is <em>exposed</em>. An account you stop using and leave enabled is a key left in a lock you've turned your back on. Second, and decisive: multi-factor authentication. The password was complex; it did not matter. Complexity is not a second factor. A stolen secret the attacker <em>knows</em> is defeated only by a factor the attacker does not <em>have</em>. One MFA prompt on that legacy profile and the leaked password opens nothing.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (a dormant but valid credential) <span class="minus">−</span> <span class="k">response</span> (deprovisioning + access review)
+<span class="k">tool</span>    (reuse of a leaked password)    <span class="minus">−</span> <span class="k">product</span>  (MFA + credential-exposure monitoring)
+<span class="k">vuln</span>    (single-factor legacy remote access) <span class="minus">−</span> <span class="k">standard</span> (zero trust; MFA by default, exceptions logged)
+<span class="k">remainder</span> = the access you stopped using but never switched off</div>
+
+    <p class="record">The record: DarkSide ransomware; initial access via a legacy VPN account, no longer in use but still active, protected by a single reused password found in a dark-web leak, with no MFA; confirmed in the CEO's June 2021 Senate testimony. Initial access as early as 29 April; shutdown 7 May; ~$4.4M ransom paid, ~$2.3M later recovered by the US DOJ. Sources: US Senate testimony (J. Blount); DOJ; Sophos.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>A pipeline that moved nearly half a region's fuel was stopped not by a brilliant exploit but by an account someone forgot to turn off. Scale on the outside, triviality on the inside — this is the recurring shape, and it should frighten you more than any zero-day.</p>
+      <p>The single rule that would have closed this door is the same one Book I's founding decade named and the same one the next two cases will keep re-teaching: <b>never let one factor be enough.</b> And its quieter twin — <b>the access you no longer use is the access no one is watching.</b> Count your dormant keys. The attacker already has.</p>
+    </div>
+    <div class="foot"><span>The Manual I · Case II</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- CASE III EQUIFAX -->
+  <section class="page">
+    <div class="sec-open">Case III</div>
+    <h1 class="chap">The Open Window</h1>
+    <div class="caseline">Equifax · United States · 2017 · ~147M people · 76 days undetected</div>
+    <p class="lede">The vector is the unpatched public flaw. Red found no secret. Red read the same bulletin the defenders read — and moved first.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>I didn't discover anything. I read a public announcement — the same one your own team received — and I simply acted on it before you did.</p>
+      <p>A critical flaw in a web framework you ran was disclosed and patched on the same day, in the open, with a maximum-severity score attached. From that moment a clock was running, and it was running for both of us. Your team had the patch. I had the same advisory and a scanner. You had a dispute portal facing the internet, still unpatched weeks later. I went through it, and then I stayed — for seventy-six days — because the one monitoring tool that might have seen me carry data out had a certificate that had quietly expired, and a blind sensor sees nothing.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>This is the one that stings, because nothing here was unknown. The vulnerability was published. The patch existed. The internal order to patch went out. What failed was execution at scale.</p>
+      <p>Three things rebuild it. Asset inventory: you cannot patch the server you have forgotten you run, and there was a Struts instance no one had on the list. A patch SLA driven by severity: a maximum-score, internet-facing, remote-code flaw is not a routine-cycle ticket — the clock starts the day the patch ships, not the day the attacker arrives. And certificate lifecycle management, because the expired cert that blinded the monitor turned a detectable theft into an invisible one. Detection you have stopped maintaining is detection you no longer have.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (a publicly known, unpatched flaw) <span class="minus">−</span> <span class="k">response</span> (severity-driven patch SLA)
+<span class="k">tool</span>    (a public exploit of a known CVE)  <span class="minus">−</span> <span class="k">product</span>  (vuln &amp; asset management; WAF)
+<span class="k">vuln</span>    (unpatched RCE + blinded monitoring) <span class="minus">−</span> <span class="k">standard</span> (CVSS-ranked patching; cert lifecycle)
+<span class="k">remainder</span> = the window everyone knew about and no one shut</div>
+
+    <p class="record">The record: Apache Struts CVE-2017-5638, a remote-code-execution flaw scored 9.8, disclosed and patched 7 March 2017; exploited against an unpatched Equifax dispute portal from ~13 May; undetected until 29 July; ~147M Americans affected (plus UK and Canada); a lapsed certificate on an inspection device left encrypted exfiltration unseen for months; US$700M settlement. Sources: GAO report; US House Oversight Committee report; Apache Foundation; CISA advisory.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>The most dangerous vulnerability is almost never the secret one. It is the one <b>everyone already knows about</b> — published, scored, patched — and left open anyway, because knowing is not the same as doing, and an organization large enough forgets its own servers.</p>
+      <p>Two lines to carry out of this book's first volume. <b>The clock starts when the patch ships, not when the attacker arrives</b> — disclosure arms both sides at once, and the only variable is who moves first. And <b>detection you stopped maintaining is not detection</b> — a blind sensor, an expired cert, an unanswered alert all collapse to the same nothing. First Contact, here, was made through a window the whole industry had been warned about by name.</p>
+    </div>
+    <div class="foot"><span>The Manual I · Case III</span><span>Granted · 5</span></div>
+  </section>
+
+  <!-- CLOSE -->
+  <section class="page">
+    <div class="sec-open">First Contact — the three doors, together</div>
+    <h1 class="chap" style="font-size:1.6rem">What the three share</h1>
+    <div class="reduction">THE BORROWED DOOR  (Target)    = trust extended, never scoped
+THE SIDE GATE      (Colonial)  = access granted, never revoked
+THE OPEN WINDOW    (Equifax)   = a flaw announced, never shut
+   ↓
+every First Contact = a door someone <span class="k">trusted</span> and stopped <span class="k">watching</span>
+   ↓
+the defense is never exotic:
+   scope the trust · revoke the unused · shut the known window · and WATCH
+   — second factor, segmentation, patch SLA, maintained detection</div>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus closes Book I</div>
+      <p>Notice what none of these three required: no zero-day, no genius, no new weakness the field had not already catalogued. A vendor's borrowed key, a forgotten account, a patch not applied. Red, in every case, used something <b>ordinary</b> — and ordinary was enough because, on the defending side, something equally ordinary had been left undone.</p>
+      <p>This is the hopeful reading and the demanding one at once, and it is the spine of the whole Manual: the work is not mostly cleverness. It is mostly <b>doing the known thing, every time, on every door, including the ones you stopped using.</b> Red gets in through the gap between what you know and what you maintain. The Long Hallway — Book II — is what Red does once inside, and how Blue, at last, begins to catch up.</p>
+    </div>
+    <div style="text-align:center;padding-top:2rem">
+      <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of Book I · First Contact</div>
+      <div class="seal" style="margin-top:1.4rem">G</div>
+    </div>
+    <div class="foot"><span>The Manual I · First Contact</span><span>Granted · 6</span></div>
+  </section>
+
+</div>
+</body>
+</html>

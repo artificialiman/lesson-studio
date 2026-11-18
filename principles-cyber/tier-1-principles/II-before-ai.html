@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Principles Cyber II — Before AI</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a; --warn:#7a3b25;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+  .page{padding:3.2rem 0 1.2rem;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;font-family:var(--mono);
+    font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+    text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;
+    text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;
+    margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);min-width:3.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);
+    border-left:2px solid var(--rule);padding-left:.9rem}
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2.1rem;line-height:1.1;margin:.1rem 0 1.4rem;font-weight:600}
+  h3{font-size:1.22rem;margin:2.2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  h4{font-size:1rem;margin:1.5rem 0 .5rem;font-weight:600;color:var(--accent);
+    font-variant:small-caps;letter-spacing:.03em}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  .eq{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);
+    border-radius:3px;font-family:var(--mono);font-size:.82rem;line-height:1.7;
+    padding:1rem 1.2rem;margin:1.2rem 0;white-space:pre-wrap;overflow-x:auto}
+  .eq .k{color:var(--accent)}
+  .eqlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-2);margin:1.4rem 0 -.6rem}
+  .oneliner{background:var(--paper-2);border:1px solid var(--rule);border-radius:3px;
+    padding:1rem 1.2rem;margin:1.3rem 0}
+  .oneliner b::before{content:"▸ Relationship — ";font-variant:small-caps;color:var(--accent);letter-spacing:.03em}
+  table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.9rem}
+  th{background:var(--plate-bg);color:var(--plate-ink);font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:.55rem .7rem;font-weight:600}
+  td{padding:.55rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+  tr:nth-child(even) td{background:var(--paper-2)}
+  .warn{color:var(--warn);font-weight:600}
+  .pillar{background:var(--plate-bg);color:var(--plate-ink);margin:3.5rem -1.4rem;
+    padding:3rem 1.8rem 2rem;border-top:3px double var(--plate-rule);border-bottom:3px double var(--plate-rule)}
+  .pillar .plabel{font-family:var(--mono);font-size:.64rem;letter-spacing:.4em;text-transform:uppercase;
+    color:#c6a86f;text-align:center;margin-bottom:1.8rem}
+  .pillar h3{color:#f0e6cf;margin-top:0;font-size:1.5rem}
+  .pillar .equiv-tag{font-style:italic;color:#c6a86f;font-size:.95rem;margin:-.4rem 0 1rem}
+  .pillar .authority{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:#9f855c;
+    border-left:2px solid var(--plate-rule);padding-left:.8rem;margin:1rem 0 1.4rem}
+  .pillar p{color:#e3d7bf}
+  .pillar table{font-size:.84rem}
+  .pillar th{background:#3a2d20;color:#e9ddc4}
+  .pillar td{border-bottom:1px solid #4a3a28;color:#ddd0b6}
+  .pillar tr:nth-child(even) td{background:#332618}
+  .pillar .eq{background:#241b12;border-color:#4a3a28;border-left-color:#c6a86f;color:#e3d7bf}
+  .pillar .eq .k{color:#d9b877}
+  .pillar hr{border:0;border-top:1px solid var(--plate-rule);margin:1.6rem 0}
+  .pillar .foot{border-top-color:var(--plate-rule);color:#9f855c}
+  @media print{body{background:#fff;font-size:11.5pt}.pillar{break-inside:avoid;margin-left:0;margin-right:0}
+    .plate-title{min-height:0;height:100vh}.eq,table,.oneliner{break-inside:avoid}}
+  @media(max-width:600px){body{font-size:16px}.plate-title h1{font-size:2.1rem}
+    .toc-line{flex-wrap:wrap}.toc-line .equiv{text-align:left;width:100%}}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <!-- TITLE PLATE -->
+  <section class="plate-title">
+    <div class="vol">Principles Cyber &nbsp;·&nbsp; Book II of III</div>
+    <h1>Principles Cyber</h1>
+    <div class="sub">Before AI</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · A Compressed Reference for the Serious Student</div>
+    <div class="granted">A Granted Publication</div>
+    <div class="seal">G</div>
+  </section>
+
+  <!-- TOC -->
+  <section class="page">
+    <h2 class="sec-h">Table of Contents</h2>
+    <div class="toc-line"><span class="marker">§01</span><span class="name">The Threat Model</span><span class="equiv">The Gate — asked before all else</span></div>
+    <div class="toc-line"><span class="marker">§02</span><span class="name">Identity &amp; Access</span><span class="equiv">Atom Equivalent — the currency</span></div>
+    <div class="toc-line"><span class="marker">§03</span><span class="name">The Network &amp; Where Attacks Live</span><span class="equiv">Organic Equivalent — the backbone</span></div>
+    <div class="toc-line"><span class="marker">Pillar I</span><span class="name">The Cyber Kill Chain</span><span class="equiv">The Reaction-Mechanism Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§04</span><span class="name">Vulnerability Classes</span><span class="equiv">Compound Equivalent — the acid/base/salt gate</span></div>
+    <div class="toc-line"><span class="marker">Pillar II</span><span class="name">MITRE ATT&amp;CK</span><span class="equiv">The Periodic Table Equivalent</span></div>
+    <div class="toc-line"><span class="marker">Pillar III</span><span class="name">OWASP Top Ten</span><span class="equiv">The Named-Family Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§05</span><span class="name">Defense in Depth</span><span class="equiv">The Four-Instruments Equivalent</span></div>
+    <div class="toc-line"><span class="marker">Pillar IV</span><span class="name">The NIST CSF Functions</span><span class="equiv">The Activity Series Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§06</span><span class="name">Glossary &amp; Constants</span><span class="equiv">Front-matter reference</span></div>
+    <p class="toc-note">This book is the mature classical discipline at its high-water mark — everything true the day before machines began doing the attacking themselves. Hold the picture: every threat here moves at the speed of a tired human with a to-do list. Book III takes the human away.</p>
+    <div class="foot"><span>Principles Cyber II</span><span>Granted · 1</span></div>
+  </section>
+
+  <!-- §01 THREAT MODEL -->
+  <section class="page">
+    <div class="sec-open">§01 · The Threat Model</div>
+    <h1 class="chap">The Threat Model</h1>
+    <p class="lede">Every section in this book is downstream of one question, asked before any defense is chosen: secure it against <em>whom</em>, protecting <em>what</em>, at what <em>cost</em>?</p>
+
+    <div class="eqlabel">The reduction</div>
+    <div class="eq"><span class="k">threat model</span>    = asset + adversary + attack surface + acceptable loss
+<span class="k">security</span>        = a limited budget, spent against the risks that matter to YOU
+<span class="k">acceptable loss</span> = what you can afford to lose — you cannot protect everything equally</div>
+    <p>Security is not the absence of risk; there is no such thing. The most common real-world failure in the field is not a broken lock. It is a strong lock on the wrong door, bought by someone who never wrote a threat model.</p>
+
+    <div class="eqlabel">The gate — who is the adversary?</div>
+    <div class="eq"><span class="k">GATE →</span> Who wants it, and what do they bring?
+   Anyone, untargeted, at scale       → Opportunistic
+   You specifically, for a reason      → Targeted
+   A government's resources behind them → Nation-state (APT)
+   Someone already inside               → Insider</div>
+    <table>
+      <tr><th>Adversary</th><th>Resources</th><th>How you resist</th></tr>
+      <tr><td>Opportunistic</td><td>Low — reused tools</td><td>Basic hygiene; be harder than the next target</td></tr>
+      <tr><td>Targeted</td><td>Medium — will adapt</td><td>Defense in depth; assume they get through once</td></tr>
+      <tr><td>Nation-state</td><td>High — time and money</td><td>Assume breach; detect and contain</td></tr>
+      <tr><td>Insider</td><td>Already trusted</td><td>Least privilege; monitoring; separation of duties</td></tr>
+    </table>
+    <div class="oneliner"><b>the adversary decides the defense, not the other way around.</b> Hygiene that stops a spammer is useless against a patient nation-state; the heavy monitoring you build for a nation-state is wasted on a spammer. Buying controls before naming the adversary is buying a winter coat without knowing the season.</div>
+
+    <h3>Assume breach — the humbler idea</h3>
+    <div class="eq"><span class="k">Prevent</span>  → stop them getting in     (necessary, never sufficient)
+<span class="k">Detect</span>   → notice fast when they do (because they will)
+<span class="k">Respond</span>  → contain and evict them
+<span class="k">Recover</span>  → restore what was lost</div>
+    <div class="oneliner"><b>prevention has a 100% failure rate given enough time and a determined enough adversary.</b> Detection and response are where real losses are decided — the Morris worm (Book I) taught it: the machines that recovered were the ones whose owners noticed fast, not the ones with the best locks.</div>
+    <div class="foot"><span>Principles Cyber II · §01</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- §02 IDENTITY -->
+  <section class="page">
+    <div class="sec-open">§02 · Identity &amp; Access</div>
+    <h1 class="chap">Identity &amp; Access</h1>
+    <p class="lede">Where the modern attacker spends most of their effort. They rarely break the cryptography. They log in.</p>
+
+    <div class="eqlabel">The reduction — AAA</div>
+    <div class="eq"><span class="k">AUTHENTICATION</span> → who are you?    (prove identity)
+<span class="k">AUTHORIZATION</span>  → what may you do? (grant permission)
+<span class="k">ACCOUNTING</span>     → what did you do? (record it, so it can be reviewed)</div>
+    <p>Book I gave the first two. The mature discipline adds the third — accounting — the one defenders neglect until the moment they need it. You cannot investigate, contain, or even notice an intrusion if nothing wrote down what happened.</p>
+    <div class="oneliner"><b>a system with perfect locks and no logs is a crime scene with no witnesses.</b> You may know you were robbed, but never how — so you cannot stop it happening again. Every incident response in Book III begins with someone reading logs that either exist or do not.</div>
+
+    <h3>The factors, and why one is never enough</h3>
+    <div class="eq">password attacks, by shape (know the shape to block it):
+   guesses against one account          → brute force
+   one common password, many accounts    → password spraying
+   passwords leaked elsewhere, reused     → credential stuffing
+<span class="k">defense</span> = a second factor the attacker does not hold (MFA)</div>
+    <div class="oneliner"><b>every password attack is the same attack — reuse of a knowledge-factor secret the attacker should not hold — stopped by the same countermeasure.</b> The multi-decade war over passwords ends in one rule: never let one factor be enough.</div>
+
+    <h3>Privilege escalation — the climb</h3>
+    <div class="eq"><span class="k">GATE →</span> which way is the attacker climbing?
+   HIGHER privileges than their account should have → Vertical
+   OTHER accounts at the same level                  → Horizontal
+<span class="k">ceiling on the breach</span> = the loosest permission in reach</div>
+    <div class="oneliner"><b>privilege escalation is not a separate attack; it is the collection on a debt least privilege already owed.</b> The attacker climbs exactly as far as the loosest permission allows and no further — the ceiling on every breach was set, before the attacker arrived, by whoever decided how much power each account would hold.</div>
+    <div class="foot"><span>Principles Cyber II · §02</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- §03 NETWORK -->
+  <section class="page">
+    <div class="sec-open">§03 · The Network &amp; Where Attacks Live</div>
+    <h1 class="chap">The Network &amp; Where Attacks Live</h1>
+    <p class="lede">The backbone everything attaches to. Like the carbon chain in organic chemistry, the layers are a fixed skeleton — and every attack lives at a specific layer, the way every functional group sits at a specific carbon.</p>
+
+    <div class="eqlabel">The reduction — the layered model</div>
+    <div class="eq"><span class="k">a message</span> = data wrapped in layer after layer of headers
+each layer adds its own envelope, and strips it at the far end
+<span class="k">an attack</span> = targeting the one layer where a control is missing</div>
+
+    <table>
+      <tr><th>Layer (TCP/IP)</th><th>Job</th><th>Where the attack lives</th></tr>
+      <tr><td>Application</td><td>What the user sees — web, email, DNS</td><td>Injection, phishing, malicious payloads</td></tr>
+      <tr><td>Transport</td><td>Reliable delivery — TCP/UDP ports</td><td>Port scanning, session hijacking, floods</td></tr>
+      <tr><td>Internet</td><td>Addressing &amp; routing — IP</td><td>Spoofing, man-in-the-middle, rerouting</td></tr>
+      <tr><td>Link</td><td>The physical hop — Ethernet, Wi-Fi</td><td>Eavesdropping, rogue access points</td></tr>
+    </table>
+    <div class="oneliner"><b>the layers are the reason "where is the control?" is a sharper question than "is there a control?"</b> Encryption at the application layer does nothing for a spoof at the internet layer; a firewall at the transport layer does nothing for an injection at the application layer. A defender who cannot name the layer cannot name the gap.</div>
+
+    <h3>The perimeter, and its end</h3>
+    <div class="eq">OLD model: a hard shell, a soft inside (trust = being inside the wall)
+NEW model: ZERO TRUST — verify every request, inside or out
+<span class="k">trust</span> = never granted by location; always earned per request</div>
+    <div class="oneliner"><b>the trusted-host relationship that let the Morris worm spread (Book I) is the same assumption zero trust exists to kill.</b> "Inside the network" stopped meaning "safe" the moment one breached machine inside the wall could reach every other. Zero trust is least privilege, applied to the network itself.</div>
+    <div class="foot"><span>Principles Cyber II · §03</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- PILLAR I KILL CHAIN -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar I</div>
+    <h3>The Cyber Kill Chain</h3>
+    <div class="equiv-tag">The Reaction-Mechanism Equivalent — a reaction proceeds in ordered steps, and so does an intrusion</div>
+    <div class="authority">Grounded in: Lockheed Martin, "Intelligence-Driven Computer Network Defense" (the Cyber Kill Chain), 2011 — a named, published model, not this book's invention.</div>
+    <p>A chemical reaction mechanism shows the ordered steps between reactants and products — and a defender who knows the mechanism can interrupt it at any step. The kill chain is the same idea for an intrusion: seven ordered stages, and breaking any one of them breaks the whole attack.</p>
+    <table>
+      <tr><th>#</th><th>Stage</th><th>Where the defender breaks it</th></tr>
+      <tr><td>1</td><td>Reconnaissance</td><td>Reduce public exposure; detect scanning</td></tr>
+      <tr><td>2</td><td>Weaponization</td><td>(attacker-side — little defender reach)</td></tr>
+      <tr><td>3</td><td>Delivery</td><td>Email filtering, web filtering</td></tr>
+      <tr><td>4</td><td>Exploitation</td><td>Patching, hardening</td></tr>
+      <tr><td>5</td><td>Installation</td><td>Endpoint detection, least privilege</td></tr>
+      <tr><td>6</td><td>Command &amp; Control</td><td>Network monitoring, egress filtering</td></tr>
+      <tr><td>7</td><td>Actions on Objectives</td><td>Data-loss prevention, segmentation</td></tr>
+    </table>
+    <hr>
+    <p><b style="color:#f0e6cf">Why ordered stages matter.</b> Just as interrupting one step of a reaction mechanism stops the product from ever forming, breaking one link in the chain stops the breach — the attacker cannot act on objectives (7) if command and control (6) never connects. This is the defender's great structural advantage in the classical era: the attacker must complete every step in order; the defender needs to win only once, at any step. Book III's hardest news is what happens to that advantage when the seven steps run in seconds instead of weeks.</p>
+    <div class="foot"><span>Principles Cyber II · Pillar I</span><span>Granted · 5</span></div>
+  </section>
+
+  <!-- §04 VULN CLASSES -->
+  <section class="page">
+    <div class="sec-open">§04 · Vulnerability Classes</div>
+    <h1 class="chap">Vulnerability Classes</h1>
+    <p class="lede">Most "new" vulnerabilities are the same few families, worn differently — exactly as compound chemistry's thousands of reactions reduce to one acid/base/salt fork asked again with a different partner.</p>
+
+    <div class="eqlabel">The gate — what kind of weakness is this?</div>
+    <div class="eq"><span class="k">GATE →</span> What did the system fail to do?
+   Trusted input it should have checked   → Injection family
+   Failed to confirm who is asking         → Broken authentication
+   Failed to confirm what they may touch   → Broken access control
+   Left a door open by default              → Misconfiguration
+   Trusted data that crossed a boundary     → Deserialization / SSRF family</div>
+
+    <table>
+      <tr><th>Family</th><th>The root failure</th><th>The defensive cure</th></tr>
+      <tr><td>Injection</td><td>Input treated as command, not as data</td><td>Treat all input as untrusted; separate code from data</td></tr>
+      <tr><td>Broken authentication</td><td>Identity not properly confirmed</td><td>MFA; strong session handling</td></tr>
+      <tr><td>Broken access control</td><td>Authorization not enforced per request</td><td>Server-side checks on every access (complete mediation)</td></tr>
+      <tr><td>Misconfiguration</td><td>Insecure defaults left in place</td><td>Fail-safe defaults; harden; remove the unused</td></tr>
+      <tr><td>Exposed secrets</td><td>Credentials left in code or files</td><td>Scan repos; rotate; never embed secrets</td></tr>
+    </table>
+    <div class="oneliner"><b>the buffer overflow of the Morris worm (Book I) and a modern injection flaw are the same failure — a program trusting its input to be what it expected.</b> Fifty years of "new" vulnerabilities are variations on one unlearned lesson: never trust the size, shape, or content of what crosses the boundary into your program.</div>
+
+    <h4>Why this matters for Book III</h4>
+    <p>Hold this list. When an autonomous AI agent attacks in Book III, it does not discover new families — it runs down this exact short list, faster and more patiently than a human would. The vulnerability classes do not change. Only the speed and tirelessness of the thing checking them does.</p>
+    <div class="foot"><span>Principles Cyber II · §04</span><span>Granted · 6</span></div>
+  </section>
+
+  <!-- PILLAR II ATT&CK -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar II</div>
+    <h3>MITRE ATT&amp;CK</h3>
+    <div class="equiv-tag">The Periodic Table Equivalent — every known adversary behaviour, catalogued by an external authority</div>
+    <div class="authority">Grounded in: MITRE ATT&amp;CK — a public, maintained knowledge base of adversary tactics and techniques observed in the real world, curated by MITRE, not by this book.</div>
+    <p>The Periodic Table earned trust because an external body — IUPAC — decides what goes in it, by checkable evidence. ATT&amp;CK holds itself to the same standard: it is not a list of what an attacker <em>could</em> do in theory, but a catalogue of what has actually been <em>observed</em>, each technique tied to real reported intrusions.</p>
+    <div class="eq"><span class="k">TACTIC</span>    = the attacker's goal at a stage (the "why")
+<span class="k">TECHNIQUE</span> = the specific way they achieve it (the "how")
+the matrix = tactics across the top, techniques beneath each</div>
+    <table>
+      <tr><th>Tactic (a goal)</th><th>Example technique family (defensive view)</th></tr>
+      <tr><td>Initial Access</td><td>Phishing; exploiting a public-facing app</td></tr>
+      <tr><td>Persistence</td><td>Creating accounts; scheduled tasks</td></tr>
+      <tr><td>Privilege Escalation</td><td>Abusing over-permissive access</td></tr>
+      <tr><td>Credential Access</td><td>Harvesting stored or exposed secrets</td></tr>
+      <tr><td>Lateral Movement</td><td>Using trust between hosts</td></tr>
+      <tr><td>Exfiltration</td><td>Moving data out over a channel</td></tr>
+    </table>
+    <hr>
+    <p><b style="color:#f0e6cf">Why a catalogue beats a story.</b> A defender who thinks in war stories defends against the last attack. A defender who thinks in ATT&amp;CK defends against the <em>catalogue</em> of observed techniques — the same shift chemistry made when it stopped teaching "reactions I have seen" and started teaching the table that organizes all of them. Book III's threat reports (Check Point, Microsoft, Google) all map ARTEX's behaviour onto this exact matrix — proof that an AI attacker, for all its speed, is still playing techniques already in the table.</p>
+    <div class="foot"><span>Principles Cyber II · Pillar II</span><span>Granted · 7</span></div>
+  </section>
+
+  <!-- PILLAR III OWASP -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar III</div>
+    <h3>The OWASP Top Ten</h3>
+    <div class="equiv-tag">The Named-Family Equivalent — the handful of classes that cover most of what actually goes wrong</div>
+    <div class="authority">Grounded in: OWASP (Open Worldwide Application Security Project) Top Ten — a community standard, periodically revised from real-world data on the most common web application risks.</div>
+    <p>Compound chemistry did not ask a student to memorize every salt; it taught the acid/base/salt families and let the thousands of specifics fall out. The OWASP Top Ten does the same for web security: not every bug, but the handful of families that account for most real breaches.</p>
+    <table>
+      <tr><th>Family</th><th>Plain meaning</th></tr>
+      <tr><td>Broken Access Control</td><td>Users reach what they shouldn't</td></tr>
+      <tr><td>Cryptographic Failures</td><td>Sensitive data not properly protected</td></tr>
+      <tr><td>Injection</td><td>Input treated as command</td></tr>
+      <tr><td>Insecure Design</td><td>The flaw is in the plan, not the code</td></tr>
+      <tr><td>Security Misconfiguration</td><td>Insecure defaults, left in place</td></tr>
+      <tr><td>Vulnerable Components</td><td>Old libraries with known holes</td></tr>
+      <tr><td>Identification/Auth Failures</td><td>Weak login and session handling</td></tr>
+    </table>
+    <hr>
+    <p><b style="color:#f0e6cf">The list that barely changes.</b> The striking thing about the Top Ten across its revisions is how little it moves — broken access control and injection have led it for years. That stability is the whole lesson: the families are stable, the specific exploits are endless, and a defender who holds the families holds the ground the exploits keep re-attacking. This is the acid/base/salt insight, transplanted whole.</p>
+    <div class="foot"><span>Principles Cyber II · Pillar III</span><span>Granted · 8</span></div>
+  </section>
+
+  <!-- §05 DEFENSE IN DEPTH -->
+  <section class="page">
+    <div class="sec-open">§05 · Defense in Depth</div>
+    <h1 class="chap">Defense in Depth</h1>
+    <p class="lede">No single control holds. Defense in depth is the layered toolkit — the four-instruments idea of the chemistry volume, where no one instrument answers everything and the chain of them does.</p>
+
+    <div class="eqlabel">The reduction — controls by job</div>
+    <div class="eq"><span class="k">PREVENTIVE</span> → stop it happening     (firewall, MFA, patching)
+<span class="k">DETECTIVE</span>  → notice it happening   (logging, monitoring, alerts)
+<span class="k">CORRECTIVE</span> → fix it after          (backups, incident response)
+<span class="k">defense in depth</span> = layers, so one failure is not total failure</div>
+
+    <table>
+      <tr><th>Layer</th><th>Example controls</th></tr>
+      <tr><td>Perimeter</td><td>Firewall, segmentation, zero-trust access</td></tr>
+      <tr><td>Identity</td><td>MFA, least privilege, strong session handling</td></tr>
+      <tr><td>Endpoint</td><td>EDR, patching, hardening</td></tr>
+      <tr><td>Data</td><td>Encryption at rest and in transit, DLP, backups</td></tr>
+      <tr><td>Monitoring</td><td>Centralized logs, alerting, anomaly detection</td></tr>
+    </table>
+    <div class="oneliner"><b>defense in depth is the CIA triad's trade-off, solved in layers instead of all at once.</b> Each layer alone makes a weak promise; stacked, they make a strong one — because an attacker now has to defeat every layer in sequence, while the defender needs any one layer to hold long enough to be noticed.</div>
+
+    <h3>The complete hierarchy, restated</h3>
+    <div class="eq">THREAT MODEL (asset + adversary + surface + acceptable loss)
+   ↓
+IDENTITY (the currency the attacker steals rather than breaks)
+   ↓
+NETWORK LAYERS (where each attack lives)
+   ↓
+KILL CHAIN → the ordered steps; break any one → Pillar I
+   ↓
+VULNERABILITY CLASSES → the short, stable family list → Pillars II, III
+   ↓
+DEFENSE IN DEPTH → preventive / detective / corrective, in layers
+   ↓
+ASSUME BREACH → detect and respond, because prevention eventually fails</div>
+    <p>This is the classical discipline, whole. A complete craft, built on one assumption that held for fifty years: the adversary is a human, working at human speed, one keyboard at a time. Hold that assumption in view. Book III is the story of the day it broke.</p>
+    <div class="foot"><span>Principles Cyber II · §05</span><span>Granted · 9</span></div>
+  </section>
+
+  <!-- PILLAR IV NIST CSF -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar IV</div>
+    <h3>The NIST CSF Functions</h3>
+    <div class="equiv-tag">The Activity Series Equivalent — a fixed, ordered set that tells you what to do and in what order</div>
+    <div class="authority">Grounded in: NIST Cybersecurity Framework — the core functions by which a US federal standard organizes an entire security program.</div>
+    <p>The Activity Series is valuable because it is ordered and fixed — read it once and it governs every displacement that follows. The CSF functions are the same kind of object for a whole security program: a fixed, ordered set that turns "do security" into named, sequenced work.</p>
+    <div class="eq"><span class="k">GOVERN</span>   → set the strategy and accountability
+<span class="k">IDENTIFY</span> → know what you have and what threatens it
+<span class="k">PROTECT</span>  → put the safeguards in place
+<span class="k">DETECT</span>   → notice when something is wrong
+<span class="k">RESPOND</span>  → act to contain and evict
+<span class="k">RECOVER</span>  → restore and learn</div>
+    <hr>
+    <p><b style="color:#f0e6cf">Why order is the whole point.</b> You cannot protect what you have not identified, cannot respond to what you did not detect, cannot recover without having protected your backups. The functions are not a menu to pick from — they are a sequence, each depending on the one before, exactly as the Activity Series' power comes from its fixed order and not from any single entry. A program missing one function is a chain missing a link, and the attacker finds the gap by walking the same ordered path the defender skipped.</p>
+    <div class="foot"><span>Principles Cyber II · Pillar IV</span><span>Granted · 10</span></div>
+  </section>
+
+  <!-- §06 GLOSSARY -->
+  <section class="page">
+    <div class="sec-open">§06 · Front-matter reference</div>
+    <h1 class="chap">Glossary &amp; Constants</h1>
+    <p class="lede">Everything the sections lean on, gathered in one place — the reference a defender holds before the material, not inside it.</p>
+
+    <h3>The frameworks — external authorities to know cold</h3>
+    <table>
+      <tr><th>Framework</th><th>Author</th><th>Job</th></tr>
+      <tr><td>CIA triad</td><td>NIST FIPS 199</td><td>Classifies what every control protects</td></tr>
+      <tr><td>Saltzer &amp; Schroeder</td><td>1975</td><td>Eight principles of secure design</td></tr>
+      <tr><td>Cyber Kill Chain</td><td>Lockheed Martin, 2011</td><td>The ordered stages of an intrusion</td></tr>
+      <tr><td>ATT&amp;CK</td><td>MITRE</td><td>Catalogue of observed adversary techniques</td></tr>
+      <tr><td>OWASP Top Ten</td><td>OWASP</td><td>The most common web application risks</td></tr>
+      <tr><td>CSF</td><td>NIST</td><td>Govern / Identify / Protect / Detect / Respond / Recover</td></tr>
+    </table>
+
+    <h3>Glossary — every definition, gathered</h3>
+    <p><b>AAA</b> — authentication, authorization, accounting; the three jobs of an identity system.</p>
+    <p><b>Accounting (auditing)</b> — recording what users did, so intrusions can be noticed and investigated.</p>
+    <p><b>Assume breach</b> — the stance that prevention will eventually fail, so detection and response must be funded.</p>
+    <p><b>Attack surface</b> — the complete set of points where an attacker could try to get in, including the forgotten ones.</p>
+    <p><b>Credential stuffing</b> — reusing passwords leaked from one site against another.</p>
+    <p><b>Defense in depth</b> — layering preventive, detective, and corrective controls so one failure is not total.</p>
+    <p><b>Injection</b> — a flaw where input is treated as a command rather than as data.</p>
+    <p><b>Kill chain</b> — Lockheed Martin's seven ordered stages of an intrusion; breaking any one breaks the attack.</p>
+    <p><b>Lateral movement</b> — spreading from one compromised host to others by abusing trust between them.</p>
+    <p><b>Least privilege</b> — every account and process gets only the access its job requires; sets the blast radius.</p>
+    <p><b>MITRE ATT&amp;CK</b> — a public knowledge base of real-world adversary tactics and techniques.</p>
+    <p><b>OWASP Top Ten</b> — a community standard listing the most common web application security risks.</p>
+    <p><b>Password spraying</b> — trying one common password against many accounts.</p>
+    <p><b>Privilege escalation</b> — gaining more access than an account should have (vertical) or reaching peer accounts (horizontal).</p>
+    <p><b>Threat model</b> — the statement of asset, adversary, attack surface, and acceptable loss that decides which defenses are worth buying.</p>
+    <p><b>Zero trust</b> — granting trust per request and never by network location; least privilege applied to the network.</p>
+
+    <div class="foot"><span>Principles Cyber II · §06</span><span>Granted · 11</span></div>
+  </section>
+
+  <section class="page" style="text-align:center;padding-top:4rem">
+    <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of Book II</div>
+    <p style="font-style:italic;color:var(--ink-soft);margin-top:1rem">Book III — With AI: ARTEX — takes everything here and asks one question: what changes when the human at the keyboard is replaced by an agent that never tires, and what pointedly does not?</p>
+    <div class="seal" style="margin-top:2rem">G</div>
+  </section>
+
+</div>
+</body>
+</html>

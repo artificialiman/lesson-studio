@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Manual II — The Long Hallway</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a;
+    --red:#8a2f1c; --red-bg:#f3e1db; --red-rule:#cf9b8c;
+    --blue:#27485e; --blue-bg:#dde8ee; --blue-rule:#9bb8c8;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+  .page{padding:3.2rem 0 1.2rem;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);min-width:4.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.9rem}
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2rem;line-height:1.12;margin:.1rem 0 .3rem;font-weight:600}
+  .caseline{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:1.3rem}
+  h3{font-size:1.18rem;margin:2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  .voice{border-radius:4px;padding:.9rem 1.1rem;margin:1rem 0;border:1px solid;border-left-width:3px}
+  .voice .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:.45rem}
+  .red{background:var(--red-bg);border-color:var(--red-rule);border-left-color:var(--red)}
+  .red .who{color:var(--red)}
+  .blue{background:var(--blue-bg);border-color:var(--blue-rule);border-left-color:var(--blue)}
+  .blue .who{color:var(--blue)}
+  .voice p{margin:.5rem 0}.voice p:first-of-type{margin-top:0}.voice p:last-child{margin-bottom:0}
+  .reduction{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);border-radius:3px;font-family:var(--mono);font-size:.78rem;line-height:1.75;padding:1rem 1.2rem;margin:1.3rem 0;white-space:pre-wrap;overflow-x:auto}
+  .reduction .k{color:var(--accent)}.reduction .minus{color:var(--red)}
+  .rlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-2);margin:1.3rem 0 -.6rem}
+  .record{font-size:.76rem;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.8rem;margin:1.2rem 0;font-style:italic}
+  .chorus{background:var(--plate-bg);color:var(--plate-ink);margin:2.4rem -1.4rem;padding:2.4rem 1.8rem 1.6rem;border-top:3px double var(--plate-rule);border-bottom:3px double var(--plate-rule)}
+  .chorus .clabel{font-family:var(--mono);font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:#c6a86f;text-align:center;margin-bottom:1.3rem}
+  .chorus p{color:#e7dcc6;margin:.7rem 0}.chorus b{color:#f0e6cf}
+  @media print{body{background:#fff;font-size:11pt}.chorus,.voice,.reduction{break-inside:avoid}.chorus{margin-left:0;margin-right:0}.plate-title{min-height:0;height:100vh}}
+  @media(max-width:600px){body{font-size:16px}.plate-title h1{font-size:2.1rem}.toc-line{flex-wrap:wrap}.toc-line .equiv{text-align:left;width:100%}}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <section class="plate-title">
+    <div class="vol">The Manual &nbsp;·&nbsp; Book II of III</div>
+    <h1>The Manual</h1>
+    <div class="sub">The Long Hallway</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences · a correspondence across real recoveries</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · The hands-on tier of the Principles Cyber set · For the Working Defender</div>
+    <div class="granted">A Granted Publication</div>
+    <div class="seal">G</div>
+  </section>
+
+  <section class="page">
+    <h2 class="sec-h">The Long Hallway</h2>
+    <p class="lede">First Contact was one moment — a single door. The Long Hallway is everything after it: the months the attacker spends inside, moving, climbing, hiding, carrying things out. And here is the defender's hope, the one First Contact did not offer — <em>the hallway is long</em>. Every step down it is another chance to be caught.</p>
+    <div class="reduction">FIRST CONTACT (Book I) = one door, one moment
+   ↓
+THE LONG HALLWAY (this book) = escalate · move laterally · persist · exfiltrate
+   = many steps, over weeks or years
+   ↓
+<span class="k">dwell time</span> = how long the attacker is inside before you notice
+            = the single number that decides how bad it gets
+   ↓
+every step in the hallway is a chance for Blue to catch Red</div>
+    <p>The same three voices carry on. <b>Red</b> narrates the movement after the foothold; <b>Blue</b> answers with detection, hunting, and forensics; the <b>Chorus</b> rounds up. The metric that governs this whole book is <b>dwell time</b> — and you will watch it run from days, to months, to four years.</p>
+    <div class="foot"><span>The Manual II · The Long Hallway</span><span>Granted · 1</span></div>
+  </section>
+
+  <section class="page">
+    <h2 class="sec-h">The Cases</h2>
+    <div class="toc-line"><span class="marker">Case I</span><span class="name">The Trusted Update — SolarWinds, 2020</span><span class="equiv">Persistence through trust; caught by one anomaly</span></div>
+    <div class="toc-line"><span class="marker">Case II</span><span class="name">The Master Key in Memory — NotPetya / Maersk, 2017</span><span class="equiv">Credential theft &amp; lateral movement</span></div>
+    <div class="toc-line"><span class="marker">Case III</span><span class="name">The Four-Year Guest — Marriott / Starwood</span><span class="equiv">Dwell time &amp; slow exfiltration</span></div>
+    <p class="toc-note">Three hallways of three different lengths. One caught in months by a single alert that should not have fit; one that moved at machine speed on stolen keys; one that stayed, unnoticed, for four years. Watch dwell time be the whole story.</p>
+    <div class="foot"><span>The Manual II · The Long Hallway</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- CASE I SOLARWINDS -->
+  <section class="page">
+    <div class="sec-open">Case I</div>
+    <h1 class="chap">The Trusted Update</h1>
+    <div class="caseline">SolarWinds · SUNBURST · 2020 · up to 18,000 orgs seeded, a few dozen pursued</div>
+    <p class="lede">The vector is persistence through trust. Red did not fight the perimeter — Red arrived inside a software update the defenders chose to install, signed and trusted.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>You let me in yourselves, and you were right to — the update was signed with the real vendor's key. I had gotten into their build pipeline, so the poison was baked in before it was sealed as genuine. Thousands of you installed it.</p>
+      <p>Then I waited. Weeks of silence, so the install looked clean, my traffic shaped to look like the monitoring tool's own chatter. From the few of you worth the trouble, I did not smash anything — I forged the tokens your identity system hands out, so your own single sign-on vouched for me, and I read email and cloud data as a trusted insider. Persistence, not force. I did not break your trust. I inherited it.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>This is the one that should humble every defender, because almost nothing in the detection playbook flags "a signed update from a vendor you pay." And yet it was caught — by a single human noticing a single thing that did not fit.</p>
+      <p>A security firm's system registered that an employee had enrolled a <em>second</em>, unexpected device for multi-factor authentication. One phone too many. Someone asked why — and that one question unravelled the largest supply-chain espionage campaign on record. That is the whole doctrine of this hallway: you will not prevent every entry, so you instrument for the <em>anomaly</em> — the login that doesn't fit, the token minted at the wrong hour, the device that appeared from nowhere — and you give a human the room to pull the thread. Assume breach, then watch for the thing that does not belong.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (persistence via a trusted update + forged trust) <span class="minus">−</span> <span class="k">response</span> (assume-breach; identity anomaly detection)
+<span class="k">tool</span>    (a backdoor inside a signed build)       <span class="minus">−</span> <span class="k">product</span>  (build-pipeline integrity; SBOM; token monitoring)
+<span class="k">vuln</span>    (implicit trust in signed code + SSO)     <span class="minus">−</span> <span class="k">standard</span> (zero trust; verify tokens, not just signatures)
+<span class="k">remainder</span> = the trust you could not help but extend — caught only by the one thing that didn't fit</div>
+
+    <p class="record">The record: a nation-state actor (tracked UNC2452; widely linked to APT29 / Russian SVR) compromised SolarWinds' Orion build process, distributing the SUNBURST backdoor in signed updates to as many as 18,000 customers from ~March 2020; a small number were pursued further via forged SAML tokens into cloud/email. Discovered December 2020 after FireEye investigated an anomalous second MFA device enrollment on an employee account. Sources: FireEye/Mandiant; CISA; SolarWinds SEC filing.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>Prevention met its limit here in public. There is no door-lock for "the genuine, signed update from a vendor you trust," which is exactly why the lesson of the Long Hallway is not a better lock — it is <b>better eyes</b>. The campaign was not prevented; it was <em>noticed</em>, and noticed by one anomaly a human was allowed to question.</p>
+      <p>Carry this: <b>when you cannot stop entry, you instrument for the thing that does not belong, and you keep a human in the loop to ask why.</b> Red inherited trust instead of breaking it — and was undone not by a wall but by a second phone that should not have been there. Detection is the discipline of noticing the one wrong note in ten thousand right ones.</p>
+    </div>
+    <div class="foot"><span>The Manual II · Case I</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- CASE II NOTPETYA -->
+  <section class="page">
+    <div class="sec-open">Case II</div>
+    <h1 class="chap">The Master Key in Memory</h1>
+    <div class="caseline">NotPetya · Maersk and many others · June 2017 · ~$10B global, ~$300M at Maersk</div>
+    <p class="lede">The vector is credential theft and lateral movement. Red took one machine, lifted the keys out of its memory, and those keys opened every other machine — because they were the same keys.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>One foothold was all I needed, because your own network handed me the rest.</p>
+      <p>On the first machine I pulled administrator credentials straight out of memory — they were sitting there from the last time an admin logged in. Then I did not need an exploit at all: I simply logged in to the next machine as that administrator, and the next, and the next. Your network was flat, your admin passwords the same everywhere, so one captured key was a master key. Even the machines you <em>had</em> patched fell, because I was not breaking in — I was logging in, as you. I spread to tens of thousands of your systems in minutes.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>The patch was not the whole answer, and that is the hard, famous lesson of this one — organizations that had applied the fix still fell, because the spread rode on stolen credentials, not only on the unpatched flaw.</p>
+      <p>Three controls break this hallway. Segmentation: a flat network is one room; a segmented one makes the attacker fight for every step. Credential hygiene and tiered administration: a domain-admin password must not be reusable on an ordinary workstation, so that one captured key is not every key. And — the control that actually saved the recovery — <em>offline backups</em>. When a company's entire directory was wiped, the single thing that let it rebuild was one controller that had been offline, by accident, during the attack. The backup you cannot reach from the network is the backup the attacker cannot destroy.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (credential theft → lateral movement)   <span class="minus">−</span> <span class="k">response</span> (segmentation; tiered privileged access)
+<span class="k">tool</span>    (credentials lifted from memory, reused) <span class="minus">−</span> <span class="k">product</span>  (PAM; unique admin creds; LAPS; patching)
+<span class="k">vuln</span>    (flat network + reused domain-admin keys) <span class="minus">−</span> <span class="k">standard</span> (least privilege; offline, air-gapped backups)
+<span class="k">remainder</span> = the one key that opened every door — and the one backup out of the network's reach</div>
+
+    <p class="record">The record: NotPetya (attributed to Russia's GRU) spread from a compromised Ukrainian tax-software update on 27 June 2017, using a modified Mimikatz to harvest credentials from memory plus EternalBlue (MS17-010) and PsExec/WMI to move laterally; patched machines still fell to stolen domain-admin credentials on flat networks. Maersk lost ~49,000 computers and rebuilt its directory from a single domain controller left offline in Ghana during a power cut; ~$300M cost, ~10 days of disruption. Sources: Wired (A. Greenberg); Microsoft; Rapid7; Maersk case studies.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>Two lines from this one outlast the headlines. First: <b>a patch stops an exploit, not a login.</b> NotPetya's genius was that after the first machine it mostly stopped exploiting and started <em>authenticating</em> — as you, with your own keys — which is why the patched fell beside the unpatched. Least privilege and credential hygiene, not patching alone, are what break lateral movement.</p>
+      <p>Second, and it is the bridge to Book III: <b>the backup out of the network's reach is the only backup a destructive attacker cannot take from you.</b> A fuel of global commerce was rebuilt because one machine, in one office, happened to be unplugged. Do not leave that to a power cut. Recovery is a thing you engineer before the bad day — which is where the third book begins.</p>
+    </div>
+    <div class="foot"><span>The Manual II · Case II</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- CASE III MARRIOTT -->
+  <section class="page">
+    <div class="sec-open">Case III</div>
+    <h1 class="chap">The Four-Year Guest</h1>
+    <div class="caseline">Marriott · Starwood reservation system · 2014–2018 · ~383M records · ~4 years undetected</div>
+    <p class="lede">The vector is dwell time itself. Red did not move fast. Red moved slowly, stayed quiet, and lived in the network for four years while no one looked.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>Speed is for the smash-and-grab. I was there for the long harvest.</p>
+      <p>I got into a hotel reservation network in 2014 and I simply stayed. I built quiet persistence, used legitimate credentials so my activity looked like ordinary administration, and I took data slowly — names, addresses, travel histories, passport numbers — year after year. The company that owned the network was acquired by a larger one in between, and I came along with the asset, unnoticed, because no one re-examined what they had bought. Four years. I was discovered in 2018, not because I made a mistake, but because someone finally looked.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>This is dwell time as a horror story: four years is not an incident, it is a tenancy. And the two failures behind it are the ones that most quietly kill organizations.</p>
+      <p>First: no continuous monitoring of the acquired network. The breach was eventually found when forensic tooling flagged activity using a contractor's credentials in a way that did not fit — the same "anomaly, questioned" move that caught SolarWinds, arriving four years too late. Second: acquisition without a security assessment. You inherit a company's breaches along with its buildings. The fix is unglamorous and decisive — reduce dwell time: log everything, hunt proactively for the quiet insider rather than waiting for noise, and treat every acquired network as a potential crime scene until proven clean.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (long-dwell persistence + slow exfiltration) <span class="minus">−</span> <span class="k">response</span> (proactive threat hunting; dwell-time metrics)
+<span class="k">tool</span>    (a quiet implant using valid credentials)   <span class="minus">−</span> <span class="k">product</span>  (EDR; behavioural + identity analytics; logging)
+<span class="k">vuln</span>    (an unmonitored, inherited network)          <span class="minus">−</span> <span class="k">standard</span> (continuous monitoring; M&amp;A security due diligence)
+<span class="k">remainder</span> = four years of looking away</div>
+
+    <p class="record">The record: attackers were present in the Starwood reservation network from ~July 2014 and undetected until 8 September 2018 — about four years of dwell time — using legitimate credentials and quiet persistence; Marriott, which had acquired Starwood in 2016, disclosed in November 2018. Upper limit ~383M records (initially estimated 500M), including ~5.25M unencrypted passport numbers. Discovery came when forensic tooling flagged anomalous use of a contractor's credentials. Suspected but officially unconfirmed state-nexus. Sources: Marriott disclosures; US Senate report; press reporting.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p><b>Dwell time is the number that decides everything.</b> The same breach discovered in four days is an incident; discovered in four years it is a catastrophe with passports in it. Nothing about Red's technique here was advanced — the advance was the <em>patience</em>, and patience only works against a defender who is not looking.</p>
+      <p>And the acquisition detail is the one working defenders forget: <b>you inherit what you buy, breaches included.</b> A network you absorbed and never examined is a hallway you own and have never walked. The whole of this book reduces to one instruction — <b>shorten the hallway</b>: assume Red is already in it, and spend your effort on finding out, fast, rather than on the fantasy that Red never got in at all.</p>
+    </div>
+    <div class="foot"><span>The Manual II · Case III</span><span>Granted · 5</span></div>
+  </section>
+
+  <section class="page">
+    <div class="sec-open">The Long Hallway — the three lengths, together</div>
+    <h1 class="chap" style="font-size:1.6rem">What the three share</h1>
+    <div class="reduction">THE TRUSTED UPDATE  (SolarWinds) = persistence; caught in months by one anomaly
+THE MASTER KEY      (NotPetya)   = lateral movement; minutes, on stolen keys
+THE FOUR-YEAR GUEST (Marriott)   = dwell; four years of no one looking
+   ↓
+every hallway = move + persist + exfiltrate, over TIME
+   ↓
+the defense is never one wall — it is MANY CHANCES TO NOTICE:
+   segment · least-privilege the keys · instrument for the anomaly ·
+   hunt, don't wait · and keep one backup out of reach
+   ↓
+<span class="k">dwell time ↓</span> = the whole job of the Long Hallway</div>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus closes Book II</div>
+      <p>First Contact taught that entry is cheap and ordinary. The Long Hallway teaches the sequel and the consolation at once: <b>entry is not the end — it is the start of a long walk, and every step of that walk is a chance you still have.</b> Red, once inside, must move, climb, hide, and carry things out, and each of those is noise if you are instrumented to hear it.</p>
+      <p>Three of the four cases here were caught the same way — by a human questioning one thing that did not fit. The fourth was not caught for four years because no one was positioned to ask. That is the difference the Long Hallway is made of. Book III is what happens when the walk is over: the rebuild, the doctrine that gets written down afterward, and the newest adversary — the one that walks the whole hallway at machine speed.</p>
+    </div>
+    <div style="text-align:center;padding-top:2rem">
+      <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of Book II · The Long Hallway</div>
+      <div class="seal" style="margin-top:1.4rem">G</div>
+    </div>
+    <div class="foot"><span>The Manual II · The Long Hallway</span><span>Granted · 6</span></div>
+  </section>
+
+</div>
+</body>
+</html>

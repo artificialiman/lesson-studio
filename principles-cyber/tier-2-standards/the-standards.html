@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Principles Cyber — The Standards</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a; --warn:#7a3b25;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+  .page{padding:3.2rem 0 1.2rem;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);min-width:3.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.9rem}
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2.1rem;line-height:1.1;margin:.1rem 0 1.4rem;font-weight:600}
+  h3{font-size:1.22rem;margin:2.2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  h4{font-size:1rem;margin:1.5rem 0 .5rem;font-weight:600;color:var(--accent);font-variant:small-caps;letter-spacing:.03em}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  .eq{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);border-radius:3px;font-family:var(--mono);font-size:.82rem;line-height:1.7;padding:1rem 1.2rem;margin:1.2rem 0;white-space:pre-wrap;overflow-x:auto}
+  .eq .k{color:var(--accent)}
+  .eqlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-2);margin:1.4rem 0 -.6rem}
+  .law{background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:3px;padding:.9rem 1.1rem;margin:1rem 0}
+  .law .n{font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.88rem}
+  th{background:var(--plate-bg);color:var(--plate-ink);font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:.5rem .65rem;font-weight:600}
+  td{padding:.5rem .65rem;border-bottom:1px solid var(--rule);vertical-align:top}
+  tr:nth-child(even) td{background:var(--paper-2)}
+  .pillar{background:var(--plate-bg);color:var(--plate-ink);margin:3.5rem -1.4rem;padding:3rem 1.8rem 2rem;border-top:3px double var(--plate-rule);border-bottom:3px double var(--plate-rule)}
+  .pillar .plabel{font-family:var(--mono);font-size:.64rem;letter-spacing:.4em;text-transform:uppercase;color:#c6a86f;text-align:center;margin-bottom:1.8rem}
+  .pillar h3{color:#f0e6cf;margin-top:0;font-size:1.5rem}
+  .pillar .equiv-tag{font-style:italic;color:#c6a86f;font-size:.95rem;margin:-.4rem 0 1rem}
+  .pillar .authority{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:#9f855c;border-left:2px solid var(--plate-rule);padding-left:.8rem;margin:1rem 0 1.4rem}
+  .pillar p{color:#e3d7bf}
+  .pillar table{font-size:.82rem}
+  .pillar th{background:#3a2d20;color:#e9ddc4}
+  .pillar td{border-bottom:1px solid #4a3a28;color:#ddd0b6}
+  .pillar tr:nth-child(even) td{background:#332618}
+  .idx{column-count:2;column-gap:2rem;font-size:.85rem}
+  .idx p{margin:.25rem 0;break-inside:avoid}
+  @media print{body{background:#fff;font-size:11pt}.pillar{break-inside:avoid;margin-left:0;margin-right:0}.plate-title{min-height:0;height:100vh}.eq,table,.law{break-inside:avoid}}
+  @media(max-width:600px){body{font-size:16px}.plate-title h1{font-size:2.1rem}.toc-line{flex-wrap:wrap}.toc-line .equiv{text-align:left;width:100%}.idx{column-count:1}}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <section class="plate-title">
+    <div class="vol">Principles Cyber &nbsp;·&nbsp; The Standards Tier</div>
+    <h1>Principles Cyber</h1>
+    <div class="sub">The Standards</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · Theory · Law · Reference · For the Working Defender</div>
+    <div class="granted">A Granted Publication</div>
+    <div class="seal">G</div>
+  </section>
+
+  <section class="page">
+    <h2 class="sec-h">Table of Contents</h2>
+    <div class="toc-line"><span class="marker">§01</span><span class="name">The Laws</span><span class="equiv">Theory &amp; law, stated formally</span></div>
+    <div class="toc-line"><span class="marker">§02</span><span class="name">The Standards Bodies</span><span class="equiv">Who publishes the authority</span></div>
+    <div class="toc-line"><span class="marker">Pillar I</span><span class="name">CVSS</span><span class="equiv">The Measured-Scale Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§03</span><span class="name">Reference Tables</span><span class="equiv">The lookup a defender reaches for</span></div>
+    <div class="toc-line"><span class="marker">Pillar II</span><span class="name">ISO/IEC 27001</span><span class="equiv">The Governing-Body Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§04</span><span class="name">Master Glossary</span><span class="equiv">Every term, all five volumes</span></div>
+    <div class="toc-line"><span class="marker">§05</span><span class="name">Series Index</span><span class="equiv">Topic → where it lives</span></div>
+    <p class="toc-note">This is the reference volume of the set — the one not read through but reached for. Where the Principles tier carries the "why" and the Practice tier the "how on the job," this carries the "what is fixed": the laws stated once, the bodies that publish them, and the tables a working defender looks up mid-task. It is this subject's front-matter, grown into its own book.</p>
+    <div class="foot"><span>Principles Cyber · Standards</span><span>Granted · 1</span></div>
+  </section>
+
+  <!-- §01 THE LAWS -->
+  <section class="page">
+    <div class="sec-open">§01 · The Laws</div>
+    <h1 class="chap">The Laws</h1>
+    <p class="lede">The field's conservation laws — stated once, obeyed since. Each is given as a defender would cite it on the job, not as a paragraph to read through.</p>
+
+    <div class="law"><div class="n">Law 1 · The CIA Triad</div>Every security control serves one or more of three properties: <b>confidentiality</b> (only the right people read it), <b>integrity</b> (unaltered since trusted), <b>availability</b> (reachable when needed). A control whose property you cannot name is a control you do not understand.</div>
+
+    <div class="law"><div class="n">Law 2 · Kerckhoffs's Principle</div>A system must stay secure even when everything about its design is public — only the key is secret. Security that depends on a hidden method is already broken, because methods leak. ("No security through obscurity.")</div>
+
+    <div class="law"><div class="n">Law 3 · Least Privilege</div>Every user, process, and service receives the minimum access its job requires and no more. Least privilege sets the blast radius of every breach before the breach occurs.</div>
+
+    <div class="law"><div class="n">Law 4 · Complete Mediation</div>Every access to every object is checked, every time. No trusted shortcuts, no cached "already allowed." The request that skips the check is the request that breaches.</div>
+
+    <div class="law"><div class="n">Law 5 · Fail-Safe Defaults</div>The default answer is deny. Access is granted deliberately, never inherited by accident. A system that fails should fail closed, not open.</div>
+
+    <div class="law"><div class="n">Law 6 · Defense in Depth</div>No single control is trusted to hold. Controls are layered — preventive, detective, corrective — so that one failure is survivable and never total.</div>
+
+    <div class="law"><div class="n">Law 7 · Assume Breach</div>Prevention fails eventually against a determined adversary. A program must invest in detection, response, and recovery, not prevention alone — losses are decided after the wall is crossed.</div>
+
+    <div class="law"><div class="n">Law 8 · Zero Trust</div>Trust is never granted by network location. Every request is verified — identity, device, context — inside the perimeter as rigorously as outside it. Least privilege, applied to the network.</div>
+
+    <div class="law"><div class="n">Law 9 · Separation of Duties</div>No single person or process holds end-to-end power over a critical action. Two keys, two parties — so that one compromised actor cannot complete the whole harm alone.</div>
+
+    <div class="eqlabel">The laws, reduced</div>
+    <div class="eq"><span class="k">confidentiality + integrity + availability</span> = what you protect
+<span class="k">least privilege + complete mediation</span>      = how you contain
+<span class="k">defense in depth + assume breach</span>          = how you survive failure
+<span class="k">Kerckhoffs + zero trust + separation</span>      = what you never assume</div>
+    <div class="foot"><span>Principles Cyber · Standards · §01</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- §02 STANDARDS BODIES -->
+  <section class="page">
+    <div class="sec-open">§02 · The Standards Bodies</div>
+    <h1 class="chap">The Standards Bodies</h1>
+    <p class="lede">The laws above are principles. These are the institutions that turn principles into checkable, auditable, published standards — the field's IUPAC, several times over.</p>
+
+    <table>
+      <tr><th>Standard</th><th>Body</th><th>What it governs</th></tr>
+      <tr><td>CSF (Cybersecurity Framework)</td><td>NIST (US)</td><td>Program structure: Govern, Identify, Protect, Detect, Respond, Recover</td></tr>
+      <tr><td>SP 800-53</td><td>NIST</td><td>Catalogue of security &amp; privacy controls</td></tr>
+      <tr><td>SP 800-63</td><td>NIST</td><td>Digital identity &amp; authentication assurance levels</td></tr>
+      <tr><td>FIPS 199 / 140-3</td><td>NIST</td><td>Data categorization / cryptographic module validation</td></tr>
+      <tr><td>ISO/IEC 27001</td><td>ISO + IEC</td><td>Information Security Management System (ISMS) certification</td></tr>
+      <tr><td>CIS Controls</td><td>Center for Internet Security</td><td>Prioritized, prescriptive safeguards (18 controls)</td></tr>
+      <tr><td>OWASP Top Ten</td><td>OWASP</td><td>Most common web application risks</td></tr>
+      <tr><td>ATT&amp;CK</td><td>MITRE</td><td>Catalogue of observed adversary tactics &amp; techniques</td></tr>
+      <tr><td>CVE / CWE</td><td>MITRE</td><td>Named vulnerabilities / named weakness types</td></tr>
+      <tr><td>CVSS</td><td>FIRST.org</td><td>Scoring the severity of a vulnerability</td></tr>
+      <tr><td>PCI DSS</td><td>PCI SSC</td><td>Protection of payment card data</td></tr>
+      <tr><td>Kill Chain</td><td>Lockheed Martin</td><td>The ordered stages of an intrusion</td></tr>
+    </table>
+
+    <div class="eqlabel">How they divide the labour</div>
+    <div class="eq"><span class="k">What could go wrong?</span>  → CWE (weakness types), OWASP (web families)
+<span class="k">What HAS gone wrong?</span>  → CVE (named vulns), ATT&amp;CK (observed techniques)
+<span class="k">How bad is it?</span>        → CVSS (severity score)
+<span class="k">What do we do?</span>       → NIST CSF / 800-53, CIS Controls, ISO 27001
+<span class="k">Who proves it?</span>       → ISO 27001 cert, PCI DSS audit</div>
+    <div class="foot"><span>Principles Cyber · Standards · §02</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- PILLAR I CVSS -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar I</div>
+    <h3>CVSS — The Common Vulnerability Scoring System</h3>
+    <div class="equiv-tag">The Measured-Scale Equivalent — a vulnerability's severity as a number on a fixed, public scale</div>
+    <div class="authority">Grounded in: FIRST.org (Forum of Incident Response and Security Teams), the body that publishes and versions the CVSS specification.</div>
+    <p>The pH scale gave chemistry a single number that ranked acidity on a fixed, published axis. CVSS does the same for vulnerabilities: a 0.0–10.0 score, computed from defined metrics, so two defenders anywhere agree on how severe a flaw is without arguing.</p>
+    <table>
+      <tr><th>Band</th><th>Score</th><th>Working meaning</th></tr>
+      <tr><td>None</td><td>0.0</td><td>No impact</td></tr>
+      <tr><td>Low</td><td>0.1–3.9</td><td>Patch in routine cycle</td></tr>
+      <tr><td>Medium</td><td>4.0–6.9</td><td>Schedule deliberately</td></tr>
+      <tr><td>High</td><td>7.0–8.9</td><td>Prioritize</td></tr>
+      <tr><td>Critical</td><td>9.0–10.0</td><td>Emergency — patch now</td></tr>
+    </table>
+    <div class="eq">Base score is built from metrics such as:
+   Attack Vector      (Network / Adjacent / Local / Physical)
+   Attack Complexity  (Low / High)
+   Privileges Required(None / Low / High)
+   User Interaction   (None / Required)
+   Impact to C, I, A  (None / Low / High)</div>
+    <hr>
+    <p><b style="color:#f0e6cf">Why a number beats an adjective.</b> "Serious" means different things to different teams; <b>9.8</b> does not. Like pH turning "sour" into a position on a line, CVSS turns "bad" into a rank that drives a patch queue — and the base metrics show <em>why</em> the number landed where it did, so a working defender reads the vector, not just the digit.</p>
+    <div class="foot"><span>Principles Cyber · Standards · Pillar I</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- §03 REFERENCE TABLES -->
+  <section class="page">
+    <div class="sec-open">§03 · Reference Tables</div>
+    <h1 class="chap">Reference Tables</h1>
+    <p class="lede">The lookups a working defender reaches for mid-task. Memorize the shapes; reach here for the values.</p>
+
+    <h4>Cryptography — algorithms in current use</h4>
+    <table>
+      <tr><th>Job</th><th>Use</th><th>Avoid (broken/legacy)</th></tr>
+      <tr><td>Symmetric cipher</td><td>AES-128 / AES-256</td><td>DES, 3DES, RC4</td></tr>
+      <tr><td>Asymmetric</td><td>RSA-2048+/-3072, ECC (P-256+)</td><td>RSA-1024</td></tr>
+      <tr><td>Hashing (integrity)</td><td>SHA-256, SHA-3</td><td>MD5, SHA-1</td></tr>
+      <tr><td>Password storage</td><td>bcrypt, scrypt, Argon2</td><td>unsalted SHA/MD5</td></tr>
+      <tr><td>Key exchange</td><td>ECDHE (forward secrecy)</td><td>static RSA key exchange</td></tr>
+      <tr><td>Transport</td><td>TLS 1.3 / 1.2</td><td>SSL, TLS 1.0/1.1</td></tr>
+    </table>
+
+    <h4>Ports &amp; protocols — the ones you must know cold</h4>
+    <table>
+      <tr><th>Port</th><th>Service</th><th>Secure form</th></tr>
+      <tr><td>22</td><td>SSH</td><td>(already encrypted)</td></tr>
+      <tr><td>25 / 587</td><td>SMTP (mail send)</td><td>587 w/ STARTTLS</td></tr>
+      <tr><td>53</td><td>DNS</td><td>DNS over TLS/HTTPS</td></tr>
+      <tr><td>80 → 443</td><td>HTTP → HTTPS</td><td>443 (TLS)</td></tr>
+      <tr><td>389 → 636</td><td>LDAP → LDAPS</td><td>636 (TLS)</td></tr>
+      <tr><td>3389</td><td>RDP</td><td>VPN + NLA; never public</td></tr>
+      <tr><td>445</td><td>SMB</td><td>never expose to internet</td></tr>
+    </table>
+
+    <h4>Authentication &amp; federation protocols</h4>
+    <table>
+      <tr><th>Protocol</th><th>Job</th></tr>
+      <tr><td>Kerberos</td><td>Ticket-based auth inside a domain (Active Directory)</td></tr>
+      <tr><td>SAML 2.0</td><td>Browser single sign-on (enterprise federation)</td></tr>
+      <tr><td>OAuth 2.0</td><td>Delegated authorization (access without sharing a password)</td></tr>
+      <tr><td>OIDC</td><td>Identity layer on top of OAuth 2.0 (who the user is)</td></tr>
+      <tr><td>RADIUS / TACACS+</td><td>Network device &amp; remote-access AAA</td></tr>
+    </table>
+
+    <h4>Incident response — the cycle (NIST SP 800-61)</h4>
+    <div class="eq"><span class="k">1 Preparation</span>   → tooling, playbooks, logging in place before anything
+<span class="k">2 Detection &amp; Analysis</span> → identify and scope the incident
+<span class="k">3 Containment</span>  → stop the spread (short- and long-term)
+<span class="k">4 Eradication</span>  → remove the foothold
+<span class="k">5 Recovery</span>     → restore and verify clean
+<span class="k">6 Post-Incident</span>→ lessons learned, feed back to step 1</div>
+    <div class="foot"><span>Principles Cyber · Standards · §03</span><span>Granted · 5</span></div>
+  </section>
+
+  <!-- PILLAR II ISO 27001 -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar II</div>
+    <h3>ISO/IEC 27001</h3>
+    <div class="equiv-tag">The Governing-Body Equivalent — security as a managed, audited, certifiable system</div>
+    <div class="authority">Grounded in: ISO (International Organization for Standardization) and IEC — ISO/IEC 27001, the international standard for an Information Security Management System (ISMS).</div>
+    <p>IUPAC did not test individual compounds — it governed the <em>system</em> by which elements are named and placed. ISO 27001 governs the system by which an organization manages security: not a checklist of controls, but a certifiable discipline of running, measuring, and improving them.</p>
+    <div class="eq"><span class="k">an ISMS</span> = policies + people + processes + controls, managed as one
+<span class="k">certification</span> = an external auditor confirms the system actually runs
+<span class="k">the engine</span> = Plan → Do → Check → Act (continual improvement)</div>
+    <hr>
+    <p><b style="color:#f0e6cf">Why a system, not a checklist.</b> A control list tells you what to install once; an ISMS tells you how to keep it working as the organization and the threats change. The difference is the difference between a reaction run once in a lab and an industrial process held at steady state — and industry, as the companion chemistry volume knows, is where the standard has to hold continuously, not just pass one exam.</p>
+    <div class="foot"><span>Principles Cyber · Standards · Pillar II</span><span>Granted · 6</span></div>
+  </section>
+
+  <!-- §04 MASTER GLOSSARY -->
+  <section class="page">
+    <div class="sec-open">§04 · Master Glossary</div>
+    <h1 class="chap">Master Glossary</h1>
+    <p class="lede">Every defined term across the five volumes, gathered in one place — the note-making strategy the companion chemistry series is built on.</p>
+    <div class="idx">
+      <p><b>AAA</b> — authentication, authorization, accounting.</p>
+      <p><b>Access control</b> — deciding which users reach which resources.</p>
+      <p><b>APT</b> — advanced persistent threat; a patient, resourced, usually state-linked adversary.</p>
+      <p><b>ARTEX</b> — open-source LLM-driven autonomous pentest framework (Go); ships no model of its own.</p>
+      <p><b>Asymmetric encryption</b> — public/private key pair; public locks, private unlocks.</p>
+      <p><b>Attack surface</b> — every point an attacker could try, including the forgotten.</p>
+      <p><b>Authentication</b> — proving who you are (know / have / are).</p>
+      <p><b>Authorization</b> — deciding what you may do.</p>
+      <p><b>Availability</b> — the CIA property of being reachable when needed.</p>
+      <p><b>Blast radius</b> — how far a compromise spreads; set by least privilege.</p>
+      <p><b>Blue team</b> — the defenders: detection, response, hardening.</p>
+      <p><b>Buffer overflow</b> — input exceeding reserved memory, overwriting adjacent memory.</p>
+      <p><b>CIA triad</b> — confidentiality, integrity, availability.</p>
+      <p><b>CVE</b> — a named, catalogued specific vulnerability.</p>
+      <p><b>CVSS</b> — 0–10 severity score for a vulnerability (FIRST.org).</p>
+      <p><b>CWE</b> — a named type of weakness (the class a CVE belongs to).</p>
+      <p><b>Confidentiality</b> — only authorized people can read it.</p>
+      <p><b>Credential stuffing</b> — reusing leaked passwords across sites.</p>
+      <p><b>Defense in depth</b> — layered controls so one failure is not total.</p>
+      <p><b>Digital signature</b> — hash encrypted with a private key; proves authorship + integrity.</p>
+      <p><b>Hashing</b> — one-way fixed-size fingerprint; serves integrity; no key.</p>
+      <p><b>IR</b> — incident response; the prepare→detect→contain→eradicate→recover→learn cycle.</p>
+      <p><b>Integrity</b> — data unaltered since trusted.</p>
+      <p><b>Kerberos</b> — ticket-based domain authentication.</p>
+      <p><b>Kill chain</b> — the seven ordered stages of an intrusion.</p>
+      <p><b>Lateral movement</b> — spreading host to host by abusing trust.</p>
+      <p><b>Least privilege</b> — minimum access for the job, no more.</p>
+      <p><b>MFA</b> — two+ factors from different categories.</p>
+      <p><b>MITRE ATT&amp;CK</b> — catalogue of observed adversary techniques.</p>
+      <p><b>OAuth 2.0</b> — delegated authorization without sharing a password.</p>
+      <p><b>OIDC</b> — identity layer atop OAuth 2.0.</p>
+      <p><b>OWASP Top Ten</b> — most common web application risks.</p>
+      <p><b>Password spraying</b> — one common password against many accounts.</p>
+      <p><b>Privilege escalation</b> — gaining more access than granted (vertical / horizontal).</p>
+      <p><b>Red team</b> — authorized offensive testers emulating a real adversary.</p>
+      <p><b>Reference monitor</b> — always-invoked, tamper-proof, verifiable access checkpoint.</p>
+      <p><b>Risk</b> — likelihood × impact.</p>
+      <p><b>SAML</b> — browser single sign-on for enterprise federation.</p>
+      <p><b>SIEM</b> — centralized log collection, correlation, and alerting.</p>
+      <p><b>SOC</b> — security operations centre; the blue team's watch floor.</p>
+      <p><b>Symmetric encryption</b> — one shared key, locks and unlocks.</p>
+      <p><b>Threat model</b> — asset + adversary + attack surface + acceptable loss.</p>
+      <p><b>TLS</b> — transport encryption securing data in transit.</p>
+      <p><b>Trojan / Virus / Worm</b> — disguised / host-attached / self-propagating malicious code.</p>
+      <p><b>Zero trust</b> — verify every request; never trust by location.</p>
+    </div>
+    <div class="foot"><span>Principles Cyber · Standards · §04</span><span>Granted · 7</span></div>
+  </section>
+
+  <!-- §05 INDEX -->
+  <section class="page">
+    <div class="sec-open">§05 · Series Index</div>
+    <h1 class="chap">Series Index</h1>
+    <p class="lede">Where each idea lives across the set, so a working reader can jump straight to the treatment they need — the "why," the "what is fixed," or the "how on the job."</p>
+    <table>
+      <tr><th>Topic</th><th>Principles (why)</th><th>Standards (fixed)</th><th>Practice (how)</th></tr>
+      <tr><td>CIA triad</td><td>Bk I Pillar I</td><td>Law 1</td><td>IR scoping</td></tr>
+      <tr><td>Least privilege</td><td>Bk I §01, Bk II §02</td><td>Law 3</td><td>Red/blue priv-esc</td></tr>
+      <tr><td>Cryptography</td><td>Bk I §02</td><td>§03 crypto table</td><td>PKI drills</td></tr>
+      <tr><td>Authentication</td><td>Bk I Pillar III</td><td>§03 protocols</td><td>Kerberos/SAML drills</td></tr>
+      <tr><td>Kill chain</td><td>Bk II Pillar I</td><td>§02 bodies</td><td>Red-team method</td></tr>
+      <tr><td>Vulnerability classes</td><td>Bk II §04</td><td>CWE/OWASP, CVSS</td><td>Exam archetypes</td></tr>
+      <tr><td>Detection/response</td><td>Bk II §01, Bk III Pillar II</td><td>§03 IR cycle</td><td>Blue-team method</td></tr>
+      <tr><td>AI / ARTEX</td><td>Bk III (all)</td><td>Glossary</td><td>Agentic-threat triage</td></tr>
+      <tr><td>Risk scoring</td><td>Bk II §01</td><td>Pillar I (CVSS)</td><td>Risk-math drills</td></tr>
+    </table>
+    <div class="eq"><span class="k">Principles</span> = read it once, to understand        (Books I–III)
+<span class="k">Standards</span>  = reach for it, to look up          (this volume)
+<span class="k">Practice</span>   = work through it, to become able   (the Practice volume)
+three treatments, one subject — read together</div>
+    <div class="foot"><span>Principles Cyber · Standards · §05</span><span>Granted · 8</span></div>
+  </section>
+
+  <section class="page" style="text-align:center;padding-top:4rem">
+    <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of the Standards</div>
+    <p style="font-style:italic;color:var(--ink-soft);margin-top:1rem">The Practice volume turns all of this into work — red team, blue team, and the certifications that mark a working defender.</p>
+    <div class="seal" style="margin-top:2rem">G</div>
+  </section>
+
+</div>
+</body>
+</html>

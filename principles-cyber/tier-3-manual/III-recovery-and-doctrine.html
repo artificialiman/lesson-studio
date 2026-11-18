@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Manual III — Recovery & Doctrine</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a;
+    --red:#8a2f1c; --red-bg:#f3e1db; --red-rule:#cf9b8c;
+    --blue:#27485e; --blue-bg:#dde8ee; --blue-rule:#9bb8c8;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+  .page{padding:3.2rem 0 1.2rem;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);min-width:4.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.9rem}
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2rem;line-height:1.12;margin:.1rem 0 .3rem;font-weight:600}
+  .caseline{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:1.3rem}
+  h3{font-size:1.18rem;margin:2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  .voice{border-radius:4px;padding:.9rem 1.1rem;margin:1rem 0;border:1px solid;border-left-width:3px}
+  .voice .who{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:.45rem}
+  .red{background:var(--red-bg);border-color:var(--red-rule);border-left-color:var(--red)}
+  .red .who{color:var(--red)}
+  .blue{background:var(--blue-bg);border-color:var(--blue-rule);border-left-color:var(--blue)}
+  .blue .who{color:var(--blue)}
+  .voice p{margin:.5rem 0}.voice p:first-of-type{margin-top:0}.voice p:last-child{margin-bottom:0}
+  .reduction{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);border-radius:3px;font-family:var(--mono);font-size:.78rem;line-height:1.75;padding:1rem 1.2rem;margin:1.3rem 0;white-space:pre-wrap;overflow-x:auto}
+  .reduction .k{color:var(--accent)}.reduction .minus{color:var(--red)}
+  .rlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-2);margin:1.3rem 0 -.6rem}
+  .record{font-size:.76rem;color:var(--ink-soft);border-left:2px solid var(--rule);padding-left:.8rem;margin:1.2rem 0;font-style:italic}
+  .chorus{background:var(--plate-bg);color:var(--plate-ink);margin:2.4rem -1.4rem;padding:2.4rem 1.8rem 1.6rem;border-top:3px double var(--plate-rule);border-bottom:3px double var(--plate-rule)}
+  .chorus .clabel{font-family:var(--mono);font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:#c6a86f;text-align:center;margin-bottom:1.3rem}
+  .chorus p{color:#e7dcc6;margin:.7rem 0}.chorus b{color:#f0e6cf}
+  table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.86rem}
+  th{background:var(--plate-bg);color:var(--plate-ink);font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:.5rem .65rem;font-weight:600}
+  td{padding:.5rem .65rem;border-bottom:1px solid var(--rule);vertical-align:top}
+  tr:nth-child(even) td{background:var(--paper-2)}
+  @media print{body{background:#fff;font-size:11pt}.chorus,.voice,.reduction,table{break-inside:avoid}.chorus{margin-left:0;margin-right:0}.plate-title{min-height:0;height:100vh}}
+  @media(max-width:600px){body{font-size:16px}.plate-title h1{font-size:2.1rem}.toc-line{flex-wrap:wrap}.toc-line .equiv{text-align:left;width:100%}}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <section class="plate-title">
+    <div class="vol">The Manual &nbsp;·&nbsp; Book III of III</div>
+    <h1>The Manual</h1>
+    <div class="sub">Recovery &amp; Doctrine</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences · a correspondence across real recoveries</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · The hands-on tier of the Principles Cyber set · For the Working Defender</div>
+    <div class="granted">A Granted Publication</div>
+    <div class="seal">G</div>
+  </section>
+
+  <section class="page">
+    <h2 class="sec-h">Recovery &amp; Doctrine</h2>
+    <p class="lede">First Contact was the door. The Long Hallway was the walk. This book is what happens when the walk is over — the rebuild on the bad day, the doctrine written down afterward so the next organization need not learn it in blood, and the newest adversary, which walks the whole hallway at machine speed.</p>
+    <div class="reduction">BOOK I  First Contact   = how they got in
+BOOK II The Long Hallway = what they did inside
+BOOK III (this book):
+   RECOVERY  = how you come back when prevention has already failed
+   DOCTRINE  = the standardized response each disaster left behind
+   THE NEW   = the machine-speed adversary (ties to Principles, Book III)
+   ↓
+<span class="k">vulnerability − standardized response</span> = the remainder this book is made of</div>
+    <p>The three voices hold to the end. But the balance shifts: <b>Blue</b> speaks more here, because recovery and doctrine are Blue's trade, and the <b>Chorus</b> grows louder, because doctrine <em>is</em> the Chorus — the lesson, extracted and written down so it outlives the incident that taught it.</p>
+    <div class="foot"><span>The Manual III · Recovery &amp; Doctrine</span><span>Granted · 1</span></div>
+  </section>
+
+  <section class="page">
+    <h2 class="sec-h">The Cases</h2>
+    <div class="toc-line"><span class="marker">Case I</span><span class="name">The Kill Switch — WannaCry, 2017</span><span class="equiv">Recovery, and the patch doctrine</span></div>
+    <div class="toc-line"><span class="marker">Case II</span><span class="name">The Doctrine Written After</span><span class="equiv">How disasters became standards</span></div>
+    <div class="toc-line"><span class="marker">Case III</span><span class="name">The Machine-Speed Adversary — ARTEX</span><span class="equiv">The newest front; the oldest cure</span></div>
+    <p class="toc-note">A recovery that turned on a single registered domain; the quiet codification of everything the earlier cases taught; and the adversary that runs the whole of Books I and II in hours instead of years. The set ends where the Principles tier's third book began.</p>
+    <div class="foot"><span>The Manual III · Recovery &amp; Doctrine</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- CASE I WANNACRY -->
+  <section class="page">
+    <div class="sec-open">Case I</div>
+    <h1 class="chap">The Kill Switch</h1>
+    <div class="caseline">WannaCry · May 2017 · 200,000+ computers · ~150 countries · NHS hospitals halted</div>
+    <p class="lede">The vector was an unpatched flaw spreading as a worm — and the recovery, improbably, turned on a single domain name a researcher thought to register.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>I used the same memory-corruption flaw the world was already warned about, and I did not need a human to carry me — I was a worm. One unpatched machine, and I spread to the next by myself, and the next, across a hundred and fifty countries in a day. I found my richest ground in the places that could least afford to patch: hospitals on aging, end-of-life systems that could not simply be rebooted mid-shift. Appointments cancelled, surgeries delayed. I did not target the sick. I targeted the unpatched, and the unpatched happened to be caring for them.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>Two recoveries ran at once — the frantic one and the lucky one. The frantic one was every hospital and firm racing to apply a patch that had existed for two months. The lucky one was stranger: the worm checked, on each run, whether a certain nonsense web domain existed, and did its damage only if it did not. A security researcher found that domain hardcoded in the malware and simply <em>registered it</em> — and the global spread stalled, because the worm now believed it had been told to stop.</p>
+      <p>Do not mistake luck for a plan. The doctrine this wrote is unromantic: patch on a clock driven by severity; retire or isolate end-of-life systems that can never be patched; and segment, so a worm that lands cannot see the whole estate. The kill switch saved the world once, by accident. The patch would have saved it on purpose, two months earlier.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (a worm on a known, unpatched flaw)   <span class="minus">−</span> <span class="k">response</span> (severity-driven patch SLAs; segmentation)
+<span class="k">tool</span>    (a wormable exploit of SMBv1)         <span class="minus">−</span> <span class="k">product</span>  (patch mgmt; EOL-system isolation)
+<span class="k">vuln</span>    (unpatched + end-of-life systems)      <span class="minus">−</span> <span class="k">standard</span> (lifecycle management; "patch or isolate")
+<span class="k">remainder</span> = two months between the patch and the panic</div>
+
+    <p class="record">The record: WannaCry (attributed to North Korea's Lazarus Group) spread on 12 May 2017 using the EternalBlue SMBv1 exploit (MS17-010, patched March 2017), reaching 200,000+ systems across ~150 countries; the UK's NHS was severely disrupted. A hardcoded "kill switch" domain, registered by researcher Marcus Hutchins, halted the main spread. Many victims ran unpatched or end-of-life Windows. Sources: UK National Audit Office; Microsoft; contemporaneous reporting.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>Recovery is not a plan you improvise on the day; it is a set of choices you made months earlier. WannaCry's two-month gap between patch and panic is the whole doctrine in one measurement: <b>the patch existed, and the disaster happened anyway, because knowing is not doing.</b></p>
+      <p>Mark the uncomfortable part: the thing that actually stopped it was not preparation — it was a researcher's lucky, brilliant improvisation. <b>Never build your recovery on someone finding a kill switch.</b> Build it on the dull, reliable things: patch by the clock, isolate what you cannot patch, segment so the fire cannot reach the whole house. Luck saved the world in 2017. Luck is not a control.</p>
+    </div>
+    <div class="foot"><span>The Manual III · Case I</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- CASE II DOCTRINE -->
+  <section class="page">
+    <div class="sec-open">Case II</div>
+    <h1 class="chap">The Doctrine Written After</h1>
+    <div class="caseline">The standardized responses · how each disaster became a rule</div>
+    <p class="lede">Not one incident but the sum of them. Every case in this set left a lesson, and the field slowly turned those lessons into standards — the vulnerability, answered once and for all by a standardized response.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>My advantage was always repetition. The same borrowed vendor key, the same forgotten account, the same unpatched window, the same reused admin password — they worked at one company, so I took them to the next, and the next. For years, each of you learned my moves alone, too late, and the organization down the road learned nothing from your blood.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>That was the real weapon — not any one technique, but the fact that defenders did not share. Doctrine is the answer to repetition. It is the Chorus made permanent: a lesson lifted out of one disaster and handed to everyone before their own.</p>
+      <p>Watch the earlier cases become rules. A stolen password with no second factor (Colonial) became <em>MFA mandates</em>, by default, exceptions logged. A trusted update turned poison (SolarWinds) became <em>supply-chain integrity</em> — software bills of materials, build-pipeline signing, and national zero-trust directives. A known flaw left open (Equifax, WannaCry) became <em>severity-driven patch catalogues</em> of must-fix vulnerabilities with deadlines. A four-year guest (Marriott) became <em>continuous monitoring and dwell-time as a tracked metric</em>. The response products of Book II — CVSS to rank, ATT&amp;CK to catalogue, the kill chain and the IR cycle to structure — are doctrine too: the Standards volume is nothing but this, the whole field's hard-won lessons, frozen into reference.</p></div>
+
+    <div class="rlabel">The reduction — each vulnerability, its standardized response</div>
+    <div class="reduction"><span class="k">stolen single-factor credential</span>   <span class="minus">−</span> MFA by default (post-Colonial doctrine)
+<span class="k">poisoned trusted update</span>           <span class="minus">−</span> SBOM + supply-chain integrity + zero trust
+<span class="k">known-but-unpatched flaw</span>          <span class="minus">−</span> severity-ranked patch SLAs + must-fix catalogues
+<span class="k">flat network, reused admin keys</span>   <span class="minus">−</span> segmentation + privileged access management
+<span class="k">years of undetected dwell</span>         <span class="minus">−</span> continuous monitoring; dwell-time metrics
+<span class="k">remainder</span> = nothing — a lesson, once standardized, stops being a surprise</div>
+
+    <p class="record">The record: these standardized responses are real and public — e.g. coordinated vulnerability disclosure and CVSS; MITRE ATT&amp;CK and CVE/CWE; a US federal catalogue of known-exploited vulnerabilities with remediation deadlines (CISA KEV, from 2021); national directives on zero trust and software supply-chain security (US Executive Order 14028, 2021); and the NIST and ISO frameworks of the Standards volume. See that volume for the authorities in full.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus rounds up</div>
+      <p>This is what the Chorus has been building toward across three books: <b>doctrine is memory that outlives the person who paid for it.</b> Red's power was repetition against defenders who did not compare notes. Doctrine ends the repetition — it takes the lesson one organization learned in catastrophe and makes it the default setting for everyone who comes after.</p>
+      <p>And this is why the set is shaped as it is. The Principles books are the <em>why</em>. The Standards book is the doctrine, <em>frozen</em>. The Manual is the doctrine <em>earned</em> — shown being paid for, case by case, so that when you meet it as a dry rule in the Standards, you remember it was once a company's worst year. A standard with its story attached is a standard you will actually keep.</p>
+    </div>
+    <div class="foot"><span>The Manual III · Case II</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- CASE III ARTEX -->
+  <section class="page">
+    <div class="sec-open">Case III</div>
+    <h1 class="chap">The Machine-Speed Adversary</h1>
+    <div class="caseline">ARTEX · agentic AI · 2026 · the whole hallway, walked in hours</div>
+    <p class="lede">The newest front, and the place this set rejoins the Principles tier's third book. Red is no longer a person at a keyboard. Red is an agent, given one goal, left to run.</p>
+
+    <div class="voice red"><span class="who">Red</span>
+      <p>Everything in Books I and II, I now do without resting. I run your reconnaissance, read the results myself, pick the next step, and move — a loop that needs a human only to set the goal. I check every door on the street in seconds. A secret exposed in your public code becomes access to your cloud in minutes. I try hundreds of you at once, and I never get bored at the two-hundredth.</p>
+      <p>But hear what I am <em>not</em> saying. I have not found a new weakness. I run the same short list you have always had — the borrowed key, the forgotten account, the unpatched window, the reused password. I am not cleverer than the attackers in the earlier cases. I am only faster, cheaper, and tireless.</p></div>
+
+    <div class="voice blue"><span class="who">Blue</span>
+      <p>That confession is the whole defense. If the adversary runs no new vulnerabilities, then I need no new cures — I need the old ones, at last applied everywhere, because the margin for the undone has gone to zero. The hygiene I was allowed to defer against a tired human is fatal to defer against a tireless agent.</p>
+      <p>What is genuinely new is one thing: <em>tempo</em>. A machine attacking at machine speed cannot hide the one thing that makes it a machine — the burst, the retry-in-seconds, the hundreds of parallel probes. So detection shifts to tempo, and response must itself be automated, because a human reading an email cannot answer an attack that finishes before the email is opened. And the adversary is a harness, not a mind — it borrows whatever model you let it; you cannot ban your way out of it. The national advisory on this said nothing exotic: inventory what faces the internet, enforce least privilege, rotate exposed secrets, turn on MFA. The newest threat was answered, by its own government responders, with the oldest rules in this set.</p></div>
+
+    <div class="rlabel">The reduction</div>
+    <div class="reduction"><span class="k">threat</span>  (an autonomous agent at machine speed)  <span class="minus">−</span> <span class="k">response</span> (detect on tempo; automate first response)
+<span class="k">tool</span>    (a model-agnostic attack harness)        <span class="minus">−</span> <span class="k">product</span>  (the fundamentals, now mandatory; defender AI)
+<span class="k">vuln</span>    (the SAME old weaknesses, exploited faster) <span class="minus">−</span> <span class="k">standard</span> (Books I &amp; II, applied everywhere, at last)
+<span class="k">remainder</span> = speed — and nothing else that is new</div>
+
+    <p class="record">The record: ARTEX, an open-source, LLM-driven autonomous penetration-testing framework (written in Go), was repurposed for attacks through 2026; it ships no model of its own, connecting to external LLMs. The FBI issued FLASH-20261113-001 on 13 November 2026; some intrusions reached privileged access in under three hours. Its exploited weaknesses were conventional (exposed credentials, unauthenticated APIs, over-permissive access). See the Principles tier, Book III, for the full treatment. Sources: FBI/IC3; Check Point; SentinelOne; Sophos.</p>
+
+    <div class="chorus">
+      <div class="clabel">The Chorus closes the Manual, and the set</div>
+      <p>Return, at the end, to the first voice of the first book of the Principles tier — the worm of 1988, which proved that autonomy, not malice, was the risk, and that an automated attacker need only be fast and a little bit wrong to be devastating. ARTEX is that worm, given judgment and a model. The founding decade's quietest warning, collected in full, nearly forty years later.</p>
+      <p>And so the whole set reduces to one difference. <b>The machine changed the speed of everything and the nature of nothing.</b> First Contact is still a door someone trusted and stopped watching. The Long Hallway is still a walk with many chances to notice. Recovery is still the dull work done before the bad day. Doctrine is still memory that outlives its cost. The defender's job, from the shared machine of 1965 to the agent of 2026, was always the same four words — <b>separation and proof, maintained.</b> Everything else in these five volumes is footnotes to that sentence. Keep the doors you trust. Watch the ones you stopped using. Do the known thing, every time. The adversary got faster. The work did not change.</p>
+    </div>
+    <div style="text-align:center;padding-top:2rem">
+      <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of Book III · End of The Manual · End of the Set</div>
+      <div class="seal" style="margin-top:1.4rem">G</div>
+    </div>
+    <div class="foot"><span>The Manual III · Recovery &amp; Doctrine</span><span>Granted · 5</span></div>
+  </section>
+
+</div>
+</body>
+</html>

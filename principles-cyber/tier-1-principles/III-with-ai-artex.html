@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Principles Cyber III — With AI: ARTEX</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a; --warn:#7a3b25;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+  .page{padding:3.2rem 0 1.2rem;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;font-family:var(--mono);
+    font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+    text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;
+    text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;
+    margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);min-width:3.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);
+    border-left:2px solid var(--rule);padding-left:.9rem}
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2.1rem;line-height:1.1;margin:.1rem 0 1.4rem;font-weight:600}
+  h3{font-size:1.22rem;margin:2.2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  h4{font-size:1rem;margin:1.5rem 0 .5rem;font-weight:600;color:var(--accent);
+    font-variant:small-caps;letter-spacing:.03em}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  .eq{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);
+    border-radius:3px;font-family:var(--mono);font-size:.82rem;line-height:1.7;
+    padding:1rem 1.2rem;margin:1.2rem 0;white-space:pre-wrap;overflow-x:auto}
+  .eq .k{color:var(--accent)}
+  .eqlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-2);margin:1.4rem 0 -.6rem}
+  .oneliner{background:var(--paper-2);border:1px solid var(--rule);border-radius:3px;
+    padding:1rem 1.2rem;margin:1.3rem 0}
+  .oneliner b::before{content:"▸ Relationship — ";font-variant:small-caps;color:var(--accent);letter-spacing:.03em}
+  table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.9rem}
+  th{background:var(--plate-bg);color:var(--plate-ink);font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:.55rem .7rem;font-weight:600}
+  td{padding:.55rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+  tr:nth-child(even) td{background:var(--paper-2)}
+  .warn{color:var(--warn);font-weight:600}
+  .pillar{background:var(--plate-bg);color:var(--plate-ink);margin:3.5rem -1.4rem;
+    padding:3rem 1.8rem 2rem;border-top:3px double var(--plate-rule);border-bottom:3px double var(--plate-rule)}
+  .pillar .plabel{font-family:var(--mono);font-size:.64rem;letter-spacing:.4em;text-transform:uppercase;
+    color:#c6a86f;text-align:center;margin-bottom:1.8rem}
+  .pillar h3{color:#f0e6cf;margin-top:0;font-size:1.5rem}
+  .pillar .equiv-tag{font-style:italic;color:#c6a86f;font-size:.95rem;margin:-.4rem 0 1rem}
+  .pillar .authority{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:#9f855c;
+    border-left:2px solid var(--plate-rule);padding-left:.8rem;margin:1rem 0 1.4rem}
+  .pillar p{color:#e3d7bf}
+  .pillar table{font-size:.84rem}
+  .pillar th{background:#3a2d20;color:#e9ddc4}
+  .pillar td{border-bottom:1px solid #4a3a28;color:#ddd0b6}
+  .pillar tr:nth-child(even) td{background:#332618}
+  .pillar .eq{background:#241b12;border-color:#4a3a28;border-left-color:#c6a86f;color:#e3d7bf}
+  .pillar .eq .k{color:#d9b877}
+  .pillar hr{border:0;border-top:1px solid var(--plate-rule);margin:1.6rem 0}
+  .pillar .foot{border-top-color:var(--plate-rule);color:#9f855c}
+  .src{font-size:.8rem;color:var(--ink-soft);line-height:1.6;margin:.3rem 0}
+  @media print{body{background:#fff;font-size:11.5pt}.pillar{break-inside:avoid;margin-left:0;margin-right:0}
+    .plate-title{min-height:0;height:100vh}.eq,table,.oneliner{break-inside:avoid}}
+  @media(max-width:600px){body{font-size:16px}.plate-title h1{font-size:2.1rem}
+    .toc-line{flex-wrap:wrap}.toc-line .equiv{text-align:left;width:100%}}
+</style>
+</head>
+<body>
+<div class="book">
+
+  <!-- TITLE PLATE -->
+  <section class="plate-title">
+    <div class="vol">Principles Cyber &nbsp;·&nbsp; Book III of III</div>
+    <h1>Principles Cyber</h1>
+    <div class="sub">With AI — the ARTEX Era</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · A Compressed Reference for the Serious Student</div>
+    <div class="granted">A Granted Publication · A Defender's Volume</div>
+    <div class="seal">G</div>
+  </section>
+
+  <!-- TOC -->
+  <section class="page">
+    <h2 class="sec-h">Table of Contents</h2>
+    <div class="toc-line"><span class="marker">§01</span><span class="name">What AI Actually Changes</span><span class="equiv">The Gate — what varies, what doesn't</span></div>
+    <div class="toc-line"><span class="marker">§02</span><span class="name">The Agentic Loop</span><span class="equiv">Kinetics Equivalent — rate &amp; catalyst</span></div>
+    <div class="toc-line"><span class="marker">§03</span><span class="name">ARTEX — A Case Study</span><span class="equiv">Nuclear Equivalent — the chain reaction</span></div>
+    <div class="toc-line"><span class="marker">Pillar I</span><span class="name">FBI FLASH-20261113-001</span><span class="equiv">The External-Authority Plate</span></div>
+    <div class="toc-line"><span class="marker">§04</span><span class="name">The Constant That Didn't Change</span><span class="equiv">The Conservation-Law Equivalent</span></div>
+    <div class="toc-line"><span class="marker">Pillar II</span><span class="name">Detection at Machine Speed</span><span class="equiv">The Qualitative-Analysis Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§05</span><span class="name">Mitigations</span><span class="equiv">The Four-Instruments Equivalent</span></div>
+    <div class="toc-line"><span class="marker">Pillar III</span><span class="name">The Arms Race</span><span class="equiv">Creeper &amp; Reaper, Returned</span></div>
+    <div class="toc-line"><span class="marker">§06</span><span class="name">Glossary, Constants &amp; Sources</span><span class="equiv">Front-matter reference</span></div>
+    <p class="toc-note">A defender's volume. It describes a live threat the way the security industry describes it — to recognize and resist it — not to operate it. Every mitigation here is drawn from public advisories. Facts about ARTEX reflect reporting through mid-November 2026 and are cited in §06; a live threat changes, so treat the dated figures as reach, not gospel.</p>
+    <div class="foot"><span>Principles Cyber III</span><span>Granted · 1</span></div>
+  </section>
+
+  <!-- §01 WHAT AI CHANGES -->
+  <section class="page">
+    <div class="sec-open">§01 · What AI Actually Changes</div>
+    <h1 class="chap">What AI Actually Changes</h1>
+    <p class="lede">The whole book turns on one subtraction. Books I and II assumed a human at the keyboard. Take the human away — what changes, and what pointedly does not?</p>
+
+    <div class="eqlabel">The reduction</div>
+    <div class="eq"><span class="k">classical attack</span> = human skill × human time × human patience
+<span class="k">AI attack</span>        = same techniques × machine speed × machine patience
+<span class="k">what changed</span>     = speed, scale, tirelessness, cost
+<span class="k">what did NOT</span>     = the vulnerabilities, the kill chain, the defenses</div>
+
+    <p>This difference — not a difference of kind — is the entire subject. An AI attacker does not know a vulnerability class that Book II did not list. It runs the same short list from §04 of Book II, but it never gets bored, never sleeps, never gives up on the three-hundredth target because the first two hundred were dull.</p>
+
+    <div class="eqlabel">The gate — is this actually new?</div>
+    <div class="eq"><span class="k">GATE →</span> Faced with an "AI attack," ask what is new:
+   New vulnerability class?   → Almost never
+   New technique?             → Rarely
+   Same techniques, faster,
+   cheaper, at larger scale?  → Almost always — THIS is the change</div>
+
+    <table>
+      <tr><th>Dimension</th><th>Human era (Book II)</th><th>AI era (this book)</th></tr>
+      <tr><td>Speed</td><td>Days to weeks per target</td><td>Minutes — targeting to privileged access reported under 3 hours</td></tr>
+      <tr><td>Scale</td><td>A few targets at once</td><td>Hundreds in parallel</td></tr>
+      <tr><td>Patience</td><td>Fatigue, boredom, error</td><td>None — it retries a failed call in seconds</td></tr>
+      <tr><td>Cost</td><td>Skilled operator time</td><td>Reported as little as $145 in model fees per campaign</td></tr>
+      <tr><td>Vulnerabilities</td><td colspan="2" class="warn">Unchanged — the same OWASP/ATT&amp;CK families</td></tr>
+    </table>
+
+    <div class="oneliner"><b>the Morris worm (Book I) already proved autonomy is the risk, not novelty.</b> AI did not invent self-running attacks; it gave them judgment. The worm could only do the one thing it was written to do. An AI agent reads the result of each step and chooses the next — autonomy with a brain attached, which is exactly the leap §02 is about.</div>
+    <div class="foot"><span>Principles Cyber III · §01</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- §02 AGENTIC LOOP -->
+  <section class="page">
+    <div class="sec-open">§02 · The Agentic Loop</div>
+    <h1 class="chap">The Agentic Loop</h1>
+    <p class="lede">The new reaction mechanism. Physical chemistry asked how fast and by what pathway a reaction proceeds; this section asks the same of an attack that steers itself.</p>
+
+    <div class="eqlabel">The reduction — the loop</div>
+    <div class="eq"><span class="k">OBSERVE</span> → read the current state of the target
+<span class="k">PLAN</span>    → an LLM chooses the next step toward the goal
+<span class="k">ACT</span>     → run a tool (scanner, request, script)
+<span class="k">ADJUST</span>  → feed the result back; loop again
+the operator sets ONE goal; the loop runs with little further input</div>
+
+    <p>In classical terms, the human used to <em>be</em> the loop — look at a result, decide the next move, act, look again. The agentic framework automates that judgment. One operator sets an objective; cooperating agents handle planning, execution, and revision in a repeating cycle, often across thousands of actions in a session.</p>
+
+    <div class="oneliner"><b>the loop is a catalyst, not a new reaction.</b> A catalyst (Book-companion Physical Chemistry) does not change what reaction is possible — it lowers the energy to make it happen, so far more of it happens. The agentic loop does exactly this to attacks: the same intrusions were always possible; the loop drops the human effort each one costs to near zero, so vastly more of them happen.</div>
+
+    <h3>Why speed alone breaks a classical assumption</h3>
+    <div class="eq">Book II's defender advantage:
+   attacker must complete every kill-chain step IN ORDER
+   defender needs to win ONCE, at any step
+AI era pressure:
+   the seven steps can run in seconds, not weeks
+   → the defender's window to "win once" shrinks toward zero</div>
+    <div class="oneliner"><b>machine speed attacks the <em>time</em> in the kill chain, not the chain itself.</b> The stages are unchanged — recon, deliver, exploit, escalate, exfiltrate — but a defense built to notice an intrusion over days is a defense built for a clock the attacker no longer runs on. This is why detection and automated response (§05) matter more in this book than in any before it.</div>
+
+    <h4>The honest limit — hallucination</h4>
+    <p>The loop is not magic. Because an LLM drives it, it can misread success — in one reported campaign, agents announced cash-outs that never happened, reading a server's "success" response as proof of theft when no funds had moved. The defender's lesson is not comfort; it is that AI-driven attacks are noisy and error-prone in ways a careful human is not, and that noise is a detection signal.</p>
+    <div class="foot"><span>Principles Cyber III · §02</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- §03 ARTEX CASE STUDY -->
+  <section class="page">
+    <div class="sec-open">§03 · ARTEX — A Case Study</div>
+    <h1 class="chap">ARTEX — A Case Study</h1>
+    <p class="lede">A single framework made the abstractions of §01 and §02 concrete in 2026. It is studied here the way a toxicology text studies a poison — to recognize it and treat it, not to administer it.</p>
+
+    <div class="eqlabel">The reduction — what ARTEX is</div>
+    <div class="eq"><span class="k">ARTEX</span>      = a harness, NOT a model
+<span class="k">harness</span>    = the agentic loop + security tools, in one framework
+<span class="k">the model</span>  = supplied externally — ARTEX ships none of its own
+<span class="k">so</span>         = ARTEX = (any LLM API) + (the loop) + (standard tools)</div>
+
+    <p>ARTEX is an open-source, LLM-driven autonomous penetration-testing framework written in Go. It was built, like many tools in this field, for legitimate security testing — letting authorized teams test systems they own. The same properties that make it useful to defenders drew criminal and state-linked actors, who repurposed it.</p>
+
+    <table>
+      <tr><th>Fact</th><th>As reported</th></tr>
+      <tr><td>Type</td><td>Open-source, multi-agent, LLM-driven pentest framework (Go)</td></tr>
+      <tr><td>Origin</td><td>Published on GitHub July 2026 by a developer using the handle "Autumn-27"</td></tr>
+      <tr><td>Closed</td><td>Made unavailable / closed-source Oct 8, 2026 after abuse reports; forks, mirrors, and a paid "ARTEX PRO" persist</td></tr>
+      <tr><td>Model</td><td>Ships none — connects to external LLMs; attacker instances mostly used Chinese-origin models (esp. the DeepSeek Flash family)</td></tr>
+      <tr><td>Exposure</td><td>1,600+ publicly exposed consoles as of early Nov 2026 (one study: 2,557 hosted, 1,608 live)</td></tr>
+    </table>
+
+    <div class="oneliner"><b>the "harness, not a model" fact is the single most important line in this book.</b> It means you cannot defend by banning one model — take any capable LLM, drop it into the harness, and the attack resumes. The threat is the loop plus the tooling, not any one brain you might block. This is why defense returns to the fundamentals of Books I and II and not to the AI itself.</div>
+
+    <h3>The autonomy, made real</h3>
+    <p>What distinguished ARTEX activity from classical intrusions was the removal of the operator mid-attack. In several documented campaigns, nobody prompted the agents again after the initial goal was set — the loop retried failed calls within seconds and chose its own next steps across thousands of actions. Reported campaigns reached from initial targeting to privileged access in under three hours, and ran against hundreds of organizations in parallel.</p>
+
+    <div class="oneliner"><b>ARTEX is the Morris worm (Book I) with judgment.</b> The worm spread blindly and brought down 10% of the internet by accident. ARTEX spreads with a planner reading each result — the same removal of the human, now with the ability to adapt. The founding decade's quietest warning, collected in full fifty years later.</div>
+
+    <h4>A note on model safeguards</h4>
+    <p>Public reporting records that, in some instances, operators hit refusals when they pointed the harness at certain Western models with stronger safety guardrails — and then switched to more permissive models to continue. The defender's reading is twofold: model-level safeguards are a real friction on misuse, and they are not a perimeter, because a model-agnostic harness simply routes around a model that says no. Defense cannot be outsourced to the model's conscience.</p>
+    <div class="foot"><span>Principles Cyber III · §03</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- PILLAR I FBI FLASH -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar I</div>
+    <h3>FBI FLASH-20261113-001</h3>
+    <div class="equiv-tag">The External-Authority Plate — the threat, as a government body stated it, not as this book claims it</div>
+    <div class="authority">Grounded in: FBI FLASH-20261113-001, "Threat Overview of ARTEX Autonomous Penetration Testing Framework," TLP:CLEAR, issued via IC3 on November 13, 2026.</div>
+    <p>Every Pillar in this trilogy rests on an external, checkable authority. For a live threat, the highest such authority is a government advisory. This plate records what the FBI itself stated — so the student weighs the alert, not the author.</p>
+    <div class="eq"><span class="k">What:</span>   an open-source, LLM-driven autonomous pentest framework (Go)
+<span class="k">Does:</span>   "automate multiple phases of cyber intrusions at machine
+         speed, from reconnaissance through data exfiltration"
+<span class="k">Since:</span>  malicious use observed from at least August 2026
+<span class="k">Speed:</span>  some intrusions reached privileged access in under 3 hours</div>
+    <table>
+      <tr><th>Sectors named</th><th>Key figures</th></tr>
+      <tr><td>Financial services, government, technology, defense, semiconductor, energy, healthcare, manufacturing, telecommunications, legal</td><td>1,600+ exposed consoles (early Nov 2026); ~67,000 individuals' data in South Korean finance attacks; 2,250+ downstream tenants in the ConnectWise supply-chain compromise</td></tr>
+    </table>
+    <hr>
+    <p><b style="color:#f0e6cf">The tell in the FBI's own mitigations.</b> The bureau's recommended defenses are strikingly ordinary: inventory internet-facing applications, restrict cloud admin interfaces, apply least privilege to app permissions, scan for exposed secrets, preserve logs. Not one of them is AI-specific. The most authoritative voice on the threat answered a machine-speed attack with the fundamentals of Books I and II — which is §04's entire argument, stated by the FBI before this book makes it.</p>
+    <div class="foot"><span>Principles Cyber III · Pillar I</span><span>Granted · 5</span></div>
+  </section>
+
+  <!-- §04 THE CONSTANT -->
+  <section class="page">
+    <div class="sec-open">§04 · The Constant That Didn't Change</div>
+    <h1 class="chap">The Constant That Didn't Change</h1>
+    <p class="lede">The keystone of the trilogy. In every reaction a chemist runs, something is conserved — mass, charge, energy. In every AI attack reported to date, something is conserved too: the vulnerabilities.</p>
+
+    <div class="eqlabel">The conservation law</div>
+    <div class="eq"><span class="k">conserved</span>   = the weaknesses exploited
+            = weak/exposed credentials, unauthenticated APIs,
+              over-permissive access, misconfiguration, unpatched flaws
+<span class="k">not conserved</span> = the speed, scale, and cost of exploiting them
+<span class="k">therefore</span>   = the cure is conserved too — it is Books I and II</div>
+
+    <p>Across the documented ARTEX campaigns, the agents did not find exotic new holes. They found hardcoded passwords, plaintext credential files, unauthenticated endpoints, secrets left in public code, and accounts with more privilege than their job required — the exact failures named in Book I's Saltzer &amp; Schroeder plate and Book II's vulnerability-classes gate. One reported path ran from a secret exposed in public code to sensitive cloud data in five minutes. The hole was old. Only the clock was new.</p>
+
+    <div class="oneliner"><b>if the vulnerabilities are conserved, the defenses are too.</b> This is the most hopeful sentence in the book and the most demanding. Hopeful, because you already know what to do — it is in Books I and II. Demanding, because machine speed means the hygiene you were allowed to defer in the human era is now the difference between a blocked probe and a three-hour breach.</p>
+
+    <h3>Why "basic hygiene" is the expert consensus</h3>
+    <table>
+      <tr><th>What the agent exploited</th><th>The Book I / II principle it violated</th></tr>
+      <tr><td>Hardcoded / exposed credentials</td><td>Never embed secrets; least privilege</td></tr>
+      <tr><td>Unauthenticated APIs</td><td>Complete mediation — check every access</td></tr>
+      <tr><td>Over-permissive accounts</td><td>Least privilege — blast radius</td></tr>
+      <tr><td>Insecure defaults</td><td>Fail-safe defaults</td></tr>
+      <tr><td>Reused / sprayed passwords</td><td>MFA — never let one factor be enough</td></tr>
+    </table>
+    <div class="oneliner"><b>the field's leading responders converged on the same unglamorous verdict: defending against an AI attacker is, overwhelmingly, the hygiene you already owed.</b> The machine does not pick a better lock. It checks every unlocked door on the street, in seconds, tirelessly — so the only door that stays safe is the one that was actually locked.</div>
+    <div class="foot"><span>Principles Cyber III · §04</span><span>Granted · 6</span></div>
+  </section>
+
+  <!-- PILLAR II DETECTION -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar II</div>
+    <h3>Detection at Machine Speed</h3>
+    <div class="equiv-tag">The Qualitative-Analysis Equivalent — identifying the agent by its signatures, not by guesswork</div>
+    <div class="authority">Grounded in: published detection guidance from Check Point Research ("Hacking on Autopilot," Nov 5, 2026), Sophos X-Ops, SentinelOne, and the FBI FLASH indicator table.</div>
+    <p>Compound chemistry's qualitative analysis identified an unknown salt by the tests it reacts to — add this reagent, read that result. Detecting an AI-driven intrusion is the same discipline: it leaves signatures, and a defender reads them rather than guessing.</p>
+    <table>
+      <tr><th>Signature class</th><th>What to watch for (defensive)</th></tr>
+      <tr><td>Tempo</td><td>Machine-paced bursts — many actions in seconds; failed calls retried within seconds with small variations</td></tr>
+      <tr><td>Identity</td><td>One identity authenticating to many service principals; tokens requested across many cloud services in a short window</td></tr>
+      <tr><td>Artifacts</td><td>Paths and strings containing "artx"/"artex"; reported working directories; web-server processes spawning shells</td></tr>
+      <tr><td>Exfil channels</td><td>Repeated callbacks to request-logging services used as drop points</td></tr>
+    </table>
+    <hr>
+    <p><b style="color:#f0e6cf">The honest caveat, kept in the plate.</b> Authorized penetration testers also run ARTEX. Every signature above is a lead, not a verdict — the same way a single qualitative test narrows a salt but does not name it alone. And infrastructure rotates, so indicators are validated before they are blocked. The durable detection signal is not any one string; it is <em>tempo</em> — the one thing a human attacker cannot fake and an AI cannot hide, because machine speed is the whole point of using the machine.</p>
+    <div class="foot"><span>Principles Cyber III · Pillar II</span><span>Granted · 7</span></div>
+  </section>
+
+  <!-- §05 MITIGATIONS -->
+  <section class="page">
+    <div class="sec-open">§05 · Mitigations</div>
+    <h1 class="chap">Mitigations</h1>
+    <p class="lede">The four instruments, pointed at this threat. Every control here is drawn from public advisories — and every one is a control Books I and II already taught. They are gathered, not invented.</p>
+
+    <div class="eqlabel">The reduction — four fronts</div>
+    <div class="eq"><span class="k">REDUCE SURFACE</span> → close the doors the agent scans for
+<span class="k">HARDEN IDENTITY</span> → make stolen credentials dead ends
+<span class="k">PROTECT APPS</span>    → stop input and secrets from leaking
+<span class="k">DETECT + RESPOND</span>→ win on tempo, since speed is the attack</div>
+
+    <h4>I. Reduce external attack surface</h4>
+    <table>
+      <tr><th>Control</th><th>Why it blunts an AI attacker</th></tr>
+      <tr><td>Inventory every internet-facing app (incl. partner portals, legacy, mobile backends)</td><td>The agent scans the doors you forgot; you cannot defend an unknown door</td></tr>
+      <tr><td>Restrict cloud admin, management, and backup interfaces to trusted networks</td><td>Removes the high-value targets from public reach</td></tr>
+      <tr><td>Move apps behind zero-trust access where feasible</td><td>Every request re-verified, not trusted by location</td></tr>
+    </table>
+
+    <h4>II. Harden identity and access</h4>
+    <table>
+      <tr><th>Control</th><th>Why</th></tr>
+      <tr><td>Least privilege on multi-tenant app permissions and consent grants</td><td>Caps the blast radius of any one stolen identity</td></tr>
+      <tr><td>Phishing-resistant MFA; block legacy auth; smart lockout</td><td>Kills spraying and stuffing at machine scale</td></tr>
+      <tr><td>Monitor credential additions and new service principals</td><td>Catches the agent granting itself persistence</td></tr>
+    </table>
+
+    <h4>III. Strengthen application protections</h4>
+    <table>
+      <tr><th>Control</th><th>Why</th></tr>
+      <tr><td>Scan repos, images, and pipelines for embedded secrets; rotate promptly</td><td>Closes the "exposed secret → cloud data in minutes" path</td></tr>
+      <tr><td>Enforce server-side authorization on every request; limit response fields</td><td>Complete mediation — defeats the unauthenticated-API family</td></tr>
+      <tr><td>Rate-limit and alert on unusual volume on high-impact APIs</td><td>Turns the agent's speed into its own alarm</td></tr>
+    </table>
+
+    <h4>IV. Detect, respond, preserve</h4>
+    <table>
+      <tr><th>Control</th><th>Why</th></tr>
+      <tr><td>Alert on machine-paced bursts and rapid cloud enumeration</td><td>Tempo is the signal the attacker cannot hide (Pillar II)</td></tr>
+      <tr><td>Automate first response for fast, privileged paths (disable principal, revoke tokens), confirm after</td><td>Only machine-speed response can meet a machine-speed attack</td></tr>
+      <tr><td>Preserve sign-in, audit, and SIEM logs before containment</td><td>Accounting (Book II) — no logs, no investigation</td></tr>
+    </table>
+
+    <div class="oneliner"><b>front IV is the only one that is genuinely heavier than in the human era.</b> Fronts I–III are the old hygiene, now non-negotiable. Front IV is new in degree: when the attack runs in seconds, a response that waits for a human to read an email is a response that arrives after the breach. Automated, pre-authorized containment is the one place the defender, too, must hand judgment to a machine.</div>
+
+    <h3>The complete hierarchy, restated</h3>
+    <div class="eq">WHAT CHANGED = speed, scale, cost (§01)
+   ↓
+THE AGENTIC LOOP = a catalyst on old reactions (§02)
+   ↓
+ARTEX = a harness, not a model — can't be banned away (§03) → Pillar I
+   ↓
+THE CONSTANT = the vulnerabilities are conserved (§04)
+   ↓
+THEREFORE the cure is conserved: Books I + II, now mandatory
+   ↓
+DETECT ON TEMPO (Pillar II) + AUTOMATE RESPONSE (§05)
+   = the one front that is new in degree</div>
+    <div class="foot"><span>Principles Cyber III · §05</span><span>Granted · 8</span></div>
+  </section>
+
+  <!-- PILLAR III ARMS RACE -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar III</div>
+    <h3>The Arms Race</h3>
+    <div class="equiv-tag">Creeper &amp; Reaper, Returned — attack and defense, the same tool, pointed opposite ways</div>
+    <div class="authority">Grounded in: Book I, §03 (Creeper &amp; Reaper, 1971) — and the 2026 consensus that defenders are applying the same agentic AI to detection and response.</div>
+    <p>In 1971 the first self-moving attack (Creeper) and the first self-moving defense (Reaper) were born the same year, the same mechanism, differing only in intent. The AI era is that sentence at full scale: the same agentic loop that drives ARTEX also drives autonomous defense — triage, detection, and response agents that read and act at the attacker's tempo.</p>
+    <div class="eq"><span class="k">offense AI</span> = the loop + tools, pointed at breaking in
+<span class="k">defense AI</span> = the loop + tools, pointed at catching the break-in
+<span class="k">the difference</span> = intent, authorization, and oversight — not capability
+<span class="k">who wins</span>   = whoever automates the fundamentals faster</div>
+    <hr>
+    <p><b style="color:#f0e6cf">The trilogy's last conservation law.</b> The oldest pattern in the field (Book I) is the newest news in it (Book III): offense and defense have always been the same tools in opposite hands, and the edge goes to whoever automates first. What AI did not change is the thing to end on — the defender's job is still separation and proof, least privilege and complete mediation, detect and respond. The machine made all of it faster. It made none of it different. A worm, in 1988, spent one night proving the field's quietest warning was never quiet. An agent, in 2026, proved the field's oldest principles were never obsolete.</p>
+    <div class="foot"><span>Principles Cyber III · Pillar III</span><span>Granted · 9</span></div>
+  </section>
+
+  <!-- §06 GLOSSARY + SOURCES -->
+  <section class="page">
+    <div class="sec-open">§06 · Front-matter reference</div>
+    <h1 class="chap">Glossary, Constants &amp; Sources</h1>
+
+    <h3>The constants — the ARTEX timeline (2026)</h3>
+    <table>
+      <tr><th>Date</th><th>Event (as reported)</th></tr>
+      <tr><td>July 2026</td><td>ARTEX published on GitHub by "Autumn-27"</td></tr>
+      <tr><td>Aug 2026</td><td>Malicious use observed from at least this point</td></tr>
+      <tr><td>Oct 7–8, 2026</td><td>Use against South Korean financial firms reported; developer closes the source</td></tr>
+      <tr><td>Nov 5, 2026</td><td>Check Point "Hacking on Autopilot" published</td></tr>
+      <tr><td>Nov 13, 2026</td><td>FBI FLASH-20261113-001 issued</td></tr>
+    </table>
+
+    <h3>Glossary — every term, gathered</h3>
+    <p><b>Agentic framework</b> — software that lets an LLM pursue a goal through a repeating observe–plan–act–adjust loop, with little human input after the goal is set.</p>
+    <p><b>ARTEX</b> — an open-source, LLM-driven autonomous penetration-testing framework (Go); built for authorized testing, repurposed for attacks; ships no model of its own.</p>
+    <p><b>ARTEX PRO</b> — a reported paid variant persisting after the original was closed-sourced.</p>
+    <p><b>Agentic loop</b> — observe, plan, act, adjust; the mechanism that replaces the human's moment-to-moment judgment.</p>
+    <p><b>Conservation law (of this book)</b> — the observation that AI attacks exploit the same vulnerabilities as before; only speed, scale, and cost change.</p>
+    <p><b>FBI FLASH</b> — a US law-enforcement threat advisory; FLASH-20261113-001 covers ARTEX.</p>
+    <p><b>Hallucination</b> — an LLM reporting an outcome that did not occur; in attacks, a source of noise and a detection signal.</p>
+    <p><b>Harness, not a model</b> — the principle that ARTEX is the loop plus tooling, with the model supplied externally; the reason it cannot be defended against by banning any one model.</p>
+    <p><b>Machine-paced burst</b> — a volume and speed of actions only automation produces; the most durable detection signal.</p>
+    <p><b>Model-agnostic</b> — able to use any LLM API interchangeably.</p>
+    <p><b>Supply-chain compromise</b> — abusing a trusted vendor's access to reach its downstream customers (e.g. the reported ConnectWise case).</p>
+    <p><b>Zero trust</b> — verify every request regardless of location; the network-layer form of least privilege (Book II).</p>
+
+    <h3>Sources</h3>
+    <p class="src">FBI, "Threat Overview of ARTEX Autonomous Penetration Testing Framework," FLASH-20261113-001, IC3, Nov 13, 2026.</p>
+    <p class="src">Check Point Research, "Hacking on Autopilot: Inside ARTEX Cybercrime Campaigns," Nov 5, 2026.</p>
+    <p class="src">SentinelOne, "ARTEX Unmasked: The Rise of AI-Powered ARTEX in Cybercrime &amp; Espionage," Nov 13, 2026.</p>
+    <p class="src">Sophos X-Ops, "ARTEX attackers apply agentic AI," 2026.</p>
+    <p class="src">eSecurity Planet, "ARTEX Cyberattacks: AI Agents Steal Credentials and Signing Certificates," Nov 9, 2026.</p>
+    <p class="src">SOCRadar, "ARTEX AI Pentest Tool: What Security Teams Need to Know," Nov 2026.</p>
+    <p class="src">Dark Reading, "Cyber Experts Weigh In: How to Fight Artex &amp; AntiFox," 2026.</p>
+    <p class="src" style="margin-top:1rem;font-style:italic">Figures reflect reporting through mid-November 2026 and describe reach, not confirmed victim counts; a live threat changes, and indicators should be re-verified against current advisories before action.</p>
+
+    <div class="foot"><span>Principles Cyber III · §06</span><span>Granted · 10</span></div>
+  </section>
+
+  <section class="page" style="text-align:center;padding-top:4rem">
+    <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of the Trilogy</div>
+    <p style="font-style:italic;color:var(--ink-soft);margin-top:1rem">Book I minted the constants. Book II built the craft on them. Book III proved the machine made all of it faster and none of it different. The defender's job was always separation and proof — and still is.</p>
+    <div class="seal" style="margin-top:2rem">G</div>
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Principles Cyber I — The First Ten Years</title>
+<style>
+  :root{
+    --ink:#211b14; --ink-soft:#4a4036; --paper:#f4efe6; --paper-2:#efe8db;
+    --rule:#c9bda8; --accent:#6b4f2e; --accent-2:#8a6a3e;
+    --plate-ink:#f2ead8; --plate-bg:#2c2219; --plate-rule:#6b573c;
+    --eq-bg:#ece3d2; --eq-rule:#bda98a; --warn:#7a3b25;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono","Courier New",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+    line-height:1.5;font-size:17px;-webkit-font-smoothing:antialiased}
+  .book{max-width:48rem;margin:0 auto;padding:0 1.4rem 5rem}
+
+  /* ---- running page frame ---- */
+  .page{padding:3.2rem 0 1.2rem;border-bottom:1px solid transparent;position:relative}
+  .foot{margin-top:2.6rem;padding-top:.7rem;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;font-family:var(--mono);
+    font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2)}
+
+  /* ---- title plate ---- */
+  .plate-title{min-height:92vh;display:flex;flex-direction:column;justify-content:center;
+    text-align:center;padding:4rem 0}
+  .plate-title .vol{font-family:var(--mono);font-size:.7rem;letter-spacing:.42em;
+    text-transform:uppercase;color:var(--accent-2);margin-bottom:2.4rem}
+  .plate-title h1{font-size:2.9rem;line-height:1.05;margin:0 0 .5rem;font-weight:600;
+    letter-spacing:.01em}
+  .plate-title .sub{font-size:1.15rem;font-style:italic;color:var(--ink-soft);margin-bottom:3rem}
+  .spaced{letter-spacing:.34em;text-transform:uppercase}
+  .plate-title .byline{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);
+    line-height:2.5}
+  .plate-title .byline b{color:var(--ink);font-weight:600;letter-spacing:.3em}
+  .plate-title .edi{margin-top:2.6rem;font-family:var(--mono);font-size:.6rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--accent-2)}
+  .plate-title .granted{margin-top:1.1rem;font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.42em;text-transform:uppercase;color:var(--accent)}
+  .seal{width:46px;height:46px;border:1.5px solid var(--accent);border-radius:50%;
+    margin:2.4rem auto 0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;color:var(--accent)}
+
+  /* ---- TOC ---- */
+  h2.sec-h{font-size:.72rem;font-family:var(--mono);letter-spacing:.26em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 1.6rem;font-weight:700}
+  .toc-line{display:flex;align-items:baseline;gap:.6rem;padding:.5rem 0;
+    border-bottom:1px dotted var(--rule)}
+  .toc-line .marker{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);
+    min-width:3.2rem}
+  .toc-line .name{flex:1;font-size:1.02rem}
+  .toc-line .equiv{font-size:.82rem;font-style:italic;color:var(--ink-soft);text-align:right}
+  .toc-note{margin-top:1.6rem;font-size:.86rem;font-style:italic;color:var(--ink-soft);
+    border-left:2px solid var(--rule);padding-left:.9rem}
+
+  /* ---- section openers ---- */
+  .sec-open{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;
+    text-transform:uppercase;color:var(--accent-2);margin-bottom:.4rem}
+  h1.chap{font-size:2.1rem;line-height:1.1;margin:.1rem 0 1.4rem;font-weight:600}
+  h3{font-size:1.22rem;margin:2.2rem 0 .7rem;font-weight:600;color:var(--ink)}
+  h4{font-size:1rem;margin:1.5rem 0 .5rem;font-weight:600;color:var(--accent);
+    font-variant:small-caps;letter-spacing:.03em}
+  p{margin:.8rem 0}
+  .lede{font-size:1.08rem;color:var(--ink-soft)}
+  hr.soft{border:0;border-top:1px solid var(--rule);margin:2.4rem 0}
+
+  /* ---- equation / gate blocks (the sums & differences) ---- */
+  .eq{background:var(--eq-bg);border:1px solid var(--eq-rule);border-left:3px solid var(--accent);
+    border-radius:3px;font-family:var(--mono);font-size:.82rem;line-height:1.7;
+    padding:1rem 1.2rem;margin:1.2rem 0;white-space:pre-wrap;overflow-x:auto}
+  .eq .k{color:var(--accent)}
+  .eqlabel{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--accent-2);margin:1.4rem 0 -.6rem}
+
+  /* ---- one-liner ---- */
+  .oneliner{background:var(--paper-2);border:1px solid var(--rule);border-radius:3px;
+    padding:1rem 1.2rem;margin:1.3rem 0}
+  .oneliner b::before{content:"▸ Relationship — ";font-variant:small-caps;color:var(--accent);
+    letter-spacing:.03em}
+
+  /* ---- tables ---- */
+  table{width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.9rem}
+  th{background:var(--plate-bg);color:var(--plate-ink);font-family:var(--mono);
+    font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;text-align:left;
+    padding:.55rem .7rem;font-weight:600}
+  td{padding:.55rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+  tr:nth-child(even) td{background:var(--paper-2)}
+  .warn{color:var(--warn);font-weight:600}
+
+  /* ---- reference plate / pillar (full-page interlude) ---- */
+  .pillar{background:var(--plate-bg);color:var(--plate-ink);margin:3.5rem -1.4rem;
+    padding:3rem 1.8rem 2rem;border-top:3px double var(--plate-rule);
+    border-bottom:3px double var(--plate-rule)}
+  .pillar .plabel{writing-mode:horizontal-tb;font-family:var(--mono);font-size:.64rem;
+    letter-spacing:.4em;text-transform:uppercase;color:#c6a86f;text-align:center;
+    margin-bottom:1.8rem}
+  .pillar h3{color:#f0e6cf;margin-top:0;font-size:1.5rem}
+  .pillar .equiv-tag{font-style:italic;color:#c6a86f;font-size:.95rem;margin:-.4rem 0 1rem}
+  .pillar .authority{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;
+    color:#9f855c;border-left:2px solid var(--plate-rule);padding-left:.8rem;margin:1rem 0 1.4rem}
+  .pillar p{color:#e3d7bf}
+  .pillar table{font-size:.84rem}
+  .pillar th{background:#3a2d20;color:#e9ddc4;border-bottom:1px solid var(--plate-rule)}
+  .pillar td{border-bottom:1px solid #4a3a28;color:#ddd0b6}
+  .pillar tr:nth-child(even) td{background:#332618}
+  .pillar .eq{background:#241b12;border-color:#4a3a28;border-left-color:#c6a86f;color:#e3d7bf}
+  .pillar .eq .k{color:#d9b877}
+  .pillar hr{border:0;border-top:1px solid var(--plate-rule);margin:1.6rem 0}
+  .pillar .foot{border-top-color:var(--plate-rule);color:#9f855c}
+
+  @media print{
+    body{background:#fff;font-size:11.5pt}
+    .pillar{break-inside:avoid;margin-left:0;margin-right:0}
+    .plate-title{min-height:0;height:100vh}
+    .eq,table,.oneliner{break-inside:avoid}
+  }
+  @media(max-width:600px){
+    body{font-size:16px}
+    .plate-title h1{font-size:2.1rem}
+    .toc-line{flex-wrap:wrap}
+    .toc-line .equiv{text-align:left;width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="book">
+
+  <!-- ===================== TITLE PLATE ===================== -->
+  <section class="plate-title">
+    <div class="vol">Principles Cyber &nbsp;·&nbsp; Book I of III</div>
+    <h1>Principles Cyber</h1>
+    <div class="sub">The First Ten Years</div>
+    <div class="sub" style="font-size:.95rem;margin-top:-1.6rem">Reduced to Sums &amp; Differences</div>
+    <div class="byline">
+      <div class="spaced">Written by</div>
+      <div><b>Iman Christian Bassey</b></div>
+      <div class="spaced" style="margin-top:1.4rem">Sponsored by</div>
+      <div><b style="letter-spacing:.18em">Tender Care Comprehensive College</b></div>
+    </div>
+    <div class="edi">First Edition · A Compressed Reference for the Serious Student</div>
+    <div class="granted">A Granted Publication</div>
+    <div class="seal">G</div>
+  </section>
+
+  <!-- ===================== TABLE OF CONTENTS ===================== -->
+  <section class="page">
+    <h2 class="sec-h">Table of Contents</h2>
+
+    <div class="toc-line"><span class="marker">§01</span><span class="name">The Shared Machine</span><span class="equiv">Atom Equivalent — the currency</span></div>
+    <div class="toc-line"><span class="marker">Pillar I</span><span class="name">The CIA Triad</span><span class="equiv">The Periodic Table Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§02</span><span class="name">Cryptography is Born</span><span class="equiv">Bonding Equivalent — the three routes</span></div>
+    <div class="toc-line"><span class="marker">Pillar II</span><span class="name">Saltzer &amp; Schroeder's Eight</span><span class="equiv">The Electronegativity Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§03</span><span class="name">The First Self-Moving Code</span><span class="equiv">Nuclear Equivalent — instability &amp; chain reaction</span></div>
+    <div class="toc-line"><span class="marker">Pillar III</span><span class="name">The Three Factors &amp; MFA</span><span class="equiv">The Activity Series Equivalent</span></div>
+    <div class="toc-line"><span class="marker">§04</span><span class="name">Glossary &amp; Constants</span><span class="equiv">Front-matter reference</span></div>
+
+    <p class="toc-note">Reference Plates (Pillars) appear as full-page interludes between sections — the same structural role Electronegativity, the Activity Series, and the pH/Solubility scales play in the companion chemistry volume. Each plate is grounded in an external, checkable authority, not in the author's say-so.</p>
+
+    <div class="foot"><span>Principles Cyber I</span><span>Granted · 1</span></div>
+  </section>
+
+  <!-- ===================== §01 ===================== -->
+  <section class="page">
+    <div class="sec-open">§01 · The Shared Machine</div>
+    <h1 class="chap">The Shared Machine</h1>
+    <p class="lede">Every other section in this book is downstream of one sentence. This is where that sentence lives.</p>
+
+    <div class="eqlabel">The founding reduction</div>
+    <div class="eq"><span class="k">security</span>     = separation + proof
+<span class="k">separation</span>   = one user's things, kept apart from another's
+<span class="k">proof</span>        = a user, made to demonstrate they are who they claim
+<span class="k">identity</span>     = the currency of security</div>
+
+    <p>A computer owned by one person, locked in one room, used by no one else, needs no security — it needs a door. Security begins the moment that stops being true: the moment a machine is <em>shared</em>. Every breach in this three-book project is, underneath, a failure of separation or a failure of proof.</p>
+
+    <h3>I. The founding facts — the constants underneath everything</h3>
+    <table>
+      <tr><th>Year</th><th>Event</th><th>What it minted</th></tr>
+      <tr><td>1961</td><td>CTSS at MIT — first widely used time-sharing</td><td>The password, as a login mechanism</td></tr>
+      <tr><td>1965</td><td>Multics design begins</td><td>Access control, designed in, not bolted on</td></tr>
+      <tr><td>1971</td><td>Creeper crosses ARPANET</td><td>First self-moving code</td></tr>
+      <tr><td>1972</td><td>Anderson Report (US Air Force)</td><td>First formal call for deliberate security</td></tr>
+      <tr><td>1975</td><td>Saltzer &amp; Schroeder publish</td><td>The permanent design rulebook</td></tr>
+    </table>
+
+    <div class="oneliner"><b>the password did not arrive to stop hackers — there were none yet.</b> It arrived because a shared machine had to tell two honest users apart. Security's first mechanism was built for bookkeeping and only later asked to hold a line against an enemy. Almost every weakness in this book is a mechanism built for one job, asked to do a second, harder one it was never designed for.</div>
+
+    <h3>II. The gate — authentication, authorization</h3>
+    <p>Before anything else about a user can be decided, the user clears this gate. It has two posts, and the single most common confusion in the field is treating them as one.</p>
+    <div class="eq"><span class="k">GATE →</span> What is being decided about this user?
+   Who are you?     → Authentication   (proving identity)
+   What may you do? → Authorization    (granting permission)</div>
+
+    <div class="oneliner"><b>authentication is the border post; authorization is the map of which buildings your visa opens.</b> Letting the wrong person in and letting the right person into the wrong room are different holes, patched in different places — confusing them is why systems get "fixed" at the wrong layer and breached anyway.</div>
+
+    <h3>III. Least privilege — the one principle every later breach re-teaches</h3>
+    <div class="eq"><span class="k">least privilege</span> = every user, program, process gets exactly
+                  the minimum access its job requires — and
+                  not one permission more.
+<span class="k">blast radius</span>    = how far a compromise spreads
+               = set by the loosest permission in reach</div>
+    <p>The attacker rarely breaks in as an administrator. They break in anywhere, and climb — and the climb is only possible because some account somewhere held more power than its job required.</p>
+    <div class="oneliner"><b>every catastrophic breach in this project is least privilege, violated and then exploited.</b> The founding decade named the cure in 1975. The field is still failing to take it.</div>
+
+    <h3>The complete hierarchy, restated</h3>
+    <div class="eq">THE SHARED MACHINE (security becomes necessary at all)
+   ↓
+SEPARATION + PROOF
+   ↓
+CIA TRIAD (the three properties every control serves) → Pillar I
+   ↓
+GATE → AUTHENTICATION / AUTHORIZATION
+   ↓ (who are you?)        ↓ (what may you do?)
+   three factors → Pillar III   reference monitor; least privilege
+   ↓
+SALTZER &amp; SCHROEDER (the eight rules all of it obeys) → Pillar II</div>
+    <p>Everything after this section was already obeying this one sentence — <em>a shared machine must separate users and prove identity</em> — before it was ever formally shown. This is the beginning not because the field happened in this order, but because everything else was already secretly derived from it.</p>
+
+    <div class="foot"><span>Principles Cyber I · §01</span><span>Granted · 2</span></div>
+  </section>
+
+  <!-- ===================== PILLAR I ===================== -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar I</div>
+    <h3>The CIA Triad</h3>
+    <div class="equiv-tag">The Periodic Table Equivalent — the classification every control is read against</div>
+    <div class="authority">Grounded in: NIST FIPS 199 (2004), "Standards for Security Categorization" — confidentiality, integrity, and availability defined by a public federal standard, not by this book's author.</div>
+
+    <p>Every element in the chemistry Periodic Table earned its place through an external, checkable authority — IUPAC, not the book's author. This plate holds itself to the same standard: the three properties below are the categories a US federal standard uses to classify every information system, verifiable in FIPS 199 itself.</p>
+
+    <div class="eq"><span class="k">CONFIDENTIALITY</span> → Can only the right people read it?
+<span class="k">INTEGRITY</span>       → Is it unaltered since it was trusted?
+<span class="k">AVAILABILITY</span>    → Is it there when the right person needs it?</div>
+
+    <table>
+      <tr><th>Property</th><th>The question</th><th>What breaks it</th></tr>
+      <tr><td>Confidentiality</td><td>Who can see this?</td><td>Theft, eavesdropping, leaks</td></tr>
+      <tr><td>Integrity</td><td>Has this been changed?</td><td>Tampering, forgery, corruption</td></tr>
+      <tr><td>Availability</td><td>Is this reachable?</td><td>Deletion, overload, ransom</td></tr>
+    </table>
+
+    <p>Where the Periodic Table sorts elements by shell-filling family, the triad sorts every control by which of three properties it serves. A password serves confidentiality; a checksum serves integrity; a backup serves availability. When you cannot say which of the three a control protects, you do not yet understand the control.</p>
+
+    <hr>
+    <p><b style="color:#f0e6cf">The trade no one escapes.</b> The three are not independent — they trade against each other constantly. The most confidential file is the one no one can reach, which destroys availability. The most available system is the one with no locks, which destroys confidentiality. Security is not maximizing all three; it is choosing the balance a situation actually needs — the same way a reaction's conditions are chosen, not maximized.</p>
+
+    <div class="foot"><span>Principles Cyber I · Pillar I</span><span>Granted · 3</span></div>
+  </section>
+
+  <!-- ===================== §02 ===================== -->
+  <section class="page">
+    <div class="sec-open">§02 · Cryptography is Born</div>
+    <h1 class="chap">Cryptography is Born</h1>
+    <p class="lede">The one section where the mechanism is pure mathematics, and the mathematics is the security. A careless human can undo everything else in these books. A sound cipher cannot be talked around.</p>
+
+    <p>For all of history before this decade, secret writing was a craft of tricks — swap this letter for that one, and pray the enemy never works out the pattern. In two years, 1976 to 1977, it became a science with public rules, and the craft never came back.</p>
+
+    <div class="eqlabel">The gate — three routes</div>
+    <div class="eq"><span class="k">GATE →</span> What do you need, and who already shares a secret with you?
+   Hide contents, both sides share a key already → Symmetric
+   Hide contents, the two share NO secret yet    → Asymmetric
+   Prove contents unaltered, hide nothing         → Hashing</div>
+    <p>Like isotope, ion, and molecule, the three look related and do genuinely different work. Two hide; one does not hide at all and is still cryptography.</p>
+
+    <h3>I. Symmetric — one shared key, both directions</h3>
+    <div class="eq">plaintext --(key)--> ciphertext --(same key)--> plaintext
+<span class="k">symmetric</span> = one secret key, used to lock AND unlock</div>
+    <table>
+      <tr><th>Fact</th><th>Value</th></tr>
+      <tr><td>Landmark standard</td><td>DES — adopted 1977, key only 56 bits</td></tr>
+      <tr><td>Modern replacement</td><td>AES — 128 / 192 / 256-bit keys</td></tr>
+      <tr><td>Strength</td><td>Fast; ideal for bulk data</td></tr>
+      <tr><td>Weakness</td><td>Both sides must already share the key secretly</td></tr>
+    </table>
+    <div class="oneliner"><b>symmetric is a strongbox with one key both people must hold.</b> Wonderfully secure, and useless until you answer the one question it cannot answer itself — how did you both get the key?</div>
+
+    <h3>II. Asymmetric — the idea that changed everything (1976–77)</h3>
+    <div class="eq"><span class="k">key pair</span>:
+   public key  → shared with everyone; LOCKS or VERIFIES
+   private key → kept secret forever;   UNLOCKS or SIGNS
+anything locked with the public key opens ONLY with the private key</div>
+    <table>
+      <tr><th>Fact</th><th>Value</th></tr>
+      <tr><td>Diffie–Hellman</td><td>1976 — two strangers derive a shared key in the open</td></tr>
+      <tr><td>RSA</td><td>1977 — first practical public-key encryption and signatures</td></tr>
+      <tr><td>Weakness</td><td>Slow; impractical for large data</td></tr>
+    </table>
+    <div class="oneliner"><b>asymmetric solves symmetric's fatal flaw and inherits a new one.</b> Strangers can communicate with no prior meeting — but it is too slow for real traffic. So the two combine: asymmetric is used once, briefly, to deliver a fresh symmetric key, and the fast cipher carries the conversation. Every secure web connection you have made is this handoff.</div>
+
+    <h3>III. Hashing — the route that hides nothing and is still cryptography</h3>
+    <div class="eq">input of ANY size --(hash)--> fixed-size digest
+   same input → same digest   ·   any change → totally different digest
+   the digest → cannot be reversed to the input
+<span class="k">hashing</span> serves INTEGRITY, uses NO key — it is not encryption</div>
+    <p>A well-built system never stores your password. It stores the <em>hash</em>. On login it hashes what you typed and compares digests — so a thief who steals the file steals fingerprints, not passwords.</p>
+    <div class="oneliner"><b>encryption is meant to be reversed by the right key; hashing is meant never to be reversed at all.</b> If there is no key and no way back, it is a hash, not a cipher — the field's most common beginner error is calling them the same thing.</div>
+
+    <h3>The complete hierarchy, restated</h3>
+    <div class="eq">CONFIDENTIALITY + INTEGRITY (the CIA properties maths can buy)
+   ↓
+GATE → SYMMETRIC / ASYMMETRIC / HASHING
+   └── combined: asymmetric delivers a key, symmetric carries traffic
+   ↓
+DIGITAL SIGNATURE = hash + private key
+   = proof of authorship + proof of integrity</div>
+    <p>Before 1976, a cipher's security lived in a secret method that always eventually leaked. After 1977, the method was published, the key was the only secret, and the security was mathematics anyone could inspect and no one could talk around. The decade did not improve cryptography. It changed what kind of thing it was.</p>
+
+    <div class="foot"><span>Principles Cyber I · §02</span><span>Granted · 4</span></div>
+  </section>
+
+  <!-- ===================== PILLAR II ===================== -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar II</div>
+    <h3>Saltzer &amp; Schroeder's Eight</h3>
+    <div class="equiv-tag">The Electronegativity Equivalent — the derivation underneath, not just the label</div>
+    <div class="authority">Grounded in: Saltzer &amp; Schroeder, "The Protection of Information in Computer Systems," Proceedings of the IEEE, 1975 — eight principles stated once and never since replaced.</div>
+
+    <p>Electronegativity explained WHY a bond resolves the way it does, not just that it does. These eight principles do the same job for secure design: they are the derivation underneath every claim in this book that one system resists misuse and another does not.</p>
+
+    <table>
+      <tr><th>#</th><th>Principle</th><th>Plain statement</th></tr>
+      <tr><td>1</td><td>Economy of mechanism</td><td>Keep it simple — you can only verify what you understand</td></tr>
+      <tr><td>2</td><td>Fail-safe defaults</td><td>Deny by default; grant deliberately, never by accident</td></tr>
+      <tr><td>3</td><td>Complete mediation</td><td>Check every access, every time — no trusted shortcuts</td></tr>
+      <tr><td>4</td><td>Open design</td><td>Never depend on the design being secret</td></tr>
+      <tr><td>5</td><td>Separation of privilege</td><td>Require more than one condition to grant access</td></tr>
+      <tr><td>6</td><td>Least privilege</td><td>Give each part only the access it needs</td></tr>
+      <tr><td>7</td><td>Least common mechanism</td><td>Share as little as possible between users</td></tr>
+      <tr><td>8</td><td>Psychological acceptability</td><td>If it is too hard to use correctly, it will be bypassed</td></tr>
+    </table>
+
+    <hr>
+    <p><b style="color:#f0e6cf">The one students disbelieve.</b> "Open design" is the principle beginners reject and the one that matters most. A lock whose security depends on nobody knowing how it works is already broken, because design secrets always leak. A good lock stays secure when the attacker holds the blueprints and lacks only the key. This single principle is why real cryptography (Pillar's neighbour, §02) is published openly, and why "security through obscurity" is a warning, not a method.</p>
+
+    <p style="font-size:.84rem;color:#c6a86f">Where chemistry's electronegativity gave a continuous number — 0.96, 2.23, a threshold at 1.7 — these eight give a checklist instead: crossed or not crossed, rule by rule. A different shape, the same job — explain why the earlier claim holds, not just assert it.</p>
+
+    <div class="foot"><span>Principles Cyber I · Pillar II</span><span>Granted · 5</span></div>
+  </section>
+
+  <!-- ===================== §03 ===================== -->
+  <section class="page">
+    <div class="sec-open">§03 · The First Self-Moving Code</div>
+    <h1 class="chap">The First Self-Moving Code</h1>
+    <p class="lede">The first place in the field where the threat runs on its own after launch — which makes it, quietly, the true ancestor of Book III. Autonomy did not arrive with AI. It arrived in 1971, in one line of text on a screen.</p>
+
+    <div class="eqlabel">The gate — how does the code spread?</div>
+    <div class="eq"><span class="k">GATE →</span> How does the malicious code spread?
+   Attaches to a host file, waits for a human to run it → Virus
+   Copies itself across a network, no human needed       → Worm
+   Pretends to be something wanted, is run willingly     → Trojan</div>
+    <table>
+      <tr><th>Type</th><th>Needs a host file?</th><th>Needs a human?</th><th>Spreads by</th></tr>
+      <tr><td>Virus</td><td>Yes</td><td>Yes — runs the file</td><td>Infected files, shared and opened</td></tr>
+      <tr><td>Worm</td><td>No</td><td class="warn">No</td><td>Copying itself over the network</td></tr>
+      <tr><td>Trojan</td><td>No</td><td>Yes — installs it</td><td>Deception — looking desirable</td></tr>
+    </table>
+    <div class="oneliner"><b>the three differ on one axis only — how much the attacker still needs a human to do.</b> The worm is the dangerous one precisely because it removed the human — the same removal that makes the agentic attacks of Book III dangerous, fifty years later.</div>
+
+    <h3>I. Creeper and Reaper — first move, first countermove (1971)</h3>
+    <div class="eq">Creeper (1971): copied itself across ARPANET —
+                "I'M THE CREEPER: CATCH ME IF YOU CAN."
+Reaper  (1971): written to chase Creeper down and delete it.</div>
+    <div class="oneliner"><b>the field's first attack and its first defense were born the same year, built on the same mechanism, differing only in intent.</b> This is the permanent shape of the subject: offense and defense are the same tools pointed opposite ways, and whoever automates faster sets the pace. Book III is this sentence, with AI as the thing automated.</div>
+
+    <h3>II. The Morris worm — the day the threat stopped being theoretical (1988)</h3>
+    <table>
+      <tr><th>Fact</th><th>Value</th></tr>
+      <tr><td>Date</td><td>November 2, 1988</td></tr>
+      <tr><td>Internet size then</td><td>~60,000 computers</td></tr>
+      <tr><td>Machines infected</td><td>~6,000 — roughly 10% of the whole internet</td></tr>
+      <tr><td>Intent</td><td>Not destructive — meant to measure the internet's size</td></tr>
+      <tr><td>What went wrong</td><td>A reinfection bug made it copy onto machines repeatedly</td></tr>
+      <tr><td>Firsts</td><td>First CFAA felony conviction; first CERT created</td></tr>
+    </table>
+    <p>The worm destroyed no data. It did something stranger: it made machines <em>unavailable</em> — the third leg of the triad — purely by copying itself too eagerly. A program meant only to count the internet nearly switched it off.</p>
+    <div class="oneliner"><b>the Morris worm proved that autonomy is the risk, not malice.</b> Its author meant no harm; it harmed ~10% of the internet anyway, because a small bug multiplied by automatic self-replication became a catastrophe no human could hand-stop. This is the decade's sharpest warning to Book III — an autonomous attacker need not be clever or cruel to be devastating. It need only be fast, self-copying, and a little bit wrong.</p>
+
+    <h4>What it exploited — vulnerabilities, named for the first time</h4>
+    <table>
+      <tr><th>Route</th><th>What it was</th><th>Still exploited?</th></tr>
+      <tr><td>Weak passwords</td><td>Guessed from a built-in dictionary</td><td class="warn">Yes — password spraying, Book III</td></tr>
+      <tr><td>Buffer overflow</td><td>More data than a program reserved room for</td><td class="warn">Yes — a whole vuln class</td></tr>
+      <tr><td>Trusted hosts</td><td>Machines that trusted each other blindly</td><td class="warn">Yes — lateral movement</td></tr>
+    </table>
+    <div class="oneliner"><b>the worm used no magic — it used weak passwords, an unchecked input size, and over-trusting hosts.</b> Three failures of the Saltzer &amp; Schroeder rules (Pillar II), specifically complete mediation and least privilege. The field's first real disaster was the field ignoring the design principles it had written down thirteen years earlier.</div>
+
+    <h3>One worm, still moving</h3>
+    <p>Not a hierarchy this time. A worm does not announce itself — it just keeps copying, quietly, whether or not anyone is watching. Start with everything this book has said the enemy is: a human defeating separation or faking proof. Take the human away. What is left still spreads, still climbs, still fills the disk — because the danger was never only the human's cleverness, it was the automation set in motion and then uncallable.</p>
+    <p>In 1988 that automation was six thousand machines and an accident. In Book III it is an AI agent given one goal and left to run. The decade that invented the password also invented the thing that would outrun the human defending it.</p>
+
+    <div class="foot"><span>Principles Cyber I · §03</span><span>Granted · 6</span></div>
+  </section>
+
+  <!-- ===================== PILLAR III ===================== -->
+  <section class="pillar">
+    <div class="plabel">Reference Plate · Pillar III</div>
+    <h3>The Three Factors &amp; MFA</h3>
+    <div class="equiv-tag">The Activity Series Equivalent — a fixed ranking that predicts what displaces what</div>
+    <div class="authority">Grounded in: NIST SP 800-63, Digital Identity Guidelines — the three authenticator factor categories as defined by a public federal standard.</div>
+
+    <p>The Activity Series does not describe attraction; it predicts <em>eviction</em> — a higher-ranked element displaces a lower one from its compound, every time, by fixed rank. The factor model does the parallel job for identity: a stolen secret's usefulness is displaced the instant a second factor from a different category is required.</p>
+
+    <div class="eq">Something you <span class="k">KNOW</span> → password, PIN        (weakest alone)
+Something you <span class="k">HAVE</span> → phone, token, card
+Something you <span class="k">ARE</span>  → fingerprint, face    (cannot be changed once copied)</div>
+
+    <table>
+      <tr><th>Attack shape</th><th>What it reuses</th><th>Displaced by</th></tr>
+      <tr><td>Brute force</td><td>Guesses against one account</td><td>A second factor</td></tr>
+      <tr><td>Password spraying</td><td>One common password, many accounts</td><td>A second factor</td></tr>
+      <tr><td>Credential stuffing</td><td>Passwords leaked elsewhere</td><td>A second factor</td></tr>
+    </table>
+
+    <hr>
+    <p><b style="color:#f0e6cf">The ranking that ends the war.</b> Every password attack is one attack — the reuse of a knowledge-factor secret the attacker should not hold — and every one dies against the same countermeasure, a factor the attacker does not hold. Just as Zinc displaces Copper purely by fixed positional rank, MFA displaces a stolen password purely because proof now requires a category the thief cannot reach. The multi-decade war over passwords ends in one rule: never let one factor be enough.</p>
+
+    <div class="foot"><span>Principles Cyber I · Pillar III</span><span>Granted · 7</span></div>
+  </section>
+
+  <!-- ===================== §04 GLOSSARY ===================== -->
+  <section class="page">
+    <div class="sec-open">§04 · Front-matter reference</div>
+    <h1 class="chap">Glossary &amp; Constants</h1>
+    <p class="lede">Everything the sections lean on, in one place. The periodic table of the founding decade: the values and definitions a defender should hold before the material starts, not hunt for inside it.</p>
+
+    <h3>The constants — dates to know cold</h3>
+    <table>
+      <tr><th>Year</th><th>Event</th></tr>
+      <tr><td>1961</td><td>CTSS — the password enters computing</td></tr>
+      <tr><td>1965</td><td>Multics — access control designed in</td></tr>
+      <tr><td>1971</td><td>Creeper &amp; Reaper — first self-moving code and countermeasure</td></tr>
+      <tr><td>1972</td><td>Anderson Report — first formal call for computer security</td></tr>
+      <tr><td>1975</td><td>Saltzer &amp; Schroeder — the eight principles</td></tr>
+      <tr><td>1976</td><td>Diffie–Hellman key exchange</td></tr>
+      <tr><td>1977</td><td>RSA; DES adopted</td></tr>
+      <tr><td>1988</td><td>Morris worm; first CFAA conviction; first CERT</td></tr>
+    </table>
+
+    <h3>Glossary — every definition, gathered</h3>
+    <p><b>Access control</b> — the mechanism deciding which users may reach which resources on a shared system.</p>
+    <p><b>Asymmetric encryption</b> — encryption with a linked public/private key pair; what the public key locks, only the private key opens. Solves key distribution between strangers; slow for bulk data.</p>
+    <p><b>Authentication</b> — proving a user is who they claim, by one of three factors: know / have / are.</p>
+    <p><b>Authorization</b> — deciding what an authenticated user may do.</p>
+    <p><b>Availability</b> — the CIA property that a resource is reachable when needed.</p>
+    <p><b>Buffer overflow</b> — a flaw where a program accepts more input than it reserved memory for, letting the excess overwrite adjacent memory; if the attacker controls the excess, they can control the program.</p>
+    <p><b>CERT</b> — Computer Emergency Response Team; the first was created after the Morris worm (1988).</p>
+    <p><b>CIA triad</b> — confidentiality, integrity, availability; the three properties every control serves.</p>
+    <p><b>Ciphertext / plaintext</b> — the scrambled output of encryption / the readable original.</p>
+    <p><b>Collision resistance</b> — the hashing property that two different inputs should never share a digest.</p>
+    <p><b>Confidentiality</b> — the CIA property that only authorized people can read something.</p>
+    <p><b>Digest (hash)</b> — the fixed-size, one-way fingerprint a hash function produces.</p>
+    <p><b>Digital signature</b> — a document's hash encrypted with the signer's private key; proves authorship and integrity, verified with the public key.</p>
+    <p><b>Factor</b> — one of three categories of identity evidence: knowledge, possession, inherence.</p>
+    <p><b>Hashing</b> — a one-way function mapping any input to a fixed-size digest; serves integrity, uses no key, cannot be reversed. Not encryption.</p>
+    <p><b>Integrity</b> — the CIA property that data is unaltered since it was trusted.</p>
+    <p><b>Least privilege</b> — every user, program, and process gets only the minimum access its job requires; it sets the blast radius of any compromise.</p>
+    <p><b>Multi-factor authentication (MFA)</b> — combining two or more factors from different categories, so stealing one is not enough.</p>
+    <p><b>Reference monitor</b> — the always-invoked, tamper-proof, verifiable checkpoint every access request must pass.</p>
+    <p><b>Security through obscurity</b> — relying on a design being secret; a warning, not a method, because design secrets always leak.</p>
+    <p><b>Symmetric encryption</b> — encryption with one shared key for both locking and unlocking; fast, but both sides must already share the key.</p>
+    <p><b>Trojan / Virus / Worm</b> — malicious code that is run willingly through disguise / that attaches to a host file and spreads when run / that copies itself across a network with no human action.</p>
+
+    <div class="foot"><span>Principles Cyber I · §04</span><span>Granted · 8</span></div>
+  </section>
+
+  <section class="page" style="text-align:center;padding-top:4rem">
+    <div class="granted" style="font-family:var(--mono);font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--accent)">End of Book I</div>
+    <p style="font-style:italic;color:var(--ink-soft);margin-top:1rem">Book II — Cyber Before AI — takes the classical discipline at its high-water mark, the day before machines began doing the attacking themselves.</p>
+    <div class="seal" style="margin-top:2rem">G</div>
+  </section>
+
+</div>
+</body>
+</html>
